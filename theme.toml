@@ -1,27 +1,10 @@
 name = "Research Group"
 license = "MIT"
-licenselink = "https://github.com/HugoBlox/theme-documentation/blob/main/LICENSE.md"
-description = "Easy,
-all-in-one beautiful documentation website including a customizable homepage and blog. Super fast,
-empowering you to focus on your content."
-
+licenselink = "https://github.com/wowchemy/starter-hugo-research-group/blob/main/LICENSE.md"
+description = "The **Research Group Template** empowers your research group to easily create a beautiful website with a stunning homepage, news, academic publications, events, team profiles, and a contact form."
 homepage = "https://github.com/wowchemy/starter-hugo-research-group"
 demosite = "https://research-group.netlify.app/"
-
-tags = [
-"landing",
-"docs",
-"blog",
-"responsive",
-"minimal",
-"light",
-"dark",
-"multilingual",
-"dark mode",
-"tailwind",
-"company",
-"gallery"
-"academic",
+tags = ["academic",
         "university",
         "research",
         "publications",
@@ -49,31 +32,10 @@ tags = [
         "customizable",
         "technical",
         "slide"
-]
+        ]
+features = ["page builder", "widgets", "themes", "search", "research publication system", "filterable portfolio",
+            "blog", "create courses", "talks", "events", "slides", "gallery", "contact form"]
 
-features = [
-"secure",
-"fast",
-"search",
-"dark mode",
-"widgets",
-"page builder",
-"widgets",
-"themes",
-"search",
-"research publication system",
-"filterable portfolio",
-"blog",
-"create courses",
-"talks",
-"events",
-"slides",
-"gallery",
-"contact form"
-]
-
-
-# If the theme has a single author
 [author]
   name = "George Cushen"
-  homepage = "https://georgecushen.com/"
+  homepage = "https://georgecushen.com"

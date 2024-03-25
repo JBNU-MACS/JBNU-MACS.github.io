@@ -56,6 +56,7 @@ sections:
       # Reduce spacing
       spacing:
         padding: ["1rem", 0, "1rem", 0]
+
   - block: features
     id: features
     content:
@@ -80,18 +81,6 @@ sections:
         - name: Swappable Blocks
           icon: rectangle-group
           description: Build your pages with blocks - no coding required!
-  - block: cta-card
-    content:
-      title: "Start Writing with the #1 Effortless Documentation Platform"
-      text: Hugo Blox Docs Theme brings all your technical knowledge together in a single, centralized knowledge base. Easily search and edit it with the tools you use every day!
-      button:
-        text: Get Started
-        url: https://hugoblox.com/templates/details/docs/
-    design:
-      card:
-        # Card background color (CSS class)
-        css_class: "bg-primary-700"
-        css_style: ""
 
   - block: markdown
     content:

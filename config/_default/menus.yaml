@@ -8,6 +8,9 @@ main:
   - name: Authors
     url: /authors
     weight: 15
+  - name: People
+    url: /people
+    weight: 16
   - name: Documentation
     url: docs/
     weight: 20

@@ -18,7 +18,8 @@ removePathAccents: true
 ############################
 ## ADVANCED
 ############################
-
+build:
+  writeStats: true
 enableGitInfo: false
 summaryLength: 30
 paginate: 10

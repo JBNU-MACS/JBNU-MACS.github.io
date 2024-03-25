@@ -4,48 +4,52 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Appearance
-
 appearance:
-  theme_day: minimal
-  theme_night:
-  font: native
-  font_size: L
+  mode: light
+  color: blue
 
 # SEO
-
 marketing:
   seo:
-    site_type: Organization
+    site_type: Project
     local_business_type: ''
     org_name: ''
-    description: 'A highly-customizable Hugo research group theme powered by Wowchemy website builder.'
+    description: 'A highly-customizable Hugo documentation theme powered by Hugo Blox website builder.'
     twitter: 'GetResearchDev'
   analytics:
     google_analytics: ''
-    baidu_tongji: ''
     google_tag_manager: ''
     microsoft_clarity: ''
+    baidu_tongji: ''
+    plausible: ''
+    fathom: ''
+    pirsch: ''
   verification:
     google: ''
     baidu: ''
 
 # Site header
-
 header:
   navbar:
     enable: true
-    align: r
-    show_logo: true
-    show_language: false
-    show_day_night: true
+    blox: "navbar"
+    align: "center"
+    fixed_to_top: true
+    logo:
+      text: ""
+      # Logo filename in `assets/media/` folder
+      filename: "logo.svg"
+    button:
+      enable: true
+      text: "Get Started"
+      url: "https://hugoblox.com/templates/details/docs/"
     show_search: true
-    highlight_active_link: false
+    show_theme_chooser: true
 
 # Site footer
-
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} My Company. This work is licensed under {license}'
     license:
       enable: true
       allow_derivatives: false
@@ -53,66 +57,28 @@ footer:
       allow_commercial: false
 
 # Localization
-
 locale:
   date_format: 'Jan 2, 2006'
   time_format: '3:04 PM'
-  address_format: en-us
 
 # Site features
-
 features:
-  syntax_highlighter:
-    enable: false
-    extra_languages:
-      - r
-      - latex
   math:
     enable: false
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/<username>/<repository>'
-    content_dir: content
-    branch: main
-  avatar:
-    gravatar: false
-    shape: circle
+    url: 'https://github.com/HugoBlox/hugo-blox-builder/'
+    content_dir: 'starters/documentation/content'
+    branch: 'main'
+  feedback:
+    responses:
+      positive: 'Glad to hear it! [Any ideas for improvements?](https://github.com/<USERNAME>/<REPO>/issues/new).'
+      negative: 'Sorry to hear that. [Please tell us how we can improve](https://github.com/<USERNAME>/<REPO>/issues/new).'
   comment:
     provider: ''
-    disqus:
-      shortname: ''
-      show_count: true
-    commento:
-      url: ''
     giscus:
       repo: ''
       repo_id: ''
       category: ''
       category_id: ''
-  search:
-    provider: wowchemy
-    algolia:
-      app_id: ''
-      api_key: ''
-      index_name: ''
-      show_logo: false
-  map:
-    provider: 'mapnik'
-    api_key: ''
-    zoom: 15
-
-# Extensions
-
-extensions:
-  decap_cms:
-    branch: main
-    local_backend: false
-  academicons:
-    enable: true
-
-# Citation style
-
-publications:
-  date_format: January 2006
-  citation_style: apa

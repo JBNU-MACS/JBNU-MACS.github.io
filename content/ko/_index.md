@@ -42,7 +42,7 @@ sections:
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
       slide_height: '200'
-      is_fullscreen: true
+      is_fullscreen: false
       # Automatically transition through slides?
       loop: true
       # Duration of transition between slides (in ms)

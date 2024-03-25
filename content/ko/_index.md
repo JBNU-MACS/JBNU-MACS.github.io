@@ -34,8 +34,8 @@ sections:
     design:
       view: card
       columns: '1'
-      
-  - block: stats
+
+  - block: collection
     content:
       items:
         - statistic: "1M+"

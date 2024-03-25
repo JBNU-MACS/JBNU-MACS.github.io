@@ -14,10 +14,8 @@ sections:
         filename: welcome.jpg
       text: |
         <br>
-        
         The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
   
-
   - block: features
     id: features
     content:
@@ -57,9 +55,9 @@ sections:
         tag: ''
       offset: 0
       order: desc
-      page_type: publications
+      page_type: publication
     design:
-      view: card
+      view: list
       columns: '3'
 
   - block: collection
@@ -78,7 +76,7 @@ sections:
       order: desc
       page_type: post
     design:
-      view: card
+      view: compact
       columns: '3'
 
   - block: markdown

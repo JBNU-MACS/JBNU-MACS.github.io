@@ -82,12 +82,27 @@ features:
       negative: 'Sorry to hear that. [Please tell us how we can improve](https://github.com/<USERNAME>/<REPO>/issues/new).'
   comment:
     provider: ''
+    disqus:
+      shortname: ''
+      show_count: true
+    commento:
+      url: ''
     giscus:
       repo: ''
       repo_id: ''
       category: ''
       category_id: ''
-
+  search:
+    provider: wowchemy
+    algolia:
+      app_id: ''
+      api_key: ''
+      index_name: ''
+      show_logo: false
+  map:
+    provider: 'mapnik'
+    api_key: ''
+    zoom: 15
 
 # Extensions
 

@@ -55,6 +55,9 @@ features = ["secure",
         "slide"
 ]
 
+features = ["page builder", "widgets", "themes", "search", "research publication system", "filterable portfolio",
+            "blog", "create courses", "talks", "events", "slides", "gallery", "contact form"]
+
 # If the theme has a single author
 [author]
   name = "George Cushen"

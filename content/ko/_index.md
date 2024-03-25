@@ -16,46 +16,6 @@ sections:
         
         The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
   
-  - block: collection
-    content:
-      title: Latest News
-      subtitle:
-      text:
-      count: 5
-      filters:
-        author: ''
-        category: ''
-        exclude_featured: false
-        publication_type: ''
-        tag: ''
-      offset: 0
-      order: desc
-      page_type: post
-    design:
-      view: card
-      columns: '1'
-
-  - block: collection
-    content:
-      items:
-        - statistic: "1M+"
-          description: |
-            Websites built  
-            with Hugo Blox
-        - statistic: "10k+"
-          description: |
-            GitHub stars  
-            since 2016
-        - statistic: "3k+"
-          description: |
-            Discord community  
-            for support
-    design:
-      # Section background color (CSS class)
-      css_class: "bg-gray-100 dark:bg-gray-800"
-      # Reduce spacing
-      spacing:
-        padding: ["1rem", 0, "1rem", 0]
 
   - block: features
     id: features
@@ -81,6 +41,25 @@ sections:
         - name: Swappable Blocks
           icon: rectangle-group
           description: Build your pages with blocks - no coding required!
+
+  - block: collection
+    content:
+      title: Latest News
+      subtitle:
+      text:
+      count: 5
+      filters:
+        author: ''
+        category: ''
+        exclude_featured: false
+        publication_type: ''
+        tag: ''
+      offset: 0
+      order: desc
+      page_type: post
+    design:
+      view: card
+      columns: '1'
 
   - block: markdown
     content:

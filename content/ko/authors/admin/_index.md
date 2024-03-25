@@ -70,8 +70,39 @@ highlight_name: false
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
   - Researchers
+
+
 ---
 
 Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+
+
+---
+title: My page
+type: landing
+
+sections:
+  - block: resume-experience
+    content:
+      # The user's folder name in `content/authors/`
+      username: admin
+    design:
+      # Hugo date format
+      date_format: 'January 2006'
+      # Education or Experience section first?
+      is_education_first: false
+---
+
+---
+title: My page
+type: landing
+
+sections:
+  - block: resume-skills
+    content:
+      title: Skills & Hobbies
+      # Note: `username` refers to the user's folder name in `content/authors/`
+      username: admin
+---

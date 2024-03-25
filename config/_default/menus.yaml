@@ -8,9 +8,6 @@ main:
   - name: Authors
     url: /authors
     weight: 15
-  - name: People
-    url: people/
-    weight: 20
   - name: Documentation
     url: docs/
     weight: 25
@@ -23,24 +20,6 @@ main:
   - name: Community
     url: community/
     weight: 50
-  - name: Community
-    url: community/
-    weight: 50
-  - name: Publications
-    url: publication
-    weight: 20
-  - name: News
-    url: post
-    weight: 30
-  - name: Events
-    url: event
-    weight: 40
-  - name: Contact
-    url: contact
-    weight: 50
-  - name: Tour
-    url: tour
-    weight: 60
 
 sidebar:
   - identifier: more

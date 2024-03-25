@@ -90,7 +90,7 @@ sections:
       text:
       count: 3
       filters:
-        author: '' FG
+        author: ''
         category: ''
         exclude_featured: false
         publication_type: ''

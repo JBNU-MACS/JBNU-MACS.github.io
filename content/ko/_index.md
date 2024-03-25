@@ -57,15 +57,15 @@ sections:
       order: desc
       page_type: publication
     design:
-      view: list
-      columns: '1'
+      view: showcase
+      columns: '3'
 
   - block: collection
     content:
       title: Latest News
       subtitle:
       text:
-      count: 4
+      count: 2
       filters:
         author: ''
         category: ''

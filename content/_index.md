@@ -24,7 +24,22 @@ sections:
         link:
           text: "Read more"
           url: "/blog/"
-    design:
+  - block: collection
+    content:
+      title: Latest News
+      subtitle:
+      text:
+      count: 5
+      filters:
+        author: ''
+        category: ''
+        exclude_featured: false
+        publication_type: ''
+        tag: ''
+      offset: 0
+      order: desc
+      page_type: post
+design:
       spacing:
         padding: [0, 0, 0, 0]
         margin: [0, 0, 0, 0]

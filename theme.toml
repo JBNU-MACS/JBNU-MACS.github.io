@@ -19,12 +19,7 @@ tags = ["landing",
 "dark mode",
 "tailwind",
 "company",
-"gallery"]
-features = ["secure",
-"fast",
-"search",
-"dark mode",
-"widgets",
+"gallery"
 "academic",
         "university",
         "research",
@@ -55,8 +50,27 @@ features = ["secure",
         "slide"
 ]
 
-features = ["page builder", "widgets", "themes", "search", "research publication system", "filterable portfolio",
-            "blog", "create courses", "talks", "events", "slides", "gallery", "contact form"]
+features = [
+        "secure",
+"fast",
+"search",
+"dark mode",
+"widgets",
+"page builder",
+"widgets",
+"themes",
+"search",
+"research publication system",
+"filterable portfolio",
+"blog",
+"create courses",
+"talks",
+"events",
+"slides",
+"gallery",
+"contact form"
+]
+
 
 # If the theme has a single author
 [author]

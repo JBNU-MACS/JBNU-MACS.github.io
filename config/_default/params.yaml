@@ -77,6 +77,9 @@ features:
     url: 'https://github.com/HugoBlox/hugo-blox-builder/'
     content_dir: 'starters/documentation/content'
     branch: 'main'
+  avatar:
+    gravatar: false
+    shape: circle
   feedback:
     responses:
       positive: 'Glad to hear it! [Any ideas for improvements?](https://github.com/<USERNAME>/<REPO>/issues/new).'

@@ -9,23 +9,22 @@ sections:
     content:
       title: Contact
       text: |-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus augue non tempor egestas. Proin nisl nunc, dignissim in accumsan dapibus, auctor ullamcorper neque. Quisque at elit felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eget elementum odio. Cras interdum eget risus sit amet aliquet. In volutpat, nisl ut fringilla dignissim, arcu nisl suscipit ante, at accumsan sapien nisl eu eros.
+        관심 있으시면 아래로 연락주세요.
       email: ksl(at)jbnu.ac.kr
       phone: +82-63-270-2406
       address:
-        street: 567 Baekje-daero
-        city: Jeonju
-        region: Jeollabuk-do
+        street: 전북대학교 공과대학 7호관 626호
+        city: 전주시
+        region: 전라북도
         postcode: '54896'
-        country: South Korea
+        country: 대한민국
         country_code: KO
       coordinates:
         latitude: '35.84601324617979'
         longitude: '127.13444961966684'
       directions: 
       office_hours:
-        - 'Monday 13:00 to 18:00'
-        - 'Wednesday 13:00 to 18:00'
+        - '월/수 13:00 to 18:00'
       #contact_links:
       #  - icon: comments
       #    icon_pack: fas

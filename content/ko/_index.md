@@ -41,7 +41,7 @@ sections:
           color: '#333'
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
-      slide_height: '500'
+      slide_height: '300px'
       is_fullscreen: false
       # Automatically transition through slides?
       loop: true
@@ -50,13 +50,13 @@ sections:
 
   - block: hero
     content:
-      title: |
-        Medical AI & Computational Science (MACS)
+      title: |-
+       ## Medical AI & Computational Science (MACS)
       # image:
       #   filename: welcome.jpg
-      text: |
+      text: |-
         <br>
-        The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+        ### The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
   
   - block: features
     id: features

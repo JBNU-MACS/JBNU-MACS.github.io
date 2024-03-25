@@ -45,10 +45,29 @@ sections:
 
   - block: collection
     content:
+      title: Latest Publications
+      subtitle:
+      text:
+      count: 6
+      filters:
+        author: ''
+        category: ''
+        exclude_featured: false
+        publication_type: ''
+        tag: ''
+      offset: 0
+      order: desc
+      page_type: publications
+    design:
+      view: card
+      columns: '3'
+
+  - block: collection
+    content:
       title: Latest News
       subtitle:
       text:
-      count: 5
+      count: 3
       filters:
         author: ''
         category: ''
@@ -60,28 +79,8 @@ sections:
       page_type: post
     design:
       view: card
-      columns: '1'
+      columns: '3'
 
-  - block: markdown
-    content:
-      title:
-      subtitle: ''
-      text:
-    design:
-      columns: '1'
-      background:
-        image: 
-          filename: coders.jpg
-          filters:
-            brightness: 1
-          parallax: false
-          position: center
-          size: cover
-          text_color_light: true
-      spacing:
-        padding: ['20px', '0', '20px', '0']
-      css_class: fullscreen
-  
   - block: markdown
     content:
       title:

@@ -29,7 +29,7 @@ sections:
           icon: bolt
           description: Super fast page load with Tailwind CSS and super fast site building with Hugo.
         - name: Easy
-          icon: sparkles
+          icon: medical
           description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!
         - name: No-Code
           icon: code-bracket
@@ -46,7 +46,7 @@ sections:
       title: Latest Publications
       subtitle:
       text:
-      count: 6
+      count: 3
       filters:
         author: ''
         category: ''
@@ -65,7 +65,7 @@ sections:
       title: Latest News
       subtitle:
       text:
-      count: 3
+      count: 4
       filters:
         author: ''
         category: ''
@@ -77,7 +77,7 @@ sections:
       page_type: post
     design:
       view: compact
-      columns: '3'
+      columns: '2'
 
   - block: markdown
     content:

@@ -25,6 +25,3 @@ main:
   - name: Contact
     url: contact
     weight: 50
-  - name: Tour
-    url: tour
-    weight: 60

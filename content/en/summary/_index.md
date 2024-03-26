@@ -8,8 +8,8 @@ sections:
 
   - block: features
     content:
-      title: <span style="font-size:80%">Medical AI & Computational Science (MACS) Lab </span>
-      text: <span style="font-size:125%">전북대학교 의료 AI 및 계산 수학 연구실 홈페이지에 오신 것을 환영합니다.</span>
+      title: <span style="font-size:75%">Medical AI & Computational Science (MACS) Lab </span>
+      text: <span style="font-size:110%">전북대학교 의료 AI 및 계산 수학 연구실 홈페이지에 오신 것을 환영합니다.</span>
 
   - block: slider
     content:
@@ -57,7 +57,7 @@ sections:
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
       slide_height: '350px'
-      slide_width: '100px'
+      slide_width: '50%'
       is_fullscreen: false
       # Automatically transition through slides?
       loop: true

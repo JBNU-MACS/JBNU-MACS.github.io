@@ -107,7 +107,7 @@ sections:
       title: Notifications & News
       subtitle:
       text:
-      count: 2
+      count: 30
       filters:
         author: ''
         category: ''

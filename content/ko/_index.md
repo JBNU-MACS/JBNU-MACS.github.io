@@ -94,6 +94,25 @@ sections:
 
   - block: collection
     content:
+      title: Notifications & News
+      subtitle:
+      text:
+      count: 2
+      filters:
+        author: ''
+        category: ''
+        exclude_featured: false
+        publication_type: ''
+        tag: ''
+      offset: 0
+      order: desc
+      page_type: post
+    design:
+      view: compact
+      columns: '2'
+
+  - block: collection
+    content:
       title: Latest Publications
       subtitle:
       text:
@@ -112,25 +131,6 @@ sections:
       columns: '2'
     advanced:
       css_style: "text-align: center;"
-
-  - block: collection
-    content:
-      title: Notifications
-      subtitle:
-      text:
-      count: 2
-      filters:
-        author: ''
-        category: ''
-        exclude_featured: false
-        publication_type: ''
-        tag: ''
-      offset: 0
-      order: desc
-      page_type: post
-    design:
-      view: compact
-      columns: '2'
 
   - block: markdown
     content:

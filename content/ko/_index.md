@@ -100,7 +100,7 @@ sections:
         - name: 멀티모달(Multi-modality)
           icon: globe
           icon_pack: fas
-          description:  <span style="font-size:90%">Vision 및 Language 분야의 기반 AI 기술 개발 및 고도화 이후 관련 응용 어플리케이션에 기술 적용.</span><br><br>
+          description:  <span style="font-size:90%">Vision & Language 분야의 기반 AI 기술 개발 및 고도화 및 관련 응용 어플리케이션에 기술 적용.</span><br><br>
         - name: 의료수학(Medical Math)
           icon: calculator
           icon_pack: fas

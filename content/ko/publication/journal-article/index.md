@@ -1,7 +1,7 @@
 ---
 title: "An example journal article"
 authors:
-- admin
+- Kyungsu Lee
 - 이해윤
 author_notes:
 - "Equal contribution"

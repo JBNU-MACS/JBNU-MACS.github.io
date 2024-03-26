@@ -11,7 +11,7 @@ sections:
       slides:
       - title: AI
         content: 'Just opened last month!'
-        align: right
+        align: center
         background:
           image:
             filename: welcome.jpg
@@ -31,7 +31,7 @@ sections:
           color: '#666'
       - title: Development
         content: 'Share your knowledge with the group and explore exciting new topics together!'
-        align: left
+        align: center
         background:
           image:
             filename: contact.jpg
@@ -41,7 +41,7 @@ sections:
           color: '#555'
       - title: Mathematics
         content: 'Just opened last month!'
-        align: right
+        align: center
         background:
           image:
             filename: welcome.jpg
@@ -64,6 +64,7 @@ sections:
       # image:
       #   filename: welcome.jpg
       text: The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+      align: center
       design:
         background:
           gradient_angle: 0
@@ -126,7 +127,7 @@ sections:
       page_type: publication
     design:
       view: showcase
-      columns: '3'
+      columns: '1'
 
   - block: collection
     content:

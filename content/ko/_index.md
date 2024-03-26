@@ -58,41 +58,11 @@ sections:
       # Duration of transition between slides (in ms)
       interval: 3000
 
-  - block: markdown
+  - block: features
     content:
       title: Medical AI & Computational Science (MACS) Lab
       text: 전북대학교 의료 AI 및 계산 수학 연구실 홈페이지에 오신 것을 환영합니다. 
 
-sections:
-  - block: hero
-    content:
-      title: Build Your Landing Pages with Hugo Blox
-      text: 🧱 EASY. FREE (OPEN SOURCE). NO-CODE  🧱
-      primary_action:
-        text: Get Started
-        url: https://hugoblox.com/templates/
-        icon: rocket-launch
-      secondary_action:
-        text: Read the docs
-        url: https://docs.hugoblox.com
-      announcement:
-        text: "Announcing the release of version 1."
-        link:
-          text: "Read more"
-          url: "/blog/"
-    design:
-      spacing:
-        padding: [0, 0, 0, 0]
-        margin: [0, 0, 0, 0]
-      # For full-screen, add `min-h-screen` below
-      css_class: "dark"
-      background:
-        color: "navy"
-        image:
-          # Add your image background to `assets/media/`.
-          filename: coders.jpg
-          filters:
-            brightness: 0.5
             
 # sections:
 #   - block: resume-biography

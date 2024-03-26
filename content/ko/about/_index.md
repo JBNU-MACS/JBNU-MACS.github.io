@@ -14,51 +14,69 @@ sections:
   - block: slider
     content:
       slides:
-      - title: AI
-        content: 'Just opened last month!'
+
+      - title: <span style="font-size:90%">AI</span>
+        content: <span style="font-size:90%">의료/항공우주/컨텐츠 등 특성화 분야에 적용 가능한 AI 기술 개발<span style="font-size:90%">
         align: center
         background:
           image:
-            filename: welcome.jpg
+            filename: Ai.jpg
             filters:
-              brightness: 0.5
+              brightness: 0.4
           position: center
-          color: '#333'
-      - title: Medical AI
-        content: Take a look at what we're working on...
+          color: '#000'
+
+      - title: <span style="font-size:90%">Healthcare</span>
+        content: <span style="font-size:90%">의료 및 헬스케어 분야에 적용 가능한 AI 기술 개발</span>
         align: center
         background:
           image:
-            filename: coders.jpg
+            filename: mathematics.jpg
             filters:
-              brightness: 0.7
-          position: right
-          color: '#666'
-      - title: Development
-        content: 'Share your knowledge with the group and explore exciting new topics together!'
-        align: center
-        background:
-          image:
-            filename: contact.jpg
-            filters:
-              brightness: 0.7
+              brightness: 0.4
           position: center
-          color: '#555'
-      - title: Mathematics
-        content: 'Just opened last month!'
+          color: '#000'
+
+      - title: <span style="font-size:90%">Mathematics</span>
+        content: <span style="font-size:90%">AI와 관련된 수학 및 최적화 이론 연구</span>
         align: center
         background:
           image:
-            filename: welcome.jpg
+            filename: mathematics.jpg
             filters:
-              brightness: 0.5
+              brightness: 0.4
           position: center
-          color: '#333'
+          color: '#000'
+
+      - title: <span style="font-size:90%">Development</span>
+        content: <span style="font-size:90%">기반 기술을 활용한 Full-Stack 어플리케이션 개발</span>
+        align: center
+        background:
+          image:
+            filename: development.jpg
+            filters:
+              brightness: 0.4
+          position: center
+          color: '#000'
+
+          
+      - title: <span style="font-size:90%">Recruit</span>
+        content: <span style="font-size:90%">Interested in MacsLAB?</span>
+        align: center
+        background:
+          image:
+            filename: recruitment.jpg
+            filters:
+              brightness: 0.4
+          position: center
+          color: '#000'
         link:
-          icon: graduation-cap
+          icon: user
           icon_pack: fas
-          text: Join Us
-          url: ../contact/
+          text: <span style="font-size:60%">Join Us</span>
+          text-color: '#000'
+          url: contact
+
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
       slide_height: '350px'

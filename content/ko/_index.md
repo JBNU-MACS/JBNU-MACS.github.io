@@ -58,7 +58,7 @@ sections:
       # Duration of transition between slides (in ms)
       interval: 3000
 
-  - block: markdown
+  - block: hero
     content:
       title: Medical AI & Computational Science (MACS) Lab
       text: 전북대학교 의료 AI 및 계산 수학 연구실 홈페이지에 오신 것을 환영합니다. 

@@ -22,7 +22,7 @@ sections:
           image:
             filename: recruitment.jpg
             filters:
-              brightness: 0.3
+              brightness: 0.4
           position: center
           color: '#000'
         link:
@@ -38,7 +38,7 @@ sections:
           image:
             filename: Ai.jpg
             filters:
-              brightness: 0.3
+              brightness: 0.4
           position: center
           color: '#000'
 
@@ -49,7 +49,7 @@ sections:
           image:
             filename: mathematics.jpg
             filters:
-              brightness: 0.3
+              brightness: 0.4
           position: center
           color: '#000'
 
@@ -60,7 +60,7 @@ sections:
           image:
             filename: development.jpg
             filters:
-              brightness: 0.3
+              brightness: 0.4
           position: center
           color: '#000'
 
@@ -82,23 +82,28 @@ sections:
       text: 저희 연구실에서는 다음과 같은 연구/개발 분야에 관심을 쏟고 있습니다.<br><br><br><br>
       items:
         - name: 인공지능(AI)
-          icon: magnifying-glass
-          description: Automatic sitemaps, RSS feeds, and rich metadata take the pain out of SEO and syndication.<br><br>
-        - name: 의료수학(Medical Math)
-          icon: bolt
-          description: Super fast page load with Tailwind CSS and super fast site building with Hugo.<br><br>
+          icon: code-branch
+          icon_pack: fab
+          description: 의료 (Medical), 항공우주 (Aerospace), 컨텐츠 (Contents) 등 다양한 특성화 분야에 적응형 AI 기술 적용.
         - name: 멀티모달(Multi-modality)
-          icon: medical
-          icon_pack:
-          description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!<br><br>
+          icon: globe
+          icon_pack: fab
+          description: Vision 및 Language 분야에 
+        - name: 의료수학(Medical Math)
+          icon: calculator
+          icon_pack: fab
+          description: Super fast page load with Tailwind CSS and super fast site building with Hugo.<br><br>
         - name: 컨텐츠 (Contents)
-          icon: code-bracket
+          icon: comment-dots
+          icon_pack: fab
           description: Edit and design your site just using rich text (Markdown) and configurable YAML parameters.<br><br>
         - name: 개발 (Development)
-          icon: star
+          icon: laptop
+          icon_pack: fab
           description: Rated 5-stars by the community.<br><br>
         - name: 솔루션 (Solution)
-          icon: rectangle-group
+          icon: app-store-ios
+          icon_pack: fab
           description: Build your pages with blocks - no coding required!<br><br>
 
 

@@ -9,7 +9,7 @@ sections:
   - block: features
     content:
       title: <span style="font-size:80%">Medical AI & Computational Science (Macs) Lab </span>
-      text: <br><span style="font-size:125%">전북대학교 의료 AI 및 계산 수학 연구실 홈페이지에 오신 것을 환영합니다.</span>
+      text: <br><span style="font-size:125%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span>
 
   - block: slider
     content:
@@ -82,22 +82,22 @@ sections:
       title: <span style="font-size:75%">Lab's Interests</span>
       text: 저희 연구실에서는 다음과 같은 연구/개발 분야에 관심을 갖고 있습니다.<br><br><br><br>
       items:
-        - name: AI
+        - name: 인공지능(AI)
           icon: magnifying-glass
           description: Automatic sitemaps, RSS feeds, and rich metadata take the pain out of SEO and syndication.<br><br>
-        - name: Fast
+        - name: 의료수학(Medical Math)
           icon: bolt
           description: Super fast page load with Tailwind CSS and super fast site building with Hugo.<br><br>
-        - name: Easy
+        - name: 멀티모달(Multi-modality)
           icon: medical.svg
           description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!<br><br>
-        - name: No-Code
+        - name: 국방(Defense)
           icon: code-bracket
           description: Edit and design your site just using rich text (Markdown) and configurable YAML parameters.<br><br>
-        - name: Highly Rated
+        - name: 개발(Development)
           icon: star
           description: Rated 5-stars by the community.<br><br>
-        - name: Swappable Blocks
+        - name: 솔루션(Solution)
           icon: rectangle-group
           description: Build your pages with blocks - no coding required!<br><br>
 

@@ -74,18 +74,6 @@ sections:
         link:
           text: "Read more"
           url: "/blog/"
-    design:
-      spacing:
-        padding: [0, 0, 0, 0]
-        margin: [0, 0, 0, 0]
-      # For full-screen, add `min-h-screen` below
-      background:
-        color: "navy"
-        image:
-          # Add your image background to `assets/media/`.
-          filename: coders.jpg
-          filters:
-            brightness: 0.5
   
 
   - block: features

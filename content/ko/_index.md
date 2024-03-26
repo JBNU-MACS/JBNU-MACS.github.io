@@ -80,7 +80,7 @@ sections:
     id: features
     content:
       title: <span style="font-size:75%">Lab's Interests</span>
-      text: 저희 연구실에서는 다음과 같은 연구/개발 분야에 관심을 갖고 있습니다.<br><br><br><br>
+      text: 저희 연구실에서는 다음과 같은 연구/개발 분야에 관심을 쏟고 있습니다.<br><br><br><br>
       items:
         - name: 인공지능(AI)
           icon: magnifying-glass
@@ -89,7 +89,8 @@ sections:
           icon: bolt
           description: Super fast page load with Tailwind CSS and super fast site building with Hugo.<br><br>
         - name: 국방(Defense)
-          icon: medical.svg
+          icon: medical
+          icon_pack:
           description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!<br><br>
         - name: 멀티모달(Multi-modality)
           icon: code-bracket

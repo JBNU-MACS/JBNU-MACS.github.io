@@ -6,6 +6,6 @@ view: citation
 
 # Optional banner image (relative to `assets/media/` folder).
 banner:
-  caption: ''
-  image: ''
+  caption: 'Image credit: [**Geo**](https://github.com/gcushen/)'
+  image: 'coders.jpg'
 ---

@@ -35,7 +35,7 @@ main:
     weight: 2
   - parent: Notifications
     name: Notifications
-    url: post
+    url: publication
     weight: 1
   - parent: Notifications
     name: News

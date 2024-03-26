@@ -83,6 +83,7 @@ sections:
         label:
       advanced:
         css_class: fullscreen
+      css_style: "text-align: center;"
   
 
   - block: features
@@ -126,7 +127,7 @@ sections:
       order: desc
       page_type: publication
     design:
-      view: showcase
+      view: citation
       columns: '1'
 
   - block: collection

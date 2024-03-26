@@ -27,28 +27,32 @@ main:
     url: publication
     weight: 300
 
+  - name: Projects
+    url: project
+    weight: 400
+
 
   - name: Coursework
     url: publication
-    weight: 400
-
-  - name: Notifications
-    url: post
     weight: 500
-  - parent: Noti
+
+  - name: Inform
+    url: post
+    weight: 600
+  - parent: Inform
     name: Notifications
     url: publication
-    weight: 510
-  - parent: Notifications
+    weight: 610
+  - parent: Inform
     name: News
     url: post
-    weight: 520
-  - parent: Notifications
+    weight: 620
+  - parent: Inform
     name: Event
     url: event
-    weight: 530
+    weight: 630
 
 
   - name: Contact
     url: contact
-    weight: 600
+    weight: 700

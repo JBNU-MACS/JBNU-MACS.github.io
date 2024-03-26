@@ -88,10 +88,10 @@ sections:
         - name: 의료수학(Medical Math)
           icon: bolt
           description: Super fast page load with Tailwind CSS and super fast site building with Hugo.<br><br>
-        - name: 멀티모달(Multi-modality)
+        - name: 국방(Defense)
           icon: medical.svg
           description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!<br><br>
-        - name: 국방(Defense)
+        - name: 멀티모달(Multi-modality)
           icon: code-bracket
           description: Edit and design your site just using rich text (Markdown) and configurable YAML parameters.<br><br>
         - name: 개발(Development)

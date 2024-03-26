@@ -25,8 +25,11 @@ sections:
       # Choose which groups/teams of users to display.
       #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
       user_groups:
-          - Principal Investigators
-          - Researchers
+          - 박사과정
+          - 석사과정
+          - 학부연구생정
+          # - Principal Investigators
+          # - Researchers
           # - Grad Students
           # - Administration
           # - Visitors

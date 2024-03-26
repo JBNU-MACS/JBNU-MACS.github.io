@@ -61,7 +61,7 @@ sections:
   - block: markdown
     content:
       title: Medical AI & Computational Science (MACS) Lab
-      text: 전북대학교 의료 AI 및 계산 수학 연구실 홈페이지에 오신 것을 환영합니다. 저희 연구실에서는 AI를 활용하여 
+      text: 전북대학교 의료 AI 및 계산 수학 연구실 홈페이지에 오신 것을 환영합니다. 
       alignment: center
   
 
@@ -69,7 +69,7 @@ sections:
     id: features
     content:
       title: Lab's Interests
-      text: 저희 연구실에서는 다음과 같은 연구/개발 분야에 관심을 갖고 있습니다.<br><br>
+      text: 저희 연구실에서는 다음과 같은 연구/개발 분야에 관심을 갖고 있습니다.<br><br><br><br>
       items:
         - name: AI
           icon: magnifying-glass

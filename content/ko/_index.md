@@ -58,16 +58,13 @@ sections:
       # Duration of transition between slides (in ms)
       interval: 3000
 
-  - block: hero
+  - block: markdown
     content:
       title: Medical AI & Computational Science (MACS)
-      # image:
-      #   filename: welcome.jpg
+      image:
+        filename: welcome.jpg
       text: The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
       align: center
-      advanced:
-        css_class: fullscreen
-        css_style: "text-align: center;"
   
 
   - block: features
@@ -100,7 +97,7 @@ sections:
       title: Latest Publications
       subtitle:
       text:
-      count: 3
+      count: 4
       filters:
         author: ''
         category: ''
@@ -118,7 +115,7 @@ sections:
 
   - block: collection
     content:
-      title: Latest News
+      title: Notifications
       subtitle:
       text:
       count: 2

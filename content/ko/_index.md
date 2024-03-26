@@ -60,11 +60,10 @@ sections:
 
   - block: markdown
     content:
-      title: Medical AI & Computational Science (MACS)
-      image:
-        filename: welcome.jpg
-      text: The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
-      align: center
+      title: Medical AI & Computational Science (MACS) Lab
+      text: |
+      <br>
+      전북대학교 의료 AI 및 계산 수학 연구실 홈페이지입니다. 
   
 
   - block: features

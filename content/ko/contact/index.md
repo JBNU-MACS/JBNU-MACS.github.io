@@ -24,7 +24,7 @@ sections:
         longitude: '127.13444961966684'
       directions: 
       office_hours:
-        - '월/수 13:00 to 18:00'
+        - '월/수 13:00 to 18:00' <br><br>
       #contact_links:
       #  - icon: comments
       #    icon_pack: fas

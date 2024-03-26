@@ -15,7 +15,7 @@ sections:
       sort_by: Params.last_name
       sort_ascending: true
     design:
-      show_interests: true
+      show_interests: false
       show_role: true
       show_social: true
 
@@ -27,14 +27,15 @@ sections:
       user_groups:
           - Principal Investigators
           - Researchers
-          - Grad Students
-          - Administration
-          - Visitors
-          - Alumni
+          # - Grad Students
+          # - Administration
+          # - Visitors
+          # - Alumni
       sort_by: Params.last_name
       sort_ascending: true
     design:
       show_interests: false
       show_role: false
       show_social: false
+      columns: 3
 ---

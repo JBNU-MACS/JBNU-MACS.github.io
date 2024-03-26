@@ -9,7 +9,17 @@ sections:
   - block: slider
     content:
       slides:
-      - title: 👋 Welcome to the group
+      - title: AI
+        content: 'Just opened last month!'
+        align: right
+        background:
+          image:
+            filename: welcome.jpg
+            filters:
+              brightness: 0.5
+          position: center
+          color: '#333'
+      - title: Medical AI
         content: Take a look at what we're working on...
         align: center
         background:
@@ -19,7 +29,7 @@ sections:
               brightness: 0.7
           position: right
           color: '#666'
-      - title: Lunch & Learn ☕️
+      - title: Development
         content: 'Share your knowledge with the group and explore exciting new topics together!'
         align: left
         background:
@@ -29,7 +39,7 @@ sections:
               brightness: 0.7
           position: center
           color: '#555'
-      - title: World-Class Semiconductor Lab
+      - title: Mathematics
         content: 'Just opened last month!'
         align: right
         background:
@@ -41,23 +51,66 @@ sections:
           color: '#333'
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
-      slide_height: '300px'
+      slide_height: '350px'
       is_fullscreen: false
       # Automatically transition through slides?
       loop: true
       # Duration of transition between slides (in ms)
-      interval: 2000
+      interval: 3000
 
   - block: hero
     content:
-      title: |-
-       ## Medical AI & Computational Science (MACS)
+      title: Medical AI & Computational Science (MACS)
       # image:
       #   filename: welcome.jpg
-      text: |-
-        <br>
-        ### The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+      text: The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+      design:
+        background:
+          gradient_angle: 0
+          gradient_start: 'rgb(224,223,255)'
+          gradient_end: 'rgb(153,238,255)'
+          text_color_light: false
+      cta:
+        url: '#courses'
+        label: Explore our courses
+        icon_pack: fas
+        icon: user-graduate
+      cta_alt:
+        url:
+        label:
+      cta_note:
+        label:
+      advanced:
+        css_class: fullscreen
   
+  - block: portfolio
+      headless: true
+      weight: 30
+      title: Explore top courses
+      subtitle:
+      content:
+        filters:
+          folders:
+            - course
+          kinds:
+            - section
+          exclude_tags:
+            - preface
+
+        filter_default: 0
+
+        filter_button:
+          - name: All Courses
+            tag: '*'
+          - name: Previous
+            tag: previous
+          - name: Current
+            tag: current
+      design:
+        columns: '1'
+        view: masonry
+        flip_alt_rows: false
+
   - block: features
     id: features
     content:

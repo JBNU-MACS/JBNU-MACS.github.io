@@ -3,7 +3,7 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Medical AI & Computational Science (MACS) # Website name
+title: MacsLAB # Website name
 baseURL: 'https://jbnu.macs.or.kr/' # Website URL
 
 ############################

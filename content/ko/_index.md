@@ -22,7 +22,7 @@ sections:
           image:
             filename: recruitment.jpg
             filters:
-              brightness: 0.1
+              brightness: 0.3
           position: center
           color: '#000'
         link:
@@ -49,7 +49,7 @@ sections:
           image:
             filename: mathematics.jpg
             filters:
-              brightness: 0.5
+              brightness: 0.3
           position: center
           color: '#000'
 
@@ -60,7 +60,7 @@ sections:
           image:
             filename: development.jpg
             filters:
-              brightness: 0.7
+              brightness: 0.3
           position: center
           color: '#000'
 

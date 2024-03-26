@@ -48,7 +48,7 @@ sections:
         align: center
         background:
           image:
-            filename: mathematics.jpg
+            filename: healthcare.jpg
             filters:
               brightness: 0.4
           position: center

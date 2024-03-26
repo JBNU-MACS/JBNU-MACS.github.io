@@ -41,7 +41,7 @@ main:
     weight: 600
   - parent: Inform
     name: Notifications
-    url: publication
+    url: notification
     weight: 610
   - parent: Inform
     name: News

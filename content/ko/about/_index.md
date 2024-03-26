@@ -31,7 +31,7 @@ sections:
         align: center
         background:
           image:
-            filename: mathematics.jpg
+            filename: healthcare.jpg
             filters:
               brightness: 0.4
           position: center
@@ -59,7 +59,7 @@ sections:
           position: center
           color: '#000'
 
-          
+
       - title: <span style="font-size:90%">Recruit</span>
         content: <span style="font-size:90%">Interested in MacsLAB?</span>
         align: center

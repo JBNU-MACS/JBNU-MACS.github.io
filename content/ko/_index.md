@@ -62,7 +62,24 @@ sections:
     content:
       title: Medical AI & Computational Science (MACS) Lab
       text: 전북대학교 의료 AI 및 계산 수학 연구실 홈페이지에 오신 것을 환영합니다. 
-      alignment: center
+      primary_action:
+        text: Join Team
+        url: https://hugoblox.com/templates/
+        icon: rocket-launch
+      secondary_action:
+        text: Read the docs
+        url: https://docs.hugoblox.com
+      announcement:
+        text: "Announcing the release of version 1."
+        link:
+          text: "Read more"
+          url: "/blog/"
+    design:
+      spacing:
+        padding: [0, 0, 0, 0]
+        margin: [0, 0, 0, 0]
+      # For full-screen, add `min-h-screen` below
+      css_class: "dark"
   
 
   - block: features

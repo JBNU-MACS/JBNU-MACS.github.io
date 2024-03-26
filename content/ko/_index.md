@@ -83,7 +83,7 @@ sections:
         label:
       advanced:
         css_class: fullscreen
-      css_style: "text-align: center;"
+        css_style: "text-align: center;"
   
 
   - block: features

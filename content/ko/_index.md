@@ -29,6 +29,7 @@ sections:
           icon: user
           icon_pack: fas
           text: <span style="font-size:60%">Join Us</span>
+          text-color: '#000'
           url: contact
 
       - title: <span style="font-size:70%">AI</span>
@@ -83,28 +84,28 @@ sections:
       items:
         - name: 인공지능(AI)
           icon: code-branch
-          icon_pack: fab
-          description: 의료 (Medical), 항공우주 (Aerospace), 컨텐츠 (Contents) 등 다양한 특성화 분야에 적응형 AI 기술 적용.
+          icon_pack: fas
+          description: 의료 (Medical), 항공우주 (Aerospace), 컨텐츠 (Contents) 등 다양한 특성화 분야에 적응형 AI 기술 적용.<br><br>
         - name: 멀티모달(Multi-modality)
           icon: globe
-          icon_pack: fab
-          description: Vision 및 Language 분야에 
+          icon_pack: fas
+          description: Vision 및 Language 분야의 기반 AI 기술 개발 및 고도화 이후 관련 응용 어플리케이션에 기술 적용.<br><br>
         - name: 의료수학(Medical Math)
           icon: calculator
-          icon_pack: fab
-          description: Super fast page load with Tailwind CSS and super fast site building with Hugo.<br><br>
+          icon_pack: fas
+          description: 의료 분야에 대한 통계 분석 수행 및 의료 질병에 대한 수학적인 모델링 관련 연구 수행.<br><br>
         - name: 컨텐츠 (Contents)
           icon: comment-dots
-          icon_pack: fab
-          description: Edit and design your site just using rich text (Markdown) and configurable YAML parameters.<br><br>
+          icon_pack: fas
+          description: 웹툰 및 미디어 컨텐츠와 관련된 AI 기반 기술 개발 및 관련 어플리케이션 개발 수행.<br><br>
         - name: 개발 (Development)
           icon: laptop
-          icon_pack: fab
-          description: Rated 5-stars by the community.<br><br>
+          icon_pack: fas
+          description: Full-Stack 기반의 응용 어플리케이션 개발.<br><br>
         - name: 솔루션 (Solution)
           icon: app-store-ios
           icon_pack: fab
-          description: Build your pages with blocks - no coding required!<br><br>
+          description: 기반기술을 바탕으로 한 AI 어플리케이션 제작 및 솔루션 개발!<br><br>
 
 
   - block: collection

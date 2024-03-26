@@ -1,47 +1,45 @@
 ---
 # Display name
-title: 이경수
+title: Alice Wu 吳恩達
 
-# Full Name (for SEO)
-first_name: Kyungsu
-last_name: Lee
+# Full name (for SEO)
+first_name: Alice
+last_name: Wu
 
 # Username (this should match the folder name)
 authors:
-  - admin
+  - 5
 
 # Is this the primary user of the site?
-superuser: true
+superuser: false
 
 # Role/position
-role: 조교수
+role: Professor of Artificial Intelligence
 
 # Organizations/Affiliations
 organizations:
-  - name: 전북대학교 컴퓨터인공지능학부
-    url: 'https://csai.jbnu.ac.kr/csai/index.do'
+  - name: Stanford University
+    url: ''
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include distributed robotics, mobile computing and programmable matter.
 
 interests:
-  - 인공지능 (AI)
-  - Vision & Language
-  - 의료수학 (Medical Mathematics)
-  - 국방 (Defense & Remote Sensing)
-  - 개발 (Development & Deploy)
+  - Artificial Intelligence
+  - Computational Linguistics
+  - Information Retrieval
 
 education:
   courses:
-    - course: Ph.D. in (전기전자컴퓨터공학과)
-      institution: 대구경북과학기술원 (DGIST)
-      year: 2023
-    - course: Integrated M.S. in (정보통신융합전공)
-      institution: 대구경북과학기술원 (DGIST)
-      year: 2019
-    - course: B.S. in (전산전자공학부)
-      institution: 한동대학교
-      year: 2017
+    - course: PhD in Artificial Intelligence
+      institution: Stanford University
+      year: 2012
+    - course: MEng in Artificial Intelligence
+      institution: Massachusetts Institute of Technology
+      year: 2009
+    - course: BSc in Artificial Intelligence
+      institution: Massachusetts Institute of Technology
+      year: 2008
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -50,11 +48,11 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:ksl@jbnu.ac.kr'
-  - icon: google-scholar
-    icon_pack: ai
+    link: 'mailto:test@example.org'
+  - icon: twitter
+    icon_pack: fab
     link: https://twitter.com/GeorgeCushen
-  - icon: orcid
+  - icon: google-scholar
     icon_pack: ai
     link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
   - icon: github
@@ -67,20 +65,15 @@ social:
 #   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: 'ksl@jbnu.ac.kr'
-
-# Highlight the author in author lists? (true/false)
-highlight_name: true
+email: ''
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Professor
-
-
+  - Researchers
+  - Visitors
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+吳恩達 is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-

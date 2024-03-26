@@ -29,10 +29,10 @@ interests:
 
 education:
   courses:
-    - course: Ph.D. (전기전자컴퓨터공학과)
+    - course: Ph.D. in (전기전자컴퓨터공학과)
       institution: 대구경북과학기술원 (DGIST)
       year: 2023
-    - course: Integrated M.S. (정보통신융합전공)
+    - course: Integrated M.S. in (정보통신융합전공)
       institution: 대구경북과학기술원 (DGIST)
       year: 2019
     - course: B.S. in (전산전자공학부)

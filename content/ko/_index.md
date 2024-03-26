@@ -78,7 +78,7 @@ sections:
   - block: features
     id: features
     content:
-      title: <span style="font-size:75%; weight: bold;">Lab's Interests</span>
+      title: <span style="font-size:75%; weight: bold">Lab's Interests</span>
       text: 저희 연구실에서는 다음과 같은 연구/개발 분야에 관심을 갖고 있습니다.<br><br><br><br>
       items:
         - name: AI

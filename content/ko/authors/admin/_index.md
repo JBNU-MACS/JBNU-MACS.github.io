@@ -29,13 +29,13 @@ interests:
 
 education:
   courses:
-    - course: Ph.D. in Artificial Intelligence
+    - course: Ph.D. (전기전자컴퓨터공학과)
       institution: 대구경북과학기술원 (DGIST)
       year: 2023
-    - course: Integrated M.S. in Artificial Intelligence
+    - course: Integrated M.S. (정보통신융합전공)
       institution: 대구경북과학기술원 (DGIST)
       year: 2019
-    - course: B.S. in Computer Science & Electrical Engineering
+    - course: B.S. in (전산전자공학부)
       institution: 한동대학교
       year: 2017
 

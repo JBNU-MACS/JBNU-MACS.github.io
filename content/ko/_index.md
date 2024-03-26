@@ -118,6 +118,15 @@ sections:
           icon: rectangle-group
           description: Build your pages with blocks - no coding required!
 
+  - block: resume-biography
+    content:
+      # The user's folder name in content/authors/
+      username: admin
+    design:
+      spacing:
+        padding: [0, 0, 0, 0]
+      biography:
+        style: 'text-align: justify; font-size: 0.8em;'
 
   - block: resume-experience
     content:

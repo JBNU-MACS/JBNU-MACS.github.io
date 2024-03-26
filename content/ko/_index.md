@@ -69,7 +69,7 @@ sections:
     id: features
     content:
       title: Lab's Interests
-      text: 저희 연구실에서는 다음과 같은 연구/개발 분야에 관심을 갖고 있습니다.
+      text: 저희 연구실에서는 다음과 같은 연구/개발 분야에 관심을 갖고 있습니다.<br><br>
       items:
         - name: AI
           icon: magnifying-glass

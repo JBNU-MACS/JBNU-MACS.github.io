@@ -84,22 +84,22 @@ sections:
       items:
         - name: AI
           icon: magnifying-glass
-          description: Automatic sitemaps, RSS feeds, and rich metadata take the pain out of SEO and syndication.
+          description: Automatic sitemaps, RSS feeds, and rich metadata take the pain out of SEO and syndication.<br><br>
         - name: Fast
           icon: bolt
-          description: Super fast page load with Tailwind CSS and super fast site building with Hugo.
+          description: Super fast page load with Tailwind CSS and super fast site building with Hugo.<br><br>
         - name: Easy
           icon: medical.svg
-          description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!
+          description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!<br><br>
         - name: No-Code
           icon: code-bracket
-          description: Edit and design your site just using rich text (Markdown) and configurable YAML parameters.
+          description: Edit and design your site just using rich text (Markdown) and configurable YAML parameters.<br><br>
         - name: Highly Rated
           icon: star
-          description: Rated 5-stars by the community.
+          description: Rated 5-stars by the community.<br><br>
         - name: Swappable Blocks
           icon: rectangle-group
-          description: Build your pages with blocks - no coding required!
+          description: Build your pages with blocks - no coding required!<br><br>
 
 
   - block: collection

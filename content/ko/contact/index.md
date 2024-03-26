@@ -9,7 +9,7 @@ sections:
     content:
       title: Contact
       text: |-
-        관심 있으시면 아래로 연락주세요.
+        <br> 전북대학교 의료 AI 및 계산 수학 연구실(Macs)에 관심 있으시면 아래로 연락주시면 감사드리겠습니다.
       email: ksl(at)jbnu.ac.kr
       phone: +82-63-270-2406
       address:

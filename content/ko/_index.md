@@ -14,61 +14,56 @@ sections:
   - block: slider
     content:
       slides:
+
       - title: <span style="font-size:80%">Recruit</span>
-        content: <span style="font-size:80%">'Interested in Macs?'</span>
+        content: <span style="font-size:80%">Interested in Macs?</span>
         align: center
         background:
           image:
-            filename: welcome.jpg
+            filename: recruitment.jpg
             filters:
               brightness: 0.5
           position: center
           color: '#333'
         link:
-          icon: graduation-cap
+          icon: user
           icon_pack: fas
-          text: Join Us
+          text: <span style="font-size:70%">Join Us</span>
           url: contact
-      - title: AI
-        content: 'Just opened last month!'
+
+      - title: <span style="font-size:80%">AI</span>
+        content: <span style="font-size:80%">의료/항공우주/컨텐츠 등 특성화 분야에 적용 가능한 AI 기술 개발<span style="font-size:80%">
         align: center
         background:
           image:
-            filename: welcome.jpg
+            filename: Ai.jpg
             filters:
               brightness: 0.5
           position: center
           color: '#333'
-      - title: Medical AI
-        content: Take a look at what we're working on...
+
+      - title: <span style="font-size:80%">Mathematics</span>
+        content: <span style="font-size:80%">AI와 관련된 기반 이론 연구</span>
         align: center
         background:
           image:
-            filename: coders.jpg
+            filename: mathematics.jpg
             filters:
               brightness: 0.7
-          position: right
+          position: center
           color: '#666'
-      - title: Development
-        content: 'Share your knowledge with the group and explore exciting new topics together!'
+
+      - title: <span style="font-size:80%">Development</span>
+        content: <span style="font-size:80%">기반 기술을 활용한 Full-Stack 어플리케이션 개발</span>
         align: center
         background:
           image:
-            filename: contact.jpg
+            filename: development.jpg
             filters:
               brightness: 0.7
           position: center
           color: '#555'
-      - title: Mathematics
-        content: 'Just opened last month!'
-        align: center
-        background:
-          image:
-            filename: welcome.jpg
-            filters:
-              brightness: 0.5
-          position: center
-          color: '#333'
+
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
       slide_height: '350px'

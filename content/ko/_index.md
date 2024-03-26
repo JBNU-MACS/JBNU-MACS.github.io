@@ -8,53 +8,53 @@ sections:
 
   - block: features
     content:
-      title: <span style="font-size:80%">Medical AI & Computational Science (Macs) Lab </span>
+      title: <span style="font-size:70%">Medical AI & Computational Science (Macs) Lab </span>
       text: <br><span style="font-size:125%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span>
 
   - block: slider
     content:
       slides:
 
-      - title: <span style="font-size:80%">Recruit</span>
-        content: <span style="font-size:80%">Interested in Macs?</span>
+      - title: <span style="font-size:70%">Recruit</span>
+        content: <span style="font-size:70%">Interested in MacsLAB?</span>
         align: center
         background:
           image:
             filename: recruitment.jpg
             filters:
-              brightness: 0.5
+              brightness: 0.1
           position: center
-          color: '#333'
+          color: '#000'
         link:
           icon: user
           icon_pack: fas
-          text: <span style="font-size:70%">Join Us</span>
+          text: <span style="font-size:60%">Join Us</span>
           url: contact
 
-      - title: <span style="font-size:80%">AI</span>
-        content: <span style="font-size:80%">의료/항공우주/컨텐츠 등 특성화 분야에 적용 가능한 AI 기술 개발<span style="font-size:80%">
+      - title: <span style="font-size:70%">AI</span>
+        content: <span style="font-size:70%">의료/항공우주/컨텐츠 등 특성화 분야에 적용 가능한 AI 기술 개발<span style="font-size:70%">
         align: center
         background:
           image:
             filename: Ai.jpg
             filters:
-              brightness: 0.5
+              brightness: 0.3
           position: center
-          color: '#333'
+          color: '#000'
 
-      - title: <span style="font-size:80%">Mathematics</span>
-        content: <span style="font-size:80%">AI와 관련된 기반 이론 연구</span>
+      - title: <span style="font-size:70%">Mathematics</span>
+        content: <span style="font-size:70%">AI와 관련된 기반 이론 연구</span>
         align: center
         background:
           image:
             filename: mathematics.jpg
             filters:
-              brightness: 0.7
+              brightness: 0.5
           position: center
-          color: '#666'
+          color: '#000'
 
-      - title: <span style="font-size:80%">Development</span>
-        content: <span style="font-size:80%">기반 기술을 활용한 Full-Stack 어플리케이션 개발</span>
+      - title: <span style="font-size:70%">Development</span>
+        content: <span style="font-size:70%">기반 기술을 활용한 Full-Stack 어플리케이션 개발</span>
         align: center
         background:
           image:
@@ -62,7 +62,7 @@ sections:
             filters:
               brightness: 0.7
           position: center
-          color: '#555'
+          color: '#000'
 
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')

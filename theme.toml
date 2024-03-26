@@ -32,10 +32,11 @@ tags = ["academic",
         "customizable",
         "technical",
         "slide",
+        "landing", "docs", "blog", "responsive", "minimal", "light", "dark", "multilingual", "dark mode", "tailwind", "company", "gallery",
         "landing", "docs", "blog", "responsive", "minimal", "light", "dark", "multilingual", "dark mode", "tailwind", "company", "gallery"
         ]
 features = ["page builder", "widgets", "themes", "search", "research publication system", "filterable portfolio",
-            "blog", "create courses", "talks", "events", "slides", "gallery", "contact form", "secure", "fast", "search", "dark mode", "widgets"
+            "blog", "create courses", "talks", "events", "slides", "gallery", "contact form", "secure", "fast", "search", "dark mode", "widgets", "secure", "fast", "search", "dark mode", "widgets"
             ] 
 
 [author]

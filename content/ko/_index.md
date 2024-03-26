@@ -11,57 +11,57 @@ sections:
       title: <span style="font-size:80%">Medical AI & Computational Science (MACS) Lab </span>
       text: <span style="font-size:125%">전북대학교 의료 AI 및 계산 수학 연구실 홈페이지에 오신 것을 환영합니다.</span>
 
-  - block: slider
-    content:
-      slides:
-      - title: AI
-        content: 'Just opened last month!'
-        align: center
-        background:
-          image:
-            filename: welcome.jpg
-            filters:
-              brightness: 0.5
-          position: center
-          color: '#333'
-      - title: Medical AI
-        content: Take a look at what we're working on...
-        align: center
-        background:
-          image:
-            filename: coders.jpg
-            filters:
-              brightness: 0.7
-          position: right
-          color: '#666'
-      - title: Development
-        content: 'Share your knowledge with the group and explore exciting new topics together!'
-        align: center
-        background:
-          image:
-            filename: contact.jpg
-            filters:
-              brightness: 0.7
-          position: center
-          color: '#555'
-      - title: Mathematics
-        content: 'Just opened last month!'
-        align: center
-        background:
-          image:
-            filename: welcome.jpg
-            filters:
-              brightness: 0.5
-          position: center
-          color: '#333'
-    design:
-      # Slide height is automatic unless you force a specific height (e.g. '400px')
-      slide_height: '350px'
-      is_fullscreen: false
-      # Automatically transition through slides?
-      loop: true
-      # Duration of transition between slides (in ms)
-      interval: 3000
+  # - block: slider
+  #   content:
+  #     slides:
+  #     - title: AI
+  #       content: 'Just opened last month!'
+  #       align: center
+  #       background:
+  #         image:
+  #           filename: welcome.jpg
+  #           filters:
+  #             brightness: 0.5
+  #         position: center
+  #         color: '#333'
+  #     - title: Medical AI
+  #       content: Take a look at what we're working on...
+  #       align: center
+  #       background:
+  #         image:
+  #           filename: coders.jpg
+  #           filters:
+  #             brightness: 0.7
+  #         position: right
+  #         color: '#666'
+  #     - title: Development
+  #       content: 'Share your knowledge with the group and explore exciting new topics together!'
+  #       align: center
+  #       background:
+  #         image:
+  #           filename: contact.jpg
+  #           filters:
+  #             brightness: 0.7
+  #         position: center
+  #         color: '#555'
+  #     - title: Mathematics
+  #       content: 'Just opened last month!'
+  #       align: center
+  #       background:
+  #         image:
+  #           filename: welcome.jpg
+  #           filters:
+  #             brightness: 0.5
+  #         position: center
+  #         color: '#333'
+  #   design:
+  #     # Slide height is automatic unless you force a specific height (e.g. '400px')
+  #     slide_height: '350px'
+  #     is_fullscreen: false
+  #     # Automatically transition through slides?
+  #     loop: true
+  #     # Duration of transition between slides (in ms)
+  #     interval: 3000
 
   # - block: hero
   #   content:

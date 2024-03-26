@@ -115,13 +115,6 @@ sections:
       # Education or Experience section first?
       is_education_first: false
 
-sections:
-  - block: resume-skills
-    content:
-      title: Skills & Hobbies
-      # Note: `username` refers to the user's folder name in `content/authors/`
-      username: admin
-
   - block: features
     id: features
     content:

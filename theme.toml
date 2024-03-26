@@ -4,6 +4,7 @@ licenselink = "https://github.com/wowchemy/starter-hugo-research-group/blob/main
 description = "The **Research Group Template** empowers your research group to easily create a beautiful website with a stunning homepage, news, academic publications, events, team profiles, and a contact form."
 homepage = "https://github.com/wowchemy/starter-hugo-research-group"
 demosite = "https://research-group.netlify.app/"
+
 tags = ["academic",
         "university",
         "research",
@@ -35,6 +36,7 @@ tags = ["academic",
         "landing", "docs", "blog", "responsive", "minimal", "light", "dark", "multilingual", "dark mode", "tailwind", "company", "gallery",
         "landing", "docs", "blog", "responsive", "minimal", "light", "dark", "multilingual", "dark mode", "tailwind", "company", "gallery"
         ]
+        
 features = ["page builder", "widgets", "themes", "search", "research publication system", "filterable portfolio",
             "blog", "create courses", "talks", "events", "slides", "gallery", "contact form", "secure", "fast", "search", "dark mode", "widgets", "secure", "fast", "search", "dark mode", "widgets"
             ] 

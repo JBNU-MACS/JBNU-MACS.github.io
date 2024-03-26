@@ -9,39 +9,46 @@ main:
   #   weight: 1
   - name: About
     url: about
-    weight: 5
+    weight: 100
+
   - name: People
     url: people
-    weight: 10
-  - name: Publications
-    url: publication
-    weight: 20
-  - name: Notifications
-    url: post
-    weight: 30
-  - name: Coursework
-    url: publication
-    weight: 20
-  - name: Contact
-    url: contact
-    weight: 50
+    weight: 200
   - parent: People
     name: Professor
-    url: contact
-    weight: 1
+    url: /author/kyungsu-lee/
+    weight: 210
   - parent: People
     name: Members
     url: people
-    weight: 2
-  - parent: Notifications
+    weight: 220
+
+  - name: Publications
+    url: publication
+    weight: 300
+
+
+  - name: Coursework
+    url: publication
+    weight: 400
+
+  - name: Notifications
+    url: post
+    weight: 500
+  - parent: Noti
     name: Notifications
     url: publication
-    weight: 1
+    weight: 510
   - parent: Notifications
     name: News
     url: post
-    weight: 2
+    weight: 520
   - parent: Notifications
     name: Event
     url: event
-    weight: 3
+    weight: 530
+
+
+  - name: Contact
+    url: contact
+    weight: 600

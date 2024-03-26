@@ -19,9 +19,9 @@ main:
   - name: Notifications
     url: post
     weight: 30
-  - name: News & Events
-    url: event
-    weight: 40
+  - name: Coursework
+    url: publication
+    weight: 20
   - name: Contact
     url: contact
     weight: 50
@@ -33,3 +33,15 @@ main:
     name: Members
     url: people
     weight: 2
+  - parent: Notifications
+    name: Notifications
+    url: post
+    weight: 1
+  - parent: Notifications
+    name: News
+    url: post
+    weight: 2
+  - parent: Notifications
+    name: Event
+    url: event
+    weight: 3

@@ -40,10 +40,6 @@ main:
     url: post
     weight: 600
   - parent: Inform
-    name: Notifications
-    url: notification
-    weight: 610
-  - parent: Inform
     name: News
     url: post
     weight: 620

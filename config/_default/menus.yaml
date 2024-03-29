@@ -27,14 +27,14 @@ main:
     url: publication
     weight: 300
 
-  - name: Projects
-    url: project
-    weight: 400
+  # - name: Projects
+  #   url: project
+  #   weight: 400
 
 
-  - name: Coursework
-    url: publication
-    weight: 500
+  # - name: Coursework
+  #   url: publication
+  #   weight: 500
 
   - name: Inform
     url: post

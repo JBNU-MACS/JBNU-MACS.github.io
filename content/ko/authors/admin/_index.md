@@ -34,15 +34,12 @@ interests:
 
 education:
   courses:
-    - course: Ph.D. in (전기전자컴퓨터공학과)
+    - course: Integrated M.S. & Ph.D. in (전기전자컴퓨터공학과)
       institution: 대구경북과학기술원 (DGIST)
-      year: 2023
-    - course: Integrated M.S. in (정보통신융합전공)
-      institution: 대구경북과학기술원 (DGIST)
-      year: 2019
+      year: 2018 - 2023
     - course: B.S. in (전산전자공학부)
       institution: 한동대학교
-      year: 2017
+      year: 2014 - 2018
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons

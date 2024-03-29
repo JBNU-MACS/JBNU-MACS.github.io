@@ -6,6 +6,6 @@ view: citation
 
 # Optional banner image (relative to `assets/media/` folder).
 banner:
-  caption: 'Image credit: [**Geo**](https://unsplash.com/)'
+  caption: 'Image credit: [** unsplash **](https://unsplash.com/)'
   image: 'researchpaper.jpg'
 ---

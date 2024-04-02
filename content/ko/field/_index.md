@@ -1,5 +1,5 @@
 ---
-title: Notifications & News
+title: Research Fields
 
 # Listing view
 view: community/custom_card

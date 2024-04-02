@@ -1,5 +1,5 @@
 ---
-title: Notifications & News
+title: News
 
 # Listing view
 view: community/custom_card

@@ -155,7 +155,7 @@ sections:
       page_type: publication
     design:
       view: community/custom_card
-      columns: '2'
+      columns: '1'
     advanced:
       css_style: "text-align: center;"
 

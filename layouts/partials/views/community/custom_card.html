@@ -22,8 +22,8 @@
 
 <div class="card-simple view-card">
 
-  {{ if eq $item.Type "event" }}
-  <div class="article-metadata">
+  <!-- {{ if eq $item.Type "event" }} -->
+  <!-- <div class="article-metadata"> -->
     <!-- {{ if $item.Params.authors }}
     <div>
       {{ partial "page_metadata_authors" $item }}
@@ -36,10 +36,10 @@
     <span class="middot-divider"></span>
     <span>{{ . }}</span>
     {{ end }} -->
-  </div>
-  {{ else }}
+  <!-- </div> -->
+  <!-- {{ else }}
     {{ partial "page_metadata" (dict "page" $item "is_list" 1) }}
-  {{ end }}
+  {{ end }} -->
 
   {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
   {{ $anchor := $item.Params.image.focal_point | default "Smart" }}
@@ -59,8 +59,10 @@
   </div>
 
     {{ if $item.Params.authors }}
-    <div>
-      {{ partial "page_metadata_authors" $item }}
+    <div class="article-metadata">
+        <div>
+            {{ partial "page_metadata_authors" $item }}
+        </div>
     </div>
     {{ end }}
 

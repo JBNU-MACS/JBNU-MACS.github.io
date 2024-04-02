@@ -43,7 +43,7 @@ abstract: Various deep learning-based segmentation models have been developed to
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=8.12, 5.17% (Q1)___ <br> _IEEE Transactions on Geoscience and Remote Sensing (TGRS, 2021, Vol. 60, Issue 1, pp. 1001-1017)_
 
-tags: []
+tags: ['AI', 'Q1']
 
 # Display this page in the Featured widget?
 featured: true

@@ -37,7 +37,7 @@ abstract: The domain-adaptive semantic segmentation in aerial images by a deep-l
 # Summary. An optional shortened abstract.
 summary: ___ICCV 2021 (Top AI & CV Conference)___ <br> _International Conference on Computer Vision2021_
 
-tags: []
+tags: ['AI']
 
 # Display this page in the Featured widget?
 featured: true

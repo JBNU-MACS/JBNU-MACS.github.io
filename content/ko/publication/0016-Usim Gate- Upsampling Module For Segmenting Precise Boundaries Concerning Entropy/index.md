@@ -37,7 +37,7 @@ abstract: Deep learning (DL) techniques for precise semantic segmentation have r
 # Summary. An optional shortened abstract.
 summary: ___AISTATS 2023 (Top AI & CV Conference)___ <br> _Artificial Intelligence and Statistics2023_
 
-tags: []
+tags: ['AI']
 
 # Display this page in the Featured widget?
 featured: true

@@ -63,7 +63,7 @@ abstract: (Background) Federated learning is a decentralized approach to machine
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=3.23, 56.45% (Q3)___ <br> _JMIR Medical Informatics (JMIR Medical Informatics, 2021, Vol. 9, Issue 5)_
 
-tags: []
+tags: ['AI', 'Q3']
 
 # Display this page in the Featured widget?
 featured: false

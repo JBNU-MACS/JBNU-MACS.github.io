@@ -43,7 +43,7 @@ abstract: We develop a novel smartphone-based spectral imaging otoscope for tele
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=3.21, 28.79% (Q2)___ <br> _Journal of Biophotonics (Journal of Biophotonics, 2020, Vol. 13, Issue 6, pp. 24-52)_
 
-tags: []
+tags: ['AI', 'mobile', 'healthcare', 'classification', 'Q2']
 
 # Display this page in the Featured widget?
 featured: true

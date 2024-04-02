@@ -45,7 +45,7 @@ abstract: Change detection is an important task in the field of remote sensing. 
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=4.71, 19.00% (Q1)___ <br> _IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (JSTAR, 2021, Vol. 14, Issue 1, pp. 4139-4149)_
 
-tags: []
+tags: ['AI', 'Q1']
 
 # Display this page in the Featured widget?
 featured: true

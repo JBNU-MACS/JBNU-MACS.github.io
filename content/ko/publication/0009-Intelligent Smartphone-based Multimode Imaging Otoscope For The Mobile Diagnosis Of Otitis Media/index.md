@@ -45,7 +45,7 @@ abstract: Otitis media (OM) is one of the most common ear diseases in children a
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=3.56, 30.20% (Q2)___ <br> _Biomedical Optics Express (BOE, 2021, Vol. 12, Issue 12, pp. 7765-7779)_
 
-tags: []
+tags: ['AI', 'Q2']
 
 # Display this page in the Featured widget?
 featured: true

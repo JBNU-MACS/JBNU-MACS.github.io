@@ -43,7 +43,7 @@ abstract: A rotator cuff tear (RCT) is an injury in adults that causes difficult
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=3.85, 28.91% (Q2)___ <br> _Sensors (Sensors, 2021, Vol. 21, Issue 6)_
 
-tags: []
+tags: ['AI', 'Q2']
 
 # Display this page in the Featured widget?
 featured: true

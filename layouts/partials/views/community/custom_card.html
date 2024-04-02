@@ -44,10 +44,9 @@
   {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
   {{ $anchor := $item.Params.image.focal_point | default "Smart" }}
   {{ with $resource }}
-    <!-- {{ $image := .Fill (printf "408x150 %s" $anchor) }} -->
+    {{ $image := .Fill (printf "408x100 %s" $anchor) }}
     <!-- {{ $image := . }} -->
-    {{ $image := .Resize "400x" }}
-    {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+    {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize 900x webp" }}{{ end }}
     <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
       <div class="img-hover-zoom">
         <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"

@@ -8,5 +8,5 @@ view: community/custom_compact
 banner:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/)'
   image: 'researchpaper.jpg'
-  height: 200px
+  height: '20px'
 ---

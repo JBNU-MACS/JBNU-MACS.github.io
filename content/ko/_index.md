@@ -143,7 +143,7 @@ sections:
       title: Latest Publications
       subtitle:
       text:
-      count: 5
+      count: 3
       filters:
         author: ''
         category: ''

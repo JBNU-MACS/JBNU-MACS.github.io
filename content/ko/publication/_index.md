@@ -2,7 +2,7 @@
 title: Publications
 
 # Listing view
-view: compact
+view: community/custom_compact
 
 # Optional banner image (relative to `assets/media/` folder).
 banner:

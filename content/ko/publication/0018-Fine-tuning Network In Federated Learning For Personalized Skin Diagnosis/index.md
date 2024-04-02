@@ -47,7 +47,7 @@ abstract: Federated learning (FL) has emerged as a promising technique in the fi
 # Summary. An optional shortened abstract.
 summary: ___MICCAI 2023 (Top AI & CV Conference)___ <br> _International Conference on Medical Image Computing and Computer-Assisted Intervention2023_
 
-tags: ['AI', 'medical', 'healthcare', 'skin', 'federated learning', 'domain adaptation', 'personalization']
+tags: ['AI', 'medical', 'healthcare', 'skin', 'federated learning', 'domain adaptation', 'personalization', 'fine-tuning']
 
 # Display this page in the Featured widget?
 featured: true

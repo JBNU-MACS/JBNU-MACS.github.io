@@ -58,6 +58,12 @@
     <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
   </div>
 
+    {{ if $item.Params.authors }}
+    <div>
+      {{ partial "page_metadata_authors" $item }}
+    </div>
+    {{ end }}
+
   {{ with $summary }}
   <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="summary-link">
     <div class="article-style">

@@ -15,7 +15,15 @@ authors:
   - 황재윤
 
 # Author notes (optional)
-# author_notes:
+author_notes:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - 'Corresponding author'
+  - 'Corresponding author'
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
@@ -28,11 +36,11 @@ publishDate: '2023-10-01'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['학회 논문 (AI & Computer Vision)']
+publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI 2023)
-publication_short: MICCAI2023
+publication_short: MICCAI2023 [__Top AI & Computer Vision Conference__]
 
 abstract: Federated learning (FL) has emerged as a promising technique in the field of medical diagnosis. By distributing the same task through deep networks on mobile devices, FL has proven effective in diagnosing dermatitis, a common and easily recognizable skin disease. However, in skin disease diagnosis, FL poses challenges related to (1) prioritizing generalization over personalization and (2) limited utilization of mobile devices. Despite its improved comprehensive diagnostic performance, skin disease diagnosis should aim for personalized diagnosis rather than centralized and generalized diagnosis, due to personal diversities and variability, such as skin color, wrinkles, and aging. To this end, we propose a novel deep learning network for personalized diagnosis in an adaptive manner, utilizing personal characteristics in diagnosing dermatitis in a mobile- and FL-based environment. Our framework, dubbed APD-Net, achieves adaptive and personalized diagnosis using a new model design and a genetic algorithm (GA)-based fine-tuning method. APD-Net incorporates a novel architectural design that leverages personalized and centralized parameters, along with a fine-tuning method based on a modified GA to identify personal characteristics. We validated APD-Net on clinical datasets and demonstrated its superior performance, compared with state-of-the-art approaches. Our experimental results showed that APD-Net markedly improved personalized diagnostic accuracy by 9.9% in dermatitis diagnosis, making it a promising tool for clinical practice.
 
@@ -80,13 +88,3 @@ featured: true
 #   Otherwise, set `slides: ""`.
 # slides: example
 ---
-
-# {{% callout note %}}
-# Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-# {{% /callout %}}
-
-# {{% callout note %}}
-# Create your slides in Markdown - click the _Slides_ button to check out the example.
-# {{% /callout %}}
-
-# Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/).

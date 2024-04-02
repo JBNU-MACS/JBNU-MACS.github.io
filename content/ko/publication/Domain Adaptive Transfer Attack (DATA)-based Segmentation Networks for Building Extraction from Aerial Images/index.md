@@ -10,10 +10,16 @@ authors:
   - 이경수
   - 박주흠
   - 황재윤
-  - Jihwan P. Choi*
+  - 최지환
 
 # Author notes (optional)
-# author_notes:
+author_notes:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - 'Corresponding author'
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
@@ -30,7 +36,7 @@ publication_types: ['article-journal']
 
 # Publication name and optional abbreviated publication name.
 publication: IEEE Transactions on Geoscience and Remote Sensing
-publication_short: TGRS
+publication_short: TGRS [__SCI(E) IF=5.60, 5.11% (Q1)__]
 
 abstract: Semantic segmentation models based on convolutional neural networks (CNNs) have gained much attention in relation to remote sensing and have achieved remarkable performance for the extraction of buildings from high-resolution aerial images. However, the issue of limited generalization for unseen images remains. When there is a domain gap between the training and test data sets, the CNN-based segmentation models trained by a training data set fail to segment buildings for the test data set. In this article, we propose segmentation networks based on a domain adaptive transfer attack (DATA) scheme for building extraction from aerial images. The proposed system combines the domain transfer and the adversarial attack concepts. Based on the DATA scheme, the distribution of the input images can be shifted to that of the target images while turning images into adversarial examples against a target network. Defending adversarial examples adapted to the target domain can overcome the performance degradation due to the domain gap and increase the robustness of the segmentation model. Cross-data set experiments and ablation study are conducted for three different data sets- the Inria aerial image labeling data set, the Massachusetts building data set, and the WHU East Asia data set. Compared with the performance of the segmentation network without the DATA scheme, the proposed method shows improvements in the overall intersection over union (IoU). Moreover, it is verified that the proposed method outperforms even when compared with feature adaptation (FA) and output space adaptation (OSA).
 
@@ -78,13 +84,3 @@ featured: true
 #   Otherwise, set `slides: ""`.
 # slides: example
 ---
-
-# {{% callout note %}}
-# Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-# {{% /callout %}}
-
-# {{% callout note %}}
-# Create your slides in Markdown - click the _Slides_ button to check out the example.
-# {{% /callout %}}
-
-# Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/).

@@ -11,7 +11,11 @@ authors:
   - 황재윤
 
 # Author notes (optional)
-# author_notes:
+author_notes:
+  - ''
+  - ''
+  - ''
+  - 'Corresponding author'
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
@@ -24,11 +28,11 @@ publishDate: '2022-12-04'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['학회 논문 (AI & Computer Vision)']
+publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: Neural Information Processing Systems (NeurIPS 2022)
-publication_short: NeurIPS2022
+publication_short: NeurIPS2022 [__Top AI & Computer Vision Conference__]
 
 abstract: The simulation of human neurons and neurotransmission mechanisms has been realized in deep neural networks based on the theoretical implementations of activation functions. However, recent studies have reported that the threshold potential of neurons exhibits different values according to the locations and types of individual neurons, and that the activation functions have limitations in terms of representing this variability. Therefore, this study proposes a simple yet effective activation function that facilitates different thresholds and adaptive activations according to the positions of units and the contexts of inputs. Furthermore, the proposed activation function mathematically exhibits a more generalized form of Swish activation function, and thus we denoted it as Adaptive SwisH (ASH). ASH highlights informative features that exhibit large values in the top percentiles in an input, whereas it rectifies low values. Most importantly, ASH exhibits trainable, adaptive, and context-aware properties compared to other activation functions. Furthermore, ASH represents general formula of the previously studied activation function and provides a reasonable mathematical background for the superior performance. To validate the effectiveness and robustness of ASH, we implemented ASH into many deep learning models for various tasks, including classification, detection, segmentation, and image generation. Experimental analysis demonstrates that our activation function can provide the benefits of more accurate prediction and earlier convergence in many deep learning applications.
 
@@ -76,13 +80,3 @@ featured: true
 #   Otherwise, set `slides: ""`.
 # slides: example
 ---
-
-# {{% callout note %}}
-# Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-# {{% /callout %}}
-
-# {{% callout note %}}
-# Create your slides in Markdown - click the _Slides_ button to check out the example.
-# {{% /callout %}}
-
-# Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/).

@@ -12,7 +12,12 @@ authors:
   - 황재윤
 
 # Author notes (optional)
-# author_notes:
+author_notes:
+  - ''
+  - ''
+  - ''
+  - 'Corresponding author'
+  - 'Corresponding author'
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
@@ -25,11 +30,11 @@ publishDate: '2023-10-01'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['학회 논문 (AI & Computer Vision)']
+publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI 2023)
-publication_short: MICCAI2023
+publication_short: MICCAI2023 [__Top AI & Computer Vision Conference__]
 
 abstract: Unsupervised domain adaptation (UDA) has become increasingly popular in imaging-based diagnosis due to the challenge of labeling a large number of datasets in target domains. Without labeled data, well-trained deep learning models in a source domain may not perform well when applied to a target domain. UDA allows for the use of large-scale datasets from various domains for model deployment, but it can face difficulties in performing adaptive feature extraction when dealing with unlabeled data in an unseen target domain. To address this, we propose an advanced test-time fine-tuning UDA framework designed to better utilize the latent features of datasets in the unseen target domain by fine-tuning the model itself during diagnosis. Our proposed framework is based on an auto-encoder-based network architecture that fine-tunes the model itself. This allows our framework to learn knowledge specific to the unseen target domain during the fine-tuning phase. In order to further optimize our framework for the unseen target domain, we introduce a re-initialization module that injects randomness into network parameters. This helps the framework to converge to a local minimum that is better-suited for the target domain, allowing for improved performance in domain adaptation tasks. To evaluate our framework, we carried out experiments on UDA segmentation tasks using breast cancer datasets acquired from multiple domains. Our experimental results demonstrated that our framework achieved state-of-the-art performance, outperforming other competing UDA models, in segmenting breast cancer on ultrasound images from an unseen domain, which supports its clinical potential for improving breast cancer diagnosis.
 
@@ -79,13 +84,3 @@ featured: true
 #   Otherwise, set `slides: ""`.
 # slides: example
 ---
-
-# {{% callout note %}}
-# Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-# {{% /callout %}}
-
-# {{% callout note %}}
-# Create your slides in Markdown - click the _Slides_ button to check out the example.
-# {{% /callout %}}
-
-# Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/).

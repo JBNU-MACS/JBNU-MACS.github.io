@@ -1,5 +1,5 @@
 ---
-title: 'Federated Learning for Thyroid Ultrasound Image Analysis to Protect Personal Information. Validation Study in Real Healthcare Environment'
+title: 'Federated Learning for Thyroid Ultrasound Image Analysis to Protect Personal Information: Validation Study in Real Healthcare Environment'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
@@ -23,7 +23,23 @@ authors:
   - 공현중
 
 # Author notes (optional)
-# author_notes:
+author_notes:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - 'Corresponding author'
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
@@ -40,7 +56,7 @@ publication_types: ['article-journal']
 
 # Publication name and optional abbreviated publication name.
 publication: JMIR Medical Informatics
-publication_short: JMIR Medical Informatics
+publication_short: JMIR Medical Informatics [__SCI(E) IF=3.23, 56.45% (Q3)__]
 
 abstract: (Background) Federated learning is a decentralized approach to machine learning; it is a training strategy that overcomes medical data privacy regulations and generalizes deep learning algorithms. Federated learning mitigates many systemic privacy risks by sharing only the model and parameters for training, without the need to export existing medical data sets. In this study, we performed ultrasound image analysis using federated learning to predict whether thyroid nodules were benign or malignant. (Objective) The goal of this study was to evaluate whether the performance of federated learning was comparable with that of conventional deep learning. (Methods) A total of 8457 (5375 malignant, 3082 benign) ultrasound images were collected from 6 institutions and used for federated learning and conventional deep learning. Five deep learning networks (VGG19, ResNet50, ResNext50, SE-ResNet50, and SE-ResNext50) were used. Using stratified random sampling, we selected 20% (1075 malignant, 616 benign) of the total images for internal validation. For external validation, we used 100 ultrasound images (50 malignant, 50 benign) from another institution.
 
@@ -88,13 +104,3 @@ featured: true
 #   Otherwise, set `slides: ""`.
 # slides: example
 ---
-
-# {{% callout note %}}
-# Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-# {{% /callout %}}
-
-# {{% callout note %}}
-# Create your slides in Markdown - click the _Slides_ button to check out the example.
-# {{% /callout %}}
-
-# Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/).

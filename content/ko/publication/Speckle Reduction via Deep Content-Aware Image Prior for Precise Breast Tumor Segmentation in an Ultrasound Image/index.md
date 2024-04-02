@@ -13,7 +13,13 @@ authors:
   - 황재윤
 
 # Author notes (optional)
-# author_notes:
+author_notes:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - 'Corresponding author'
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
@@ -30,7 +36,7 @@ publication_types: ['article-journal']
 
 # Publication name and optional abbreviated publication name.
 publication: IEEE Transactions on Ultrasonics,  Ferroelectrics,  and Frequency Control
-publication_short: TUFFC
+publication_short: TUFFC [__SCI(E) IF=3.60, 17.70% (Q1)__]
 
 abstract: The performance of computer-aided diagnosis (CAD) systems that are based on ultrasound imaging has been enhanced owing to the advancement in deep learning. However, because of the inherent speckle noise in ultrasound images, the ambiguous boundaries of lesions deteriorate and are difficult to distinguish, resulting in the performance degradation of CAD. Although several methods have been proposed to reduce speckle noise over decades, this task remains a challenge that must be improved to enhance the performance of CAD. In this article, we propose a deep content-aware image prior (DCAIP) with a content-aware attention module (CAAM) for superior despeckling of ultrasound images without clean images. For the image prior, we developed a CAAM to deal with the content information in an input image. In this module, super-pixel pooling (SPP) is used to give attention to salient regions in an ultrasound image. Therefore, it can provide more content information regarding the input image when compared to other attention modules. The DCAIP consists of deep learning networks based on this attention module. The DCAIP is validated by applying it as a preprocessing step for breast tumor segmentation in ultrasound images, which is one of the tasks in CAD. Our method improved the segmentation performance by 15.89% in terms of the area under the precision_ecall (PR) curve (AUPRC). The results demonstrate that our method enhances the quality of ultrasound images by effectively reducing speckle noise while preserving important information in the image, promising for the design of superior CAD systems.
 
@@ -78,13 +84,3 @@ featured: true
 #   Otherwise, set `slides: ""`.
 # slides: example
 ---
-
-# {{% callout note %}}
-# Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-# {{% /callout %}}
-
-# {{% callout note %}}
-# Create your slides in Markdown - click the _Slides_ button to check out the example.
-# {{% /callout %}}
-
-# Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/).

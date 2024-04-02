@@ -7,10 +7,13 @@ title: 'Self-Mutating Network for Domain Adaptive Segmentation in Aerial Images'
 authors:
   - 이경수
   - 이해윤
-  - Jae Youn Hwang*
+  - 황재윤
 
 # Author notes (optional)
-# author_notes:
+author_notes:
+  - ''
+  - ''
+  - 'Corresponding author'
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
@@ -23,11 +26,11 @@ publishDate: '2021-10-17'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['학회 논문 (AI & Computer Vision)']
+publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: International Conference on Computer Vision (ICCV 2021)
-publication_short: ICCV2022
+publication_short: ICCV2022 [__Top AI & Computer Vision Conference__]
 
 abstract: The domain-adaptive semantic segmentation in aerial images by a deep-learning technique remains a challenge owing to the domain gaps caused by a resolution, image sensors, time-zone, the density of buildings, and even building styles of each city. Currently, convolutional neural network (CNN)-based domain adaptation methodologies have been developed to decrease the domain gaps, but, they have shown still poor performance to utilize multiple aerial images in different domains. In this paper, therefore, the CNN-based network denoted as Self-Mutating Network, which changes the values of parameters of convolutional filters itself according to the domain of input image, is proposed. By adopting Parameter Mutation to change the values of parameters and Parameter Fluctuation to randomly convulse the parameters, the network self-changes and fine-tunes the parameters, then achieves better predictions of a domain-adaptive segmentation. Through the ablation study of the Self-Mutating Network, we concluded that the Self-Mutating Network can be utilized in the domain-adaptive semantic segmentation of aerial images in different domains.
 
@@ -75,13 +78,3 @@ featured: true
 #   Otherwise, set `slides: ""`.
 # slides: example
 ---
-
-# {{% callout note %}}
-# Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-# {{% /callout %}}
-
-# {{% callout note %}}
-# Create your slides in Markdown - click the _Slides_ button to check out the example.
-# {{% /callout %}}
-
-# Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/).

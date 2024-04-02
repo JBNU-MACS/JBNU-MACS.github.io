@@ -26,7 +26,7 @@ publishDate: '2020-05-11'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['2']
+publication_types: ['article-journal']
 
 # Publication name and optional abbreviated publication name.
 publication: Biomedical Optics Express

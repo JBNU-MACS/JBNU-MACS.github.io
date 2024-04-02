@@ -26,10 +26,12 @@ main:
   - name: Research
     url: publication
     weight: 300
-  - name: Publications
+  - parent: Research
+    name: Publications
     url: publication
     weight: 310
-  - name: Fields
+  - parent: Research
+    name: Fields
     url: field
     weight: 320
 

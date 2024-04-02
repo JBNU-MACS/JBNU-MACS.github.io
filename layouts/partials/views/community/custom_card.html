@@ -44,7 +44,7 @@
   {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
   {{ $anchor := $item.Params.image.focal_point | default "Smart" }}
   {{ with $resource }}
-    {{ $image := .Fill (printf "408x100 %s" $anchor) }}
+    {{ $image := .Fill (printf "158x100 %s" $anchor) }}
     <!-- {{ $image := . }} -->
     {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize 900x webp" }}{{ end }}
     <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>

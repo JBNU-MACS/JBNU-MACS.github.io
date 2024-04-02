@@ -138,7 +138,7 @@ sections:
       filters:
         folders:
           - post
-          - publications
+          - publication
     design:
       view: community/custom_card
       columns: '2'

@@ -142,6 +142,25 @@ sections:
 
   - block: collection
     content:
+      title: Notifications & News
+      subtitle:
+      text:
+      count: 3
+      filters:
+        author: ''
+        category: ''
+        exclude_featured: false
+        publication_type: ''
+        tag: ''
+      offset: 0
+      order: desc
+      page_type: community/custom_card
+    design:
+      view: compact
+      columns: '2'
+
+  - block: collection
+    content:
       title: Latest Publications
       subtitle:
       text:

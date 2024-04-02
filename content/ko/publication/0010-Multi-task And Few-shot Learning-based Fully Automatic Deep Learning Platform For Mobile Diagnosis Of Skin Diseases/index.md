@@ -45,7 +45,7 @@ abstract: Fluorescence imaging-based diagnostic systems have been widely used to
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=7.70, 6.40% (Q1)___ <br> _IEEE Journal of Biomedical and Health Informatics (JBHI, 2022, Vol. 27, Issue 1, pp. 176-187)_
 
-tags: ['AI', 'Q1']
+tags: ['AI', 'medical', 'healthcare', 'skin', 'few-shot', 'multi-task', 'Q1']
 
 # Display this page in the Featured widget?
 featured: true

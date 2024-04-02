@@ -43,7 +43,7 @@ abstract: Ultrasound (US) imaging is widely used in the field of medicine. US im
 # Summary. An optional shortened abstract.
 summary: ___MICCAI 2022 (Top AI & CV Conference)___ <br> _International Conference on Medical Image Computing and Computer-Assisted Intervention2022_
 
-tags: ['AI']
+tags: ['AI', 'medical', 'ultrasound', 'classification']
 
 # Display this page in the Featured widget?
 featured: true

@@ -43,7 +43,7 @@ abstract: Rotator cuff tear (RCT) is a common injury that causes pain and disabi
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=3.37, 34.25% (Q2)___ <br> _IEEE ACCESS (IEEE ACCESS, 2020, Vol. 8, Issue 1, pp. 65472-65487)_
 
-tags: ['AI', 'ultrasound', 'segmentation', 'Q2']
+tags: ['AI', 'medical', 'ultrasound', 'segmentation', 'Q2']
 
 # Display this page in the Featured widget?
 featured: true

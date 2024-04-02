@@ -43,7 +43,7 @@ abstract: A single-beam acoustic trapping technique has been shown to be very us
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=3.73, 22.73% (Q1)___ <br> _Biomedical Optics Express (BOE, 2020, Vol. 11, Issue 6, pp. 2976-2995)_
 
-tags: ['AI', 'Q1']
+tags: ['AI', 'biomedical', 'cell', 'tracking', 'segmentation', 'Q1']
 
 # Display this page in the Featured widget?
 featured: true

@@ -41,7 +41,7 @@ abstract: Magnetic resonance imaging (MRI) has been popularly used to diagnose o
 # Summary. An optional shortened abstract.
 summary: ___ACCV 2022 (Top AI & CV Conference)___ <br> _Asian Conference on Computer Vision2022_
 
-tags: ['AI']
+tags: ['AI', 'medical', 'segmentation', 'mathematics']
 
 # Display this page in the Featured widget?
 featured: true

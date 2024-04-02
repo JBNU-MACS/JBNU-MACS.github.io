@@ -43,7 +43,7 @@ abstract: The performance of computer-aided diagnosis (CAD) systems that are bas
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=3.60, 17.70% (Q1)___ <br> _IEEE Transactions on Ultrasonics,  Ferroelectrics,  and Frequency Control (TUFFC, 2022, Vol. 69, Issue 9, pp. 2638-2650)_
 
-tags: ['AI', 'Q1']
+tags: ['AI', 'medical', 'ultrasound', 'denoising', 'segmentation', 'Q1']
 
 # Display this page in the Featured widget?
 featured: true

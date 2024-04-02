@@ -43,7 +43,7 @@ abstract: Semantic segmentation models based on convolutional neural networks (C
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=5.60, 5.11% (Q1)___ <br> _IEEE Transactions on Geoscience and Remote Sensing (TGRS, 2020, Vol. 59, Issue 6, pp. 5171-5182)_
 
-tags: ['AI', 'Q1']
+tags: ['AI', 'remote sensing', 'domain adaptation', 'segmentation', 'Q1']
 
 # Display this page in the Featured widget?
 featured: true

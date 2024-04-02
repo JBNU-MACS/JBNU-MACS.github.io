@@ -39,7 +39,7 @@ abstract: The simulation of human neurons and neurotransmission mechanisms has b
 # Summary. An optional shortened abstract.
 summary: ___NeurIPS 2022 (Top AI & CV Conference)___ <br> _Neural Information Processing Systems2022_
 
-tags: ['AI']
+tags: ['AI', 'mathematics', 'localization']
 
 # Display this page in the Featured widget?
 featured: true

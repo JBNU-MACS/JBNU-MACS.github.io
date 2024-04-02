@@ -47,7 +47,7 @@ abstract: Unanticipated difficult laryngoscopy is associated with serious airway
 # Summary. An optional shortened abstract.
 summary: ___SCI(E); IF=10.70, 1.40% (Q1)___ <br> _Anaesthesia (Anaesthesia, 2022, Vol. 78, Issue 1, pp. 64-72)_
 
-tags: ['AI', 'Q1']
+tags: ['AI', 'medical', 'x-ray', 'localization', 'classification', 'Q1']
 
 # Display this page in the Featured widget?
 featured: true

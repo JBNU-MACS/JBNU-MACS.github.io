@@ -26,6 +26,17 @@ sections:
           position: center
           color: '#000'
 
+      - title: <span style="font-size:90%">Medical AI</span>
+        content: <span style="font-size:90%">의료AI를 통한 질병 진단 및 환경 개선</span>
+        align: center
+        background:
+          image:
+            filename: medical.jpg
+            filters:
+              brightness: 0.4
+          position: center
+          color: '#000'
+
       - title: <span style="font-size:90%">Healthcare</span>
         content: <span style="font-size:90%">의료 및 헬스케어 분야에 적용 가능한 AI 기술 개발</span>
         align: center
@@ -37,7 +48,7 @@ sections:
           position: center
           color: '#000'
 
-      - title: <span style="font-size:90%">Healthcare</span>
+      - title: <span style="font-size:90%">Aerospace</span>
         content: <span style="font-size:90%">항공우주에 적용 가능한 특성화 AI 기술 개발</span>
         align: center
         background:
@@ -48,7 +59,7 @@ sections:
           position: center
           color: '#000'
 
-      - title: <span style="font-size:90%">Healthcare</span>
+      - title: <span style="font-size:90%">Contents AI</span>
         content: <span style="font-size:90%">웹툰 및 컨텐츠 적용 가능한 특성화 AI 기술 개발</span>
         align: center
         background:

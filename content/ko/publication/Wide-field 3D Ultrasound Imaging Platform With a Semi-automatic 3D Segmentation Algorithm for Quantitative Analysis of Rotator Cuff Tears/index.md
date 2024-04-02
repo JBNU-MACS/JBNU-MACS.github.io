@@ -5,16 +5,16 @@ title: 'Wide-field 3D Ultrasound Imaging Platform With a Semi-automatic 3D Segme
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Moon Hwan Lee
-  - JunYoung Kim
-  - Kyungsu Lee
+  - 이문환
+  - 김준영
+  - 이경수
   - ChangHuk Choi*
-  - and Jae Youn Hwang*
+  - 
+  - Jae Youn Hwang*
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2020-04-06'

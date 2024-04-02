@@ -5,15 +5,15 @@ title: 'Self-Supervised Domain Adaptive Segmentation for Breast Cancer using Tes
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Kyungsu Lee
-  - Haeyun Lee
+  - 이경수
+  - 이해윤
   - Georges El Fakhri
-  - Jonghye Woo & Jae Youn Hwang
+  - Jonghye Woo
+  - 황재윤
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2023-10-01'
@@ -25,7 +25,7 @@ publishDate: '2023-10-01'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['conference-paper']
+publication_types: ['학회 논문 (AI & Computer Vision)']
 
 # Publication name and optional abbreviated publication name.
 publication: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI 2023)

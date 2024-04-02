@@ -5,16 +5,16 @@ title: 'Imbalanced Loss-Integrated Deep-Learning-Based Ultrasound Image Analysis
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Kyungsu Lee
-  - JunYoung Kim
+  - 이경수
+  - 김준영
   - MoonHwan Lee
   - ChangHuk Choi*
-  - and Jae Youn Hwang*
+  - 
+  - Jae Youn Hwang*
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2021-03-22'

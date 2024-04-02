@@ -5,17 +5,16 @@ title: 'USG-Net. Deep Learning-based Ultrasound Scanning-Guide for Orthopedic So
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Kyungsu Lee
-  - Jaeseung Yang
-  - Moon Hwan Lee
-  - Jin Ho Chang
-  - Jun-Young Kim
-  - Jae Youn Hwang
+  - 이경수
+  - 양재승
+  - 이문환
+  - 장진호
+  - 김준영
+  - 황재윤
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2022-09-17'
@@ -27,7 +26,7 @@ publishDate: '2022-09-17'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['conference-paper']
+publication_types: ['학회 논문 (AI & Computer Vision)']
 
 # Publication name and optional abbreviated publication name.
 publication: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI 2022)

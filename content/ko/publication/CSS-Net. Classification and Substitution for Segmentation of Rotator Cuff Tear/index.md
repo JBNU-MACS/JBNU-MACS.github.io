@@ -5,16 +5,15 @@ title: 'CSS-Net. Classification and Substitution for Segmentation of Rotator Cuf
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Kyungsu Lee
-  - Hah Min Lew
-  - Moon Hwan Lee
-  - Jun-Young Kim
-  - Jae Youn Hwang
+  - 이경수
+  - 류하민
+  - 이문환
+  - 김준영
+  - 황재윤
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2022-12-08'
@@ -26,7 +25,7 @@ publishDate: '2022-12-08'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['conference-paper']
+publication_types: ['학회 논문 (AI & Computer Vision)']
 
 # Publication name and optional abbreviated publication name.
 publication: Asian Conference on Computer Vision (ACCV 2022)

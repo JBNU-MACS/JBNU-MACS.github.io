@@ -6,16 +6,15 @@ title: 'Smartphone-based spectral imaging otoscope. system development and preli
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - Thiago C. Cavalcanti
-  - Sewoong Kim
-  - Kyungsu Lee
-  - Sang-Yeon Lee
-  - Moo Kyun Park
-  - Jae Youn Hwang
+  - 김세웅
+  - 이경수
+  - 윤상연
+  - 박무균
+  - 황재윤
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2020-03-05'

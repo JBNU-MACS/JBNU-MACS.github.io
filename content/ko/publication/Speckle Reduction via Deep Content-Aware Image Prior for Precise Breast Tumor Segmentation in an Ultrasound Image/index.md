@@ -5,17 +5,16 @@ title: 'Speckle Reduction via Deep Content-Aware Image Prior for Precise Breast 
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Haeyun Lee
-  - Moon Hwan Lee
-  - Sangyeon Youn
-  - Kyungsu Lee
-  - Hah Min Lew
-  - Jae Youn Hwang
+  - 이해윤
+  - 이문환
+  - 윤상연
+  - 이경수
+  - 류하민
+  - 황재윤
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2022-07-25'

@@ -5,16 +5,16 @@ title: 'Fully-Automatic Deep Learning-Based Analysis for Determination of Invasi
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Sangyeon Youn
-  - Kyungsu Lee
-  - Jeehoon Son
-  - In-Hwan Yang
-  - and Jae Youn Hwang
+  - 윤상연
+  - 이경수
+  - 손지훈
+  - 양인환
+  - 
+  - 황재윤
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2020-05-11'

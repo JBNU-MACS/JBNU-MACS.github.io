@@ -5,18 +5,21 @@ title: 'Deep-learning model associating lateral cervical radiographic features w
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Hye-Yeon Cho1 and Kyungsu Lee1
-  - Hyun-Lim Yang
-  - Chul-Woo Jung
-  - Hee-Young Park
-  - Jae Youn Hwang
-  - Hyoun-Joong Kong
-  - and Hyung-Chul Lee
+  - 조혜연
+  - 이경수
+  - 양현림
+  - 정철우
+  - 박희영
+  - 황재윤
+  - 공현중
+  - 
+  - 이형철
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+  - 'Equal contribution'
+  - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2022-10-05'

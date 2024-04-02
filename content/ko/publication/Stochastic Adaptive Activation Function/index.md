@@ -5,15 +5,14 @@ title: 'Stochastic Adaptive Activation Function'
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Kyungsu Lee
-  - Jaeseung Yang
-  - Haeyun Lee
-  - Jae Youn Hwang
+  - 이경수
+  - 양재승
+  - 이해윤
+  - 황재윤
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2022-12-04'
@@ -25,7 +24,7 @@ publishDate: '2022-12-04'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['conference-paper']
+publication_types: ['학회 논문 (AI & Computer Vision)']
 
 # Publication name and optional abbreviated publication name.
 publication: Neural Information Processing Systems (NeurIPS 2022)

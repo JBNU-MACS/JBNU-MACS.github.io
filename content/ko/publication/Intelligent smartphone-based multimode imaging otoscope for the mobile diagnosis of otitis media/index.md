@@ -6,16 +6,16 @@ title: 'Intelligent smartphone-based multimode imaging otoscope for the mobile d
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - Thiago C. Cavalcanti
-  - Hah Min Lew
-  - Kyungsu Lee
-  - Sang-Yeon Lee
-  - Moo Kyun Park
-  - and Jae Youn Hwang*
+  - 류하민
+  - 이경수
+  - 윤상연
+  - 박무균
+  - 
+  - Jae Youn Hwang*
 
 # Author notes (optional)
 # author_notes:
-#   - 'Equal contribution'
-#   - 'Equal contribution'
+# {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2021-11-23'

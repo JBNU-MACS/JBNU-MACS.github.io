@@ -123,22 +123,38 @@ sections:
 
   - block: collection
     content:
+      id: section-1
       title: Notifications & News
       subtitle:
       text:
-      count: 3
-      filters:
-        author: ''
-        category: ''
-        exclude_featured: false
-        publication_type: ''
-        tag: ''
+      count: 2
       offset: 0
       order: desc
       filters:
         folders:
           - post
+    content:
+      id: section-2
+      title: Notifications & News
+      subtitle:
+      text:
+      count: 2
+      offset: 0
+      order: desc
+      filters:
+        folders:
           - publication
+    content:
+      id: section-3
+      title: Notifications & News
+      subtitle:
+      text:
+      count: 2
+      offset: 0
+      order: desc
+      filters:
+        folders:
+          - event
     design:
       view: community/custom_card
       columns: '2'

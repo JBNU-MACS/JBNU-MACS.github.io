@@ -154,7 +154,7 @@ sections:
       order: desc
       page_type: publication
     design:
-      view: compact
+      view: card
       columns: '2'
     advanced:
       css_style: "text-align: center;"

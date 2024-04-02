@@ -1,5 +1,5 @@
 ---
-title: 'Fully-automatic Deep Learning-based Analysis For Determination Of The Invasiveness Of Breast Cancer Cells In An Acoustic Trap'
+title: '<span style="font-size:95%">Fully-automatic Deep Learning-based Analysis for Determination of the Invasiveness of Breast Cancer Cells in an Acoustic Trap</span>'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

@@ -1,5 +1,5 @@
 ---
-title: 'Domain Adaptive Transfer Attack-based Segmentation Networks For Building Extraction From Aerial Images'
+title: '<span style="font-size:95%">Domain Adaptive Transfer Attack-based Segmentation Networks for Building Extraction from Aerial Images</span>'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

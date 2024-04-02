@@ -1,5 +1,5 @@
 ---
-title: 'Multi-task And Few-shot Learning-based Fully Automatic Deep Learning Platform For Mobile Diagnosis Of Skin Diseases'
+title: '<span style="font-size:95%">Multi-task and Few-shot Learning-based Fully Automatic Deep Learning Platform for Mobile Diagnosis of Skin Diseases</span>'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

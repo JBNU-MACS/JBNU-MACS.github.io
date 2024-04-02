@@ -1,5 +1,5 @@
 ---
-title: 'Usim Gate: Upsampling Module For Segmenting Precise Boundaries Concerning Entropy'
+title: '<span style="font-size:95%">USIM Gate: Upsampling Module for Segmenting Precise Boundaries Concerning Entropy</span>'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

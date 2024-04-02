@@ -1,5 +1,5 @@
 ---
-title: 'Deep-learning Model Associating Lateral Cervical Radiographic Features With Cormack--lehane Grade 3 Or 4 Glottic View'
+title: '<span style="font-size:95%">Deep-Learning Model Associating Lateral Cervical Radiographic Features with Cormack--lehane Grade 3 Or 4 Glottic View</span>'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

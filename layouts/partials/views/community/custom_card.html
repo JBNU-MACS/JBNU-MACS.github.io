@@ -49,8 +49,8 @@
     {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize 900x webp" }}{{ end }}
     <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
       <div class="img-hover-zoom">
-        <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
-            class="article-banner" alt="{{ $item.Title }}" loading="lazy">
+        <img src="{{ $image.RelPermalink }}" height="{{ 100px }}" width="{{ $image.Width }}" class="article-banner" alt="{{ $item.Title }}" loading="lazy">
+        <!-- <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}" class="article-banner" alt="{{ $item.Title }}" loading="lazy"> -->
       </div>
     </a>
   {{end}}

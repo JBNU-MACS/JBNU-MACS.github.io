@@ -30,9 +30,9 @@ publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: International Conference on Computer Vision
-publication_short: International Conference on Computer Vision (ICCV)  [__Top AI & Computer Vision Conference__]
+publication_short: International Conference on Computer Vision (ICCV)  [__Top AI & CV Conference__]
 
-abstract: ICCV 2021 <br> __[AI & CV Conference] International Conference on Computer Vision2021__ <br> Top AI & Computer Vision Conference <br>The domain-adaptive semantic segmentation in aerial images by a deep-learning technique remains a challenge owing to the domain gaps caused by a resolution, image sensors, time-zone, the density of buildings, and even building styles of each city. Currently, convolutional neural network (CNN)-based domain adaptation methodologies have been developed to decrease the domain gaps, but, they have shown still poor performance to utilize multiple aerial images in different domains. In this paper, therefore, the CNN-based network denoted as Self-Mutating Network, which changes the values of parameters of convolutional filters itself according to the domain of input image, is proposed. By adopting Parameter Mutation to change the values of parameters and Parameter Fluctuation to randomly convulse the parameters, the network self-changes and fine-tunes the parameters, then achieves better predictions of a domain-adaptive segmentation. Through the ablation study of the Self-Mutating Network, we concluded that the Self-Mutating Network can be utilized in the domain-adaptive semantic segmentation of aerial images in different domains.
+abstract: __[Top AI & CV Conference] ICCV2021__ <br> Top AI & CV Conference <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>The domain-adaptive semantic segmentation in aerial images by a deep-learning technique remains a challenge owing to the domain gaps caused by a resolution, image sensors, time-zone, the density of buildings, and even building styles of each city. Currently, convolutional neural network (CNN)-based domain adaptation methodologies have been developed to decrease the domain gaps, but, they have shown still poor performance to utilize multiple aerial images in different domains. In this paper, therefore, the CNN-based network denoted as Self-Mutating Network, which changes the values of parameters of convolutional filters itself according to the domain of input image, is proposed. By adopting Parameter Mutation to change the values of parameters and Parameter Fluctuation to randomly convulse the parameters, the network self-changes and fine-tunes the parameters, then achieves better predictions of a domain-adaptive segmentation. Through the ablation study of the Self-Mutating Network, we concluded that the Self-Mutating Network can be utilized in the domain-adaptive semantic segmentation of aerial images in different domains.
 
 # Summary. An optional shortened abstract.
 # summary: The domain-adaptive semantic segmentation in aerial images by a deep-learning technique remains a challenge owing to the domain gaps caused by a resolution, image sensors, time-zone, the density of buildings, and even building styles of each city. Currently, convolutional neural network (CNN)-based domain adaptation methodologies have been developed to decrease the domain gaps, but, they have shown still poor performance to utilize multiple aerial images in different domains. In this paper, therefore, the CNN-based network denoted as Self-Mutating Network, which changes the values of parameters of convolutional filters itself according to the domain of input image, is proposed. By adopting Parameter Mutation to change the values of parameters and Parameter Fluctuation to randomly convulse the parameters, the network self-changes and fine-tunes the parameters, then achieves better predictions of a domain-adaptive segmentation. Through the ablation study of the Self-Mutating Network, we concluded that the Self-Mutating Network can be utilized in the domain-adaptive semantic segmentation of aerial images in different domains.
@@ -48,12 +48,12 @@ featured: true
 #   url: http://example.org
 
 # url_pdf: '{{url_pdf}}'
-# url_code: '{{url_code}}''
+url_code: ''
 # url_dataset: '{{url_dataset}}'
 # url_poster: '{{url_poster}}'
 # url_project: ''
 # url_slides: ''
-# url_source: '{{url_source}}'
+url_source: 'https://openaccess.thecvf.com/content/ICCV2021/html/Lee_Self-Mutating_Network_for_Domain_Adaptive_Segmentation_in_Aerial_Images_ICCV_2021_paper.html'
 # url_video: ''
 
 # Featured image

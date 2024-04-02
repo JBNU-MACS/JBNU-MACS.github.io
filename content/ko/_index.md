@@ -166,5 +166,5 @@ sections:
       text: |
         {{% cta cta_link="./people/" cta_text="Meet the team →" %}} {{% cta cta_link="./contact/" cta_text="Join team →" %}}
     design:
-      columns: '1'
+      columns: '2'
 ---

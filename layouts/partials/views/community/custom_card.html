@@ -46,7 +46,7 @@
   {{ with $resource }}
     {{ $image := .Fill (printf "608x250 %s" $anchor) }}
     <!-- {{ $image := . }} -->
-    {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize 600x webp" }}{{ end }}
+    {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "resize x250 webp" }}{{ end }}
     <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
       <div class="img-hover-zoom">
         <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"

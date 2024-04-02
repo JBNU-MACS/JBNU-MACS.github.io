@@ -24,7 +24,7 @@ publishDate: '2021-10-17'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['preprint']
+publication_types: ['1']
 
 # Publication name and optional abbreviated publication name.
 publication: International Conference on Computer Vision (ICCV 2021)

@@ -28,7 +28,7 @@ publishDate: '2021-03-26'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['article-journal']
+publication_types: ['2']
 
 # Publication name and optional abbreviated publication name.
 publication: IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing

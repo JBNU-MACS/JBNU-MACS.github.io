@@ -143,7 +143,7 @@ sections:
       title: Latest Publications
       subtitle:
       text:
-      count: 4
+      count: 5
       filters:
         author: ''
         category: ''
@@ -154,7 +154,7 @@ sections:
       order: desc
       page_type: publication
     design:
-      view: citation
+      view: compact
       columns: '2'
     advanced:
       css_style: "text-align: center;"

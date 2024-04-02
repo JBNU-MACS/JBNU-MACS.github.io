@@ -1,5 +1,5 @@
 ---
-title: '<span style="font-size:95%">Speckle Reduction Via Deep Content-aware Image Prior for Precise Breast Tumor Segmentation in an Ultrasound Image</span>'
+title: 'Speckle Reduction Via Deep Content-aware Image Prior for Precise Breast Tumor Segmentation in an Ultrasound Image'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

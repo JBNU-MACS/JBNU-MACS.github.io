@@ -1,5 +1,5 @@
 ---
-title: '<span style="font-size:95%">Stochastic Adaptive Activation Function</span>'
+title: 'Stochastic Adaptive Activation Function'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

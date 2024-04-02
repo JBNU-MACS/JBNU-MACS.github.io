@@ -1,5 +1,5 @@
 ---
-title: '<span style="font-size:95%">USG-Net: Deep Learning-based Ultrasound Scanning-Guide for an Orthopedic Sonographer</span>'
+title: 'USG-Net: Deep Learning-based Ultrasound Scanning-Guide for an Orthopedic Sonographer'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

@@ -1,5 +1,5 @@
 ---
-title: '<span style="font-size:95%">Local Similarity Siamese Network for Urban Land Change Detection on Remote Sensing Images</span>'
+title: 'Local Similarity Siamese Network for Urban Land Change Detection on Remote Sensing Images'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

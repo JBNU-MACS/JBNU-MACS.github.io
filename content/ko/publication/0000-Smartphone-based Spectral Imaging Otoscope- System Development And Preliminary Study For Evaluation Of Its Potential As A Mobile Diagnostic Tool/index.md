@@ -1,5 +1,5 @@
 ---
-title: '<span style="font-size:95%">Smartphone-based Spectral Imaging Otoscope: System Development and Preliminary Study for Evaluation of Its Potential As a Mobile Diagnostic Tool</span>'
+title: 'Smartphone-based Spectral Imaging Otoscope: System Development and Preliminary Study for Evaluation of Its Potential As a Mobile Diagnostic Tool'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

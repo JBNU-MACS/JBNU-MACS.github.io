@@ -9,17 +9,9 @@ sections:
   - block: features
     content:
       title: <span style="font-size:70%">Medical AI & Computational Science (Macs) Lab </span>
-      text: <br><span style="font-size:125%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span>
-
-
-  - block: markdown
-    content:
-      title:
-      subtitle:
-      text: |
+      text: <br><span style="font-size:125%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span> <br>
         {{% cta cta_link="./people/" cta_text="Meet the team →" %}}
-    design:
-      columns: '2'
+
 
   - block: slider
     content:

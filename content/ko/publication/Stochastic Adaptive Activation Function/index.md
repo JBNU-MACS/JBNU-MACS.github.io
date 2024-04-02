@@ -1,5 +1,5 @@
 ---
-title: __'Stochastic Adaptive Activation Function'__
+title: '__Stochastic Adaptive Activation Function__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

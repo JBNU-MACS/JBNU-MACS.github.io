@@ -1,5 +1,5 @@
 ---
-title: __'Intelligent smartphone-based multimode imaging otoscope for the mobile diagnosis of otitis media'__
+title: '__Intelligent smartphone-based multimode imaging otoscope for the mobile diagnosis of otitis media__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

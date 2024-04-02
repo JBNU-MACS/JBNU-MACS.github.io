@@ -1,5 +1,5 @@
 ---
-title: __'Imbalanced Loss-Integrated Deep-Learning-Based Ultrasound Image Analysis for Diagnosis of Rotator-Cuff Tear'__
+title: '__Imbalanced Loss-Integrated Deep-Learning-Based Ultrasound Image Analysis for Diagnosis of Rotator-Cuff Tear__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

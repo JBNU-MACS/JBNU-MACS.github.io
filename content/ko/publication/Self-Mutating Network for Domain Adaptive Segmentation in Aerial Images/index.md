@@ -1,5 +1,5 @@
 ---
-title: __'Self-Mutating Network for Domain Adaptive Segmentation in Aerial Images'__
+title: '__Self-Mutating Network for Domain Adaptive Segmentation in Aerial Images__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

@@ -1,5 +1,5 @@
 ---
-title: __'Wide-field 3D Ultrasound Imaging Platform With a Semi-automatic 3D Segmentation Algorithm for Quantitative Analysis of Rotator Cuff Tears'__
+title: '__Wide-field 3D Ultrasound Imaging Platform With a Semi-automatic 3D Segmentation Algorithm for Quantitative Analysis of Rotator Cuff Tears__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

@@ -1,5 +1,5 @@
 ---
-title: __'Local Similarity Siamese Network for Urban Use Change Detection on Aerial Images'__
+title: '__Local Similarity Siamese Network for Urban Use Change Detection on Aerial Images__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

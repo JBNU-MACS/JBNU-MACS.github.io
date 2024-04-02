@@ -1,5 +1,5 @@
 ---
-title: __'CSS-Net: Classification and Substitution for Segmentation of Rotator Cuff Tear'__
+title: '__CSS-Net: Classification and Substitution for Segmentation of Rotator Cuff Tear__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

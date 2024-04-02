@@ -1,5 +1,5 @@
 ---
-title: __'Self-Supervised Domain Adaptive Segmentation for Breast Cancer using Test-Time Fine-Tuning'__
+title: '__Self-Supervised Domain Adaptive Segmentation for Breast Cancer using Test-Time Fine-Tuning__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

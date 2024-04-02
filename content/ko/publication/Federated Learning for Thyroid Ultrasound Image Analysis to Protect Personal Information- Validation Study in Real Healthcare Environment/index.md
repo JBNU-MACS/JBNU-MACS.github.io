@@ -1,5 +1,5 @@
 ---
-title: __'Federated Learning for Thyroid Ultrasound Image Analysis to Protect Personal Information: Validation Study in Real Healthcare Environment'__
+title: '__Federated Learning for Thyroid Ultrasound Image Analysis to Protect Personal Information: Validation Study in Real Healthcare Environment__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

@@ -1,5 +1,5 @@
 ---
-title: __'Fine-Tuning Network in Federated Learning for Personalized Skin Diagnosis'__
+title: '__Fine-Tuning Network in Federated Learning for Personalized Skin Diagnosis__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

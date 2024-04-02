@@ -1,5 +1,5 @@
 ---
-title: __'USIM Gate: Novel Attention-based UpSampling Interpolation Method for Segmenting Precise Boundaries of Target Objects'__
+title: '__USIM Gate: Novel Attention-based UpSampling Interpolation Method for Segmenting Precise Boundaries of Target Objects__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

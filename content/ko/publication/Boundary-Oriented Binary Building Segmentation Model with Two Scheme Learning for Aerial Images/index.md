@@ -1,5 +1,5 @@
 ---
-title: __'Boundary-Oriented Binary Building Segmentation Model with Two Scheme Learning for Aerial Images'__
+title: '__Boundary-Oriented Binary Building Segmentation Model with Two Scheme Learning for Aerial Images__'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

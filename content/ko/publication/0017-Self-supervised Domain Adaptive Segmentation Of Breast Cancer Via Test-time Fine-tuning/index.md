@@ -40,7 +40,7 @@ abstract: Unsupervised domain adaptation (UDA) has become increasingly popular i
 
 
 # Summary. An optional shortened abstract.
-summary: __MICCAI 2023 (Top AI & CV Conference)__ <br> International Conference on Medical Image Computing and Computer-Assisted Intervention2023
+summary: ___MICCAI 2023 (Top AI & CV Conference)___ <br> _International Conference on Medical Image Computing and Computer-Assisted Intervention2023_
 
 tags: []
 

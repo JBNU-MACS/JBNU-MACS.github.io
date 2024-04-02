@@ -41,7 +41,7 @@ publication_short: Journal of Biophotonics (Journal of Biophotonics)  [__SCI(E);
 abstract: We develop a novel smartphone-based spectral imaging otoscope for telemedicine and examine its capability for the mobile diagnosis of middle ear diseases. The device was applied to perform spectral imaging and analysis of an ear-mimicking phantom and a normal and abnormal tympanic membrane for evaluation of its potential for the mobile diagnosis. Spectral classified images were obtained via online spectral analysis in a remote server. The phantom experimental results showed that it allowed us to distinguish four different fluids located behind a semitransparent membrane. Also, in the spectral classified images of normal ears (n = 3) and an ear with chronic otitis media (n = 1), the normal and abnormal regions in each ear could be quantitatively distinguished with high contrast. These preliminary results thus suggested that it might have the potentials for providing quantitative information for the mobile diagnosis of various middle ear diseases.
 
 # Summary. An optional shortened abstract.
-summary: __SCI(E); IF=3.21, 28.79% (Q2)__ <br> Journal of Biophotonics (Journal of Biophotonics, 2020, Vol. 13, Issue 6, pp. 24-52)
+summary: ___SCI(E); IF=3.21, 28.79% (Q2)___ <br> _Journal of Biophotonics (Journal of Biophotonics, 2020, Vol. 13, Issue 6, pp. 24-52)_
 
 tags: []
 

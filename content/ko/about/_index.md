@@ -37,6 +37,28 @@ sections:
           position: center
           color: '#000'
 
+      - title: <span style="font-size:90%">Healthcare</span>
+        content: <span style="font-size:90%">항공우주에 적용 가능한 특성화 AI 기술 개발</span>
+        align: center
+        background:
+          image:
+            filename: aerospace.jpg
+            filters:
+              brightness: 0.4
+          position: center
+          color: '#000'
+
+      - title: <span style="font-size:90%">Healthcare</span>
+        content: <span style="font-size:90%">웹툰 및 컨텐츠 적용 가능한 특성화 AI 기술 개발</span>
+        align: center
+        background:
+          image:
+            filename: contents.jpg
+            filters:
+              brightness: 0.4
+          position: center
+          color: '#000'
+
       - title: <span style="font-size:90%">Mathematics</span>
         content: <span style="font-size:90%">AI와 관련된 수학 및 최적화 이론 연구</span>
         align: center

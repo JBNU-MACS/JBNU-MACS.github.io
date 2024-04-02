@@ -26,11 +26,11 @@
   {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
   <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="card-image hover-overlay">
     <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
-         alt="{{ $item.Title }}" class="img-responsive" loading="lazy">
+         alt="{{ $item.Title }}" class="img-responsive" loading="lazy" style="margin-top: 15px;">
   </a>
   {{ end }}
   <div class="card-text">
-    <div class="section-subheading article-title mb-1 mt-3" style="margin-top: 15px;">
+    <div class="section-subheading article-title mb-1 mt-3">
         <h4><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a></h4>
     </div>
     

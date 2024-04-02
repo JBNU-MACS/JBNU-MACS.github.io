@@ -137,7 +137,7 @@ sections:
           - event
     design:
       view: community/custom_card
-      columns: '1'
+      columns: '2'
 
   - block: collection
     content:
@@ -167,5 +167,5 @@ sections:
       text: |
         {{% cta cta_link="./contact/" cta_text="Join team →" %}}
     design:
-      columns: '2'
+      columns: '1'
 ---

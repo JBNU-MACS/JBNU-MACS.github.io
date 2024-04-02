@@ -134,7 +134,7 @@ sections:
       title: Notifications & News
       subtitle:
       text:
-      count: 2
+      count: 3
       filters:
         author: ''
         category: ''
@@ -153,7 +153,7 @@ sections:
       title: Latest Publications
       subtitle:
       text:
-      count: 3
+      count: 4
       filters:
         author: ''
         category: ''
@@ -165,6 +165,27 @@ sections:
       page_type: publication
     design:
       view: community/custom_card
+      columns: '2'
+    advanced:
+      css_style: "text-align: center;"
+
+  - block: collection
+    content:
+      title: Latest Publications
+      subtitle:
+      text:
+      count: 4
+      filters:
+        author: ''
+        category: ''
+        exclude_featured: false
+        publication_type: ''
+        tag: ''
+      offset: 0
+      order: desc
+      page_type: publication
+    design:
+      view: Masonry
       columns: '2'
     advanced:
       css_style: "text-align: center;"

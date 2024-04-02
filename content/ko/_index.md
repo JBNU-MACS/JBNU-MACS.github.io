@@ -132,28 +132,8 @@ sections:
       order: desc
       filters:
         folders:
+          - notification
           - post
-    content:
-      id: section-2
-      title: Notifications & News
-      subtitle:
-      text:
-      count: 2
-      offset: 0
-      order: desc
-      filters:
-        folders:
-          - publication
-    content:
-      id: section-3
-      title: Notifications & News
-      subtitle:
-      text:
-      count: 2
-      offset: 0
-      order: desc
-      filters:
-        folders:
           - event
     design:
       view: community/custom_card

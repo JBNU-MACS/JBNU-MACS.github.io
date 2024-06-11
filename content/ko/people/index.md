@@ -1,6 +1,6 @@
 ---
 title: People
-date: 2022-10-24
+date: 2024-06-11
 
 type: landing
 
@@ -21,7 +21,7 @@ sections:
 
   - block: people
     content:
-      title: Researchers
+      title: Student Researchers
       # Choose which groups/teams of users to display.
       #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
       user_groups:
@@ -39,7 +39,7 @@ sections:
       sort_ascending: true
     design:
       show_interests: false
-      show_role: true
+      show_role: false
       show_social: false
-      columns: 3
+      columns: 2
 ---

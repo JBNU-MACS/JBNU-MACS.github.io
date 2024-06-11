@@ -54,8 +54,8 @@ featured: true
 
 # Custom links (uncomment lines below)
 # links:
-# - name: Custom Link
-#   url: http://example.org
+- name: Demo Site
+  url: https://osa-ct.or.kr
 
 # url_pdf: '{{url_pdf}}'
 url_code: ''

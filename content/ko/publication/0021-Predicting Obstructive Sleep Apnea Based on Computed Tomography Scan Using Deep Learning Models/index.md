@@ -54,14 +54,14 @@ featured: true
 
 # Custom links (uncomment lines below)
 # links:
-- name: Demo Site
-  url: https://osa-ct.or.kr
+# - name: Custom Link
+#   url: http://example.org
 
 # url_pdf: '{{url_pdf}}'
 url_code: ''
 # url_dataset: '{{url_dataset}}'
 # url_poster: '{{url_poster}}'
-# url_project: ''
+url_project: 'https://osa-ct.or.kr'
 # url_slides: ''
 url_source: 'https://doi.org/10.1164/rccm.202304-0767OC'
 # url_video: ''

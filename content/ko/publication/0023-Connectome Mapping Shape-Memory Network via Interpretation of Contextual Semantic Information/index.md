@@ -18,7 +18,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2025-01-23'
-doi: 'https://openreview.net/forum?id=PZYr22zFyE&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2025%2FConference%2FAuthors%23your-submissions)'
+doi: ''
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2025-04-00'

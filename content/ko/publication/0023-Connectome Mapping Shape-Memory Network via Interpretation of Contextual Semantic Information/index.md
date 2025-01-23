@@ -26,7 +26,7 @@ publishDate: '2025-04-00'
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ['aper-conference']
+publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: The Thirteenth International Conference on Learning Representations (ICLR2025)

@@ -22,12 +22,12 @@ sections:
 
   - block: people
     content:
-      title: M.S. & Ph.D Student
+      title: Student Researchers (Graduate)
       # Choose which groups/teams of users to display.
       #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
       user_groups:
-        - Master
-        - PhD
+        - Ph.D. Student
+        - M.S. Student
           # - 박사과정
           # - 석사과정
           # - 학부연구생
@@ -44,7 +44,7 @@ sections:
       show_role: true
       show_social: true
       show_organizations: false
-      columns: 2
+      columns: 1
 
   - block: people
     content:

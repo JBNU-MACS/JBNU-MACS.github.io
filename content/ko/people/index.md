@@ -22,7 +22,32 @@ sections:
 
   - block: people
     content:
-      title: Student Researchers
+      title: M.S. Student
+      # Choose which groups/teams of users to display.
+      #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
+      user_groups:
+        - Master
+          # - 박사과정
+          # - 석사과정
+          # - 학부연구생
+          # - Principal Investigators
+          # - Researchers
+          # - Grad Students
+          # - Administration
+          # - Visitors
+          # - Alumni
+      sort_by: Params.last_name
+      sort_ascending: true
+    design:
+      show_interests: true
+      show_role: true
+      show_social: true
+      show_organizations: false
+      columns: 2
+
+  - block: people
+    content:
+      title: Student Researchers (Undergraduate)
       # Choose which groups/teams of users to display.
       #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
       user_groups:

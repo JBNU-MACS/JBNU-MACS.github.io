@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 최서연
+title: 민태홍
 
 # Full Name (for SEO)
 first_name: Student
@@ -8,17 +8,17 @@ last_name: 1
 
 # Username (this should match the folder name)
 authors:
-  - 최서연
+  - 민태홍
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: 학석사 연계과정
+role: 석사과정
 
 # Organizations/Affiliations
 organizations:
-  - name: 전북대학교 컴퓨터인공지능학부
+  - name: 전북대학교 전자.정보공학부(컴퓨터공학전공)
 
 # Short bio (displayed in user profile at end of posts)
 # bio: 연합학습 및 표현 학습을 사용한 medical 도메인에서의 딥 러닝 기법, 도메인 적응 및 테스트 타임 학습과 같은 딥 러닝 기반 컴퓨터 비전 응용, 이미지 처리 및 이미지-텍스트 캡셔닝을 포함한 의료 응용의 딥 러닝 기반 진단 등을 포함합니다.

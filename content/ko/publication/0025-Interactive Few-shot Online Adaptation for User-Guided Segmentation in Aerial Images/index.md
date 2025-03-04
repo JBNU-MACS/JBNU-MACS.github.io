@@ -1,5 +1,5 @@
 ---
-title: 'Connectome Mapping: Shape-Memory Network via Interpretation of Contextual Semantic Information'
+title: 'Interactive Few-shot Online Adaptation for User-Guided Segmentation in Aerial Images'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here

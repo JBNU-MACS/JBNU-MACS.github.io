@@ -21,7 +21,7 @@ date: '2025-01-20'
 doi: 'https://doi.org/10.1016/j.eswa.2025.126639'
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2025-05-05'
+publishDate: '2025-01-20'
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).

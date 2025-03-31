@@ -21,11 +21,11 @@ author_notes:
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
-date: '2024-03-31'
+date: '2025-03-31'
 doi: ''
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2024-03-31'
+publishDate: '2025-03-31'
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
@@ -44,7 +44,7 @@ summary: ___SCI(E); IF=3.20, 36.70% (Q2)___ <br> _IEEE Signal Processing Letters
 tags: ['AI', 'Ultrasound', 'Super-resolution', 'Segmentation', 'Test-Time Adaptation', 'Q2']
 
 # Display this page in the Featured widget?
-featured: true
+featured: false
 
 # Custom links (uncomment lines below)
 # links:

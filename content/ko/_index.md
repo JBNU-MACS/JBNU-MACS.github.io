@@ -11,7 +11,7 @@ sections:
     content:
       slides:
 
-      - title: <span style="font-size:70%">Medical AI & Computational Science (Macs) Lab</span>
+      - title: <span style="font-size:70%">MacsLab</span>
         content: <span style="font-size:70%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span>
         align: center
         background:
@@ -100,6 +100,11 @@ sections:
       loop: true
       # Duration of transition between slides (in ms)
       interval: 5500
+      advanced:
+      css_style: |
+        .slick-prev, .slick-next {
+          display: none !important;
+        }
 
 
   - block: features

@@ -22,7 +22,7 @@ sections:
           position: center
           color: '#000'
         link:
-          icon: book-open-cover
+          icon: book-open
           icon_pack: fas
           text: <span style="font-size:60%">See Research Field →</span>
           text-color: '#000'

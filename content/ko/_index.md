@@ -11,8 +11,8 @@ sections:
     content:
       slides:
 
-      - title: <span style="font-size:70%; line-height:1.15;">MacsLab</span>
-        content: <span style="font-size:70%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span>
+      - title: <span style="font-size:70%">MacsLab</span>
+        content: <span style="font-size:70%; line-height:1.15;">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span>
         align: center
         background:
           image:
@@ -46,7 +46,7 @@ sections:
           url: contact
 
       - title: <span style="font-size:70%">AI</span>
-        content: <span style="font-size:70%">의료/항공우주/컨텐츠 등 특성화 분야에 적용 가능한 AI 기술 개발<span style="font-size:70%">
+        content: <span style="font-size:70%; line-height:1.0;">의료/항공우주/컨텐츠 등 특성화 분야에 적용 가능한 AI 기술 개발<span style="font-size:70%">
         align: center
         background:
           image:
@@ -58,7 +58,7 @@ sections:
 
 
       - title: <span style="font-size:70%">Development</span>
-        content: <span style="font-size:70%">기반 기술을 활용한 Full-Stack 어플리케이션 개발</span>
+        content: <span style="font-size:70%; line-height:1.0;">기반 기술을 활용한 Full-Stack 어플리케이션 개발</span>
         align: center
         background:
           image:
@@ -69,7 +69,7 @@ sections:
           color: '#000'
 
       - title: <span style="font-size:90%">Medical AI</span>
-        content: <span style="font-size:90%">의료AI를 통한 질병 진단 및 환경 개선</span>
+        content: <span style="font-size:70%">의료AI를 통한 질병 진단 및 환경 개선</span>
         align: center
         background:
           image:

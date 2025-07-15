@@ -21,10 +21,15 @@
 
 
 @media (max-width: 767px) {
+
+  .home-section {
+    padding: 25px
+  }
+
   .featurette {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 0.5rem !important;
+    gap: 0.35rem !important;
     width: 100% !important;
   }
 
@@ -34,21 +39,21 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0.75rem;
+    padding: 0.25rem;
     width: 100% !important;
     max-width: 100% !important;
   }
 
   .featurette .icon {
-    font-size: 1.6rem !important;
+    font-size: 0.8rem !important;
     margin-bottom: 0.5rem;
   }
 
   .featurette h3,
   .featurette p {
-    font-size: 0.75rem !important;
+    font-size: 0.65rem !important;
     word-break: keep-all;
-    margin: 0.2rem 0;
+    margin: 0.1rem 0;
     display: none !important;
   }
 }

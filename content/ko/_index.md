@@ -100,9 +100,9 @@ sections:
       loop: true
       # Duration of transition between slides (in ms)
       interval: 5500
-      advanced:
+    advanced:
       css_style: |
-        .carousel-control-next-icon, .carousel-control-prev-icon {
+        .slick-prev, .slick-next, .carousel-control-next-icon, .carousel-control-prev-icon {
           display: none !important;
         }
 
@@ -135,6 +135,17 @@ sections:
           icon: app-store-ios
           icon_pack: fab
           description:  <span style="font-size:90%">AI 기반기술 및 관련 어플리케이션에 적용을 통한 통합 솔루션 개발!</span><br><br>
+      design:
+        columns: 3
+      advanced:
+        css_style: |
+          @media (max-width: 767px) {
+            .feature-grid {
+              display: grid !important;
+              grid-template-columns: repeat(3, 1fr) !important;
+              gap: 1.5rem;
+            }
+          }
 
   - block: collection
     content:

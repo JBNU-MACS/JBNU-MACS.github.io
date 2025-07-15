@@ -128,10 +128,16 @@ sections:
       advanced:
         css_style: |
           @media (max-width: 767px) {
-            .feature-grid {
+            .featurette {
               display: grid !important;
               grid-template-columns: repeat(3, 1fr) !important;
-              gap: 1.5rem;
+              gap: 1rem !important;
+            }
+
+            .featurette > div {
+              width: auto !important;
+              max-width: none !important;
+              flex: 0 0 auto !important;
             }
           }
     content:

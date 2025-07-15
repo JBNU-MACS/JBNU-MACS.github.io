@@ -102,7 +102,7 @@ sections:
       interval: 5500
       advanced:
       css_style: |
-        .slick-prev, .slick-next {
+        .carousel-control-next-icon, .carousel-control-prev-icon {
           display: none !important;
         }
 
@@ -135,9 +135,6 @@ sections:
           icon: app-store-ios
           icon_pack: fab
           description:  <span style="font-size:90%">AI 기반기술 및 관련 어플리케이션에 적용을 통한 통합 솔루션 개발!</span><br><br>
-      # text: <span style="font-size:125%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span><br>
-      #   # {{% cta cta_link="./field/" cta_text="See Research Field →" %}}
-
 
   - block: collection
     content:

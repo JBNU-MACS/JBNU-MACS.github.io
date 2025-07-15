@@ -106,11 +106,11 @@ sections:
           display: none !important;
         }
 
-        
+
         /* 모바일용 높이 (가로폭 767px 이하) */
         @media (max-width: 767px) {
           .carousel-item, .slide, .slick-slide, .carousel-inner {
-            height: 250px !important;
+            height: 265px !important;
           }
         }
 

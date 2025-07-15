@@ -11,6 +11,22 @@ sections:
     content:
       slides:
 
+      - title: <span style="font-size:70%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span>
+        align: center
+        background:
+          image:
+            filename: pic-jbnu.jpg
+            filters:
+              brightness: 0.4
+          position: center
+          color: '#000'
+        link:
+          icon: book-open-cover
+          icon_pack: fas
+          text: <span style="font-size:60%">See Research Field →</span>
+          text-color: '#000'
+          url: field
+
       - title: <span style="font-size:70%">Recruit</span>
         content: <span style="font-size:70%">Interested in MacsLAB?</span>
         align: center
@@ -80,7 +96,7 @@ sections:
       # Automatically transition through slides?
       loop: true
       # Duration of transition between slides (in ms)
-      interval: 3000
+      interval: 5000
 
 
   - block: features
@@ -112,8 +128,8 @@ sections:
           icon: app-store-ios
           icon_pack: fab
           description:  <span style="font-size:90%">AI 기반기술 및 관련 어플리케이션에 적용을 통한 통합 솔루션 개발!</span><br><br>
-      text: <span style="font-size:125%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span><br>
-        # {{% cta cta_link="./field/" cta_text="See Research Field →" %}}
+      # text: <span style="font-size:125%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span><br>
+      #   # {{% cta cta_link="./field/" cta_text="See Research Field →" %}}
 
 
   - block: collection

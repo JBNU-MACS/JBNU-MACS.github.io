@@ -30,7 +30,6 @@
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 0.35rem !important;
-    width: 100% !important;
   }
 
   .featurette > div {
@@ -55,5 +54,9 @@
     word-break: keep-all;
     margin: 0.1rem 0;
     display: none !important;
+  }
+
+  .featurette > .section-subheading {
+    font-size: 0.65rem !important;
   }
 }

@@ -11,13 +11,14 @@ sections:
     content:
       slides:
 
-      - title: <span style="font-size:70%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span>
+      - title: <span style="font-size:70%">Medical AI & Computational Science (Macs) Lab</span>
+        content: <span style="font-size:70%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span>
         align: center
         background:
           image:
             filename: pic-jbnu.jpg
             filters:
-              brightness: 0.4
+              brightness: 0.3
           position: center
           color: '#000'
         link:
@@ -90,13 +91,13 @@ sections:
 
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
-      slide_height: '350px'
+      slide_height: '370px'
       slide_width: '100px'
       is_fullscreen: false
       # Automatically transition through slides?
       loop: true
       # Duration of transition between slides (in ms)
-      interval: 5000
+      interval: 6000
 
 
   - block: features

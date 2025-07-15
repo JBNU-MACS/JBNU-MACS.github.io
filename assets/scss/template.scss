@@ -17,3 +17,19 @@
 .home-section {
   padding: 65px
 }
+
+
+
+@media (max-width: 767px) {
+  .featurette {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .featurette > div {
+    width: auto !important;
+    max-width: none !important;
+    flex: 0 0 auto !important;
+  }
+}

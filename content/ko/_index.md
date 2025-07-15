@@ -107,21 +107,6 @@ sections:
         }
 
 
-        /* 모바일용 높이 (가로폭 767px 이하) */
-        @media (max-width: 767px) {
-          .carousel-item, .slide, .slick-slide, .carousel-inner {
-            height: 25px !important;
-          }
-        }
-
-        /* 데스크톱용 높이 (가로폭 768px 이상) */
-        @media (min-width: 768px) {
-          .carousel-item, .slide, .slick-slide, .carousel-inner {
-            height: 350px !important;
-          }
-        }
-
-
   - block: features
     content:
       id: feature-01   

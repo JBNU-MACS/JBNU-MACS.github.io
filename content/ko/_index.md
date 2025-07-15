@@ -85,17 +85,7 @@ sections:
 
   - block: features
     content:
-      title: <span style="font-size:70%">Medical AI & Computational Science (Macs) Lab </span>
-      text: <br><span style="font-size:125%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span> <br><br>
-        {{% cta cta_link="./field/" cta_text="See Research Field →" %}}
-
-
-
-  - block: features
-    id: features
-    content:
-      title: <span style="font-size:75%">Lab's Interests</span>
-      text: 저희 연구실에서는 다음과 같은 연구/개발 분야에 관심을 쏟고 있습니다.<br><br><br><br>
+      title: <span style="font-size:70%">Medical AI & Computational Science (Macs) Lab </span>      
       items:
         - name: 인공지능(AI)
           icon: code-branch
@@ -121,6 +111,8 @@ sections:
           icon: app-store-ios
           icon_pack: fab
           description:  <span style="font-size:90%">AI 기반기술 및 관련 어플리케이션에 적용을 통한 통합 솔루션 개발!</span><br><br>
+      text: <br><span style="font-size:125%">전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</span> <br><br>
+        {{% cta cta_link="./field/" cta_text="See Research Field →" %}}
 
 
   - block: collection

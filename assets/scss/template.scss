@@ -29,20 +29,25 @@
   }
 
   .featurette > div {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.75rem;
     width: 100% !important;
     max-width: 100% !important;
-    flex: 0 0 auto !important;
-    text-align: center;
-    padding: 0.5rem;
   }
 
   .featurette .icon {
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
+    margin-bottom: 0.5rem;
   }
 
   .featurette h3,
   .featurette p {
     font-size: 0.75rem !important;
     word-break: keep-all;
+    margin: 0.2rem 0;
   }
 }

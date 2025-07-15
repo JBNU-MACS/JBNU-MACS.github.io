@@ -123,23 +123,6 @@ sections:
 
 
   - block: features
-    design:
-        columns: 3
-      advanced:
-        css_style: |
-          @media (max-width: 767px) {
-            .featurette {
-              display: grid !important;
-              grid-template-columns: repeat(3, 1fr) !important;
-              gap: 1rem !important;
-            }
-
-            .featurette > div {
-              width: auto !important;
-              max-width: none !important;
-              flex: 0 0 auto !important;
-            }
-          }
     content:
       id: feature-01   
       items:
@@ -167,7 +150,23 @@ sections:
           icon: app-store-ios
           icon_pack: fab
           description:  <span style="font-size:90%">AI 기반기술 및 관련 어플리케이션에 적용을 통한 통합 솔루션 개발!</span><br><br>
-    
+    design:
+      columns: 3
+    advanced:
+      css_style: |
+        @media (max-width: 767px) {
+          .featurette {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 1rem !important;
+          }
+
+          .featurette > div {
+            width: auto !important;
+            max-width: none !important;
+            flex: 0 0 auto !important;
+          }
+        }
 
   - block: collection
     content:

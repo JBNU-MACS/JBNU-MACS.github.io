@@ -24,7 +24,7 @@ sections:
         link:
           icon: book-open
           icon_pack: fas
-          text: <span style="font-size:60%">See Research Field →</span>
+          text: <span style="font-size:70%">See Research Field →</span>
           text-color: '#000'
           url: field
 
@@ -56,12 +56,24 @@ sections:
           position: center
           color: '#000'
 
-      - title: <span style="font-size:70%">Healthcare</span>
-        content: <span style="font-size:70%">의료 및 헬스케어 분야에 적용 가능한 AI 기술 개발</span>
+
+      - title: <span style="font-size:70%">Development</span>
+        content: <span style="font-size:70%">기반 기술을 활용한 Full-Stack 어플리케이션 개발</span>
         align: center
         background:
           image:
-            filename: healthcare.jpg
+            filename: development.jpg
+            filters:
+              brightness: 0.4
+          position: center
+          color: '#000'
+
+      - title: <span style="font-size:90%">Medical AI</span>
+        content: <span style="font-size:90%">의료AI를 통한 질병 진단 및 환경 개선</span>
+        align: center
+        background:
+          image:
+            filename: medical.jpg
             filters:
               brightness: 0.4
           position: center
@@ -78,16 +90,6 @@ sections:
           position: center
           color: '#000'
 
-      - title: <span style="font-size:70%">Development</span>
-        content: <span style="font-size:70%">기반 기술을 활용한 Full-Stack 어플리케이션 개발</span>
-        align: center
-        background:
-          image:
-            filename: development.jpg
-            filters:
-              brightness: 0.4
-          position: center
-          color: '#000'
 
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')

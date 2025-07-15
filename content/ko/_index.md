@@ -101,7 +101,7 @@ sections:
       # Duration of transition between slides (in ms)
       interval: 5500
     advanced:
-      css_style: |
+      css_style:
         .slick-prev, .slick-next, .carousel-control-next-icon, .carousel-control-prev-icon {
           display: none !important;
         }
@@ -138,7 +138,7 @@ sections:
       design:
         columns: 3
       advanced:
-        css_style: |
+        css_style:
           @media (max-width: 767px) {
             .feature-grid {
               display: grid !important;

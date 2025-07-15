@@ -24,12 +24,25 @@
   .featurette {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1rem !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
   }
 
   .featurette > div {
-    width: auto !important;
-    max-width: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
     flex: 0 0 auto !important;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .featurette .icon {
+    font-size: 1.5rem !important;
+  }
+
+  .featurette h3,
+  .featurette p {
+    font-size: 0.75rem !important;
+    word-break: keep-all;
   }
 }

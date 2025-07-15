@@ -97,13 +97,12 @@ sections:
       # Automatically transition through slides?
       loop: true
       # Duration of transition between slides (in ms)
-      interval: 6000
+      interval: 5500
 
 
   - block: features
     content:
-      id: feature-01
-      title: <span style="font-size:70%">Medical AI & Computational Science (Macs) Lab </span>      
+      id: feature-01   
       items:
         - name: 인공지능(AI)
           icon: code-branch

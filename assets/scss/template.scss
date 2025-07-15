@@ -20,6 +20,14 @@
 
 
 
+html[data-theme="dark"] .featurette-icon,
+html[data-theme="dark"] .featurette-icon i,
+html[data-theme="dark"] .featurette-icon svg {
+  color: #ffae42 !important;
+  fill: #ffae42 !important;
+}
+
+
 
 /* 모바일용 높이 (가로폭 767px 이하) */
 @media (max-width: 767px) {

@@ -31,11 +31,13 @@
               {{ if $author_profile }}
                 <a href="{{ $author_profile.Permalink }}" style="color: black;">{{ $author }}</a>
               {{ else }}
-                {{ $author }}
-                
+
                 {{ if eq $author "Kyungsu Lee" }}
-                  {{ $authorName = printf "<b>%s</b>" $author }}
+                  {{ $author = printf "<b>%s</b>" $author }}
                 {{ end }}
+
+                
+                {{ $author }}
 
               {{ end }}
               {{/* 아래는 author_notes 관련 로직 (필요시 유지) */}}

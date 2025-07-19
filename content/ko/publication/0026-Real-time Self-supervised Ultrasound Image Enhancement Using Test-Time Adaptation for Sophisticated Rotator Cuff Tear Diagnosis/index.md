@@ -34,7 +34,11 @@ publication_types: ['article-journal']
 
 # Publication name and optional abbreviated publication name.
 publication: IEEE Signal Processing Letters
-publication_short: IEEE Signal Processing Letters  [__SCI(E); IF=3.20, 36.70% (Q2)__]
+publication_short: IEEE SPL
+journal_type: SCI(E)
+impact_factor: '3.20'
+jcr_rank: '36.70%'
+jcr_percentile: 'Q2'
 
 abstract: Medical ultrasound imaging is a key diagnostic tool across various fields, with computer-aided diagnosis systems benefiting from advances in deep learning. However, its lower resolution and artifacts pose challenges, particularly for non-specialists. The simultaneous acquisition of degraded and high-quality images is infeasible, limiting supervised learning approaches. Additionally, self-supervised and zero-shot methods require extensive processing time, conflicting with the real-time demands of ultrasound imaging. Therefore, to address the aforementioned issues, we propose real-time ultrasound image enhancement via a self-supervised learning technique and a test-time adaptation for sophisticated rotational cuff tear diagnosis. The proposed approach learns from other domain image datasets and performs self-supervised learning on an ultrasound image during inference for enhancement. Our approach not only demonstrated superior ultrasound image enhancement performance compared to other state-of-the-art methods but also achieved an 18\% improvement in the RCT segmentation performance.
 

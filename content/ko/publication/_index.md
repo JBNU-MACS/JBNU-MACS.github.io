@@ -12,7 +12,7 @@ banner:
   display: none !important;
 }
 
-.container-publications {
+#container-publications {
   display: none !important;
 }
 </style>

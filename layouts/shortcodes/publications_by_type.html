@@ -23,15 +23,37 @@
     <hr>
     <h2>{{ $title }}</h2>
 
-    <ol style="margin-bottom:2em;"> {{/* <ul> 대신 <ol> 사용 */}}
+    <ol style="margin-bottom:2em;">
       {{ range $item := $items }}
         <li style="margin-bottom:1.2em; line-height:1.6;">
+          {{/* 논문 번호 옆에 * 표시 추가 로직 */}}
+          {{ $showAsterisk := false }}
+          {{ with $item.Params.authors }}
+            {{ if gt (len .) 0 }}
+              {{/* 1저자인 경우 */}}
+              {{ if eq (index . 0) "Kyungsu Lee" }}
+                {{ $showAsterisk = true }}
+              {{ end }}
+              {{/* 공동 1저자인 경우 (author_notes에 'Equal contribution'이 있고 'Kyungsu Lee'인 경우) */}}
+              {{ range $idx, $auth := . }}
+                {{ if eq $auth "Kyungsu Lee" }}
+                  {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
+                    {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
+                      {{ $showAsterisk = true }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+          {{ if $showAsterisk }}*&nbsp;{{ end }} {{/* 번호 옆에 * 표시 */}}
+
           {{ with $item.Params.authors }}
             {{ $totalAuthors := len . }}
             {{ range $index, $author := . }}
               {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
 
-              {{ $displayedAuthor := $author }} {{/* 이 변수를 사용하여 최종 출력할 저자 이름 관리 */}}
+              {{ $displayedAuthor := $author }}
               {{ if eq $author "Kyungsu Lee" }}
                 {{ $displayedAuthor = printf "<b>%s</b>" $author }}
               {{ end }}
@@ -124,7 +146,7 @@
           {{ end }}
         </li>
       {{ end }}
-    </ol> {{/* </ul> 대신 <ol> 사용 */}}
+    </ol>
   {{ end }}
 {{ end }}
 

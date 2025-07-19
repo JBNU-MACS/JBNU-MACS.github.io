@@ -156,7 +156,7 @@
               {{ if $journalInfo }}{{ $journalInfo = printf "%s (%s)" $journalInfo $item.Params.jcr_percentile }}{{ else }}{{ $journalInfo = printf "(%s)" $journalInfo $item.Params.jcr_percentile }}{{ end }}
             {{ end }}
             {{ if $journalInfo }}
-              [{{ $journalInfo }}]
+              <br>[{{ $journalInfo }}]
             {{ end }}
           {{ else }}
             {{/* paper-conference 등 기타 타입의 기본 출력 형식 */}}

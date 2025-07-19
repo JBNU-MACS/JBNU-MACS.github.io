@@ -60,7 +60,7 @@ url_code: ''
 # url_poster: '{{url_poster}}'
 url_project: ''
 # url_slides: ''
-url_source: '10.1109/TUFFC.2024.3506913'
+url_source: 'https://ieeexplore.ieee.org/document/10772248'
 # url_video: ''
 
 # Featured image

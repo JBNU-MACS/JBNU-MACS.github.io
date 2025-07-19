@@ -7,9 +7,9 @@ title: 'Real-time Self-supervised Ultrasound Image Enhancement Using Test-Time A
 authors:
   - Haeyun Lee
   - 이경수
-  - 윤종필
-  - 김지훈
-  - 김준영
+  - Jong Pil Yoon
+  - Jihun Kim
+  - Jun-Young Kim
 
 # Author notes (optional)
 author_notes:
@@ -22,7 +22,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2025-03-31'
-doi: ''
+doi: '10.1109/LSP.2025.3557754'
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2025-03-31'
@@ -52,12 +52,12 @@ featured: false
 #   url: http://example.org
 
 # url_pdf: '{{url_pdf}}'
-url_code: ''
+# url_code: ''
 # url_dataset: '{{url_dataset}}'
 # url_poster: '{{url_poster}}'
 # url_project: ''
 # url_slides: ''
-url_source: ''
+url_source: 'https://ieeexplore.ieee.org/document/10948347'
 # url_video: ''
 
 # Featured image

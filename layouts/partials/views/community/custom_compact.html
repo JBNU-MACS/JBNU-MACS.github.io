@@ -7,37 +7,16 @@
 {{ end }}
 
 <li style="margin-bottom:1.2em; line-height:1.6;">
-  {{/* 저자 영문명 출력 및 링크 로직 */}}
   {{ with $item.Params.authors }}
-    {{ range $idx, $author_slug := . }}
-      {{ if $idx }}, {{ end }}
-      {{ $author_page := site.GetPage (printf "authors/%s" ($author_slug | urlize)) }}
-      
-      {{ $author_display_name := "" }}
-      {{ if $author_page }}
-        {{ with $author_page.Params.name_en }}
-          {{ $author_display_name = . }}
-        {{ else }}
-          {{ $author_display_name = $author_page.Params.name_ko | default $author_slug }} {{/* name_en이 없으면 name_ko, 그것도 없으면 슬러그 */}}
-        {{ end }}
+    {{ range $idx, $author := . }}
+      {{ $authorPage := site.GetPage (printf "authors/%s" (urlize $author)) }}
+      {{ if $authorPage }}
+        <a href="{{ $authorPage.RelPermalink }}">{{ $author }}</a>{{ if ne (add $idx 1) (len $) }}, {{ end }}
       {{ else }}
-        {{ $author_display_name = $author_slug }} {{/* 저자 페이지를 찾을 수 없으면 슬러그 자체를 출력 */}}
-      {{ end }}
-
-      {{/* 저자 이름에 링크 추가 */}}
-      {{ if $author_page }}
-        <a href="{{ $author_page.RelPermalink }}">{{ $author_display_name }}</a>
-      {{ else }}
-        {{ $author_display_name }}
+        {{ $author }}{{ if ne (add $idx 1) (len $) }}, {{ end }}
       {{ end }}
     {{ end }}.
   {{ end }}
-  
-  {{/* Equal Contribution 표시 (논문 Front Matter에 equal_contribution: true가 있을 경우) */}}
-  {{ if $item.Params.equal_contribution }}
-    <sup>*</sup> {{/* 또는 원하는 기호나 텍스트 */}}
-  {{ end }}
-
   <b>
     {{ if $link }}
       <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>

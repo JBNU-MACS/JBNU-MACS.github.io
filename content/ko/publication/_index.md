@@ -68,6 +68,7 @@ h2 {
   opacity: 1 !important;
   max-height: auto !important;
   pointer-events: auto !important;
+  overflow: visible;
 }
 </style>
 

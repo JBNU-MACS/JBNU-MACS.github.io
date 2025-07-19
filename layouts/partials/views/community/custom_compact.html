@@ -9,17 +9,13 @@
 <li style="margin-bottom:1.2em; line-height:1.6;">
   {{ with $item.Params.authors }}
     {{ range $idx, $author := . }}
-      {{ $authorInitial := "" }}
-      {{ $authorParts := split $author " " }}
-      {{ range $authorParts }}
-        {{ $authorInitial = printf "%s%s." $authorInitial (substr . 0 1) }}
-      {{ end }}
-
+      {{/* 기존의 저자 이니셜 생성 로직은 삭제합니다. */}}
+      
       {{ $authorPage := site.GetPage (printf "authors/%s" (urlize $author)) }}
       {{ if $authorPage }}
-        <a href="{{ $authorPage.RelPermalink }}" style="color: black;">{{ $authorInitial }}</a>{{ if ne (add $idx 1) (len $) }}{{ if eq (add $idx 2) (len $) }} and {{ else }}, {{ end }}{{ end }}
+        <a href="{{ $authorPage.RelPermalink }}" style="color: black;">{{ $author }}</a>{{ if ne (add $idx 1) (len $) }}{{ if eq (add $idx 2) (len $) }} and {{ else }}, {{ end }}{{ end }}
       {{ else }}
-        {{ $authorInitial }}{{ if ne (add $idx 1) (len $) }}{{ if eq (add $idx 2) (len $) }} and {{ else }}, {{ end }}{{ end }}
+        {{ $author }}{{ if ne (add $idx 1) (len $) }}{{ if eq (add $idx 2) (len $) }} and {{ else }}, {{ end }}{{ end }}
       {{ end }}
     {{ end }}.
   {{ end }}

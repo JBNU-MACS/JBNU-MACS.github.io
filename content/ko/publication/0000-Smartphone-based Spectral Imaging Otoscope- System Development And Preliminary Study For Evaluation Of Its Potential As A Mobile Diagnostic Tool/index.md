@@ -5,7 +5,7 @@ title: 'Smartphone-based Spectral Imaging Otoscope: System Development and Preli
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - Thiago C. Cavalcanti
+  - Thiago Coutinho Cavalcanti
   - 김세웅
   - 이경수
   - 윤상연

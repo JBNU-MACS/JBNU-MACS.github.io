@@ -9,7 +9,6 @@ authors:
   - 김준영
   - 이문환
   - 최창혁
-  - 
   - 황재윤
 
 # Author notes (optional)

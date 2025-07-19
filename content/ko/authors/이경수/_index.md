@@ -11,7 +11,6 @@ last_name: Lee
 
 # Username (this should match the folder name)
 authors:
-  - Kyungsu Lee
   - 이경수
 
 # Is this the primary user of the site?

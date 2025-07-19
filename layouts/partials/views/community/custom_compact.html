@@ -9,17 +9,24 @@
 <li style="margin-bottom:1.2em; line-height:1.6;">
   {{/* 저자 영문명 출력 로직 */}}
   {{ with $item.Params.authors }}
-    {{ range $idx, $author_slug := . }}
+    {{ range $idx, $author_slug_from_post := . }} {{/* 변수 이름 명확화 */}}
       {{ if $idx }}, {{ end }}
-      {{ $author_page := site.GetPage (printf "authors/%s" ($author_slug | urlize)) }}
+      
+      {{ $author_slug_normalized := $author_slug_from_post | urlize }} {{/* 확실히 urlize된 슬러그 */}}
+      {{ $author_page := site.GetPage (printf "authors/%s" $author_slug_normalized) }}
+      
+      {{ warnf "디버그: 원본 authors 값: '%s', URLize된 슬러그: '%s', 저자 페이지 찾음 여부: %t" $author_slug_from_post $author_slug_normalized ($author_page != nil) }} {{/* **이 디버그 라인을 꼭 확인하세요!** */}}
+      
       {{ if $author_page }}
         {{ with $author_page.Params.name_en }}
           {{ . }}
         {{ else }}
-          {{ $author_page.Params.name_ko | default $author_slug }} {{/* name_en이 없으면 name_ko, 그것도 없으면 슬러그 */}}
+          {{ warnf "디버그: 저자 페이지 '%s'를 찾았으나 name_en 필드가 없거나 비어있음. name_ko 시도." $author_slug_normalized }}
+          {{ $author_page.Params.name_ko | default $author_slug_from_post }} {{/* name_en이 없으면 name_ko, 그것도 없으면 원본 슬러그 */}}
         {{ end }}
       {{ else }}
-        {{ $author_slug }} {{/* 저자 페이지를 찾을 수 없으면 슬러그 자체를 출력 */}}
+        {{ warnf "디버그: 저자 페이지 'authors/%s'를 찾을 수 없음. 원본 값 출력." $author_slug_normalized }}
+        {{ $author_slug_from_post }} {{/* 저자 페이지를 찾을 수 없으면 원본 값 (아마 한글) 출력 */}}
       {{ end }}
     {{ end }}.
   {{ end }}

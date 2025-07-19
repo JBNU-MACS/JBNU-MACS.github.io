@@ -144,7 +144,7 @@ sections:
       title: Notifications & News
       subtitle:
       text:
-      count: 3
+      count: 5
       offset: 0
       order: desc
       filters:
@@ -162,7 +162,7 @@ sections:
       title: Latest Publications
       subtitle:
       text:
-      count: 3
+      count: 5
       filters:
         author: ''
         category: ''

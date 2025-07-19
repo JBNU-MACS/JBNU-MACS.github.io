@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 이경수
+title: 이경수 (Kyungsu Lee)
 
 # Full Name (for SEO)
 first_name: Kyungsu

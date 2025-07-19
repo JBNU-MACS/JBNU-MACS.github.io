@@ -8,7 +8,7 @@ authors:
   - Haeyun Lee
   - 채영준
   - 주현진
-  - 이경수
+  - Kyungsu Lee
   - Jae Youn Hwang
   - 김석무
   - 김광순

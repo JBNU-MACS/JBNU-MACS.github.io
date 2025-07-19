@@ -6,7 +6,7 @@ title: 'Predicting Obstructive Sleep Apnea Based on Computed Tomography Scan Usi
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 김정훈
-  - 이경수
+  - Kyungsu Lee
   - 김현진
   - 박해찬
   - Jae Youn Hwang

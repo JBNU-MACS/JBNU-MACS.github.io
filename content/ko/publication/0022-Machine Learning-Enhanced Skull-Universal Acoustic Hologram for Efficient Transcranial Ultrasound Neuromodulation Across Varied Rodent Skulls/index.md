@@ -6,7 +6,7 @@ title: 'Machine Learning-Enhanced Skull-Universal Acoustic Hologram for Efficien
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - Moon Hwan Lee
-  - 이경수
+  - Kyungsu Lee
   - 유영승
   - 조형준
   - 정의헌

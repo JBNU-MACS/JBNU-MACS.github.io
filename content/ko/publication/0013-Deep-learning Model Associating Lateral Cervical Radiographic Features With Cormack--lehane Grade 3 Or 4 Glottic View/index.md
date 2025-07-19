@@ -6,7 +6,7 @@ title: 'Deep-Learning Model Associating Lateral Cervical Radiographic Features w
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 조혜연
-  - 이경수
+  - Kyungsu Lee
   - 양현림
   - 정철우
   - 박희영

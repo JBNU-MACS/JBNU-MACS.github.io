@@ -8,7 +8,7 @@ authors:
   - Haeyun Lee
   - Moon Hwan Lee
   - Sang-Yeon Lee
-  - 이경수
+  - Kyungsu Lee
   - Hah Min Lew
   - Jae Youn Hwang
 

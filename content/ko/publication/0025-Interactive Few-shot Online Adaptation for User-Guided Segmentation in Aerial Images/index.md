@@ -6,7 +6,7 @@ title: 'Interactive Few-shot Online Adaptation for User-Guided Segmentation in A
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 김영수
-  - 이경수
+  - Kyungsu Lee
 
 # Author notes (optional)
 author_notes:
@@ -27,8 +27,8 @@ publishDate: '2025-04-00'
 publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
-publication: The Thirteenth International Conference on Learning Representations Workshop (ICLRW2025, ML4RS)
-publication_short: The Thirteenth International Conference on Learning Representations Workshop (ICLRW2025, ML4RS)
+publication: The Thirteenth International Conference on Learning Representations Workshop
+publication_short: ICLRW2025, ML4RS
 
 abstract: Over the past few decades, geospatial objects have been extensively recognized as significant components in remote sensing applications, including environmental monitoring, urban planning, and defense. Particularly, accurate segmentation of objects has aimed at meaningful observations from aerial imagery, leading to the necessity of deep learning-based methodologies. However, conventional deep learning-based segmentation methodologies exhibit limited generalization capabilities across diverse geographical domains due to inherent variations in regional characteristics and data distribution shifts. Furthermore, most existing approaches strongly rely on static, pre-trained models lacking the adaptability to handle previously unseen data. To alleviate these limitations, we propose a novel Few-shot Semi-Online Adaptation framework incorporating interactive user feedback to iteratively refine segmentation outputs. By leveraging online learning and test-time adaptation, our approach enables models to continuously be accurate based on minimal user corrections, ensuring flexibility and adaptability to new environments. Experimental results demonstrate that our method effectively enhances the segmentation accuracy with minimal user intervention, bridging the gap between automated segmentation and domain-specific expertise. Our research contributes to the development of interactive, user-adaptive segmentation models to facilitate geospatial analysis more efficiently and reliably. 
 # Summary. An optional shortened abstract.

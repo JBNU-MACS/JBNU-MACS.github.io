@@ -7,7 +7,7 @@ title: 'Domain Adaptive Transfer Attack-based Segmentation Networks for Building
 authors:
   - 나영환
   - 김준희
-  - 이경수
+  - Kyungsu Lee
   - 박주흠
   - Jae Youn Hwang
   - 최지환

@@ -7,7 +7,7 @@ title: 'Wide-field 3D Ultrasound Imaging Platform with a Semi-Automatic 3D Segme
 authors:
   - Moon Hwan Lee
   - Jun-Young Kim
-  - 이경수
+  - Kyungsu Lee
   - 최창혁
   - Jae Youn Hwang
 

@@ -6,7 +6,7 @@ title: 'Local Similarity Siamese Network for Urban Land Change Detection on Remo
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - Haeyun Lee
-  - 이경수
+  - Kyungsu Lee
   - 김준희
   - 나영환
   - 박주흠

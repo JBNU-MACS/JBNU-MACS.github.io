@@ -6,7 +6,7 @@ title: 'Real-time Self-supervised Ultrasound Image Enhancement Using Test-Time A
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - Haeyun Lee
-  - 이경수
+  - Kyungsu Lee
   - Jong Pil Yoon
   - Jihun Kim
   - Jun-Young Kim

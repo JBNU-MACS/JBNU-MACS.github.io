@@ -11,7 +11,7 @@ authors:
 
 # Author notes (optional)
 author_notes:
-  - 'Equal contribution'
+  - ''
   - ''
   - 'Corresponding author'
 # {{equal}}

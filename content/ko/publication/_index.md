@@ -57,10 +57,12 @@ h2 {
 
 .hidden-by-opacity {
   opacity: 0 !important;
+  height: 0;
   pointer-events: none !important;
 }
 .visible-by-opacity {
   opacity: 1 !important;
+  height: auto;
   pointer-events: auto !important;
 }
 </style>

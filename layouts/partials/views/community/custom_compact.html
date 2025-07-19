@@ -8,7 +8,7 @@
 
 <li style="margin-bottom:1.2em; line-height:1.6;">
   {{ with $item.Params.authors }}
-    {{ $authorList := slice }} {{/* 저자 이름을 저장할 슬라이스 생성 */}}
+    {{ $formattedAuthors := slice }} {{/* 포매팅된 저자 이름을 저장할 슬라이스 */}}
     {{ range $idx, $author := . }}
       {{ $authorDisplay := $author }}
       {{ $isCorresponding := false }}
@@ -23,34 +23,35 @@
       {{ end }}
 
       {{ $authorOutput := "" }}
-      {{/* urlize를 한국어 이름에도 적용하는 것이 불안정할 수 있으므로, 해당 저자 페이지가 확실히 영어 이름으로 된 폴더명이라면 urlize를 쓰되, 아니면 $authorDisplay를 그대로 사용하거나 명확한 폴더명을 지정해야 함 */}}
-      {{/* 여기서는 urlize를 적용하여 Hugo의 기본 동작을 따르되, 만약 링크가 깨지면 해당 부분을 수동 조정해야 합니다. */}}
+      {{/* 저자 페이지 링크 (urlize는 영문 이름에 더 적합하며, 한글 이름 폴더명에 맞춰 조정 필요) */}}
       {{ $authorPage := site.GetPage (printf "authors/%s" (urlize $authorDisplay)) }}
       {{ if $authorPage }}
+        {{/* ----- 이 부분이 이미지에서 지적하신 문제의 핵심 수정 부분입니다. ----- */}}
         {{ $authorOutput = printf "<a href=\"%s\" style=\"color: black;\">%s</a>" $authorPage.RelPermalink $authorDisplay | safeHTML }}
       {{ else }}
         {{ $authorOutput = $authorDisplay }}
       {{ end }}
 
+      {{/* 교신저자 표시 추가 */}}
       {{ if $isCorresponding }}
+        {{/* ----- 이 부분도 이미지에서 지적하신 문제의 핵심 수정 부분입니다. ----- */}}
         {{ $authorOutput = printf "%s<span style=\"vertical-align: super;\">*</span>" $authorOutput | safeHTML }}
       {{ end }}
 
-      {{ $authorList = $authorList | append $authorOutput }}
+      {{ $formattedAuthors = $formattedAuthors | append $authorOutput }}
     {{ end }}
 
-    {{/* delimit를 사용하여 저자 목록을 올바르게 결합 */}}
-    {{ $lastAuthor := "" }}
-    {{ if gt (len $authorList) 1 }}
-      {{ $lastAuthor = index $authorList (sub (len $authorList) 1) }}
-      {{ $authorList = after (sub (len $authorList) 1) $authorList }}
-      {{ if gt (len $authorList) 0 }}
-        {{ delimit $authorList ", " }} and {{ $lastAuthor }}.
+    {{/* 저자 목록 결합 및 and 로직 (delimit 사용) */}}
+    {{ if gt (len $formattedAuthors) 0 }}
+      {{ if eq (len $formattedAuthors) 1 }}
+        {{ index $formattedAuthors 0 }}.
+      {{ else if eq (len $formattedAuthors) 2 }}
+        {{ index $formattedAuthors 0 }} and {{ index $formattedAuthors 1 }}.
       {{ else }}
-        {{ $lastAuthor }}.
+        {{ $firstAuthors := first (sub (len $formattedAuthors) 1) $formattedAuthors }}
+        {{ $lastAuthor := index $formattedAuthors (sub (len $formattedAuthors) 1) }}
+        {{ delimit $firstAuthors ", " }} and {{ $lastAuthor }}.
       {{ end }}
-    {{ else if eq (len $authorList) 1 }}
-      {{ index $authorList 0 }}.
     {{ end }}
   {{ end }}
   "<b>

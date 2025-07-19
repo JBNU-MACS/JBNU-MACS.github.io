@@ -7,7 +7,7 @@ title: 'USG-Net: Deep Learning-based Ultrasound Scanning-Guide for an Orthopedic
 authors:
   - 이경수
   - 양재승
-  - 이문환
+  - Moon Hwan Lee
   - 장진호
   - Jun-Young Kim
   - Jae Youn Hwang

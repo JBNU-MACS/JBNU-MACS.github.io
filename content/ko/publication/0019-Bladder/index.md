@@ -6,7 +6,7 @@ title: 'Intelligent Bladder Volume Monitoring for Wearable Ultrasound Devices: E
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 이경수
-  - 이문환
+  - Moon Hwan Lee
   - 강동호
   - 김세웅
   - 장진호

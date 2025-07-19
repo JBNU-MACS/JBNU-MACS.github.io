@@ -9,7 +9,7 @@ authors:
   - Haeyun Lee
   - Georges El Fakhri
   - Jonghye Woo
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

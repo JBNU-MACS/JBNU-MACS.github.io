@@ -10,7 +10,7 @@ authors:
   - Haeyun Lee
   - 박주흠
   - 최지환
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

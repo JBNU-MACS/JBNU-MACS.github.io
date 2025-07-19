@@ -9,28 +9,44 @@
 <li style="margin-bottom:1.2em; line-height:1.6;">
   {{ with $item.Params.authors }}
     {{ range $idx, $author := . }}
+      {{ $authorInitial := "" }}
+      {{ $authorParts := split $author " " }}
+      {{ range $authorParts }}
+        {{ $authorInitial = printf "%s%s." $authorInitial (substr . 0 1) }}
+      {{ end }}
+
       {{ $authorPage := site.GetPage (printf "authors/%s" (urlize $author)) }}
       {{ if $authorPage }}
-        <a href="{{ $authorPage.RelPermalink }}">{{ $author }}</a>{{ if ne (add $idx 1) (len $) }}, {{ end }}
+        <a href="{{ $authorPage.RelPermalink }}" style="color: black;">{{ $authorInitial }}</a>{{ if ne (add $idx 1) (len $) }}{{ if eq (add $idx 2) (len $) }} and {{ else }}, {{ end }}{{ end }}
       {{ else }}
-        {{ $author }}{{ if ne (add $idx 1) (len $) }}, {{ end }}
+        {{ $authorInitial }}{{ if ne (add $idx 1) (len $) }}{{ if eq (add $idx 2) (len $) }} and {{ else }}, {{ end }}{{ end }}
       {{ end }}
     {{ end }}.
   {{ end }}
+  "
   <b>
     {{ if $link }}
-      <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
+      <a href="{{$link}}" {{ $target | safeHTMLAttr }} style="color: black;">{{ $item.Title }}</a>
     {{ else }}
       {{ $item.Title }}
     {{ end }}
-  </b>.
+  </b>,"
   {{ with $item.Params.publication }}
     <i>{{ . }}</i>,
   {{ end }}
   {{ with $item.Params.date }}
-    {{ (time .).Year }}.
+    {{ if $item.Params.volume }}
+      vol. {{ $item.Params.volume }},
+    {{ end }}
+    {{ if $item.Params.issue }}
+      no. {{ $item.Params.issue }},
+    {{ end }}
+    {{ if $item.Params.pages }}
+      pp. {{ $item.Params.pages }},
+    {{ end }}
+    {{ (time .).Format "Jan." }} {{ (time .).Year }}.
   {{ end }}
   {{ if $item.Params.url_pdf }}
-    <a href="{{ $item.Params.url_pdf }}" target="_blank">[PDF]</a>
+    <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color: black;">[PDF]</a>
   {{ end }}
 </li>

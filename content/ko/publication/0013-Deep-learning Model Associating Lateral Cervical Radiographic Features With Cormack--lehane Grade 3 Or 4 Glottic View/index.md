@@ -10,7 +10,7 @@ authors:
   - 양현림
   - 정철우
   - 박희영
-  - 황재윤
+  - Jae Youn Hwang
   - 공현중
   - 이형철
 

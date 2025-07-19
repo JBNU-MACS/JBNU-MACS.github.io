@@ -9,7 +9,7 @@ authors:
   - 김준희
   - 이경수
   - 박주흠
-  - 황재윤
+  - Jae Youn Hwang
   - 최지환
 
 # Author notes (optional)

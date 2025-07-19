@@ -10,7 +10,7 @@ authors:
   - 이경수
   - 윤상연
   - 박무균
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

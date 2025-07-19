@@ -9,8 +9,7 @@ authors:
   - 이경수
   - 손지훈
   - 양인환
-  - 
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

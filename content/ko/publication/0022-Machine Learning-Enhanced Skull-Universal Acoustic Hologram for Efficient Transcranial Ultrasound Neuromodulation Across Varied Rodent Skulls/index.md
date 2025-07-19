@@ -10,7 +10,7 @@ authors:
   - 유영승
   - 조형준
   - 정의헌
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

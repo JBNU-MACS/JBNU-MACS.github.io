@@ -9,7 +9,7 @@ authors:
   - Jun-Young Kim
   - 이문환
   - 최창혁
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

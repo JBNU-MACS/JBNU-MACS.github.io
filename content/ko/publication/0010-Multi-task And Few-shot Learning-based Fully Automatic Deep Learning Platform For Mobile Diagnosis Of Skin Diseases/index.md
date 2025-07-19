@@ -11,7 +11,7 @@ authors:
   - 류하민
   - 서대헌
   - 이동훈
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

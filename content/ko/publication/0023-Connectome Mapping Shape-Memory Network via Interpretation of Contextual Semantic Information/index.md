@@ -7,7 +7,7 @@ title: 'Connectome Mapping: Shape-Memory Network via Interpretation of Contextua
 authors:
   - 이경수
   - Haeyun Lee
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

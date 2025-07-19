@@ -12,7 +12,7 @@ authors:
   - Georges El Fakhri
   - 이동훈
   - Jonghye Woo
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

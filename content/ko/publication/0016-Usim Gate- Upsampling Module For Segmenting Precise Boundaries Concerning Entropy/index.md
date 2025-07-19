@@ -7,7 +7,7 @@ title: 'USIM Gate: Upsampling Module for Segmenting Precise Boundaries Concernin
 authors:
   - 이경수
   - Haeyun Lee
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

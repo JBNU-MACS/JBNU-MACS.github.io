@@ -1,6 +1,6 @@
 
 <div class="btn-row">
-  <button
+<button
     class="glass-toggle-btn"
     id="toggle-btn"
     onclick="
@@ -10,10 +10,18 @@
       var pubs = document.getElementById('container-publications');
       pub.style.setProperty('display', refOn ? 'flex' : 'none', 'important');
       pubs.style.setProperty('display', refOn ? 'none' : 'flex', 'important');
-      pubs.style.setProperty('height', 'auto', 'important'); // height를 항상 auto로!
+      pubs.style.setProperty('height', 'auto', 'important');
+      pubs.style.setProperty('overflow', 'visible', 'important');
+      pubs.style.height = 'auto';
+      pubs.style.overflow = 'visible';
+      setTimeout(function(){
+        pubs.style.setProperty('height', 'auto', 'important');
+        pubs.style.setProperty('overflow', 'visible', 'important');
+        pubs.style.height = 'auto';
+        pubs.style.overflow = 'visible';
+      }, 50);
     "
   >ref</button>
-</div>
 
 <hr>
 

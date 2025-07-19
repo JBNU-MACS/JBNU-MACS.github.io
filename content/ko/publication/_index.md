@@ -25,6 +25,14 @@ h2 {
   font-weight: bolder;
 }
 
+.btn-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 32px 40px 0 0;
+  box-sizing: border-box;
+}
 .glass-toggle-btn {
   padding: 8px 28px;
   font-size: 16px;

@@ -6,4 +6,10 @@ date: 2025-07-02
 TEST
 
 ![발표 사진1](KCC2025_KSL.png)
+
+
+TEST2
+
 ![발표 사진2](KCC2025_SYC.jpeg)
+
+TEST3

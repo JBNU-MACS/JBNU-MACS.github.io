@@ -61,12 +61,12 @@ h2 {
 
 .hidden-by-opacity {
   opacity: 0 !important;
-  height: 0 !important;
+  max-height: 0 !important;
   pointer-events: none !important;
 }
 .visible-by-opacity {
   opacity: 1 !important;
-  height: auto !important;
+  max-height: auto !important;
   pointer-events: auto !important;
 }
 </style>

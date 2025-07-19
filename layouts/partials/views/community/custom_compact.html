@@ -9,26 +9,34 @@
 <li style="margin-bottom:1.2em; line-height:1.6;">
   {{ with $item.Params.authors }}
     {{ range $idx, $author := . }}
-      {{ $authorPage := site.GetPage (printf "authors/%s" (urlize $author)) }}
-      {{ if $authorPage }}
-        <a href="{{ $authorPage.RelPermalink }}" style="color: black;">{{ $author }}</a>
-      {{ else }}
-        {{ $author }}
+      {{ $authorDisplay := $author }}
+      {{ $isCorresponding := false }}
+
+      {{/* 교신저자 표시 로직 */}}
+      {{ if strings.HasSuffix $author "*" }}
+        {{ $authorDisplay = strings.TrimSuffix $author "*" }}
+        {{ $isCorresponding = true }}
       {{ end }}
-      {{ if eq (add $idx 1) (len $) }}
-        {{/* 마지막 저자라면 아무것도 추가하지 않음 (뒤에 .가 붙음) */}}
-      {{ else if eq (add $idx 2) (len $) }}
-        {{/* 마지막에서 두 번째 저자라면 " and " 추가 */}}
-        and 
+
+      {{ $authorPage := site.GetPage (printf "authors/%s" (urlize $authorDisplay)) }}
+      {{ if $authorPage }}
+        <a href="{{ $authorPage.RelPermalink }}" style="color: black;">{{ $authorDisplay }}</a>{{ if $isCorresponding }}$^*${{ end }}
       {{ else }}
-        {{/* 그 외의 경우 (중간 저자) 쉼표와 공백 추가 */}}
-        , 
+        {{ $authorDisplay }}{{ if $isCorresponding }}$^*${{ end }}
+      {{ end }}
+
+      {{/* and와 , 로직 개선 */}}
+      {{ if lt (add $idx 1) (len $) }} {{/* 현재 저자가 마지막 저자가 아닐 경우에만 쉼표 또는 'and' 추가 로직 실행 */}}
+        {{ if eq (add $idx 2) (len $) }}
+          and 
+        {{ else }}
+          , 
+        {{ end }}
       {{ end }}
     {{ end }}
-    {{/* 저자 목록 끝에 불필요한 .은 제거 */}}
+    . {{/* 저자 목록 끝에 마침표를 찍음 (전체 인용문의 시작) */}}
   {{ end }}
-  "
-  <b>
+  "<b>
     {{ if $link }}
       <a href="{{$link}}" {{ $target | safeHTMLAttr }} style="color: black;">{{ $item.Title }}</a>
     {{ else }}

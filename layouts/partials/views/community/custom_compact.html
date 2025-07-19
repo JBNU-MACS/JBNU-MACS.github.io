@@ -1,75 +1,66 @@
-{{ $items := where .Site.RegularPages "Type" "publication" }}
+{{ range $type := (slice "paper-csai" "article-journal" "paper-conference") }}
+  {{ $title := "" }}
+  {{ if eq $type "paper-csai" }}
+    {{ $title = "Top AI/CS Conference" }}
+  {{ else if eq $type "article-journal" }}
+    {{ $title = "Journal Proceedings" }}
+  {{ else if eq $type "paper-conference" }}
+    {{ $title = "Conference Proceedings" }}
+  {{ end }}
 
-{{/* Define custom order and corresponding titles */}}
-{{ $order := slice 
-    (dict "type" "paper-csai" "title" "Top AI/CS Conference")
-    (dict "type" "article-journal" "title" "Journal Proceedings")
-    (dict "type" "paper-conference" "title" "Conference Proceedings")
-}}
+  {{ $items := where site.RegularPages "Params.publication_types" "intersect" (slice $type) }}
 
-{{/* Group items by publication_types */}}
-{{ $groupedItems := $items.GroupByParam "publication_types" }}
+  {{ if gt (len $items) 0 }}
+    ---
+    ## {{ $title }}
 
-{{/* Iterate through the custom order */}}
-{{ range $order }}
-  {{ $currentType := .type }}
-  {{ $currentTitle := .title }}
-
-  {{ range $group := $groupedItems }}
-    {{ if eq $group.Key (slice $currentType) }} {{/* Compare with slice because publication_types is a list */}}
-      <h2>{{ $currentTitle }}</h2>
-      ---
-      <ul class="publications-list">
-        {{/* Sort items within each group by weight, then by date (desc) */}}
-        {{ range (sort $group.Pages ".Params.weight" "asc" | sort ".Date" "desc") }}
-          {{ $item := . }}
-          {{ $link := $item.RelPermalink }}
-          {{ $target := "" }}
-          {{ if $item.Params.external_link }}
-            {{ $link = $item.Params.external_link }}
-            {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-          {{ end }}
-
-          <li style="margin-bottom:1.2em; line-height:1.6;">
-            {{ with $item.Params.authors }}
-              {{ range $index, $author := . }}
-                {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
-                {{ if $author_profile }}
-                  <a href="{{ $author_profile.Permalink }}" style="color: black;">{{ $author }}</a>
-                {{ else }}
-                  {{ $author }}
-                {{ end }}
-                {{ if eq (index $.item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
-                {{ if eq (index $.item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
-                {{ if ne $index (sub (len $.item.Params.authors) 1) }}
-                  {{ if eq (add $index 1) (sub (len $.item.Params.authors) 1) }}
-                    and 
-                  {{ else }}
-                    , 
-                  {{ end }}
-                {{ end }}
-              {{ end }}.
-            {{ end }}
-            <b>
-              {{ if $link }}
-                <a href="{{$link}}" {{ $target | safeHTMLAttr }} style="color: black;">"{{ $item.Title }}"</a>
+    <ul>
+      {{ range $item := $items }}
+        <li style="margin-bottom:1.2em; line-height:1.6;">
+          {{ with $item.Params.authors }}
+            {{ range $index, $author := . }}
+              {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
+              {{ if $author_profile }}
+                <a href="{{ $author_profile.Permalink }}" style="color: black;">{{ $author }}</a>
               {{ else }}
-                "{{ $item.Title }}"
+                {{ $author }}
               {{ end }}
-            </b>.
-            {{ with $item.Params.publication }}
-              <i>{{ . }}</i>,
+              {{ if eq (index $.item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
+              {{ if eq (index $.item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
+              {{ if ne $index (sub (len $.item.Params.authors) 1) }}
+                {{ if eq (add $index 1) (sub (len $.item.Params.authors) 1) }}
+                  and&nbsp;
+                {{ else }}
+                  ,&nbsp;
+                {{ end }}
+              {{ end }}
+            {{ end }}.
+          {{ end }}
+          <b>
+            {{ $link := $item.RelPermalink }}
+            {{ $target := "" }}
+            {{ if $item.Params.external_link }}
+              {{ $link = $item.Params.external_link }}
+              {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
             {{ end }}
-            {{ with $item.Params.date }}
-              ({{ (time .).Year }}).
+
+            {{ if $link }}
+              <a href="{{$link}}" {{ $target | safeHTMLAttr }} style="color: black;">"{{ $item.Title }}"</a>
+            {{ else }}
+              "{{ $item.Title }}"
             {{ end }}
-            {{ if $item.Params.url_pdf }}
-              <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color: black;">[PDF]</a>
-            {{ end }}
-          </li>
-        {{ end }}
-      </ul>
-      <br> {{/* Add some space between sections */}}
-    {{ end }}
+          </b>.
+          {{ with $item.Params.publication }}
+            <i>{{ . }}</i>,
+          {{ end }}
+          {{ with $item.Params.date }}
+            ({{ (time .).Year }}).
+          {{ end }}
+          {{ if $item.Params.url_pdf }}
+            <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color: black;">[PDF]</a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
   {{ end }}
 {{ end }}

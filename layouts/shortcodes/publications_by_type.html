@@ -74,7 +74,7 @@
                 ({{ $item.Params.publication_short }})
               {{ end }}
             {{ end }}
-          {{ if eq $type "paper-conference" }}
+          {{ else if eq $type "paper-conference" }}
             , {{ with $item.Params.publication }}
               <i>{{ . }}</i>
               {{ if $item.Params.publication_short }}

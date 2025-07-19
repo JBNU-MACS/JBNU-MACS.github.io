@@ -9,3 +9,10 @@ banner:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/)'
   image: 'researchpaper.jpg'
 ---
+
+
+<style>
+.form-row mb-4 {
+  display: none !important;
+}
+</style>

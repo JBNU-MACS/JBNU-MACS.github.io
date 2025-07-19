@@ -16,16 +16,19 @@
       var refOn = (this.textContent === 'ref');
       var pub = document.getElementById('publication-container');
       var pubs = document.getElementById('container-publications');
+      var footer = document.querySelector('.page-footer'); // 추가
       if(refOn){
         pub.classList.add('visible-by-opacity');
         pub.classList.remove('hidden-by-opacity');
         pubs.classList.add('hidden-by-opacity');
         pubs.classList.remove('visible-by-opacity');
+        footer.style.display = 'none'; // ref 모드면 footer 숨김
       }else{
         pub.classList.add('hidden-by-opacity');
         pub.classList.remove('visible-by-opacity');
         pubs.classList.add('visible-by-opacity');
         pubs.classList.remove('hidden-by-opacity');
+        footer.style.display = ''; // showcase 모드면 footer 표시
       }
     "
   >ref</button>

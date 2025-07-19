@@ -36,7 +36,11 @@ publication_types: ['article-journal']
 
 # Publication name and optional abbreviated publication name.
 publication: Biomedical Optics Express
-publication_short: Biomedical Optics Express (BOE)  [__SCI(E); IF=3.56, 30.20% (Q2)__]
+publication_short: BOE
+journal_type: SCI(E)
+impact_factor: '3.56'
+jcr_rank: '30.20%'
+jcr_percentile: 'Q2'
 
 abstract: Otitis media (OM) is one of the most common ear diseases in children and a common reason for outpatient visits to medical doctors in primary care practices. Adhesive OM (AdOM) is recognized as a sequela of OM with effusion (OME) and often requires surgical intervention. OME and AdOM exhibit similar symptoms, and it is difficult to distinguish between them using a conventional otoscope in a primary care unit. The accuracy of the diagnosis is highly dependent on the experience of the examiner. The development of an advanced otoscope with less variation in diagnostic accuracy by the examiner is crucial for a more accurate diagnosis. Thus, we developed an intelligent smartphone-based multimode imaging otoscope for better diagnosis of OM, even in mobile environments. The system offers spectral and autofluorescence imaging of the tympanic membrane using a smartphone attached to the developed multimode imaging module. Moreover, it is capable of intelligent analysis for distinguishing between normal, OME, and AdOM ears using a machine learning algorithm. Using the developed system, we examined the ears of 69 patients to assess their performance for distinguishing between normal, OME, and AdOM ears. In the classification of ear diseases, the multimode system based on machine learning analysis performed better in terms of accuracy and F1 scores than single RGB image analysis, RGB/fluorescence image analysis, and the analysis of spectral image cubes only, respectively. These results demonstrate that the intelligent multimode diagnostic capability of an otoscope would be beneficial for better diagnosis and management of OM.
 

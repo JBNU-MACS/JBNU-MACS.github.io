@@ -16,9 +16,6 @@ banner:
   display: none !important;
 }
 
-#container-publications {
-  display: none !important;
-}
 
 h2 {
   font-weight: bolder;

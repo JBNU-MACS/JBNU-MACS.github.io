@@ -59,20 +59,7 @@
 
       {{ if and $show_authors_only $item.Params.authors }}
       <div>
-        {{/* 기존 partial "page_metadata_authors" $item 대신 영문명 출력 */}}
-        {{ range $idx, $author := $item.Params.authors }}
-          {{ if $idx }}, {{ end }}
-          {{ $author_page := site.GetPage (printf "authors/%s" ($author | urlize)) }}
-          {{ if $author_page }}
-            {{ with $author_page.Params.name_en }}
-              {{ . }}
-            {{ else }}
-              {{ $author }} {{/* name_en이 없을 경우 authors 필드의 이름을 사용 */}}
-            {{ end }}
-          {{ else }}
-            {{ $author }} {{/* author 페이지가 없을 경우 authors 필드의 이름을 사용 */}}
-          {{ end }}
-        {{ end }}
+        {{ partial "page_metadata_authors" $item }}
       </div>
       {{ else if not $show_authors_only }}
         {{ partial "page_metadata" (dict "page" $item "is_list" 1) }}

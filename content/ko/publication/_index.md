@@ -11,6 +11,10 @@ banner:
 .form-row {
   display: none !important;
 }
+
+.container-publications {
+  display: none !important;
+}
 </style>
 
 {{< publications_by_type >}}

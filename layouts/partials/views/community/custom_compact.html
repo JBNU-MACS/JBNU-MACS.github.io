@@ -15,8 +15,8 @@
       {{ else }}
         {{ $author }}
       {{ end }}
-      {{ if eq (index $.item.Params.author_notes $index) "Equal contribution" }}<sup>†</sup>{{ end }}
-      {{ if eq (index $.item.Params.author_notes $index) "Corresponding author" }}<sup>*</sup>{{ end }}
+      {{ if eq (index $.item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
+      {{ if eq (index $.item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
       {{ if ne $index (sub (len $.item.Params.authors) 1) }}
         {{ if eq (add $index 1) (sub (len $.item.Params.authors) 1) }}
           and 

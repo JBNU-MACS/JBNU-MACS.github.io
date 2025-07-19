@@ -7,8 +7,8 @@ title: 'Multi-task and Few-shot Learning-based Fully Automatic Deep Learning Pla
 authors:
   - 이경수
   - T C Cavalcanti
-  - 김세웅
-  - 류하민
+  - Sewoong Kim
+  - Hah Min Lew
   - 서대헌
   - 이동훈
   - Jae Youn Hwang

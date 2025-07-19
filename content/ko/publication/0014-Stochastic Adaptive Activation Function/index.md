@@ -6,7 +6,7 @@ title: 'Stochastic Adaptive Activation Function'
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 이경수
-  - 양재승
+  - Jaeseung Yang
   - Haeyun Lee
   - Jae Youn Hwang
 

@@ -8,7 +8,7 @@ authors:
   - 이경수
   - Haeyun Lee
   - Thiago Coutinho Cavalcanti
-  - 김세웅
+  - Sewoong Kim
   - Georges El Fakhri
   - 이동훈
   - Jonghye Woo

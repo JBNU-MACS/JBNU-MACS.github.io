@@ -17,7 +17,6 @@ author_notes:
   - 'Equal contribution'
   - ''
   - 'Corresponding author'
-  - ''
   - 'Corresponding author'
 # {{equal}}
 

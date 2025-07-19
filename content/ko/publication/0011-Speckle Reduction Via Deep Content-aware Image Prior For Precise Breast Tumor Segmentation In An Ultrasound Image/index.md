@@ -7,9 +7,9 @@ title: 'Speckle Reduction Via Deep Content-aware Image Prior for Precise Breast 
 authors:
   - Haeyun Lee
   - Moon Hwan Lee
-  - 윤상연
+  - Sang-Yeon Lee
   - 이경수
-  - 류하민
+  - Hah Min Lew
   - Jae Youn Hwang
 
 # Author notes (optional)

@@ -6,7 +6,7 @@ title: 'CSS-Net: Classification and Substitution for Segmentation of Rotator Cuf
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 이경수
-  - 류하민
+  - Hah Min Lew
   - Moon Hwan Lee
   - Jun-Young Kim
   - Jae Youn Hwang

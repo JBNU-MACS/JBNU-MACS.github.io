@@ -8,7 +8,7 @@ authors:
   - 이경수
   - Moon Hwan Lee
   - 강동호
-  - 김세웅
+  - Sewoong Kim
   - 장진호
   - 오승준
   - Jae Youn Hwang

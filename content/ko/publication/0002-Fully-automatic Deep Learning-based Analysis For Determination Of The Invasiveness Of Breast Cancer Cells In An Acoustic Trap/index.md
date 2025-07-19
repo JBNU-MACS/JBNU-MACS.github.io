@@ -5,7 +5,7 @@ title: 'Fully-automatic Deep Learning-based Analysis for Determination of the In
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - 윤상연
+  - Sang-Yeon Lee
   - 이경수
   - 손지훈
   - 양인환

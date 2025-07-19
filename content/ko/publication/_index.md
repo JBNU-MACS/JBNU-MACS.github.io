@@ -18,7 +18,6 @@ banner:
 
 #container-publications {
   opacity: 0;
-  height: 0;
   transition: opacity 0.4s;
 }
 

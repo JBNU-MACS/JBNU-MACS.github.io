@@ -7,7 +7,7 @@ title: 'Smartphone-based Spectral Imaging Otoscope: System Development and Preli
 authors:
   - Thiago C. Cavalcanti
   - 김세웅
-  - Kyungsu Lee
+  - 이경수
   - 윤상연
   - 박무균
   - 황재윤

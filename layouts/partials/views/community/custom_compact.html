@@ -1,24 +1,14 @@
 {{ $item := .item }}
 
-{{/* Dynamic view adjusts to content type. */}}
-{{ $show_authors_only := false }}{{/* Show authors only or full metadata? */}}
+{{/* 링크 설정 */}}
 {{ $link := $item.RelPermalink }}
 {{ $target := "" }}
 {{ if $item.Params.external_link }}
   {{ $link = $item.Params.external_link }}
   {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
 {{ end }}
-{{ if eq $item.Type "event" }}
-  {{ $show_authors_only = true }}
-{{ else if eq $item.Type "publication" }}
-  {{ $show_authors_only = true }}
-{{ else if eq $item.Type "project" }}
-  {{ $show_authors_only = true }}
-{{ end }}
 
-{{ $has_attachments := partial "functions/has_attachments" $item }}
-
-{{/* Get summary. */}}
+{{/* 본문 표시용 summary */}}
 {{ $summary := "" }}
 {{ if $item.Params.summary }}
   {{ $summary = $item.Params.summary | markdownify | emojify }}
@@ -36,40 +26,62 @@
     </div>
 
     {{ with $summary }}
-    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="summary-link">
-      <div class="article-style">
-        {{.}}
-      </div>
-    </a>
+      <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="summary-link">
+        <div class="article-style">
+          {{.}}
+        </div>
+      </a>
     {{ end }}
 
     <div class="stream-meta article-metadata">
 
+      {{/* 저자: 반드시 영문명만 출력 */}}
+      {{ if $item.Params.authors }}
+        <div>
+          {{ $authorNames := slice }}
+          {{ range $item.Params.authors }}
+            {{ $author := site.GetPage (printf "authors/%s" .) }}
+            {{ if $author }}
+              {{ $authorNames = $authorNames | append $author.Title }}
+            {{ else }}
+              {{ $authorNames = $authorNames | append . }}
+            {{ end }}
+          {{ end }}
+          {{ delimit $authorNames ", " }}.
+        </div>
+      {{ end }}
+
+      {{/* 아래는 필요시 기존 코드(이벤트 등)는 유지 */}}
       {{ if eq $item.Type "event" }}
-      <div>
-        <span>
-          {{ partial "functions/get_event_dates" $item }}
-        </span>
-        {{ with $item.Params.location }}
-        <span class="middot-divider"></span>
-        <span>{{ . }}</span>
-        {{ end }}
-      </div>
+        <div>
+          <span>
+            {{ partial "functions/get_event_dates" $item }}
+          </span>
+          {{ with $item.Params.location }}
+            <span class="middot-divider"></span>
+            <span>{{ . }}</span>
+          {{ end }}
+        </div>
       {{ end }}
 
-      {{ if and $show_authors_only $item.Params.authors }}
-      <div>
-        {{ partial "page_metadata_authors" $item }}
-      </div>
-      {{ else if not $show_authors_only }}
-        {{ partial "page_metadata" (dict "page" $item "is_list" 1) }}
+      {{ if $item.Params.publication }}
+        <div>
+          <i>{{ $item.Params.publication }}</i>
+        </div>
       {{ end }}
+
+      {{ if $item.Params.date }}
+        <div>
+          {{ (time $item.Params.date).Year }}
+        </div>
+      {{ end }}
+
     </div>
 
-    {{ if $has_attachments }}
-    <div class="btn-links">
-      {{ partial "page_links" (dict "page" $item "is_list" 1) }}
-    </div>
+    {{ if partial "functions/has_attachments" $item }}
+      <div class="btn-links">
+        {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+      </div>
     {{ end }}
 
     <div style="margin-bottom: 50px;"></div>

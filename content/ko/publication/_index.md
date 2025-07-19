@@ -18,7 +18,7 @@ banner:
 
 #container-publications {
   opacity: 0;
-  transition: opacity 0.6s;
+  transition: opacity 0.3s;
 }
 
 h2 {
@@ -56,7 +56,7 @@ h2 {
 }
 
 #publication-container {
-  transition: opacity 0.6s;
+  transition: opacity 0.3s;
 }
 
 .hidden-by-opacity {
@@ -66,9 +66,9 @@ h2 {
 }
 .visible-by-opacity {
   opacity: 1 !important;
-  max-height: auto !important;
+  height: auto !important;
   pointer-events: auto !important;
-  overflow: visible;
+  overflow: visible !important;
 }
 </style>
 

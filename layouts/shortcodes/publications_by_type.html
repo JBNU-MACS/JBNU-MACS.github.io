@@ -18,7 +18,9 @@
   {{ $items := where (where site.RegularPages "Section" "publication") "Params.publication_types" "intersect" (slice $type) }}
 
   {{ if gt (len $items) 0 }}
+  
     ---
+
     ## {{ $title }}
 
     <ul>

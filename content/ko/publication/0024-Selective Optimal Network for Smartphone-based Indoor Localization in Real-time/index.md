@@ -29,8 +29,12 @@ publishDate: '2025-01-20'
 publication_types: ['article-journal']
 
 # Publication name and optional abbreviated publication name.
-publication: Expert Systems With Applications (ESWA)
-publication_short: Expert Systems With Applications (ESWA) [__SCI(E); IF=7.50, 5.20% (Q1)__]
+publication: Expert Systems With Applications
+publication_short: ESWA
+journal_type: SCI(E)
+impact_factor: '7.50'
+jcr_rank: '5.20%'
+jcr_percentile: 'Q1'
 
 abstract: Deep learning-based scene recognition algorithms have been developed for real-time application in indoor localization systems. However, owing to the slow calculation time resulting from the deep structure of convolutional neural networks, deep learning-based algorithms have limitations in the usage of real-time applications, despite their high accuracy in classification tasks. To significantly reduce the computation time of these algorithms and slightly improve their accuracy, we thus propose a path-selective deep learning network, denoted as Selective Optimal Network (SoN). The SoN selectively uses the depth-variable networks depending on a new indicator, denoted as the classification-complexity of a source image. The SoN reduces the prediction time by selecting optimal depth for the baseline networks corresponding to the input samples. The network was evaluated using two public datasets and two custom datasets for indoor localization and scene classification, respectively. The experimental results indicated that, compared to other deep learning models, the SoN exhibited improved accuracy and enhanced the processing speed by up to 78.59\%. Additionally, the SoN was applied to a smartphone-based indoor positioning system in real-time. The results indicated that the SoN shows excellent performance for rapid and accurate classification in real-time applications of indoor localization systems.
 

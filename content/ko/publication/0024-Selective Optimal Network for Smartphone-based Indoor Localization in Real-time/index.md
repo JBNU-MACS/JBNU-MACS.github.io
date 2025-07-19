@@ -6,7 +6,7 @@ title: 'SoN: Selective Optimal Network for Smartphone-based Indoor Localization 
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 이경수
-  - 이해윤
+  - Haeyun Lee
   - 황재윤
 
 # Author notes (optional)
@@ -48,12 +48,12 @@ featured: true
 #   url: http://example.org
 
 # url_pdf: '{{url_pdf}}'
-url_code: ''
+# url_code: ''
 # url_dataset: '{{url_dataset}}'
 # url_poster: '{{url_poster}}'
 url_project: ''
 # url_slides: ''
-url_source: ''
+url_source: 'https://www.sciencedirect.com/science/article/abs/pii/S0957417425002611?via%3Dihub'
 # url_video: ''
 
 # Featured image

@@ -21,38 +21,32 @@ h2 {
 }
 
 .glass-toggle-btn {
-      padding: 18px 40px;
-      font-size: 20px;
-      font-weight: 600;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.18);
-      border: none;
-      border-radius: 18px;
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      outline: none;
-      cursor: pointer;
-      transition: background 0.25s, color 0.25s;
-      text-shadow: 0 1px 2px rgba(31, 38, 135, 0.18);
+  padding: 8px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  background: rgba(255, 255, 255, 0.32);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px 0 rgba(80, 100, 200, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  outline: none;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  text-shadow: 0 2px 8px rgba(200, 210, 255, 0.16);
 }
 .glass-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.5);
   color: #4F8EF7;
+  box-shadow: 0 6px 20px 0 rgba(80, 100, 200, 0.15);
 }
 </style>
 
-<script>
-  const btn = document.getElementById('toggleBtn');
-  btn.addEventListener('click', function() {
-    if (btn.textContent === 'ref') {
-      btn.textContent = 'showcase';
-    } else {
-      btn.textContent = 'ref';
-    }
-  });
-</script>
 
-<button class="glass-toggle-btn" id="toggleBtn">ref</button>
+<button
+  class="glass-toggle-btn"
+  onclick="this.textContent = (this.textContent === 'ref') ? 'showcase' : 'ref';"
+>ref</button>
 
 {{< publications_by_type >}}

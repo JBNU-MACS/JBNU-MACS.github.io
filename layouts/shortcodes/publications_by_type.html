@@ -23,18 +23,16 @@
     <hr>
     <h2>{{ $title }}</h2>
 
-    <ol style="margin-bottom:2em;">
-      {{ range $item := $items }}
+    <ol style="margin-bottom:2em; list-style: none; padding-left: 0;"> {{/* list-style: none; 추가 및 padding-left 조정 */}}
+      {{ range $itemIndex, $item := $items }} {{/* $itemIndex 변수 추가 */}}
         <li style="margin-bottom:1.2em; line-height:1.6;">
-          {{/* 논문 번호 옆에 * 표시 추가 로직 */}}
+          {{/* 논문 번호 및 * 표시 로직 - 볼드체 적용 */}}
           {{ $showAsterisk := false }}
           {{ with $item.Params.authors }}
             {{ if gt (len .) 0 }}
-              {{/* 1저자인 경우 */}}
               {{ if eq (index . 0) "Kyungsu Lee" }}
                 {{ $showAsterisk = true }}
               {{ end }}
-              {{/* 공동 1저자인 경우 (author_notes에 'Equal contribution'이 있고 'Kyungsu Lee'인 경우) */}}
               {{ range $idx, $auth := . }}
                 {{ if eq $auth "Kyungsu Lee" }}
                   {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
@@ -46,7 +44,10 @@
               {{ end }}
             {{ end }}
           {{ end }}
-          {{ if $showAsterisk }}*&nbsp;{{ end }} {{/* 번호 옆에 * 표시 */}}
+
+          {{ if $showAsterisk }}<b>*{{ add $itemIndex 1 }}.</b>&nbsp; {{/* *번호. 볼드체 적용 */}}
+          {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp; {{/* 번호. 볼드체 적용 */}}
+          {{ end }}
 
           {{ with $item.Params.authors }}
             {{ $totalAuthors := len . }}

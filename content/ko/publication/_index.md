@@ -12,7 +12,7 @@ banner:
 
 
 <style>
-.form-row mb-4 {
+.form-row {
   display: none !important;
 }
 </style>

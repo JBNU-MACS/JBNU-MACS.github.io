@@ -8,75 +8,29 @@
 
 <li style="margin-bottom:1.2em; line-height:1.6;">
   {{ with $item.Params.authors }}
-    {{ $formattedAuthors := slice }} {{/* 포매팅된 저자 이름을 저장할 슬라이스 */}}
-    {{ range $idx, $author := . }}
-      {{ $authorDisplay := $author }}
-      {{ $isCorresponding := false }}
-
-      {{/* author_notes 필드에서 교신저자 여부 확인 */}}
-      {{ if $item.Params.author_notes }}
-        {{ if lt $idx (len $item.Params.author_notes) }}
-          {{ if eq (index $item.Params.author_notes $idx) "Corresponding author" }}
-            {{ $isCorresponding = true }}
-          {{ end }}
-        {{ end }}
-      {{ end }}
-
-      {{ $authorOutput := "" }}
-      {{/*
-        **중요**: 저자 프로필 폴더명이 영어라면 urlize 사용.
-        한글 폴더명이라면 urlize 제거 또는 해당 저자 프로필 폴더명을 영어로 변경 후 _index.md에 title: "한글이름" 지정 권장.
-        여기서는 일단 urlize 유지.
-      */}}
-      {{ $authorPage := site.GetPage (printf "authors/%s" (urlize $authorDisplay)) }}
-      {{ if $authorPage }}
-        {{ $authorOutput = printf "<a href=\"%s\" style=\"color: black;\">%s</a>" $authorPage.RelPermalink $authorDisplay | safeHTML }}
+    {{ range $index, $author := . }}
+      {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
+      {{ if $author_profile }}
+        <a href="{{ $author_profile.Permalink }}" style="color: black;">{{ $author }}</a>{{ if ne $index (sub (len $.item.Params.authors) 1) }}, {{ end }}
       {{ else }}
-        {{ $authorOutput = $authorDisplay }}
+        {{ $author }}{{ if ne $index (sub (len $.item.Params.authors) 1) }}, {{ end }}
       {{ end }}
-
-      {{/* 교신저자 표시 추가 */}}
-      {{ if $isCorresponding }}
-        {{ $authorOutput = printf "%s<span style=\"vertical-align: super;\">*</span>" $authorOutput | safeHTML }}
-      {{ end }}
-
-      {{ $formattedAuthors = $formattedAuthors | append $authorOutput }}
-    {{ end }}
-
-    {{/* 저자 목록 결합 및 and 로직 */}}
-    {{ if gt (len $formattedAuthors) 0 }}
-      {{ if eq (len $formattedAuthors) 1 }}
-        {{ index $formattedAuthors 0 }}.
-      {{ else if eq (len $formattedAuthors) 2 }}
-        {{ index $formattedAuthors 0 }} and {{ index $formattedAuthors 1 }}.
-      {{ else }}
-        {{ $firstAuthors := first (sub (len $formattedAuthors) 1) $formattedAuthors }}
-        {{ $lastAuthor := index $formattedAuthors (sub (len $formattedAuthors) 1) }}
-        {{ delimit $firstAuthors ", " }} and {{ $lastAuthor }}.
-      {{ end }}
-    {{ end }}
+      {{ if eq (index $.item.Params.author_notes $index) "Equal contribution" }}<sup>†</sup>{{ end }}
+      {{ if eq (index $.item.Params.author_notes $index) "Corresponding author" }}<sup>*</sup>{{ end }}
+    {{ end }}.
   {{ end }}
-  "<b>{{/* 제목 앞 공백 제거 */}}
+  <b>
     {{ if $link }}
       <a href="{{$link}}" {{ $target | safeHTMLAttr }} style="color: black;">{{ $item.Title }}</a>
     {{ else }}
       {{ $item.Title }}
     {{ end }}
-  </b>,"
+  </b>.
   {{ with $item.Params.publication }}
     <i>{{ . }}</i>,
   {{ end }}
   {{ with $item.Params.date }}
-    {{ if $item.Params.volume }}
-      vol. {{ $item.Params.volume }},
-    {{ end }}
-    {{ if $item.Params.issue }}
-      no. {{ $item.Params.issue }},
-    {{ end }}
-    {{ if $item.Params.pages }}
-      pp. {{ $item.Params.pages }},
-    {{ end }}
-    {{ (time .).Format "Jan." }} {{ (time .).Year }}.
+    {{ (time .).Year }}.
   {{ end }}
   {{ if $item.Params.url_pdf }}
     <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color: black;">[PDF]</a>

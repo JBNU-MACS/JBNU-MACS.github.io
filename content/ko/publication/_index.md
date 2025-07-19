@@ -18,7 +18,7 @@ banner:
 
 #container-publications {
   opacity: 0;
-  transition: opacity 0.4s;
+  transition: opacity 0.6s;
 }
 
 h2 {
@@ -53,6 +53,10 @@ h2 {
   background: rgba(255, 255, 255, 0.5);
   color: #4F8EF7;
   box-shadow: 0 6px 20px 0 rgba(80, 100, 200, 0.15);
+}
+
+#publication-container {
+  transition: opacity 0.6s;
 }
 
 .hidden-by-opacity {

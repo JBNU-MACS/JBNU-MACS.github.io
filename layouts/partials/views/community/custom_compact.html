@@ -23,10 +23,13 @@
       {{ end }}
 
       {{ $authorOutput := "" }}
-      {{/* 저자 페이지 링크 (urlize는 영문 이름에 더 적합하며, 한글 이름 폴더명에 맞춰 조정 필요) */}}
+      {{/*
+        **중요**: 저자 프로필 폴더명이 영어라면 urlize 사용.
+        한글 폴더명이라면 urlize 제거 또는 해당 저자 프로필 폴더명을 영어로 변경 후 _index.md에 title: "한글이름" 지정 권장.
+        여기서는 일단 urlize 유지.
+      */}}
       {{ $authorPage := site.GetPage (printf "authors/%s" (urlize $authorDisplay)) }}
       {{ if $authorPage }}
-        {{/* ----- 이 부분이 이미지에서 지적하신 문제의 핵심 수정 부분입니다. ----- */}}
         {{ $authorOutput = printf "<a href=\"%s\" style=\"color: black;\">%s</a>" $authorPage.RelPermalink $authorDisplay | safeHTML }}
       {{ else }}
         {{ $authorOutput = $authorDisplay }}
@@ -34,14 +37,13 @@
 
       {{/* 교신저자 표시 추가 */}}
       {{ if $isCorresponding }}
-        {{/* ----- 이 부분도 이미지에서 지적하신 문제의 핵심 수정 부분입니다. ----- */}}
         {{ $authorOutput = printf "%s<span style=\"vertical-align: super;\">*</span>" $authorOutput | safeHTML }}
       {{ end }}
 
       {{ $formattedAuthors = $formattedAuthors | append $authorOutput }}
     {{ end }}
 
-    {{/* 저자 목록 결합 및 and 로직 (delimit 사용) */}}
+    {{/* 저자 목록 결합 및 and 로직 */}}
     {{ if gt (len $formattedAuthors) 0 }}
       {{ if eq (len $formattedAuthors) 1 }}
         {{ index $formattedAuthors 0 }}.
@@ -54,7 +56,7 @@
       {{ end }}
     {{ end }}
   {{ end }}
-  "<b>
+  "<b>{{/* 제목 앞 공백 제거 */}}
     {{ if $link }}
       <a href="{{$link}}" {{ $target | safeHTMLAttr }} style="color: black;">{{ $item.Title }}</a>
     {{ else }}

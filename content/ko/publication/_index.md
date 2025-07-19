@@ -21,4 +21,5 @@ h2 {
 }
 </style>
 
+
 {{< publications_by_type >}}

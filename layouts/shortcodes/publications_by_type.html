@@ -40,7 +40,7 @@
               {{/* HERE WAS THE PROBLEM: Changed $.item to $item */}}
               {{ if ne $index (sub (len $item.Params.authors) 1) }}
                 {{ if eq (add $index 1) (sub (len $item.Params.authors) 1) }}
-                  and&nbsp;
+                  , and&nbsp;
                 {{ else }}
                   ,&nbsp;
                 {{ end }}

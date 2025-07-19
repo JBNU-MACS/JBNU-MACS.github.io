@@ -20,6 +20,12 @@
   {{ $items := where (where site.RegularPages "Section" "publication") "Params.publication_types" "intersect" (slice $type) }}
 
   {{ if gt (len $items) 0 }}
+
+    <button
+      class="glass-toggle-btn"
+      onclick="this.textContent = (this.textContent === 'ref') ? 'showcase' : 'ref';"
+    >ref</button>
+
     <hr>
     <h2>{{ $title }}</h2>
 

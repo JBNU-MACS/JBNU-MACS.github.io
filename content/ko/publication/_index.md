@@ -43,10 +43,4 @@ h2 {
 }
 </style>
 
-
-<button
-  class="glass-toggle-btn"
-  onclick="this.textContent = (this.textContent === 'ref') ? 'showcase' : 'ref';"
->ref</button>
-
 {{< publications_by_type >}}

@@ -18,15 +18,14 @@
   {{ $items := where (where site.RegularPages "Section" "publication") "Params.publication_types" "intersect" (slice $type) }}
 
   {{ if gt (len $items) 0 }}
-
     <hr>
-
     <h2>{{ $title }}</h2>
 
     <ul>
       {{ range $item := $items }}
         <li style="margin-bottom:1.2em; line-height:1.6;">
           {{ with $item.Params.authors }}
+            {{ $totalAuthors := len . }}
             {{ range $index, $author := . }}
               {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
               {{ if $author_profile }}
@@ -34,18 +33,22 @@
               {{ else }}
                 {{ $author }}
               {{ end }}
-              {{/* HERE WAS THE PROBLEM: Changed $.item to $item */}}
-              {{ if eq (index $item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
-              {{ if eq (index $item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
-              {{/* HERE WAS THE PROBLEM: Changed $.item to $item */}}
-              {{ if ne $index (sub (len $item.Params.authors) 1) }}
-                {{ if eq (add $index 1) (sub (len $item.Params.authors) 1) }}
-                  , and&nbsp;
+              {{/* 아래는 author_notes 관련 로직 (필요시 유지) */}}
+              {{ if and ($item.Params.author_notes) (lt $index (len $item.Params.author_notes)) }}
+                {{ if eq (index $item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
+                {{ if eq (index $item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
+              {{ end }}
+
+              {{/* 쉼표와 'and'를 위한 로직 - 저자 구분 */}}
+              {{ if ne $index (sub $totalAuthors 1) }} {{/* 현재 저자가 마지막 저자가 아닐 때만 쉼표/and 처리 */}}
+                {{ if eq (add $index 1) (sub $totalAuthors 1) }}
+                  , and&nbsp; {{/* 마지막에서 두 번째 저자라면 ', and' 추가 */}}
                 {{ else }}
-                  ,&nbsp;
+                  ,&nbsp; {{/* 그 외에는 쉼표 추가 */}}
                 {{ end }}
               {{ end }}
-            {{ end }}.
+
+            {{ end }}. {{/* 저자 목록 끝에 마침표 */}}
           {{ end }}
           <b>
             {{ $link := $item.RelPermalink }}
@@ -60,13 +63,18 @@
             {{ else }}
               "{{ $item.Title }}"
             {{ end }}
-          </b>.
+          </b>,
+          {{/* 학회 이름 (학회이름 short) 형식으로 출력 */}}
           {{ with $item.Params.publication }}
-            <i>{{ . }}</i>,
+            <i>{{ . }}</i>
+            {{ if $item.Params.publication_short }}
+              ({{ $item.Params.publication_short }})
+            {{ end }}
           {{ end }}
-          {{ with $item.Params.date }}
+          {{/* 년도 부분 삭제 */}}
+          {{/* {{ with $item.Params.date }}
             ({{ (time .).Year }}).
-          {{ end }}
+          {{ end }} */}}
           {{ if $item.Params.url_pdf }}
             <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color: black;">[PDF]</a>
           {{ end }}

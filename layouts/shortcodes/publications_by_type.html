@@ -1,3 +1,14 @@
+  <button
+    class="glass-toggle-btn"
+    id="toggle-btn"
+    onclick="
+      this.textContent = (this.textContent === 'ref') ? 'showcase' : 'ref';
+      var refOn = (this.textContent === 'ref');
+      document.getElementById('publication-container').style.setProperty('display', refOn ? 'flex' : 'none', 'important');
+      document.getElementById('container-publications').style.setProperty('display', refOn ? 'none' : 'flex', 'important');
+    "
+  >ref</button>
+
 <div id="publication-container">
 
 {{/* 이 숏코드는 publication_types에 따라 논문 목록을 분류하여 표시합니다. */}}
@@ -20,11 +31,6 @@
   {{ $items := where (where site.RegularPages "Section" "publication") "Params.publication_types" "intersect" (slice $type) }}
 
   {{ if gt (len $items) 0 }}
-
-    <button
-      class="glass-toggle-btn"
-      onclick="this.textContent = (this.textContent === 'ref') ? 'showcase' : 'ref';"
-    >ref</button>
 
     <hr>
     <h2>{{ $title }}</h2>

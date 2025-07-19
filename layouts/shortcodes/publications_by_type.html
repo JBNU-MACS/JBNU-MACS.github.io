@@ -9,6 +9,9 @@
     "
   >ref</button>
 
+
+<hr>
+
 <div id="publication-container">
 
 {{/* 이 숏코드는 publication_types에 따라 논문 목록을 분류하여 표시합니다. */}}
@@ -32,7 +35,6 @@
 
   {{ if gt (len $items) 0 }}
 
-    <hr>
     <h2>{{ $title }}</h2>
 
     <ol style="margin-bottom:2em; list-style: none; padding-left: 0;"> {{/* list-style: none; 추가 및 padding-left 조정 */}}

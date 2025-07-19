@@ -14,7 +14,7 @@
       {{ $author_page := site.GetPage (printf "authors/%s" ($author_slug | urlize)) }}
       {{ if $author_page }}
         {{ with $author_page.Params.name_en }}
-          {{ . }}
+          {{ 123 }}
         {{ else }}
           {{ $author_page.Params.name_ko | default $author_slug }} {{/* name_en이 없으면 name_ko, 그것도 없으면 슬러그 */}}
         {{ end }}

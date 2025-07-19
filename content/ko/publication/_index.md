@@ -25,6 +25,10 @@ h2 {
   font-weight: bolder;
 }
 
+.article-banner {
+  height: 200px;
+}
+
 .btn-row {
   display: flex;
   justify-content: flex-end;

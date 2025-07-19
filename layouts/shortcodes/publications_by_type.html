@@ -22,13 +22,13 @@
         pub.classList.remove('hidden-by-opacity');
         pubs.classList.add('hidden-by-opacity');
         pubs.classList.remove('visible-by-opacity');
-        footer.style.display = 'none'; // ref 모드면 footer 숨김
+        footer.style.display = ''; // showcase 모드면 footer 표시
       }else{
         pub.classList.add('hidden-by-opacity');
         pub.classList.remove('visible-by-opacity');
         pubs.classList.add('visible-by-opacity');
         pubs.classList.remove('hidden-by-opacity');
-        footer.style.display = ''; // showcase 모드면 footer 표시
+        footer.style.display = 'none'; // ref 모드면 footer 숨김
       }
     "
   >ref</button>

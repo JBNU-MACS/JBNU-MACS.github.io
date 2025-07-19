@@ -30,11 +30,11 @@ h2 {
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  padding: 32px 40px 0 0;
+  padding: 12px 8px 0 0;
   box-sizing: border-box;
 }
 .glass-toggle-btn {
-  padding: 4px 4px;
+  padding: 4px 12px;
   font-size: 16px;
   font-weight: 500;
   color: #222;

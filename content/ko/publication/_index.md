@@ -34,10 +34,11 @@ h2 {
   box-sizing: border-box;
 }
 .glass-toggle-btn {
-  padding: 4px 12px;
+  padding: 4px 16px;
   font-size: 16px;
   font-weight: 500;
   color: #222;
+  min-width: 80px;
   background: rgba(255, 255, 255, 0.32);
   border: none;
   border-radius: 16px;
@@ -69,6 +70,7 @@ h2 {
   height: auto !important;
   pointer-events: auto !important;
   overflow: visible !important;
+  display: block !important;
 }
 </style>
 

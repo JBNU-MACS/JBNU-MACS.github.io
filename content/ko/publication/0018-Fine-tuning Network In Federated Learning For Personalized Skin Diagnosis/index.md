@@ -10,7 +10,7 @@ authors:
   - Thiago Coutinho Cavalcanti
   - Sewoong Kim
   - Georges El Fakhri
-  - 이동훈
+  - Dong Hun Lee
   - Jonghye Woo
   - Jae Youn Hwang
 

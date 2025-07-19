@@ -10,7 +10,7 @@ authors:
   - Sewoong Kim
   - Hah Min Lew
   - 서대헌
-  - 이동훈
+  - Dong Hun Lee
   - Jae Youn Hwang
 
 # Author notes (optional)

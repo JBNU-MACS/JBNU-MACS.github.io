@@ -15,6 +15,10 @@ banner:
 #container-publications {
   display: none !important;
 }
+
+h2 {
+  font-weight: bolder;
+}
 </style>
 
 {{< publications_by_type >}}

@@ -3,6 +3,10 @@
 {{ if not $pubs }}{{ $pubs = .Pages }}{{ end }}
 {{ if not $pubs }}{{ $pubs = .RegularPages }}{{ end }}
 
+{{ range $pubs }}
+  <pre>{{ .Title }} | {{ printf "%#v" .Params.publication_types }}</pre>
+{{ end }}
+
 {{ with $pubs }}
   {{/* Top-AI/CS Conference Section */}}
   {{ $top := where . "Params.publication_types" "intersect" (slice "paper-csai") }}

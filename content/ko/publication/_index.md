@@ -18,6 +18,7 @@ banner:
 
 #container-publications {
   opacity: 0;
+  height: 0;
   transition: opacity 0.4s;
 }
 
@@ -57,12 +58,12 @@ h2 {
 
 .hidden-by-opacity {
   opacity: 0 !important;
-  height: 0;
+  height: 0 !important;
   pointer-events: none !important;
 }
 .visible-by-opacity {
   opacity: 1 !important;
-  height: auto;
+  height: auto !important;
   pointer-events: auto !important;
 }
 </style>

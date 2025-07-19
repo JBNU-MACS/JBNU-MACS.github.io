@@ -53,7 +53,7 @@
 
     <ol style="margin-bottom:2em; list-style: none; padding-left: 0;"> {{/* list-style: none; 추가 및 padding-left 조정 */}}
       {{ range $itemIndex, $item := $items }} {{/* $itemIndex 변수 추가 */}}
-        <li style="margin-bottom:1.2em; line-height:1.6;">
+        <li style="margin-bottom:1.2em; line-height:1.6; font-size: 0.75rem;">
           {{/* 논문 번호 및 * 표시 로직 - 볼드체 적용 */}}
           {{ $showAsterisk := false }}
           {{ with $item.Params.authors }}

@@ -34,7 +34,7 @@ h2 {
   box-sizing: border-box;
 }
 .glass-toggle-btn {
-  padding: 8px 28px;
+  padding: 8px 4px;
   font-size: 16px;
   font-weight: 500;
   color: #222;

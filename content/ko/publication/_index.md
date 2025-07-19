@@ -17,8 +17,8 @@ banner:
 }
 
 #container-publications {
-  display: none !important;
-  height:  auto !important;
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 
 h2 {
@@ -53,6 +53,15 @@ h2 {
   background: rgba(255, 255, 255, 0.5);
   color: #4F8EF7;
   box-shadow: 0 6px 20px 0 rgba(80, 100, 200, 0.15);
+}
+
+.hidden-by-opacity {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+.visible-by-opacity {
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 </style>
 

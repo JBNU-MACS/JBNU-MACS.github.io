@@ -1,6 +1,6 @@
 
 <div class="btn-row">
-<button
+  <button
     class="glass-toggle-btn"
     id="toggle-btn"
     onclick="
@@ -8,18 +8,17 @@
       var refOn = (this.textContent === 'ref');
       var pub = document.getElementById('publication-container');
       var pubs = document.getElementById('container-publications');
-      pub.style.setProperty('display', refOn ? 'block' : 'none', 'important');
-      pubs.style.setProperty('display', refOn ? 'none' : 'block', 'important');
-      pubs.style.setProperty('height', 'auto', 'important');
-      pubs.style.setProperty('overflow', 'visible', 'important');
-      pubs.style.height = 'auto';
-      pubs.style.overflow = 'visible';
-      setTimeout(function(){
-        pubs.style.setProperty('height', 'auto', 'important');
-        pubs.style.setProperty('overflow', 'visible', 'important');
-        pubs.style.height = 'auto';
-        pubs.style.overflow = 'visible';
-      }, 1000);
+      if(refOn){
+        pub.classList.add('visible-by-opacity');
+        pub.classList.remove('hidden-by-opacity');
+        pubs.classList.add('hidden-by-opacity');
+        pubs.classList.remove('visible-by-opacity');
+      }else{
+        pub.classList.add('hidden-by-opacity');
+        pub.classList.remove('visible-by-opacity');
+        pubs.classList.add('visible-by-opacity');
+        pubs.classList.remove('hidden-by-opacity');
+      }
     "
   >ref</button>
 

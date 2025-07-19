@@ -1,6 +1,9 @@
 ---
 title: Congratulations to Seo-Yeon Choi (Student Researcher, 학부연구생) on Two Papers Accepted to ICCV 2025 Workshops!
 date: 2025-07-19
+show_featured_image: false
+share: false
+showShare: false
 ---
 
 <br><br>
@@ -9,7 +12,7 @@ We are thrilled to announce that our undergraduate researcher, **Seo-Yeon Choi (
 
 Even more exciting, one paper was selected for an **oral presentation** and the other for a **poster presentation**. Having two papers accepted at such a prestigious venue as ICCV is a truly outstanding feat, especially for an undergraduate researcher. This is a testament to Seo-Yeon’s dedication, hard work, and innovative research.
 
-Congratulations once again, Seo-Yeon! We look forward to seeing both the oral and poster presentations at ICCV 2025!
+Congratulations once again, Seo-Yeon! We look forward to seeing both the oral and poster presentations at ICCV 2025 in Hawaii! 🌺🌴
 
 
 <br><br>
@@ -45,9 +48,21 @@ Recent advances in deep learning have improved diagnostic precision across medic
 
 ---
 
+<br><br>
+
 Once again, congratulations to Seo-Yeon Choi for this outstanding achievement. Let’s look forward to an inspiring and impactful presentation at ICCV 2025! 🚀🎉
+
+<br><br>
 
 ---
 
 
 <br><br>
+
+
+
+<style>
+.featured-image-wrapper {
+	display: none !important;
+}
+</style>

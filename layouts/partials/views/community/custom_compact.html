@@ -1,115 +1,116 @@
-{{/* 1. 안전하게 publication 데이터 소스 지정 */}}
 {{ $pubs := .Items }}
 {{ if not $pubs }}{{ $pubs = .Pages }}{{ end }}
 {{ if not $pubs }}{{ $pubs = .RegularPages }}{{ end }}
 
-{{/* 2. publication_types별로 필터링 */}}
-{{ $top := where $pubs "Params.publication_types" "intersect" (slice "paper-csai") }}
-{{ $journal := where $pubs "Params.publication_types" "intersect" (slice "article-journal") }}
-{{ $conf := where $pubs "Params.publication_types" "intersect" (slice "paper-conference") }}
+{{ if $pubs }}
+  {{ $top := where $pubs "Params.publication_types" "intersect" (slice "paper-csai") }}
+  {{ $journal := where $pubs "Params.publication_types" "intersect" (slice "article-journal") }}
+  {{ $conf := where $pubs "Params.publication_types" "intersect" (slice "paper-conference") }}
 
-{{/* 3. 카테고리별 conventional 리스트 출력 */}}
-{{ if gt (len $top) 0 }}
-  <h2>Top-AI/CS Conference</h2>
-  <ol>
-    {{ range $top }}
-      {{ $link := .RelPermalink }}
-      {{ $target := "" }}
-      {{ if .Params.external_link }}
-        {{ $link = .Params.external_link }}
-        {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-      {{ end }}
-      <li style="margin-bottom:1.2em; line-height:1.6;">
-        {{ with .Params.authors }}
-          {{ delimit . ", " }}.
+  {{ if gt (len $top) 0 }}
+    <h2>Top-AI/CS Conference</h2>
+    <ol>
+      {{ range $top }}
+        {{ $link := .RelPermalink }}
+        {{ $target := "" }}
+        {{ if .Params.external_link }}
+          {{ $link = .Params.external_link }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
-        <b>
-          {{ if $link }}
-            <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ .Title }}</a>
-          {{ else }}
-            {{ .Title }}
+        <li style="margin-bottom:1.2em; line-height:1.6;">
+          {{ with .Params.authors }}
+            {{ delimit . ", " }}.
           {{ end }}
-        </b>.
-        {{ with .Params.publication }}
-          <i>{{ . }}</i>,
-        {{ end }}
-        {{ with .Params.date }}
-          {{ (time .).Year }}.
-        {{ end }}
-        {{ with .Params.url_pdf }}
-          <a href="{{ . }}" target="_blank">[PDF]</a>
-        {{ end }}
-      </li>
-    {{ end }}
-  </ol>
-{{ end }}
+          <b>
+            {{ if $link }}
+              <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ .Title }}</a>
+            {{ else }}
+              {{ .Title }}
+            {{ end }}
+          </b>.
+          {{ with .Params.publication }}
+            <i>{{ . }}</i>,
+          {{ end }}
+          {{ with .Params.date }}
+            {{ (time .).Year }}.
+          {{ end }}
+          {{ with .Params.url_pdf }}
+            <a href="{{ . }}" target="_blank">[PDF]</a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ol>
+  {{ end }}
 
-{{ if gt (len $journal) 0 }}
-  <h2>Journal Proceeding</h2>
-  <ol>
-    {{ range $journal }}
-      {{ $link := .RelPermalink }}
-      {{ $target := "" }}
-      {{ if .Params.external_link }}
-        {{ $link = .Params.external_link }}
-        {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-      {{ end }}
-      <li style="margin-bottom:1.2em; line-height:1.6;">
-        {{ with .Params.authors }}
-          {{ delimit . ", " }}.
+  {{ if gt (len $journal) 0 }}
+    <h2>Journal Proceeding</h2>
+    <ol>
+      {{ range $journal }}
+        {{ $link := .RelPermalink }}
+        {{ $target := "" }}
+        {{ if .Params.external_link }}
+          {{ $link = .Params.external_link }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
-        <b>
-          {{ if $link }}
-            <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ .Title }}</a>
-          {{ else }}
-            {{ .Title }}
+        <li style="margin-bottom:1.2em; line-height:1.6;">
+          {{ with .Params.authors }}
+            {{ delimit . ", " }}.
           {{ end }}
-        </b>.
-        {{ with .Params.publication }}
-          <i>{{ . }}</i>,
-        {{ end }}
-        {{ with .Params.date }}
-          {{ (time .).Year }}.
-        {{ end }}
-        {{ with .Params.url_pdf }}
-          <a href="{{ . }}" target="_blank">[PDF]</a>
-        {{ end }}
-      </li>
-    {{ end }}
-  </ol>
-{{ end }}
+          <b>
+            {{ if $link }}
+              <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ .Title }}</a>
+            {{ else }}
+              {{ .Title }}
+            {{ end }}
+          </b>.
+          {{ with .Params.publication }}
+            <i>{{ . }}</i>,
+          {{ end }}
+          {{ with .Params.date }}
+            {{ (time .).Year }}.
+          {{ end }}
+          {{ with .Params.url_pdf }}
+            <a href="{{ . }}" target="_blank">[PDF]</a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ol>
+  {{ end }}
 
-{{ if gt (len $conf) 0 }}
-  <h2>Conference Proceeding</h2>
-  <ol>
-    {{ range $conf }}
-      {{ $link := .RelPermalink }}
-      {{ $target := "" }}
-      {{ if .Params.external_link }}
-        {{ $link = .Params.external_link }}
-        {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-      {{ end }}
-      <li style="margin-bottom:1.2em; line-height:1.6;">
-        {{ with .Params.authors }}
-          {{ delimit . ", " }}.
+  {{ if gt (len $conf) 0 }}
+    <h2>Conference Proceeding</h2>
+    <ol>
+      {{ range $conf }}
+        {{ $link := .RelPermalink }}
+        {{ $target := "" }}
+        {{ if .Params.external_link }}
+          {{ $link = .Params.external_link }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
-        <b>
-          {{ if $link }}
-            <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ .Title }}</a>
-          {{ else }}
-            {{ .Title }}
+        <li style="margin-bottom:1.2em; line-height:1.6;">
+          {{ with .Params.authors }}
+            {{ delimit . ", " }}.
           {{ end }}
-        </b>.
-        {{ with .Params.publication }}
-          <i>{{ . }}</i>,
-        {{ end }}
-        {{ with .Params.date }}
-          {{ (time .).Year }}.
-        {{ end }}
-        {{ with .Params.url_pdf }}
-          <a href="{{ . }}" target="_blank">[PDF]</a>
-        {{ end }}
-      </li>
-    {{ end }}
-  </ol>
+          <b>
+            {{ if $link }}
+              <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ .Title }}</a>
+            {{ else }}
+              {{ .Title }}
+            {{ end }}
+          </b>.
+          {{ with .Params.publication }}
+            <i>{{ . }}</i>,
+          {{ end }}
+          {{ with .Params.date }}
+            {{ (time .).Year }}.
+          {{ end }}
+          {{ with .Params.url_pdf }}
+            <a href="{{ . }}" target="_blank">[PDF]</a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ol>
+  {{ end }}
+{{ else }}
+  <p>No publications found.</p>
 {{ end }}

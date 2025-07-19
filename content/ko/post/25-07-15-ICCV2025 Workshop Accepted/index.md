@@ -1,7 +1,6 @@
 ---
 title: Congratulations to Seo-Yeon Choi (Student Researcher, 학부연구생) on Two Papers Accepted to ICCV 2025 Workshops!
 date: 2025-07-19
-show_featured_image: false
 share: false
 showShare: false
 ---
@@ -59,10 +58,3 @@ Once again, congratulations to Seo-Yeon Choi for this outstanding achievement. L
 
 <br><br>
 
-
-
-<style>
-.featured-image-wrapper {
-	display: none !important;
-}
-</style>

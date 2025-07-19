@@ -26,7 +26,7 @@ h2 {
 }
 
 .article-banner {
-  height: 200px;
+  height: 150px;
 }
 
 .btn-row {

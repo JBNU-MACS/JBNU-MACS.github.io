@@ -1,101 +1,120 @@
-<h2>Top-AI/CS Conference</h2>
-<ol>
-{{ range where .Items "Params.publication_types" "intersect" (slice "paper-csai") }}
-  {{ $item := . }}
-  {{ $link := $item.RelPermalink }}
-  {{ $target := "" }}
-  {{ if $item.Params.external_link }}
-    {{ $link = $item.Params.external_link }}
-    {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-  {{ end }}
-  <li style="margin-bottom:1.2em; line-height:1.6;">
-    {{ with $item.Params.authors }}
-      {{ delimit . ", " }}.
-    {{ end }}
-    <b>
-      {{ if $link }}
-        <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
-      {{ else }}
-        {{ $item.Title }}
-      {{ end }}
-    </b>.
-    {{ with $item.Params.publication }}
-      <i>{{ . }}</i>,
-    {{ end }}
-    {{ with $item.Params.date }}
-      {{ (time .).Year }}.
-    {{ end }}
-    {{ with $item.Params.url_pdf }}
-      <a href="{{ . }}" target="_blank">[PDF]</a>
-    {{ end }}
-  </li>
-{{ end }}
-</ol>
+{{/* 안전하게 Items, Pages, RegularPages 중 사용 가능한 변수 선택 */}}
+{{ $pubs := .Items }}
+{{ if not $pubs }}{{ $pubs = .Pages }}{{ end }}
+{{ if not $pubs }}{{ $pubs = .RegularPages }}{{ end }}
 
-<h2>Journal Proceeding</h2>
-<ol>
-{{ range where .Items "Params.publication_types" "intersect" (slice "article-journal") }}
-  {{ $item := . }}
-  {{ $link := $item.RelPermalink }}
-  {{ $target := "" }}
-  {{ if $item.Params.external_link }}
-    {{ $link = $item.Params.external_link }}
-    {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-  {{ end }}
-  <li style="margin-bottom:1.2em; line-height:1.6;">
-    {{ with $item.Params.authors }}
-      {{ delimit . ", " }}.
-    {{ end }}
-    <b>
-      {{ if $link }}
-        <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
-      {{ else }}
-        {{ $item.Title }}
+{{ with $pubs }}
+  {{/* Top-AI/CS Conference Section */}}
+  {{ $top := where . "Params.publication_types" "intersect" (slice "paper-csai") }}
+  {{ if gt (len $top) 0 }}
+    <h2>Top-AI/CS Conference</h2>
+    <ol>
+      {{ range $top }}
+        {{ $item := . }}
+        {{ $link := $item.RelPermalink }}
+        {{ $target := "" }}
+        {{ if $item.Params.external_link }}
+          {{ $link = $item.Params.external_link }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <li style="margin-bottom:1.2em; line-height:1.6;">
+          {{ with $item.Params.authors }}
+            {{ delimit . ", " }}.
+          {{ end }}
+          <b>
+            {{ if $link }}
+              <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
+            {{ else }}
+              {{ $item.Title }}
+            {{ end }}
+          </b>.
+          {{ with $item.Params.publication }}
+            <i>{{ . }}</i>,
+          {{ end }}
+          {{ with $item.Params.date }}
+            {{ (time .).Year }}.
+          {{ end }}
+          {{ with $item.Params.url_pdf }}
+            <a href="{{ . }}" target="_blank">[PDF]</a>
+          {{ end }}
+        </li>
       {{ end }}
-    </b>.
-    {{ with $item.Params.publication }}
-      <i>{{ . }}</i>,
-    {{ end }}
-    {{ with $item.Params.date }}
-      {{ (time .).Year }}.
-    {{ end }}
-    {{ with $item.Params.url_pdf }}
-      <a href="{{ . }}" target="_blank">[PDF]</a>
-    {{ end }}
-  </li>
-{{ end }}
-</ol>
+    </ol>
+  {{ end }}
 
-<h2>Conference Proceeding</h2>
-<ol>
-{{ range where .Items "Params.publication_types" "intersect" (slice "paper-conference") }}
-  {{ $item := . }}
-  {{ $link := $item.RelPermalink }}
-  {{ $target := "" }}
-  {{ if $item.Params.external_link }}
-    {{ $link = $item.Params.external_link }}
-    {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-  {{ end }}
-  <li style="margin-bottom:1.2em; line-height:1.6;">
-    {{ with $item.Params.authors }}
-      {{ delimit . ", " }}.
-    {{ end }}
-    <b>
-      {{ if $link }}
-        <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
-      {{ else }}
-        {{ $item.Title }}
+  {{/* Journal Proceeding Section */}}
+  {{ $journal := where . "Params.publication_types" "intersect" (slice "article-journal") }}
+  {{ if gt (len $journal) 0 }}
+    <h2>Journal Proceeding</h2>
+    <ol>
+      {{ range $journal }}
+        {{ $item := . }}
+        {{ $link := $item.RelPermalink }}
+        {{ $target := "" }}
+        {{ if $item.Params.external_link }}
+          {{ $link = $item.Params.external_link }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <li style="margin-bottom:1.2em; line-height:1.6;">
+          {{ with $item.Params.authors }}
+            {{ delimit . ", " }}.
+          {{ end }}
+          <b>
+            {{ if $link }}
+              <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
+            {{ else }}
+              {{ $item.Title }}
+            {{ end }}
+          </b>.
+          {{ with $item.Params.publication }}
+            <i>{{ . }}</i>,
+          {{ end }}
+          {{ with $item.Params.date }}
+            {{ (time .).Year }}.
+          {{ end }}
+          {{ with $item.Params.url_pdf }}
+            <a href="{{ . }}" target="_blank">[PDF]</a>
+          {{ end }}
+        </li>
       {{ end }}
-    </b>.
-    {{ with $item.Params.publication }}
-      <i>{{ . }}</i>,
-    {{ end }}
-    {{ with $item.Params.date }}
-      {{ (time .).Year }}.
-    {{ end }}
-    {{ with $item.Params.url_pdf }}
-      <a href="{{ . }}" target="_blank">[PDF]</a>
-    {{ end }}
-  </li>
+    </ol>
+  {{ end }}
+
+  {{/* Conference Proceeding Section */}}
+  {{ $conf := where . "Params.publication_types" "intersect" (slice "paper-conference") }}
+  {{ if gt (len $conf) 0 }}
+    <h2>Conference Proceeding</h2>
+    <ol>
+      {{ range $conf }}
+        {{ $item := . }}
+        {{ $link := $item.RelPermalink }}
+        {{ $target := "" }}
+        {{ if $item.Params.external_link }}
+          {{ $link = $item.Params.external_link }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <li style="margin-bottom:1.2em; line-height:1.6;">
+          {{ with $item.Params.authors }}
+            {{ delimit . ", " }}.
+          {{ end }}
+          <b>
+            {{ if $link }}
+              <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
+            {{ else }}
+              {{ $item.Title }}
+            {{ end }}
+          </b>.
+          {{ with $item.Params.publication }}
+            <i>{{ . }}</i>,
+          {{ end }}
+          {{ with $item.Params.date }}
+            {{ (time .).Year }}.
+          {{ end }}
+          {{ with $item.Params.url_pdf }}
+            <a href="{{ . }}" target="_blank">[PDF]</a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ol>
+  {{ end }}
 {{ end }}
-</ol>

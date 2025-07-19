@@ -6,7 +6,7 @@ title: 'Wide-field 3D Ultrasound Imaging Platform with a Semi-Automatic 3D Segme
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 이문환
-  - 김준영
+  - Jun-Young Kim
   - 이경수
   - 최창혁
   - 황재윤

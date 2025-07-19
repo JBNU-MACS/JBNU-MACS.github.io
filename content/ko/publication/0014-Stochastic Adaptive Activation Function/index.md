@@ -7,7 +7,7 @@ title: 'Stochastic Adaptive Activation Function'
 authors:
   - 이경수
   - 양재승
-  - 이해윤
+  - Haeyun Lee
   - 황재윤
 
 # Author notes (optional)

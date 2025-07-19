@@ -6,7 +6,7 @@ title: 'Imbalanced Loss-Integrated Deep-Learning-based Ultrasound Image Analysis
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 이경수
-  - 김준영
+  - Jun-Young Kim
   - 이문환
   - 최창혁
   - 황재윤

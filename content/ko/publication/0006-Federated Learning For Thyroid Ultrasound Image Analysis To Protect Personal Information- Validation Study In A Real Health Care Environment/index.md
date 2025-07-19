@@ -5,7 +5,7 @@ title: 'Federated Learning for Thyroid Ultrasound Image Analysis to Protect Pers
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - 이해윤
+  - Haeyun Lee
   - 채영준
   - 주현진
   - 이경수

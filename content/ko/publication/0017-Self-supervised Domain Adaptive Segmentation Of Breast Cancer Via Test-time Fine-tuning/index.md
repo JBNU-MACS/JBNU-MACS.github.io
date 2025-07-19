@@ -6,7 +6,7 @@ title: 'Self-supervised Domain Adaptive Segmentation of Breast Cancer Via Test-t
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 이경수
-  - 이해윤
+  - Haeyun Lee
   - Georges El Fakhri
   - Jonghye Woo
   - 황재윤

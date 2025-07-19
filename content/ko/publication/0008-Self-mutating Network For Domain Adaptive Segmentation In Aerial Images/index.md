@@ -6,7 +6,7 @@ title: 'Self-Mutating Network for Domain Adaptive Segmentation in Aerial Images'
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 이경수
-  - 이해윤
+  - Haeyun Lee
   - 황재윤
 
 # Author notes (optional)

@@ -8,7 +8,7 @@ authors:
   - 이경수
   - 류하민
   - 이문환
-  - 김준영
+  - Jun-Young Kim
   - 황재윤
 
 # Author notes (optional)

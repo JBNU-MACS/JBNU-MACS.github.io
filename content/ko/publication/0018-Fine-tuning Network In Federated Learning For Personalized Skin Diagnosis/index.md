@@ -6,7 +6,7 @@ title: 'Fine-Tuning Network in Federated Learning for Personalized Skin Diagnosi
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - 이경수
-  - 이해윤
+  - Haeyun Lee
   - Thiago Coutinho Cavalcanti
   - 김세웅
   - Georges El Fakhri

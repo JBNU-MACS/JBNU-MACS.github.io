@@ -9,7 +9,7 @@ authors:
   - 양재승
   - 이문환
   - 장진호
-  - 김준영
+  - Jun-Young Kim
   - 황재윤
 
 # Author notes (optional)

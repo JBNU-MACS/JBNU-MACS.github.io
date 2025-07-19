@@ -7,7 +7,7 @@ title: 'Boundary-oriented Binary Building Segmentation Model with Two Scheme Lea
 authors:
   - 이경수
   - 김준희
-  - 이해윤
+  - Haeyun Lee
   - 박주흠
   - 최지환
   - 황재윤

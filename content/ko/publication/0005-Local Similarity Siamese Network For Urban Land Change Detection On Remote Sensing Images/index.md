@@ -5,7 +5,7 @@ title: 'Local Similarity Siamese Network for Urban Land Change Detection on Remo
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - 이해윤
+  - Haeyun Lee
   - 이경수
   - 김준희
   - 나영환

@@ -7,7 +7,7 @@ title: 'SoN: Selective Optimal Network for Smartphone-based Indoor Localization 
 authors:
   - 이경수
   - Haeyun Lee
-  - 황재윤
+  - Jae Youn Hwang
 
 # Author notes (optional)
 author_notes:

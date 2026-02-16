@@ -1,258 +1,354 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var pubs = document.getElementById('container-publications');
+    if (pubs) {
+      pubs.style.height = '0';
+      pubs.style.display = 'none';
+    }
+  });
+</script>
+
+<div class="btn-row">
+  <button
+    class="glass-toggle-btn"
+    id="toggle-btn"
+    onclick="
+      this.textContent = (this.textContent === 'ref') ? 'showcase' : 'ref';
+      var refOn = (this.textContent === 'ref');
+      var pub = document.getElementById('publication-container');
+      var pubs = document.getElementById('container-publications');
+      var footer = document.querySelector('.page-footer');
+      if(refOn){
+        pub.classList.add('visible-by-opacity');
+        pub.classList.remove('hidden-by-opacity');
+        pubs.classList.add('hidden-by-opacity');
+        pubs.classList.remove('visible-by-opacity');
+        if (footer) footer.style.display = '';
+      }else{
+        pub.classList.add('hidden-by-opacity');
+        pub.classList.remove('visible-by-opacity');
+        pubs.classList.add('visible-by-opacity');
+        pubs.classList.remove('hidden-by-opacity');
+        if (footer) footer.style.display = 'none';
+      }
+    "
+  >ref</button>
+</div>
+
+<hr>
+
 <style>
-  .pub-grid{
+  .pub-wrap{ width:100%; }
+  .pub-head{
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.2rem;
+    grid-template-columns: 100px 1fr 1fr;
+    column-gap: 2.2rem;
+    align-items:end;
+    padding: 0.4rem 0 1rem;
+  }
+  .pub-head .col-title{
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-align:center;
+  }
+  .pub-row{
+    display:grid;
+    grid-template-columns: 100px 1fr 1fr;
+    column-gap: 2.2rem;
     align-items:start;
+    padding: 1.1rem 0;
   }
-  @media (max-width: 900px){
-    .pub-grid{ grid-template-columns: 1fr; }
-  }
-  .pub-col h2{ margin: 0.2rem 0 1rem; }
   .pub-year{
-    margin: 1.2rem 0 0.6rem;
-    padding-top: 0.8rem;
-    border-top: 1px solid rgba(0,0,0,0.12);
-    font-size: 1.05rem;
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 1;
+    padding-top: 0.2rem;
   }
   .pub-list{
-    margin-bottom: 1.8rem;
-    list-style:none;
-    padding-left:0;
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+  }
+  .pub-item{
+    margin-bottom: 1.2em;
+    line-height: 1.6;
+    font-size: 0.82rem;
+    padding: 10px;
+  }
+  .pub-sep{
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.15);
+    margin: 1.1rem 0;
+  }
+  @media (max-width: 900px){
+    .pub-head{ display:none; }
+    .pub-row{
+      grid-template-columns: 1fr;
+      row-gap: 0.8rem;
+    }
+    .pub-year{ font-size: 1.5rem; }
   }
 </style>
 
-<div id="publication-container">
+<div id="publication-container" class="pub-wrap">
 
-  {{/* 왼쪽(Conference) + 오른쪽(Journal)로 2컬럼 */}}
-  <div class="pub-grid">
+  {{/* ===== 타입 정의: 왼쪽(Conference) / 오른쪽(Journal) ===== */}}
+  {{ $leftTypes := slice "paper-csai" "paper-conference" }}
+  {{ $rightTypes := slice "article-journal" }}
 
-    {{/* ========== LEFT: CS/AI Conference ========== */}}
-    <div class="pub-col">
-      <h2>CS/AI Conference</h2>
+  {{/* ===== 전체 publication 페이지 ===== */}}
+  {{ $allItems := where site.RegularPages "Section" "publication" }}
+  {{ $allItems = $allItems.ByDate.Reverse }}
 
-      {{/* left에 포함할 publication_types */}}
-      {{ $leftTypes := slice "paper-csai" "paper-conference" }}
-
-      {{/* left 아이템 전체 모으기 */}}
-      {{ $leftItems := where (where site.RegularPages "Section" "publication") "Params.publication_types" "intersect" $leftTypes }}
-      {{ $leftItems = $leftItems.ByDate.Reverse }}
-
-      {{/* 연도별 그룹 (Key=YYYY) */}}
-      {{ range $group := $leftItems.GroupByDate "2006" }}
-        <h3 class="pub-year">{{ $group.Key }}</h3>
-
-        <ol class="pub-list">
-          {{ range $itemIndex, $item := $group.Pages }}
-
-            <li style="margin-bottom:1.2em; line-height:1.6; font-size:0.82rem; padding:10px;">
-              {{/* ===== 별표/번호 로직 (기존 유지) ===== */}}
-              {{ $showAsterisk := false }}
-              {{ with $item.Params.authors }}
-                {{ if gt (len .) 0 }}
-                  {{ if eq (index . 0) "Kyungsu Lee" }}
-                    {{ $showAsterisk = true }}
-                  {{ end }}
-                  {{ range $idx, $auth := . }}
-                    {{ if eq $auth "Kyungsu Lee" }}
-                      {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
-                        {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
-                          {{ $showAsterisk = true }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
-              {{ end }}
-
-              {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
-              {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
-              {{ end }}
-
-              {{ with $item.Params.authors }}
-                {{ $totalAuthors := len . }}
-                {{ range $index, $author := . }}
-                  {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
-
-                  {{ $displayedAuthor := $author }}
-                  {{ if eq $author "Kyungsu Lee" }}
-                    {{ $displayedAuthor = printf "<b>%s</b>" $author }}
-                  {{ end }}
-
-                  {{ if $author_profile }}
-                    <a href="{{ $author_profile.Permalink }}" style="color:black;">{{ $displayedAuthor | safeHTML }}</a>
-                  {{ else }}
-                    {{ $displayedAuthor | safeHTML }}
-                  {{ end }}
-
-                  {{ if and ($item.Params.author_notes) (lt $index (len $item.Params.author_notes)) }}
-                    {{ if eq (index $item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
-                    {{ if eq (index $item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
-                  {{ end }}
-
-                  {{ if ne $index (sub $totalAuthors 1) }}
-                    {{ if eq (add $index 1) (sub $totalAuthors 1) }}
-                      , and&nbsp;
-                    {{ else }}
-                      ,&nbsp;
-                    {{ end }}
-                  {{ end }}
-                {{ end }}.
-              {{ end }}
-
-              <b>
-                {{ $link := $item.RelPermalink }}
-                {{ $target := "" }}
-                {{ if $item.Params.external_link }}
-                  {{ $link = $item.Params.external_link }}
-                  {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-                {{ end }}
-
-                {{ if $link }}
-                  <a href="{{ $link }}" {{ $target | safeHTMLAttr }} style="color:black;">"{{ $item.Title }}"</a>
-                {{ else }}
-                  "{{ $item.Title }}"
-                {{ end }}
-              </b>
-
-              {{/* ===== Conference 출력 형식 (기존 else 블록과 유사) ===== */}}
-              , {{ with $item.Params.publication }}
-                <i>{{ . }}</i>,
-              {{ end }}
-              {{ with $item.Params.date }}
-                ({{ (time .).Year }})
-              {{ end }}
-              .
-              {{ if $item.Params.url_pdf }}
-                <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
-              {{ end }}
-            </li>
-
-          {{ end }}
-        </ol>
-      {{ end }}
-    </div>
-
-    {{/* ========== RIGHT: Journal ========== */}}
-    <div class="pub-col">
-      <h2>Journal</h2>
-
-      {{ $rightTypes := slice "article-journal" }}
-      {{ $rightItems := where (where site.RegularPages "Section" "publication") "Params.publication_types" "intersect" $rightTypes }}
-      {{ $rightItems = $rightItems.ByDate.Reverse }}
-
-      {{ range $group := $rightItems.GroupByDate "2006" }}
-        <h3 class="pub-year">{{ $group.Key }}</h3>
-
-        <ol class="pub-list">
-          {{ range $itemIndex, $item := $group.Pages }}
-            <li style="margin-bottom:1.2em; line-height:1.6; font-size:0.82rem; padding:10px;">
-              {{/* ===== 별표/번호 로직 동일 ===== */}}
-              {{ $showAsterisk := false }}
-              {{ with $item.Params.authors }}
-                {{ if gt (len .) 0 }}
-                  {{ if eq (index . 0) "Kyungsu Lee" }}
-                    {{ $showAsterisk = true }}
-                  {{ end }}
-                  {{ range $idx, $auth := . }}
-                    {{ if eq $auth "Kyungsu Lee" }}
-                      {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
-                        {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
-                          {{ $showAsterisk = true }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
-              {{ end }}
-
-              {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
-              {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
-              {{ end }}
-
-              {{ with $item.Params.authors }}
-                {{ $totalAuthors := len . }}
-                {{ range $index, $author := . }}
-                  {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
-
-                  {{ $displayedAuthor := $author }}
-                  {{ if eq $author "Kyungsu Lee" }}
-                    {{ $displayedAuthor = printf "<b>%s</b>" $author }}
-                  {{ end }}
-
-                  {{ if $author_profile }}
-                    <a href="{{ $author_profile.Permalink }}" style="color:black;">{{ $displayedAuthor | safeHTML }}</a>
-                  {{ else }}
-                    {{ $displayedAuthor | safeHTML }}
-                  {{ end }}
-
-                  {{ if and ($item.Params.author_notes) (lt $index (len $item.Params.author_notes)) }}
-                    {{ if eq (index $item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
-                    {{ if eq (index $item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
-                  {{ end }}
-
-                  {{ if ne $index (sub $totalAuthors 1) }}
-                    {{ if eq (add $index 1) (sub $totalAuthors 1) }}
-                      , and&nbsp;
-                    {{ else }}
-                      ,&nbsp;
-                    {{ end }}
-                  {{ end }}
-                {{ end }}.
-              {{ end }}
-
-              <b>
-                {{ $link := $item.RelPermalink }}
-                {{ $target := "" }}
-                {{ if $item.Params.external_link }}
-                  {{ $link = $item.Params.external_link }}
-                  {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-                {{ end }}
-
-                {{ if $link }}
-                  <a href="{{ $link }}" {{ $target | safeHTMLAttr }} style="color:black;">"{{ $item.Title }}"</a>
-                {{ else }}
-                  "{{ $item.Title }}"
-                {{ end }}
-              </b>
-
-              {{/* ===== Journal 출력 형식 (기존 article-journal 블록 그대로) ===== */}}
-              , {{ with $item.Params.publication }}
-                <i>{{ . }}</i>,
-              {{ end }}
-              {{ with $item.Params.publication_short }}
-                {{ . }},
-              {{ end }}
-              {{ with $item.Params.date }}
-                {{ (time .).Year }}
-              {{ end }}
-
-              {{ $journalInfo := "" }}
-              {{ if $item.Params.journal_type }}
-                {{ $journalInfo = printf "%s" $item.Params.journal_type }}
-              {{ end }}
-              {{ if $item.Params.impact_factor }}
-                {{ if $journalInfo }}{{ $journalInfo = printf "%s; IF=%s" $journalInfo $item.Params.impact_factor }}{{ else }}{{ $journalInfo = printf "IF=%s" $item.Params.impact_factor }}{{ end }}
-              {{ end }}
-              {{ if $item.Params.jcr_rank }}
-                {{ if $journalInfo }}{{ $journalInfo = printf "%s, %s" $journalInfo $item.Params.jcr_rank }}{{ else }}{{ $journalInfo = printf "%s" $journalInfo }}{{ end }}
-              {{ end }}
-              {{ if $item.Params.jcr_percentile }}
-                {{ if $journalInfo }}{{ $journalInfo = printf "%s (%s)" $journalInfo $item.Params.jcr_percentile }}{{ else }}{{ $journalInfo = printf "(%s)" $journalInfo }}{{ end }}
-              {{ end }}
-              {{ if $journalInfo }}
-                <br>[{{ $journalInfo }}]
-              {{ end }}
-
-              .
-              {{ if $item.Params.url_pdf }}
-                <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
-              {{ end }}
-            </li>
-          {{ end }}
-        </ol>
-      {{ end }}
-    </div>
-
+  {{/* ===== 헤더(연도 + 2컬럼 타이틀) ===== */}}
+  <div class="pub-head">
+    <div></div>
+    <div class="col-title">Top Conference</div>
+    <div class="col-title">Journal</div>
   </div>
+
+  {{/* ===== 연도 기준으로 “한 번만” 그룹핑 ===== */}}
+  {{ range $group := $allItems.GroupByDate "2006" }}
+    {{ $yearPages := $group.Pages }}
+
+    {{ $leftItems := where $yearPages "Params.publication_types" "intersect" $leftTypes }}
+    {{ $rightItems := where $yearPages "Params.publication_types" "intersect" $rightTypes }}
+
+    {{/* 연도에 양쪽 다 아무것도 없으면 스킵 */}}
+    {{ if or (gt (len $leftItems) 0) (gt (len $rightItems) 0) }}
+
+      <div class="pub-row">
+        <div class="pub-year">{{ $group.Key }}</div>
+
+        {{/* ========== LEFT: Conference (paper-csai + paper-conference) ========== */}}
+        <div>
+          <ol class="pub-list">
+            {{ range $itemIndex, $item := $leftItems }}
+              <li class="pub-item">
+
+                {{/* ===== 별표/번호 로직 ===== */}}
+                {{ $showAsterisk := false }}
+                {{ with $item.Params.authors }}
+                  {{ if gt (len .) 0 }}
+                    {{ if eq (index . 0) "Kyungsu Lee" }}
+                      {{ $showAsterisk = true }}
+                    {{ end }}
+                    {{ range $idx, $auth := . }}
+                      {{ if eq $auth "Kyungsu Lee" }}
+                        {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
+                          {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
+                            {{ $showAsterisk = true }}
+                          {{ end }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+
+                {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
+                {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
+                {{ end }}
+
+                {{/* ===== 저자 출력 ===== */}}
+                {{ with $item.Params.authors }}
+                  {{ $totalAuthors := len . }}
+                  {{ range $index, $author := . }}
+                    {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
+
+                    {{ $displayedAuthor := $author }}
+                    {{ if eq $author "Kyungsu Lee" }}
+                      {{ $displayedAuthor = printf "<b>%s</b>" $author }}
+                    {{ end }}
+
+                    {{ if $author_profile }}
+                      <a href="{{ $author_profile.Permalink }}" style="color:black;">{{ $displayedAuthor | safeHTML }}</a>
+                    {{ else }}
+                      {{ $displayedAuthor | safeHTML }}
+                    {{ end }}
+
+                    {{ if and ($item.Params.author_notes) (lt $index (len $item.Params.author_notes)) }}
+                      {{ if eq (index $item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
+                      {{ if eq (index $item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
+                    {{ end }}
+
+                    {{ if ne $index (sub $totalAuthors 1) }}
+                      {{ if eq (add $index 1) (sub $totalAuthors 1) }}
+                        , and&nbsp;
+                      {{ else }}
+                        ,&nbsp;
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}.
+                {{ end }}
+
+                {{/* ===== 제목 링크 ===== */}}
+                <b>
+                  {{ $link := $item.RelPermalink }}
+                  {{ $target := "" }}
+                  {{ if $item.Params.external_link }}
+                    {{ $link = $item.Params.external_link }}
+                    {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+                  {{ end }}
+
+                  {{ if $link }}
+                    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} style="color:black;">"{{ $item.Title }}"</a>
+                  {{ else }}
+                    "{{ $item.Title }}"
+                  {{ end }}
+                </b>
+
+                {{/* ===== Conference 출력 형식: csai면 (short) 스타일, 아니면 기본 컨퍼런스 ===== */}}
+                {{ $isCsai := false }}
+                {{ if $item.Params.publication_types }}
+                  {{ if (in $item.Params.publication_types "paper-csai") }}
+                    {{ $isCsai = true }}
+                  {{ end }}
+                {{ end }}
+
+                {{ if $isCsai }}
+                  , {{ with $item.Params.publication }}
+                    <i>{{ . }}</i>
+                    {{ if $item.Params.publication_short }}
+                      ({{ $item.Params.publication_short }})
+                    {{ end }}
+                  {{ end }}
+                {{ else }}
+                  , {{ with $item.Params.publication }}
+                    <i>{{ . }}</i>,
+                  {{ end }}
+                  {{ with $item.Params.date }}
+                    ({{ (time .).Year }})
+                  {{ end }}
+                {{ end }}
+
+                .
+                {{ if $item.Params.url_pdf }}
+                  <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
+                {{ end }}
+              </li>
+            {{ end }}
+          </ol>
+        </div>
+
+        {{/* ========== RIGHT: Journal (article-journal only) ========== */}}
+        <div>
+          <ol class="pub-list">
+            {{ range $itemIndex, $item := $rightItems }}
+              <li class="pub-item">
+
+                {{/* ===== 별표/번호 로직 ===== */}}
+                {{ $showAsterisk := false }}
+                {{ with $item.Params.authors }}
+                  {{ if gt (len .) 0 }}
+                    {{ if eq (index . 0) "Kyungsu Lee" }}
+                      {{ $showAsterisk = true }}
+                    {{ end }}
+                    {{ range $idx, $auth := . }}
+                      {{ if eq $auth "Kyungsu Lee" }}
+                        {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
+                          {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
+                            {{ $showAsterisk = true }}
+                          {{ end }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+
+                {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
+                {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
+                {{ end }}
+
+                {{/* ===== 저자 출력 ===== */}}
+                {{ with $item.Params.authors }}
+                  {{ $totalAuthors := len . }}
+                  {{ range $index, $author := . }}
+                    {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
+
+                    {{ $displayedAuthor := $author }}
+                    {{ if eq $author "Kyungsu Lee" }}
+                      {{ $displayedAuthor = printf "<b>%s</b>" $author }}
+                    {{ end }}
+
+                    {{ if $author_profile }}
+                      <a href="{{ $author_profile.Permalink }}" style="color:black;">{{ $displayedAuthor | safeHTML }}</a>
+                    {{ else }}
+                      {{ $displayedAuthor | safeHTML }}
+                    {{ end }}
+
+                    {{ if and ($item.Params.author_notes) (lt $index (len $item.Params.author_notes)) }}
+                      {{ if eq (index $item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
+                      {{ if eq (index $item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
+                    {{ end }}
+
+                    {{ if ne $index (sub $totalAuthors 1) }}
+                      {{ if eq (add $index 1) (sub $totalAuthors 1) }}
+                        , and&nbsp;
+                      {{ else }}
+                        ,&nbsp;
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}.
+                {{ end }}
+
+                {{/* ===== 제목 링크 ===== */}}
+                <b>
+                  {{ $link := $item.RelPermalink }}
+                  {{ $target := "" }}
+                  {{ if $item.Params.external_link }}
+                    {{ $link = $item.Params.external_link }}
+                    {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+                  {{ end }}
+
+                  {{ if $link }}
+                    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} style="color:black;">"{{ $item.Title }}"</a>
+                  {{ else }}
+                    "{{ $item.Title }}"
+                  {{ end }}
+                </b>
+
+                {{/* ===== Journal 출력 형식 (원래 article-journal 블록 유지) ===== */}}
+                , {{ with $item.Params.publication }}
+                  <i>{{ . }}</i>,
+                {{ end }}
+                {{ with $item.Params.publication_short }}
+                  {{ . }},
+                {{ end }}
+                {{ with $item.Params.date }}
+                  {{ (time .).Year }}
+                {{ end }}
+
+                {{ $journalInfo := "" }}
+                {{ if $item.Params.journal_type }}
+                  {{ $journalInfo = printf "%s" $item.Params.journal_type }}
+                {{ end }}
+                {{ if $item.Params.impact_factor }}
+                  {{ if $journalInfo }}{{ $journalInfo = printf "%s; IF=%s" $journalInfo $item.Params.impact_factor }}{{ else }}{{ $journalInfo = printf "IF=%s" $item.Params.impact_factor }}{{ end }}
+                {{ end }}
+                {{ if $item.Params.jcr_rank }}
+                  {{ if $journalInfo }}{{ $journalInfo = printf "%s, %s" $journalInfo $item.Params.jcr_rank }}{{ else }}{{ $journalInfo = printf "%s" $journalInfo }}{{ end }}
+                {{ end }}
+                {{ if $item.Params.jcr_percentile }}
+                  {{ if $journalInfo }}{{ $journalInfo = printf "%s (%s)" $journalInfo $item.Params.jcr_percentile }}{{ else }}{{ $journalInfo = printf "(%s)" $journalInfo }}{{ end }}
+                {{ end }}
+                {{ if $journalInfo }}
+                  <br>[{{ $journalInfo }}]
+                {{ end }}
+
+                .
+                {{ if $item.Params.url_pdf }}
+                  <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
+                {{ end }}
+              </li>
+            {{ end }}
+          </ol>
+        </div>
+
+      </div>
+
+      <hr class="pub-sep">
+
+    {{ end }}
+  {{ end }}
+
 </div>

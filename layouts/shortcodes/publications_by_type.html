@@ -130,20 +130,27 @@
                 {{ $showAsterisk := false }}
                 {{ with $item.Params.authors }}
                   {{ if gt (len .) 0 }}
+
+                    {{/* 1. 첫 저자인 경우 */}}
                     {{ if eq (index . 0) "Kyungsu Lee" }}
                       {{ $showAsterisk = true }}
                     {{ end }}
+
+                    {{/* 2. Equal contribution 또는 Corresponding author인 경우 */}}
                     {{ range $idx, $auth := . }}
                       {{ if eq $auth "Kyungsu Lee" }}
                         {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
-                          {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
+                          {{ $note := index $item.Params.author_notes $idx }}
+                          {{ if or (eq $note "Equal contribution") (eq $note "Corresponding author") }}
                             {{ $showAsterisk = true }}
                           {{ end }}
                         {{ end }}
                       {{ end }}
                     {{ end }}
+
                   {{ end }}
                 {{ end }}
+
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
                 {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;

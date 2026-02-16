@@ -29,7 +29,7 @@ publication_types:
 
 # Publication name and optional abbreviated publication name.
 publication: ACM CHI conference on Human Factors in Computing Systems
-publication_short: __CHI2026__
+publication_short: CHI2026
 
 abstract: Artificial intelligence (AI) supports radiology diagnosis, but differences in hospital equipment and protocols often undermine reliability and patient trust. We introduce a federated learning framework that incorporates personalization and frequency-based feature reconstruction to deliver consistent and interpretable diagnostic outcomes across institutions. Using Fast Fourier Transform (FFT) representations, our approach reduces equipment dependency while offering transparent explanations of diagnostic results. We conducted a multi-level user evaluation involving both clinicians and patients. Clinicians assessed diagnostic accuracy and workflow integration, while patients evaluated interpretability, trust, and reduction of anxiety. Results show that personalized federated learning enhances equity, reliability, and acceptance of AI-assisted diagnosis. This work presents a human-centered design framework that aligns algorithmic advances with the needs of patients and clinicians, moving beyond technical performance toward trustworthy and patient-centered medical AI.
 

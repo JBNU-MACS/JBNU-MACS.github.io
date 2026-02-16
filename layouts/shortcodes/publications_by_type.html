@@ -78,6 +78,12 @@
     font-size: 0.82rem;
     padding: 10px;
   }
+  
+.journal-meta{
+  align-self: flex-end;
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
   .pub-sep{
     border: none;
     border-top: 1px solid rgba(0,0,0,0.15);
@@ -346,8 +352,9 @@
                   {{ if $journalInfo }}{{ $journalInfo = printf "%s (%s)" $journalInfo $item.Params.jcr_percentile }}{{ else }}{{ $journalInfo = printf "(%s)" $journalInfo }}{{ end }}
                 {{ end }}
                 {{ if $journalInfo }}
-                  <br>[{{ $journalInfo }}]
+                  <span class="journal-meta">[{{ $journalInfo }}]</span>
                 {{ end }}
+
 
                 .
                 {{ if $item.Params.url_pdf }}

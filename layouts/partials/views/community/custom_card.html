@@ -35,7 +35,6 @@
   </a>
   {{ end }}
   <div class="card-text macslab-trend-card-text">
-    <div class="macslab-card-badge">{{ $card_badge }}</div>
 
     {{ if eq $card_section "publication" }}
     <div class="ieee-ref-block">
@@ -45,6 +44,9 @@
       "<a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a>,"
       {{ with $item.Params.publication }}
       <i>{{ . }}</i>
+      {{ with $item.Params.publication_short }}
+      (<span class="ieee-venue-short">{{ . }}</span>)
+      {{ end }}
       {{ end }}
       {{ with $item.Params.date }}, {{ (time .).Year }}{{ end }}.
       {{ if $item.Params.url_pdf }}

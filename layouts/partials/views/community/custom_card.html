@@ -19,18 +19,24 @@
 {{ end }}
 
 {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
+{{ $card_section := $item.Section | default "item" }}
+{{ $card_badge := "Item" }}
+{{ if eq $card_section "notification" }}{{ $card_badge = "Notification" }}{{ end }}
+{{ if eq $card_section "post" }}{{ $card_badge = "News" }}{{ end }}
+{{ if eq $card_section "publication" }}{{ $card_badge = "Publication" }}{{ end }}
 
-<div class="card macslab-trend-card">
+<div class="card macslab-trend-card card-section-{{ $card_section }}">
   {{ with $resource }}
   {{ $image := .Resize "550x" }}
   {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
   <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="card-image hover-overlay">
     <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
-         alt="{{ $item.Title }}" class="img-responsive" loading="lazy" style="margin-top: 15px;">
+         alt="{{ $item.Title }}" class="img-responsive" loading="lazy">
   </a>
   {{ end }}
   <div class="card-text macslab-trend-card-text">
-    <div class="section-subheading article-title mb-1 mt-3">
+    <div class="macslab-card-badge">{{ $card_badge }}</div>
+    <div class="section-subheading article-title mb-1">
         <h4><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a></h4>
     </div>
     

@@ -165,17 +165,39 @@ body.home .home-section .universal-wrapper {
   padding: 0.9rem 0.98rem 1rem;
 }
 
+.home-dual-feed .macslab-card-badge {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #425175;
+  background: #edf2ff;
+  border: 1px solid rgba(123, 141, 186, 0.35);
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .home-dual-feed .macslab-trend-card .article-title h4 {
   font-size: 0.95rem;
   line-height: 1.42;
   margin-bottom: 0.42rem;
   font-weight: 700;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .home-dual-feed .macslab-trend-card .article-style p {
   font-size: 0.84rem;
   line-height: 1.52;
   margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .home-dual-feed .macslab-trend-card .article-metadata {
@@ -183,7 +205,19 @@ body.home .home-section .universal-wrapper {
   margin-bottom: 0.42rem;
   opacity: 0.82;
   padding-bottom: 0.42rem;
-  border-bottom: 1px dashed rgba(142, 156, 189, 0.45);
+  border-bottom: 1px solid rgba(173, 186, 215, 0.45);
+}
+
+.home-dual-feed .macslab-trend-card.card-section-post .article-style p {
+  -webkit-line-clamp: 4;
+}
+
+.home-dual-feed .macslab-trend-card.card-section-publication .article-style p {
+  -webkit-line-clamp: 3;
+}
+
+.home-dual-feed .macslab-trend-card.card-section-notification .article-style p {
+  -webkit-line-clamp: 3;
 }
 
 @media (max-width: 1200px) {
@@ -228,6 +262,14 @@ body.home .home-section .universal-wrapper {
 
   .home-dual-feed .macslab-trend-card .card-image img {
     height: 132px;
+  }
+
+  .home-dual-feed .macslab-trend-card .article-title h4 {
+    font-size: 0.9rem;
+  }
+
+  .home-dual-feed .macslab-trend-card .article-style p {
+    font-size: 0.8rem;
   }
 }
 

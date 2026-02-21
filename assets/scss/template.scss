@@ -92,34 +92,40 @@ html[data-theme="dark"] .featurette-icon svg {
 }
 
 /* Home: unified two-column feed */
+body.home .home-section .container,
+body.home .home-section .universal-wrapper {
+  max-width: 1640px;
+  width: 96vw;
+}
+
 .home-dual-feed {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.1rem;
+  gap: 1.5rem;
   align-items: start;
   position: relative;
-  background: #f6f8fc;
-  border: 1px solid rgba(149, 157, 181, 0.24);
-  padding: 1rem;
-  border-radius: 22px;
+  background: #f3f6fb;
+  border: 1px solid rgba(132, 146, 178, 0.28);
+  padding: 1.35rem;
+  border-radius: 24px;
 }
 
 .home-dual-feed-col {
   min-width: 0;
-  padding: 0.9rem 0.9rem 1rem;
-  border-radius: 16px;
+  padding: 1rem 1rem 1.1rem;
+  border-radius: 18px;
   background: #ffffff;
-  border: 1px solid rgba(178, 186, 208, 0.45);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(160, 173, 203, 0.52);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
 }
 
 .home-dual-feed-title {
-  font-size: 0.98rem;
+  font-size: 0.92rem;
   font-weight: 800;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.85rem;
   letter-spacing: -0.01em;
   padding: 0 0 0.5rem;
-  border-bottom: 1px solid rgba(125, 141, 173, 0.25);
+  border-bottom: 1px solid rgba(125, 141, 173, 0.3);
   color: #1f2a44;
   text-transform: uppercase;
 }
@@ -127,69 +133,96 @@ html[data-theme="dark"] .featurette-icon svg {
 .home-dual-feed-list {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
 .home-dual-feed .macslab-trend-card {
   width: 100%;
   max-width: 760px;
   margin: 0 auto;
-  border: 1px solid rgba(182, 191, 214, 0.5);
+  border: 1px solid rgba(164, 177, 207, 0.55);
   border-radius: 14px;
   overflow: hidden;
   background: #ffffff;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 352px;
 }
 
 .home-dual-feed .macslab-trend-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(115, 131, 171, 0.58);
-  box-shadow: 0 10px 22px rgba(30, 41, 59, 0.1);
+  border-color: rgba(105, 124, 173, 0.68);
+  box-shadow: 0 14px 30px rgba(30, 41, 59, 0.12);
 }
 
 .home-dual-feed .macslab-trend-card .card-image img {
   margin-top: 0 !important;
   width: 100%;
-  height: 128px;
+  height: 138px;
   object-fit: cover;
 }
 
 .home-dual-feed .macslab-trend-card-text {
-  padding: 0.75rem 0.85rem 0.85rem;
+  padding: 0.82rem 0.92rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .home-dual-feed .macslab-trend-card .article-title h4 {
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   line-height: 1.38;
   margin-bottom: 0.3rem;
   font-weight: 700;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3.3em;
 }
 
 .home-dual-feed .macslab-trend-card .article-style p {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   line-height: 1.46;
   margin-bottom: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-height: 3.2em;
 }
 
 .home-dual-feed .macslab-trend-card .article-metadata {
-  font-size: 0.66rem;
-  margin-bottom: 0.3rem;
+  font-size: 0.64rem;
+  margin-bottom: 0.34rem;
   opacity: 0.78;
+  min-height: 1.1rem;
+}
+
+.home-dual-feed .macslab-trend-card .btn-links {
+  margin-top: auto;
 }
 
 @media (max-width: 1200px) {
+  body.home .home-section .container,
+  body.home .home-section .universal-wrapper {
+    width: 95vw;
+  }
+
   .home-dual-feed {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 1.15rem;
   }
 }
 
 @media (max-width: 767px) {
+  body.home .home-section .container,
+  body.home .home-section .universal-wrapper {
+    width: 94vw;
+  }
+
   .home-dual-feed {
     grid-template-columns: 1fr;
     gap: 0.9rem;
@@ -210,6 +243,7 @@ html[data-theme="dark"] .featurette-icon svg {
   .home-dual-feed .macslab-trend-card {
     width: 100%;
     border-radius: 12px;
+    min-height: 0;
   }
 
   .home-dual-feed .macslab-trend-card .card-image img {

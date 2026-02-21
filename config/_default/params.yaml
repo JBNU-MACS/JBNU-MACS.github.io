@@ -36,8 +36,8 @@ header:
     align: c
     show_logo: true
     show_language: false
-    show_day_night: true
-    show_search: true
+    show_day_night: false
+    show_search: false
     highlight_active_link: false
 
 # Site footer

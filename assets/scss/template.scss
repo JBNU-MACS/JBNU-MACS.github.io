@@ -104,14 +104,10 @@ body.home .home-section .universal-wrapper {
   gap: 0.85rem;
   align-items: start;
   position: relative;
-  background:
-    radial-gradient(1200px 400px at 8% 0%, rgba(142, 197, 252, 0.22), transparent 55%),
-    radial-gradient(1000px 360px at 92% 100%, rgba(224, 195, 252, 0.22), transparent 55%),
-    linear-gradient(135deg, #f8fbff 0%, #f4f7ff 100%);
-  border: 1px solid rgba(142, 158, 197, 0.24);
-  padding: 1.35rem;
+  padding: 0.45rem;
+  padding-top: 0.75rem;
   border-radius: 24px;
-  box-shadow: 0 16px 38px rgba(31, 45, 78, 0.08);
+  box-shadow: 0 16px 38px rgba(31, 45, 78, 0.045);
 }
 
 .home-dual-feed-col {

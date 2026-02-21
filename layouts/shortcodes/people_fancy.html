@@ -18,8 +18,8 @@
   <nav class="macs-people-tabs" aria-label="People categories">
     <button type="button" class="is-active" data-tab="all">All</button>
     <button type="button" data-tab="graduate">Graduate</button>
-    <button type="button" data-tab="parttime">Part-time</button>
     <button type="button" data-tab="undergrad">Undergraduate</button>
+    <button type="button" data-tab="parttime">Part-time</button>
     <button type="button" data-tab="alumni">Alumni</button>
   </nav>
 
@@ -51,14 +51,14 @@
     </div>
   </div>
 
-  <div class="macs-people-section" data-group="parttime">
+  <div class="macs-people-section" data-group="undergrad">
     <div class="macs-people-section-head">
-      <h2>Part-time Graduate (M.S. / Ph.D.)</h2>
-      <span>{{ len $parttime }}</span>
+      <h2>Undergraduate</h2>
+      <span>{{ len $undergrad }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ if eq (len $parttime) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
-      {{ range $parttime }}
+      {{ if eq (len $undergrad) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
+      {{ range $undergrad }}
         {{ $avatar := "" }}
         {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
         <article class="macs-people-card">
@@ -79,14 +79,14 @@
     </div>
   </div>
 
-  <div class="macs-people-section" data-group="undergrad">
+  <div class="macs-people-section" data-group="parttime">
     <div class="macs-people-section-head">
-      <h2>Undergraduate</h2>
-      <span>{{ len $undergrad }}</span>
+      <h2>Part-time Graduate (M.S. / Ph.D.)</h2>
+      <span>{{ len $parttime }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ if eq (len $undergrad) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
-      {{ range $undergrad }}
+      {{ if eq (len $parttime) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
+      {{ range $parttime }}
         {{ $avatar := "" }}
         {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
         <article class="macs-people-card">

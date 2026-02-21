@@ -2194,15 +2194,17 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-people-fancy-head h1 {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.48rem;
   letter-spacing: -0.02em;
-  color: #1c3158;
+  color: #102a52;
+  font-weight: 800;
 }
 
 .macs-people-fancy-head p {
   margin: 0;
-  font-size: 0.78rem;
-  color: #5d7094;
+  font-size: 0.8rem;
+  color: #425c86;
+  font-weight: 600;
 }
 
 .macs-people-tabs {
@@ -2214,11 +2216,11 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-people-tabs button {
   border: 1px solid #d6e0ef;
   background: #ffffff;
-  color: #30496f;
+  color: #28456f;
   border-radius: 999px;
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  padding: 0.24rem 0.56rem;
+  padding: 0.26rem 0.6rem;
   line-height: 1.2;
   transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
@@ -2235,6 +2237,20 @@ body.home .home-section:has(.home-dual-feed) {
   background: #fbfdff;
   border-radius: 14px;
   padding: 0.72rem 0.62rem 0.56rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.macs-people-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 72px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #3f78d8 0%, #64b1ff 100%);
+  opacity: 0.78;
 }
 
 .macs-people-section-head {
@@ -2246,9 +2262,10 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-people-section-head h2 {
   margin: 0;
-  font-size: 0.92rem;
-  color: #24395f;
+  font-size: 1.02rem;
+  color: #1a345f;
   letter-spacing: -0.01em;
+  font-weight: 800;
 }
 
 .macs-people-section-head span {
@@ -2261,8 +2278,8 @@ body.home .home-section:has(.home-dual-feed) {
   border-radius: 999px;
   border: 1px solid #d1deef;
   background: #f5f9ff;
-  color: #315380;
-  font-size: 0.66rem;
+  color: #1f497f;
+  font-size: 0.68rem;
   font-weight: 700;
 }
 
@@ -2292,12 +2309,13 @@ body.home .home-section:has(.home-dual-feed) {
   background: #ffffff;
   border-radius: 12px;
   padding: 0.46rem;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
 
 .macs-people-card-inner:hover {
   border-color: #c7d7ed;
   box-shadow: 0 8px 16px rgba(16, 35, 68, 0.08);
+  transform: translateY(-1px);
 }
 
 .macs-people-avatar {
@@ -2320,23 +2338,26 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-people-card h3 {
   margin: 0;
-  font-size: 0.88rem;
-  color: #243b64;
+  font-size: 0.96rem;
+  color: #132f5a;
   line-height: 1.25;
+  font-weight: 800;
 }
 
 .macs-people-card .role {
   margin: 0.18rem 0 0;
-  font-size: 0.68rem;
-  color: #4c6288;
+  font-size: 0.76rem;
+  color: #2f4f80;
   line-height: 1.34;
+  font-weight: 700;
 }
 
 .macs-people-card .org {
   margin: 0.1rem 0 0;
-  font-size: 0.62rem;
-  color: #6b7f9f;
-  line-height: 1.3;
+  font-size: 0.7rem;
+  color: #556d93;
+  line-height: 1.35;
+  font-weight: 600;
 }
 
 @media (max-width: 767px) {
@@ -2345,16 +2366,16 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-people-fancy-head h1 {
-    font-size: 1.12rem;
+    font-size: 1.18rem;
   }
 
   .macs-people-fancy-head p {
-    font-size: 0.66rem;
+    font-size: 0.68rem;
   }
 
   .macs-people-tabs button {
-    font-size: 0.61rem;
-    padding: 0.2rem 0.42rem;
+    font-size: 0.64rem;
+    padding: 0.22rem 0.45rem;
   }
 
   .macs-people-section {
@@ -2363,7 +2384,7 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-people-section-head h2 {
-    font-size: 0.79rem;
+    font-size: 0.84rem;
   }
 
   .macs-people-grid {
@@ -2385,14 +2406,14 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-people-card h3 {
-    font-size: 0.77rem;
+    font-size: 0.8rem;
   }
 
   .macs-people-card .role {
-    font-size: 0.62rem;
+    font-size: 0.66rem;
   }
 
   .macs-people-card .org {
-    font-size: 0.58rem;
+    font-size: 0.6rem;
   }
 }

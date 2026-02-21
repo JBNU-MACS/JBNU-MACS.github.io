@@ -122,7 +122,14 @@
       {{ if eq (len $alumni) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
       {{ range $alumni }}
         {{ $avatar := "" }}
+        {{ $gradym := "" }}
         {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+        {{ with .Params.graduation_year_month }}{{ $gradym = . }}{{ end }}
+        {{ if eq $gradym "" }}
+          {{ range .Params.organizations }}
+            {{ with .year }}{{ $gradym = . }}{{ end }}
+          {{ end }}
+        {{ end }}
         <article class="macs-people-card">
           <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
             {{ if $avatar }}
@@ -135,6 +142,9 @@
               <p class="role">{{ .Params.role }}</p>
               {{ with index .Params.organizations 0 }}
                 <p class="org">{{ .name }}</p>
+              {{ end }}
+              {{ if ne $gradym "" }}
+                <p class="grad">졸업: {{ $gradym }}</p>
               {{ end }}
             </div>
           </a>

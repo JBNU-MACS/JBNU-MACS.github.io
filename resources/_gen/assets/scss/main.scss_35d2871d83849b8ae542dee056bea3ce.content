@@ -466,7 +466,7 @@ pre {
 
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 0.96vw; } }
+    max-width: 0.96vw !important; } }
 
 .row {
   display: flex;

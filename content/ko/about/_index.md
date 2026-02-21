@@ -5,19 +5,7 @@ date: 2024-03-25
 type: landing
 
 sections:
- 
-
-  - block: markdown
-    content:
-      title:
-      subtitle:
-      text: |
-        {{< about_fancy >}}
-    design:
-      columns: '1'
-  
-
- - block: slider
+  - block: slider
     content:
       id: about-fancy-slider
       slides:
@@ -62,5 +50,14 @@ sections:
       is_fullscreen: false
       loop: true
       interval: 4200
+
+  - block: markdown
+    content:
+      title:
+      subtitle:
+      text: |
+        {{< about_fancy >}}
+    design:
+      columns: '1'
   
 ---

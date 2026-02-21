@@ -520,9 +520,10 @@ body.home .home-section.wg-slider {
 }
 
 body.home .wg-slider .carousel-item {
-  border-radius: 24px;
-  border: 1px solid rgba(160, 182, 224, 0.42);
-  box-shadow: 0 22px 48px rgba(17, 28, 58, 0.2);
+  border-radius: 28px;
+  border: 1px solid rgba(158, 183, 235, 0.35);
+  box-shadow: 0 30px 60px rgba(10, 21, 45, 0.34);
+  transform: translateZ(0);
 }
 
 body.home .wg-slider .carousel-item::before {
@@ -530,7 +531,8 @@ body.home .wg-slider .carousel-item::before {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(110deg, rgba(8, 16, 35, 0.62) 0%, rgba(8, 16, 35, 0.18) 48%, rgba(8, 16, 35, 0.68) 100%);
+    radial-gradient(700px 300px at 82% 16%, rgba(72, 136, 255, 0.26), transparent 58%),
+    linear-gradient(112deg, rgba(5, 12, 26, 0.76) 0%, rgba(6, 14, 31, 0.28) 48%, rgba(6, 14, 31, 0.8) 100%);
   z-index: 1;
 }
 
@@ -543,41 +545,50 @@ body.home .wg-slider .btn {
 }
 
 body.home .wg-slider .hero-title {
-  font-size: clamp(2rem, 2.8vw, 3.2rem);
+  font-size: clamp(2.4rem, 3.5vw, 4.2rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
-  text-shadow: 0 10px 30px rgba(7, 16, 36, 0.45);
+  letter-spacing: -0.035em;
+  text-shadow: 0 16px 42px rgba(4, 10, 25, 0.6);
+  max-width: 760px;
 }
 
 body.home .wg-slider .hero-lead {
-  font-size: clamp(1rem, 1.15vw, 1.3rem);
-  max-width: 760px;
+  font-size: clamp(1.05rem, 1.35vw, 1.55rem);
+  max-width: 840px;
   line-height: 1.5;
-  text-shadow: 0 8px 20px rgba(7, 16, 36, 0.38);
+  text-shadow: 0 10px 24px rgba(6, 14, 31, 0.5);
+  opacity: 0.98;
 }
 
 body.home .wg-slider .btn {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.16);
+  background: linear-gradient(135deg, rgba(88, 150, 255, 0.28) 0%, rgba(104, 210, 255, 0.24) 100%);
   color: #f7fbff !important;
-  padding: 0.62rem 1.25rem;
+  padding: 0.68rem 1.35rem;
   font-weight: 700;
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
+  box-shadow: 0 10px 26px rgba(34, 79, 170, 0.3);
 }
 
 body.home .wg-slider .btn:hover {
-  background: rgba(255, 255, 255, 0.24);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(19, 40, 92, 0.28);
+  background: linear-gradient(135deg, rgba(103, 164, 255, 0.38) 0%, rgba(119, 220, 255, 0.33) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(23, 56, 131, 0.35);
 }
 
 body.home .wg-slider .carousel-indicators li {
-  width: 26px;
-  height: 4px;
+  width: 34px;
+  height: 5px;
   border-radius: 999px;
-  opacity: 0.56;
+  opacity: 0.62;
+  margin: 0 4px;
+}
+
+body.home .wg-slider .carousel-indicators .active {
+  background: linear-gradient(90deg, #65b2ff 0%, #72e0ff 100%);
+  opacity: 1;
 }
 
 body.home .home-section.wg-featurette {
@@ -656,6 +667,14 @@ body.home .featurette p {
 @media (max-width: 767px) {
   body.home .wg-slider .carousel-item {
     border-radius: 14px;
+  }
+
+  body.home .wg-slider .hero-title {
+    font-size: 1.8rem;
+  }
+
+  body.home .wg-slider .hero-lead {
+    font-size: 0.9rem;
   }
 
   body.home .featurette {

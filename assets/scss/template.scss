@@ -15,7 +15,7 @@
 
 
 .home-section {
-  padding: 65px
+  padding: 65px 20px;
 }
 
 
@@ -53,7 +53,7 @@ html[data-theme="dark"] .featurette-icon svg {
 @media (max-width: 767px) {
 
   .home-section {
-    padding: 25px
+    padding: 25px 10px;
   }
 
   .featurette {
@@ -94,8 +94,8 @@ html[data-theme="dark"] .featurette-icon svg {
 /* Home: unified two-column feed */
 body.home .home-section .container,
 body.home .home-section .universal-wrapper {
-  max-width: 1640px;
-  width: 96vw;
+  max-width: 1900px;
+  width: 99vw;
 }
 
 .home-dual-feed {
@@ -189,7 +189,7 @@ body.home .home-section .universal-wrapper {
 @media (max-width: 1200px) {
   body.home .home-section .container,
   body.home .home-section .universal-wrapper {
-    width: 95vw;
+    width: 97vw;
   }
 
   .home-dual-feed {
@@ -201,7 +201,7 @@ body.home .home-section .universal-wrapper {
 @media (max-width: 767px) {
   body.home .home-section .container,
   body.home .home-section .universal-wrapper {
-    width: 94vw;
+    width: 96vw;
   }
 
   .home-dual-feed {

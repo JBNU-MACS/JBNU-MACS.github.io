@@ -91,12 +91,35 @@ html[data-theme="dark"] .featurette-icon svg {
   }
 }
 
-/* Home: Notifications & News / Latest Publications cards */
-#section-1 .macslab-trend-card,
-#section-2 .macslab-trend-card {
+/* Home: unified two-column feed */
+.home-dual-feed {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.home-dual-feed-col {
+  min-width: 0;
+}
+
+.home-dual-feed-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin: 0 0 0.9rem;
+  letter-spacing: -0.02em;
+}
+
+.home-dual-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.home-dual-feed .macslab-trend-card {
   width: 100%;
   max-width: 760px;
-  margin: 0 auto 1rem;
+  margin: 0 auto;
   border: 1px solid rgba(20, 33, 61, 0.08);
   border-radius: 18px;
   overflow: hidden;
@@ -105,35 +128,30 @@ html[data-theme="dark"] .featurette-icon svg {
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-#section-1 .macslab-trend-card:hover,
-#section-2 .macslab-trend-card:hover {
+.home-dual-feed .macslab-trend-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 34px rgba(11, 42, 99, 0.14);
 }
 
-#section-1 .macslab-trend-card .card-image img,
-#section-2 .macslab-trend-card .card-image img {
+.home-dual-feed .macslab-trend-card .card-image img {
   margin-top: 0 !important;
   width: 100%;
-  height: 180px;
+  height: 160px;
   object-fit: cover;
 }
 
-#section-1 .macslab-trend-card-text,
-#section-2 .macslab-trend-card-text {
+.home-dual-feed .macslab-trend-card-text {
   padding: 0.9rem 1rem 1rem;
 }
 
-#section-1 .macslab-trend-card .article-title h4,
-#section-2 .macslab-trend-card .article-title h4 {
-  font-size: 1.03rem;
+.home-dual-feed .macslab-trend-card .article-title h4 {
+  font-size: 0.96rem;
   line-height: 1.35;
   margin-bottom: 0.35rem;
 }
 
-#section-1 .macslab-trend-card .article-style p,
-#section-2 .macslab-trend-card .article-style p {
-  font-size: 0.88rem;
+.home-dual-feed .macslab-trend-card .article-style p {
+  font-size: 0.82rem;
   line-height: 1.52;
   margin-bottom: 0;
   display: -webkit-box;
@@ -142,56 +160,56 @@ html[data-theme="dark"] .featurette-icon svg {
   overflow: hidden;
 }
 
-#section-1 .macslab-trend-card .article-metadata,
-#section-2 .macslab-trend-card .article-metadata {
-  font-size: 0.78rem;
+.home-dual-feed .macslab-trend-card .article-metadata {
+  font-size: 0.72rem;
   margin-bottom: 0.35rem;
 }
 
-#section-1 .home-section-bg,
-#section-2 .home-section-bg {
+.home-dual-feed {
   background:
     radial-gradient(circle at 8% 10%, rgba(133, 194, 255, 0.12), transparent 38%),
     radial-gradient(circle at 92% 88%, rgba(84, 144, 255, 0.08), transparent 36%);
+  padding: 0.8rem;
+  border-radius: 20px;
 }
 
 @media (max-width: 767px) {
-  #section-1 .macslab-trend-card,
-  #section-2 .macslab-trend-card {
+  .home-dual-feed {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .home-dual-feed-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .home-dual-feed .macslab-trend-card {
     width: 100%;
     border-radius: 14px;
   }
 
-  #section-1 .macslab-trend-card .card-image img,
-  #section-2 .macslab-trend-card .card-image img {
-    height: 150px;
+  .home-dual-feed .macslab-trend-card .card-image img {
+    height: 145px;
   }
 }
 
 /* Main landing typography tuning */
-#section-1 .section-heading h1,
-#section-2 .section-heading h1 {
-  font-size: 1.8rem;
+body.home .wg-slider .carousel-item {
+  font-size: 0.88rem;
 }
 
-#section-1 .article-title h4,
-#section-2 .article-title h4 {
-  font-size: 0.98rem;
+body.home .featurette .section-subheading {
+  font-size: 0.86rem;
 }
 
-#section-1 .article-style p,
-#section-2 .article-style p {
-  font-size: 0.84rem;
-}
-
-#section-1 .article-metadata,
-#section-2 .article-metadata {
-  font-size: 0.74rem;
+body.home .featurette p {
+  font-size: 0.82rem;
 }
 
 @media (max-width: 767px) {
-  #section-1 .section-heading h1,
-  #section-2 .section-heading h1 {
-    font-size: 1.45rem;
+  body.home .wg-slider .carousel-item {
+    font-size: 0.82rem;
   }
 }

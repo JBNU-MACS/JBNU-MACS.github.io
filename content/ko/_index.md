@@ -138,45 +138,14 @@ sections:
     design:
       columns: 3
 
-  - block: collection
+  - block: markdown
     content:
-      id: section-1
-      title: Notifications & News
+      title:
       subtitle:
-      text:
-      count: 5
-      offset: 0
-      order: desc
-      filters:
-        folders:
-          - notification
-          - post
-          - event
+      text: |
+        {{< home_dual_feed >}}
     design:
-      view: community/custom_card
-      columns: '2'
-
-  - block: collection
-    content:
-      id: section-2
-      title: Latest Publications
-      subtitle:
-      text:
-      count: 5
-      filters:
-        author: ''
-        category: ''
-        exclude_featured: false
-        publication_type: ''
-        tag: ''
-      offset: 0
-      order: desc
-      page_type: publication
-    design:
-      view: community/custom_card
-      columns: '2'
-    advanced:
-      css_style: "text-align: center;"
+      columns: '1'
 
   - block: markdown
     content:

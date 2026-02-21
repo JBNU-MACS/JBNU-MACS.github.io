@@ -1424,3 +1424,31 @@ body.home .home-section:has(.home-dual-feed) {
     word-break: keep-all;
   }
 }
+
+/* Feature card height -20% (desktop) */
+.macs-feature-card {
+  padding: 0.8rem 0.72rem 0.72rem;
+}
+
+.macs-feature-icon {
+  width: 37px;
+  height: 37px;
+  font-size: 0.99rem;
+  margin-bottom: 0.28rem;
+}
+
+.macs-feature-card h3 {
+  font-size: 0.8rem;
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+}
+
+.macs-feature-card p {
+  font-size: 0.62rem;
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

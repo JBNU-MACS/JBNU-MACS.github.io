@@ -1452,3 +1452,249 @@ body.home .home-section:has(.home-dual-feed) {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Contact page redesign */
+.macs-contact-fancy {
+  display: grid;
+  gap: 1rem;
+}
+
+.macs-contact-hero {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 250px;
+  border: 1px solid rgba(141, 166, 212, 0.42);
+  background:
+    linear-gradient(118deg, rgba(8, 17, 38, 0.78) 0%, rgba(8, 17, 38, 0.42) 45%, rgba(8, 17, 38, 0.72) 100%),
+    url('/media/pic-jbnu.jpg') center / cover no-repeat;
+  box-shadow: 0 18px 36px rgba(16, 29, 61, 0.18);
+}
+
+.macs-contact-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  padding: 2rem 1.8rem 1.7rem;
+  color: #f4f8ff;
+}
+
+.macs-contact-kicker {
+  margin: 0 0 0.55rem;
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(220, 233, 255, 0.48);
+  background: rgba(220, 233, 255, 0.14);
+  padding: 0.18rem 0.52rem;
+  border-radius: 999px;
+}
+
+.macs-contact-hero h1 {
+  margin: 0 0 0.55rem;
+  color: #f8fbff;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.macs-contact-hero p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.5;
+  color: rgba(242, 247, 255, 0.95);
+}
+
+.macs-contact-hero-actions {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.macs-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background: rgba(236, 244, 255, 0.16);
+  color: #f5f9ff !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 0.82rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.macs-contact-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(236, 244, 255, 0.24);
+}
+
+.macs-contact-btn.ghost {
+  background: transparent;
+}
+
+.macs-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.macs-contact-card {
+  border-radius: 15px;
+  border: 1px solid rgba(165, 181, 214, 0.56);
+  background: linear-gradient(165deg, #ffffff 0%, #f7faff 100%);
+  box-shadow: 0 10px 22px rgba(20, 35, 66, 0.08);
+  padding: 0.95rem 0.88rem 0.85rem;
+}
+
+.macs-contact-card h3 {
+  margin: 0 0 0.38rem;
+  font-size: 0.94rem;
+  color: #22345c;
+}
+
+.macs-contact-card p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #33466d;
+  font-weight: 600;
+}
+
+.macs-contact-card p a {
+  color: #2a57a4;
+  text-decoration: none;
+}
+
+.macs-contact-card small {
+  display: block;
+  margin-top: 0.36rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #5a6a89;
+}
+
+.macs-contact-map-wrap {
+  border-radius: 16px;
+  border: 1px solid rgba(163, 180, 214, 0.52);
+  background: #ffffff;
+  box-shadow: 0 12px 26px rgba(18, 33, 61, 0.09);
+  overflow: hidden;
+}
+
+.macs-contact-map-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.8rem 0.92rem;
+  border-bottom: 1px solid rgba(185, 198, 225, 0.48);
+}
+
+.macs-contact-map-head h3 {
+  margin: 0;
+  font-size: 0.93rem;
+  color: #24365f;
+}
+
+.macs-contact-map-head a {
+  font-size: 0.76rem;
+  color: #2a5bad;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.macs-contact-map iframe {
+  width: 100%;
+  height: 340px;
+  border: 0;
+}
+
+@media (max-width: 1024px) {
+  .macs-contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .macs-contact-hero h1 {
+    font-size: 1.76rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .macs-contact-fancy {
+    gap: 0.72rem;
+  }
+
+  .macs-contact-hero {
+    border-radius: 14px;
+    min-height: 185px;
+  }
+
+  .macs-contact-hero-content {
+    padding: 1rem 0.9rem 0.95rem;
+  }
+
+  .macs-contact-kicker {
+    font-size: 0.55rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .macs-contact-hero h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .macs-contact-hero p {
+    font-size: 0.74rem;
+    line-height: 1.42;
+  }
+
+  .macs-contact-btn {
+    font-size: 0.67rem;
+    padding: 0.32rem 0.64rem;
+  }
+
+  .macs-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .macs-contact-card {
+    border-radius: 12px;
+    padding: 0.72rem 0.68rem 0.66rem;
+  }
+
+  .macs-contact-card h3 {
+    font-size: 0.82rem;
+  }
+
+  .macs-contact-card p {
+    font-size: 0.74rem;
+  }
+
+  .macs-contact-card small {
+    font-size: 0.66rem;
+  }
+
+  .macs-contact-map-wrap {
+    border-radius: 12px;
+  }
+
+  .macs-contact-map-head {
+    padding: 0.62rem 0.68rem;
+  }
+
+  .macs-contact-map-head h3 {
+    font-size: 0.8rem;
+  }
+
+  .macs-contact-map-head a {
+    font-size: 0.67rem;
+  }
+
+  .macs-contact-map iframe {
+    height: 250px;
+  }
+}

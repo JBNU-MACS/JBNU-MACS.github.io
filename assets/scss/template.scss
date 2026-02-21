@@ -678,6 +678,50 @@ body.home .featurette p {
 }
 
 /* About page custom layout */
+#about-fancy-slider .carousel-item {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(147, 168, 212, 0.44);
+  box-shadow: 0 20px 42px rgba(15, 29, 63, 0.2);
+  position: relative;
+}
+
+#about-fancy-slider .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, rgba(8, 18, 42, 0.64) 0%, rgba(8, 18, 42, 0.26) 48%, rgba(8, 18, 42, 0.7) 100%);
+  pointer-events: none;
+}
+
+#about-fancy-slider .hero-title,
+#about-fancy-slider .hero-lead {
+  position: relative;
+  z-index: 2;
+  text-align: left !important;
+  max-width: 700px;
+  margin-left: 4.2rem;
+  text-shadow: 0 10px 26px rgba(8, 16, 36, 0.42);
+}
+
+#about-fancy-slider .hero-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+#about-fancy-slider .hero-lead {
+  font-size: 1.04rem;
+  line-height: 1.5;
+}
+
+#about-fancy-slider .carousel-indicators li {
+  width: 26px;
+  height: 4px;
+  border-radius: 999px;
+  opacity: 0.6;
+}
+
 .macs-about-fancy {
   display: grid;
   gap: 1.2rem;
@@ -781,6 +825,24 @@ body.home .featurette p {
 }
 
 @media (max-width: 767px) {
+  #about-fancy-slider .carousel-item {
+    border-radius: 14px;
+  }
+
+  #about-fancy-slider .hero-title,
+  #about-fancy-slider .hero-lead {
+    margin-left: 1rem;
+    max-width: 90%;
+  }
+
+  #about-fancy-slider .hero-title {
+    font-size: 1.45rem;
+  }
+
+  #about-fancy-slider .hero-lead {
+    font-size: 0.82rem;
+  }
+
   .macs-about-hero {
     min-height: 250px;
     border-radius: 14px;

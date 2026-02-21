@@ -94,7 +94,8 @@ html[data-theme="dark"] .featurette-icon svg {
 /* Home: Notifications & News / Latest Publications cards */
 #section-1 .macslab-trend-card,
 #section-2 .macslab-trend-card {
-  width: min(100%, 760px);
+  width: 100%;
+  max-width: 760px;
   margin: 0 auto 1rem;
   border: 1px solid rgba(20, 33, 61, 0.08);
   border-radius: 18px;

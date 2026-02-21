@@ -1099,13 +1099,13 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-home-hero-track {
   position: relative;
-  min-height: 390px;
+  min-height: 370px;
 }
 
 .macs-home-hero-slide {
   position: absolute;
   inset: 0;
-  padding: 2.8rem 2.8rem 2.4rem;
+  padding: 2.55rem 2.45rem 2.15rem;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1136,22 +1136,10 @@ body.home .home-section:has(.home-dual-feed) {
   color: #f4f8ff;
 }
 
-.macs-home-hero-kicker {
-  margin: 0 0 0.85rem;
-  display: inline-block;
-  border-radius: 999px;
-  border: 1px solid rgba(224, 236, 255, 0.42);
-  background: rgba(218, 232, 255, 0.12);
-  padding: 0.2rem 0.52rem;
-  font-size: 0.59rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
 .macs-home-hero h1 {
   margin: 0;
   color: #fbfdff;
-  font-size: 2.22rem;
+  font-size: 2.33rem;
   line-height: 1.06;
   letter-spacing: -0.03em;
   text-shadow: 0 10px 28px rgba(7, 15, 35, 0.48);
@@ -1159,14 +1147,14 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-home-hero p {
   margin: 0.9rem 0 0;
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   line-height: 1.54;
   color: rgba(242, 247, 255, 0.95);
   text-shadow: 0 6px 20px rgba(9, 18, 41, 0.35);
 }
 
 .macs-home-hero-slide.is-notice h1 {
-  font-size: 1.9rem;
+  font-size: 2rem;
   line-height: 1.14;
   max-width: 92%;
 }
@@ -1190,7 +1178,7 @@ body.home .home-section:has(.home-dual-feed) {
   border: 1px solid rgba(233, 241, 255, 0.4);
   background: rgba(233, 241, 255, 0.1);
   color: rgba(246, 250, 255, 0.96);
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   font-weight: 600;
 }
 
@@ -1210,9 +1198,9 @@ body.home .home-section:has(.home-dual-feed) {
   border: 1px solid rgba(255, 255, 255, 0.44);
   background: rgba(238, 245, 255, 0.15);
   color: #f5f9ff !important;
-  font-size: 0.68rem;
+  font-size: 0.71rem;
   font-weight: 700;
-  padding: 0.36rem 0.72rem;
+  padding: 0.38rem 0.74rem;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   transition: transform 0.2s ease, background 0.2s ease;
@@ -1295,34 +1283,34 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .macs-feature-card h3 {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .macs-feature-card p {
-  font-size: 0.93rem;
+  font-size: 0.65rem;
   line-height: 1.48;
 }
 
 @media (max-width: 1024px) {
   .macs-home-hero-track {
-    min-height: 315px;
+    min-height: 300px;
   }
 
   .macs-home-hero-slide {
-    padding: 1.9rem 1.6rem 2rem;
+    padding: 1.75rem 1.45rem 1.8rem;
   }
 
   .macs-home-hero h1 {
-    font-size: 1.62rem;
+    font-size: 1.7rem;
   }
 
   .macs-home-hero p {
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     max-width: 90%;
   }
 
   .macs-home-hero-slide.is-notice h1 {
-    font-size: 1.42rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -1332,29 +1320,23 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-home-hero-track {
-    min-height: 255px;
+    min-height: 240px;
   }
 
   .macs-home-hero-slide {
-    padding: 0.92rem 0.82rem 1.75rem;
-  }
-
-  .macs-home-hero-kicker {
-    font-size: 0.56rem;
-    margin-bottom: 0.45rem;
-    padding: 0.14rem 0.34rem;
+    padding: 0.88rem 0.78rem 1.65rem;
   }
 
   .macs-home-hero h1 {
-    font-size: 1.22rem;
+    font-size: 1.46rem;
     line-height: 1.16;
     max-width: 92%;
     word-break: keep-all;
   }
 
   .macs-home-hero p {
-    font-size: 0.72rem;
-    line-height: 1.36;
+    font-size: 0.86rem;
+    line-height: 1.35;
     max-width: 95%;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -1369,8 +1351,8 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-home-hero-tags span {
-    font-size: 0.58rem;
-    padding: 0.12rem 0.34rem;
+    font-size: 0.7rem;
+    padding: 0.13rem 0.35rem;
   }
 
   .macs-home-hero-tags span:nth-child(n + 3) {
@@ -1383,8 +1365,8 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-home-hero-btn {
-    font-size: 0.64rem;
-    padding: 0.28rem 0.52rem;
+    font-size: 0.77rem;
+    padding: 0.3rem 0.56rem;
   }
 
   .macs-home-hero-ui {
@@ -1403,7 +1385,7 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-home-hero-slide.is-notice h1 {
-    font-size: 1.04rem;
+    font-size: 1.25rem;
     line-height: 1.2;
   }
 

@@ -123,6 +123,10 @@ body.home .home-section .universal-wrapper {
 }
 
 .home-dual-feed-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
   font-size: 1.02rem;
   font-weight: 800;
   margin: 0 0 0.85rem;
@@ -131,6 +135,25 @@ body.home .home-section .universal-wrapper {
   border-bottom: 1px solid rgba(125, 141, 173, 0.3);
   color: #1f2a44;
   text-transform: uppercase;
+}
+
+.home-dual-feed-title span {
+  min-width: 0;
+}
+
+.home-dual-feed-more {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #4a6590;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.16s ease;
+}
+
+.home-dual-feed-more:hover {
+  color: #204f97;
 }
 
 .home-dual-feed-list {

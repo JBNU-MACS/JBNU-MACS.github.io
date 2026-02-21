@@ -9,7 +9,10 @@
 
 <div class="home-dual-feed">
   <div class="home-dual-feed-col">
-    <h2 class="home-dual-feed-title">Notification</h2>
+    <h2 class="home-dual-feed-title">
+      <span>Notification</span>
+      <a class="home-dual-feed-more" href="{{ "notification/" | relLangURL }}">(More...)</a>
+    </h2>
     <div class="home-dual-feed-list">
       {{ range $notificationPages }}
         {{ partial "views/community/custom_card.html" (dict "item" .) }}
@@ -18,7 +21,10 @@
   </div>
 
   <div class="home-dual-feed-col">
-    <h2 class="home-dual-feed-title">News</h2>
+    <h2 class="home-dual-feed-title">
+      <span>News</span>
+      <a class="home-dual-feed-more" href="{{ "post/" | relLangURL }}">(More...)</a>
+    </h2>
     <div class="home-dual-feed-list">
       {{ range $newsPages }}
         {{ partial "views/community/custom_card.html" (dict "item" .) }}
@@ -27,7 +33,10 @@
   </div>
 
   <div class="home-dual-feed-col">
-    <h2 class="home-dual-feed-title">Last Publication</h2>
+    <h2 class="home-dual-feed-title">
+      <span>Last Publication</span>
+      <a class="home-dual-feed-more" href="{{ "publication/" | relLangURL }}">(More...)</a>
+    </h2>
     <div class="home-dual-feed-list">
       {{ range $pubPages }}
         {{ partial "views/community/custom_card.html" (dict "item" .) }}

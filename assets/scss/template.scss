@@ -2913,9 +2913,8 @@ body.home .home-section:has(.home-dual-feed) {
   border-radius: 22px;
   border: 1px solid rgba(150, 174, 221, 0.5);
   background:
-    radial-gradient(280px 140px at 95% -10%, rgba(140, 210, 255, 0.3), transparent 70%),
-    linear-gradient(150deg, #ffffff 0%, #f2f7ff 100%);
-  box-shadow: 0 18px 36px rgba(20, 36, 69, 0.1);
+    linear-gradient(150deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 12px 24px rgba(20, 36, 69, 0.07);
 }
 
 .macs-author-hero::after {
@@ -2926,7 +2925,7 @@ body.home .home-section:has(.home-dual-feed) {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(111, 174, 255, 0.2) 0%, rgba(111, 174, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(111, 174, 255, 0.08) 0%, rgba(111, 174, 255, 0) 70%);
 }
 
 .macs-author-avatar {
@@ -3017,7 +3016,7 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-author-block {
   border-radius: 16px;
   border: 1px solid #dbe6f5;
-  box-shadow: 0 10px 20px rgba(18, 34, 66, 0.06);
+  box-shadow: 0 6px 14px rgba(18, 34, 66, 0.05);
 }
 
 .macs-author-block h2 {
@@ -3046,15 +3045,24 @@ body.home .home-section:has(.home-dual-feed) {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  width: 30px;
+  height: 30px;
   color: #244c86;
   border: 1px solid #cfdef3;
   background: #f2f8ff;
-  border-radius: 999px;
-  padding: 0.14rem 0.48rem;
-  font-weight: 700;
+  border-radius: 9px;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.macs-author-links a i {
+  font-size: 0.92rem;
+  line-height: 1;
+}
+
+.macs-author-links a:hover {
+  transform: translateY(-1px);
+  border-color: #9db7df;
+  background: #eaf3ff;
 }
 
 .macs-author-work-list .work-item {
@@ -3111,5 +3119,15 @@ body.home .home-section:has(.home-dual-feed) {
 
   .macs-author-bio {
     font-size: 0.74rem;
+  }
+
+  .macs-author-links a {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+
+  .macs-author-links a i {
+    font-size: 0.84rem;
   }
 }

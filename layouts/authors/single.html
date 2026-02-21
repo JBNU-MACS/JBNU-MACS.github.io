@@ -71,37 +71,12 @@
           </section>
         {{ end }}
 
-        {{ if .Params.interests }}
-          <section class="macs-author-block">
-            <h2>Research Interests</h2>
-            <div class="macs-chip-wrap">
-              {{ range .Params.interests }}
-                <span class="chip">{{ . }}</span>
-              {{ end }}
-            </div>
-          </section>
-        {{ end }}
       </div>
 
       <div class="macs-author-col-right">
-        {{ if gt (len $recent) 0 }}
-          <section class="macs-author-block">
-            <h2>Recent Works</h2>
-            <div class="macs-author-work-list">
-              {{ range $recent }}
-                <a class="work-item" href="{{ .RelPermalink }}">
-                  <span class="type">{{ .Type }}</span>
-                  <strong>{{ .Title }}</strong>
-                  <small>{{ .Date.Format "2006-01-02" }}</small>
-                </a>
-              {{ end }}
-            </div>
-          </section>
-        {{ end }}
-
         {{ if gt (len $social) 0 }}
           <section class="macs-author-block">
-            <h2>Links</h2>
+            <h2>Link</h2>
             <div class="macs-author-links">
               {{ range $social }}
                 {{ $pack := .icon_pack | default "fas" }}
@@ -131,6 +106,32 @@
                    title="{{ $icon }}"
                    {{ if not (hasPrefix .link "mailto:") }}target="_blank" rel="noopener"{{ end }}>
                   <i class="{{ $klass }}" aria-hidden="true"></i>
+                </a>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+
+        {{ if .Params.interests }}
+          <section class="macs-author-block">
+            <h2>Research Interest</h2>
+            <div class="macs-chip-wrap">
+              {{ range .Params.interests }}
+                <span class="chip">{{ . }}</span>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+
+        {{ if gt (len $recent) 0 }}
+          <section class="macs-author-block">
+            <h2>Recent Work</h2>
+            <div class="macs-author-work-list">
+              {{ range $recent }}
+                <a class="work-item" href="{{ .RelPermalink }}">
+                  <span class="type">{{ .Type }}</span>
+                  <strong>{{ .Title }}</strong>
+                  <small>{{ .Date.Format "2006-01-02" }}</small>
                 </a>
               {{ end }}
             </div>

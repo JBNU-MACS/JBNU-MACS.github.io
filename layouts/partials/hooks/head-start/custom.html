@@ -1,0 +1,30 @@
+<script>
+  (function () {
+    try {
+      localStorage.setItem('wcTheme', 'light');
+      localStorage.setItem('theme', 'light');
+    } catch (e) {}
+
+    var originalMatchMedia = window.matchMedia;
+    if (typeof originalMatchMedia === 'function') {
+      window.matchMedia = function (query) {
+        if (query && query.indexOf('prefers-color-scheme: dark') !== -1) {
+          return {
+            matches: false,
+            media: query,
+            onchange: null,
+            addListener: function () {},
+            removeListener: function () {},
+            addEventListener: function () {},
+            removeEventListener: function () {},
+            dispatchEvent: function () { return false; }
+          };
+        }
+        return originalMatchMedia.call(window, query);
+      };
+    }
+
+    document.documentElement.classList.remove('dark');
+    document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>

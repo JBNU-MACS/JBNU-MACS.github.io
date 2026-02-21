@@ -1,6 +1,16 @@
 <script>
-  try {
-    localStorage.setItem('wcTheme', 'light');
-    localStorage.setItem('theme', 'light');
-  } catch (e) {}
+  (function () {
+    try {
+      localStorage.setItem('wcTheme', 'light');
+      localStorage.setItem('theme', 'light');
+    } catch (e) {}
+
+    document.documentElement.classList.remove('dark');
+    document.documentElement.setAttribute('data-theme', 'light');
+    window.addEventListener('DOMContentLoaded', function () {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.setAttribute('data-theme', 'light');
+      if (document.body) document.body.classList.remove('dark');
+    }, { once: true });
+  })();
 </script>

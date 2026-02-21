@@ -1136,6 +1136,17 @@ body.home .home-section:has(.home-dual-feed) {
   color: #f4f8ff;
 }
 
+
+
+/* 모바일용 높이 (가로폭 767px 이하) */
+@media (max-width: 767px) {
+
+  .macs-home-hero-content {
+    max-width: 95vw !important;
+  }
+
+}
+
 .macs-home-hero h1 {
   margin: 0;
   color: #fbfdff;

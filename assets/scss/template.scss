@@ -1071,3 +1071,311 @@ body.home .wg-slider .carousel-indicators .active {
     margin: 0 2px;
   }
 }
+
+/* ===== Home Hero Refresh (2026-02) ===== */
+body.home {
+  background:
+    radial-gradient(1100px 520px at 8% -8%, rgba(115, 168, 255, 0.17), transparent 60%),
+    radial-gradient(900px 500px at 92% 10%, rgba(255, 187, 146, 0.13), transparent 56%),
+    #f6f8fd;
+}
+
+body.home .home-section:has(.macs-home-hero),
+body.home .home-section:has(.macs-feature-grid-wrap),
+body.home .home-section:has(.home-dual-feed) {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.macs-home-hero {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(155, 180, 223, 0.48);
+  box-shadow: 0 22px 46px rgba(20, 32, 61, 0.2);
+  isolation: isolate;
+}
+
+.macs-home-hero-track {
+  position: relative;
+  min-height: 520px;
+}
+
+.macs-home-hero-slide {
+  position: absolute;
+  inset: 0;
+  padding: 4.2rem 4rem 3.8rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.58s ease, transform 0.9s ease;
+}
+
+.macs-home-hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.macs-home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(680px 280px at 88% 18%, rgba(100, 172, 255, 0.26), transparent 60%),
+    linear-gradient(114deg, rgba(9, 19, 42, 0.8) 0%, rgba(9, 19, 42, 0.38) 48%, rgba(9, 19, 42, 0.74) 100%);
+}
+
+.macs-home-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  color: #f4f8ff;
+}
+
+.macs-home-hero-kicker {
+  margin: 0 0 0.85rem;
+  display: inline-block;
+  border-radius: 999px;
+  border: 1px solid rgba(224, 236, 255, 0.42);
+  background: rgba(218, 232, 255, 0.12);
+  padding: 0.24rem 0.65rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.macs-home-hero h1 {
+  margin: 0;
+  color: #fbfdff;
+  font-size: 3.1rem;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  text-shadow: 0 10px 28px rgba(7, 15, 35, 0.48);
+}
+
+.macs-home-hero p {
+  margin: 0.9rem 0 0;
+  font-size: 1.02rem;
+  line-height: 1.54;
+  color: rgba(242, 247, 255, 0.95);
+  text-shadow: 0 6px 20px rgba(9, 18, 41, 0.35);
+}
+
+.macs-home-hero-actions {
+  margin-top: 1.18rem;
+  display: flex;
+  gap: 0.62rem;
+  flex-wrap: wrap;
+}
+
+.macs-home-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  background: rgba(238, 245, 255, 0.15);
+  color: #f5f9ff !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.5rem 1.02rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.macs-home-hero-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(238, 245, 255, 0.24);
+}
+
+.macs-home-hero-btn.ghost {
+  background: transparent;
+}
+
+.macs-home-hero-ui {
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 1.1rem;
+  z-index: 3;
+}
+
+.macs-home-hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.38rem;
+  margin-bottom: 0.5rem;
+}
+
+.macs-home-hero-dots button {
+  width: 24px;
+  height: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(243, 248, 255, 0.5);
+  padding: 0;
+}
+
+.macs-home-hero-dots button.is-active {
+  width: 36px;
+  background: linear-gradient(90deg, #68b8ff 0%, #73dbff 100%);
+}
+
+.macs-home-hero-progress {
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(230, 240, 255, 0.28);
+  overflow: hidden;
+}
+
+.macs-home-hero-progress span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #68b8ff 0%, #73dbff 100%);
+}
+
+/* Feature cards: cleaner and less heavy */
+.macs-feature-grid-wrap {
+  margin: 0.15rem auto 0.65rem;
+}
+
+.macs-feature-grid {
+  gap: 0.92rem;
+}
+
+.macs-feature-card {
+  border-radius: 16px;
+  border: 1px solid rgba(165, 181, 214, 0.52);
+  background: linear-gradient(160deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 10px 24px rgba(21, 36, 68, 0.08);
+  padding: 1rem 0.9rem 0.9rem;
+}
+
+.macs-feature-icon {
+  width: 46px;
+  height: 46px;
+  font-size: 1.24rem;
+}
+
+.macs-feature-card h3 {
+  font-size: 1rem;
+}
+
+.macs-feature-card p {
+  font-size: 0.93rem;
+  line-height: 1.48;
+}
+
+@media (max-width: 1024px) {
+  .macs-home-hero-track {
+    min-height: 440px;
+  }
+
+  .macs-home-hero-slide {
+    padding: 2.8rem 2.2rem 3.2rem;
+  }
+
+  .macs-home-hero h1 {
+    font-size: 2.28rem;
+  }
+
+  .macs-home-hero p {
+    font-size: 0.92rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 767px) {
+  .macs-home-hero {
+    border-radius: 14px;
+  }
+
+  .macs-home-hero-track {
+    min-height: 320px;
+  }
+
+  .macs-home-hero-slide {
+    padding: 1.2rem 1rem 2.2rem;
+  }
+
+  .macs-home-hero-kicker {
+    font-size: 0.62rem;
+    margin-bottom: 0.45rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .macs-home-hero h1 {
+    font-size: 1.38rem;
+    line-height: 1.15;
+    max-width: 92%;
+    word-break: keep-all;
+  }
+
+  .macs-home-hero p {
+    font-size: 0.74rem;
+    line-height: 1.4;
+    max-width: 95%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 0.55rem;
+  }
+
+  .macs-home-hero-actions {
+    margin-top: 0.72rem;
+    gap: 0.45rem;
+  }
+
+  .macs-home-hero-btn {
+    font-size: 0.68rem;
+    padding: 0.38rem 0.7rem;
+  }
+
+  .macs-home-hero-ui {
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.62rem;
+  }
+
+  .macs-home-hero-dots button {
+    width: 16px;
+    height: 3px;
+  }
+
+  .macs-home-hero-dots button.is-active {
+    width: 24px;
+  }
+
+  .macs-feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.58rem;
+  }
+
+  .macs-feature-card {
+    padding: 0.64rem 0.42rem;
+  }
+
+  .macs-feature-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .macs-feature-card h3 {
+    font-size: 0.68rem;
+    margin: 0;
+    line-height: 1.2;
+    min-height: 2.35em;
+    word-break: keep-all;
+  }
+}

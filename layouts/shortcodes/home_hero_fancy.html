@@ -1,0 +1,99 @@
+<section class="macs-home-hero" id="macs-home-hero">
+  <div class="macs-home-hero-track" aria-live="polite">
+    <article class="macs-home-hero-slide is-active" style="background-image: url('/media/pic-jbnu.jpg');">
+      <div class="macs-home-hero-overlay"></div>
+      <div class="macs-home-hero-content">
+        <p class="macs-home-hero-kicker">MACS LAB</p>
+        <h1>Medical AI &amp; Computational Science</h1>
+        <p>전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</p>
+        <div class="macs-home-hero-actions">
+          <a href="/field/" class="macs-home-hero-btn">See Research Field</a>
+          <a href="/contact/" class="macs-home-hero-btn ghost">Join Us</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="macs-home-hero-slide" style="background-image: url('/media/medical.jpg');">
+      <div class="macs-home-hero-overlay"></div>
+      <div class="macs-home-hero-content">
+        <p class="macs-home-hero-kicker">Research</p>
+        <h1>Medical AI</h1>
+        <p>의료 데이터와 딥러닝 기반으로 진단 보조, 임상 워크플로우, 신뢰 가능한 AI 적용을 확장합니다.</p>
+      </div>
+    </article>
+
+    <article class="macs-home-hero-slide" style="background-image: url('/media/development.jpg');">
+      <div class="macs-home-hero-overlay"></div>
+      <div class="macs-home-hero-content">
+        <p class="macs-home-hero-kicker">Engineering</p>
+        <h1>Research to Product</h1>
+        <p>연구 결과를 실제 서비스와 시스템으로 연결하는 실용적 개발 역량을 강화합니다.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="macs-home-hero-ui">
+    <div class="macs-home-hero-dots">
+      <button class="is-active" data-idx="0" aria-label="slide 1"></button>
+      <button data-idx="1" aria-label="slide 2"></button>
+      <button data-idx="2" aria-label="slide 3"></button>
+    </div>
+    <div class="macs-home-hero-progress"><span></span></div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('macs-home-hero');
+    if (!root) return;
+    var slides = root.querySelectorAll('.macs-home-hero-slide');
+    var dots = root.querySelectorAll('.macs-home-hero-dots button');
+    var progress = root.querySelector('.macs-home-hero-progress span');
+    if (!slides.length || !dots.length) return;
+
+    var idx = 0;
+    var timer = null;
+
+    function render(nextIdx) {
+      idx = nextIdx;
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+      if (progress) {
+        progress.style.transition = 'none';
+        progress.style.width = '0%';
+        window.requestAnimationFrame(function () {
+          progress.style.transition = 'width 5.2s linear';
+          progress.style.width = '100%';
+        });
+      }
+    }
+
+    function next() {
+      render((idx + 1) % slides.length);
+    }
+
+    function start() {
+      stop();
+      timer = window.setInterval(next, 5200);
+    }
+
+    function stop() {
+      if (timer) window.clearInterval(timer);
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var n = parseInt(dot.getAttribute('data-idx') || '0', 10);
+        render(n);
+        start();
+      });
+    });
+
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('touchstart', stop, { passive: true });
+    root.addEventListener('touchend', start, { passive: true });
+
+    start();
+  })();
+</script>

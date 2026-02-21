@@ -1,0 +1,91 @@
+{{ define "main" }}
+{{ $avatar := "" }}
+{{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+{{ $socialEmail := "" }}
+{{ range .Params.social }}
+  {{ if and (eq .icon "envelope") (hasPrefix .link "mailto:") }}
+    {{ $socialEmail = replace .link "mailto:" "" }}
+  {{ end }}
+{{ end }}
+{{ $email := .Params.email | default $socialEmail }}
+{{ $recent := first 6 (.Pages.ByDate.Reverse) }}
+
+<div class="universal-wrapper">
+  <section class="macs-author-fancy">
+    <header class="macs-author-hero">
+      <div class="macs-author-visual">
+        {{ if $avatar }}
+          <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-author-avatar">
+        {{ else }}
+          <div class="macs-author-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
+        {{ end }}
+      </div>
+
+      <div class="macs-author-head-copy">
+        <p class="kicker">MACS LAB PROFILE</p>
+        <h1>
+          {{ if .Params.name_ko }}{{ .Params.name_ko }}{{ else }}{{ .Title }}{{ end }}
+          {{ with .Params.name_en }}<span>{{ . }}</span>{{ end }}
+        </h1>
+        <p class="role">{{ .Params.role }}</p>
+        {{ with index .Params.organizations 0 }}
+          <p class="org">{{ .name }}</p>
+        {{ end }}
+        {{ if ne $email "" }}
+          <p class="contact">Contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
+        {{ end }}
+      </div>
+    </header>
+
+    {{ if .Params.interests }}
+      <section class="macs-author-block">
+        <h2>Research Interests</h2>
+        <div class="macs-chip-wrap">
+          {{ range .Params.interests }}
+            <span class="chip">{{ . }}</span>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+
+    {{ with .Params.education.courses }}
+      <section class="macs-author-block">
+        <h2>Education</h2>
+        <div class="macs-author-edu-list">
+          {{ range . }}
+            <article class="macs-author-edu-item">
+              <h3>{{ .course }}</h3>
+              <p>{{ .institution }}</p>
+              <small>{{ .year }}</small>
+            </article>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+
+    {{ if .Content }}
+      <section class="macs-author-block">
+        <h2>Bio</h2>
+        <div class="macs-author-bio">
+          {{ .Content }}
+        </div>
+      </section>
+    {{ end }}
+
+    {{ if gt (len $recent) 0 }}
+      <section class="macs-author-block">
+        <h2>Recent Works</h2>
+        <div class="macs-author-work-list">
+          {{ range $recent }}
+            <a class="work-item" href="{{ .RelPermalink }}">
+              <span class="type">{{ .Type }}</span>
+              <strong>{{ .Title }}</strong>
+              <small>{{ .Date.Format "2006-01-02" }}</small>
+            </a>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  </section>
+</div>
+{{ end }}

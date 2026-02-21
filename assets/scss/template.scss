@@ -2521,6 +2521,253 @@ body.home .home-section:has(.home-dual-feed) {
   }
 }
 
+/* Author term page custom layout */
+.macs-author-fancy {
+  display: grid;
+  gap: 0.8rem;
+  padding: 0.2rem 0 0.8rem;
+}
+
+.macs-author-hero {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid #d9e4f3;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #ffffff 0%, #f7fbff 100%);
+  box-shadow: 0 14px 30px rgba(16, 33, 66, 0.08);
+  padding: 0.9rem;
+}
+
+.macs-author-avatar {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 2px solid #cfdef3;
+}
+
+.macs-author-avatar.placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #315689;
+  background: #edf4ff;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.macs-author-head-copy .kicker {
+  margin: 0 0 0.25rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4a6490;
+  font-weight: 700;
+}
+
+.macs-author-head-copy h1 {
+  margin: 0;
+  font-size: 1.62rem;
+  color: #102f5b;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.macs-author-head-copy h1 span {
+  display: inline-block;
+  margin-left: 0.38rem;
+  font-size: 0.88rem;
+  color: #4b658f;
+  font-weight: 600;
+}
+
+.macs-author-head-copy .role {
+  margin: 0.35rem 0 0;
+  font-size: 0.86rem;
+  color: #234977;
+  font-weight: 700;
+}
+
+.macs-author-head-copy .org {
+  margin: 0.18rem 0 0;
+  font-size: 0.72rem;
+  color: #5b7398;
+}
+
+.macs-author-head-copy .contact {
+  margin: 0.22rem 0 0;
+  font-size: 0.7rem;
+  color: #60789d;
+}
+
+.macs-author-head-copy .contact a {
+  color: #28589f;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.macs-author-block {
+  border: 1px solid #e0e8f5;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 0.7rem;
+}
+
+.macs-author-block h2 {
+  margin: 0 0 0.5rem;
+  font-size: 0.96rem;
+  color: #173b6e;
+  letter-spacing: -0.01em;
+}
+
+.macs-chip-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+}
+
+.macs-chip-wrap .chip {
+  border-radius: 999px;
+  border: 1px solid #cfddf2;
+  background: #f2f8ff;
+  color: #345987;
+  font-size: 0.68rem;
+  padding: 0.16rem 0.46rem;
+  font-weight: 600;
+}
+
+.macs-author-edu-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.macs-author-edu-item {
+  border: 1px solid #e4ebf7;
+  border-radius: 10px;
+  padding: 0.5rem 0.55rem;
+  background: #fbfdff;
+}
+
+.macs-author-edu-item h3 {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #213f6d;
+}
+
+.macs-author-edu-item p {
+  margin: 0.12rem 0 0;
+  font-size: 0.7rem;
+  color: #536d94;
+}
+
+.macs-author-edu-item small {
+  display: block;
+  margin-top: 0.08rem;
+  font-size: 0.62rem;
+  color: #7388a8;
+}
+
+.macs-author-bio {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #2d446c;
+}
+
+.macs-author-work-list {
+  display: grid;
+  gap: 0.34rem;
+}
+
+.macs-author-work-list .work-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.4rem;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid #e0e8f5;
+  border-radius: 10px;
+  padding: 0.38rem 0.5rem;
+  background: #fbfdff;
+}
+
+.macs-author-work-list .work-item .type {
+  font-size: 0.58rem;
+  color: #33598c;
+  border: 1px solid #d0def3;
+  border-radius: 999px;
+  background: #f1f7ff;
+  padding: 0.08rem 0.28rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.macs-author-work-list .work-item strong {
+  font-size: 0.72rem;
+  color: #1e3c69;
+  font-weight: 700;
+}
+
+.macs-author-work-list .work-item small {
+  font-size: 0.62rem;
+  color: #7086a8;
+}
+
+@media (max-width: 767px) {
+  .macs-author-hero {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    border-radius: 12px;
+    padding: 0.62rem;
+  }
+
+  .macs-author-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+  }
+
+  .macs-author-head-copy h1 {
+    font-size: 1.16rem;
+  }
+
+  .macs-author-head-copy h1 span {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.12rem;
+    font-size: 0.72rem;
+  }
+
+  .macs-author-head-copy .role {
+    font-size: 0.74rem;
+  }
+
+  .macs-author-head-copy .org,
+  .macs-author-head-copy .contact {
+    font-size: 0.64rem;
+  }
+
+  .macs-author-block {
+    border-radius: 10px;
+    padding: 0.52rem;
+  }
+
+  .macs-author-block h2 {
+    font-size: 0.82rem;
+  }
+
+  .macs-author-bio {
+    font-size: 0.72rem;
+    line-height: 1.58;
+  }
+
+  .macs-author-work-list .work-item {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
+
 /* Author page: clean trendy profile */
 .article-container #profile {
   border: 1px solid #dce6f3;

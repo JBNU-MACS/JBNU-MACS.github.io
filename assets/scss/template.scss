@@ -2520,3 +2520,136 @@ body.home .home-section:has(.home-dual-feed) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* Author page: clean trendy profile */
+.article-container #profile {
+  border: 1px solid #dce6f3;
+  border-radius: 20px;
+  padding: 1.1rem 1rem 0.95rem;
+  background:
+    radial-gradient(220px 110px at 10% -10%, rgba(152, 205, 255, 0.22), transparent 70%),
+    #f9fbff;
+  box-shadow: 0 14px 28px rgba(20, 36, 68, 0.08);
+}
+
+.article-container #profile .avatar {
+  width: 176px;
+  height: 176px;
+  border-radius: 22px;
+  border: 2px solid #d1def1;
+  box-shadow: 0 10px 20px rgba(14, 32, 62, 0.12);
+}
+
+.article-container #profile .portrait-title h2 {
+  font-size: 1.38rem;
+  margin: 0.7rem 0 0.26rem;
+  color: #132f5b;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.article-container #profile .portrait-title h3 {
+  font-size: 0.84rem;
+  color: #395783;
+  font-weight: 700;
+  margin: 0;
+}
+
+.article-container #profile .network-icon {
+  margin-top: 0.62rem;
+}
+
+.article-container #profile .network-icon li {
+  margin-right: 0.55rem;
+}
+
+.article-container #profile .network-icon .big-icon {
+  font-size: 1.35rem;
+  color: #2c4f82;
+  padding: 0.22rem;
+  border-radius: 10px;
+  background: #eef4ff;
+  border: 1px solid #d5e1f3;
+}
+
+.article-container .article-style {
+  font-size: 0.95rem;
+  line-height: 1.72;
+  color: #243b61;
+}
+
+.article-container .article-style h2 {
+  font-size: 1.05rem;
+  color: #173665;
+  margin-top: 1rem;
+  margin-bottom: 0.52rem;
+  letter-spacing: -0.01em;
+}
+
+.article-container .article-style ul.ul-interests,
+.article-container .article-style ul.ul-edu {
+  border: 1px solid #dfe8f5;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 0.72rem 0.72rem 0.54rem;
+  margin-bottom: 0.8rem;
+}
+
+.article-container .article-style ul.ul-interests li,
+.article-container .article-style ul.ul-edu li {
+  font-size: 0.82rem;
+  color: #355278;
+  margin-bottom: 0.22rem;
+}
+
+.article-container .article-style ul.ul-edu li .description p.course {
+  font-size: 0.8rem;
+  color: #1f3e70;
+  font-weight: 700;
+}
+
+.article-container .article-style ul.ul-edu li .description p.institution {
+  font-size: 0.72rem;
+  color: #587195;
+}
+
+@media (max-width: 767px) {
+  .article-container #profile {
+    border-radius: 14px;
+    padding: 0.8rem 0.65rem 0.72rem;
+  }
+
+  .article-container #profile .avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 16px;
+  }
+
+  .article-container #profile .portrait-title h2 {
+    font-size: 1.08rem;
+  }
+
+  .article-container #profile .portrait-title h3 {
+    font-size: 0.72rem;
+  }
+
+  .article-container .article-style {
+    font-size: 0.82rem;
+    line-height: 1.62;
+  }
+
+  .article-container .article-style h2 {
+    font-size: 0.9rem;
+  }
+
+  .article-container .article-style ul.ul-interests,
+  .article-container .article-style ul.ul-edu {
+    border-radius: 10px;
+    padding: 0.55rem 0.52rem 0.44rem;
+  }
+
+  .article-container .article-style ul.ul-interests li,
+  .article-container .article-style ul.ul-edu li {
+    font-size: 0.74rem;
+  }
+}

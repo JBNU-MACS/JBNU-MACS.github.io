@@ -9085,7 +9085,7 @@ html[dir='rtl'] body {
     background-attachment: scroll; } }
 
 .home-section:first-of-type {
-  padding-top: 50px; }
+  padding-top: 15px; }
 
 .home-section:nth-of-type(even) {
   background: #f7f7f7; }

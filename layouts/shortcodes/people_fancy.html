@@ -1,0 +1,156 @@
+{{ $all := where site.RegularPages "Section" "authors" }}
+{{ $graduates := sort (where $all "Params.user_groups" "intersect" (slice "M.S. Student")) "Title" }}
+{{ $parttime := sort (where $all "Params.user_groups" "intersect" (slice "Part-time Graduate")) "Title" }}
+{{ $undergrad := sort (where $all "Params.user_groups" "intersect" (slice "Student")) "Title" }}
+{{ $alumni := sort (where $all "Params.user_groups" "intersect" (slice "Alumni")) "Title" }}
+
+<section class="macs-people-fancy" id="macs-people-fancy">
+  <header class="macs-people-fancy-head">
+    <h1>People</h1>
+    <p>MACS Lab members</p>
+  </header>
+
+  <nav class="macs-people-tabs" aria-label="People categories">
+    <button type="button" class="is-active" data-tab="all">All</button>
+    <button type="button" data-tab="graduate">Graduate</button>
+    <button type="button" data-tab="parttime">Part-time</button>
+    <button type="button" data-tab="undergrad">Undergraduate</button>
+    <button type="button" data-tab="alumni">Alumni</button>
+  </nav>
+
+  <div class="macs-people-section" data-group="graduate">
+    <div class="macs-people-section-head">
+      <h2>Graduate</h2>
+      <span>{{ len $graduates }}</span>
+    </div>
+    <div class="macs-people-grid">
+      {{ range $graduates }}
+        {{ $avatar := "" }}
+        {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+        <article class="macs-people-card">
+          <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
+            {{ if $avatar }}
+              <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-people-avatar">
+            {{ else }}
+              <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
+            {{ end }}
+            <h3>{{ .Title }}</h3>
+            <p class="role">{{ .Params.role }}</p>
+            {{ with index .Params.organizations 0 }}
+              <p class="org">{{ .name }}</p>
+            {{ end }}
+          </a>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="macs-people-section" data-group="parttime">
+    <div class="macs-people-section-head">
+      <h2>Part-time Graduate (M.S. / Ph.D.)</h2>
+      <span>{{ len $parttime }}</span>
+    </div>
+    <div class="macs-people-grid">
+      {{ range $parttime }}
+        {{ $avatar := "" }}
+        {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+        <article class="macs-people-card">
+          <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
+            {{ if $avatar }}
+              <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-people-avatar">
+            {{ else }}
+              <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
+            {{ end }}
+            <h3>{{ .Title }}</h3>
+            <p class="role">{{ .Params.role }}</p>
+            {{ with index .Params.organizations 0 }}
+              <p class="org">{{ .name }}</p>
+            {{ end }}
+          </a>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="macs-people-section" data-group="undergrad">
+    <div class="macs-people-section-head">
+      <h2>Undergraduate</h2>
+      <span>{{ len $undergrad }}</span>
+    </div>
+    <div class="macs-people-grid">
+      {{ range $undergrad }}
+        {{ $avatar := "" }}
+        {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+        <article class="macs-people-card">
+          <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
+            {{ if $avatar }}
+              <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-people-avatar">
+            {{ else }}
+              <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
+            {{ end }}
+            <h3>{{ .Title }}</h3>
+            <p class="role">{{ .Params.role }}</p>
+            {{ with index .Params.organizations 0 }}
+              <p class="org">{{ .name }}</p>
+            {{ end }}
+          </a>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="macs-people-section" data-group="alumni">
+    <div class="macs-people-section-head">
+      <h2>Alumni</h2>
+      <span>{{ len $alumni }}</span>
+    </div>
+    <div class="macs-people-grid">
+      {{ range $alumni }}
+        {{ $avatar := "" }}
+        {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+        <article class="macs-people-card">
+          <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
+            {{ if $avatar }}
+              <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-people-avatar">
+            {{ else }}
+              <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
+            {{ end }}
+            <h3>{{ .Title }}</h3>
+            <p class="role">{{ .Params.role }}</p>
+            {{ with index .Params.organizations 0 }}
+              <p class="org">{{ .name }}</p>
+            {{ end }}
+          </a>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('macs-people-fancy');
+    if (!root) return;
+    var tabs = root.querySelectorAll('.macs-people-tabs button');
+    var sections = root.querySelectorAll('.macs-people-section');
+    if (!tabs.length || !sections.length) return;
+
+    function render(group) {
+      sections.forEach(function (section) {
+        var key = section.getAttribute('data-group');
+        section.style.display = (group === 'all' || group === key) ? '' : 'none';
+      });
+      tabs.forEach(function (tab) {
+        tab.classList.toggle('is-active', tab.getAttribute('data-tab') === group);
+      });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        render(tab.getAttribute('data-tab') || 'all');
+      });
+    });
+
+    render('all');
+  })();
+</script>

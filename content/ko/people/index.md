@@ -48,6 +48,20 @@ sections:
 
   - block: people
     content:
+      title: Student Researchers (Graduate)
+      user_groups:
+        - M.S. Student
+      sort_by: Params.last_name
+      sort_ascending: true
+    design:
+      show_interests: false
+      show_role: true
+      show_social: true
+      show_organizations: false
+      columns: 2
+
+  - block: people
+    content:
       title: Student Researchers (Undergraduate)
       # Choose which groups/teams of users to display.
       #   Edit `user_groups` in each user's profile to add them to one or more of these groups.

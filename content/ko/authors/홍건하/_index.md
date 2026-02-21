@@ -14,7 +14,7 @@ authors:
 superuser: false
 
 # Role/position
-role: 학부연구생
+role: (석사과정) 울산과학기술원 (UNIST)
 
 # Organizations/Affiliations
 organizations:
@@ -67,7 +67,7 @@ highlight_name: true
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Student
+  - Alumni
 
 
 ---

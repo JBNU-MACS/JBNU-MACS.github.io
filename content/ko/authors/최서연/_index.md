@@ -14,7 +14,7 @@ authors:
 superuser: false
 
 # Role/position
-role: 학석사 연계과정
+role: 석사과정
 
 # Organizations/Affiliations
 organizations:
@@ -67,7 +67,7 @@ highlight_name: true
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Student
+  - M.S. Student
 
 
 ---

@@ -14,7 +14,7 @@ authors:
 superuser: false
 
 # Role/position
-role: (연구 인턴) 한국과학기술원 (KAIST)
+role: (석사과정) 한국과학기술원 (KAIST)
 
 # Organizations/Affiliations
 organizations:

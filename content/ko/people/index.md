@@ -59,6 +59,7 @@ sections:
       show_social: true
       show_organizations: false
       columns: 2
+      css_class: people-trendy-block people-trendy-grad
 
   - block: people
     content:
@@ -73,6 +74,7 @@ sections:
       show_social: true
       show_organizations: true
       columns: 2
+      css_class: people-trendy-block people-trendy-part
 
   - block: people
     content:
@@ -98,6 +100,7 @@ sections:
       show_social: true
       show_organizations: false
       columns: 2
+      css_class: people-trendy-block people-trendy-under
 
   - block: people   
     content:
@@ -123,4 +126,5 @@ sections:
       show_social: true
       show_organizations: true
       columns: 2
+      css_class: people-trendy-block people-trendy-alumni
 ---

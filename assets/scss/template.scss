@@ -1791,6 +1791,47 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 /* People page trendy refresh */
+.people-quick-nav-wrap {
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+.macs-people-quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  position: sticky;
+  top: 64px;
+  z-index: 20;
+  padding: 0.4rem 0.45rem;
+  border-radius: 14px;
+  border: 1px solid rgba(164, 182, 216, 0.54);
+  background: rgba(247, 251, 255, 0.86);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(18, 33, 60, 0.08);
+}
+
+.macs-people-quick-nav button {
+  border: 1px solid rgba(146, 168, 210, 0.62);
+  background: #ffffff;
+  color: #2b436e;
+  border-radius: 999px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  padding: 0.28rem 0.62rem;
+  line-height: 1.2;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+.macs-people-quick-nav button:hover,
+.macs-people-quick-nav button.is-active {
+  transform: translateY(-1px);
+  border-color: rgba(102, 132, 193, 0.82);
+  background: linear-gradient(135deg, #eaf3ff 0%, #f2f8ff 100%);
+  color: #17396f;
+}
+
 .people-trendy-block {
   position: relative;
   border-radius: 20px;
@@ -1928,6 +1969,18 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 @media (max-width: 767px) {
+  .macs-people-quick-nav {
+    top: 56px;
+    gap: 0.28rem;
+    padding: 0.34rem 0.34rem;
+    border-radius: 10px;
+  }
+
+  .macs-people-quick-nav button {
+    font-size: 0.64rem;
+    padding: 0.22rem 0.44rem;
+  }
+
   .people-trendy-block {
     border-radius: 14px;
     padding: 0.72rem 0.56rem 0.5rem;

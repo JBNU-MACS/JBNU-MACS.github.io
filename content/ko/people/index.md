@@ -5,6 +5,16 @@ date: 2024-06-11
 type: landing
 
 sections:
+  - block: markdown
+    content:
+      title:
+      subtitle:
+      text: |
+        {{< people_quick_nav >}}
+    design:
+      columns: '1'
+      css_class: people-quick-nav-wrap
+
   # - block: people
   #   content:
   #     title: Professor
@@ -63,21 +73,6 @@ sections:
 
   - block: people
     content:
-      title: Part-time Graduate (M.S. / Ph.D.)
-      user_groups:
-        - Part-time Graduate
-      sort_by: Params.last_name
-      sort_ascending: true
-    design:
-      show_interests: false
-      show_role: true
-      show_social: true
-      show_organizations: true
-      columns: 2
-      css_class: people-trendy-block people-trendy-part
-
-  - block: people
-    content:
       title: Student Researchers (Undergraduate)
       # Choose which groups/teams of users to display.
       #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
@@ -101,6 +96,21 @@ sections:
       show_organizations: false
       columns: 2
       css_class: people-trendy-block people-trendy-under
+
+  - block: people
+    content:
+      title: Part-time Graduate (M.S. / Ph.D.)
+      user_groups:
+        - Part-time Graduate
+      sort_by: Params.last_name
+      sort_ascending: true
+    design:
+      show_interests: false
+      show_role: true
+      show_social: true
+      show_organizations: true
+      columns: 2
+      css_class: people-trendy-block people-trendy-part
 
   - block: people   
     content:

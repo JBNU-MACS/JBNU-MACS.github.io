@@ -1,0 +1,26 @@
+<nav class="macs-people-quick-nav" aria-label="People quick navigation">
+  <button type="button" data-target=".people-trendy-grad">Graduate</button>
+  <button type="button" data-target=".people-trendy-part">Part-time</button>
+  <button type="button" data-target=".people-trendy-under">Undergraduate</button>
+  <button type="button" data-target=".people-trendy-alumni">Alumni</button>
+</nav>
+
+<script>
+  (function () {
+    var nav = document.currentScript && document.currentScript.previousElementSibling;
+    if (!nav || !nav.classList.contains('macs-people-quick-nav')) return;
+    var buttons = nav.querySelectorAll('button[data-target]');
+    if (!buttons.length) return;
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var selector = btn.getAttribute('data-target');
+        var section = selector ? document.querySelector(selector) : null;
+        if (!section) return;
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        buttons.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+      });
+    });
+  })();
+</script>

@@ -1453,62 +1453,105 @@ body.home .home-section:has(.home-dual-feed) {
   overflow: hidden;
 }
 
-/* Contact page redesign */
+/* Contact page redesign: distinct visual identity */
 .macs-contact-fancy {
   display: grid;
-  gap: 1rem;
+  gap: 0.95rem;
 }
 
 .macs-contact-hero {
   position: relative;
-  border-radius: 22px;
+  border-radius: 24px;
   overflow: hidden;
-  min-height: 250px;
-  border: 1px solid rgba(141, 166, 212, 0.42);
+  min-height: 280px;
+  border: 1px solid rgba(120, 151, 217, 0.5);
   background:
-    linear-gradient(118deg, rgba(8, 17, 38, 0.78) 0%, rgba(8, 17, 38, 0.42) 45%, rgba(8, 17, 38, 0.72) 100%),
+    linear-gradient(112deg, rgba(8, 22, 54, 0.86) 0%, rgba(8, 22, 54, 0.44) 48%, rgba(8, 22, 54, 0.8) 100%),
     url('/media/pic-jbnu.jpg') center / cover no-repeat;
-  box-shadow: 0 18px 36px rgba(16, 29, 61, 0.18);
+  box-shadow: 0 22px 44px rgba(15, 31, 71, 0.22);
+}
+
+.macs-contact-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.macs-contact-orb.orb-a {
+  width: 180px;
+  height: 180px;
+  right: -30px;
+  top: -40px;
+  background: radial-gradient(circle, rgba(107, 203, 255, 0.42) 0%, rgba(107, 203, 255, 0) 68%);
+}
+
+.macs-contact-orb.orb-b {
+  width: 210px;
+  height: 210px;
+  left: -40px;
+  bottom: -95px;
+  background: radial-gradient(circle, rgba(255, 189, 138, 0.34) 0%, rgba(255, 189, 138, 0) 72%);
 }
 
 .macs-contact-hero-content {
   position: relative;
   z-index: 1;
-  max-width: 760px;
-  padding: 2rem 1.8rem 1.7rem;
+  max-width: 780px;
+  padding: 2.15rem 1.95rem 1.85rem;
   color: #f4f8ff;
 }
 
 .macs-contact-kicker {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.58rem;
   display: inline-block;
-  font-size: 0.68rem;
+  font-size: 0.69rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  border: 1px solid rgba(220, 233, 255, 0.48);
-  background: rgba(220, 233, 255, 0.14);
-  padding: 0.18rem 0.52rem;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(226, 238, 255, 0.5);
+  background: rgba(218, 232, 255, 0.16);
+  padding: 0.16rem 0.5rem;
   border-radius: 999px;
 }
 
 .macs-contact-hero h1 {
-  margin: 0 0 0.55rem;
-  color: #f8fbff;
-  font-size: 2rem;
+  margin: 0 0 0.5rem;
+  color: #f9fbff;
+  font-size: 2.14rem;
   letter-spacing: -0.02em;
 }
 
 .macs-contact-hero p {
   margin: 0;
-  font-size: 0.93rem;
+  font-size: 0.95rem;
   line-height: 1.5;
   color: rgba(242, 247, 255, 0.95);
+  max-width: 88%;
+}
+
+.macs-contact-meta {
+  margin-top: 0.72rem;
+  display: flex;
+  gap: 0.38rem;
+  flex-wrap: wrap;
+}
+
+.macs-contact-meta span {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(224, 236, 255, 0.42);
+  background: rgba(224, 236, 255, 0.13);
+  color: #f3f7ff;
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 0.16rem 0.46rem;
 }
 
 .macs-contact-hero-actions {
   margin-top: 0.9rem;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.46rem;
   flex-wrap: wrap;
 }
 
@@ -1518,69 +1561,78 @@ body.home .home-section:has(.home-dual-feed) {
   justify-content: center;
   text-decoration: none !important;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  background: rgba(236, 244, 255, 0.16);
-  color: #f5f9ff !important;
-  font-size: 0.8rem;
+  border: 1px solid rgba(246, 251, 255, 0.58);
+  background: rgba(241, 248, 255, 0.2);
+  color: #f6faff !important;
+  font-size: 0.79rem;
   font-weight: 700;
-  padding: 0.4rem 0.82rem;
-  transition: transform 0.2s ease, background 0.2s ease;
+  padding: 0.38rem 0.8rem;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .macs-contact-btn:hover {
   transform: translateY(-1px);
-  background: rgba(236, 244, 255, 0.24);
+  background: rgba(241, 248, 255, 0.28);
+  box-shadow: 0 8px 16px rgba(19, 50, 110, 0.2);
 }
 
 .macs-contact-btn.ghost {
   background: transparent;
 }
 
+.macs-contact-bento {
+  display: grid;
+  grid-template-columns: 1.05fr 1.45fr;
+  gap: 0.85rem;
+  align-items: stretch;
+}
+
 .macs-contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.85rem;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
 }
 
 .macs-contact-card {
-  border-radius: 15px;
-  border: 1px solid rgba(165, 181, 214, 0.56);
-  background: linear-gradient(165deg, #ffffff 0%, #f7faff 100%);
-  box-shadow: 0 10px 22px rgba(20, 35, 66, 0.08);
-  padding: 0.95rem 0.88rem 0.85rem;
+  border-radius: 16px;
+  border: 1px solid rgba(153, 178, 220, 0.56);
+  background:
+    linear-gradient(156deg, #ffffff 0%, #f4f8ff 100%);
+  box-shadow: 0 12px 24px rgba(20, 35, 66, 0.1);
+  padding: 0.9rem 0.82rem 0.82rem;
 }
 
 .macs-contact-card h3 {
-  margin: 0 0 0.38rem;
-  font-size: 0.94rem;
-  color: #22345c;
+  margin: 0 0 0.34rem;
+  font-size: 0.9rem;
+  color: #1f3e77;
 }
 
 .macs-contact-card p {
   margin: 0;
-  font-size: 0.84rem;
-  color: #33466d;
-  font-weight: 600;
+  font-size: 0.82rem;
+  color: #2e4878;
+  font-weight: 700;
 }
 
 .macs-contact-card p a {
-  color: #2a57a4;
+  color: #1f4c9b;
   text-decoration: none;
 }
 
 .macs-contact-card small {
   display: block;
-  margin-top: 0.36rem;
-  font-size: 0.72rem;
-  line-height: 1.45;
+  margin-top: 0.34rem;
+  font-size: 0.7rem;
+  line-height: 1.42;
   color: #5a6a89;
 }
 
 .macs-contact-map-wrap {
-  border-radius: 16px;
-  border: 1px solid rgba(163, 180, 214, 0.52);
+  border-radius: 18px;
+  border: 1px solid rgba(149, 175, 220, 0.54);
   background: #ffffff;
-  box-shadow: 0 12px 26px rgba(18, 33, 61, 0.09);
+  box-shadow: 0 14px 28px rgba(18, 33, 61, 0.1);
   overflow: hidden;
 }
 
@@ -1589,76 +1641,115 @@ body.home .home-section:has(.home-dual-feed) {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  padding: 0.8rem 0.92rem;
-  border-bottom: 1px solid rgba(185, 198, 225, 0.48);
+  padding: 0.82rem 0.92rem;
+  border-bottom: 1px solid rgba(178, 196, 229, 0.55);
+  background: linear-gradient(135deg, #eef5ff 0%, #f8fbff 100%);
 }
 
 .macs-contact-map-head h3 {
   margin: 0;
-  font-size: 0.93rem;
-  color: #24365f;
+  font-size: 0.9rem;
+  color: #234174;
 }
 
 .macs-contact-map-head a {
-  font-size: 0.76rem;
-  color: #2a5bad;
+  font-size: 0.74rem;
+  color: #2156ad;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .macs-contact-map iframe {
   width: 100%;
-  height: 340px;
+  height: 100%;
+  min-height: 345px;
   border: 0;
 }
 
 @media (max-width: 1024px) {
+  .macs-contact-bento {
+    grid-template-columns: 1fr;
+  }
+
   .macs-contact-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .macs-contact-hero h1 {
-    font-size: 1.76rem;
+    font-size: 1.9rem;
+  }
+
+  .macs-contact-map iframe {
+    min-height: 300px;
   }
 }
 
 @media (max-width: 767px) {
   .macs-contact-fancy {
-    gap: 0.72rem;
+    gap: 0.7rem;
   }
 
   .macs-contact-hero {
     border-radius: 14px;
-    min-height: 185px;
+    min-height: 205px;
+  }
+
+  .macs-contact-orb.orb-a {
+    width: 120px;
+    height: 120px;
+    right: -26px;
+    top: -30px;
+  }
+
+  .macs-contact-orb.orb-b {
+    width: 140px;
+    height: 140px;
+    left: -28px;
+    bottom: -64px;
   }
 
   .macs-contact-hero-content {
-    padding: 1rem 0.9rem 0.95rem;
+    padding: 1rem 0.9rem 0.94rem;
   }
 
   .macs-contact-kicker {
-    font-size: 0.55rem;
-    margin-bottom: 0.35rem;
+    font-size: 0.52rem;
+    margin-bottom: 0.28rem;
   }
 
   .macs-contact-hero h1 {
-    font-size: 1.3rem;
-    margin-bottom: 0.35rem;
+    font-size: 1.26rem;
+    margin-bottom: 0.32rem;
   }
 
   .macs-contact-hero p {
-    font-size: 0.74rem;
-    line-height: 1.42;
+    font-size: 0.73rem;
+    line-height: 1.4;
+    max-width: 96%;
+  }
+
+  .macs-contact-meta {
+    margin-top: 0.46rem;
+    gap: 0.24rem;
+  }
+
+  .macs-contact-meta span {
+    font-size: 0.56rem;
+    padding: 0.12rem 0.34rem;
+  }
+
+  .macs-contact-meta span:nth-child(3) {
+    display: none;
   }
 
   .macs-contact-btn {
-    font-size: 0.67rem;
-    padding: 0.32rem 0.64rem;
+    font-size: 0.66rem;
+    padding: 0.3rem 0.6rem;
   }
 
   .macs-contact-grid {
     grid-template-columns: 1fr;
-    gap: 0.65rem;
+    gap: 0.62rem;
   }
 
   .macs-contact-card {
@@ -1667,15 +1758,15 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-contact-card h3 {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
   }
 
   .macs-contact-card p {
-    font-size: 0.74rem;
+    font-size: 0.73rem;
   }
 
   .macs-contact-card small {
-    font-size: 0.66rem;
+    font-size: 0.64rem;
   }
 
   .macs-contact-map-wrap {
@@ -1687,14 +1778,14 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-contact-map-head h3 {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
   .macs-contact-map-head a {
-    font-size: 0.67rem;
+    font-size: 0.64rem;
   }
 
   .macs-contact-map iframe {
-    height: 250px;
+    min-height: 240px;
   }
 }

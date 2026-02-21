@@ -154,7 +154,7 @@ sections:
           - event
     design:
       view: community/custom_card
-      columns: '1'
+      columns: '2'
 
   - block: collection
     content:
@@ -174,7 +174,7 @@ sections:
       page_type: publication
     design:
       view: community/custom_card
-      columns: '1'
+      columns: '2'
     advanced:
       css_style: "text-align: center;"
 

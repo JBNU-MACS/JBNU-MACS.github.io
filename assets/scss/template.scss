@@ -168,49 +168,30 @@ html[data-theme="dark"] .featurette-icon svg {
   }
 }
 
-/* Desktop: Notifications left / Publications right */
-@media (min-width: 992px) {
-  section#section-1,
-  section#section-2 {
-    float: left;
-    width: 50%;
-    padding-left: 22px;
-    padding-right: 22px;
-    box-sizing: border-box;
-  }
-
-  section#section-2 + section {
-    clear: both;
-  }
-}
-
 /* Main landing typography tuning */
-body.home .home-section {
-  font-size: 0.95rem;
+#section-1 .section-heading h1,
+#section-2 .section-heading h1 {
+  font-size: 1.8rem;
 }
 
-body.home .section-heading h1 {
-  font-size: 2rem;
+#section-1 .article-title h4,
+#section-2 .article-title h4 {
+  font-size: 0.98rem;
 }
 
-body.home .wg-slider .carousel-item {
-  font-size: 0.9rem;
+#section-1 .article-style p,
+#section-2 .article-style p {
+  font-size: 0.84rem;
 }
 
-body.home .featurette .section-subheading {
-  font-size: 0.9rem;
-}
-
-body.home .featurette p {
-  font-size: 0.86rem;
+#section-1 .article-metadata,
+#section-2 .article-metadata {
+  font-size: 0.74rem;
 }
 
 @media (max-width: 767px) {
-  body.home .home-section {
-    font-size: 0.9rem;
-  }
-
-  body.home .section-heading h1 {
-    font-size: 1.6rem;
+  #section-1 .section-heading h1,
+  #section-2 .section-heading h1 {
+    font-size: 1.45rem;
   }
 }

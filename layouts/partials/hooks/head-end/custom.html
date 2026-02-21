@@ -3,28 +3,14 @@
     function forceLightTheme() {
       try {
         localStorage.setItem('wcTheme', 'light');
-        localStorage.setItem('theme', 'light');
-        localStorage.setItem('color-theme', 'light');
-        localStorage.setItem('preferred-theme', 'light');
       } catch (e) {}
 
       document.documentElement.classList.remove('dark');
       document.documentElement.setAttribute('data-theme', 'light');
-      if (document.body) document.body.classList.remove('dark');
     }
 
     forceLightTheme();
-    document.addEventListener('DOMContentLoaded', forceLightTheme);
-
-    var observer = new MutationObserver(forceLightTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class', 'data-theme']
-    });
-
-    setTimeout(function () {
-      observer.disconnect();
-    }, 10000);
+    window.addEventListener('DOMContentLoaded', forceLightTheme, { once: true });
   })();
 </script>
 

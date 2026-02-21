@@ -526,6 +526,13 @@ body.home .wg-slider .carousel-item {
   transform: translateZ(0);
 }
 
+body.home .wg-slider .carousel-item,
+body.home .wg-slider .slide,
+body.home .wg-slider .slick-slide,
+body.home .wg-slider .carousel-inner {
+  height: 520px !important;
+}
+
 body.home .wg-slider .carousel-item::before {
   content: "";
   position: absolute;
@@ -669,12 +676,26 @@ body.home .featurette p {
     border-radius: 14px;
   }
 
+  body.home .wg-slider .carousel-item,
+  body.home .wg-slider .slide,
+  body.home .wg-slider .slick-slide,
+  body.home .wg-slider .carousel-inner {
+    height: 300px !important;
+  }
+
   body.home .wg-slider .hero-title {
-    font-size: 1.8rem;
+    font-size: 1.35rem;
   }
 
   body.home .wg-slider .hero-lead {
-    font-size: 0.9rem;
+    font-size: 0.78rem;
+    line-height: 1.42;
+    max-width: 92%;
+  }
+
+  body.home .wg-slider .btn {
+    padding: 0.46rem 0.92rem;
+    font-size: 0.78rem;
   }
 
   body.home .featurette {
@@ -693,6 +714,15 @@ body.home .featurette p {
 
   body.home .featurette p {
     font-size: 0.74rem !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  body.home .wg-slider .carousel-item,
+  body.home .wg-slider .slide,
+  body.home .wg-slider .slick-slide,
+  body.home .wg-slider .carousel-inner {
+    height: 420px !important;
   }
 }
 

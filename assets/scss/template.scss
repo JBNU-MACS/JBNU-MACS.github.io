@@ -2376,6 +2376,40 @@ body.home .home-section:has(.home-dual-feed) {
   min-width: 0;
 }
 
+/* Graduate + Undergraduate: name and role on one line */
+.macs-people-section[data-group="graduate"] .macs-people-meta,
+.macs-people-section[data-group="undergrad"] .macs-people-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.34rem;
+  row-gap: 0.12rem;
+}
+
+.macs-people-section[data-group="graduate"] .macs-people-card h3,
+.macs-people-section[data-group="undergrad"] .macs-people-card h3 {
+  margin: 0;
+}
+
+.macs-people-section[data-group="graduate"] .macs-people-card .role,
+.macs-people-section[data-group="undergrad"] .macs-people-card .role {
+  margin: 0;
+  font-size: 0.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1d4f90;
+  background: #eaf2ff;
+  border: 1px solid #c8daf6;
+  border-radius: 999px;
+  padding: 0.08rem 0.38rem;
+}
+
+.macs-people-section[data-group="graduate"] .macs-people-card .org,
+.macs-people-section[data-group="undergrad"] .macs-people-card .org {
+  flex-basis: 100%;
+  margin-top: 0.08rem;
+}
+
 @media (max-width: 767px) {
   .macs-people-fancy {
     gap: 0.56rem;
@@ -2435,6 +2469,12 @@ body.home .home-section:has(.home-dual-feed) {
 
   .macs-people-card .grad {
     font-size: 0.5rem;
+  }
+
+  .macs-people-section[data-group="graduate"] .macs-people-card .role,
+  .macs-people-section[data-group="undergrad"] .macs-people-card .role {
+    font-size: 0.54rem;
+    padding: 0.06rem 0.32rem;
   }
 }
 

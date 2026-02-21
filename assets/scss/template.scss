@@ -167,3 +167,50 @@ html[data-theme="dark"] .featurette-icon svg {
     height: 150px;
   }
 }
+
+/* Desktop: Notifications left / Publications right */
+@media (min-width: 992px) {
+  section#section-1,
+  section#section-2 {
+    float: left;
+    width: 50%;
+    padding-left: 22px;
+    padding-right: 22px;
+    box-sizing: border-box;
+  }
+
+  section#section-2 + section {
+    clear: both;
+  }
+}
+
+/* Main landing typography tuning */
+body.home .home-section {
+  font-size: 0.95rem;
+}
+
+body.home .section-heading h1 {
+  font-size: 2rem;
+}
+
+body.home .wg-slider .carousel-item {
+  font-size: 0.9rem;
+}
+
+body.home .featurette .section-subheading {
+  font-size: 0.9rem;
+}
+
+body.home .featurette p {
+  font-size: 0.86rem;
+}
+
+@media (max-width: 767px) {
+  body.home .home-section {
+    font-size: 0.9rem;
+  }
+
+  body.home .section-heading h1 {
+    font-size: 1.6rem;
+  }
+}

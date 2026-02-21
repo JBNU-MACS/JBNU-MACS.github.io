@@ -32,6 +32,7 @@
       {{ if eq (len $graduates) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
       {{ range $graduates }}
         {{ $avatar := "" }}
+        {{ $email := (.Params.email | default "") }}
         {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
         <article class="macs-people-card">
           <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
@@ -46,7 +47,12 @@
               {{ with index .Params.organizations 0 }}
                 <p class="org">{{ replaceRE "^전북대학교\\s*" "" .name }}</p>
               {{ end }}
-              <p class="hint">Profile</p>
+              {{ if ne $email "" }}
+                <p class="contact">contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
+              {{ else }}
+                <p class="contact">contact:</p>
+              {{ end }}
+              <p class="hint">View detail</p>
             </div>
           </a>
         </article>
@@ -63,6 +69,7 @@
       {{ if eq (len $undergrad) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
       {{ range $undergrad }}
         {{ $avatar := "" }}
+        {{ $email := (.Params.email | default "") }}
         {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
         <article class="macs-people-card">
           <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
@@ -77,7 +84,12 @@
               {{ with index .Params.organizations 0 }}
                 <p class="org">{{ replaceRE "^전북대학교\\s*" "" .name }}</p>
               {{ end }}
-              <p class="hint">Profile</p>
+              {{ if ne $email "" }}
+                <p class="contact">contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
+              {{ else }}
+                <p class="contact">contact:</p>
+              {{ end }}
+              <p class="hint">View detail</p>
             </div>
           </a>
         </article>
@@ -94,6 +106,7 @@
       {{ if eq (len $parttime) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
       {{ range $parttime }}
         {{ $avatar := "" }}
+        {{ $email := (.Params.email | default "") }}
         {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
         <article class="macs-people-card">
           <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
@@ -108,7 +121,12 @@
               {{ with index .Params.organizations 0 }}
                 <p class="org">{{ replaceRE "^전북대학교\\s*" "" .name }}</p>
               {{ end }}
-              <p class="hint">Profile</p>
+              {{ if ne $email "" }}
+                <p class="contact">contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
+              {{ else }}
+                <p class="contact">contact:</p>
+              {{ end }}
+              <p class="hint">View detail</p>
             </div>
           </a>
         </article>
@@ -126,6 +144,7 @@
       {{ range $alumni }}
         {{ $avatar := "" }}
         {{ $gradym := "" }}
+        {{ $email := (.Params.email | default "") }}
         {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
         {{ with .Params.graduation_year_month }}{{ $gradym = . }}{{ end }}
         {{ if eq $gradym "" }}
@@ -149,7 +168,12 @@
               {{ if ne $gradym "" }}
                 <p class="grad">졸업: {{ $gradym }}</p>
               {{ end }}
-              <p class="hint">Profile</p>
+              {{ if ne $email "" }}
+                <p class="contact">contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
+              {{ else }}
+                <p class="contact">contact:</p>
+              {{ end }}
+              <p class="hint">View detail</p>
             </div>
           </a>
         </article>

@@ -2909,30 +2909,24 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-author-hero {
   position: relative;
   overflow: hidden;
-  grid-template-columns: 220px minmax(0, 1fr);
-  border-radius: 22px;
-  border: 1px solid rgba(150, 174, 221, 0.5);
-  background:
-    linear-gradient(150deg, #ffffff 0%, #f8fbff 100%);
-  box-shadow: 0 12px 24px rgba(20, 36, 69, 0.07);
+  grid-template-columns: 180px minmax(0, 1fr);
+  border-radius: 18px;
+  border: 1px solid #d9e4f3;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(20, 36, 69, 0.05);
+  gap: 0.95rem;
+  padding: 0.9rem;
 }
 
 .macs-author-hero::after {
-  content: "";
-  position: absolute;
-  right: -30px;
-  top: -40px;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(111, 174, 255, 0.08) 0%, rgba(111, 174, 255, 0) 70%);
+  display: none;
 }
 
 .macs-author-avatar {
-  width: 220px;
-  height: 220px;
-  border-radius: 18px;
-  border: 2px solid rgba(183, 204, 237, 0.7);
+  width: 180px;
+  height: 180px;
+  border-radius: 14px;
+  border: 1px solid #cfdef3;
 }
 
 .macs-author-head-copy {
@@ -2941,63 +2935,82 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .macs-author-head-copy .kicker {
-  font-size: 0.66rem;
-  color: #335a93;
+  margin: 0 0 0.25rem;
+  font-size: 0.58rem;
+  color: #4a6490;
+  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .macs-author-head-copy h1 {
-  font-size: 1.82rem;
+  margin: 0;
+  font-size: 1.62rem;
   color: #0f2f60;
+  line-height: 1.12;
 }
 
-.macs-author-head-copy h1 span {
-  font-size: 0.96rem;
-  color: #486a9a;
+.macs-author-head-copy h1 .name-ko {
+  display: block;
+  font-weight: 800;
+}
+
+.macs-author-head-copy h1 .name-en {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.56em;
+  color: #4f6991;
+  font-weight: 700;
 }
 
 .macs-author-meta-line {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem 0.46rem;
+  gap: 0.26rem 0.42rem;
   align-items: center;
-  margin-top: 0.35rem;
+  margin-top: 0.42rem;
 }
 
 .macs-author-head-copy .role {
   margin: 0;
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   color: #1d4f90;
   background: #eaf2ff;
   border: 1px solid #cadbf6;
   border-radius: 999px;
-  padding: 0.12rem 0.4rem;
+  padding: 0.1rem 0.38rem;
 }
 
 .macs-author-head-copy .org {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: 0.76rem;
+  color: #4b658d;
 }
 
 .macs-author-head-copy .contact {
-  margin: 0;
-  font-size: 0.7rem;
+  margin: 0.34rem 0 0;
+  font-size: 0.76rem;
+  color: #53719a;
+}
+
+.macs-author-head-copy .contact a {
+  color: #28589f;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .macs-author-stat-row {
-  margin-top: 0.58rem;
+  margin-top: 0.52rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid #e7edf8;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.32rem;
+  gap: 0.28rem 0.5rem;
 }
 
 .macs-author-stat-row span {
-  font-size: 0.64rem;
+  font-size: 0.65rem;
   color: #2f568d;
-  border: 1px solid #d0def2;
-  background: #f2f8ff;
-  border-radius: 999px;
-  padding: 0.12rem 0.4rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .macs-author-main {
@@ -3079,34 +3092,37 @@ body.home .home-section:has(.home-dual-feed) {
 @media (max-width: 767px) {
   .macs-author-hero {
     grid-template-columns: 1fr;
-    border-radius: 14px;
+    border-radius: 12px;
+    gap: 0.62rem;
+    padding: 0.64rem;
   }
 
   .macs-author-avatar {
-    width: 132px;
-    height: 132px;
+    width: 124px;
+    height: 124px;
     border-radius: 12px;
   }
 
   .macs-author-head-copy h1 {
-    font-size: 1.28rem;
+    font-size: 1.2rem;
   }
 
-  .macs-author-head-copy h1 span {
-    font-size: 0.78rem;
+  .macs-author-head-copy h1 .name-en {
+    margin-top: 0.12rem;
+    font-size: 0.62em;
   }
 
   .macs-author-head-copy .role {
-    font-size: 0.66rem;
+    font-size: 0.64rem;
   }
 
   .macs-author-head-copy .org,
   .macs-author-head-copy .contact {
-    font-size: 0.64rem;
+    font-size: 0.68rem;
   }
 
   .macs-author-stat-row span {
-    font-size: 0.58rem;
+    font-size: 0.61rem;
   }
 
   .macs-author-block {

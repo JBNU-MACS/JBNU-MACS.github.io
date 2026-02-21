@@ -25,18 +25,18 @@
       <div class="macs-author-head-copy">
         <p class="kicker">MACS LAB PROFILE</p>
         <h1>
-          {{ if .Params.name_ko }}{{ .Params.name_ko }}{{ else }}{{ .Title }}{{ end }}
-          {{ with .Params.name_en }}<span>{{ . }}</span>{{ end }}
+          <span class="name-ko">{{ if .Params.name_ko }}{{ .Params.name_ko }}{{ else }}{{ .Title }}{{ end }}</span>
+          {{ with .Params.name_en }}<span class="name-en">{{ . }}</span>{{ end }}
         </h1>
         <div class="macs-author-meta-line">
           <p class="role">{{ .Params.role }}</p>
           {{ with index .Params.organizations 0 }}
             <p class="org">{{ .name }}</p>
           {{ end }}
-          {{ if ne $email "" }}
-            <p class="contact">Contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
-          {{ end }}
         </div>
+        {{ if ne $email "" }}
+          <p class="contact">Contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
+        {{ end }}
         <div class="macs-author-stat-row">
           <span>Interests {{ len (.Params.interests | default (slice)) }}</span>
           <span>Courses {{ len (.Params.education.courses | default (slice)) }}</span>

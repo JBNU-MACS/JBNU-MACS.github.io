@@ -1,39 +1,90 @@
 <section class="macs-feature-grid-wrap">
   <div class="macs-feature-grid">
-    <article class="macs-feature-card">
+    <article class="macs-feature-card" data-title="인공지능(AI)" data-desc="의료 (Medical), 항공우주 (Aerospace), 컨텐츠 (Contents) 등 다양한 특성화 분야에 적응형 AI 기술 적용.">
       <div class="macs-feature-icon"><i class="fas fa-code-branch"></i></div>
       <h3>인공지능(AI)</h3>
       <p>의료 (Medical), 항공우주 (Aerospace), 컨텐츠 (Contents) 등 다양한 특성화 분야에 적응형 AI 기술 적용.</p>
     </article>
 
-    <article class="macs-feature-card">
+    <article class="macs-feature-card" data-title="멀티모달(Multi-modality)" data-desc="Vision &amp; Language 분야의 기반 AI 기술 개발 및 관련 응용 어플리케이션에 기술 적용.">
       <div class="macs-feature-icon"><i class="fas fa-globe"></i></div>
       <h3>멀티모달(Multi-modality)</h3>
       <p>Vision &amp; Language 분야의 기반 AI 기술 개발 및 관련 응용 어플리케이션에 기술 적용.</p>
     </article>
 
-    <article class="macs-feature-card">
+    <article class="macs-feature-card" data-title="의료수학(Medical Math)" data-desc="의료 분야에 대한 통계 분석 수행 및 의료 질병에 대한 수학적인 모델링 관련 연구 수행.">
       <div class="macs-feature-icon"><i class="fas fa-calculator"></i></div>
       <h3>의료수학(Medical Math)</h3>
       <p>의료 분야에 대한 통계 분석 수행 및 의료 질병에 대한 수학적인 모델링 관련 연구 수행.</p>
     </article>
 
-    <article class="macs-feature-card">
+    <article class="macs-feature-card" data-title="컨텐츠 (Contents)" data-desc="웹툰 및 미디어 컨텐츠와 관련된 AI 기반 기술 개발 및 고도화.">
       <div class="macs-feature-icon"><i class="fas fa-comment-dots"></i></div>
       <h3>컨텐츠 (Contents)</h3>
       <p>웹툰 및 미디어 컨텐츠와 관련된 AI 기반 기술 개발 및 고도화.</p>
     </article>
 
-    <article class="macs-feature-card">
+    <article class="macs-feature-card" data-title="개발 (Development)" data-desc="Full-Stack 기반의 응용 어플리케이션 개발.">
       <div class="macs-feature-icon"><i class="fas fa-laptop"></i></div>
       <h3>개발 (Development)</h3>
       <p>Full-Stack 기반의 응용 어플리케이션 개발.</p>
     </article>
 
-    <article class="macs-feature-card">
+    <article class="macs-feature-card" data-title="솔루션 (Solution)" data-desc="AI 기반기술 및 관련 어플리케이션에 적용을 통한 통합 솔루션 개발.">
       <div class="macs-feature-icon"><i class="fab fa-app-store-ios"></i></div>
       <h3>솔루션 (Solution)</h3>
       <p>AI 기반기술 및 관련 어플리케이션에 적용을 통한 통합 솔루션 개발.</p>
     </article>
   </div>
+
+  <div class="macs-feature-modal" id="macs-feature-modal" aria-hidden="true">
+    <div class="macs-feature-modal-inner" role="dialog" aria-modal="true" aria-labelledby="macs-feature-modal-title">
+      <button type="button" class="macs-feature-modal-close" aria-label="닫기">&times;</button>
+      <h4 id="macs-feature-modal-title"></h4>
+      <p id="macs-feature-modal-desc"></p>
+    </div>
+  </div>
 </section>
+
+<script>
+  (function () {
+    var root = document.currentScript && document.currentScript.previousElementSibling;
+    if (!root) return;
+    var cards = root.querySelectorAll('.macs-feature-card');
+    var modal = root.querySelector('#macs-feature-modal');
+    var title = root.querySelector('#macs-feature-modal-title');
+    var desc = root.querySelector('#macs-feature-modal-desc');
+    var closeBtn = root.querySelector('.macs-feature-modal-close');
+    if (!cards.length || !modal || !title || !desc || !closeBtn) return;
+
+    function isMobile() {
+      return window.matchMedia('(max-width: 767px)').matches;
+    }
+
+    function openModal(t, d) {
+      title.textContent = t || '';
+      desc.textContent = d || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    cards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        if (!isMobile()) return;
+        openModal(card.getAttribute('data-title'), card.getAttribute('data-desc'));
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+  })();
+</script>

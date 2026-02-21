@@ -93,13 +93,13 @@ sections:
 
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
-      slide_height: '500px'
+      slide_height: '460px'
       slide_width: '100px'
       is_fullscreen: false
       # Automatically transition through slides?
       loop: true
       # Duration of transition between slides (in ms)
-      interval: 6200
+      interval: 5200
     advanced:
       css_style: |
         .slick-prev, .slick-next, .carousel-control-next-icon, .carousel-control-prev-icon {

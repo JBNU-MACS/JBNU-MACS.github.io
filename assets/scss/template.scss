@@ -2900,3 +2900,216 @@ body.home .home-section:has(.home-dual-feed) {
     font-size: 0.74rem;
   }
 }
+
+/* Author page trendy v2 override */
+.macs-author-fancy {
+  gap: 0.95rem;
+}
+
+.macs-author-hero {
+  position: relative;
+  overflow: hidden;
+  grid-template-columns: 220px minmax(0, 1fr);
+  border-radius: 22px;
+  border: 1px solid rgba(150, 174, 221, 0.5);
+  background:
+    radial-gradient(280px 140px at 95% -10%, rgba(140, 210, 255, 0.3), transparent 70%),
+    linear-gradient(150deg, #ffffff 0%, #f2f7ff 100%);
+  box-shadow: 0 18px 36px rgba(20, 36, 69, 0.1);
+}
+
+.macs-author-hero::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(111, 174, 255, 0.2) 0%, rgba(111, 174, 255, 0) 70%);
+}
+
+.macs-author-avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 18px;
+  border: 2px solid rgba(183, 204, 237, 0.7);
+}
+
+.macs-author-head-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.macs-author-head-copy .kicker {
+  font-size: 0.66rem;
+  color: #335a93;
+}
+
+.macs-author-head-copy h1 {
+  font-size: 1.82rem;
+  color: #0f2f60;
+}
+
+.macs-author-head-copy h1 span {
+  font-size: 0.96rem;
+  color: #486a9a;
+}
+
+.macs-author-meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.46rem;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+
+.macs-author-head-copy .role {
+  margin: 0;
+  font-size: 0.74rem;
+  color: #1d4f90;
+  background: #eaf2ff;
+  border: 1px solid #cadbf6;
+  border-radius: 999px;
+  padding: 0.12rem 0.4rem;
+}
+
+.macs-author-head-copy .org {
+  margin: 0;
+  font-size: 0.72rem;
+}
+
+.macs-author-head-copy .contact {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+.macs-author-stat-row {
+  margin-top: 0.58rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+}
+
+.macs-author-stat-row span {
+  font-size: 0.64rem;
+  color: #2f568d;
+  border: 1px solid #d0def2;
+  background: #f2f8ff;
+  border-radius: 999px;
+  padding: 0.12rem 0.4rem;
+  font-weight: 700;
+}
+
+.macs-author-main {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 0.76rem;
+}
+
+.macs-author-col-left,
+.macs-author-col-right {
+  display: grid;
+  gap: 0.76rem;
+  align-content: start;
+}
+
+.macs-author-block {
+  border-radius: 16px;
+  border: 1px solid #dbe6f5;
+  box-shadow: 0 10px 20px rgba(18, 34, 66, 0.06);
+}
+
+.macs-author-block h2 {
+  font-size: 1.02rem;
+  color: #133a6f;
+}
+
+.macs-chip-wrap .chip {
+  font-size: 0.71rem;
+  padding: 0.18rem 0.5rem;
+}
+
+.macs-author-bio {
+  font-size: 0.86rem;
+  line-height: 1.72;
+}
+
+.macs-author-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+}
+
+.macs-author-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #244c86;
+  border: 1px solid #cfdef3;
+  background: #f2f8ff;
+  border-radius: 999px;
+  padding: 0.14rem 0.48rem;
+  font-weight: 700;
+}
+
+.macs-author-work-list .work-item {
+  border-radius: 12px;
+  padding: 0.45rem 0.58rem;
+}
+
+@media (max-width: 980px) {
+  .macs-author-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .macs-author-hero {
+    grid-template-columns: 1fr;
+    border-radius: 14px;
+  }
+
+  .macs-author-avatar {
+    width: 132px;
+    height: 132px;
+    border-radius: 12px;
+  }
+
+  .macs-author-head-copy h1 {
+    font-size: 1.28rem;
+  }
+
+  .macs-author-head-copy h1 span {
+    font-size: 0.78rem;
+  }
+
+  .macs-author-head-copy .role {
+    font-size: 0.66rem;
+  }
+
+  .macs-author-head-copy .org,
+  .macs-author-head-copy .contact {
+    font-size: 0.64rem;
+  }
+
+  .macs-author-stat-row span {
+    font-size: 0.58rem;
+  }
+
+  .macs-author-block {
+    border-radius: 11px;
+  }
+
+  .macs-author-block h2 {
+    font-size: 0.86rem;
+  }
+
+  .macs-author-bio {
+    font-size: 0.74rem;
+  }
+}

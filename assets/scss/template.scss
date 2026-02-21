@@ -676,3 +676,138 @@ body.home .featurette p {
     font-size: 0.74rem !important;
   }
 }
+
+/* About page custom layout */
+.macs-about-fancy {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.macs-about-hero {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 320px;
+  border: 1px solid rgba(140, 162, 204, 0.4);
+  background:
+    linear-gradient(115deg, rgba(8, 19, 44, 0.78) 0%, rgba(8, 19, 44, 0.42) 48%, rgba(8, 19, 44, 0.72) 100%),
+    url('/media/pic-jbnu.jpg') center / cover no-repeat;
+  box-shadow: 0 20px 42px rgba(16, 30, 62, 0.2);
+}
+
+.macs-about-hero-content {
+  position: relative;
+  z-index: 1;
+  color: #f6f9ff;
+  max-width: 760px;
+  padding: 2.2rem 2.1rem 2rem;
+}
+
+.macs-about-kicker {
+  display: inline-block;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(208, 224, 255, 0.42);
+  background: rgba(220, 232, 255, 0.15);
+  margin-bottom: 0.8rem;
+}
+
+.macs-about-hero h1 {
+  color: #f8fbff;
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.7rem, 2.2vw, 2.45rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.macs-about-hero p {
+  margin: 0 0 1rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: rgba(242, 246, 255, 0.94);
+}
+
+.macs-about-cta {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.52rem 1.05rem;
+  color: #e8f1ff !important;
+  border: 1px solid rgba(205, 222, 255, 0.48);
+  background: rgba(223, 235, 255, 0.14);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.macs-about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.macs-about-card {
+  border-radius: 16px;
+  border: 1px solid rgba(168, 182, 215, 0.42);
+  background: linear-gradient(155deg, #ffffff 0%, #f7f9ff 100%);
+  box-shadow: 0 10px 24px rgba(24, 37, 70, 0.07);
+  padding: 1rem 0.95rem 0.92rem;
+}
+
+.macs-about-card h3 {
+  margin: 0 0 0.58rem;
+  font-size: 0.98rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.macs-about-card ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.macs-about-card li {
+  margin: 0.18rem 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: #4d5d7e;
+}
+
+@media (max-width: 1000px) {
+  .macs-about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .macs-about-hero {
+    min-height: 250px;
+    border-radius: 14px;
+  }
+
+  .macs-about-hero-content {
+    padding: 1.15rem 1rem 1rem;
+  }
+
+  .macs-about-hero h1 {
+    font-size: 1.35rem;
+  }
+
+  .macs-about-hero p {
+    font-size: 0.84rem;
+  }
+
+  .macs-about-card {
+    border-radius: 12px;
+    padding: 0.8rem 0.72rem 0.74rem;
+  }
+
+  .macs-about-card h3 {
+    font-size: 0.88rem;
+  }
+
+  .macs-about-card li {
+    font-size: 0.78rem;
+  }
+}

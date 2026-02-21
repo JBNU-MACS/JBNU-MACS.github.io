@@ -18,7 +18,7 @@ role: (석사과정) 대구경북과학기술원 (DGIST)
 
 # Organizations/Affiliations
 organizations:
-  - name: 학부연구생
+  - name: 학부연구생 (소프트웨어공학과)
 
 # Short bio (displayed in user profile at end of posts)
 # bio: 연합학습 및 표현 학습을 사용한 medical 도메인에서의 딥 러닝 기법, 도메인 적응 및 테스트 타임 학습과 같은 딥 러닝 기반 컴퓨터 비전 응용, 이미지 처리 및 이미지-텍스트 캡셔닝을 포함한 의료 응용의 딥 러닝 기반 진단 등을 포함합니다.

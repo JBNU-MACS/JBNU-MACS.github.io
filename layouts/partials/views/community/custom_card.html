@@ -35,10 +35,26 @@
   </a>
   {{ end }}
   <div class="card-text macslab-trend-card-text">
-    <div class="section-subheading article-title mb-1">
-        <h4><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a></h4>
+    <div class="macslab-card-badge">{{ $card_badge }}</div>
+
+    {{ if eq $card_section "publication" }}
+    <div class="ieee-ref-block">
+      {{ with $item.Params.authors }}
+      <span class="ieee-authors">{{ delimit . ", " }}</span>,
+      {{ end }}
+      "<a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a>,"
+      {{ with $item.Params.publication }}
+      <i>{{ . }}</i>
+      {{ end }}
+      {{ with $item.Params.date }}, {{ (time .).Year }}{{ end }}.
+      {{ if $item.Params.url_pdf }}
+      <a href="{{ $item.Params.url_pdf }}" target="_blank" rel="noopener">[PDF]</a>
+      {{ end }}
     </div>
-    
+    {{ else }}
+    <div class="section-subheading article-title mb-1">
+      <h4><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a></h4>
+    </div>
 
     {{ if $item.Params.authors }}
     <div class="article-metadata">
@@ -58,6 +74,7 @@
     <div class="btn-links">
       {{ partial "page_links" (dict "page" $item "is_list" 1) }}
     </div>
+    {{ end }}
     {{ end }}
   </div>
 </div>

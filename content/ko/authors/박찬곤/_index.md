@@ -14,11 +14,11 @@ authors:
 superuser: false
 
 # Role/position
-role: 박사과정
+role: 파트박사 / 한국생산기술연구원
 
 # Organizations/Affiliations
 organizations:
-  - name: 전북대학교 전자.정보공학부(컴퓨터공학전공)
+  - name: 한국생산기술연구원
 
 # Short bio (displayed in user profile at end of posts)
 # bio: 연합학습 및 표현 학습을 사용한 medical 도메인에서의 딥 러닝 기법, 도메인 적응 및 테스트 타임 학습과 같은 딥 러닝 기반 컴퓨터 비전 응용, 이미지 처리 및 이미지-텍스트 캡셔닝을 포함한 의료 응용의 딥 러닝 기반 진단 등을 포함합니다.
@@ -67,7 +67,7 @@ highlight_name: true
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Ph.D. Student
+  - Part-time Graduate
 
 
 ---

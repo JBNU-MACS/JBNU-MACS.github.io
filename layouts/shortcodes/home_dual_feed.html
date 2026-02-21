@@ -1,12 +1,24 @@
-{{ $newsPages := where site.RegularPages "Section" "in" (slice "notification" "post" "event") }}
-{{ $newsPages = first 5 ($newsPages.ByDate.Reverse) }}
+{{ $notificationPages := where site.RegularPages "Section" "notification" }}
+{{ $notificationPages = first 4 ($notificationPages.ByDate.Reverse) }}
+
+{{ $newsPages := where site.RegularPages "Section" "post" }}
+{{ $newsPages = first 4 ($newsPages.ByDate.Reverse) }}
 
 {{ $pubPages := where site.RegularPages "Section" "publication" }}
-{{ $pubPages = first 5 ($pubPages.ByDate.Reverse) }}
+{{ $pubPages = first 4 ($pubPages.ByDate.Reverse) }}
 
 <div class="home-dual-feed">
   <div class="home-dual-feed-col">
-    <h2 class="home-dual-feed-title">Notifications &amp; News</h2>
+    <h2 class="home-dual-feed-title">Notification</h2>
+    <div class="home-dual-feed-list">
+      {{ range $notificationPages }}
+        {{ partial "views/community/custom_card.html" (dict "item" .) }}
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="home-dual-feed-col">
+    <h2 class="home-dual-feed-title">News</h2>
     <div class="home-dual-feed-list">
       {{ range $newsPages }}
         {{ partial "views/community/custom_card.html" (dict "item" .) }}
@@ -15,7 +27,7 @@
   </div>
 
   <div class="home-dual-feed-col">
-    <h2 class="home-dual-feed-title">Latest Publications</h2>
+    <h2 class="home-dual-feed-title">Last Publication</h2>
     <div class="home-dual-feed-list">
       {{ range $pubPages }}
         {{ partial "views/community/custom_card.html" (dict "item" .) }}

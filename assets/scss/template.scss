@@ -94,8 +94,8 @@ html[data-theme="dark"] .featurette-icon svg {
 /* Home: unified two-column feed */
 .home-dual-feed {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
   align-items: start;
   position: relative;
 }
@@ -110,7 +110,7 @@ html[data-theme="dark"] .featurette-icon svg {
 }
 
 .home-dual-feed-title {
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   font-weight: 800;
   margin: 0 0 1rem;
   letter-spacing: -0.02em;
@@ -144,7 +144,7 @@ html[data-theme="dark"] .featurette-icon svg {
 .home-dual-feed .macslab-trend-card .card-image img {
   margin-top: 0 !important;
   width: 100%;
-  height: 172px;
+  height: 140px;
   object-fit: cover;
 }
 
@@ -153,13 +153,13 @@ html[data-theme="dark"] .featurette-icon svg {
 }
 
 .home-dual-feed .macslab-trend-card .article-title h4 {
-  font-size: 1rem;
+  font-size: 0.92rem;
   line-height: 1.42;
   margin-bottom: 0.45rem;
 }
 
 .home-dual-feed .macslab-trend-card .article-style p {
-  font-size: 0.86rem;
+  font-size: 0.8rem;
   line-height: 1.56;
   margin-bottom: 0;
   display: -webkit-box;
@@ -169,7 +169,7 @@ html[data-theme="dark"] .featurette-icon svg {
 }
 
 .home-dual-feed .macslab-trend-card .article-metadata {
-  font-size: 0.76rem;
+  font-size: 0.7rem;
   margin-bottom: 0.45rem;
 }
 
@@ -179,6 +179,12 @@ html[data-theme="dark"] .featurette-icon svg {
     radial-gradient(circle at 92% 88%, rgba(84, 144, 255, 0.12), transparent 40%);
   padding: 1.25rem;
   border-radius: 24px;
+}
+
+@media (max-width: 1200px) {
+  .home-dual-feed {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 767px) {

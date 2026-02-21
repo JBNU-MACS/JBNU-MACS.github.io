@@ -1,3 +1,6 @@
+{{ $notices := first 3 ((where site.RegularPages "Section" "notification").ByDate.Reverse) }}
+{{ $total := add 4 (len $notices) }}
+
 <section class="macs-home-hero" id="macs-home-hero">
   <div class="macs-home-hero-track" aria-live="polite">
     <article class="macs-home-hero-slide is-active" style="background-image: url('/media/pic-jbnu.jpg');">
@@ -35,6 +38,23 @@
       </div>
     </article>
 
+    <article class="macs-home-hero-slide" style="background-image: url('/media/medical.jpg');">
+      <div class="macs-home-hero-overlay"></div>
+      <div class="macs-home-hero-content">
+        <p class="macs-home-hero-kicker">Multi-modality</p>
+        <h1>Vision-Language Intelligence</h1>
+        <p>멀티모달 학습으로 의료 영상, 텍스트, 임상 정보를 통합하여 해석 가능한 AI를 연구합니다.</p>
+        <div class="macs-home-hero-tags">
+          <span>Vision-Language</span>
+          <span>Multi-modal</span>
+          <span>Reasoning</span>
+        </div>
+        <div class="macs-home-hero-actions">
+          <a href="/research/" class="macs-home-hero-btn">Research Topics</a>
+        </div>
+      </div>
+    </article>
+
     <article class="macs-home-hero-slide" style="background-image: url('/media/development.jpg');">
       <div class="macs-home-hero-overlay"></div>
       <div class="macs-home-hero-content">
@@ -51,13 +71,32 @@
         </div>
       </div>
     </article>
+
+    {{ range $notice := $notices }}
+      {{ $bg := "/media/pic-jbnu.jpg" }}
+      {{ with $notice.Resources.GetMatch "featured*" }}
+        {{ $bg = .RelPermalink }}
+      {{ end }}
+      <article class="macs-home-hero-slide is-notice" style="background-image: url('{{ $bg }}');">
+        <div class="macs-home-hero-overlay"></div>
+        <div class="macs-home-hero-content">
+          <p class="macs-home-hero-kicker">Notification</p>
+          <h1>{{ $notice.Title }}</h1>
+          <p>{{ $notice.Summary | plainify | truncate 120 }}</p>
+          <div class="macs-home-hero-actions">
+            <a href="{{ $notice.RelPermalink }}" class="macs-home-hero-btn">Read Notice</a>
+            <a href="/notification/" class="macs-home-hero-btn ghost">All Notifications</a>
+          </div>
+        </div>
+      </article>
+    {{ end }}
   </div>
 
   <div class="macs-home-hero-ui">
     <div class="macs-home-hero-dots">
-      <button class="is-active" data-idx="0" aria-label="slide 1"></button>
-      <button data-idx="1" aria-label="slide 2"></button>
-      <button data-idx="2" aria-label="slide 3"></button>
+      {{ range $i, $_ := seq $total }}
+        <button class="{{ if eq $i 1 }}is-active{{ end }}" data-idx="{{ sub $i 1 }}" aria-label="slide {{ $i }}"></button>
+      {{ end }}
     </div>
     <div class="macs-home-hero-progress"><span></span></div>
   </div>

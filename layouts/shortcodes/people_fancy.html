@@ -46,6 +46,7 @@
               {{ with index .Params.organizations 0 }}
                 <p class="org">{{ replaceRE "^전북대학교\\s*" "" .name }}</p>
               {{ end }}
+              <p class="hint">Profile</p>
             </div>
           </a>
         </article>
@@ -76,6 +77,7 @@
               {{ with index .Params.organizations 0 }}
                 <p class="org">{{ replaceRE "^전북대학교\\s*" "" .name }}</p>
               {{ end }}
+              <p class="hint">Profile</p>
             </div>
           </a>
         </article>
@@ -106,6 +108,7 @@
               {{ with index .Params.organizations 0 }}
                 <p class="org">{{ replaceRE "^전북대학교\\s*" "" .name }}</p>
               {{ end }}
+              <p class="hint">Profile</p>
             </div>
           </a>
         </article>
@@ -146,6 +149,7 @@
               {{ if ne $gradym "" }}
                 <p class="grad">졸업: {{ $gradym }}</p>
               {{ end }}
+              <p class="hint">Profile</p>
             </div>
           </a>
         </article>

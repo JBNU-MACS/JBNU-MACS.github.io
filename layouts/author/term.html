@@ -25,8 +25,7 @@
       <div class="macs-author-head-copy">
         <p class="kicker">MACS LAB PROFILE</p>
         <h1>
-          <span class="name-ko">{{ if .Params.name_ko }}{{ .Params.name_ko }}{{ else }}{{ .Title }}{{ end }}</span>
-          {{ with .Params.name_en }}<span class="name-en">{{ . }}</span>{{ end }}
+          <span class="name-ko">{{ if .Params.name_ko }}{{ .Params.name_ko }}{{ else }}{{ .Title }}{{ end }}</span>{{ with .Params.name_en }} <span class="name-en">({{ . }})</span>{{ end }}
         </h1>
         <div class="macs-author-meta-line">
           <p class="role">{{ .Params.role }}</p>

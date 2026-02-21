@@ -18,7 +18,7 @@ role: 석사과정
 
 # Organizations/Affiliations
 organizations:
-  - name: 전북대학교 컴퓨터인공지능학부
+  - name: 전북대학교 전자.정보공학부(컴퓨터공학)
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''

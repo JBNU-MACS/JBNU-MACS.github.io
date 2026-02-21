@@ -40,11 +40,13 @@
             {{ else }}
               <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
             {{ end }}
-            <h3>{{ .Title }}</h3>
-            <p class="role">{{ .Params.role }}</p>
-            {{ with index .Params.organizations 0 }}
-              <p class="org">{{ .name }}</p>
-            {{ end }}
+            <div class="macs-people-meta">
+              <h3>{{ .Title }}</h3>
+              <p class="role">{{ .Params.role }}</p>
+              {{ with index .Params.organizations 0 }}
+                <p class="org">{{ .name }}</p>
+              {{ end }}
+            </div>
           </a>
         </article>
       {{ end }}
@@ -68,11 +70,13 @@
             {{ else }}
               <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
             {{ end }}
-            <h3>{{ .Title }}</h3>
-            <p class="role">{{ .Params.role }}</p>
-            {{ with index .Params.organizations 0 }}
-              <p class="org">{{ .name }}</p>
-            {{ end }}
+            <div class="macs-people-meta">
+              <h3>{{ .Title }}</h3>
+              <p class="role">{{ .Params.role }}</p>
+              {{ with index .Params.organizations 0 }}
+                <p class="org">{{ .name }}</p>
+              {{ end }}
+            </div>
           </a>
         </article>
       {{ end }}
@@ -96,11 +100,13 @@
             {{ else }}
               <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
             {{ end }}
-            <h3>{{ .Title }}</h3>
-            <p class="role">{{ .Params.role }}</p>
-            {{ with index .Params.organizations 0 }}
-              <p class="org">{{ .name }}</p>
-            {{ end }}
+            <div class="macs-people-meta">
+              <h3>{{ .Title }}</h3>
+              <p class="role">{{ .Params.role }}</p>
+              {{ with index .Params.organizations 0 }}
+                <p class="org">{{ .name }}</p>
+              {{ end }}
+            </div>
           </a>
         </article>
       {{ end }}
@@ -124,11 +130,13 @@
             {{ else }}
               <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
             {{ end }}
-            <h3>{{ .Title }}</h3>
-            <p class="role">{{ .Params.role }}</p>
-            {{ with index .Params.organizations 0 }}
-              <p class="org">{{ .name }}</p>
-            {{ end }}
+            <div class="macs-people-meta">
+              <h3>{{ .Title }}</h3>
+              <p class="role">{{ .Params.role }}</p>
+              {{ with index .Params.organizations 0 }}
+                <p class="org">{{ .name }}</p>
+              {{ end }}
+            </div>
           </a>
         </article>
       {{ end }}

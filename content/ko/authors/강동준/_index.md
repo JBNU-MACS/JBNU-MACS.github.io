@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 곽봉석
+title: 강동준
 
 # Full Name (for SEO)
 first_name: Student
@@ -8,13 +8,13 @@ last_name: 1
 
 # Username (this should match the folder name)
 authors:
-  - 곽봉석
+  - 강동준
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: 파트석사 / 한국생산기술연구원
+role: 석사과정
 
 # Organizations/Affiliations
 organizations:
@@ -28,5 +28,5 @@ highlight_name: true
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-  - Part-time Graduate
+  - M.S. Student
 ---

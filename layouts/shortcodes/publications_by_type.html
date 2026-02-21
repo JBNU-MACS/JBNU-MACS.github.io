@@ -15,7 +15,7 @@
     onclick="
       this.textContent = (this.textContent === 'ref') ? 'showcase' : 'ref';
       var refOn = (this.textContent === 'ref');
-      var pub = document.getElementById('publication-container');
+      var pub = document.getElementById('publication-ref-mode');
       var pubs = document.getElementById('container-publications');
       var footer = document.querySelector('.page-footer');
       if(refOn){
@@ -35,37 +35,79 @@
   >ref</button>
 </div>
 
-<hr>
-
 <style>
   .universal-wrapper {
-        width: 1400px !important;
-    }
+    max-width: 1480px !important;
+    width: min(98vw, 1480px) !important;
+  }
+  .pub-page-shell {
+    display: grid;
+    gap: 1rem;
+  }
+  .pub-section {
+    border: 1px solid rgba(163, 180, 216, 0.58);
+    border-radius: 20px;
+    background: linear-gradient(165deg, #ffffff 0%, #f7faff 100%);
+    box-shadow: 0 14px 32px rgba(30, 44, 84, 0.08);
+    padding: 0.9rem 1rem 0.95rem;
+  }
+  .pub-section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(140, 160, 198, 0.28);
+    padding-bottom: 0.45rem;
+    margin-bottom: 0.3rem;
+  }
+  .pub-section-head h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #1f355f;
+  }
+  .pub-section-head span {
+    font-size: 0.7rem;
+    color: #58719d;
+    font-weight: 600;
+  }
   .pub-wrap{ width:100%; }
   .pub-head{
     display:grid;
     grid-template-columns: 80px 1fr 1fr;
     column-gap: 0.75rem;
     align-items:end;
-    padding: 0.4rem 0 1rem;
+    padding: 0.4rem 0 0.85rem;
   }
   .pub-head .col-title{
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 0.94rem;
     text-align:center;
+    color: #233c6a;
+    border: 1px solid rgba(169, 186, 219, 0.45);
+    background: rgba(245, 249, 255, 0.92);
+    border-radius: 999px;
+    padding: 0.24rem 0.45rem;
   }
   .pub-row{
     display:grid;
     grid-template-columns: 80px 1fr 1fr;
     column-gap: 0.75rem;
     align-items:start;
-    padding: 1.1rem 0;
+    padding: 0.95rem 0;
   }
   .pub-year{
+    display: inline-flex;
+    justify-content: center;
     font-weight: 800;
-    font-size: 1.15rem;
+    font-size: 0.92rem;
     line-height: 1;
-    padding-top: 0.2rem;
+    padding: 0.26rem 0.38rem;
+    border-radius: 10px;
+    border: 1px solid rgba(167, 185, 216, 0.55);
+    color: #284f89;
+    background: rgba(244, 248, 255, 0.95);
   }
   .pub-list{
     margin: 0;
@@ -73,38 +115,86 @@
     padding-left: 0;
   }
   .pub-item{
-    margin-bottom: 1.2em;
-    line-height: 1.6;
-    font-size: 0.82rem;
-    padding: 10px;
+    margin-bottom: 0.78rem;
+    line-height: 1.72;
+    font-size: 0.84rem;
+    padding: 0.62rem 0.66rem;
+    border: 1px solid rgba(180, 193, 220, 0.45);
+    border-left: 3px solid #98b2df;
+    border-radius: 11px;
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(23, 40, 78, 0.05);
   }
   .journal-meta{
-    align-self: flex-end;
-    font-size: 0.75rem;
-    margin-top: 2px;
-    text-align: end;
-    font-weight: 900;
+    display: inline-block;
+    font-size: 0.65rem;
+    margin-top: 0.25rem;
+    font-weight: 800;
+    color: #2f4e82;
+    background: #eef4ff;
+    border: 1px solid #cadbf8;
+    border-radius: 999px;
+    padding: 0.14rem 0.48rem;
   }
   .pub-sep{
     border: none;
-    border-top: 1px solid rgba(0,0,0,0.15);
-    margin: 1.1rem 0;
+    border-top: 1px dashed rgba(121, 141, 180, 0.44);
+    margin: 0.56rem 0;
+  }
+  .pub-item a {
+    color: #1e4c96 !important;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .pub-item a:hover {
+    text-decoration: underline;
   }
   @media (max-width: 900px){
-
-  .universal-wrapper {
-        width: 80% !important;
+    .universal-wrapper {
+      width: min(96vw, 900px) !important;
+    }
+    .pub-section {
+      border-radius: 15px;
+      padding: 0.7rem 0.65rem 0.72rem;
+    }
+    .pub-section-head h3 {
+      font-size: 0.88rem;
+    }
+    .pub-section-head span {
+      font-size: 0.62rem;
     }
     .pub-head{ display:none; }
     .pub-row{
       grid-template-columns: 1fr;
-      row-gap: 0.8rem;
+      row-gap: 0.62rem;
+      padding: 0.72rem 0;
     }
-    .pub-year{ font-size: 1.5rem; }
+    .pub-item {
+      font-size: 0.76rem;
+      line-height: 1.64;
+      padding: 0.56rem 0.52rem;
+      margin-bottom: 0.6rem;
+      border-radius: 10px;
+    }
+    .pub-year{
+      width: fit-content;
+      font-size: 0.85rem;
+      padding: 0.18rem 0.38rem;
+    }
+    .journal-meta {
+      font-size: 0.6rem;
+    }
   }
 </style>
 
-<div id="publication-container" class="pub-wrap">
+<div id="publication-ref-mode" class="visible-by-opacity">
+  <div class="pub-page-shell">
+    <section class="pub-section">
+      <div class="pub-section-head">
+        <h3>Reference List: Top CS/AI Conference & Journal</h3>
+        <span>IEEE-style references</span>
+      </div>
+      <div class="pub-wrap">
 
   {{/* ===== 타입 정의: 왼쪽(Conference) / 오른쪽(Journal) ===== */}}
   <!-- {{ $leftTypes := slice "paper-csai" "paper-conference" }} -->
@@ -354,7 +444,7 @@
                   {{ if $journalInfo }}{{ $journalInfo = printf "%s (%s)" $journalInfo $item.Params.jcr_percentile }}{{ else }}{{ $journalInfo = printf "(%s)" $journalInfo }}{{ end }}
                 {{ end }}
                 {{ if $journalInfo }}
-                  <div class="journal-meta">[{{ $journalInfo }}]</span>
+                  <div class="journal-meta">[{{ $journalInfo }}]</div>
                 {{ end }}
 
                 .
@@ -373,9 +463,15 @@
     {{ end }}
   {{ end }}
 
-</div>
+      </div>
+    </section>
 
-<div id="publication-container" class="pub-wrap">
+    <section class="pub-section">
+      <div class="pub-section-head">
+        <h3>Reference List: Conference Proceedings</h3>
+        <span>International / Domestic split</span>
+      </div>
+      <div class="pub-wrap">
 
   {{/* ===== 타입 정의: 왼쪽(Conference) / 오른쪽(Journal) ===== */}}
   <!-- {{ $leftTypes := slice "paper-csai" "paper-conference" }} -->
@@ -625,7 +721,7 @@
                   {{ if $journalInfo }}{{ $journalInfo = printf "%s (%s)" $journalInfo $item.Params.jcr_percentile }}{{ else }}{{ $journalInfo = printf "(%s)" $journalInfo }}{{ end }}
                 {{ end }}
                 {{ if $journalInfo }}
-                  <div class="journal-meta">[{{ $journalInfo }}]</span>
+                  <div class="journal-meta">[{{ $journalInfo }}]</div>
                 {{ end }}
 
                 .
@@ -645,4 +741,7 @@
   {{ end }}
 
 
+      </div>
+    </section>
+  </div>
 </div>

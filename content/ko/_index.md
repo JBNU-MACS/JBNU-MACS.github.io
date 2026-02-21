@@ -7,6 +7,26 @@ type: landing
 sections:
 
 
+
+  - block: markdown
+    content:
+      title:
+      subtitle:
+      text: |
+        {{< fancy_feature_grid >}}
+    design:
+      columns: '1'
+
+  - block: markdown
+    content:
+      title:
+      subtitle:
+      text: |
+        {{< home_dual_feed >}}
+    design:
+      columns: '1'
+
+
   - block: slider
     content:
       slides:
@@ -106,24 +126,6 @@ sections:
           display: none !important;
         }
 
-
-  - block: markdown
-    content:
-      title:
-      subtitle:
-      text: |
-        {{< fancy_feature_grid >}}
-    design:
-      columns: '1'
-
-  - block: markdown
-    content:
-      title:
-      subtitle:
-      text: |
-        {{< home_dual_feed >}}
-    design:
-      columns: '1'
 
   - block: markdown
     content:

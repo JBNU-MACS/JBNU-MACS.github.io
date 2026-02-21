@@ -20,7 +20,7 @@
 
 {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
 
-<div class="card">
+<div class="card macslab-trend-card">
   {{ with $resource }}
   {{ $image := .Resize "550x" }}
   {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
@@ -29,7 +29,7 @@
          alt="{{ $item.Title }}" class="img-responsive" loading="lazy" style="margin-top: 15px;">
   </a>
   {{ end }}
-  <div class="card-text">
+  <div class="card-text macslab-trend-card-text">
     <div class="section-subheading article-title mb-1 mt-3">
         <h4><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a></h4>
     </div>

@@ -1,5 +1,5 @@
 ---
-title: Congratulations on AISTATS 2026 Acceptance: TCP
+title: Congratulations on AISTATS 2026 Acceptance!
 date: 2026-02-22
 share: false
 showShare: false

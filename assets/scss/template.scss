@@ -3961,38 +3961,71 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .macs-author-hero {
-  border-color: #d8dee7;
-  background: #fcfdff;
-  box-shadow: 0 8px 18px rgba(20, 28, 40, 0.05);
+  border-color: #d4d9e2;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
+  box-shadow: 0 10px 22px rgba(20, 28, 40, 0.06);
 }
 
 .macs-author-avatar {
-  border-color: #d7deea;
+  border-color: #d4dbe6;
+}
+
+.macs-author-head-copy {
+  display: grid;
+  align-content: center;
+  gap: 0.34rem;
 }
 
 .macs-author-head-copy h1,
 .macs-author-head-copy .name-ko {
-  color: #1f2632;
+  color: #141b26;
+}
+
+.macs-author-head-copy h1 {
+  margin: 0;
+  font-size: 1.56rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .macs-author-head-copy .kicker {
-  color: #5f6673;
+  margin: 0;
+  font-size: 0.58rem;
+  letter-spacing: 0.085em;
+  color: #5a616e;
+  font-weight: 690;
 }
 
 .macs-author-head-copy h1 .name-en {
-  color: #4b5563;
+  color: #303948;
+  font-size: 0.5em;
+  font-weight: 570;
+}
+
+.macs-author-meta-line {
+  gap: 0.34rem 0.56rem;
+  margin-top: 0.06rem;
 }
 
 .macs-author-head-copy .role {
-  color: #2b323f;
-  border-color: #d2d7e1;
-  background: #f4f6f9;
+  color: #1f2734;
+  border-color: #c8d0dd;
+  background: #f3f5f8;
+  font-size: 0.72rem;
+  font-weight: 710;
+  padding: 0.11rem 0.42rem;
 }
 
 .macs-author-head-copy .org,
 .macs-author-head-copy .contact,
 .macs-author-stat-row span {
-  color: #353d4b;
+  color: #232d3c;
+}
+
+.macs-author-head-copy .org {
+  font-size: 0.79rem;
+  font-weight: 600;
+  line-height: 1.36;
 }
 
 .macs-author-head-copy .contact a {
@@ -4000,8 +4033,15 @@ body.home .home-section:has(.home-dual-feed) {
   font-weight: 620;
 }
 
+.macs-author-head-copy .contact {
+  margin: 0.06rem 0 0;
+  font-size: 0.8rem;
+}
+
 .macs-author-stat-row {
-  border-top-color: #dfe5ee;
+  margin-top: 0.24rem;
+  padding-top: 0.42rem;
+  border-top-color: #d7dde7;
 }
 
 .macs-author-main {
@@ -4058,18 +4098,28 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-author-edu-item {
   border-color: #dde3ec;
   background: #fbfcfe;
+  padding: 0.5rem 0.56rem;
 }
 
 .macs-author-edu-item h3 {
   color: #28313f;
+  font-size: 0.74rem;
+  line-height: 1.36;
+  font-weight: 640;
 }
 
 .macs-author-edu-item p {
   color: #3d4656;
+  font-size: 0.665rem;
+  line-height: 1.42;
+  font-weight: 520;
 }
 
 .macs-author-edu-item small {
   color: #6a7484;
+  font-size: 0.59rem;
+  letter-spacing: 0.01em;
+  font-weight: 520;
 }
 
 .macs-chip-wrap .chip {
@@ -4132,6 +4182,19 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 @media (max-width: 767px) {
+  .macs-author-head-copy h1 {
+    font-size: 1.08rem;
+  }
+
+  .macs-author-head-copy .org,
+  .macs-author-head-copy .contact {
+    font-size: 0.72rem;
+  }
+
+  .macs-author-stat-row span {
+    font-size: 0.63rem;
+  }
+
   .macs-author-main {
     gap: 0.68rem;
   }
@@ -4158,5 +4221,17 @@ body.home .home-section:has(.home-dual-feed) {
 
   .macs-author-work-list .work-item small {
     font-size: 0.54rem;
+  }
+
+  .macs-author-edu-item h3 {
+    font-size: 0.71rem;
+  }
+
+  .macs-author-edu-item p {
+    font-size: 0.64rem;
+  }
+
+  .macs-author-edu-item small {
+    font-size: 0.56rem;
   }
 }

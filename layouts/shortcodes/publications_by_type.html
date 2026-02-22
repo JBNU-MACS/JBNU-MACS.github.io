@@ -549,14 +549,15 @@
           </ol>
         </div>
 
-        {{/* ========== RIGHT: Journal (article-journal only) ========== */}}
+        {{/* ========== RIGHT: Conference Proceedings (Domestic) ========== */}}
         <div>
           <ol class="pub-list">
             {{ range $itemIndex, $item := $rightItems }}
               {{ $badges := $item.Params.badges | default (slice) }}
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
-              {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
+              {{/* Domestic conference는 자동 하이라이트를 비활성화하고, 명시적 highlight만 반영 */}}
+              {{ $isHighlight := ($item.Params.highlight | default false) }}
               {{ $displayNumber := index $rightNumberMap $item.RelPermalink }}
               {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
               <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">

@@ -4354,8 +4354,8 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .universal-wrapper.macs-feed-list-shell {
-  width: min(98vw, 1760px) !important;
-  max-width: 1760px !important;
+  width: 97vw !important;
+  max-width: 1720px !important;
 }
 
 .macs-feed-list-head {
@@ -4429,7 +4429,7 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-feed-list-grid {
   padding: 0.92rem 1.05rem 1rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 0.78rem;
 }
 
@@ -4467,7 +4467,8 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .macs-feed-list-card .card-thumb.no-image {
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   background:
     linear-gradient(130deg, #dbe3ef 0%, #eef2f8 60%, #d8e0ec 100%);
 }
@@ -4602,7 +4603,7 @@ body.home .home-section:has(.home-dual-feed) {
 
 @media (max-width: 1200px) {
   .macs-feed-list-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 }
 

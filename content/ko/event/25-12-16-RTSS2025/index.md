@@ -1,5 +1,5 @@
 ---
-title: "RTSS 2025 (IEEE Real-Time Systems Symposium) 참석"
+title: "RTSS 2025 (IEEE Real-Time Systems Symposium) 참석 (Boston)"
 date: 2025-12-16
 show_featured_image: false
 share: false

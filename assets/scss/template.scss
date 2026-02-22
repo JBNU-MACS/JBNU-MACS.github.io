@@ -4097,68 +4097,69 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-author-edu-item {
   border-color: #dde3ec;
-  background: linear-gradient(180deg, #fcfdff 0%, #f8fafd 100%);
-  padding: 0.42rem 0.56rem;
+  background: #ffffff;
+  padding: 0.54rem 0.62rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
-    "main year"
-    "school year";
-  align-items: center;
-  column-gap: 0.5rem;
-  row-gap: 0.08rem;
+    "main period"
+    "school period";
+  align-items: start;
+  column-gap: 0.72rem;
+  row-gap: 0.14rem;
+  border-left: 3px solid #b9c7db;
 }
 
 .macs-author-edu-item .edu-main {
   grid-area: main;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.22rem 0.34rem;
+  display: grid;
+  gap: 0.12rem;
   min-width: 0;
 }
 
 .macs-author-edu-item .edu-degree {
-  color: #28313f;
-  font-size: 0.68rem;
-  line-height: 1.28;
-  font-weight: 650;
+  color: #1f2a3b;
+  font-size: 0.7rem;
+  line-height: 1.34;
+  font-weight: 690;
   margin: 0;
 }
 
 .macs-author-edu-item .edu-dept {
-  color: #495568;
-  font-size: 0.58rem;
-  line-height: 1.24;
-  font-weight: 560;
+  color: #5b687c;
+  font-size: 0.56rem;
+  line-height: 1.28;
+  font-weight: 550;
   margin: 0;
-  padding: 0.04rem 0.28rem;
-  border: 1px solid #d9e1ec;
-  border-radius: 999px;
-  background: #f6f9fd;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .macs-author-edu-item .edu-school {
   grid-area: school;
-  color: #3d4656;
+  color: #2d3a4d;
   font-size: 0.61rem;
-  line-height: 1.3;
-  font-weight: 540;
+  line-height: 1.34;
+  font-weight: 610;
   margin: 0;
 }
 
 .macs-author-edu-item .edu-period {
-  grid-area: year;
+  grid-area: period;
   justify-self: end;
-  align-self: center;
-  color: #6a7484;
-  font-size: 0.55rem;
-  letter-spacing: 0.01em;
-  font-weight: 560;
+  align-self: start;
+  color: #5a677a;
+  font-size: 0.54rem;
+  letter-spacing: 0.015em;
+  font-weight: 620;
   white-space: nowrap;
   margin: 0;
-  padding-left: 0.5rem;
-  border-left: 1px solid #d4dbe6;
+  padding: 0.12rem 0.42rem;
+  border: 1px solid #d3dbe8;
+  border-radius: 999px;
+  background: #f7f9fc;
 }
 
 .macs-author-career-list {
@@ -4315,27 +4316,26 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-author-edu-item .edu-degree {
-    font-size: 0.66rem;
+    font-size: 0.67rem;
   }
 
   .macs-author-edu-item .edu-school {
-    font-size: 0.59rem;
+    font-size: 0.58rem;
   }
 
   .macs-author-edu-item .edu-period {
-    font-size: 0.53rem;
-    padding-left: 0.36rem;
+    font-size: 0.51rem;
+    padding: 0.1rem 0.32rem;
   }
 
   .macs-author-edu-item .edu-dept {
-    font-size: 0.54rem;
-    padding: 0.03rem 0.24rem;
+    font-size: 0.52rem;
   }
 
   .macs-author-edu-item {
-    column-gap: 0.4rem;
-    row-gap: 0.06rem;
-    padding: 0.42rem 0.5rem;
+    column-gap: 0.46rem;
+    row-gap: 0.08rem;
+    padding: 0.46rem 0.5rem;
   }
 
   .macs-author-career-item h3 {

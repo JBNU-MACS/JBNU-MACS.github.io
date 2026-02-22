@@ -29,6 +29,11 @@ publishDate: '2025-11-07'
 publication_types:
   - conference-domestic
 
+award: true
+award_badge: 'Best Poster Award'
+award_name: '우수포스터상'
+award_event: '대한의용생체공학회 2025 추계학술대회'
+
 # Publication name and optional abbreviated publication name.
 publication: 대한의용생체공학회 2025 추계학술대회
 publication_short: KOSOMBE2025 Fall

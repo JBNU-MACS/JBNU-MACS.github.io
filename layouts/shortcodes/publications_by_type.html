@@ -146,6 +146,11 @@
     background: #f5f7fa;
     color: #434d5b;
   }
+  .pub-item-meta-row .badge-award{
+    border-color: #d6b36b;
+    background: #fff7e8;
+    color: #7b520f;
+  }
   .journal-meta{
     display: inline-flex;
     align-items: center;
@@ -268,6 +273,9 @@
           <ol class="pub-list">
             {{ range $itemIndex, $item := $leftItems }}
               {{ $badges := $item.Params.badges | default (slice) }}
+              {{ with ($item.Params.award_badge | default "") }}
+                {{ $badges = $badges | append . }}
+              {{ end }}
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
               {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
@@ -333,7 +341,7 @@
                       {{ $norm := lower (replaceRE "[^a-z0-9]" "" $raw) }}
                       {{ $label := $raw }}
                       {{ if eq $norm "bkcs" }}{{ $label = "BK/CS" }}{{ end }}
-                      <span class="journal-meta{{ if eq $norm "top" }} badge-top{{ end }}{{ if eq $norm "bkcs" }} badge-bkcs{{ end }}">{{ $label }}</span>
+                      <span class="journal-meta{{ if eq $norm "top" }} badge-top{{ end }}{{ if eq $norm "bkcs" }} badge-bkcs{{ end }}{{ if in $norm "award" }} badge-award{{ end }}">{{ $label }}</span>
                     {{ end }}
                     {{ with $item.Params.publication_short }}
                       <span class="venue-badge">{{ . }}</span>
@@ -472,6 +480,9 @@
           <ol class="pub-list">
             {{ range $itemIndex, $item := $leftItems }}
               {{ $badges := $item.Params.badges | default (slice) }}
+              {{ with ($item.Params.award_badge | default "") }}
+                {{ $badges = $badges | append . }}
+              {{ end }}
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
               {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
@@ -537,7 +548,7 @@
                       {{ $norm := lower (replaceRE "[^a-z0-9]" "" $raw) }}
                       {{ $label := $raw }}
                       {{ if eq $norm "bkcs" }}{{ $label = "BK/CS" }}{{ end }}
-                      <span class="journal-meta{{ if eq $norm "top" }} badge-top{{ end }}{{ if eq $norm "bkcs" }} badge-bkcs{{ end }}">{{ $label }}</span>
+                      <span class="journal-meta{{ if eq $norm "top" }} badge-top{{ end }}{{ if eq $norm "bkcs" }} badge-bkcs{{ end }}{{ if in $norm "award" }} badge-award{{ end }}">{{ $label }}</span>
                     {{ end }}
                     {{ with $item.Params.publication_short }}
                       <span class="venue-badge">{{ . }}</span>
@@ -554,6 +565,9 @@
           <ol class="pub-list">
             {{ range $itemIndex, $item := $rightItems }}
               {{ $badges := $item.Params.badges | default (slice) }}
+              {{ with ($item.Params.award_badge | default "") }}
+                {{ $badges = $badges | append . }}
+              {{ end }}
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
               {{/* Domestic conference는 자동 하이라이트를 비활성화하고, 명시적 highlight만 반영 */}}
@@ -607,7 +621,7 @@
                       {{ $norm := lower (replaceRE "[^a-z0-9]" "" $raw) }}
                       {{ $label := $raw }}
                       {{ if eq $norm "bkcs" }}{{ $label = "BK/CS" }}{{ end }}
-                      <span class="journal-meta{{ if eq $norm "top" }} badge-top{{ end }}{{ if eq $norm "bkcs" }} badge-bkcs{{ end }}">{{ $label }}</span>
+                      <span class="journal-meta{{ if eq $norm "top" }} badge-top{{ end }}{{ if eq $norm "bkcs" }} badge-bkcs{{ end }}{{ if in $norm "award" }} badge-award{{ end }}">{{ $label }}</span>
                     {{ end }}
                     {{ with $item.Params.publication_short }}
                       <span class="venue-badge">{{ . }}</span>

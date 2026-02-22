@@ -18,6 +18,11 @@ publishDate: '2025-10-15'
 publication_types:
   - conference-international
 
+award: true
+award_badge: 'Best Poster Award'
+award_name: 'Best Poster Award'
+award_event: 'AIxMHC 2025'
+
 publication: 2025 Second International Conference on Artificial Intelligence for Medicine, Health, and Care
 publication_short: AIxMHC2025
 

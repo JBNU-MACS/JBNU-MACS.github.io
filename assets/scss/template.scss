@@ -5296,3 +5296,22 @@ body.home .home-section:has(.home-dual-feed) {
     border-radius: 12px;
   }
 }
+
+/* Author mobile stat row: keep single-line items */
+@media (max-width: 767px) {
+  .macs-author-stat-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .macs-author-stat-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .macs-author-stat-row span {
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+}

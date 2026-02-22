@@ -92,21 +92,6 @@
 
     <div class="macs-author-main">
       <div class="macs-author-col-left">
-        {{ with .Params.education.courses }}
-          <section class="macs-author-block">
-            <h2>Education</h2>
-            <div class="macs-author-edu-list">
-              {{ range . }}
-                <article class="macs-author-edu-item">
-                  <h3>{{ .course }}</h3>
-                  <p>{{ .institution }}</p>
-                  <small>{{ .year }}</small>
-                </article>
-              {{ end }}
-            </div>
-          </section>
-        {{ end }}
-
         {{ if .Content }}
           <section class="macs-author-block">
             <h2>Bio</h2>
@@ -116,6 +101,20 @@
           </section>
         {{ end }}
 
+        {{ if gt (len $recent) 0 }}
+          <section class="macs-author-block">
+            <h2>Recent Work</h2>
+            <div class="macs-author-work-list">
+              {{ range $recent }}
+                <a class="work-item" href="{{ .RelPermalink }}">
+                  <span class="type">{{ .Type }}</span>
+                  <strong>{{ .Title }}</strong>
+                  <small>{{ .Date.Format "2006-01-02" }}</small>
+                </a>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
       </div>
 
       <div class="macs-author-col-right">
@@ -157,27 +156,27 @@
           </section>
         {{ end }}
 
+        {{ with .Params.education.courses }}
+          <section class="macs-author-block">
+            <h2>Education</h2>
+            <div class="macs-author-edu-list">
+              {{ range . }}
+                <article class="macs-author-edu-item">
+                  <h3>{{ .course }}</h3>
+                  <p>{{ .institution }}</p>
+                  <small>{{ .year }}</small>
+                </article>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+
         {{ if .Params.interests }}
           <section class="macs-author-block">
             <h2>Research Interest</h2>
             <div class="macs-chip-wrap">
               {{ range .Params.interests }}
                 <span class="chip">{{ . }}</span>
-              {{ end }}
-            </div>
-          </section>
-        {{ end }}
-
-        {{ if gt (len $recent) 0 }}
-          <section class="macs-author-block">
-            <h2>Recent Work</h2>
-            <div class="macs-author-work-list">
-              {{ range $recent }}
-                <a class="work-item" href="{{ .RelPermalink }}">
-                  <span class="type">{{ .Type }}</span>
-                  <strong>{{ .Title }}</strong>
-                  <small>{{ .Date.Format "2006-01-02" }}</small>
-                </a>
               {{ end }}
             </div>
           </section>

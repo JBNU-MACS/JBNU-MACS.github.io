@@ -3678,16 +3678,24 @@ body.home .home-section:has(.home-dual-feed) {
   }
 }
 
+.macs-author-head-copy h1 {
+  color: #1f2733;
+}
+
+.macs-author-head-copy .kicker {
+  color: #606a79;
+}
+
 .macs-author-head-copy h1 .name-ko {
   display: inline;
-  font-weight: 800;
+  font-weight: 760;
 }
 
 .macs-author-head-copy h1 .name-en {
   display: inline;
   font-size: 0.56em;
-  color: #4f6991;
-  font-weight: 600;
+  color: #5f6775;
+  font-weight: 560;
 }
 
 .macs-author-meta-line {
@@ -3701,9 +3709,9 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-author-head-copy .role {
   margin: 0;
   font-size: 0.68rem;
-  color: #1d4f90;
-  background: #eaf2ff;
-  border: 1px solid #cadbf6;
+  color: #414c5d;
+  background: #f1f3f6;
+  border: 1px solid #d7dce5;
   border-radius: 999px;
   padding: 0.1rem 0.38rem;
 }
@@ -3711,25 +3719,25 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-author-head-copy .org {
   margin: 0;
   font-size: 0.76rem;
-  color: #4b658d;
+  color: #4f5a6b;
 }
 
 .macs-author-head-copy .contact {
   margin: 0.34rem 0 0;
   font-size: 0.76rem;
-  color: #53719a;
+  color: #4f5b6d;
 }
 
 .macs-author-head-copy .contact a {
-  color: #28589f;
-  font-weight: 700;
+  color: #2f3d51;
+  font-weight: 600;
   text-decoration: none;
 }
 
 .macs-author-stat-row {
   margin-top: 0.52rem;
   padding-top: 0.45rem;
-  border-top: 1px solid #e7edf8;
+  border-top: 1px solid #e3e7ee;
   display: flex;
   flex-wrap: wrap;
   gap: 0.28rem 0.5rem;
@@ -3737,13 +3745,13 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-author-stat-row span {
   font-size: 0.65rem;
-  color: #2f568d;
-  font-weight: 600;
+  color: #505b6c;
+  font-weight: 560;
 }
 
 .macs-author-main {
   display: grid;
-  grid-template-columns: 1.18fr 0.82fr;
+  grid-template-columns: 1.28fr 0.72fr;
   gap: 0.76rem;
 }
 
@@ -3756,23 +3764,30 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-author-block {
   border-radius: 16px;
-  border: 1px solid #dbe6f5;
-  box-shadow: 0 6px 14px rgba(18, 34, 66, 0.05);
+  border: 1px solid #dfe5ee;
+  box-shadow: 0 5px 12px rgba(32, 43, 63, 0.045);
 }
 
 .macs-author-block h2 {
-  font-size: 1.02rem;
-  color: #133a6f;
+  font-size: 0.95rem;
+  color: #2a3342;
+  letter-spacing: -0.01em;
 }
 
 .macs-chip-wrap .chip {
-  font-size: 0.71rem;
-  padding: 0.18rem 0.5rem;
+  font-size: 0.64rem;
+  padding: 0.16rem 0.44rem;
+  color: #4c5768;
+  border: 1px solid #d8dee8;
+  background: #f5f7fa;
+  border-radius: 999px;
+  font-weight: 560;
 }
 
 .macs-author-bio {
-  font-size: 0.86rem;
-  line-height: 1.72;
+  font-size: 0.76rem;
+  line-height: 1.48;
+  color: #232a35;
 }
 
 .macs-author-links {
@@ -3786,29 +3801,75 @@ body.home .home-section:has(.home-dual-feed) {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  width: 30px;
-  height: 30px;
-  color: #244c86;
-  border: 1px solid #cfdef3;
-  background: #f2f8ff;
+  width: 28px;
+  height: 28px;
+  color: #4d596b;
+  border: 1px solid #d8dee7;
+  background: #f7f9fb;
   border-radius: 9px;
   transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 }
 
 .macs-author-links a i {
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   line-height: 1;
 }
 
 .macs-author-links a:hover {
   transform: translateY(-1px);
-  border-color: #9db7df;
-  background: #eaf3ff;
+  border-color: #bbc4d3;
+  background: #f1f4f8;
+}
+
+.macs-author-work-list {
+  display: grid;
+  gap: 0.46rem;
 }
 
 .macs-author-work-list .work-item {
+  position: relative;
+  display: block;
   border-radius: 12px;
-  padding: 0.45rem 0.58rem;
+  border: 1px solid #dce3ec;
+  background: #ffffff;
+  padding: 0.64rem 0.62rem 0.52rem;
+  text-decoration: none;
+}
+
+.macs-author-work-list .work-item .type {
+  position: absolute;
+  top: 0.34rem;
+  right: 0.44rem;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #565f6f;
+  border: 1px solid #d8dde6;
+  background: #f4f7fa;
+  border-radius: 999px;
+  padding: 0.06rem 0.28rem;
+}
+
+.macs-author-work-list .work-item strong {
+  display: block;
+  color: #212a37;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  font-weight: 620;
+  padding-right: 3.6rem;
+}
+
+.macs-author-work-list .work-item small {
+  display: block;
+  margin-top: 0.26rem;
+  color: #677284;
+  font-size: 0.62rem;
+}
+
+.macs-author-work-list .work-item:hover {
+  border-color: #c7cfdd;
+  background: #fbfcfe;
 }
 
 @media (max-width: 980px) {
@@ -3864,16 +3925,225 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-author-bio {
-    font-size: 0.74rem;
+    font-size: 0.68rem;
+    line-height: 1.44;
   }
 
   .macs-author-links a {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     border-radius: 8px;
   }
 
   .macs-author-links a i {
-    font-size: 0.84rem;
+    font-size: 0.78rem;
+  }
+
+  .macs-author-work-list .work-item .type {
+    font-size: 0.46rem;
+    top: 0.3rem;
+    right: 0.36rem;
+  }
+
+  .macs-author-work-list .work-item strong {
+    font-size: 0.72rem;
+    padding-right: 3.1rem;
+  }
+
+  .macs-author-work-list .work-item small {
+    font-size: 0.58rem;
+  }
+}
+
+/* Author page final tune: balanced split, softer palette, cleaner work badges */
+.macs-author-fancy {
+  color: #252a33;
+}
+
+.macs-author-hero {
+  border-color: #d8dee7;
+  background: #fcfdff;
+  box-shadow: 0 8px 18px rgba(20, 28, 40, 0.05);
+}
+
+.macs-author-avatar {
+  border-color: #d7deea;
+}
+
+.macs-author-head-copy h1,
+.macs-author-head-copy .name-ko {
+  color: #1f2632;
+}
+
+.macs-author-head-copy .kicker {
+  color: #5f6673;
+}
+
+.macs-author-head-copy h1 .name-en {
+  color: #656d79;
+}
+
+.macs-author-head-copy .role {
+  color: #333a48;
+  border-color: #cfd7e4;
+  background: #f2f5f9;
+}
+
+.macs-author-head-copy .org,
+.macs-author-head-copy .contact,
+.macs-author-stat-row span {
+  color: #464e5d;
+}
+
+.macs-author-head-copy .contact a {
+  color: #2a3445;
+}
+
+.macs-author-stat-row {
+  border-top-color: #dfe5ee;
+}
+
+.macs-author-main {
+  grid-template-columns: 1.28fr 0.72fr;
+  gap: 0.82rem;
+}
+
+.macs-author-block {
+  border-color: #d8dfe9;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(22, 29, 40, 0.04);
+}
+
+.macs-author-block h2 {
+  color: #252d3a;
+}
+
+.macs-author-bio {
+  color: #262d39;
+  font-size: 0.72rem;
+  line-height: 1.38;
+}
+
+.macs-author-bio p {
+  margin: 0 0 0.72rem;
+}
+
+.macs-author-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.macs-author-links a {
+  color: #3f4758;
+  border-color: #d4dbe6;
+  background: #f7f9fc;
+}
+
+.macs-author-links a:hover {
+  border-color: #bfc8d7;
+  background: #eef2f7;
+}
+
+.macs-author-edu-item {
+  border-color: #dde3ec;
+  background: #fbfcfe;
+}
+
+.macs-author-edu-item h3 {
+  color: #28313f;
+}
+
+.macs-author-edu-item p {
+  color: #4d5768;
+}
+
+.macs-author-edu-item small {
+  color: #6a7484;
+}
+
+.macs-chip-wrap .chip {
+  color: #404a5b;
+  border-color: #d4dbe6;
+  background: #f5f7fa;
+}
+
+.macs-author-work-list {
+  gap: 0.52rem;
+}
+
+.macs-author-work-list .work-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "type date"
+    "title title";
+  align-items: center;
+  gap: 0.24rem 0.44rem;
+  border-color: #d9e0ea;
+  padding: 0.56rem 0.6rem 0.54rem;
+  box-shadow: 0 2px 8px rgba(22, 30, 42, 0.03);
+}
+
+.macs-author-work-list .work-item .type {
+  position: static;
+  grid-area: type;
+  justify-self: start;
+  font-size: 0.42rem;
+  font-weight: 640;
+  letter-spacing: 0.04em;
+  color: #4f5868;
+  border-color: #d3dae6;
+  background: #f4f6fa;
+  padding: 0.05rem 0.26rem;
+}
+
+.macs-author-work-list .work-item strong {
+  grid-area: title;
+  color: #202833;
+  font-size: 0.74rem;
+  line-height: 1.42;
+  font-weight: 590;
+  padding-right: 0;
+}
+
+.macs-author-work-list .work-item small {
+  grid-area: date;
+  justify-self: end;
+  margin-top: 0;
+  color: #6a7483;
+  font-size: 0.58rem;
+}
+
+.macs-author-work-list .work-item:hover {
+  border-color: #c7d0de;
+  background: #fdfdfe;
+}
+
+@media (max-width: 767px) {
+  .macs-author-main {
+    gap: 0.68rem;
+  }
+
+  .macs-author-bio {
+    font-size: 0.66rem;
+    line-height: 1.34;
+  }
+
+  .macs-author-work-list .work-item {
+    gap: 0.22rem 0.32rem;
+    padding: 0.5rem 0.52rem;
+  }
+
+  .macs-author-work-list .work-item .type {
+    font-size: 0.4rem;
+    padding: 0.04rem 0.22rem;
+  }
+
+  .macs-author-work-list .work-item strong {
+    font-size: 0.68rem;
+    line-height: 1.4;
+  }
+
+  .macs-author-work-list .work-item small {
+    font-size: 0.54rem;
   }
 }

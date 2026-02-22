@@ -4102,34 +4102,52 @@ body.home .home-section:has(.home-dual-feed) {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
-    "course year"
-    "inst year";
+    "main year"
+    "school year";
   align-items: center;
   column-gap: 0.5rem;
   row-gap: 0.08rem;
 }
 
-.macs-author-edu-item h3 {
-  grid-area: course;
+.macs-author-edu-item .edu-main {
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.22rem 0.34rem;
+  min-width: 0;
+}
+
+.macs-author-edu-item .edu-degree {
   color: #28313f;
   font-size: 0.68rem;
   line-height: 1.28;
   font-weight: 650;
   margin: 0;
-  min-width: 0;
 }
 
-.macs-author-edu-item p {
-  grid-area: inst;
+.macs-author-edu-item .edu-dept {
+  color: #495568;
+  font-size: 0.58rem;
+  line-height: 1.24;
+  font-weight: 560;
+  margin: 0;
+  padding: 0.04rem 0.28rem;
+  border: 1px solid #d9e1ec;
+  border-radius: 999px;
+  background: #f6f9fd;
+}
+
+.macs-author-edu-item .edu-school {
+  grid-area: school;
   color: #3d4656;
   font-size: 0.61rem;
   line-height: 1.3;
   font-weight: 540;
   margin: 0;
-  min-width: 0;
 }
 
-.macs-author-edu-item small {
+.macs-author-edu-item .edu-period {
   grid-area: year;
   justify-self: end;
   align-self: center;
@@ -4296,17 +4314,22 @@ body.home .home-section:has(.home-dual-feed) {
     font-size: 0.54rem;
   }
 
-  .macs-author-edu-item h3 {
+  .macs-author-edu-item .edu-degree {
     font-size: 0.66rem;
   }
 
-  .macs-author-edu-item p {
+  .macs-author-edu-item .edu-school {
     font-size: 0.59rem;
   }
 
-  .macs-author-edu-item small {
+  .macs-author-edu-item .edu-period {
     font-size: 0.53rem;
     padding-left: 0.36rem;
+  }
+
+  .macs-author-edu-item .edu-dept {
+    font-size: 0.54rem;
+    padding: 0.03rem 0.24rem;
   }
 
   .macs-author-edu-item {

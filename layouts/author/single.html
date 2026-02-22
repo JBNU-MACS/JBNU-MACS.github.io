@@ -178,10 +178,26 @@
             <h2>Education</h2>
             <div class="macs-author-edu-list">
               {{ range . }}
+                {{ $rawCourse := .course | default "" }}
+                {{ $degree := .degree | default "" }}
+                {{ $department := .department | default "" }}
+                {{ if eq $degree "" }}
+                  {{ if findRE `^.+\s+in\s+\(.+\)\s*$` $rawCourse }}
+                    {{ $degree = replaceRE `\s+in\s+\(.+\)\s*$` "" $rawCourse }}
+                  {{ else }}
+                    {{ $degree = $rawCourse }}
+                  {{ end }}
+                {{ end }}
+                {{ if and (eq $department "") (findRE `\(.+\)` $rawCourse) }}
+                  {{ $department = replaceRE `^.*\((.+)\)\s*$` "$1" $rawCourse }}
+                {{ end }}
                 <article class="macs-author-edu-item">
-                  <h3>{{ .course }}</h3>
-                  <p>{{ .institution }}</p>
-                  <small>{{ .year }}</small>
+                  <div class="edu-main">
+                    <h3 class="edu-degree">{{ $degree }}</h3>
+                    {{ with $department }}<p class="edu-dept">{{ . }}</p>{{ end }}
+                  </div>
+                  <p class="edu-school">{{ .institution }}</p>
+                  <small class="edu-period">{{ .year }}</small>
                 </article>
               {{ end }}
             </div>

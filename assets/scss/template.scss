@@ -5297,11 +5297,12 @@ body.home .home-section:has(.home-dual-feed) {
   }
 }
 
-/* Author mobile stat row: keep single-line items */
-@media (max-width: 767px) {
+/* Author mobile stat row + recent work title: keep single-line items */
+@media (max-width: 991px) {
   .macs-author-stat-row {
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -5311,7 +5312,16 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-author-stat-row span {
-    white-space: nowrap;
+    white-space: nowrap !important;
+    display: inline-flex;
+    align-items: center;
     flex: 0 0 auto;
+  }
+
+  .macs-author-work-list .work-item strong {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

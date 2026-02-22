@@ -109,7 +109,9 @@
                 <a class="work-item" href="{{ .RelPermalink }}">
                   <span class="type">{{ .Type }}</span>
                   <strong>{{ .Title }}</strong>
-                  <small>{{ .Date.Format "2006-01-02" }}</small>
+                  {{ if ne .Type "publication" }}
+                    <small>{{ .Date.Format "2006-01-02" }}</small>
+                  {{ end }}
                 </a>
               {{ end }}
             </div>

@@ -4,6 +4,9 @@
 {{- if not $profile -}}
   {{- $profile = site.GetPage (printf "authors/%s" (urlize $name)) -}}
 {{- end -}}
+{{- if and $profile (not $profile.File) -}}
+  {{- $profile = nil -}}
+{{- end -}}
 
 {{- $alias := dict
   "kyungsulee" "이경수"
@@ -32,13 +35,34 @@
     {{- if not $profile -}}
       {{- $profile = site.GetPage (printf "authors/%s" (urlize .)) -}}
     {{- end -}}
+    {{- if and $profile (not $profile.File) -}}
+      {{- $profile = nil -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $profile -}}
+  {{- $heuristic := "" -}}
+  {{- if in $norm "kyungsulee" -}}
+    {{- $heuristic = "이경수" -}}
+  {{- else if in $norm "seoyeonchoi" -}}
+    {{- $heuristic = "최서연" -}}
+  {{- end -}}
+  {{- if ne $heuristic "" -}}
+    {{- $profile = site.GetPage (printf "authors/%s" $heuristic) -}}
+    {{- if not $profile -}}
+      {{- $profile = site.GetPage (printf "authors/%s" (urlize $heuristic)) -}}
+    {{- end -}}
+    {{- if and $profile (not $profile.File) -}}
+      {{- $profile = nil -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
 {{- if not $profile -}}
   {{- $allAuthors := slice -}}
   {{- range site.Pages -}}
-    {{- if and (or (eq .Type "authors") (eq .Section "authors")) (or (eq .Kind "term") (eq .Kind "page")) -}}
+    {{- if and .File (or (eq .Type "authors") (eq .Section "authors")) (or (eq .Kind "term") (eq .Kind "page")) -}}
       {{- $allAuthors = $allAuthors | append . -}}
     {{- end -}}
   {{- end -}}

@@ -1,0 +1,54 @@
+{{- $item := .item -}}
+{{- $isTopCsai := false -}}
+{{- with $item.Params.publication_types -}}
+  {{- if in . "paper-csai" -}}
+    {{- $isTopCsai = true -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $isTopCsai -}}
+  {{- $summaryNorm := lower (printf "%v" ($item.Params.summary | default "")) -}}
+  {{- if or
+    (in $summaryNorm "top ai")
+    (in $summaryNorm "top cs/ai")
+    (in $summaryNorm "top csai")
+  -}}
+    {{- $isTopCsai = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $isKyungsuMajor := false -}}
+{{- with $item.Params.authors -}}
+  {{- range $idx, $a := . -}}
+    {{- if not $isKyungsuMajor -}}
+      {{- $aNorm := lower (replaceRE "[^\\pL\\pN]" "" (printf "%v" $a)) -}}
+      {{- $isKyungsu := or
+        (eq $aNorm "kyungsulee")
+        (eq $aNorm "이경수")
+        (and (in $aNorm "kyungsu") (in $aNorm "lee"))
+      -}}
+      {{- if $isKyungsu -}}
+        {{- $noteNorm := "" -}}
+        {{- with $item.Params.author_notes -}}
+          {{- if lt $idx (len .) -}}
+            {{- $noteNorm = lower (replaceRE "[^\\pL\\pN]" "" (printf "%v" (index . $idx))) -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if or
+          (eq $idx 0)
+          (in $noteNorm "equalcontribution")
+          (in $noteNorm "correspondingauthor")
+          (in $noteNorm "공동")
+          (in $noteNorm "교신")
+        -}}
+          {{- $isKyungsuMajor = true -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (dict
+  "isTopCsai" $isTopCsai
+  "isKyungsuMajor" $isKyungsuMajor
+  "isHighlight" (or $isTopCsai $isKyungsuMajor)
+) -}}

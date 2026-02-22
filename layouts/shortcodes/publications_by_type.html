@@ -108,6 +108,12 @@
     background: #ffffff;
     box-shadow: 0 6px 16px rgba(23, 40, 78, 0.05);
   }
+  .pub-item.is-highlight{
+    border-color: rgba(206, 178, 114, 0.55);
+    border-left-color: #b48f45;
+    background: linear-gradient(180deg, #fffcf6 0%, #ffffff 56%);
+    box-shadow: 0 9px 20px rgba(78, 58, 26, 0.08);
+  }
   .pub-item-meta-row{
     margin-top: 0.36rem;
     display: flex;
@@ -129,6 +135,16 @@
     padding: 0.16rem 0.46rem;
     letter-spacing: 0.01em;
     white-space: nowrap;
+  }
+  .pub-item-meta-row .badge-top{
+    border-color: #d6b36b;
+    background: #fff3dc;
+    color: #765317;
+  }
+  .pub-item-meta-row .badge-bkcs{
+    border-color: #d3d7de;
+    background: #f5f7fa;
+    color: #434d5b;
   }
   .journal-meta{
     display: inline-flex;
@@ -242,33 +258,10 @@
         <div>
           <ol class="pub-list">
             {{ range $itemIndex, $item := $leftItems }}
-              <li class="pub-item">
-
-                {{/* ===== 별표/번호 로직 ===== */}}
-                {{ $showAsterisk := false }}
-                {{ with $item.Params.authors }}
-                  {{ if gt (len .) 0 }}
-
-                    {{/* 1. 첫 저자인 경우 */}}
-                    {{ if eq (index . 0) "Kyungsu Lee" }}
-                      {{ $showAsterisk = true }}
-                    {{ end }}
-
-                    {{/* 2. Equal contribution 또는 Corresponding author인 경우 */}}
-                    {{ range $idx, $auth := . }}
-                      {{ if eq $auth "Kyungsu Lee" }}
-                        {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
-                          {{ $note := index $item.Params.author_notes $idx }}
-                          {{ if or (eq $note "Equal contribution") (eq $note "Corresponding author") }}
-                            {{ $showAsterisk = true }}
-                          {{ end }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-
-                  {{ end }}
-                {{ end }}
-
+              {{ $flags := partial "content/publication_flags" (dict "item" $item) }}
+              {{ $isTopCsai := index $flags "isTopCsai" }}
+              {{ $showAsterisk := index $flags "isKyungsuMajor" }}
+              <li class="pub-item{{ if (index $flags "isHighlight") }} is-highlight{{ end }}">
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
                 {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
@@ -321,9 +314,15 @@
                 {{ if $item.Params.url_pdf }}
                   <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
                 {{ end }}
-                {{ with $item.Params.publication_short }}
+                {{ if or $isTopCsai $item.Params.publication_short }}
                   <div class="pub-item-meta-row">
-                    <span class="venue-badge">{{ . }}</span>
+                    {{ if $isTopCsai }}
+                      <span class="journal-meta badge-top">Top</span>
+                      <span class="journal-meta badge-bkcs">BK/CS</span>
+                    {{ end }}
+                    {{ with $item.Params.publication_short }}
+                      <span class="venue-badge">{{ . }}</span>
+                    {{ end }}
                   </div>
                 {{ end }}
               </li>
@@ -335,26 +334,9 @@
         <div>
           <ol class="pub-list">
             {{ range $itemIndex, $item := $rightItems }}
-              <li class="pub-item">
-
-                {{/* ===== 별표/번호 로직 ===== */}}
-                {{ $showAsterisk := false }}
-                {{ with $item.Params.authors }}
-                  {{ if gt (len .) 0 }}
-                    {{ if eq (index . 0) "Kyungsu Lee" }}
-                      {{ $showAsterisk = true }}
-                    {{ end }}
-                    {{ range $idx, $auth := . }}
-                      {{ if eq $auth "Kyungsu Lee" }}
-                        {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
-                          {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
-                            {{ $showAsterisk = true }}
-                          {{ end }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
+              {{ $flags := partial "content/publication_flags" (dict "item" $item) }}
+              {{ $showAsterisk := index $flags "isKyungsuMajor" }}
+              <li class="pub-item{{ if (index $flags "isHighlight") }} is-highlight{{ end }}">
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
                 {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
@@ -463,33 +445,10 @@
         <div>
           <ol class="pub-list">
             {{ range $itemIndex, $item := $leftItems }}
-              <li class="pub-item">
-
-                {{/* ===== 별표/번호 로직 ===== */}}
-                {{ $showAsterisk := false }}
-                {{ with $item.Params.authors }}
-                  {{ if gt (len .) 0 }}
-
-                    {{/* 1. 첫 저자인 경우 */}}
-                    {{ if eq (index . 0) "Kyungsu Lee" }}
-                      {{ $showAsterisk = true }}
-                    {{ end }}
-
-                    {{/* 2. Equal contribution 또는 Corresponding author인 경우 */}}
-                    {{ range $idx, $auth := . }}
-                      {{ if eq $auth "Kyungsu Lee" }}
-                        {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
-                          {{ $note := index $item.Params.author_notes $idx }}
-                          {{ if or (eq $note "Equal contribution") (eq $note "Corresponding author") }}
-                            {{ $showAsterisk = true }}
-                          {{ end }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-
-                  {{ end }}
-                {{ end }}
-
+              {{ $flags := partial "content/publication_flags" (dict "item" $item) }}
+              {{ $isTopCsai := index $flags "isTopCsai" }}
+              {{ $showAsterisk := index $flags "isKyungsuMajor" }}
+              <li class="pub-item{{ if (index $flags "isHighlight") }} is-highlight{{ end }}">
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
                 {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
@@ -542,9 +501,15 @@
                 {{ if $item.Params.url_pdf }}
                   <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
                 {{ end }}
-                {{ with $item.Params.publication_short }}
+                {{ if or $isTopCsai $item.Params.publication_short }}
                   <div class="pub-item-meta-row">
-                    <span class="venue-badge">{{ . }}</span>
+                    {{ if $isTopCsai }}
+                      <span class="journal-meta badge-top">Top</span>
+                      <span class="journal-meta badge-bkcs">BK/CS</span>
+                    {{ end }}
+                    {{ with $item.Params.publication_short }}
+                      <span class="venue-badge">{{ . }}</span>
+                    {{ end }}
                   </div>
                 {{ end }}
               </li>
@@ -556,26 +521,9 @@
         <div>
           <ol class="pub-list">
             {{ range $itemIndex, $item := $rightItems }}
-              <li class="pub-item">
-
-                {{/* ===== 별표/번호 로직 ===== */}}
-                {{ $showAsterisk := false }}
-                {{ with $item.Params.authors }}
-                  {{ if gt (len .) 0 }}
-                    {{ if eq (index . 0) "Kyungsu Lee" }}
-                      {{ $showAsterisk = true }}
-                    {{ end }}
-                    {{ range $idx, $auth := . }}
-                      {{ if eq $auth "Kyungsu Lee" }}
-                        {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
-                          {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
-                            {{ $showAsterisk = true }}
-                          {{ end }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
+              {{ $flags := partial "content/publication_flags" (dict "item" $item) }}
+              {{ $showAsterisk := index $flags "isKyungsuMajor" }}
+              <li class="pub-item{{ if (index $flags "isHighlight") }} is-highlight{{ end }}">
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
                 {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;

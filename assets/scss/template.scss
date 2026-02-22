@@ -4736,7 +4736,7 @@ body.home .home-section:has(.home-dual-feed) {
   align-items: center;
   gap: 0.45rem;
   margin: 0 0 0.7rem;
-  font-size: 0.74rem;
+  font-size: 0.66rem;
   text-transform: uppercase;
   letter-spacing: 0.13em;
   font-weight: 700;
@@ -4745,8 +4745,9 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-field-hero h1 {
   margin: 0;
-  font-size: clamp(1.9rem, 4.2vw, 2.95rem);
-  line-height: 1.08;
+  color: #f8fafc;
+  font-size: clamp(1.6rem, 3.6vw, 2.45rem);
+  line-height: 1.05;
   letter-spacing: -0.03em;
   font-weight: 700;
 }
@@ -4754,9 +4755,9 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-field-hero .hero-summary {
   margin: 0.95rem 0 0;
   max-width: 760px;
-  color: rgba(241, 245, 249, 0.92);
-  font-size: 1rem;
-  line-height: 1.7;
+  color: rgba(248, 250, 252, 0.96);
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 .macs-field-hero .hero-meta {
@@ -4769,9 +4770,9 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-field-hero .hero-meta span {
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
-  padding: 0.38rem 0.8rem;
-  font-size: 0.8rem;
+  min-height: 30px;
+  padding: 0.28rem 0.68rem;
+  font-size: 0.72rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   color: rgba(248, 250, 252, 0.9);
@@ -4861,18 +4862,18 @@ body.home .home-section:has(.home-dual-feed) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 36px;
-  min-height: 28px;
-  padding: 0 0.55rem;
+  min-width: 34px;
+  min-height: 24px;
+  padding: 0 0.46rem;
   border-radius: 9px;
   background: #e2e8f0;
   color: #0f172a;
-  font-size: 0.78rem;
+  font-size: 0.69rem;
   font-weight: 700;
 }
 
 .macs-field-card .field-card-meta time {
-  font-size: 0.77rem;
+  font-size: 0.67rem;
   color: #64748b;
   font-weight: 600;
 }
@@ -4880,8 +4881,8 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-field-card h2 {
   margin: 0;
   color: #0f172a;
-  font-size: clamp(0.96rem, 1.25vw, 1.06rem);
-  line-height: 1.28;
+  font-size: clamp(0.88rem, 1.08vw, 0.98rem);
+  line-height: 1.22;
   letter-spacing: -0.02em;
   font-weight: 700;
   display: -webkit-box;
@@ -4893,8 +4894,8 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-field-card p {
   margin: 0;
   color: #334155;
-  font-size: 0.82rem;
-  line-height: 1.48;
+  font-size: 0.74rem;
+  line-height: 1.36;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -4909,7 +4910,7 @@ body.home .home-section:has(.home-dual-feed) {
   min-height: 28px;
   padding: 0.22rem 0.62rem;
   border-radius: 999px;
-  font-size: 0.79rem;
+  font-size: 0.68rem;
   font-weight: 700;
   color: #0f172a;
   background: linear-gradient(120deg, #cbd5e1 0%, #e2e8f0 100%);
@@ -4984,7 +4985,8 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-field-card p {
-    font-size: 0.88rem;
+    font-size: 0.74rem;
+    line-height: 1.34;
   }
 }
 
@@ -5000,7 +5002,7 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-field-single-hero {
   border-radius: 26px;
-  padding: 1.15rem 1.15rem 1.25rem;
+  padding: 0.95rem 0.95rem 1.02rem;
   margin-bottom: 1.15rem;
   background:
     radial-gradient(circle at 15% 12%, rgba(125, 211, 252, 0.18), transparent 32%),
@@ -5012,15 +5014,15 @@ body.home .home-section:has(.home-dual-feed) {
 .field-single-back {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
-  padding: 0.3rem 0.72rem;
+  min-height: 28px;
+  padding: 0.22rem 0.58rem;
   border-radius: 999px;
   margin-bottom: 0.85rem;
   color: rgba(241, 245, 249, 0.95);
   border: 1px solid rgba(241, 245, 249, 0.26);
   background: rgba(15, 23, 42, 0.38);
   text-decoration: none;
-  font-size: 0.78rem;
+  font-size: 0.66rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 700;
@@ -5040,12 +5042,12 @@ body.home .home-section:has(.home-dual-feed) {
 
 .field-single-title-wrap {
   color: #f8fafc;
-  padding: 1rem 1.05rem;
+  padding: 0.72rem 0.78rem;
 }
 
 .field-single-kicker {
   margin: 0 0 0.62rem;
-  font-size: 0.76rem;
+  font-size: 0.66rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -5054,8 +5056,9 @@ body.home .home-section:has(.home-dual-feed) {
 
 .field-single-title-wrap h1 {
   margin: 0;
-  font-size: clamp(1.62rem, 3.8vw, 2.68rem);
-  line-height: 1.12;
+  color: #f8fafc;
+  font-size: clamp(1.35rem, 2.9vw, 2.12rem);
+  line-height: 1.08;
   letter-spacing: -0.03em;
   font-weight: 700;
 }
@@ -5070,13 +5073,13 @@ body.home .home-section:has(.home-dual-feed) {
 .field-single-meta > * {
   display: inline-flex;
   align-items: center;
-  min-height: 30px;
-  padding: 0.27rem 0.72rem;
+  min-height: 26px;
+  padding: 0.2rem 0.56rem;
   border-radius: 999px;
   border: 1px solid rgba(241, 245, 249, 0.25);
   background: rgba(241, 245, 249, 0.09);
   color: rgba(248, 250, 252, 0.95);
-  font-size: 0.77rem;
+  font-size: 0.66rem;
   font-weight: 600;
 }
 
@@ -5140,7 +5143,7 @@ body.home .home-section:has(.home-dual-feed) {
 .field-aside-card h2,
 .field-aside-card h3 {
   margin: 0 0 0.58rem;
-  font-size: 0.92rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #0f172a;
   letter-spacing: 0.02em;
@@ -5150,13 +5153,13 @@ body.home .home-section:has(.home-dual-feed) {
 .field-aside-card p {
   margin: 0;
   color: #334155;
-  font-size: 0.85rem;
-  line-height: 1.66;
+  font-size: 0.74rem;
+  line-height: 1.45;
 }
 
 .field-aside-card a {
   color: #0f172a;
-  font-size: 0.83rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-decoration: none;
 }
@@ -5203,16 +5206,16 @@ body.home .home-section:has(.home-dual-feed) {
 
 .field-single-prose > p:first-of-type {
   margin-top: 0;
-  font-size: clamp(1rem, 1.65vw, 1.08rem);
-  line-height: 1.8;
+  font-size: clamp(0.9rem, 1.18vw, 0.98rem);
+  line-height: 1.55;
   color: #1e293b;
 }
 
 .field-single-prose p {
   margin: 0 0 1rem;
   color: #334155;
-  line-height: 1.82;
-  font-size: 0.98rem;
+  line-height: 1.55;
+  font-size: 0.84rem;
 }
 
 .field-single-prose strong {
@@ -5231,7 +5234,7 @@ body.home .home-section:has(.home-dual-feed) {
 
 .field-single-prose h2,
 .field-single-prose h3 {
-  font-size: clamp(1.08rem, 2.2vw, 1.32rem);
+  font-size: clamp(0.96rem, 1.6vw, 1.12rem);
 }
 
 .field-single-prose ul {
@@ -5250,8 +5253,8 @@ body.home .home-section:has(.home-dual-feed) {
   background: #eff6ff;
   border: 1px solid #bfdbfe;
   color: #1d4ed8;
-  font-size: 0.84rem;
-  line-height: 1.3;
+  font-size: 0.72rem;
+  line-height: 1.22;
 }
 
 .field-single-prose hr {
@@ -5301,6 +5304,16 @@ body.home .home-section:has(.home-dual-feed) {
   .field-single-prose {
     border-radius: 16px;
     padding: 0.9rem 0.86rem;
+  }
+
+  .field-single-prose > p:first-of-type {
+    font-size: 0.86rem;
+    line-height: 1.48;
+  }
+
+  .field-single-prose p {
+    font-size: 0.8rem;
+    line-height: 1.48;
   }
 
   .field-single-prose ul li {

@@ -5,35 +5,13 @@
       pubs.style.height = '0';
       pubs.style.display = 'none';
     }
+    var pub = document.getElementById('publication-ref-mode');
+    if (pub) {
+      pub.classList.add('visible-by-opacity');
+      pub.classList.remove('hidden-by-opacity');
+    }
   });
 </script>
-
-<div class="btn-row">
-  <button
-    class="glass-toggle-btn"
-    id="toggle-btn"
-    onclick="
-      this.textContent = (this.textContent === 'ref') ? 'showcase' : 'ref';
-      var refOn = (this.textContent === 'ref');
-      var pub = document.getElementById('publication-ref-mode');
-      var pubs = document.getElementById('container-publications');
-      var footer = document.querySelector('.page-footer');
-      if(refOn){
-        pub.classList.add('visible-by-opacity');
-        pub.classList.remove('hidden-by-opacity');
-        pubs.classList.add('hidden-by-opacity');
-        pubs.classList.remove('visible-by-opacity');
-        if (footer) footer.style.display = '';
-      }else{
-        pub.classList.add('hidden-by-opacity');
-        pub.classList.remove('visible-by-opacity');
-        pubs.classList.add('visible-by-opacity');
-        pubs.classList.remove('hidden-by-opacity');
-        if (footer) footer.style.display = 'none';
-      }
-    "
-  >ref</button>
-</div>
 
 <style>
   .universal-wrapper {
@@ -51,6 +29,11 @@
     box-shadow: 0 14px 32px rgba(30, 44, 84, 0.08);
     padding: 0.9rem 1rem 0.95rem;
   }
+  .pub-wrap,
+  .pub-wrap p,
+  .pub-wrap li {
+    color: #24354d;
+  }
   .pub-section-head {
     display: flex;
     justify-content: space-between;
@@ -65,11 +48,11 @@
     font-size: 1rem;
     font-weight: 800;
     letter-spacing: -0.01em;
-    color: #1f355f;
+    color: #223651;
   }
   .pub-section-head span {
     font-size: 0.7rem;
-    color: #58719d;
+    color: #4b617f;
     font-weight: 600;
   }
   .pub-wrap{ width:100%; }
@@ -84,7 +67,7 @@
     font-weight: 800;
     font-size: 0.94rem;
     text-align:center;
-    color: #233c6a;
+    color: #243a59;
     border: 1px solid rgba(169, 186, 219, 0.45);
     background: rgba(245, 249, 255, 0.92);
     border-radius: 999px;
@@ -106,7 +89,7 @@
     padding: 0.26rem 0.38rem;
     border-radius: 10px;
     border: 1px solid rgba(167, 185, 216, 0.55);
-    color: #284f89;
+    color: #2d4768;
     background: rgba(244, 248, 255, 0.95);
   }
   .pub-list{
@@ -126,15 +109,17 @@
     box-shadow: 0 6px 16px rgba(23, 40, 78, 0.05);
   }
   .journal-meta{
-    display: inline-block;
+    display: block;
     font-size: 0.65rem;
     margin-top: 0.25rem;
     font-weight: 800;
-    color: #2f4e82;
-    background: #eef4ff;
-    border: 1px solid #cadbf8;
+    color: #314a6c;
+    background: #eef3fb;
+    border: 1px solid #c3d0e5;
     border-radius: 999px;
     padding: 0.14rem 0.48rem;
+    width: 100%;
+    text-align: right;
   }
   .pub-sep{
     border: none;
@@ -142,9 +127,15 @@
     margin: 0.56rem 0;
   }
   .pub-item a {
-    color: #1e4c96 !important;
+    color: #2b4467 !important;
     text-decoration: none;
     font-weight: 700;
+  }
+  .pub-item .venue-short {
+    display: inline-block;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: #1f3451;
   }
   .pub-item a:hover {
     text-decoration: underline;
@@ -192,7 +183,7 @@
     <section class="pub-section">
       <div class="pub-section-head">
         <h3>Reference List: Top CS/AI Conference & Journal</h3>
-        <span>IEEE-style references</span>
+        
       </div>
       <div class="pub-wrap">
 
@@ -321,7 +312,7 @@
                   , {{ with $item.Params.publication }}
                     <i>{{ . }}</i>
                     {{ if $item.Params.publication_short }}
-                      ({{ $item.Params.publication_short }})
+                      (<span class="venue-short">{{ $item.Params.publication_short }}</span>)
                     {{ end }}
                   {{ end }}
                 {{ else }}
@@ -424,7 +415,7 @@
                   <i>{{ . }}</i>,
                 {{ end }}
                 {{ with $item.Params.publication_short }}
-                  {{ . }},
+                  <span class="venue-short">{{ . }}</span>,
                 {{ end }}
                 {{ with $item.Params.date }}
                   {{ (time .).Year }}
@@ -598,7 +589,7 @@
                   , {{ with $item.Params.publication }}
                     <i>{{ . }}</i>
                     {{ if $item.Params.publication_short }}
-                      ({{ $item.Params.publication_short }})
+                      (<span class="venue-short">{{ $item.Params.publication_short }}</span>)
                     {{ end }}
                   {{ end }}
                 {{ else }}
@@ -701,7 +692,7 @@
                   <i>{{ . }}</i>,
                 {{ end }}
                 {{ with $item.Params.publication_short }}
-                  {{ . }},
+                  <span class="venue-short">{{ . }}</span>,
                 {{ end }}
                 {{ with $item.Params.date }}
                   {{ (time .).Year }}

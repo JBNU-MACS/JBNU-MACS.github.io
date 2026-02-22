@@ -12,7 +12,7 @@ authors:
   - H-P Park
   - Jae Youn Hwang
   - Hyoun-Joong Kong
-  - H-C Lee
+  - Hyung-Chul Lee
 
 # Author notes (optional)
 author_notes:

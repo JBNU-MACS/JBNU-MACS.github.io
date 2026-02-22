@@ -1,0 +1,28 @@
+{{- $item := .item -}}
+{{- $target := .target | default "Kyungsu Lee" -}}
+{{- $targetNorm := lower (replaceRE "[^a-z0-9]" "" $target) -}}
+{{- $authors := $item.Params.authors | default (slice) -}}
+{{- $notes := $item.Params.author_notes | default (slice) -}}
+
+{{- $isKyungsuMain := false -}}
+{{- range $idx, $auth := $authors -}}
+  {{- $resolved := partial "content/resolve_author_profile" (dict "name" $auth) -}}
+  {{- $display := index $resolved "display" | default (printf "%v" $auth) -}}
+  {{- $authNorm := lower (replaceRE "[^a-z0-9]" "" $display) -}}
+
+  {{- if eq $authNorm $targetNorm -}}
+    {{- if eq $idx 0 -}}
+      {{- $isKyungsuMain = true -}}
+    {{- else if lt $idx (len $notes) -}}
+      {{- $note := lower (printf "%v" (index $notes $idx)) -}}
+      {{- if or (in $note "equal contribution") (in $note "co-first") (in $note "corresponding") (in $note "공동") -}}
+        {{- $isKyungsuMain = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (dict
+  "is_kyungsu_main" $isKyungsuMain
+  "show_asterisk" $isKyungsuMain
+) -}}

@@ -259,25 +259,9 @@
           <ol class="pub-list">
             {{ range $itemIndex, $item := $leftItems }}
               {{ $badges := $item.Params.badges | default (slice) }}
-              {{ $isHighlight := $item.Params.highlight | default false }}
-              {{ $showAsterisk := false }}
-              {{ with $item.Params.authors }}
-                {{ if gt (len .) 0 }}
-                  {{ if eq (index . 0) "Kyungsu Lee" }}
-                    {{ $showAsterisk = true }}
-                  {{ end }}
-                  {{ range $idx, $auth := . }}
-                    {{ if eq $auth "Kyungsu Lee" }}
-                      {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
-                        {{ $note := index $item.Params.author_notes $idx }}
-                        {{ if or (eq $note "Equal contribution") (eq $note "Corresponding author") }}
-                          {{ $showAsterisk = true }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
-              {{ end }}
+              {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
+              {{ $showAsterisk := index $roleFlags "show_asterisk" }}
+              {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
               <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
@@ -354,24 +338,10 @@
         <div>
           <ol class="pub-list">
             {{ range $itemIndex, $item := $rightItems }}
-              {{ $showAsterisk := false }}
-              {{ with $item.Params.authors }}
-                {{ if gt (len .) 0 }}
-                  {{ if eq (index . 0) "Kyungsu Lee" }}
-                    {{ $showAsterisk = true }}
-                  {{ end }}
-                  {{ range $idx, $auth := . }}
-                    {{ if eq $auth "Kyungsu Lee" }}
-                      {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
-                        {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
-                          {{ $showAsterisk = true }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
-              {{ end }}
-              <li class="pub-item">
+              {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
+              {{ $showAsterisk := index $roleFlags "show_asterisk" }}
+              {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
+              <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
                 {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;

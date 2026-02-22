@@ -4,7 +4,7 @@
 {{- if $section -}}
   {{- $siblings = $section.RegularPages.ByDate.Reverse -}}
 {{- end -}}
-{{- $summary := $p.Summary | plainify | truncate 210 -}}
+{{- $summary := $p.Summary | plainify -}}
 {{- $resource := partial "blox-core/functions/get_featured_image.html" $p -}}
 
 <div class="universal-wrapper macs-field-single-shell">
@@ -15,7 +15,6 @@
         <p class="field-single-kicker">MacsLAB Research Track</p>
         <h1>{{ $p.Title }}</h1>
         <div class="field-single-meta">
-          <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006.01.02" }}</time>
           {{ if gt (len $siblings) 0 }}<span>{{ len $siblings }} Tracks</span>{{ end }}
         </div>
       </div>

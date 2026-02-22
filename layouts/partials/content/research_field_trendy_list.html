@@ -25,12 +25,6 @@
   {{- end -}}
 {{- end -}}
 {{- $total := len $items -}}
-{{- $lastUpdated := "" -}}
-{{- if gt $total 0 -}}
-  {{- with index $items 0 -}}
-    {{- $lastUpdated = .Date.Format "2006.01.02" -}}
-  {{- end -}}
-{{- end -}}
 
 <div class="universal-wrapper macs-field-shell">
   <section class="macs-field-hero" aria-labelledby="field-hero-title">
@@ -43,7 +37,6 @@
       </p>
       <div class="hero-meta">
         <span><strong>{{ $total }}</strong> Research Tracks</span>
-        {{ if ne $lastUpdated "" }}<span>Updated {{ $lastUpdated }}</span>{{ end }}
       </div>
     </div>
   </section>
@@ -58,8 +51,6 @@
       {{ else }}
         {{ $summary = $item.Plain | plainify }}
       {{ end }}
-      {{ $summary = $summary | truncate 110 }}
-
       {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
       {{ $order := printf "%02d" (add $idx 1) }}
 
@@ -78,7 +69,6 @@
           <div class="field-card-body">
             <div class="field-card-meta">
               <span class="field-order">{{ $order }}</span>
-              <time datetime="{{ $item.Date.Format "2006-01-02" }}">{{ $item.Date.Format "2006.01" }}</time>
             </div>
             <h2>{{ $item.Title }}</h2>
             {{ with $summary }}<p>{{ . }}</p>{{ end }}

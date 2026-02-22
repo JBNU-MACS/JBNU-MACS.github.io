@@ -99,9 +99,9 @@
   }
   .pub-item{
     margin-bottom: 0.78rem;
-    line-height: 1.72;
-    font-size: 0.84rem;
-    padding: 0.62rem 0.66rem;
+    line-height: 1.4;
+    font-size: 0.77rem;
+    padding: 0.82rem 0.76rem;
     border: 1px solid rgba(180, 193, 220, 0.45);
     border-left: 3px solid #98b2df;
     border-radius: 11px;
@@ -118,8 +118,9 @@
     border: 1px solid #c3d0e5;
     border-radius: 999px;
     padding: 0.14rem 0.48rem;
-    width: 100%;
+    width: fit-content;
     text-align: right;
+    margin-top: 15px;
   }
   .pub-sep{
     border: none;
@@ -437,8 +438,6 @@
                 {{ if $journalInfo }}
                   <div class="journal-meta">[{{ $journalInfo }}]</div>
                 {{ end }}
-
-                .
                 {{ if $item.Params.url_pdf }}
                   <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
                 {{ end }}

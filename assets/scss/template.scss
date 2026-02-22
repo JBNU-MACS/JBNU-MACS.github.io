@@ -2999,7 +2999,8 @@ body.home .home-section:has(.home-dual-feed) {
 .navbar .container,
 .navbar .container-xl,
 .navbar .container-lg {
-  max-width: min(96vw, 1480px);
+  width: 96vw;
+  max-width: 1480px;
 }
 
 #navbar-main .navbar-brand,

@@ -92,6 +92,21 @@
 
     <div class="macs-author-main">
       <div class="macs-author-col-left">
+        {{ with .Params.career }}
+          <section class="macs-author-block">
+            <h2>Career</h2>
+            <div class="macs-author-career-list">
+              {{ range . }}
+                <article class="macs-author-career-item">
+                  <h3>{{ .role }}</h3>
+                  <p>{{ .institution }}</p>
+                  <small>{{ .period }}</small>
+                </article>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+
         {{ if .Content }}
           <section class="macs-author-block">
             <h2>Bio</h2>
@@ -167,21 +182,6 @@
                   <h3>{{ .course }}</h3>
                   <p>{{ .institution }}</p>
                   <small>{{ .year }}</small>
-                </article>
-              {{ end }}
-            </div>
-          </section>
-        {{ end }}
-
-        {{ with .Params.career }}
-          <section class="macs-author-block">
-            <h2>Career</h2>
-            <div class="macs-author-career-list">
-              {{ range . }}
-                <article class="macs-author-career-item">
-                  <h3>{{ .role }}</h3>
-                  <p>{{ .institution }}</p>
-                  <small>{{ .period }}</small>
                 </article>
               {{ end }}
             </div>

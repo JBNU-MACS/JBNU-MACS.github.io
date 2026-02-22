@@ -1,5 +1,5 @@
 {{- $name := trim (.name | default "") " \n\r\t" -}}
-{{- $norm := lower (replaceRE "[\\s\\-\\._,]" "" $name) -}}
+{{- $norm := lower (replaceRE "[^\\pL\\pN]" "" $name) -}}
 {{- $profile := site.GetPage (printf "authors/%s" $name) -}}
 {{- if not $profile -}}
   {{- $profile = site.GetPage (printf "authors/%s" (urlize $name)) -}}
@@ -8,7 +8,7 @@
 {{- $alias := dict
   "kyungsulee" "이경수"
   "seoyeonchoi" "최서연"
-  "seoyeonchoi(studentresearcher학부연구생)" "최서연"
+  "seoyeonchoistudentresearcher학부연구생" "최서연"
   "yeongsukim" "김영수"
   "youngsukim" "김영수"
   "dongjunkang" "강동준"
@@ -28,12 +28,20 @@
 
 {{- if not $profile -}}
   {{- with index $alias $norm -}}
-    {{- $profile = site.GetPage (printf "authors/%s" (urlize .)) -}}
+    {{- $profile = site.GetPage (printf "authors/%s" .) -}}
+    {{- if not $profile -}}
+      {{- $profile = site.GetPage (printf "authors/%s" (urlize .)) -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
 {{- if not $profile -}}
-  {{- $allAuthors := where site.AllPages "Section" "authors" -}}
+  {{- $allAuthors := slice -}}
+  {{- range site.Pages -}}
+    {{- if and (or (eq .Type "authors") (eq .Section "authors")) (or (eq .Kind "term") (eq .Kind "page")) -}}
+      {{- $allAuthors = $allAuthors | append . -}}
+    {{- end -}}
+  {{- end -}}
   {{- $preferred := slice -}}
   {{- $fallback := slice -}}
   {{- range $a := $allAuthors -}}
@@ -46,14 +54,22 @@
   {{- $ordered := $preferred | append $fallback -}}
   {{- range $a := $ordered -}}
     {{- if not $profile -}}
-      {{- $titleNorm := lower (replaceRE "[\\s\\-\\._,]" "" ($a.Title | default "")) -}}
-      {{- $koNorm := lower (replaceRE "[\\s\\-\\._,]" "" (($a.Params.name_ko) | default "")) -}}
-      {{- $enNorm := lower (replaceRE "[\\s\\-\\._,]" "" (($a.Params.name_en) | default "")) -}}
+      {{- $titleNorm := lower (replaceRE "[^\\pL\\pN]" "" ($a.Title | default "")) -}}
+      {{- $koNorm := lower (replaceRE "[^\\pL\\pN]" "" (($a.Params.name_ko) | default "")) -}}
+      {{- $enNorm := lower (replaceRE "[^\\pL\\pN]" "" (($a.Params.name_en) | default "")) -}}
+      {{- $slugNorm := "" -}}
+      {{- with $a.File -}}{{- $slugNorm = lower (replaceRE "[^\\pL\\pN]" "" (.ContentBaseName | default "")) -}}{{- end -}}
       {{- $first := trim (($a.Params.first_name) | default "") " " -}}
       {{- $last := trim (($a.Params.last_name) | default "") " " -}}
       {{- $full := trim (printf "%s %s" $first $last) " " -}}
-      {{- $fullNorm := lower (replaceRE "[\\s\\-\\._,]" "" $full) -}}
-      {{- if or (and (ne $titleNorm "") (eq $norm $titleNorm)) (and (ne $koNorm "") (eq $norm $koNorm)) (and (ne $enNorm "") (eq $norm $enNorm)) (and (ne $fullNorm "") (eq $norm $fullNorm)) -}}
+      {{- $fullNorm := lower (replaceRE "[^\\pL\\pN]" "" $full) -}}
+      {{- if or
+        (and (ne $titleNorm "") (eq $norm $titleNorm))
+        (and (ne $koNorm "") (eq $norm $koNorm))
+        (and (ne $enNorm "") (eq $norm $enNorm))
+        (and (ne $slugNorm "") (eq $norm $slugNorm))
+        (and (ne $fullNorm "") (eq $norm $fullNorm))
+      -}}
         {{- $profile = $a -}}
       {{- end -}}
     {{- end -}}

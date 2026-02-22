@@ -58,7 +58,7 @@
       {{ else }}
         {{ $summary = $item.Plain | plainify }}
       {{ end }}
-      {{ $summary = $summary | truncate 185 }}
+      {{ $summary = $summary | truncate 110 }}
 
       {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
       {{ $order := printf "%02d" (add $idx 1) }}

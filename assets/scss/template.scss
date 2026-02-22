@@ -4804,8 +4804,8 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-field-card .field-card-link {
   display: grid;
-  grid-template-columns: 41% 1fr;
-  min-height: 248px;
+  grid-template-columns: 34% 1fr;
+  min-height: 192px;
   color: inherit;
   text-decoration: none;
 }
@@ -4847,8 +4847,8 @@ body.home .home-section:has(.home-dual-feed) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.85rem;
-  padding: 1.35rem 1.4rem 1.25rem;
+  gap: 0.56rem;
+  padding: 0.9rem 0.92rem 0.82rem;
 }
 
 .macs-field-card .field-card-meta {
@@ -4880,17 +4880,25 @@ body.home .home-section:has(.home-dual-feed) {
 .macs-field-card h2 {
   margin: 0;
   color: #0f172a;
-  font-size: clamp(1.06rem, 1.7vw, 1.28rem);
-  line-height: 1.33;
+  font-size: clamp(0.96rem, 1.25vw, 1.06rem);
+  line-height: 1.28;
   letter-spacing: -0.02em;
   font-weight: 700;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .macs-field-card p {
   margin: 0;
   color: #334155;
-  font-size: 0.91rem;
-  line-height: 1.66;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .macs-field-card .field-card-cta {
@@ -4898,8 +4906,8 @@ body.home .home-section:has(.home-dual-feed) {
   align-items: center;
   gap: 0.38rem;
   width: fit-content;
-  min-height: 34px;
-  padding: 0.35rem 0.86rem;
+  min-height: 28px;
+  padding: 0.22rem 0.62rem;
   border-radius: 999px;
   font-size: 0.79rem;
   font-weight: 700;

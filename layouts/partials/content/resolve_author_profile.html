@@ -61,8 +61,12 @@
       {{- with $a.File -}}{{- $slugNorm = lower (replaceRE "[^\\pL\\pN]" "" (.ContentBaseName | default "")) -}}{{- end -}}
       {{- $first := trim (($a.Params.first_name) | default "") " " -}}
       {{- $last := trim (($a.Params.last_name) | default "") " " -}}
-      {{- $full := trim (printf "%s %s" $first $last) " " -}}
-      {{- $fullNorm := lower (replaceRE "[^\\pL\\pN]" "" $full) -}}
+      {{- $firstNorm := lower (replaceRE "[^\\pL\\pN]" "" $first) -}}
+      {{- $lastNorm := lower (replaceRE "[^\\pL\\pN]" "" $last) -}}
+      {{- $fullNorm := "" -}}
+      {{- if and (ne $firstNorm "") (ne $lastNorm "") (not (eq $firstNorm "student")) (not (eq $lastNorm "1")) -}}
+        {{- $fullNorm = printf "%s%s" $firstNorm $lastNorm -}}
+      {{- end -}}
       {{- if or
         (and (ne $titleNorm "") (eq $norm $titleNorm))
         (and (ne $koNorm "") (eq $norm $koNorm))

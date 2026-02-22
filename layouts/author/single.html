@@ -11,7 +11,7 @@
 {{ $recent := first 6 (.Pages.ByDate.Reverse) }}
 {{ $workCount := len .Pages }}
 {{ $normPattern := "[^\\pL\\pN]" }}
-{{ $currentNames := slice (.Title | default "") (.Params.name_ko | default "") (.Params.name_en | default "") (printf "%s %s" (.Params.first_name | default "") (.Params.last_name | default "")) }}
+{{ $currentNames := slice (.Title | default "") (.Params.name_ko | default "") (.Params.name_en | default "") }}
 {{ if .File }}{{ $currentNames = $currentNames | append (.File.ContentBaseName | default "") }}{{ end }}
 {{ $currentNorms := slice }}
 {{ range $n := $currentNames }}
@@ -28,7 +28,7 @@
       {{ if not $hit }}
         {{ $resolved := partial "content/resolve_author_profile" (dict "name" $authorRaw) }}
         {{ with index $resolved "page" }}
-          {{ $candNames := slice (.Title | default "") (.Params.name_ko | default "") (.Params.name_en | default "") (printf "%s %s" (.Params.first_name | default "") (.Params.last_name | default "")) }}
+          {{ $candNames := slice (.Title | default "") (.Params.name_ko | default "") (.Params.name_en | default "") }}
           {{ if .File }}{{ $candNames = $candNames | append (.File.ContentBaseName | default "") }}{{ end }}
           {{ range $cn := $candNames }}
             {{ if not $hit }}

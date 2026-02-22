@@ -1,12 +1,68 @@
 {{- $item := .item -}}
 {{- $target := .target | default "Kyungsu Lee" -}}
+{{- $targetNorm := lower (replaceRE "[^\\pL\\pN]" "" $target) -}}
 {{- $types := $item.Params.publication_types | default (slice) -}}
 {{- $badges := $item.Params.badges | default (slice) -}}
+{{- with ($item.Params.award_badge | default "") -}}
+  {{- $badges = $badges | append . -}}
+{{- end -}}
 {{- $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" $target) -}}
 
 {{- $isKyungsuMain := index $roleFlags "is_kyungsu_main" -}}
+{{- $authors := $item.Params.authors | default (slice) -}}
+{{- $notes := $item.Params.author_notes | default (slice) -}}
 {{- $isJournal := in $types "article-journal" -}}
 {{- $isDomesticConference := in $types "conference-domestic" -}}
+
+{{- $isKyungsuMainFromMetadata := false -}}
+{{- range $idx, $authRaw := $authors -}}
+  {{- $candidateNorms := slice -}}
+  {{- $authName := printf "%v" $authRaw -}}
+  {{- $rawNorm := lower (replaceRE "[^\\pL\\pN]" "" $authName) -}}
+  {{- if ne $rawNorm "" -}}
+    {{- $candidateNorms = $candidateNorms | append $rawNorm -}}
+  {{- end -}}
+
+  {{- $resolved := partial "content/resolve_author_profile" (dict "name" $authName) -}}
+  {{- $displayNorm := lower (replaceRE "[^\\pL\\pN]" "" (printf "%v" (index $resolved "display"))) -}}
+  {{- if ne $displayNorm "" -}}
+    {{- $candidateNorms = $candidateNorms | append $displayNorm -}}
+  {{- end -}}
+
+  {{- with (index $resolved "page") -}}
+    {{- $pageNameKoNorm := lower (replaceRE "[^\\pL\\pN]" "" (.Params.name_ko | default "")) -}}
+    {{- $pageNameEnNorm := lower (replaceRE "[^\\pL\\pN]" "" (.Params.name_en | default "")) -}}
+    {{- $pageTitleNorm := lower (replaceRE "[^\\pL\\pN]" "" (.Title | default "")) -}}
+    {{- if ne $pageNameKoNorm "" -}}{{- $candidateNorms = $candidateNorms | append $pageNameKoNorm -}}{{- end -}}
+    {{- if ne $pageNameEnNorm "" -}}{{- $candidateNorms = $candidateNorms | append $pageNameEnNorm -}}{{- end -}}
+    {{- if ne $pageTitleNorm "" -}}{{- $candidateNorms = $candidateNorms | append $pageTitleNorm -}}{{- end -}}
+  {{- end -}}
+
+  {{- if in $candidateNorms $targetNorm -}}
+    {{- if eq $idx 0 -}}
+      {{- $isKyungsuMainFromMetadata = true -}}
+    {{- else if lt $idx (len $notes) -}}
+      {{- $note := lower (printf "%v" (index $notes $idx)) -}}
+      {{- if or
+        (in $note "equal contribution")
+        (in $note "equal")
+        (in $note "co-first")
+        (in $note "first author")
+        (in $note "corresponding")
+        (in $note "1저자")
+        (in $note "제1저자")
+        (in $note "주저자")
+        (in $note "공동1저자")
+        (in $note "교신저자")
+        (in $note "공동교신저자")
+        (in $note "공동")
+      -}}
+        {{- $isKyungsuMainFromMetadata = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $isKyungsuMain = or $isKyungsuMain $isKyungsuMainFromMetadata -}}
 
 {{- $hasTopOrBkcsBadge := false -}}
 {{- range $badge := $badges -}}

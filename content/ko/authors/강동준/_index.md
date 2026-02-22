@@ -2,6 +2,9 @@
 # Display name
 title: 강동준
 
+name_ko: "강동준"
+name_en: "Dong-Jun Kang"
+
 # Full Name (for SEO)
 first_name: Student
 last_name: 1

@@ -2,6 +2,9 @@
 # Display name
 title: 홍사강
 
+name_ko: "홍사강"
+name_en: "Sakang Hong"
+
 # Full Name (for SEO)
 first_name: Student
 last_name: 1

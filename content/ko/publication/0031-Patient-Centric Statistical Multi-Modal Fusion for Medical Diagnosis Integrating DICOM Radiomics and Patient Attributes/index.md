@@ -6,12 +6,10 @@ title: 'Patient-Centric Statistical Multi-Modal Fusion for Medical Diagnosis: In
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - Seo-Yeon Choi
-  - Yeonghoon Lee
   - Kyungsu Lee
 
 # Author notes (optional)
 author_notes:
-  - ''
   - ''
   - 'Corresponding author'
 # {{equal}}

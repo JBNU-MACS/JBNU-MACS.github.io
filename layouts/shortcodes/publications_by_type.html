@@ -458,9 +458,9 @@
                       <span class="venue-badge">{{ . }}</span>
                     {{ end }}
                     {{ with $journalType }}<span class="journal-meta">{{ . }}</span>{{ end }}
-                    {{ with $journalIF }}<span class="journal-meta">IF={{ . }}</span>{{ end }}
-                    {{ with $journalRank }}<span class="journal-meta">{{ . }}</span>{{ end }}
                     {{ with $journalQuartile }}<span class="journal-meta">{{ . }}</span>{{ end }}
+                    {{ with $journalRank }}<span class="journal-meta">JCR {{ . }}</span>{{ end }}
+                    {{ with $journalIF }}<span class="journal-meta">IF {{ . }}</span>{{ end }}
                   </div>
                 {{ end }}
                 {{ if $item.Params.url_pdf }}
@@ -737,9 +737,9 @@
                       <span class="venue-badge">{{ . }}</span>
                     {{ end }}
                     {{ with $journalType }}<span class="journal-meta">{{ . }}</span>{{ end }}
-                    {{ with $journalIF }}<span class="journal-meta">IF={{ . }}</span>{{ end }}
-                    {{ with $journalRank }}<span class="journal-meta">{{ . }}</span>{{ end }}
                     {{ with $journalQuartile }}<span class="journal-meta">{{ . }}</span>{{ end }}
+                    {{ with $journalRank }}<span class="journal-meta">JCR {{ . }}</span>{{ end }}
+                    {{ with $journalIF }}<span class="journal-meta">IF {{ . }}</span>{{ end }}
                   </div>
                 {{ end }}
 

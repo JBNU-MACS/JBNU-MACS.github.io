@@ -9,7 +9,7 @@ authors:
   - T C Cavalcanti
   - Sewoong Kim
   - Hah Min Lew
-  - 서대헌
+  - Dae Hun Suh
   - Dong Hun Lee
   - Jae Youn Hwang
 

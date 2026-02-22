@@ -7,8 +7,8 @@ title: 'Fully-automatic Deep Learning-based Analysis for Determination of the In
 authors:
   - Sang-Yeon Lee
   - Kyungsu Lee
-  - 손지훈
-  - 양인환
+  - Jeehoon Son
+  - In-Hwan Yang
   - Jae Youn Hwang
 
 # Author notes (optional)

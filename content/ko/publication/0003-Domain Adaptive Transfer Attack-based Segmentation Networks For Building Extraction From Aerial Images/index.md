@@ -5,12 +5,12 @@ title: 'Domain Adaptive Transfer Attack-based Segmentation Networks for Building
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - 나영환
-  - 김준희
+  - Younghwan Na
+  - Jun Hee Kim
   - Kyungsu Lee
-  - 박주흠
+  - Juhum Park
   - Jae Youn Hwang
-  - 최지환
+  - Jihwan P Choi
 
 # Author notes (optional)
 author_notes:

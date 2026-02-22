@@ -6,21 +6,21 @@ title: 'Federated Learning for Thyroid Ultrasound Image Analysis to Protect Pers
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - Haeyun Lee
-  - 채영준
-  - 주현진
+  - Young Jun Chai
+  - Hyunjin Joo
   - Kyungsu Lee
   - Jae Youn Hwang
-  - 김석무
-  - 김광순
-  - 남인철
-  - 최준영
-  - 유형원
-  - 이명철
+  - Seok-Mo Kim
+  - Kwangsoon Kim
+  - Inn-Chul Nam
+  - June Young Choi
+  - Hyeong Won Yu
+  - Myeong-Chul Lee
   - Hiroo Masuoka
   - Akira Miyauchi
-  - 이규언
-  - 김성완
-  - 공현중
+  - Kyu-Eon Lee
+  - Sung-Wan Kim
+  - Hyoun-Joong Kong
 
 # Author notes (optional)
 author_notes:

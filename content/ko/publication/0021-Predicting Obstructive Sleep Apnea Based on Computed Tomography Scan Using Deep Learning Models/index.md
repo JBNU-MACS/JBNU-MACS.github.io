@@ -5,14 +5,14 @@ title: 'Predicting Obstructive Sleep Apnea Based on Computed Tomography Scan Usi
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - 김정훈
+  - Jeong-Whun Kim
   - Kyungsu Lee
-  - 김현진
-  - 박해찬
+  - Hyun Jik Kim
+  - Hae Chan Park
   - Jae Youn Hwang
-  - 박석원
-  - 공현중
-  - 김진엽
+  - Seok-Won Park
+  - Hyoun-Joong Kong
+  - Jin Youp Kim
 
 # Author notes (optional)
 author_notes:

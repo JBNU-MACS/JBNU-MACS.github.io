@@ -5,7 +5,7 @@ title: 'Interactive Few-shot Online Adaptation for User-Guided Segmentation in A
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - 김영수
+  - Yeongsu Kim
   - Kyungsu Lee
 
 # Author notes (optional)
@@ -27,8 +27,8 @@ publishDate: '2025-04-00'
 publication_types: ['conference-international']
 
 badges:
-  - Top
   - BK/CS
+  
 highlight: true
 
 

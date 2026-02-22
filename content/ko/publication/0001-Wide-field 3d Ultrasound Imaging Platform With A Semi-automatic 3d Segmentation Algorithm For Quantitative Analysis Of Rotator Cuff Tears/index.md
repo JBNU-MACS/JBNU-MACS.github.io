@@ -8,7 +8,7 @@ authors:
   - Moon Hwan Lee
   - Jun-Young Kim
   - Kyungsu Lee
-  - 최창혁
+  - Chang-Hyuk Choi
   - Jae Youn Hwang
 
 # Author notes (optional)

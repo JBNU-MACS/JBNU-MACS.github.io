@@ -7,7 +7,7 @@ title: 'Fine-Grained Binary Object Segmentation in Remote Sensing Imagery via Pa
 authors:
   - Kyungsu Lee
   - Haeyun Lee
-  - 박주흠
+  - Juhum Park
   - Jae Youn Hwang
 
 # Author notes (optional)

@@ -7,10 +7,10 @@ title: 'Intelligent Bladder Volume Monitoring for Wearable Ultrasound Devices: E
 authors:
   - Kyungsu Lee
   - Moon Hwan Lee
-  - 강동호
+  - Dongho Kang
   - Sewoong Kim
-  - 장진호
-  - 오승준
+  - Jin Ho Chang
+  - Seung-June Oh
   - Jae Youn Hwang
 
 # Author notes (optional)

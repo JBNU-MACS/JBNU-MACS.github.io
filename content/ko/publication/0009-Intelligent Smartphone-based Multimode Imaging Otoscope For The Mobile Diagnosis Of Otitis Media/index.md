@@ -9,7 +9,7 @@ authors:
   - Hah Min Lew
   - Kyungsu Lee
   - Sang-Yeon Lee
-  - 박무균
+  - Moo Kyun Park
   - Jae Youn Hwang
 
 # Author notes (optional)

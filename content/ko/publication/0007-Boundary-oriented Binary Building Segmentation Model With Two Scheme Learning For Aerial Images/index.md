@@ -6,10 +6,10 @@ title: 'Boundary-oriented Binary Building Segmentation Model with Two Scheme Lea
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - Kyungsu Lee
-  - 김준희
+  - Jun Hee Kim
   - Haeyun Lee
-  - 박주흠
-  - 최지환
+  - Juhum Park
+  - Jihwan P Choi
   - Jae Youn Hwang
 
 # Author notes (optional)

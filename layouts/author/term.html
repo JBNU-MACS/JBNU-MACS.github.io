@@ -10,15 +10,37 @@
 {{ $email := .Params.email | default $socialEmail }}
 {{ $recent := first 6 (.Pages.ByDate.Reverse) }}
 {{ $workCount := len .Pages }}
+{{ $normPattern := "[^\\pL\\pN]" }}
+{{ $currentNames := slice (.Title | default "") (.Params.name_ko | default "") (.Params.name_en | default "") (printf "%s %s" (.Params.first_name | default "") (.Params.last_name | default "")) }}
+{{ if .File }}{{ $currentNames = $currentNames | append (.File.ContentBaseName | default "") }}{{ end }}
+{{ $currentNorms := slice }}
+{{ range $n := $currentNames }}
+  {{ $nTrim := trim $n " \n\r\t" }}
+  {{ if ne $nTrim "" }}
+    {{ $currentNorms = $currentNorms | append (lower (replaceRE $normPattern "" $nTrim)) }}
+  {{ end }}
+{{ end }}
 {{ $matchedPubs := slice }}
 {{ range $pub := (where site.RegularPages "Section" "publication") }}
   {{ $hit := false }}
   {{ with $pub.Params.authors }}
-    {{ range . }}
+    {{ range $authorRaw := . }}
       {{ if not $hit }}
-        {{ $resolved := partial "content/resolve_author_profile" (dict "name" .) }}
+        {{ $resolved := partial "content/resolve_author_profile" (dict "name" $authorRaw) }}
         {{ with index $resolved "page" }}
-          {{ if eq .RelPermalink $.RelPermalink }}
+          {{ $candNames := slice (.Title | default "") (.Params.name_ko | default "") (.Params.name_en | default "") (printf "%s %s" (.Params.first_name | default "") (.Params.last_name | default "")) }}
+          {{ if .File }}{{ $candNames = $candNames | append (.File.ContentBaseName | default "") }}{{ end }}
+          {{ range $cn := $candNames }}
+            {{ if not $hit }}
+              {{ $cnTrim := trim $cn " \n\r\t" }}
+              {{ if and (ne $cnTrim "") (in $currentNorms (lower (replaceRE $normPattern "" $cnTrim))) }}
+                {{ $hit = true }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ else }}
+          {{ $rawNorm := lower (replaceRE $normPattern "" $authorRaw) }}
+          {{ if in $currentNorms $rawNorm }}
             {{ $hit = true }}
           {{ end }}
         {{ end }}

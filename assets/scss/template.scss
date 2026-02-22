@@ -4690,3 +4690,288 @@ body.home .home-section:has(.home-dual-feed) {
     padding: 0.58rem 0.72rem 0.65rem;
   }
 }
+
+/* =========================
+   Research Field Page
+   ========================= */
+.macs-field-shell {
+  max-width: 1200px;
+  padding: 1.25rem 1rem 4.5rem;
+  margin: 0 auto;
+  font-family: "Space Grotesk", "Pretendard Variable", "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+.macs-field-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  margin: 0 0 1.4rem;
+  padding: 2.5rem 2.2rem;
+  background:
+    radial-gradient(circle at 84% 15%, rgba(255, 199, 94, 0.36), transparent 46%),
+    radial-gradient(circle at 9% 82%, rgba(93, 168, 255, 0.28), transparent 44%),
+    linear-gradient(130deg, #0f172a 0%, #1e293b 45%, #26334b 100%);
+  color: #f8fafc;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.32);
+}
+
+.macs-field-hero .hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(150deg, rgba(0, 0, 0, 0.85), transparent 76%);
+  pointer-events: none;
+}
+
+.macs-field-hero .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.macs-field-hero .hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.7rem;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-weight: 700;
+  opacity: 0.92;
+}
+
+.macs-field-hero h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 4.2vw, 2.95rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.macs-field-hero .hero-summary {
+  margin: 0.95rem 0 0;
+  max-width: 760px;
+  color: rgba(241, 245, 249, 0.92);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.macs-field-hero .hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.58rem;
+  margin-top: 1.2rem;
+}
+
+.macs-field-hero .hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.38rem 0.8rem;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: rgba(248, 250, 252, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.macs-field-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.05rem;
+}
+
+.macs-field-card {
+  grid-column: span 6;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.1);
+  animation: fieldCardRise 0.55s ease-out both;
+}
+
+.macs-field-card:nth-child(2n) {
+  animation-delay: 0.07s;
+}
+
+.macs-field-card:nth-child(3n) {
+  animation-delay: 0.14s;
+}
+
+.macs-field-card .field-card-link {
+  display: grid;
+  grid-template-columns: 41% 1fr;
+  min-height: 248px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.macs-field-card .field-card-media {
+  position: relative;
+  background: linear-gradient(140deg, #0f172a 0%, #334155 100%);
+}
+
+.macs-field-card .field-card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 25%, rgba(15, 23, 42, 0.22) 100%);
+}
+
+.macs-field-card .field-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.macs-field-card .field-card-media.no-image {
+  display: grid;
+  place-items: center;
+}
+
+.macs-field-card .field-card-fallback {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+  font-weight: 800;
+  color: rgba(248, 250, 252, 0.92);
+  letter-spacing: -0.05em;
+}
+
+.macs-field-card .field-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 1.35rem 1.4rem 1.25rem;
+}
+
+.macs-field-card .field-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.macs-field-card .field-card-meta .field-order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 28px;
+  padding: 0 0.55rem;
+  border-radius: 9px;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.macs-field-card .field-card-meta time {
+  font-size: 0.77rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.macs-field-card h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(1.06rem, 1.7vw, 1.28rem);
+  line-height: 1.33;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.macs-field-card p {
+  margin: 0;
+  color: #334155;
+  font-size: 0.91rem;
+  line-height: 1.66;
+}
+
+.macs-field-card .field-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  width: fit-content;
+  min-height: 34px;
+  padding: 0.35rem 0.86rem;
+  border-radius: 999px;
+  font-size: 0.79rem;
+  font-weight: 700;
+  color: #0f172a;
+  background: linear-gradient(120deg, #cbd5e1 0%, #e2e8f0 100%);
+  transition: transform 0.22s ease, background 0.22s ease;
+}
+
+.macs-field-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 26px 48px rgba(15, 23, 42, 0.16);
+}
+
+.macs-field-card:hover .field-card-media img {
+  transform: scale(1.05);
+}
+
+.macs-field-card:hover .field-card-cta {
+  transform: translateX(4px);
+  background: linear-gradient(120deg, #93c5fd 0%, #bfdbfe 100%);
+}
+
+@keyframes fieldCardRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .macs-field-card .field-card-link {
+    grid-template-columns: 38% 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .macs-field-shell {
+    padding-inline: 0.8rem;
+  }
+
+  .macs-field-hero {
+    border-radius: 22px;
+    padding: 2.1rem 1.25rem;
+  }
+
+  .macs-field-grid {
+    gap: 0.85rem;
+  }
+
+  .macs-field-card {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 640px) {
+  .macs-field-card .field-card-link {
+    grid-template-columns: 1fr;
+  }
+
+  .macs-field-card .field-card-media {
+    min-height: 180px;
+  }
+
+  .macs-field-card .field-card-body {
+    padding: 1.05rem 1rem 0.95rem;
+  }
+
+  .macs-field-card p {
+    font-size: 0.88rem;
+  }
+}

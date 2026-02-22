@@ -1,0 +1,15 @@
+{{- $item := . -}}
+{{- $authors := $item.Params.authors | default (slice) -}}
+{{- if gt (len $authors) 0 -}}
+  {{- range $idx, $a := $authors -}}
+    {{- $resolved := partial "content/resolve_author_profile" (dict "name" $a) -}}
+    {{- $display := index $resolved "display" -}}
+    {{- $url := index $resolved "url" -}}
+    {{- if ne $url "" -}}
+      <a href="{{ $url }}" rel="author">{{ $display }}</a>
+    {{- else -}}
+      <span>{{ $display }}</span>
+    {{- end -}}
+    {{- if ne $idx (sub (len $authors) 1) -}}, {{- end -}}
+  {{- end -}}
+{{- end -}}

@@ -4,7 +4,7 @@
 {{ $heroRes := $p.Resources.GetMatch "featured*" }}
 {{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*cover*" }}{{ end }}
 {{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*thumb*" }}{{ end }}
-{{ $summary := $p.Summary | plainify | strings.TrimSpace }}
+{{ $summary := trim ($p.Summary | plainify) " \n\r\t" }}
 
 <div class="universal-wrapper">
   <article class="macs-feed-single macs-feed-single--{{ $kindClass }}">

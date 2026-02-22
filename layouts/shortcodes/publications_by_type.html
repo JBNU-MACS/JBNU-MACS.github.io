@@ -108,19 +108,40 @@
     background: #ffffff;
     box-shadow: 0 6px 16px rgba(23, 40, 78, 0.05);
   }
+  .pub-item-meta-row{
+    margin-top: 0.36rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    min-width: 0;
+  }
+  .pub-item-meta-row .venue-badge{
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #c3d0e5;
+    border-radius: 999px;
+    background: #f3f7ff;
+    color: #2c4363;
+    font-size: 0.62rem;
+    font-weight: 800;
+    line-height: 1;
+    padding: 0.16rem 0.46rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
   .journal-meta{
-    display: block;
-    font-size: 0.65rem;
-    margin-top: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.62rem;
     font-weight: 800;
     color: #314a6c;
     background: #eef3fb;
     border: 1px solid #c3d0e5;
     border-radius: 999px;
     padding: 0.14rem 0.48rem;
-    width: fit-content;
+    margin-left: auto;
+    max-width: 100%;
     text-align: right;
-    margin-top: 15px;
   }
   .pub-sep{
     border: none;
@@ -173,8 +194,9 @@
       font-size: 0.85rem;
       padding: 0.18rem 0.38rem;
     }
+    .pub-item-meta-row .venue-badge,
     .journal-meta {
-      font-size: 0.6rem;
+      font-size: 0.56rem;
     }
   }
 </style>
@@ -329,6 +351,11 @@
                 {{ if $item.Params.url_pdf }}
                   <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
                 {{ end }}
+                {{ with $item.Params.publication_short }}
+                  <div class="pub-item-meta-row">
+                    <span class="venue-badge">{{ . }}</span>
+                  </div>
+                {{ end }}
               </li>
             {{ end }}
           </ol>
@@ -435,8 +462,15 @@
                 {{ if $item.Params.jcr_percentile }}
                   {{ if $journalInfo }}{{ $journalInfo = printf "%s (%s)" $journalInfo $item.Params.jcr_percentile }}{{ else }}{{ $journalInfo = printf "(%s)" $journalInfo }}{{ end }}
                 {{ end }}
-                {{ if $journalInfo }}
-                  <div class="journal-meta">[{{ $journalInfo }}]</div>
+                {{ if or ($item.Params.publication_short) $journalInfo }}
+                  <div class="pub-item-meta-row">
+                    {{ with $item.Params.publication_short }}
+                      <span class="venue-badge">{{ . }}</span>
+                    {{ end }}
+                    {{ if $journalInfo }}
+                      <span class="journal-meta">[{{ $journalInfo }}]</span>
+                    {{ end }}
+                  </div>
                 {{ end }}
                 {{ if $item.Params.url_pdf }}
                   <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
@@ -604,6 +638,11 @@
                 {{ if $item.Params.url_pdf }}
                   <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
                 {{ end }}
+                {{ with $item.Params.publication_short }}
+                  <div class="pub-item-meta-row">
+                    <span class="venue-badge">{{ . }}</span>
+                  </div>
+                {{ end }}
               </li>
             {{ end }}
           </ol>
@@ -705,13 +744,20 @@
                   {{ if $journalInfo }}{{ $journalInfo = printf "%s; IF=%s" $journalInfo $item.Params.impact_factor }}{{ else }}{{ $journalInfo = printf "IF=%s" $item.Params.impact_factor }}{{ end }}
                 {{ end }}
                 {{ if $item.Params.jcr_rank }}
-                  {{ if $journalInfo }}{{ $journalInfo = printf "%s, %s" $journalInfo $item.Params.jcr_rank }}{{ else }}{{ $journalInfo = printf "%s" $journalInfo }}{{ end }}%
+                  {{ if $journalInfo }}{{ $journalInfo = printf "%s, %s" $journalInfo $item.Params.jcr_rank }}{{ else }}{{ $journalInfo = printf "%s" $journalInfo }}{{ end }}
                 {{ end }}
                 {{ if $item.Params.jcr_percentile }}
                   {{ if $journalInfo }}{{ $journalInfo = printf "%s (%s)" $journalInfo $item.Params.jcr_percentile }}{{ else }}{{ $journalInfo = printf "(%s)" $journalInfo }}{{ end }}
                 {{ end }}
-                {{ if $journalInfo }}
-                  <div class="journal-meta">[{{ $journalInfo }}]</div>
+                {{ if or ($item.Params.publication_short) $journalInfo }}
+                  <div class="pub-item-meta-row">
+                    {{ with $item.Params.publication_short }}
+                      <span class="venue-badge">{{ . }}</span>
+                    {{ end }}
+                    {{ if $journalInfo }}
+                      <span class="journal-meta">[{{ $journalInfo }}]</span>
+                    {{ end }}
+                  </div>
                 {{ end }}
 
                 .

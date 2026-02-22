@@ -3093,6 +3093,20 @@ body.home .home-section:has(.home-dual-feed) {
   background: linear-gradient(170deg, #ffffff 0%, #f7faff 100%);
   box-shadow: 0 18px 36px rgba(25, 38, 68, 0.08);
   overflow: hidden;
+  position: relative;
+  font-family: "Pretendard Variable", "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+  color: #1f242d;
+}
+
+.macs-feed-single::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  width: 104px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4f76ad 0%, #7fa1d3 100%);
 }
 
 .macs-feed-single-hero {
@@ -3120,21 +3134,21 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .macs-feed-single-kicker .kind {
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #2b4d7c;
+  color: #273950;
   border: 1px solid rgba(147, 167, 201, 0.5);
-  background: rgba(241, 247, 255, 0.92);
+  background: rgba(248, 251, 255, 0.95);
   border-radius: 999px;
-  padding: 0.14rem 0.48rem;
+  padding: 0.12rem 0.44rem;
 }
 
 .macs-feed-single-kicker .back-link {
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  color: #4a6282;
+  color: #455668;
   text-decoration: none;
 }
 
@@ -3145,11 +3159,12 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-feed-single h1 {
   margin: 0;
-  font-size: 1.46rem;
-  line-height: 1.28;
+  font-size: 1.22rem;
+  line-height: 1.34;
   letter-spacing: -0.01em;
-  color: #20344d;
+  color: #181d24;
   text-align: left;
+  font-weight: 800;
 }
 
 .macs-feed-single-meta {
@@ -3161,20 +3176,21 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-feed-single-meta span,
 .macs-feed-single-meta time {
-  font-size: 0.72rem;
+  font-size: 0.64rem;
   font-weight: 700;
-  color: #4a6284;
+  color: #415163;
   border: 1px solid rgba(165, 182, 211, 0.45);
   background: rgba(248, 251, 255, 0.95);
   border-radius: 999px;
-  padding: 0.13rem 0.42rem;
+  padding: 0.12rem 0.4rem;
 }
 
 .macs-feed-single-summary {
   margin: 0.7rem 0 0;
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: #445c79;
+  font-size: 0.78rem;
+  line-height: 1.56;
+  color: #3b4a5d;
+  font-weight: 520;
 }
 
 .macs-feed-single-cover {
@@ -3200,28 +3216,30 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .macs-feed-single-content {
-  color: #273a52;
-  font-size: 0.97rem;
-  line-height: 1.86;
+  color: #1f242d;
+  font-size: 0.86rem;
+  line-height: 1.62;
+  font-weight: 540;
 }
 
 .macs-feed-single-content h2,
 .macs-feed-single-content h3,
 .macs-feed-single-content h4 {
-  color: #1f3758;
+  color: #1b2736;
   letter-spacing: -0.01em;
-  margin-top: 1.2rem;
-  margin-bottom: 0.55rem;
+  margin-top: 1.34rem;
+  margin-bottom: 0.68rem;
+  font-weight: 760;
 }
 
 .macs-feed-single-content p {
-  margin: 0 0 0.9rem;
+  margin: 0 0 1.15rem;
 }
 
 .macs-feed-single-content a {
-  color: #28518c;
+  color: #273f65;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 760;
 }
 
 .macs-feed-single-content a:hover {
@@ -3235,11 +3253,12 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .macs-feed-single-content blockquote {
-  border-left: 3px solid #87a8d8;
-  background: #f4f8ff;
+  border-left: 3px solid #6f8ebd;
+  background: #f7faff;
   border-radius: 10px;
-  padding: 0.6rem 0.72rem;
-  color: #334d6f;
+  padding: 0.7rem 0.78rem;
+  color: #2f3f54;
+  line-height: 1.58;
 }
 
 .macs-feed-single-content hr {
@@ -3262,8 +3281,8 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-feed-single-foot .nav {
   max-width: 48%;
-  font-size: 0.79rem;
-  color: #3e5980;
+  font-size: 0.7rem;
+  color: #3c4d62;
   text-decoration: none;
   white-space: nowrap;
   overflow: hidden;
@@ -3276,7 +3295,7 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .macs-feed-single-foot .nav:hover {
-  color: #274b80;
+  color: #2a456d;
   text-decoration: underline;
 }
 
@@ -3305,17 +3324,17 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-feed-single h1 {
-    font-size: 1.14rem;
+    font-size: 1.02rem;
     line-height: 1.34;
   }
 
   .macs-feed-single-meta span,
   .macs-feed-single-meta time {
-    font-size: 0.63rem;
+    font-size: 0.57rem;
   }
 
   .macs-feed-single-summary {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
   }
 
   .macs-feed-single-cover {
@@ -3332,14 +3351,14 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-feed-single-content {
-    font-size: 0.84rem;
-    line-height: 1.72;
+    font-size: 0.78rem;
+    line-height: 1.56;
   }
 
   .macs-feed-single-content h2,
   .macs-feed-single-content h3,
   .macs-feed-single-content h4 {
-    font-size: 1.01rem;
+    font-size: 0.9rem;
   }
 
   .macs-feed-single-foot {
@@ -3347,7 +3366,7 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-feed-single-foot .nav {
-    font-size: 0.7rem;
+    font-size: 0.62rem;
   }
 }
 

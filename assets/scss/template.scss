@@ -4097,29 +4097,50 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-author-edu-item {
   border-color: #dde3ec;
-  background: #fbfcfe;
-  padding: 0.5rem 0.56rem;
+  background: linear-gradient(180deg, #fcfdff 0%, #f8fafd 100%);
+  padding: 0.42rem 0.56rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "course year"
+    "inst year";
+  align-items: center;
+  column-gap: 0.5rem;
+  row-gap: 0.08rem;
 }
 
 .macs-author-edu-item h3 {
+  grid-area: course;
   color: #28313f;
-  font-size: 0.7rem;
-  line-height: 1.36;
-  font-weight: 640;
+  font-size: 0.68rem;
+  line-height: 1.28;
+  font-weight: 650;
+  margin: 0;
+  min-width: 0;
 }
 
 .macs-author-edu-item p {
+  grid-area: inst;
   color: #3d4656;
-  font-size: 0.63rem;
-  line-height: 1.42;
-  font-weight: 520;
+  font-size: 0.61rem;
+  line-height: 1.3;
+  font-weight: 540;
+  margin: 0;
+  min-width: 0;
 }
 
 .macs-author-edu-item small {
+  grid-area: year;
+  justify-self: end;
+  align-self: center;
   color: #6a7484;
-  font-size: 0.56rem;
+  font-size: 0.55rem;
   letter-spacing: 0.01em;
-  font-weight: 520;
+  font-weight: 560;
+  white-space: nowrap;
+  margin: 0;
+  padding-left: 0.5rem;
+  border-left: 1px solid #d4dbe6;
 }
 
 .macs-author-career-list {
@@ -4276,15 +4297,22 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-author-edu-item h3 {
-    font-size: 0.67rem;
+    font-size: 0.66rem;
   }
 
   .macs-author-edu-item p {
-    font-size: 0.61rem;
+    font-size: 0.59rem;
   }
 
   .macs-author-edu-item small {
     font-size: 0.53rem;
+    padding-left: 0.36rem;
+  }
+
+  .macs-author-edu-item {
+    column-gap: 0.4rem;
+    row-gap: 0.06rem;
+    padding: 0.42rem 0.5rem;
   }
 
   .macs-author-career-item h3 {

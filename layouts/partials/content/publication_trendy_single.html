@@ -1,0 +1,108 @@
+{{ $p := .Page }}
+{{ $hero := $p.Resources.GetMatch "featured*" }}
+{{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*cover*" }}{{ end }}
+{{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*thumb*" }}{{ end }}
+{{ $bib := $p.Resources.GetMatch "*.bib" }}
+{{ $pubYear := "" }}
+{{ with $p.Date }}{{ $pubYear = .Format "2006" }}{{ end }}
+
+<div class="universal-wrapper">
+  <article class="macs-pub-single">
+    <header class="macs-pub-hero{{ if not $hero }} no-hero{{ end }}">
+      <div class="macs-pub-head">
+        <p class="kicker">Publication</p>
+        <h1>{{ $p.Title }}</h1>
+
+        <div class="macs-pub-authors">
+          {{ with $p.Params.authors }}
+            {{ $total := len . }}
+            {{ range $idx, $a := . }}
+              {{ $profile := site.GetPage (printf "authors/%s" (urlize $a)) }}
+              {{ if $profile }}
+                <a href="{{ $profile.RelPermalink }}">{{ $a }}</a>
+              {{ else }}
+                <span>{{ $a }}</span>
+              {{ end }}
+              {{ if and $p.Params.author_notes (lt $idx (len $p.Params.author_notes)) }}
+                {{ if eq (index $p.Params.author_notes $idx) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
+                {{ if eq (index $p.Params.author_notes $idx) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
+              {{ end }}
+              {{ if ne $idx (sub $total 1) }}<span class="sep">, </span>{{ end }}
+            {{ end }}
+          {{ end }}
+        </div>
+
+        <p class="macs-pub-reference">
+          {{ with $p.Params.authors }}
+            {{ delimit . ", " }}.
+          {{ end }}
+          "{{ $p.Title }},"
+          {{ with $p.Params.publication }}<i>{{ . }}</i>{{ end }}
+          {{ with $p.Params.publication_short }}(<span class="abbr">{{ . }}</span>){{ end }}
+          {{ if ne $pubYear "" }}, {{ $pubYear }}{{ end }}.
+        </p>
+
+        <div class="macs-pub-meta">
+          {{ with $p.Params.publication }}<span>{{ . }}</span>{{ end }}
+          {{ with $p.Params.publication_short }}<span class="abbr">{{ . }}</span>{{ end }}
+          {{ with $pubYear }}<span>{{ . }}</span>{{ end }}
+          {{ with $p.Params.journal_type }}<span>{{ . }}</span>{{ end }}
+        </div>
+      </div>
+
+      {{ with $hero }}
+        <figure class="macs-pub-cover">
+          <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
+        </figure>
+      {{ end }}
+    </header>
+
+    <section class="macs-pub-main">
+      <aside class="macs-pub-side">
+        <div class="macs-pub-side-card">
+          <h3>Quick Info</h3>
+          <ul>
+            {{ with $p.Params.doi }}<li><strong>DOI</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.publication }}<li><strong>Venue</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.publication_short }}<li><strong>Abbr.</strong><span class="abbr">{{ . }}</span></li>{{ end }}
+            {{ with $pubYear }}<li><strong>Year</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.impact_factor }}<li><strong>IF</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.jcr_rank }}<li><strong>JCR</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.jcr_percentile }}<li><strong>Quartile</strong><span>{{ . }}</span></li>{{ end }}
+          </ul>
+        </div>
+
+        <div class="macs-pub-side-card">
+          <h3>Links</h3>
+          <div class="links">
+            {{ with $p.Params.doi }}<a href="{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
+            {{ with $p.Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
+            {{ with $p.Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+            {{ with $p.Params.url_code }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
+            {{ with $p.Params.url_dataset }}<a href="{{ . }}" target="_blank" rel="noopener">Dataset</a>{{ end }}
+            {{ with $p.Params.url_poster }}<a href="{{ . }}" target="_blank" rel="noopener">Poster</a>{{ end }}
+            {{ with $p.Params.url_slides }}<a href="{{ . }}" target="_blank" rel="noopener">Slides</a>{{ end }}
+            {{ with $p.Params.url_video }}<a href="{{ . }}" target="_blank" rel="noopener">Video</a>{{ end }}
+            {{ with $bib }}<a href="{{ .RelPermalink }}" target="_blank" rel="noopener">BibTeX</a>{{ end }}
+          </div>
+        </div>
+      </aside>
+
+      <div class="macs-pub-content">
+        {{ with $p.Params.abstract }}
+          <section class="macs-pub-block">
+            <h2>Abstract</h2>
+            <p>{{ . }}</p>
+          </section>
+        {{ end }}
+
+        {{ if $p.Content }}
+          <section class="macs-pub-block">
+            <h2>Details</h2>
+            <div class="body">{{ $p.Content }}</div>
+          </section>
+        {{ end }}
+      </div>
+    </section>
+  </article>
+</div>

@@ -17,6 +17,7 @@ publishDate: '2025-10-15'
 
 publication_types:
   - conference-international
+highlight: false
 
 publication: 2025 Second International Conference on Artificial Intelligence for Medicine, Health, and Care
 publication_short: AIxMHC2025

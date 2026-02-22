@@ -17,6 +17,7 @@ publishDate: '2025-10-15'
 
 publication_types:
   - conference-international
+highlight: false
 
 award: true
 award_badge: 'Best Poster Award'

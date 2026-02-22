@@ -1,0 +1,26 @@
+{{- $item := .item -}}
+{{- $target := .target | default "Kyungsu Lee" -}}
+{{- $types := $item.Params.publication_types | default (slice) -}}
+{{- $badges := $item.Params.badges | default (slice) -}}
+{{- $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" $target) -}}
+
+{{- $isKyungsuMain := index $roleFlags "is_kyungsu_main" -}}
+{{- $isJournal := in $types "article-journal" -}}
+{{- $isDomesticConference := in $types "conference-domestic" -}}
+
+{{- $hasTopOrBkcsBadge := false -}}
+{{- range $badge := $badges -}}
+  {{- $norm := lower (replaceRE "[^a-z0-9]" "" (printf "%v" $badge)) -}}
+  {{- if or (eq $norm "top") (eq $norm "bkcs") -}}
+    {{- $hasTopOrBkcsBadge = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $isTopOrBkcsConference := or (in $types "paper-csai") $hasTopOrBkcsBadge -}}
+{{- $isHighlight := and $isKyungsuMain (or $isTopOrBkcsConference $isJournal) -}}
+
+{{- if $isDomesticConference -}}
+  {{- $isHighlight = false -}}
+{{- end -}}
+
+{{- return $isHighlight -}}

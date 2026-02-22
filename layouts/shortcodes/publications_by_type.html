@@ -278,7 +278,7 @@
               {{ end }}
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
-              {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
+              {{ $isHighlight := partial "content/publication_should_highlight" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $displayNumber := index $leftNumberMap2 $item.RelPermalink }}
               {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
               <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
@@ -359,7 +359,7 @@
             {{ range $itemIndex, $item := $rightItems }}
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
-              {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
+              {{ $isHighlight := partial "content/publication_should_highlight" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $displayNumber := index $rightNumberMap2 $item.RelPermalink }}
               {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
               <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
@@ -485,7 +485,7 @@
               {{ end }}
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
-              {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
+              {{ $isHighlight := partial "content/publication_should_highlight" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $displayNumber := index $leftNumberMap $item.RelPermalink }}
               {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
               <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
@@ -570,8 +570,7 @@
               {{ end }}
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
-              {{/* Domestic conference는 자동 하이라이트를 비활성화하고, 명시적 highlight만 반영 */}}
-              {{ $isHighlight := ($item.Params.highlight | default false) }}
+              {{ $isHighlight := partial "content/publication_should_highlight" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $displayNumber := index $rightNumberMap $item.RelPermalink }}
               {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
               <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">

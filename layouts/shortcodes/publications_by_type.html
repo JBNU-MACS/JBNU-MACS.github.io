@@ -233,6 +233,15 @@
   {{/* ===== 전체 publication 페이지 ===== */}}
   {{ $allItems := where site.RegularPages "Section" "publication" }}
   {{ $allItems = $allItems.ByDate.Reverse }}
+  {{/* ===== 번호 맵: 오래된 논문=1, 연도 바뀌어도 번호 유지 ===== */}}
+  {{ $leftNumberMap2 := dict }}
+  {{ $rightNumberMap2 := dict }}
+  {{ range $idx, $it := (where $allItems "Params.publication_types" "intersect" $leftTypes).ByDate }}
+    {{ $leftNumberMap2 = merge $leftNumberMap2 (dict $it.RelPermalink (add $idx 1)) }}
+  {{ end }}
+  {{ range $idx, $it := (where $allItems "Params.publication_types" "intersect" $rightTypes).ByDate }}
+    {{ $rightNumberMap2 = merge $rightNumberMap2 (dict $it.RelPermalink (add $idx 1)) }}
+  {{ end }}
 
   {{/* ===== 헤더(연도 + 2컬럼 타이틀) ===== */}}
   <div class="pub-head">
@@ -262,10 +271,12 @@
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
               {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
+              {{ $displayNumber := index $leftNumberMap2 $item.RelPermalink }}
+              {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
               <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
 
-                {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
-                {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
+                {{ if $showAsterisk }}<b title="Main Author">*{{ $displayNumber }}.</b>&nbsp;
+                {{ else }}<b>{{ $displayNumber }}.</b>&nbsp;
                 {{ end }}
 
                 {{/* ===== 저자 출력 ===== */}}
@@ -341,10 +352,12 @@
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
               {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
+              {{ $displayNumber := index $rightNumberMap2 $item.RelPermalink }}
+              {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
               <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
 
-                {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
-                {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
+                {{ if $showAsterisk }}<b title="Main Author">*{{ $displayNumber }}.</b>&nbsp;
+                {{ else }}<b>{{ $displayNumber }}.</b>&nbsp;
                 {{ end }}
 
                 {{/* ===== 저자 출력 ===== */}}
@@ -424,6 +437,15 @@
   {{/* ===== 전체 publication 페이지 ===== */}}
   {{ $allItems := where site.RegularPages "Section" "publication" }}
   {{ $allItems = $allItems.ByDate.Reverse }}
+  {{/* ===== 번호 맵: 오래된 논문=1, 연도 바뀌어도 번호 유지 ===== */}}
+  {{ $leftNumberMap := dict }}
+  {{ $rightNumberMap := dict }}
+  {{ range $idx, $it := (where $allItems "Params.publication_types" "intersect" $leftTypes).ByDate }}
+    {{ $leftNumberMap = merge $leftNumberMap (dict $it.RelPermalink (add $idx 1)) }}
+  {{ end }}
+  {{ range $idx, $it := (where $allItems "Params.publication_types" "intersect" $rightTypes).ByDate }}
+    {{ $rightNumberMap = merge $rightNumberMap (dict $it.RelPermalink (add $idx 1)) }}
+  {{ end }}
 
   {{/* ===== 헤더(연도 + 2컬럼 타이틀) ===== */}}
   <div class="pub-head">
@@ -453,10 +475,12 @@
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
               {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
+              {{ $displayNumber := index $leftNumberMap $item.RelPermalink }}
+              {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
               <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
 
-                {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
-                {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
+                {{ if $showAsterisk }}<b title="Main Author">*{{ $displayNumber }}.</b>&nbsp;
+                {{ else }}<b>{{ $displayNumber }}.</b>&nbsp;
                 {{ end }}
 
                 {{/* ===== 저자 출력 ===== */}}
@@ -533,10 +557,12 @@
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
               {{ $showAsterisk := index $roleFlags "show_asterisk" }}
               {{ $isHighlight := or (index $roleFlags "is_kyungsu_main") ($item.Params.highlight | default false) }}
+              {{ $displayNumber := index $rightNumberMap $item.RelPermalink }}
+              {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
               <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
 
-                {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
-                {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
+                {{ if $showAsterisk }}<b title="Main Author">*{{ $displayNumber }}.</b>&nbsp;
+                {{ else }}<b>{{ $displayNumber }}.</b>&nbsp;
                 {{ end }}
 
                 {{/* ===== 저자 출력 ===== */}}

@@ -1,6 +1,6 @@
 ---
 title: Congratulations on CVPR 2026 Acceptance!
-date: 2025-12-09
+date: 2026-02-21
 share: false
 showShare: false
 ---

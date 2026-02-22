@@ -1,6 +1,6 @@
 ---
 title: Congratulations on CHI 2026 Acceptance
-date: 2026-02-22
+date: 2026-01-22
 share: false
 showShare: false
 ---

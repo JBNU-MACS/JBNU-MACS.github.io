@@ -5317,6 +5317,11 @@ body.home .home-section:has(.home-dual-feed) {
 
 /* Author mobile stat row + recent work title: keep single-line items */
 @media (max-width: 991px) {
+  .macs-author-main {
+    grid-template-columns: 1fr !important;
+    gap: 0.68rem;
+  }
+
   .macs-author-stat-row {
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -5338,6 +5343,12 @@ body.home .home-section:has(.home-dual-feed) {
 
   .macs-author-work-list .work-item strong {
     display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .macs-author-edu-item .edu-degree {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

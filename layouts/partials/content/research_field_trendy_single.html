@@ -1,0 +1,61 @@
+{{- $p := .Page -}}
+{{- $section := $p.CurrentSection -}}
+{{- $siblings := slice -}}
+{{- if $section -}}
+  {{- $siblings = $section.RegularPages.ByDate.Reverse -}}
+{{- end -}}
+{{- $summary := $p.Summary | plainify | truncate 210 -}}
+{{- $resource := partial "blox-core/functions/get_featured_image.html" $p -}}
+
+<div class="universal-wrapper macs-field-single-shell">
+  <section class="macs-field-single-hero">
+    <a class="field-single-back" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}">Research Fields</a>
+    <div class="field-single-hero-inner">
+      <div class="field-single-title-wrap">
+        <p class="field-single-kicker">MacsLAB Research Track</p>
+        <h1>{{ $p.Title }}</h1>
+        <div class="field-single-meta">
+          <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006.01.02" }}</time>
+          {{ if gt (len $siblings) 0 }}<span>{{ len $siblings }} Tracks</span>{{ end }}
+        </div>
+      </div>
+      <div class="field-single-image{{ if not $resource }} no-image{{ end }}">
+        {{ with $resource }}
+          {{ $img := .Resize "1200x760" }}
+          {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
+          <img src="{{ $img.RelPermalink }}" alt="{{ $p.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="eager">
+        {{ else }}
+          <span>{{ substr ($p.Title | plainify) 0 1 }}</span>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="macs-field-single-layout">
+    <aside class="field-single-aside">
+      <div class="field-aside-card">
+        <h2>Overview</h2>
+        {{ with $summary }}<p>{{ . }}</p>{{ end }}
+        <a href="{{ "publication/" | relLangURL }}">Related Publications</a>
+      </div>
+      {{ if gt (len $siblings) 1 }}
+        <div class="field-aside-card">
+          <h3>Other Tracks</h3>
+          <ul>
+            {{ range $item := $siblings }}
+              {{ if ne $item.RelPermalink $p.RelPermalink }}
+                <li><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    </aside>
+
+    <article class="field-single-content">
+      <div class="field-single-prose">
+        {{ $p.Content }}
+      </div>
+    </article>
+  </section>
+</div>

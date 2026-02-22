@@ -173,6 +173,21 @@
           </section>
         {{ end }}
 
+        {{ with .Params.career }}
+          <section class="macs-author-block">
+            <h2>Career</h2>
+            <div class="macs-author-career-list">
+              {{ range . }}
+                <article class="macs-author-career-item">
+                  <h3>{{ .role }}</h3>
+                  <p>{{ .institution }}</p>
+                  <small>{{ .period }}</small>
+                </article>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+
         {{ if .Params.interests }}
           <section class="macs-author-block">
             <h2>Research Interest</h2>

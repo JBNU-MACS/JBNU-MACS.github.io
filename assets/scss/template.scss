@@ -4103,21 +4103,58 @@ body.home .home-section:has(.home-dual-feed) {
 
 .macs-author-edu-item h3 {
   color: #28313f;
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   line-height: 1.36;
   font-weight: 640;
 }
 
 .macs-author-edu-item p {
   color: #3d4656;
-  font-size: 0.665rem;
+  font-size: 0.63rem;
   line-height: 1.42;
   font-weight: 520;
 }
 
 .macs-author-edu-item small {
   color: #6a7484;
-  font-size: 0.59rem;
+  font-size: 0.56rem;
+  letter-spacing: 0.01em;
+  font-weight: 520;
+}
+
+.macs-author-career-list {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.macs-author-career-item {
+  border: 1px solid #dbe1ea;
+  background: #fbfcfe;
+  border-radius: 10px;
+  padding: 0.5rem 0.56rem;
+}
+
+.macs-author-career-item h3 {
+  margin: 0;
+  color: #253041;
+  font-size: 0.72rem;
+  line-height: 1.34;
+  font-weight: 660;
+}
+
+.macs-author-career-item p {
+  margin: 0.12rem 0 0;
+  color: #3d4859;
+  font-size: 0.64rem;
+  line-height: 1.42;
+  font-weight: 530;
+}
+
+.macs-author-career-item small {
+  display: block;
+  margin-top: 0.08rem;
+  color: #697485;
+  font-size: 0.57rem;
   letter-spacing: 0.01em;
   font-weight: 520;
 }
@@ -4224,14 +4261,26 @@ body.home .home-section:has(.home-dual-feed) {
   }
 
   .macs-author-edu-item h3 {
-    font-size: 0.71rem;
+    font-size: 0.67rem;
   }
 
   .macs-author-edu-item p {
-    font-size: 0.64rem;
+    font-size: 0.61rem;
   }
 
   .macs-author-edu-item small {
-    font-size: 0.56rem;
+    font-size: 0.53rem;
+  }
+
+  .macs-author-career-item h3 {
+    font-size: 0.69rem;
+  }
+
+  .macs-author-career-item p {
+    font-size: 0.62rem;
+  }
+
+  .macs-author-career-item small {
+    font-size: 0.54rem;
   }
 }

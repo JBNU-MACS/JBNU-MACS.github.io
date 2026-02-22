@@ -258,10 +258,25 @@
         <div>
           <ol class="pub-list">
             {{ range $itemIndex, $item := $leftItems }}
-              {{ $flags := partial "content/publication_flags" (dict "item" $item) }}
-              {{ $isTopCsai := index $flags "isTopCsai" }}
-              {{ $showAsterisk := index $flags "isKyungsuMajor" }}
-              <li class="pub-item{{ if (index $flags "isHighlight") }} is-highlight{{ end }}">
+              {{ $showAsterisk := false }}
+              {{ with $item.Params.authors }}
+                {{ if gt (len .) 0 }}
+                  {{ if eq (index . 0) "Kyungsu Lee" }}
+                    {{ $showAsterisk = true }}
+                  {{ end }}
+                  {{ range $idx, $auth := . }}
+                    {{ if eq $auth "Kyungsu Lee" }}
+                      {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
+                        {{ $note := index $item.Params.author_notes $idx }}
+                        {{ if or (eq $note "Equal contribution") (eq $note "Corresponding author") }}
+                          {{ $showAsterisk = true }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              <li class="pub-item">
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
                 {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
@@ -314,17 +329,6 @@
                 {{ if $item.Params.url_pdf }}
                   <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
                 {{ end }}
-                {{ if or $isTopCsai $item.Params.publication_short }}
-                  <div class="pub-item-meta-row">
-                    {{ if $isTopCsai }}
-                      <span class="journal-meta badge-top">Top</span>
-                      <span class="journal-meta badge-bkcs">BK/CS</span>
-                    {{ end }}
-                    {{ with $item.Params.publication_short }}
-                      <span class="venue-badge">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                {{ end }}
               </li>
             {{ end }}
           </ol>
@@ -334,9 +338,24 @@
         <div>
           <ol class="pub-list">
             {{ range $itemIndex, $item := $rightItems }}
-              {{ $flags := partial "content/publication_flags" (dict "item" $item) }}
-              {{ $showAsterisk := index $flags "isKyungsuMajor" }}
-              <li class="pub-item{{ if (index $flags "isHighlight") }} is-highlight{{ end }}">
+              {{ $showAsterisk := false }}
+              {{ with $item.Params.authors }}
+                {{ if gt (len .) 0 }}
+                  {{ if eq (index . 0) "Kyungsu Lee" }}
+                    {{ $showAsterisk = true }}
+                  {{ end }}
+                  {{ range $idx, $auth := . }}
+                    {{ if eq $auth "Kyungsu Lee" }}
+                      {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
+                        {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
+                          {{ $showAsterisk = true }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              <li class="pub-item">
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
                 {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
@@ -445,10 +464,25 @@
         <div>
           <ol class="pub-list">
             {{ range $itemIndex, $item := $leftItems }}
-              {{ $flags := partial "content/publication_flags" (dict "item" $item) }}
-              {{ $isTopCsai := index $flags "isTopCsai" }}
-              {{ $showAsterisk := index $flags "isKyungsuMajor" }}
-              <li class="pub-item{{ if (index $flags "isHighlight") }} is-highlight{{ end }}">
+              {{ $showAsterisk := false }}
+              {{ with $item.Params.authors }}
+                {{ if gt (len .) 0 }}
+                  {{ if eq (index . 0) "Kyungsu Lee" }}
+                    {{ $showAsterisk = true }}
+                  {{ end }}
+                  {{ range $idx, $auth := . }}
+                    {{ if eq $auth "Kyungsu Lee" }}
+                      {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
+                        {{ $note := index $item.Params.author_notes $idx }}
+                        {{ if or (eq $note "Equal contribution") (eq $note "Corresponding author") }}
+                          {{ $showAsterisk = true }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              <li class="pub-item">
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
                 {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
@@ -501,17 +535,6 @@
                 {{ if $item.Params.url_pdf }}
                   <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
                 {{ end }}
-                {{ if or $isTopCsai $item.Params.publication_short }}
-                  <div class="pub-item-meta-row">
-                    {{ if $isTopCsai }}
-                      <span class="journal-meta badge-top">Top</span>
-                      <span class="journal-meta badge-bkcs">BK/CS</span>
-                    {{ end }}
-                    {{ with $item.Params.publication_short }}
-                      <span class="venue-badge">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                {{ end }}
               </li>
             {{ end }}
           </ol>
@@ -521,9 +544,24 @@
         <div>
           <ol class="pub-list">
             {{ range $itemIndex, $item := $rightItems }}
-              {{ $flags := partial "content/publication_flags" (dict "item" $item) }}
-              {{ $showAsterisk := index $flags "isKyungsuMajor" }}
-              <li class="pub-item{{ if (index $flags "isHighlight") }} is-highlight{{ end }}">
+              {{ $showAsterisk := false }}
+              {{ with $item.Params.authors }}
+                {{ if gt (len .) 0 }}
+                  {{ if eq (index . 0) "Kyungsu Lee" }}
+                    {{ $showAsterisk = true }}
+                  {{ end }}
+                  {{ range $idx, $auth := . }}
+                    {{ if eq $auth "Kyungsu Lee" }}
+                      {{ if and ($item.Params.author_notes) (lt $idx (len $item.Params.author_notes)) }}
+                        {{ if eq (index $item.Params.author_notes $idx) "Equal contribution" }}
+                          {{ $showAsterisk = true }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              <li class="pub-item">
 
                 {{ if $showAsterisk }}<b title="Main Author">*{{ add $itemIndex 1 }}.</b>&nbsp;
                 {{ else }}<b>{{ add $itemIndex 1 }}.</b>&nbsp;
@@ -557,22 +595,6 @@
                 {{ end }}
                 {{ with $item.Params.date }}
                   {{ (time .).Year }}
-                {{ end }}
-
-                {{ $journalType := $item.Params.journal_type }}
-                {{ $journalIF := $item.Params.impact_factor }}
-                {{ $journalRank := $item.Params.jcr_rank }}
-                {{ $journalQuartile := $item.Params.jcr_percentile }}
-                {{ if or ($item.Params.publication_short) $journalType $journalIF $journalRank $journalQuartile }}
-                  <div class="pub-item-meta-row">
-                    {{ with $item.Params.publication_short }}
-                      <span class="venue-badge">{{ . }}</span>
-                    {{ end }}
-                    {{ with $journalType }}<span class="journal-meta">{{ . }}</span>{{ end }}
-                    {{ with $journalQuartile }}<span class="journal-meta">{{ . }}</span>{{ end }}
-                    {{ with $journalRank }}<span class="journal-meta">JCR {{ . }}</span>{{ end }}
-                    {{ with $journalIF }}<span class="journal-meta">IF {{ . }}</span>{{ end }}
-                  </div>
                 {{ end }}
 
                 .

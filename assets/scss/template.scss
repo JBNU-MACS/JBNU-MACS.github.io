@@ -4325,6 +4325,11 @@ body.home .home-section:has(.home-dual-feed) {
   overflow: hidden;
 }
 
+.universal-wrapper.macs-feed-list-shell {
+  width: min(98vw, 1760px) !important;
+  max-width: 1760px !important;
+}
+
 .macs-feed-list-head {
   position: relative;
   padding: 1rem 1.1rem 1.02rem;
@@ -4418,15 +4423,19 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .macs-feed-list-card .card-thumb {
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 16 / 9;
   background: #eff2f7;
 }
 
 .macs-feed-list-card .card-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 85%;
+  max-width: 85%;
+  max-height: 85%;
+  height: auto;
+  object-fit: contain;
 }
 
 .macs-feed-list-card .card-thumb.no-image {
@@ -4570,6 +4579,11 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 @media (max-width: 767px) {
+  .universal-wrapper.macs-feed-list-shell {
+    width: 96vw !important;
+    max-width: 96vw !important;
+  }
+
   .macs-feed-list {
     margin: 0.7rem auto 0.95rem;
     border-radius: 14px;

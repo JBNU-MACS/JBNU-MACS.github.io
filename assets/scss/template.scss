@@ -4785,7 +4785,7 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 .macs-field-card {
-  grid-column: span 6;
+  grid-column: span 4;
   border-radius: 22px;
   overflow: hidden;
   background: #ffffff;
@@ -4934,6 +4934,10 @@ body.home .home-section:has(.home-dual-feed) {
 }
 
 @media (max-width: 1100px) {
+  .macs-field-card {
+    grid-column: span 6;
+  }
+
   .macs-field-card .field-card-link {
     grid-template-columns: 38% 1fr;
   }

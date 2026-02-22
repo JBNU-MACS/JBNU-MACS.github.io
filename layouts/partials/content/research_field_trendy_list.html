@@ -1,5 +1,29 @@
 {{- $page := .Page -}}
-{{- $items := $page.RegularPages.ByDate.Reverse -}}
+{{- $baseItems := $page.RegularPages.ByDate.Reverse -}}
+{{- $items := slice -}}
+{{- $pinned := slice
+  "field/00-ai"
+  "field/01-medical-imaging"
+  "field/07-computational-science"
+-}}
+{{- range $want := $pinned -}}
+  {{- range $it := $baseItems -}}
+    {{- if in $it.RelPermalink $want -}}
+      {{- $items = $items | append $it -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- range $it := $baseItems -}}
+  {{- $isPinned := false -}}
+  {{- range $want := $pinned -}}
+    {{- if in $it.RelPermalink $want -}}
+      {{- $isPinned = true -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $isPinned -}}
+    {{- $items = $items | append $it -}}
+  {{- end -}}
+{{- end -}}
 {{- $total := len $items -}}
 {{- $lastUpdated := "" -}}
 {{- if gt $total 0 -}}

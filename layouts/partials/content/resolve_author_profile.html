@@ -5,7 +5,7 @@
   {{- $profile = site.GetPage (printf "authors/%s" (urlize $name)) -}}
 {{- end -}}
 {{- if and $profile (not $profile.File) -}}
-  {{- $profile = nil -}}
+  {{- $profile = false -}}
 {{- end -}}
 
 {{- $alias := dict
@@ -36,7 +36,7 @@
       {{- $profile = site.GetPage (printf "authors/%s" (urlize .)) -}}
     {{- end -}}
     {{- if and $profile (not $profile.File) -}}
-      {{- $profile = nil -}}
+      {{- $profile = false -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
@@ -54,7 +54,7 @@
       {{- $profile = site.GetPage (printf "authors/%s" (urlize $heuristic)) -}}
     {{- end -}}
     {{- if and $profile (not $profile.File) -}}
-      {{- $profile = nil -}}
+      {{- $profile = false -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

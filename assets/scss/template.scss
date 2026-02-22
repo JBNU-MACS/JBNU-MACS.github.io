@@ -4284,3 +4284,313 @@ body.home .home-section:has(.home-dual-feed) {
     font-size: 0.54rem;
   }
 }
+
+/* Trendy list pages for Notification / News / Event */
+.macs-feed-list {
+  margin: 0.9rem auto 1.2rem;
+  border: 1px solid #d7dee8;
+  border-radius: 22px;
+  background: linear-gradient(170deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 14px 30px rgba(22, 30, 44, 0.08);
+  overflow: hidden;
+}
+
+.macs-feed-list-head {
+  position: relative;
+  padding: 1rem 1.1rem 1.02rem;
+  border-bottom: 1px solid #e0e6ef;
+  background:
+    radial-gradient(220px 140px at 10% -20%, rgba(156, 180, 220, 0.2), transparent 72%),
+    radial-gradient(240px 140px at 98% -16%, rgba(206, 222, 240, 0.28), transparent 74%),
+    #fcfdff;
+}
+
+.macs-feed-list-head.has-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(110deg, rgba(17, 25, 38, 0.66) 0%, rgba(17, 25, 38, 0.4) 42%, rgba(17, 25, 38, 0.18) 100%),
+    var(--feed-banner);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+
+.macs-feed-list-head > * {
+  position: relative;
+  z-index: 1;
+}
+
+.macs-feed-list-head .head-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.13rem 0.48rem;
+  font-size: 0.58rem;
+  font-weight: 710;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: #f1f4f9;
+  border: 1px solid #ccd5e3;
+  color: #2b3446;
+}
+
+.macs-feed-list-head h1 {
+  margin: 0.46rem 0 0;
+  text-align: left;
+  font-size: 1.16rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: #101828;
+}
+
+.macs-feed-list-head .head-summary {
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
+  color: #3d4758;
+  line-height: 1.56;
+}
+
+.macs-feed-list-head.has-banner .head-badge {
+  background: rgba(247, 250, 255, 0.22);
+  border-color: rgba(224, 234, 248, 0.48);
+  color: #f3f7ff;
+}
+
+.macs-feed-list-head.has-banner h1,
+.macs-feed-list-head.has-banner .head-summary {
+  color: #f7fbff;
+}
+
+.macs-feed-list-grid {
+  padding: 0.92rem 1.05rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.78rem;
+}
+
+.macs-feed-list-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border: 1px solid #d8dfe9;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 16px rgba(17, 24, 39, 0.05);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.macs-feed-list-card:hover {
+  transform: translateY(-2px);
+  border-color: #c4cedd;
+  box-shadow: 0 13px 24px rgba(17, 24, 39, 0.11);
+}
+
+.macs-feed-list-card .card-thumb {
+  display: grid;
+  aspect-ratio: 16 / 9;
+  background: #eff2f7;
+}
+
+.macs-feed-list-card .card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.macs-feed-list-card .card-thumb.no-image {
+  place-items: center;
+  background:
+    linear-gradient(130deg, #dbe3ef 0%, #eef2f8 60%, #d8e0ec 100%);
+}
+
+.macs-feed-list-card .card-thumb .thumb-fallback {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 720;
+  color: #3a4657;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(174, 186, 205, 0.7);
+}
+
+.macs-feed-list-card .card-body {
+  display: grid;
+  align-content: start;
+  gap: 0.38rem;
+  padding: 0.66rem 0.68rem 0.72rem;
+}
+
+.macs-feed-list-card .card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.macs-feed-list-card .card-meta .kind,
+.macs-feed-list-card .card-meta time,
+.macs-feed-list-card .card-meta .date {
+  font-size: 0.56rem;
+  color: #49566b;
+}
+
+.macs-feed-list-card .card-meta .kind {
+  border: 1px solid #d0d8e5;
+  background: #f4f7fb;
+  border-radius: 999px;
+  padding: 0.08rem 0.38rem;
+  font-weight: 660;
+}
+
+.macs-feed-list-card h2 {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.42;
+  letter-spacing: -0.01em;
+}
+
+.macs-feed-list-card h2 a {
+  color: #141b26;
+  text-decoration: none;
+}
+
+.macs-feed-list-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.macs-feed-list-card p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 0.66rem;
+  line-height: 1.52;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.macs-feed-list-card .card-link {
+  margin-top: 0.08rem;
+  font-size: 0.6rem;
+  font-weight: 680;
+  color: #2b3c59;
+  text-decoration: none;
+}
+
+.macs-feed-list-card .card-link:hover {
+  text-decoration: underline;
+}
+
+.macs-feed-list-pager {
+  border-top: 1px solid #e0e6ef;
+  padding: 0.68rem 1rem 0.76rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.56rem;
+}
+
+.macs-feed-list-pager a,
+.macs-feed-list-pager span {
+  font-size: 0.64rem;
+  color: #374559;
+  text-decoration: none;
+  border: 1px solid #d2dae6;
+  border-radius: 999px;
+  background: #f8fafd;
+  padding: 0.13rem 0.5rem;
+}
+
+.macs-feed-list-pager .count {
+  font-weight: 640;
+}
+
+.macs-feed-list-pager .disabled {
+  opacity: 0.45;
+}
+
+.macs-feed-list--notification .card-meta .kind {
+  color: #3d2f20;
+  border-color: #dfd0bf;
+  background: #fcf5eb;
+}
+
+.macs-feed-list--news .card-meta .kind {
+  color: #2a3748;
+  border-color: #ced8e7;
+  background: #f0f5fb;
+}
+
+.macs-feed-list--event .card-meta .kind {
+  color: #2c3c32;
+  border-color: #cddccd;
+  background: #eff8f0;
+}
+
+@media (max-width: 1200px) {
+  .macs-feed-list-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .macs-feed-list {
+    margin: 0.7rem auto 0.95rem;
+    border-radius: 14px;
+  }
+
+  .macs-feed-list-head {
+    padding: 0.72rem;
+  }
+
+  .macs-feed-list-head h1 {
+    font-size: 0.92rem;
+  }
+
+  .macs-feed-list-head .head-summary {
+    font-size: 0.66rem;
+  }
+
+  .macs-feed-list-grid {
+    grid-template-columns: 1fr;
+    gap: 0.58rem;
+    padding: 0.68rem;
+  }
+
+  .macs-feed-list-card {
+    border-radius: 12px;
+  }
+
+  .macs-feed-list-card .card-body {
+    padding: 0.58rem;
+  }
+
+  .macs-feed-list-card h2 {
+    font-size: 0.76rem;
+  }
+
+  .macs-feed-list-card p {
+    font-size: 0.61rem;
+    -webkit-line-clamp: 4;
+  }
+
+  .macs-feed-list-card .card-meta .kind,
+  .macs-feed-list-card .card-meta time,
+  .macs-feed-list-card .card-meta .date {
+    font-size: 0.52rem;
+  }
+
+  .macs-feed-list-card .card-link {
+    font-size: 0.56rem;
+  }
+
+  .macs-feed-list-pager {
+    padding: 0.58rem 0.72rem 0.65rem;
+  }
+}

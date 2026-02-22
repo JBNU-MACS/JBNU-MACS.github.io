@@ -1,0 +1,89 @@
+{{- $page := .Page -}}
+{{- $kindLabel := .KindLabel | default "News" -}}
+{{- $kindClass := .KindClass | default "news" -}}
+{{- $items := $page.RegularPagesRecursive.ByDate.Reverse -}}
+{{- $paginator := $page.Paginate $items 9 -}}
+{{- $bannerURL := "" -}}
+{{- with $page.Params.banner.image -}}
+  {{- with resources.Get (printf "media/%s" .) -}}
+    {{- $bannerURL = .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+
+<div class="universal-wrapper">
+  <section class="macs-feed-list macs-feed-list--{{ $kindClass }}">
+    <header class="macs-feed-list-head{{ if ne $bannerURL "" }} has-banner{{ end }}"{{ if ne $bannerURL "" }} style="--feed-banner:url('{{ $bannerURL }}')"{{ end }}>
+      <div class="head-badge">{{ $kindLabel }}</div>
+      <h1>{{ $page.Title }}</h1>
+      {{ with $page.Content }}
+        <div class="head-summary">{{ . }}</div>
+      {{ end }}
+    </header>
+
+    <div class="macs-feed-list-grid">
+      {{ range $item := $paginator.Pages }}
+        {{ $link := $item.RelPermalink }}
+        {{ $target := "" }}
+        {{ if $item.Params.external_link }}
+          {{ $link = $item.Params.external_link }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+
+        {{ $summary := "" }}
+        {{ if $item.Params.summary }}
+          {{ $summary = $item.Params.summary | plainify }}
+        {{ else if $item.Params.abstract }}
+          {{ $summary = $item.Params.abstract | plainify }}
+        {{ else if $item.Summary }}
+          {{ $summary = $item.Summary | plainify }}
+        {{ end }}
+        {{ $summary = $summary | truncate 175 }}
+
+        {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
+
+        <article class="macs-feed-list-card card-kind-{{ $kindClass }}">
+          <a class="card-thumb{{ if not $resource }} no-image{{ end }}" href="{{ $link }}" {{ $target | safeHTMLAttr }}>
+            {{ with $resource }}
+              {{ $img := .Resize "760x" }}
+              {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ $item.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+            {{ else }}
+              <span class="thumb-fallback">{{ slicestr $kindLabel 0 1 }}</span>
+            {{ end }}
+          </a>
+
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="kind">{{ $kindLabel }}</span>
+              {{ if eq $item.Type "event" }}
+                <span class="date">{{ partial "functions/get_event_dates" $item }}</span>
+              {{ else }}
+                <time datetime="{{ $item.Date.Format "2006-01-02" }}">{{ $item.Date.Format "2006.01.02" }}</time>
+              {{ end }}
+            </div>
+
+            <h2><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a></h2>
+            {{ with $summary }}<p>{{ . }}</p>{{ end }}
+            <a class="card-link" href="{{ $link }}" {{ $target | safeHTMLAttr }}>Read More</a>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+
+    {{ if gt $paginator.TotalPages 1 }}
+      <nav class="macs-feed-list-pager" aria-label="Pagination">
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}">Prev</a>
+        {{ else }}
+          <span class="disabled">Prev</span>
+        {{ end }}
+        <span class="count">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+        {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}">Next</a>
+        {{ else }}
+          <span class="disabled">Next</span>
+        {{ end }}
+      </nav>
+    {{ end }}
+  </section>
+</div>

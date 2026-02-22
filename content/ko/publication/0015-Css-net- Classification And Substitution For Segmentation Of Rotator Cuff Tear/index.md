@@ -33,6 +33,12 @@ publishDate: '2022-12-08'
 publication_types:
   - paper-csai
 
+badges:
+  - Top
+  - BK/CS
+highlight: true
+
+
 # Publication name and optional abbreviated publication name.
 publication: Asian Conference on Computer Vision
 publication_short: ACCV2022

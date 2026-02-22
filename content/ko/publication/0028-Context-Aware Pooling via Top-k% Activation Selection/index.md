@@ -27,6 +27,12 @@ publishDate: '2026-01-31'
 publication_types:
   - paper-csai
 
+badges:
+  - Top
+  - BK/CS
+highlight: true
+
+
 # Publication name and optional abbreviated publication name.
 publication: Annual Conference on Artificial Intelligence and Statistics
 publication_short: AISTATS2026

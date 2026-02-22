@@ -27,6 +27,11 @@ publishDate: '2026-01-30'
 publication_types:
   - paper-csai
 
+badges:
+  - Top
+  - BK/CS
+highlight: true
+
 # Publication name and optional abbreviated publication name.
 publication: ACM CHI conference on Human Factors in Computing Systems
 publication_short: CHI2026

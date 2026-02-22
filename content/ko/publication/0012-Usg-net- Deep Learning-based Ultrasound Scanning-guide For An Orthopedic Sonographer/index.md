@@ -35,6 +35,12 @@ publishDate: '2022-09-17'
 publication_types:
   - paper-csai
 
+badges:
+  - Top
+  - BK/CS
+highlight: true
+
+
 # Publication name and optional abbreviated publication name.
 publication: International Conference on Medical Image Computing and Computer-Assisted Intervention
 publication_short: MICCAI2022

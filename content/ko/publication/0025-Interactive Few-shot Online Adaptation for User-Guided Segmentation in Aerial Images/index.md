@@ -26,6 +26,12 @@ publishDate: '2025-04-00'
 # Enter a publication type from the CSL standard.
 publication_types: ['conference-international']
 
+badges:
+  - Top
+  - BK/CS
+highlight: true
+
+
 # Publication name and optional abbreviated publication name.
 publication: The Thirteenth International Conference on Learning Representations Workshop
 publication_short: ICLRW2025, ML4RS

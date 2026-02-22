@@ -31,6 +31,12 @@ publishDate: '2022-12-04'
 publication_types:
   - paper-csai
 
+badges:
+  - Top
+  - BK/CS
+highlight: true
+
+
 # Publication name and optional abbreviated publication name.
 publication: Neural Information Processing Systems
 publication_short: NeurIPS2022

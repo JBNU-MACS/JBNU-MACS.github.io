@@ -29,6 +29,12 @@ publishDate: '2023-04-27'
 publication_types:
   - paper-csai
 
+badges:
+  - Top
+  - BK/CS
+highlight: true
+
+
 # Publication name and optional abbreviated publication name.
 publication: Artificial Intelligence and Statistics
 publication_short: AISTATS2022

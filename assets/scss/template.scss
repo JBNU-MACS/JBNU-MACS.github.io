@@ -3085,6 +3085,272 @@ body.home .home-section:has(.home-dual-feed) {
   }
 }
 
+/* Unified single layout for Notification / Event / News */
+.macs-feed-single {
+  margin: 1rem auto 1.4rem;
+  border: 1px solid rgba(150, 170, 202, 0.45);
+  border-radius: 22px;
+  background: linear-gradient(170deg, #ffffff 0%, #f7faff 100%);
+  box-shadow: 0 18px 36px rgba(25, 38, 68, 0.08);
+  overflow: hidden;
+}
+
+.macs-feed-single-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1rem;
+  padding: 1.1rem 1.15rem;
+  border-bottom: 1px solid rgba(148, 167, 201, 0.28);
+}
+
+.macs-feed-single-hero.no-hero {
+  grid-template-columns: 1fr;
+}
+
+.macs-feed-single-head {
+  min-width: 0;
+}
+
+.macs-feed-single-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.48rem;
+  margin-bottom: 0.42rem;
+}
+
+.macs-feed-single-kicker .kind {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2b4d7c;
+  border: 1px solid rgba(147, 167, 201, 0.5);
+  background: rgba(241, 247, 255, 0.92);
+  border-radius: 999px;
+  padding: 0.14rem 0.48rem;
+}
+
+.macs-feed-single-kicker .back-link {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #4a6282;
+  text-decoration: none;
+}
+
+.macs-feed-single-kicker .back-link:hover {
+  color: #284e84;
+  text-decoration: underline;
+}
+
+.macs-feed-single h1 {
+  margin: 0;
+  font-size: 1.46rem;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  color: #20344d;
+  text-align: left;
+}
+
+.macs-feed-single-meta {
+  margin-top: 0.56rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.24rem 0.44rem;
+}
+
+.macs-feed-single-meta span,
+.macs-feed-single-meta time {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #4a6284;
+  border: 1px solid rgba(165, 182, 211, 0.45);
+  background: rgba(248, 251, 255, 0.95);
+  border-radius: 999px;
+  padding: 0.13rem 0.42rem;
+}
+
+.macs-feed-single-summary {
+  margin: 0.7rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #445c79;
+}
+
+.macs-feed-single-cover {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(153, 173, 206, 0.46);
+  box-shadow: 0 12px 26px rgba(26, 40, 71, 0.11);
+  align-self: stretch;
+}
+
+.macs-feed-single-cover img {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.macs-feed-single-body {
+  padding: 1rem 1.15rem 1.05rem;
+}
+
+.macs-feed-single-content {
+  color: #273a52;
+  font-size: 0.97rem;
+  line-height: 1.86;
+}
+
+.macs-feed-single-content h2,
+.macs-feed-single-content h3,
+.macs-feed-single-content h4 {
+  color: #1f3758;
+  letter-spacing: -0.01em;
+  margin-top: 1.2rem;
+  margin-bottom: 0.55rem;
+}
+
+.macs-feed-single-content p {
+  margin: 0 0 0.9rem;
+}
+
+.macs-feed-single-content a {
+  color: #28518c;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.macs-feed-single-content a:hover {
+  text-decoration: underline;
+}
+
+.macs-feed-single-content img {
+  border-radius: 14px;
+  border: 1px solid rgba(156, 176, 208, 0.44);
+  box-shadow: 0 10px 22px rgba(21, 37, 68, 0.1);
+}
+
+.macs-feed-single-content blockquote {
+  border-left: 3px solid #87a8d8;
+  background: #f4f8ff;
+  border-radius: 10px;
+  padding: 0.6rem 0.72rem;
+  color: #334d6f;
+}
+
+.macs-feed-single-content hr {
+  border: 0;
+  border-top: 1px dashed rgba(129, 149, 184, 0.45);
+  margin: 1rem 0;
+}
+
+.macs-feed-single-foot {
+  padding: 0 1.15rem 0.95rem;
+}
+
+.macs-feed-single-foot .foot-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  border-top: 1px solid rgba(144, 164, 198, 0.3);
+  padding-top: 0.65rem;
+}
+
+.macs-feed-single-foot .nav {
+  max-width: 48%;
+  font-size: 0.79rem;
+  color: #3e5980;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.macs-feed-single-foot .nav.next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.macs-feed-single-foot .nav:hover {
+  color: #274b80;
+  text-decoration: underline;
+}
+
+.macs-feed-single--notification .macs-feed-single-kicker .kind {
+  color: #2d4c7a;
+}
+
+.macs-feed-single--event .macs-feed-single-kicker .kind {
+  color: #335271;
+}
+
+.macs-feed-single--news .macs-feed-single-kicker .kind {
+  color: #284d73;
+}
+
+@media (max-width: 991px) {
+  .macs-feed-single {
+    margin: 0.72rem auto 1rem;
+    border-radius: 16px;
+  }
+
+  .macs-feed-single-hero {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    padding: 0.74rem 0.72rem;
+  }
+
+  .macs-feed-single h1 {
+    font-size: 1.14rem;
+    line-height: 1.34;
+  }
+
+  .macs-feed-single-meta span,
+  .macs-feed-single-meta time {
+    font-size: 0.63rem;
+  }
+
+  .macs-feed-single-summary {
+    font-size: 0.8rem;
+  }
+
+  .macs-feed-single-cover {
+    border-radius: 12px;
+  }
+
+  .macs-feed-single-cover img {
+    min-height: 170px;
+    max-height: 250px;
+  }
+
+  .macs-feed-single-body {
+    padding: 0.72rem;
+  }
+
+  .macs-feed-single-content {
+    font-size: 0.84rem;
+    line-height: 1.72;
+  }
+
+  .macs-feed-single-content h2,
+  .macs-feed-single-content h3,
+  .macs-feed-single-content h4 {
+    font-size: 1.01rem;
+  }
+
+  .macs-feed-single-foot {
+    padding: 0 0.72rem 0.72rem;
+  }
+
+  .macs-feed-single-foot .nav {
+    font-size: 0.7rem;
+  }
+}
+
 .macs-author-head-copy h1 .name-ko {
   display: inline;
   font-weight: 800;

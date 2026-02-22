@@ -1,0 +1,57 @@
+{{ $p := .Page }}
+{{ $kindLabel := .KindLabel | default "News" }}
+{{ $kindClass := .KindClass | default "news" }}
+{{ $heroRes := $p.Resources.GetMatch "featured*" }}
+{{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*cover*" }}{{ end }}
+{{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*thumb*" }}{{ end }}
+{{ $summary := $p.Summary | plainify | strings.TrimSpace }}
+
+<div class="universal-wrapper">
+  <article class="macs-feed-single macs-feed-single--{{ $kindClass }}">
+    <header class="macs-feed-single-hero{{ if not $heroRes }} no-hero{{ end }}">
+      <div class="macs-feed-single-head">
+        <div class="macs-feed-single-kicker">
+          <span class="kind">{{ $kindLabel }}</span>
+          {{ with $p.CurrentSection }}
+            <a class="back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>
+          {{ end }}
+        </div>
+
+        <h1>{{ $p.Title }}</h1>
+
+        <div class="macs-feed-single-meta">
+          <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006.01.02" }}</time>
+          {{ with $p.ReadingTime }}<span>{{ . }} min read</span>{{ end }}
+          {{ with $p.Lastmod }}<span>Updated {{ .Format "2006.01.02" }}</span>{{ end }}
+        </div>
+
+        {{ if and $summary (ne $summary ($p.Title | plainify)) }}
+          <p class="macs-feed-single-summary">{{ $summary }}</p>
+        {{ end }}
+      </div>
+
+      {{ with $heroRes }}
+        <figure class="macs-feed-single-cover">
+          <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
+        </figure>
+      {{ end }}
+    </header>
+
+    <section class="macs-feed-single-body">
+      <div class="macs-feed-single-content">
+        {{ $p.Content }}
+      </div>
+    </section>
+
+    <footer class="macs-feed-single-foot">
+      <div class="foot-links">
+        {{ with $p.PrevInSection }}
+          <a class="nav prev" href="{{ .RelPermalink }}">← {{ .Title }}</a>
+        {{ end }}
+        {{ with $p.NextInSection }}
+          <a class="nav next" href="{{ .RelPermalink }}">{{ .Title }} →</a>
+        {{ end }}
+      </div>
+    </footer>
+  </article>
+</div>

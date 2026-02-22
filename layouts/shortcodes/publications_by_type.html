@@ -275,36 +275,7 @@
                 {{ end }}
 
                 {{/* ===== 저자 출력 ===== */}}
-                {{ with $item.Params.authors }}
-                  {{ $totalAuthors := len . }}
-                  {{ range $index, $author := . }}
-                    {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
-
-                    {{ $displayedAuthor := $author }}
-                    {{ if eq $author "Kyungsu Lee" }}
-                      {{ $displayedAuthor = printf "<b>%s</b>" $author }}
-                    {{ end }}
-
-                    {{ if $author_profile }}
-                      <a href="{{ $author_profile.Permalink }}" style="color:black;">{{ $displayedAuthor | safeHTML }}</a>
-                    {{ else }}
-                      {{ $displayedAuthor | safeHTML }}
-                    {{ end }}
-
-                    {{ if and ($item.Params.author_notes) (lt $index (len $item.Params.author_notes)) }}
-                      {{ if eq (index $item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
-                      {{ if eq (index $item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
-                    {{ end }}
-
-                    {{ if ne $index (sub $totalAuthors 1) }}
-                      {{ if eq (add $index 1) (sub $totalAuthors 1) }}
-                        , and&nbsp;
-                      {{ else }}
-                        ,&nbsp;
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}.
-                {{ end }}
+                {{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" true "period" true "strongName" "Kyungsu Lee") }}
 
                 {{/* ===== 제목 링크 ===== */}}
                 <b>
@@ -390,36 +361,7 @@
                 {{ end }}
 
                 {{/* ===== 저자 출력 ===== */}}
-                {{ with $item.Params.authors }}
-                  {{ $totalAuthors := len . }}
-                  {{ range $index, $author := . }}
-                    {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
-
-                    {{ $displayedAuthor := $author }}
-                    {{ if eq $author "Kyungsu Lee" }}
-                      {{ $displayedAuthor = printf "<b>%s</b>" $author }}
-                    {{ end }}
-
-                    {{ if $author_profile }}
-                      <a href="{{ $author_profile.Permalink }}" style="color:black;">{{ $displayedAuthor | safeHTML }}</a>
-                    {{ else }}
-                      {{ $displayedAuthor | safeHTML }}
-                    {{ end }}
-
-                    {{ if and ($item.Params.author_notes) (lt $index (len $item.Params.author_notes)) }}
-                      {{ if eq (index $item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
-                      {{ if eq (index $item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
-                    {{ end }}
-
-                    {{ if ne $index (sub $totalAuthors 1) }}
-                      {{ if eq (add $index 1) (sub $totalAuthors 1) }}
-                        , and&nbsp;
-                      {{ else }}
-                        ,&nbsp;
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}.
-                {{ end }}
+                {{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" true "period" true "strongName" "Kyungsu Lee") }}
 
                 {{/* ===== 제목 링크 ===== */}}
                 <b>
@@ -554,36 +496,7 @@
                 {{ end }}
 
                 {{/* ===== 저자 출력 ===== */}}
-                {{ with $item.Params.authors }}
-                  {{ $totalAuthors := len . }}
-                  {{ range $index, $author := . }}
-                    {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
-
-                    {{ $displayedAuthor := $author }}
-                    {{ if eq $author "Kyungsu Lee" }}
-                      {{ $displayedAuthor = printf "<b>%s</b>" $author }}
-                    {{ end }}
-
-                    {{ if $author_profile }}
-                      <a href="{{ $author_profile.Permalink }}" style="color:black;">{{ $displayedAuthor | safeHTML }}</a>
-                    {{ else }}
-                      {{ $displayedAuthor | safeHTML }}
-                    {{ end }}
-
-                    {{ if and ($item.Params.author_notes) (lt $index (len $item.Params.author_notes)) }}
-                      {{ if eq (index $item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
-                      {{ if eq (index $item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
-                    {{ end }}
-
-                    {{ if ne $index (sub $totalAuthors 1) }}
-                      {{ if eq (add $index 1) (sub $totalAuthors 1) }}
-                        , and&nbsp;
-                      {{ else }}
-                        ,&nbsp;
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}.
-                {{ end }}
+                {{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" true "period" true "strongName" "Kyungsu Lee") }}
 
                 {{/* ===== 제목 링크 ===== */}}
                 <b>
@@ -669,36 +582,7 @@
                 {{ end }}
 
                 {{/* ===== 저자 출력 ===== */}}
-                {{ with $item.Params.authors }}
-                  {{ $totalAuthors := len . }}
-                  {{ range $index, $author := . }}
-                    {{ $author_profile := site.GetPage (printf "authors/%s" (urlize $author)) }}
-
-                    {{ $displayedAuthor := $author }}
-                    {{ if eq $author "Kyungsu Lee" }}
-                      {{ $displayedAuthor = printf "<b>%s</b>" $author }}
-                    {{ end }}
-
-                    {{ if $author_profile }}
-                      <a href="{{ $author_profile.Permalink }}" style="color:black;">{{ $displayedAuthor | safeHTML }}</a>
-                    {{ else }}
-                      {{ $displayedAuthor | safeHTML }}
-                    {{ end }}
-
-                    {{ if and ($item.Params.author_notes) (lt $index (len $item.Params.author_notes)) }}
-                      {{ if eq (index $item.Params.author_notes $index) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
-                      {{ if eq (index $item.Params.author_notes $index) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
-                    {{ end }}
-
-                    {{ if ne $index (sub $totalAuthors 1) }}
-                      {{ if eq (add $index 1) (sub $totalAuthors 1) }}
-                        , and&nbsp;
-                      {{ else }}
-                        ,&nbsp;
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}.
-                {{ end }}
+                {{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" true "period" true "strongName" "Kyungsu Lee") }}
 
                 {{/* ===== 제목 링크 ===== */}}
                 <b>

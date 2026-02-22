@@ -38,9 +38,7 @@
 
     {{ if eq $card_section "publication" }}
     <div class="ieee-ref-block">
-      {{ with $item.Params.authors }}
-      <span class="ieee-authors">{{ delimit . ", " }}</span>,
-      {{ end }}
+      <span class="ieee-authors">{{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" false "period" true "strongName" "Kyungsu Lee") }}</span>
       "<a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a>,"
       {{ with $item.Params.publication }}
       <i>{{ . }}</i>

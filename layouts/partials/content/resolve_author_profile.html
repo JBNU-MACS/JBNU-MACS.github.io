@@ -1,0 +1,78 @@
+{{- $name := trim (.name | default "") " \n\r\t" -}}
+{{- $norm := lower (replaceRE "[\\s\\-\\._,]" "" $name) -}}
+{{- $profile := site.GetPage (printf "authors/%s" $name) -}}
+{{- if not $profile -}}
+  {{- $profile = site.GetPage (printf "authors/%s" (urlize $name)) -}}
+{{- end -}}
+
+{{- $alias := dict
+  "kyungsulee" "이경수"
+  "seoyeonchoi" "최서연"
+  "seoyeonchoi(studentresearcher학부연구생)" "최서연"
+  "yeongsukim" "김영수"
+  "youngsukim" "김영수"
+  "dongjunkang" "강동준"
+  "saganghong" "홍사강"
+  "geonhahong" "홍건하"
+  "suminkim" "김수민"
+  "junholee" "이준호"
+  "donghyeonlee" "이동현"
+  "donghyunlee" "이동현"
+  "jinyeongjeong" "정진영"
+  "sejinjeong" "정세진"
+  "jinseonlee" "이진선"
+  "hongseokchoi" "최홍석"
+  "jaehunbae" "배재훈"
+  "sangaahn" "안상아"
+-}}
+
+{{- if not $profile -}}
+  {{- with index $alias $norm -}}
+    {{- $profile = site.GetPage (printf "authors/%s" (urlize .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $profile -}}
+  {{- $allAuthors := where site.AllPages "Section" "authors" -}}
+  {{- $preferred := slice -}}
+  {{- $fallback := slice -}}
+  {{- range $a := $allAuthors -}}
+    {{- if and $a.File (eq $a.File.ContentBaseName "admin") -}}
+      {{- $fallback = $fallback | append $a -}}
+    {{- else -}}
+      {{- $preferred = $preferred | append $a -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $ordered := $preferred | append $fallback -}}
+  {{- range $a := $ordered -}}
+    {{- if not $profile -}}
+      {{- $titleNorm := lower (replaceRE "[\\s\\-\\._,]" "" ($a.Title | default "")) -}}
+      {{- $koNorm := lower (replaceRE "[\\s\\-\\._,]" "" (($a.Params.name_ko) | default "")) -}}
+      {{- $enNorm := lower (replaceRE "[\\s\\-\\._,]" "" (($a.Params.name_en) | default "")) -}}
+      {{- $first := trim (($a.Params.first_name) | default "") " " -}}
+      {{- $last := trim (($a.Params.last_name) | default "") " " -}}
+      {{- $full := trim (printf "%s %s" $first $last) " " -}}
+      {{- $fullNorm := lower (replaceRE "[\\s\\-\\._,]" "" $full) -}}
+      {{- if or (and (ne $titleNorm "") (eq $norm $titleNorm)) (and (ne $koNorm "") (eq $norm $koNorm)) (and (ne $enNorm "") (eq $norm $enNorm)) (and (ne $fullNorm "") (eq $norm $fullNorm)) -}}
+        {{- $profile = $a -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $display := $name -}}
+{{- $url := "" -}}
+{{- if $profile -}}
+  {{- with $profile.Params.name_en -}}
+    {{- if ne (trim . " ") "" -}}{{- $display = . -}}{{- end -}}
+  {{- else -}}
+    {{- with $profile.Params.name_ko -}}
+      {{- if ne (trim . " ") "" -}}{{- $display = . -}}{{- else -}}{{- $display = $profile.Title -}}{{- end -}}
+    {{- else -}}
+      {{- $display = $profile.Title -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $url = $profile.RelPermalink -}}
+{{- end -}}
+
+{{- return (dict "page" $profile "display" $display "url" $url "raw" $name) -}}

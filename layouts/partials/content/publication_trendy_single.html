@@ -14,28 +14,11 @@
         <h1>{{ $p.Title }}</h1>
 
         <div class="macs-pub-authors">
-          {{ with $p.Params.authors }}
-            {{ $total := len . }}
-            {{ range $idx, $a := . }}
-              {{ $profile := site.GetPage (printf "authors/%s" (urlize $a)) }}
-              {{ if $profile }}
-                <a href="{{ $profile.RelPermalink }}">{{ $a }}</a>
-              {{ else }}
-                <span>{{ $a }}</span>
-              {{ end }}
-              {{ if and $p.Params.author_notes (lt $idx (len $p.Params.author_notes)) }}
-                {{ if eq (index $p.Params.author_notes $idx) "Equal contribution" }}<sup title="Equal contribution">†</sup>{{ end }}
-                {{ if eq (index $p.Params.author_notes $idx) "Corresponding author" }}<sup title="Corresponding author">*</sup>{{ end }}
-              {{ end }}
-              {{ if ne $idx (sub $total 1) }}<span class="sep">, </span>{{ end }}
-            {{ end }}
-          {{ end }}
+          {{ partial "content/render_publication_authors" (dict "item" $p "link" true "showNotes" true "period" false "strongName" "Kyungsu Lee") }}
         </div>
 
         <p class="macs-pub-reference">
-          {{ with $p.Params.authors }}
-            {{ delimit . ", " }}.
-          {{ end }}
+          {{ partial "content/render_publication_authors" (dict "item" $p "link" false "showNotes" false "period" true "strongName" "") }}
           "{{ $p.Title }},"
           {{ with $p.Params.publication }}<i>{{ . }}</i>{{ end }}
           {{ with $p.Params.publication_short }}(<span class="abbr">{{ . }}</span>){{ end }}

@@ -7,9 +7,7 @@
 {{ end }}
 
 <li style="margin-bottom:1.2em; line-height:1.6;">
-  {{ with $item.Params.authors }}
-    {{ delimit . ", " }}.
-  {{ end }}
+  {{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" false "period" true "strongName" "Kyungsu Lee") }}
   <b>
     {{ if $link }}
       <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>

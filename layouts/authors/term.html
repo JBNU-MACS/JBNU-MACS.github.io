@@ -9,6 +9,30 @@
 {{ end }}
 {{ $email := .Params.email | default $socialEmail }}
 {{ $recent := first 6 (.Pages.ByDate.Reverse) }}
+{{ $workCount := len .Pages }}
+{{ $matchedPubs := slice }}
+{{ range $pub := (where site.RegularPages "Section" "publication") }}
+  {{ $hit := false }}
+  {{ with $pub.Params.authors }}
+    {{ range . }}
+      {{ if not $hit }}
+        {{ $resolved := partial "content/resolve_author_profile" (dict "name" .) }}
+        {{ with index $resolved "page" }}
+          {{ if eq .RelPermalink $.RelPermalink }}
+            {{ $hit = true }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ if $hit }}
+    {{ $matchedPubs = $matchedPubs | append $pub }}
+  {{ end }}
+{{ end }}
+{{ if gt (len $matchedPubs) 0 }}
+  {{ $workCount = len $matchedPubs }}
+  {{ $recent = first 6 (sort $matchedPubs "Date" "desc") }}
+{{ end }}
 {{ $social := .Params.social | default (slice) }}
 
 <div class="universal-wrapper">
@@ -39,7 +63,7 @@
         <div class="macs-author-stat-row">
           <span>Interests {{ len (.Params.interests | default (slice)) }}</span>
           <span>Courses {{ len (.Params.education.courses | default (slice)) }}</span>
-          <span>Works {{ len $recent }}</span>
+          <span>Works {{ $workCount }}</span>
         </div>
       </div>
     </header>

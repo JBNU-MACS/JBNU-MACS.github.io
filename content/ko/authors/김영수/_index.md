@@ -2,6 +2,9 @@
 # Display name
 title: 김영수
 
+name_ko: "김영수"
+name_en: "Yeongsu Kim"
+
 # Full Name (for SEO)
 first_name: Student
 last_name: 1

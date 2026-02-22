@@ -2,6 +2,9 @@
 # Display name
 title: 최서연
 
+name_ko: "최서연"
+name_en: "Seo-Yeon Choi"
+
 # Full Name (for SEO)
 first_name: Student
 last_name: 1

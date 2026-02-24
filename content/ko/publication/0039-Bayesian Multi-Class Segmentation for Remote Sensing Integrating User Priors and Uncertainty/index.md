@@ -3,10 +3,16 @@ title: 'Bayesian Multi-Class Segmentation for Remote Sensing, Integrating User P
 
 # Authors
 authors:
+  - Yeongsu Kim
+  - Haeyun Lee
+  - Seo-Yeon Choi
   - Kyungsu Lee
 
 # Author notes (optional)
 author_notes:
+  - 'Equal contribution'
+  - 'Equal contribution'
+  - ''
   - 'Corresponding author'
 
 # date format: '2013-07-01T00:00:00Z'

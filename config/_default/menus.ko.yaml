@@ -11,8 +11,8 @@ main:
     url: /ko/author/이경수/
     weight: 210
   - parent: 구성원
-    name: 연구원
-    url: /ko/people/
+    name: 구성원
+    url: people
     weight: 220
 
   - name: 연구

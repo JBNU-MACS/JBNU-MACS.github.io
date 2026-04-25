@@ -14,11 +14,11 @@ authors:
 superuser: false
 
 # Role/position
-role: Undergraduate Researcher
+role: 학부연구생
 
 # Organizations/Affiliations
 organizations:
-  - name: Jeonbuk National University 산업정보시스템공학과
+  - name: 전북대학교 산업정보시스템공학과
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''

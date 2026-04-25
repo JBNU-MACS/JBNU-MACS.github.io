@@ -11,7 +11,6 @@ last_name: Lee
 
 # Username (this should match the folder name)
 authors:
-  - admin
   - 이경수
 
 # Is this the primary user of the site?
@@ -45,6 +44,17 @@ education:
       institution: 한동대학교
       year: 2014 - 2018
 
+career:
+  - role: 연구원
+    institution: Harvard Medical School
+    period: '2022. 09 ~ 2023. 03'
+  - role: 박사후연구원
+    institution: 대구경북과학기술원 (DGIST)
+    period: '2023. 03 ~ 2024. 02'
+  - role: 조교수
+    institution: 전북대학교
+    period: '2024. 03 ~ 현재'
+
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
@@ -77,7 +87,7 @@ highlight_name: true
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - admin
+  - Professor
 
 
 ---

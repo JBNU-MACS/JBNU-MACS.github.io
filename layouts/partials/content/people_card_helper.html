@@ -1,0 +1,38 @@
+{{ $item := .item }}
+{{ $lang := .lang }}
+{{ $avatar := "" }}
+{{ $email := ($item.Params.email | default "") }}
+{{ with $item.Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+
+{{/* 이름 결정 로직: en 섹션이면 name_en 우선, 없으면 Title */}}
+{{ $name := $item.Title }}
+{{ if eq $lang "en" }}
+  {{ if $item.Params.name_en }}
+    {{ $name = $item.Params.name_en }}
+  {{ end }}
+{{ end }}
+
+<article class="macs-people-card">
+  <a href="{{ $item.RelPermalink }}" class="macs-people-card-inner">
+    {{ if $avatar }}
+      <img src="{{ $avatar }}" alt="{{ $name }} avatar" class="macs-people-avatar">
+    {{ else }}
+      <div class="macs-people-avatar placeholder">{{ slicestr ($name | plainify) 0 1 }}</div>
+    {{ end }}
+    <div class="macs-people-meta">
+      <h3>{{ $name }}</h3>
+      <p class="role">{{ $item.Params.role }}</p>
+      {{ with index $item.Params.organizations 0 }}
+        <p class="org">
+          {{ if eq $lang "ko" }}
+            {{ replaceRE "^전북대학교\\s*" "" .name }}
+          {{ else }}
+            {{ .name }}
+          {{ end }}
+        </p>
+      {{ end }}
+      <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
+      <p class="hint">View detail</p>
+    </div>
+  </a>
+</article>

@@ -14,11 +14,11 @@ authors:
 superuser: false
 
 # Role/position
-role: Part-time Master's Student / Korea Environment Corporation
+role: 파트석사 / 한국환경공단
 
 # Organizations/Affiliations
 organizations:
-  - name: Department of Electronic and Information Engineering (Computer Science), Jeonbuk National University
+  - name: 전북대학교 전자.정보공학부(컴퓨터공학)
 
 # Short bio (displayed in user profile at end of posts)
 # bio: 연합학습 및 표현 학습을 사용한 medical 도메인에서의 딥 러닝 기법, 도메인 적응 및 테스트 타임 학습과 같은 딥 러닝 기반 컴퓨터 비전 응용, 이미지 처리 및 이미지-텍스트 캡셔닝을 포함한 의료 응용의 딥 러닝 기반 진단 등을 포함합니다.
@@ -29,10 +29,10 @@ organizations:
 # education:
 #   courses:
 #     - course: Integrated M.S. & Ph.D. in (전기전자컴퓨터공학과)
-#       institution: Daegu Gyeongbuk Institute of Science and Technology (DGIST)
+#       institution: 대구경북과학기술원 (DGIST)
 #       year: 2018 - 2023
 #     - course: B.S. in (전산전자공학부)
-#       institution: Handong Global University
+#       institution: 한동대학교
 #       year: 2014 - 2018
 
 # Social/Academic Networking
@@ -72,4 +72,4 @@ user_groups:
 
 ---
 
-<!-- Fine-Tuning Deep Learning Network for Multi-Domain and Multi-Task Applications이라는 제목의 논문으로 2023년 대구경북과학기술원에서 통합 석사 및 박사 학위를 받았습니다. 2024년에 School of Computer and Artificial Intelligence, Jeonbuk National University에 Assistant Professor position으로 임명받고 현재까지 근무하고 있습니다. 연구 분야는 연합학습 및 표현 학습을 사용한 medical 도메인에서의 딥 러닝 기법, 도메인 적응 및 테스트 타임 학습과 같은 딥 러닝 기반 컴퓨터 비전 응용, 이미지 처리를 포함하고 있으며, AI의 이론부터 다양한 특성화 분야의 어플리케이션까지 넓은 범위를 포함하고 있습니다.  -->
+<!-- Fine-Tuning Deep Learning Network for Multi-Domain and Multi-Task Applications이라는 제목의 논문으로 2023년 대구경북과학기술원에서 통합 석사 및 박사 학위를 받았습니다. 2024년에 전북대학교 컴퓨터인공지능학부에 조교수 position으로 임명받고 현재까지 근무하고 있습니다. 연구 분야는 연합학습 및 표현 학습을 사용한 medical 도메인에서의 딥 러닝 기법, 도메인 적응 및 테스트 타임 학습과 같은 딥 러닝 기반 컴퓨터 비전 응용, 이미지 처리를 포함하고 있으며, AI의 이론부터 다양한 특성화 분야의 어플리케이션까지 넓은 범위를 포함하고 있습니다.  -->

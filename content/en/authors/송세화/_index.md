@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Sehwa Song
+title: 송세화
 
 name_ko: "송세화"
 name_en: "Sehwa Song"
@@ -17,11 +17,11 @@ authors:
 superuser: false
 
 # Role/position
-role: Undergraduate Researcher
+role: 학부연구생
 
 # Organizations/Affiliations
 organizations:
-  - name: School of Computer and Artificial Intelligence, Jeonbuk National University
+  - name: 전북대학교 컴퓨터인공지능학부
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''

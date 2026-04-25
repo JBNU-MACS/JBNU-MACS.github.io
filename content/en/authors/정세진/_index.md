@@ -14,11 +14,11 @@ authors:
 superuser: false
 
 # Role/position
-role: Master's Student
+role: 석사과정
 
 # Organizations/Affiliations
 organizations:
-  - name: Department of Electronic and Information Engineering (Computer Science), Jeonbuk National University
+  - name: 전북대학교 전자.정보공학부(컴퓨터공학)
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''

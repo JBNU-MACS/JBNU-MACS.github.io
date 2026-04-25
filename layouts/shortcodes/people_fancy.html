@@ -4,15 +4,17 @@
     {{ $all = $all | append . }}
   {{ end }}
 {{ end }}
+
+{{/* 정교한 그룹 필터링 */}}
 {{ $professors := sort (where $all "Params.user_groups" "intersect" (slice "Professor")) "Title" }}
-{{ $graduates := sort (where $all "Params.user_groups" "intersect" (slice "M.S. Student" "Master's Student")) "Title" }}
+{{ $graduates := sort (where $all "Params.user_groups" "intersect" (slice "M.S. Student" "Master's Student" "PhD Student" "PhD Student (Integrated)")) "Title" }}
 {{ $parttime := sort (where $all "Params.user_groups" "intersect" (slice "Part-time Graduate")) "Title" }}
 {{ $undergrad := sort (where $all "Params.user_groups" "intersect" (slice "Student" "Undergraduate Researcher")) "Title" }}
 {{ $alumni := sort (where $all "Params.user_groups" "intersect" (slice "Alumni")) "Title" }}
 
 <section class="macs-people-fancy" id="macs-people-fancy">
   <header class="macs-people-fancy-head">
-    <h1>{{ if eq .Page.Language.Lang "ko" }}구성원 (People){{ else }}People{{ end }}</h1>
+    <h1>{{ if eq .Page.Language.Lang "ko" }}구성원{{ else }}People{{ end }}</h1>
     <p>MACS Lab Members</p>
   </header>
 
@@ -25,177 +27,64 @@
     <button type="button" data-tab="alumni">{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</button>
   </nav>
 
+  {{/* 공통 렌더링 매크로 (Go Template은 매크로가 없으므로 섹션별 반복) */}}
+
   <div class="macs-people-section" data-group="professor">
     <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}지도교수 (Professor){{ else }}Professor{{ end }}</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}지도교수{{ else }}Professor{{ end }}</h2>
       <span>{{ len $professors }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ if eq (len $professors) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
       {{ range $professors }}
-        {{ $avatar := "" }}
-        {{ $email := (.Params.email | default "") }}
-        {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
-        <article class="macs-people-card">
-          <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
-            {{ if $avatar }}
-              <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-people-avatar">
-            {{ else }}
-              <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
-            {{ end }}
-            <div class="macs-people-meta">
-              <h3>{{ .Title }}</h3>
-              <p class="role">{{ .Params.role }}</p>
-              {{ with index .Params.organizations 0 }}
-                <p class="org">{{ if eq $.Page.Language.Lang "ko" }}{{ replaceRE "^전북대학교\\s*" "" .name }}{{ else }}{{ .name }}{{ end }}</p>
-              {{ end }}
-              <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
-              <p class="hint">View detail</p>
-            </div>
-          </a>
-        </article>
+        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
       {{ end }}
     </div>
   </div>
 
   <div class="macs-people-section" data-group="graduate">
     <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}석사 (Graduate){{ else }}Graduate (M.S. Students){{ end }}</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}석사{{ else }}Graduate (M.S. / Ph.D. Students){{ end }}</h2>
       <span>{{ len $graduates }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ if eq (len $graduates) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
       {{ range $graduates }}
-        {{ $avatar := "" }}
-        {{ $email := (.Params.email | default "") }}
-        {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
-        <article class="macs-people-card">
-          <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
-            {{ if $avatar }}
-              <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-people-avatar">
-            {{ else }}
-              <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
-            {{ end }}
-            <div class="macs-people-meta">
-              <h3>{{ .Title }}</h3>
-              <p class="role">{{ .Params.role }}</p>
-              {{ with index .Params.organizations 0 }}
-                <p class="org">{{ if eq $.Page.Language.Lang "ko" }}{{ replaceRE "^전북대학교\\s*" "" .name }}{{ else }}{{ .name }}{{ end }}</p>
-              {{ end }}
-              <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
-              <p class="hint">View detail</p>
-            </div>
-          </a>
-        </article>
+        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
       {{ end }}
     </div>
   </div>
 
   <div class="macs-people-section" data-group="undergrad">
     <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}학부연구생 (Undergraduate){{ else }}Undergraduate Researchers{{ end }}</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}학부연구생{{ else }}Undergraduate Researchers{{ end }}</h2>
       <span>{{ len $undergrad }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ if eq (len $undergrad) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
       {{ range $undergrad }}
-        {{ $avatar := "" }}
-        {{ $email := (.Params.email | default "") }}
-        {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
-        <article class="macs-people-card">
-          <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
-            {{ if $avatar }}
-              <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-people-avatar">
-            {{ else }}
-              <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
-            {{ end }}
-            <div class="macs-people-meta">
-              <h3>{{ .Title }}</h3>
-              <p class="role">{{ .Params.role }}</p>
-              {{ with index .Params.organizations 0 }}
-                <p class="org">{{ if eq $.Page.Language.Lang "ko" }}{{ replaceRE "^전북대학교\\s*" "" .name }}{{ else }}{{ .name }}{{ end }}</p>
-              {{ end }}
-              <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
-              <p class="hint">View detail</p>
-            </div>
-          </a>
-        </article>
+        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
       {{ end }}
     </div>
   </div>
 
   <div class="macs-people-section" data-group="parttime">
     <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}파트 석/박 (Part-time M.S. / Ph.D.){{ else }}Part-time M.S. / Ph.D. Students{{ end }}</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}파트 석/박{{ else }}Part-time Students{{ end }}</h2>
       <span>{{ len $parttime }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ if eq (len $parttime) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
       {{ range $parttime }}
-        {{ $avatar := "" }}
-        {{ $email := (.Params.email | default "") }}
-        {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
-        <article class="macs-people-card">
-          <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
-            {{ if $avatar }}
-              <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-people-avatar">
-            {{ else }}
-              <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
-            {{ end }}
-            <div class="macs-people-meta">
-              <h3>{{ .Title }}</h3>
-              <p class="role">{{ .Params.role }}</p>
-              {{ with index .Params.organizations 0 }}
-                <p class="org">{{ if eq $.Page.Language.Lang "ko" }}{{ replaceRE "^전북대학교\\s*" "" .name }}{{ else }}{{ .name }}{{ end }}</p>
-              {{ end }}
-              <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
-              <p class="hint">View detail</p>
-            </div>
-          </a>
-        </article>
+        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
       {{ end }}
     </div>
   </div>
 
   <div class="macs-people-section" data-group="alumni">
     <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}졸업생 (Alumni){{ else }}Alumni{{ end }}</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</h2>
       <span>{{ len $alumni }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ if eq (len $alumni) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
       {{ range $alumni }}
-        {{ $avatar := "" }}
-        {{ $gradym := "" }}
-        {{ $email := (.Params.email | default "") }}
-        {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
-        {{ with .Params.graduation_year_month }}{{ $gradym = . }}{{ end }}
-        {{ if eq $gradym "" }}
-          {{ range .Params.organizations }}
-            {{ with .year }}{{ $gradym = . }}{{ end }}
-          {{ end }}
-        {{ end }}
-        <article class="macs-people-card">
-          <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
-            {{ if $avatar }}
-              <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-people-avatar">
-            {{ else }}
-              <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
-            {{ end }}
-            <div class="macs-people-meta">
-              <h3>{{ .Title }}</h3>
-              <p class="role">{{ .Params.role }}</p>
-              {{ with index .Params.organizations 0 }}
-                <p class="org">{{ if eq $.Page.Language.Lang "ko" }}{{ replaceRE "^전북대학교\\s*" "" .name }}{{ else }}{{ .name }}{{ end }}</p>
-              {{ end }}
-              {{ if ne $gradym "" }}
-                <p class="grad">{{ if eq $.Page.Language.Lang "ko" }}졸업:{{ else }}Graduated:{{ end }} {{ $gradym }}</p>
-              {{ end }}
-              <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
-              <p class="hint">View detail</p>
-            </div>
-          </a>
-        </article>
+        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
       {{ end }}
     </div>
   </div>
@@ -207,24 +96,11 @@
     if (!root) return;
     var tabs = root.querySelectorAll('.macs-people-tabs button');
     var sections = root.querySelectorAll('.macs-people-section');
-    if (!tabs.length || !sections.length) return;
-
     function render(group) {
-      sections.forEach(function (section) {
-        var key = section.getAttribute('data-group');
-        section.style.display = (group === 'all' || group === key) ? '' : 'none';
-      });
-      tabs.forEach(function (tab) {
-        tab.classList.toggle('is-active', tab.getAttribute('data-tab') === group);
-      });
+      sections.forEach(function (s) { s.style.display = (group === 'all' || s.getAttribute('data-group') === group) ? '' : 'none'; });
+      tabs.forEach(function (t) { t.classList.toggle('is-active', t.getAttribute('data-tab') === group); });
     }
-
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        render(tab.getAttribute('data-tab') || 'all');
-      });
-    });
-
+    tabs.forEach(function (t) { t.addEventListener('click', function () { render(t.getAttribute('data-tab') || 'all'); }); });
     render('all');
   })();
 </script>

@@ -3,42 +3,56 @@
 {{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*cover*" }}{{ end }}
 {{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*thumb*" }}{{ end }}
 {{ $bib := $p.Resources.GetMatch "*.bib" }}
-{{ $pubYear := "" }}{{ with $p.Date }}{{ $pubYear = .Format "2006" }}{{ end }}
 {{ if eq $p.Language.Lang "en" }}
 <div class="universal-wrapper">
-  <article class="en-civic-publication-detail">
-    <header class="page-head">
-      <p class="eyebrow">Publication Record</p>
-      <h1>{{ $p.Title }}</h1>
-      <div class="authors">{{ partial "content/render_publication_authors" (dict "item" $p "link" true "showNotes" true "period" false "strongName" "Kyungsu Lee") }}</div>
-      <div class="meta-line">
-        {{ with $pubYear }}<span>{{ . }}</span>{{ end }}
-        {{ with $p.Params.publication_short }}<span>{{ . }}</span>{{ end }}
-        {{ range ($p.Params.badges | default (slice)) }}<span>{{ . }}</span>{{ end }}
+  <article class="en-portal-detail en-portal-detail--publication">
+    <header class="en-portal-page__head">
+      <div>
+        {{ with $p.CurrentSection }}<a class="en-portal-back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
+        <p class="en-portal-eyebrow">Publication Record</p>
+        <h1>{{ $p.Title }}</h1>
+        <div class="en-portal-author-line">{{ partial "content/render_publication_authors" (dict "item" $p "link" true "showNotes" true "period" false "strongName" "Kyungsu Lee") }}</div>
+        {{ with $p.Params.publication }}<p class="en-portal-summary">{{ . }}</p>{{ end }}
       </div>
-      {{ with $p.Params.publication }}<p class="summary">{{ . }}</p>{{ end }}
+      <aside class="en-portal-inline-actions">
+        {{ with $p.Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+        {{ with $p.Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
+        {{ with $p.Params.url_code }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
+        {{ with $bib }}<a href="{{ .RelPermalink }}" target="_blank" rel="noopener">BibTeX</a>{{ end }}
+      </aside>
     </header>
-    <div class="publication-layout">
-      <div class="main">
-        {{ with $p.Params.abstract }}<section class="panel"><h2>Abstract</h2><p>{{ . }}</p></section>{{ end }}
-        {{ if $p.Content }}<section class="panel"><h2>Details</h2><div class="prose">{{ $p.Content }}</div></section>{{ end }}
+
+    <div class="en-portal-grid en-portal-grid--sidebar">
+      <div class="en-portal-stack">
+        {{ with $p.Params.abstract }}
+          <section class="en-portal-panel">
+            <h2>Abstract</h2>
+            <p>{{ . }}</p>
+          </section>
+        {{ end }}
+        {{ if $p.Content }}
+          <section class="en-portal-panel en-portal-panel--prose">
+            <h2>Details</h2>
+            {{ $p.Content }}
+          </section>
+        {{ end }}
       </div>
-      <aside class="side">
-        {{ with $hero }}<figure class="pub-image"><img src="{{ .RelPermalink }}" alt="{{ $p.Title }}"></figure>{{ end }}
-        <section class="panel"><h2>Record Information</h2><ul>
-          {{ with $pubYear }}<li><strong>Year</strong><span>{{ . }}</span></li>{{ end }}
-          {{ with $p.Params.publication }}<li><strong>Venue</strong><span>{{ . }}</span></li>{{ end }}
-          {{ with $p.Params.publication_short }}<li><strong>Abbreviation</strong><span>{{ . }}</span></li>{{ end }}
-          {{ with $p.Params.doi }}<li><strong>DOI</strong><span>{{ . }}</span></li>{{ end }}
-        </ul></section>
-        <section class="panel"><h2>Links</h2><div class="link-list">
-          {{ with $p.Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
-          {{ with $p.Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
-          {{ with $p.Params.url_code }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
-          {{ with $p.Params.url_dataset }}<a href="{{ . }}" target="_blank" rel="noopener">Dataset</a>{{ end }}
-          {{ with $p.Params.url_video }}<a href="{{ . }}" target="_blank" rel="noopener">Video</a>{{ end }}
-          {{ with $bib }}<a href="{{ .RelPermalink }}" target="_blank" rel="noopener">BibTeX</a>{{ end }}
-        </div></section>
+      <aside class="en-portal-stack">
+        <section class="en-portal-panel">
+          <h2>Metadata</h2>
+          <dl class="en-portal-definition-list">
+            <div><dt>Year</dt><dd>{{ $p.Date.Format "2006" }}</dd></div>
+            {{ with $p.Params.publication_short }}<div><dt>Venue</dt><dd>{{ . }}</dd></div>{{ end }}
+            {{ with $p.Params.publication }}<div><dt>Publication</dt><dd>{{ . }}</dd></div>{{ end }}
+            {{ with $p.Params.doi }}<div><dt>DOI</dt><dd>{{ . }}</dd></div>{{ end }}
+          </dl>
+        </section>
+        {{ with $hero }}
+          <section class="en-portal-panel">
+            <h2>Preview</h2>
+            <figure class="en-portal-figure"><img src="{{ .RelPermalink }}" alt="{{ $p.Title }}"></figure>
+          </section>
+        {{ end }}
       </aside>
     </div>
   </article>

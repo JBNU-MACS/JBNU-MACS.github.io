@@ -1,29 +1,28 @@
-{{- $page := .Page -}}
-{{- $baseItems := $page.RegularPages.ByDate.Reverse -}}
-{{- $items := slice -}}
-{{- $pinned := slice "field/00-ai" "field/01-medical-imaging" "field/07-computational-science" -}}
-{{- range $want := $pinned -}}{{- range $it := $baseItems -}}{{- if in $it.RelPermalink $want -}}{{- $items = $items | append $it -}}{{- end -}}{{- end -}}{{- end -}}
-{{- range $it := $baseItems -}}{{- $isPinned := false -}}{{- range $want := $pinned -}}{{- if in $it.RelPermalink $want -}}{{- $isPinned = true -}}{{- end -}}{{- end -}}{{- if not $isPinned -}}{{- $items = $items | append $it -}}{{- end -}}{{- end -}}
-<div class="universal-wrapper macs-field-shell">
+{{ $page := .Page }}
 {{ if eq $page.Language.Lang "en" }}
-  <section class="en-civic-page en-civic-page--fields">
-    <header class="page-head">
-      <p class="eyebrow">Research Fields</p>
-      <h1>{{ $page.Title }}</h1>
-      <p class="summary">MACS Lab organizes its research portfolio across domain-oriented and method-oriented tracks.</p>
+<div class="universal-wrapper">
+  <section class="en-portal-page">
+    <header class="en-portal-page__head">
+      <div>
+        <p class="en-portal-eyebrow">Research Fields</p>
+        <h1>{{ $page.Title }}</h1>
+        <p class="en-portal-summary">Research topics are organized as a clear directory of MACS Lab's current areas of work.</p>
+      </div>
     </header>
-    <div class="field-list">
-      {{ range $idx, $item := $items }}
-        {{ $summary := $item.Params.summary | default $item.Summary | default $item.Plain | plainify | truncate 180 }}
-        <article class="field-item">
-          <span class="order">{{ printf "%02d" (add $idx 1) }}</span>
-          <div class="body"><h2><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h2>{{ with $summary }}<p>{{ . }}</p>{{ end }}</div>
-          <a class="more" href="{{ $item.RelPermalink }}">View</a>
+    <div class="en-portal-directory-grid">
+      {{ range $index, $item := $page.RegularPages.ByDate.Reverse }}
+        <article class="en-portal-directory-card en-portal-directory-card--large">
+          <span class="en-portal-index">{{ printf "%02d" (add $index 1) }}</span>
+          <div>
+            <h2><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h2>
+            <p>{{ $item.Content | plainify | truncate 220 }}</p>
+            <a class="en-portal-text-link" href="{{ $item.RelPermalink }}">Read field overview</a>
+          </div>
         </article>
       {{ end }}
     </div>
   </section>
+</div>
 {{ else }}
   {{ partial "content/legacy/research_field_trendy_list_legacy.html" . }}
 {{ end }}
-</div>

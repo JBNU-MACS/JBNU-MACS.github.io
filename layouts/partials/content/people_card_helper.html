@@ -2,25 +2,30 @@
 {{ $lang := .lang }}
 {{ if eq $lang "en" }}
   {{ $avatar := "" }}
-  {{ $email := ($item.Params.email | default "") }}
   {{ with $item.Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+  {{ $socialEmail := "" }}
+  {{ range $item.Params.social }}{{ if and (eq .icon "envelope") (hasPrefix .link "mailto:") }}{{ $socialEmail = replace .link "mailto:" "" }}{{ end }}{{ end }}
+  {{ $email := $item.Params.email | default $socialEmail }}
   {{ $name := $item.Params.name_en | default $item.Title }}
-  {{ if and (eq $name $item.Title) (or $item.Params.first_name $item.Params.last_name) }}
-    {{ $name = trim (printf "%s %s" ($item.Params.first_name | default "") ($item.Params.last_name | default "")) " " }}
-  {{ end }}
+  {{ if and (eq $name $item.Title) (or $item.Params.first_name $item.Params.last_name) }}{{ $name = trim (printf "%s %s" ($item.Params.first_name | default "") ($item.Params.last_name | default "")) " " }}{{ end }}
   {{ $role := ($item.Params.role | default "") | replace "석사과정" "Master's Student" | replace "학부연구생" "Undergraduate Researcher" | replace "파트석사" "Part-time M.S. Student" | replace "파트박사" "Part-time Ph.D. Student" }}
   {{ $org := "" }}
   {{ with index $item.Params.organizations 0 }}{{ $org = .name }}{{ end }}
   {{ $org = replace $org "전북대학교 컴퓨터인공지능학부" "Department of Computer Science & Artificial Intelligence, Jeonbuk National University" }}
   {{ $org = replace $org "전북대학교 전자.정보공학부(컴퓨터공학)" "Division of Electronic and Information Engineering (Computer Science), Jeonbuk National University" }}
-<article class="en-civic-person-card">
-  <a href="{{ $item.RelPermalink }}" class="inner">
-    {{ if $avatar }}<img class="photo" src="{{ $avatar }}" alt="{{ $name }} portrait" loading="lazy">{{ else }}<div class="photo placeholder">{{ slicestr ($name | plainify) 0 1 }}</div>{{ end }}
-    <div class="body">
+<article class="en-portal-person-card">
+  <a class="en-portal-person-card__inner" href="{{ $item.RelPermalink }}">
+    {{ if $avatar }}
+      <img class="en-portal-person-card__photo" src="{{ $avatar }}" alt="{{ $name }} portrait" loading="lazy">
+    {{ else }}
+      <div class="en-portal-person-card__photo en-portal-person-card__photo--placeholder">{{ slicestr ($name | plainify) 0 1 }}</div>
+    {{ end }}
+    <div class="en-portal-person-card__body">
       <h3>{{ $name }}</h3>
-      {{ with $role }}<p class="role">{{ . }}</p>{{ end }}
-      {{ if ne $org "" }}<p class="org">{{ $org }}</p>{{ end }}
-      {{ if ne $email "" }}<p class="contact"><a href="mailto:{{ $email }}">{{ $email }}</a></p>{{ end }}
+      {{ with $item.Params.name_ko }}<p class="en-portal-person-card__alt">{{ . }}</p>{{ end }}
+      {{ with $role }}<p class="en-portal-person-card__role">{{ . }}</p>{{ end }}
+      {{ with $org }}<p class="en-portal-person-card__org">{{ . }}</p>{{ end }}
+      {{ if ne $email "" }}<p class="en-portal-person-card__contact">{{ $email }}</p>{{ end }}
     </div>
   </a>
 </article>

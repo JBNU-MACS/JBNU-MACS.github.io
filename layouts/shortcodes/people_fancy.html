@@ -10,33 +10,58 @@
 {{ $undergrad := sort (where $all "Params.user_groups" "intersect" (slice "Student" "Undergraduate Researcher")) "Title" }}
 {{ $alumni := sort (where $all "Params.user_groups" "intersect" (slice "Alumni")) "Title" }}
 {{ if eq .Page.Language.Lang "en" }}
-<section class="en-civic-page en-civic-page--people">
-  <header class="page-head">
-    <p class="eyebrow">People</p>
-    <h1>MACS Lab Members</h1>
-    <p class="summary">Faculty, graduate researchers, undergraduate researchers, part-time students, and alumni affiliated with the laboratory.</p>
+<section class="en-portal-page">
+  <header class="en-portal-page__head">
+    <div>
+      <p class="en-portal-eyebrow">People</p>
+      <h1>Member Directory</h1>
+      <p class="en-portal-summary">Faculty, students, and alumni are listed in a structured directory format for quick access to profiles and current affiliation information.</p>
+    </div>
+    <aside class="en-portal-panel en-portal-panel--accent">
+      <h2>Directory Summary</h2>
+      <div class="en-portal-stat-grid">
+        <article><strong>{{ len $professors }}</strong><span>Professor</span></article>
+        <article><strong>{{ len $graduates }}</strong><span>Graduate</span></article>
+        <article><strong>{{ len $undergrad }}</strong><span>Undergraduate</span></article>
+        <article><strong>{{ len $alumni }}</strong><span>Alumni</span></article>
+      </div>
+    </aside>
   </header>
 
-  <section class="people-group">
-    <div class="section-head"><h2>Professor</h2><span>{{ len $professors }}</span></div>
-    <div class="people-list">{{ range $professors }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
-  </section>
-  <section class="people-group">
-    <div class="section-head"><h2>Graduate Researchers</h2><span>{{ len $graduates }}</span></div>
-    <div class="people-list">{{ range $graduates }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
-  </section>
-  <section class="people-group">
-    <div class="section-head"><h2>Undergraduate Researchers</h2><span>{{ len $undergrad }}</span></div>
-    <div class="people-list">{{ range $undergrad }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
-  </section>
-  <section class="people-group">
-    <div class="section-head"><h2>Part-time Graduate Students</h2><span>{{ len $parttime }}</span></div>
-    <div class="people-list">{{ range $parttime }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
-  </section>
-  <section class="people-group">
-    <div class="section-head"><h2>Alumni</h2><span>{{ len $alumni }}</span></div>
-    <div class="people-list">{{ range $alumni }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
-  </section>
+  <nav class="en-portal-anchor-nav en-portal-panel">
+    <a href="#professor">Professor</a>
+    <a href="#graduate">Graduate Researchers</a>
+    <a href="#undergraduate">Undergraduate Researchers</a>
+    <a href="#parttime">Part-time Graduate</a>
+    <a href="#alumni">Alumni</a>
+  </nav>
+
+  <div class="en-portal-stack">
+    <section class="en-portal-panel" id="professor">
+      <div class="en-portal-section-head"><div><p class="en-portal-kicker">Faculty</p><h2>Professor</h2></div><span>{{ len $professors }}</span></div>
+      <div class="en-portal-people-grid">{{ range $professors }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
+    </section>
+
+    <section class="en-portal-panel" id="graduate">
+      <div class="en-portal-section-head"><div><p class="en-portal-kicker">Directory</p><h2>Graduate Researchers</h2></div><span>{{ len $graduates }}</span></div>
+      <div class="en-portal-people-grid">{{ range $graduates }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
+    </section>
+
+    <section class="en-portal-panel" id="undergraduate">
+      <div class="en-portal-section-head"><div><p class="en-portal-kicker">Directory</p><h2>Undergraduate Researchers</h2></div><span>{{ len $undergrad }}</span></div>
+      <div class="en-portal-people-grid">{{ range $undergrad }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
+    </section>
+
+    <section class="en-portal-panel" id="parttime">
+      <div class="en-portal-section-head"><div><p class="en-portal-kicker">Directory</p><h2>Part-time Graduate Students</h2></div><span>{{ len $parttime }}</span></div>
+      <div class="en-portal-people-grid">{{ range $parttime }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
+    </section>
+
+    <section class="en-portal-panel" id="alumni">
+      <div class="en-portal-section-head"><div><p class="en-portal-kicker">Directory</p><h2>Alumni</h2></div><span>{{ len $alumni }}</span></div>
+      <div class="en-portal-people-grid">{{ range $alumni }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
+    </section>
+  </div>
 </section>
 {{ else }}
   {{ partial "legacy/people_fancy_legacy.html" . }}

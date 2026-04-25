@@ -1,15 +1,17 @@
 {{ define "main" }}
 <div class="universal-wrapper">
-  <section class="en-civic-page en-civic-page--section">
-    <header class="page-head">
-      <p class="eyebrow">Coursework</p>
-      <h1>{{ .Title }}</h1>
-      <p class="summary">Coursework and academic training related to AI, medical imaging, multimodal learning, and computational science are organized here.</p>
+  <section class="en-portal-page">
+    <header class="en-portal-page__head">
+      <div>
+        <p class="en-portal-eyebrow">Courseworks</p>
+        <h1>{{ .Title }}</h1>
+        <p class="en-portal-summary">Coursework information covers the academic training areas that support laboratory research and student development.</p>
+      </div>
     </header>
-    <div class="fact-grid">
-      <article class="fact-card"><h2>AI Foundations</h2><p>Machine learning, deep learning, optimization, and statistical modeling.</p></article>
-      <article class="fact-card"><h2>Domain Applications</h2><p>Medical imaging, healthcare AI, aerospace analytics, and content intelligence.</p></article>
-      <article class="fact-card"><h2>Systems Practice</h2><p>Implementation, evaluation, and deployment workflows connected to research.</p></article>
+    <div class="en-portal-grid en-portal-grid--three">
+      <section class="en-portal-panel"><h2>Core Theory</h2><p>Machine learning, deep learning, optimization, probability, and statistics.</p></section>
+      <section class="en-portal-panel"><h2>Applied Domains</h2><p>Medical imaging, healthcare data, multimodal intelligence, aerospace analytics, and content AI.</p></section>
+      <section class="en-portal-panel"><h2>Implementation Practice</h2><p>Programming, experimentation, evaluation, deployment, and research software workflows.</p></section>
     </div>
   </section>
 </div>

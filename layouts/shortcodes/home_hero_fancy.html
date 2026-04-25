@@ -1,49 +1,72 @@
-{{ $notices := first 5 ((where site.RegularPages "Section" "notification").ByDate.Reverse) }}
+{{ $notices := first 4 ((where site.RegularPages "Section" "notification").ByDate.Reverse) }}
+{{ $fieldPages := (where site.RegularPages "Section" "field").ByTitle }}
+{{ $pubCount := len (where site.RegularPages "Section" "publication") }}
+{{ $fieldCount := len $fieldPages }}
+{{ $memberPages := slice }}
+{{ range site.RegularPages }}
+  {{ if and (eq .Section "authors") (eq .Lang $.Page.Language.Lang) }}
+    {{ $memberPages = $memberPages | append . }}
+  {{ end }}
+{{ end }}
+{{ $memberCount := len $memberPages }}
 {{ if eq .Page.Language.Lang "en" }}
-<section class="en-civic-home">
-  <header class="en-civic-home-head">
-    <div class="intro">
-      <p class="eyebrow">Jeonbuk National University</p>
+<section class="en-portal-home">
+  <header class="en-portal-home__masthead">
+    <div class="en-portal-home__main">
+      <p class="en-portal-eyebrow">Jeonbuk National University · Research Laboratory</p>
       <h1>Medical AI &amp; Computational Science Laboratory</h1>
-      <p class="summary">MACS Lab conducts research in medical AI, multimodal intelligence, computational science, and applied AI engineering with an emphasis on rigorous methods and practical deployment.</p>
-      <div class="actions">
+      <p class="en-portal-summary">MACS Lab conducts research in medical AI, multimodal learning, computational science, and practical AI engineering. The English site is organized as a concise institutional directory for research, people, publications, and collaboration.</p>
+      <div class="en-portal-actions">
+        <a href="{{ "about/" | relLangURL }}">About the Lab</a>
         <a href="{{ "field/" | relLangURL }}">Research Fields</a>
         <a href="{{ "publication/" | relLangURL }}">Publications</a>
         <a href="{{ "people/" | relLangURL }}">People</a>
         <a href="{{ "contact/" | relLangURL }}">Contact</a>
       </div>
     </div>
-    <div class="overview">
-      <div class="overview-card">
-        <h2>Laboratory Overview</h2>
-        <dl>
+    <aside class="en-portal-home__side">
+      <section class="en-portal-panel en-portal-panel--accent">
+        <h2>Laboratory Information</h2>
+        <dl class="en-portal-definition-list">
           <div><dt>Affiliation</dt><dd>Jeonbuk National University</dd></div>
-          <div><dt>Primary Areas</dt><dd>Medical AI, Multimodal AI, Applied Systems</dd></div>
-          <div><dt>Engagement</dt><dd>Research collaboration and student recruitment</dd></div>
+          <div><dt>Lead</dt><dd>Kyungsu Lee, Assistant Professor</dd></div>
+          <div><dt>Office</dt><dd>Engineering Building 7, Room 626</dd></div>
+          <div><dt>Contact</dt><dd><a href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr</a></dd></div>
         </dl>
-      </div>
-    </div>
+      </section>
+      <section class="en-portal-panel">
+        <h2>At a Glance</h2>
+        <div class="en-portal-stat-grid">
+          <article><strong>{{ $fieldCount }}</strong><span>Research fields</span></article>
+          <article><strong>{{ $pubCount }}</strong><span>Publications</span></article>
+          <article><strong>{{ $memberCount }}</strong><span>Members</span></article>
+          <article><strong>{{ len $notices }}</strong><span>Recent notices</span></article>
+        </div>
+      </section>
+    </aside>
   </header>
 
-  <section class="en-civic-home-notice">
-    <div class="section-head">
-      <h2>Latest Notices</h2>
-      <a href="{{ "notification/" | relLangURL }}">View All</a>
+  <section class="en-portal-home__board en-portal-panel">
+    <div class="en-portal-section-head">
+      <div>
+        <p class="en-portal-kicker">Administrative Updates</p>
+        <h2>Current Notices</h2>
+      </div>
+      <a href="{{ "notification/" | relLangURL }}">View all notices</a>
     </div>
-    <div class="notice-list">
+    <div class="en-portal-record-list">
       {{ if gt (len $notices) 0 }}
         {{ range $notices }}
-          <article class="notice-item">
+          <article class="en-portal-record">
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
-            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            <p>{{ .Summary | plainify | truncate 110 }}</p>
+            <div>
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              {{ with (.Summary | plainify | truncate 160) }}<p>{{ . }}</p>{{ end }}
+            </div>
           </article>
         {{ end }}
       {{ else }}
-        <article class="notice-item empty">
-          <h3>No current notices</h3>
-          <p>Please check again for upcoming recruitment and research announcements.</p>
-        </article>
+        <p class="en-portal-empty">No notices are currently posted.</p>
       {{ end }}
     </div>
   </section>

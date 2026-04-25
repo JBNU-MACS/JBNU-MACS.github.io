@@ -1,15 +1,17 @@
 {{ define "main" }}
 <div class="universal-wrapper">
-  <section class="en-civic-page en-civic-page--section">
-    <header class="page-head">
-      <p class="eyebrow">Laboratory Tour</p>
-      <h1>{{ .Title }}</h1>
-      <p class="summary">A concise overview of the laboratory environment, research exchange, and campus setting at MACS Lab.</p>
+  <section class="en-portal-page">
+    <header class="en-portal-page__head">
+      <div>
+        <p class="en-portal-eyebrow">Tour</p>
+        <h1>{{ .Title }}</h1>
+        <p class="en-portal-summary">A concise overview of the laboratory environment, research culture, and campus context.</p>
+      </div>
     </header>
-    <div class="fact-grid">
-      <article class="fact-card"><h2>Research Environment</h2><p>The laboratory supports work spanning medical AI, multimodal intelligence, computation, and deployable systems.</p></article>
-      <article class="fact-card"><h2>Research Exchange</h2><p>Members share ideas through technical discussions, paper reviews, and collaborative implementation.</p></article>
-      <article class="fact-card"><h2>Campus Context</h2><p>MACS Lab is based at Jeonbuk National University and works within an academic environment oriented toward practical impact.</p></article>
+    <div class="en-portal-grid en-portal-grid--three">
+      <section class="en-portal-panel"><h2>Research Environment</h2><p>The laboratory supports work in medical AI, multimodal intelligence, computational science, and software implementation.</p></section>
+      <section class="en-portal-panel"><h2>Research Exchange</h2><p>Members collaborate through paper discussions, experimental validation, code review, and implementation-oriented study.</p></section>
+      <section class="en-portal-panel"><h2>Campus Context</h2><p>MACS Lab is based at Jeonbuk National University in Jeonju and operates within an academic environment focused on practical impact.</p></section>
     </div>
   </section>
 </div>

@@ -15,7 +15,6 @@ sections:
     design:
       columns: '1'
 
-
   - block: markdown
     content:
       title:
@@ -39,7 +38,7 @@ sections:
       title:
       subtitle:
       text: |
-        {{% cta cta_link="./contact/" cta_text="Join team →" %}}
+        {{< en_home_action_strip >}}
     design:
       columns: '1'
 ---

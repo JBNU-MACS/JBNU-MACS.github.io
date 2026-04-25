@@ -1,42 +1,49 @@
 {{ if eq .Page.Language.Lang "en" }}
-<section class="en-civic-page en-civic-page--contact">
-  <header class="page-head">
-    <p class="eyebrow">Contact</p>
-    <h1>Contact MACS Lab</h1>
-    <p class="summary">We welcome inquiries regarding academic collaboration, undergraduate research, master's study, and doctoral study.</p>
+<section class="en-portal-page">
+  <header class="en-portal-page__head">
+    <div>
+      <p class="en-portal-eyebrow">Contact</p>
+      <h1>Contact and Access</h1>
+      <p class="en-portal-summary">Please use the information below for academic collaboration, student applications, and laboratory-related inquiries.</p>
+    </div>
+    <aside class="en-portal-panel en-portal-panel--accent">
+      <h2>Primary Contact</h2>
+      <p><a href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr</a></p>
+      <p class="en-portal-muted">Responses are handled during regular business hours in Korea Standard Time.</p>
+    </aside>
   </header>
 
-  <div class="contact-layout">
-    <div class="contact-grid">
-      <article class="fact-card">
-        <h2>Email</h2>
-        <p><a href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr</a></p>
-        <small>Primary channel for research collaboration and student inquiries.</small>
-      </article>
-      <article class="fact-card">
-        <h2>Phone</h2>
-        <p><a href="tel:+82632702406">+82-63-270-2406</a></p>
-        <small>Weekdays, 10:00-18:00 (KST).</small>
-      </article>
-      <article class="fact-card">
-        <h2>Office</h2>
-        <p>Room 626, Engineering Building 7</p>
-        <small>Jeonbuk National University, Jeonju, Republic of Korea</small>
-      </article>
-      <article class="fact-card">
-        <h2>Recruitment</h2>
-        <p><a href="{{ "notification/" | relLangURL }}">Open Positions</a></p>
-        <small>Current opportunities for undergraduate, master's, and doctoral applicants.</small>
-      </article>
+  <div class="en-portal-grid en-portal-grid--sidebar">
+    <div class="en-portal-stack">
+      <section class="en-portal-panel">
+        <h2>Contact Information</h2>
+        <dl class="en-portal-definition-list">
+          <div><dt>Email</dt><dd><a href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+82632702406">+82-63-270-2406</a></dd></div>
+          <div><dt>Office</dt><dd>Room 626, Engineering Building 7</dd></div>
+          <div><dt>Institution</dt><dd>Jeonbuk National University, Jeonju, Republic of Korea</dd></div>
+        </dl>
+      </section>
+      <section class="en-portal-panel">
+        <h2>Inquiry Types</h2>
+        <ul class="en-portal-bullet-list">
+          <li>Research collaboration and project discussion</li>
+          <li>Undergraduate, master's, and doctoral study inquiries</li>
+          <li>Open positions and laboratory recruitment</li>
+        </ul>
+        <a class="en-portal-text-link" href="{{ "notification/" | relLangURL }}">See current notices and openings</a>
+      </section>
     </div>
-    <aside class="map-panel">
-      <div class="section-head">
-        <h2>Location</h2>
-        <a href="https://maps.google.com/?q=35.84601324617979,127.13444961966684" target="_blank" rel="noopener">Open in Google Maps</a>
-      </div>
-      <div class="map-frame">
-        <iframe title="MACS Lab location map" src="https://www.google.com/maps?q=35.84601324617979,127.13444961966684&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+    <aside class="en-portal-stack">
+      <section class="en-portal-panel">
+        <div class="en-portal-section-head">
+          <div><p class="en-portal-kicker">Map</p><h2>Location</h2></div>
+          <a href="https://maps.google.com/?q=35.84601324617979,127.13444961966684" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+        <div class="en-portal-map-frame">
+          <iframe title="MACS Lab location map" src="https://www.google.com/maps?q=35.84601324617979,127.13444961966684&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
     </aside>
   </div>
 </section>

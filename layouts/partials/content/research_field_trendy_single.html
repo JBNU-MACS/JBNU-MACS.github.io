@@ -1,25 +1,40 @@
-{{- $p := .Page -}}
-{{- $section := $p.CurrentSection -}}
-{{- $siblings := slice -}}{{- if $section -}}{{- $siblings = $section.RegularPages.ByDate.Reverse -}}{{- end -}}
-{{- $summary := $p.Summary | plainify -}}
-<div class="universal-wrapper macs-field-single-shell">
-{{ if eq $p.Language.Lang "en" }}
-  <section class="en-civic-detail en-civic-detail--field">
-    <header class="page-head">
-      <a class="back-link" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}">Back to Research Fields</a>
-      <p class="eyebrow">Research Field</p>
-      <h1>{{ $p.Title }}</h1>
-      {{ with $summary }}<p class="summary">{{ . }}</p>{{ end }}
+{{ $page := .Page }}
+{{ if eq $page.Language.Lang "en" }}
+<div class="universal-wrapper">
+  <article class="en-portal-detail">
+    <header class="en-portal-page__head">
+      <div>
+        {{ with $page.CurrentSection }}<a class="en-portal-back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
+        <p class="en-portal-eyebrow">Research Field</p>
+        <h1>{{ $page.Title }}</h1>
+        <p class="en-portal-summary">Domain and method overview for this research area.</p>
+      </div>
     </header>
-    <div class="detail-layout">
-      <div class="detail-content">{{ $p.Content }}</div>
-      <aside class="detail-side">
-        <section class="panel"><h2>Overview</h2>{{ with $summary }}<p>{{ . }}</p>{{ end }}<a href="{{ "publication/" | relLangURL }}">Browse Publications</a></section>
-        {{ if gt (len $siblings) 1 }}<section class="panel"><h2>Other Fields</h2><div class="link-list">{{ range $item := $siblings }}{{ if ne $item.RelPermalink $p.RelPermalink }}<a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>{{ end }}{{ end }}</div></section>{{ end }}
+    <div class="en-portal-grid en-portal-grid--sidebar">
+      <div class="en-portal-stack">
+        <section class="en-portal-panel en-portal-panel--prose">
+          {{ $page.Content }}
+        </section>
+      </div>
+      <aside class="en-portal-stack">
+        <section class="en-portal-panel">
+          <h2>Overview</h2>
+          <p>{{ $page.Content | plainify | truncate 220 }}</p>
+        </section>
+        <section class="en-portal-panel">
+          <h2>Other Fields</h2>
+          <div class="en-portal-link-list">
+            {{ range first 6 (where site.RegularPages "Section" "field") }}
+              {{ if ne .RelPermalink $page.RelPermalink }}
+                <a class="en-portal-link-row" href="{{ .RelPermalink }}"><span>{{ .Title }}</span></a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </section>
       </aside>
     </div>
-  </section>
+  </article>
+</div>
 {{ else }}
   {{ partial "content/legacy/research_field_trendy_single_legacy.html" . }}
 {{ end }}
-</div>

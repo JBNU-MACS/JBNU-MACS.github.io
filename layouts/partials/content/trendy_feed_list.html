@@ -1,37 +1,48 @@
 {{- $page := .Page -}}
-{{- $kindLabel := .KindLabel | default "News" -}}
-{{- $kindClass := .KindClass | default "news" -}}
+{{- $kindLabel := .KindLabel | default "Record" -}}
 {{- if eq $page.Language.Lang "en" -}}
   {{- $items := $page.RegularPagesRecursive.ByDate.Reverse -}}
-  {{- $paginator := $page.Paginate $items 10 -}}
+  {{- $paginator := $page.Paginate $items 12 -}}
   <div class="universal-wrapper">
-    <section class="en-civic-archive">
-      <header class="page-head">
-        <p class="eyebrow">{{ $kindLabel }}</p>
-        <h1>{{ $page.Title }}</h1>
-        <p class="summary">{{ with $page.Content }}{{ . | plainify }}{{ else }}Browse recent {{ lower $kindLabel }} records from MACS Lab.{{ end }}</p>
+    <section class="en-portal-page">
+      <header class="en-portal-page__head">
+        <div>
+          <p class="en-portal-eyebrow">{{ $kindLabel }}</p>
+          <h1>{{ $page.Title }}</h1>
+          <p class="en-portal-summary">{{ with $page.Content }}{{ . | plainify }}{{ else }}Browse the {{ lower $kindLabel }} archive for MACS Lab.{{ end }}</p>
+        </div>
       </header>
-      <div class="archive-list">
-        {{ range $item := $paginator.Pages }}
-          {{ $link := $item.RelPermalink }}
-          {{ $target := "" }}
-          {{ if $item.Params.external_link }}{{ $link = $item.Params.external_link }}{{ $target = "target=\"_blank\" rel=\"noopener\"" }}{{ end }}
-          {{ $summary := "" }}
-          {{ if $item.Params.summary }}{{ $summary = $item.Params.summary | plainify }}{{ else if $item.Params.abstract }}{{ $summary = $item.Params.abstract | plainify }}{{ else if $item.Summary }}{{ $summary = $item.Summary | plainify }}{{ end }}
-          <article class="archive-item">
-            <div class="meta">{{ if eq $item.Type "event" }}{{ partial "functions/get_event_dates" $item }}{{ else }}{{ $item.Date.Format "2006.01.02" }}{{ end }}</div>
-            <div class="body">
-              <h2><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a></h2>
-              {{ with ($summary | truncate 220) }}<p>{{ . }}</p>{{ end }}
-            </div>
-            <a class="more" href="{{ $link }}" {{ $target | safeHTMLAttr }}>View</a>
-          </article>
-        {{ end }}
-      </div>
+
+      <section class="en-portal-panel en-portal-panel--flush">
+        <div class="en-portal-record-table">
+          {{ range $item := $paginator.Pages }}
+            {{ $link := $item.RelPermalink }}
+            {{ $external := false }}
+            {{ if $item.Params.external_link }}{{ $link = $item.Params.external_link }}{{ $external = true }}{{ end }}
+            {{ $summary := "" }}
+            {{ if $item.Params.summary }}{{ $summary = $item.Params.summary | plainify }}{{ else if $item.Params.abstract }}{{ $summary = $item.Params.abstract | plainify }}{{ else if $item.Summary }}{{ $summary = $item.Summary | plainify }}{{ end }}
+            <article class="en-portal-record-row">
+              <div class="en-portal-record-row__date">
+                {{ if eq $item.Type "event" }}{{ partial "functions/get_event_dates" $item }}{{ else }}{{ $item.Date.Format "2006.01.02" }}{{ end }}
+              </div>
+              <div class="en-portal-record-row__body">
+                <h2>
+                  <a href="{{ $link }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ $item.Title }}</a>
+                </h2>
+                {{ with ($summary | truncate 200) }}<p>{{ . }}</p>{{ end }}
+              </div>
+              <div class="en-portal-record-row__action">
+                <a href="{{ $link }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>Open</a>
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      </section>
+
       {{ if gt $paginator.TotalPages 1 }}
-        <nav class="pager" aria-label="Pagination">
+        <nav class="en-portal-pager" aria-label="Pagination">
           {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">Previous</a>{{ else }}<span class="disabled">Previous</span>{{ end }}
-          <span class="count">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+          <span>{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
           {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">Next</a>{{ else }}<span class="disabled">Next</span>{{ end }}
         </nav>
       {{ end }}

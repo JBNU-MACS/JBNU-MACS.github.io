@@ -1,17 +1,29 @@
 {{ define "main" }}
 <div class="universal-wrapper">
-  <section class="en-civic-page en-civic-page--section">
-    <header class="page-head">
-      <p class="eyebrow">Project Overview</p>
-      <h1>{{ .Title }}</h1>
-      <p class="summary">MACS Lab develops research-driven AI systems with an emphasis on deployable engineering, evaluation, and domain-specific problem solving.</p>
+  <section class="en-portal-page">
+    <header class="en-portal-page__head">
+      <div>
+        <p class="en-portal-eyebrow">Projects</p>
+        <h1>{{ .Title }}</h1>
+        <p class="en-portal-summary">Project records summarize ongoing or planned implementation and collaboration work connected to laboratory research.</p>
+      </div>
     </header>
-    <section class="panel">
-      <h2>Current Status</h2>
+    <section class="en-portal-panel en-portal-panel--flush">
       {{ if gt (len .RegularPages) 0 }}
-        <div class="simple-list">{{ range .RegularPages.ByDate.Reverse }}<a class="simple-item" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ .Summary | plainify | truncate 140 }}</span></a>{{ end }}</div>
+        <div class="en-portal-record-table">
+          {{ range .RegularPages.ByDate.Reverse }}
+            <article class="en-portal-record-row">
+              <div class="en-portal-record-row__date">{{ .Date.Format "2006.01.02" }}</div>
+              <div class="en-portal-record-row__body"><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ with (.Summary | plainify | truncate 180) }}<p>{{ . }}</p>{{ end }}</div>
+              <div class="en-portal-record-row__action"><a href="{{ .RelPermalink }}">Open</a></div>
+            </article>
+          {{ end }}
+        </div>
       {{ else }}
-        <div class="empty-state"><p>Project summaries will be published here as research outputs and implementation efforts are documented.</p><a href="{{ "publication/" | relLangURL }}">Browse Publications</a></div>
+        <div class="en-portal-empty-block">
+          <h2>No project records are currently listed.</h2>
+          <p>Research outputs are primarily documented through publication and news records at this time.</p>
+        </div>
       {{ end }}
     </section>
   </section>

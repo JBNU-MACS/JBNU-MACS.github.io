@@ -8490,3 +8490,665 @@ html[lang^="en"] .en-civic-publication-detail .publication-layout li {
     grid-template-columns: 1fr;
   }
 }
+
+/* English portal redesign: institutional, minimal, structured */
+html[lang^="en"] body,
+html[lang^="en"] body.home {
+  background: #f3f5f7 !important;
+  color: #17202a;
+}
+
+html[lang^="en"] .home-section {
+  padding: 1.2rem 0.75rem;
+}
+
+html[lang^="en"] .home-section .container,
+html[lang^="en"] .universal-wrapper {
+  max-width: 1180px;
+  width: calc(100vw - 2rem);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+html[lang^="en"] .universal-wrapper h1,
+html[lang^="en"] .en-portal-page h1,
+html[lang^="en"] .en-portal-detail h1,
+html[lang^="en"] .en-portal-profile h1 {
+  text-align: left;
+}
+
+html[lang^="en"] .en-portal-home,
+html[lang^="en"] .en-portal-page,
+html[lang^="en"] .en-portal-detail,
+html[lang^="en"] .en-portal-profile,
+html[lang^="en"] .en-portal-dashboard,
+html[lang^="en"] .en-portal-directory {
+  display: grid;
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-portal-home__masthead,
+html[lang^="en"] .en-portal-page__head,
+html[lang^="en"] .en-portal-grid--sidebar,
+html[lang^="en"] .en-portal-profile__head {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(280px, 0.9fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+html[lang^="en"] .en-portal-grid,
+html[lang^="en"] .en-portal-grid--three,
+html[lang^="en"] .en-portal-dashboard,
+html[lang^="en"] .en-portal-directory-grid,
+html[lang^="en"] .en-portal-people-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-portal-dashboard,
+html[lang^="en"] .en-portal-grid--three {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html[lang^="en"] .en-portal-directory-grid,
+html[lang^="en"] .en-portal-people-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html[lang^="en"] .en-portal-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-portal-panel,
+html[lang^="en"] .en-portal-year-nav,
+html[lang^="en"] .en-portal-anchor-nav {
+  background: #fff;
+  border: 1px solid #d6dde5;
+  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  box-shadow: none;
+}
+
+html[lang^="en"] .en-portal-panel--accent {
+  border-top: 4px solid #0b4f8a;
+}
+
+html[lang^="en"] .en-portal-panel--flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+html[lang^="en"] .en-portal-panel--prose {
+  line-height: 1.72;
+}
+
+html[lang^="en"] .en-portal-panel--prose h2,
+html[lang^="en"] .en-portal-panel--prose h3,
+html[lang^="en"] .en-portal-panel--prose h4 {
+  margin-top: 0;
+  color: #11233a;
+}
+
+html[lang^="en"] .en-portal-eyebrow,
+html[lang^="en"] .en-portal-kicker {
+  margin: 0 0 0.35rem;
+  color: #5d6b7a;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+html[lang^="en"] .en-portal-home h1,
+html[lang^="en"] .en-portal-page h1,
+html[lang^="en"] .en-portal-detail h1,
+html[lang^="en"] .en-portal-profile h1 {
+  margin: 0;
+  color: #11233a;
+  font-size: clamp(1.9rem, 2.8vw, 2.9rem);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+}
+
+html[lang^="en"] .en-portal-summary {
+  max-width: 72ch;
+  margin: 0.7rem 0 0;
+  color: #425466;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+html[lang^="en"] .en-portal-section-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e1e7ee;
+}
+
+html[lang^="en"] .en-portal-section-head h2,
+html[lang^="en"] .en-portal-panel h2,
+html[lang^="en"] .en-portal-panel h3 {
+  margin: 0;
+  color: #13283f;
+  line-height: 1.3;
+}
+
+html[lang^="en"] .en-portal-section-head h2 {
+  font-size: 1.2rem;
+}
+
+html[lang^="en"] .en-portal-actions,
+html[lang^="en"] .en-portal-inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+html[lang^="en"] .en-portal-actions {
+  margin-top: 1rem;
+}
+
+html[lang^="en"] .en-portal-actions a,
+html[lang^="en"] .en-portal-inline-actions a,
+html[lang^="en"] .en-portal-record-row__action a,
+html[lang^="en"] .en-portal-pager a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.6rem 0.95rem;
+  border: 1px solid #113d68;
+  border-radius: 8px;
+  background: #113d68;
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-portal-inline-actions a,
+html[lang^="en"] .en-portal-record-row__action a {
+  min-height: 38px;
+  padding: 0.48rem 0.82rem;
+  font-size: 0.92rem;
+}
+
+html[lang^="en"] .en-portal-actions a:hover,
+html[lang^="en"] .en-portal-inline-actions a:hover,
+html[lang^="en"] .en-portal-record-row__action a:hover,
+html[lang^="en"] .en-portal-pager a:hover {
+  background: #0c3154;
+  border-color: #0c3154;
+}
+
+html[lang^="en"] .en-portal-text-link,
+html[lang^="en"] .en-portal-section-head > a,
+html[lang^="en"] .en-portal-back-link {
+  color: #0b4f8a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-portal-back-link {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+}
+
+html[lang^="en"] .en-portal-definition-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+html[lang^="en"] .en-portal-definition-list > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 0.8rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e6ebf1;
+}
+
+html[lang^="en"] .en-portal-definition-list > div:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+html[lang^="en"] .en-portal-definition-list dt {
+  margin: 0;
+  color: #5c6a78;
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-portal-definition-list dd {
+  margin: 0;
+  color: #18222d;
+}
+
+html[lang^="en"] .en-portal-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+html[lang^="en"] .en-portal-stat-grid article {
+  border: 1px solid #e1e7ee;
+  border-radius: 8px;
+  padding: 0.8rem;
+  background: #f8fafb;
+}
+
+html[lang^="en"] .en-portal-stat-grid strong {
+  display: block;
+  color: #11233a;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+html[lang^="en"] .en-portal-stat-grid span,
+html[lang^="en"] .en-portal-muted {
+  color: #5d6b7a;
+  font-size: 0.92rem;
+}
+
+html[lang^="en"] .en-portal-record-list,
+html[lang^="en"] .en-portal-link-list,
+html[lang^="en"] .en-portal-publication-list {
+  display: grid;
+}
+
+html[lang^="en"] .en-portal-record,
+html[lang^="en"] .en-portal-link-row,
+html[lang^="en"] .en-portal-pub-row {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid #e5ebf1;
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-portal-record:first-child,
+html[lang^="en"] .en-portal-link-row:first-child,
+html[lang^="en"] .en-portal-pub-row:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+html[lang^="en"] .en-portal-record time,
+html[lang^="en"] .en-portal-link-row time,
+html[lang^="en"] .en-portal-pub-row span {
+  color: #5c6b7a;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-portal-record h3,
+html[lang^="en"] .en-portal-record p,
+html[lang^="en"] .en-portal-link-row span,
+html[lang^="en"] .en-portal-pub-row strong {
+  margin: 0;
+}
+
+html[lang^="en"] .en-portal-record p,
+html[lang^="en"] .en-portal-directory-card p,
+html[lang^="en"] .en-portal-panel p,
+html[lang^="en"] .en-portal-record-venue,
+html[lang^="en"] .en-portal-profile__org,
+html[lang^="en"] .en-portal-profile__alt,
+html[lang^="en"] .en-portal-profile__role,
+html[lang^="en"] .en-portal-person-card__org,
+html[lang^="en"] .en-portal-person-card__role,
+html[lang^="en"] .en-portal-person-card__contact {
+  color: #425466;
+  line-height: 1.6;
+}
+
+html[lang^="en"] .en-portal-record-table {
+  display: grid;
+}
+
+html[lang^="en"] .en-portal-record-row {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 110px;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem 1.15rem;
+  border-top: 1px solid #e5ebf1;
+  background: #fff;
+}
+
+html[lang^="en"] .en-portal-record-row:first-child {
+  border-top: 0;
+}
+
+html[lang^="en"] .en-portal-record-row__date {
+  color: #5c6b7a;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-portal-record-row__body h2,
+html[lang^="en"] .en-portal-record-row__body h3 {
+  font-size: 1.08rem;
+  margin-bottom: 0.3rem;
+}
+
+html[lang^="en"] .en-portal-record-row__body p,
+html[lang^="en"] .en-portal-record-authors,
+html[lang^="en"] .en-portal-record-venue {
+  margin: 0.2rem 0 0;
+}
+
+html[lang^="en"] .en-portal-record-row__action,
+html[lang^="en"] .en-portal-record-row__action--stacked {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+html[lang^="en"] .en-portal-directory-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid #d6dde5;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+html[lang^="en"] .en-portal-directory-card--large h2,
+html[lang^="en"] .en-portal-directory-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+html[lang^="en"] .en-portal-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid #cfd8e2;
+  background: #f7f9fb;
+  color: #113d68;
+  font-weight: 800;
+}
+
+html[lang^="en"] .en-portal-year-nav,
+html[lang^="en"] .en-portal-anchor-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+html[lang^="en"] .en-portal-year-nav a,
+html[lang^="en"] .en-portal-anchor-nav a {
+  text-decoration: none;
+  color: #0b4f8a;
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-portal-person-card {
+  border: 1px solid #d6dde5;
+  border-radius: 10px;
+  background: #fff;
+}
+
+html[lang^="en"] .en-portal-person-card__inner {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-portal-person-card__photo {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #d6dde5;
+  background: #eef2f6;
+}
+
+html[lang^="en"] .en-portal-person-card__photo--placeholder,
+html[lang^="en"] .en-portal-profile__photo--placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #113d68;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+html[lang^="en"] .en-portal-person-card__body h3 {
+  margin-bottom: 0.2rem;
+  font-size: 1.04rem;
+}
+
+html[lang^="en"] .en-portal-person-card__alt,
+html[lang^="en"] .en-portal-profile__alt {
+  margin: 0 0 0.25rem;
+  color: #5c6a78;
+  font-size: 0.92rem;
+}
+
+html[lang^="en"] .en-portal-profile__identity {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-portal-profile__photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #d6dde5;
+  background: #eef2f6;
+}
+
+html[lang^="en"] .en-portal-profile__role,
+html[lang^="en"] .en-portal-profile__org,
+html[lang^="en"] .en-portal-profile__contact {
+  margin: 0.25rem 0 0;
+}
+
+html[lang^="en"] .en-portal-timeline {
+  display: grid;
+  gap: 0.8rem;
+}
+
+html[lang^="en"] .en-portal-timeline__item {
+  padding-top: 0.8rem;
+  border-top: 1px solid #e5ebf1;
+}
+
+html[lang^="en"] .en-portal-timeline__item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+html[lang^="en"] .en-portal-timeline__item h3,
+html[lang^="en"] .en-portal-timeline__item p,
+html[lang^="en"] .en-portal-timeline__item span {
+  margin: 0;
+}
+
+html[lang^="en"] .en-portal-timeline__item span {
+  color: #5c6a78;
+  font-size: 0.92rem;
+}
+
+html[lang^="en"] .en-portal-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+html[lang^="en"] .en-portal-chip-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #d5dee7;
+  border-radius: 999px;
+  background: #f8fafb;
+  color: #18324d;
+  font-size: 0.92rem;
+}
+
+html[lang^="en"] .en-portal-author-line {
+  margin-top: 0.75rem;
+  color: #24384f;
+  line-height: 1.65;
+}
+
+html[lang^="en"] .en-portal-map-frame {
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #d6dde5;
+}
+
+html[lang^="en"] .en-portal-map-frame iframe {
+  display: block;
+  width: 100%;
+  min-height: 320px;
+  border: 0;
+}
+
+html[lang^="en"] .en-portal-figure {
+  margin: 0;
+}
+
+html[lang^="en"] .en-portal-figure img {
+  display: block;
+  width: 100%;
+  border: 1px solid #d6dde5;
+  border-radius: 8px;
+}
+
+html[lang^="en"] .en-portal-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+html[lang^="en"] .en-portal-pager .disabled {
+  color: #8a97a5;
+}
+
+html[lang^="en"] .en-portal-empty,
+html[lang^="en"] .en-portal-empty-block p {
+  color: #5c6a78;
+}
+
+html[lang^="en"] .en-portal-empty-block {
+  padding: 1.3rem;
+}
+
+html[lang^="en"] .en-portal-empty-block h2 {
+  margin-bottom: 0.4rem;
+}
+
+html[lang^="en"] .en-portal-bullet-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #425466;
+  line-height: 1.75;
+}
+
+html[lang^="en"] .en-portal-home__board,
+html[lang^="en"] .en-portal-action-strip {
+  margin-top: 0.1rem;
+}
+
+html[lang^="en"] .en-portal-action-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  html[lang^="en"] .en-portal-home__masthead,
+  html[lang^="en"] .en-portal-page__head,
+  html[lang^="en"] .en-portal-grid--sidebar,
+  html[lang^="en"] .en-portal-profile__head,
+  html[lang^="en"] .en-portal-dashboard,
+  html[lang^="en"] .en-portal-grid--three,
+  html[lang^="en"] .en-portal-directory-grid,
+  html[lang^="en"] .en-portal-people-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  html[lang^="en"] .home-section .container,
+  html[lang^="en"] .universal-wrapper {
+    width: calc(100vw - 1rem);
+  }
+
+  html[lang^="en"] .home-section {
+    padding: 0.7rem 0.25rem;
+  }
+
+  html[lang^="en"] .en-portal-panel,
+  html[lang^="en"] .en-portal-year-nav,
+  html[lang^="en"] .en-portal-anchor-nav {
+    padding: 0.9rem;
+    border-radius: 8px;
+  }
+
+  html[lang^="en"] .en-portal-home h1,
+  html[lang^="en"] .en-portal-page h1,
+  html[lang^="en"] .en-portal-detail h1,
+  html[lang^="en"] .en-portal-profile h1 {
+    font-size: 1.55rem;
+  }
+
+  html[lang^="en"] .en-portal-record,
+  html[lang^="en"] .en-portal-link-row,
+  html[lang^="en"] .en-portal-pub-row,
+  html[lang^="en"] .en-portal-record-row,
+  html[lang^="en"] .en-portal-person-card__inner,
+  html[lang^="en"] .en-portal-profile__identity,
+  html[lang^="en"] .en-portal-directory-card,
+  html[lang^="en"] .en-portal-definition-list > div,
+  html[lang^="en"] .en-portal-action-strip {
+    grid-template-columns: 1fr;
+  }
+
+  html[lang^="en"] .en-portal-record,
+  html[lang^="en"] .en-portal-link-row,
+  html[lang^="en"] .en-portal-pub-row,
+  html[lang^="en"] .en-portal-record-row {
+    gap: 0.5rem;
+  }
+
+  html[lang^="en"] .en-portal-record-row,
+  html[lang^="en"] .en-portal-record-row__action,
+  html[lang^="en"] .en-portal-record-row__action--stacked,
+  html[lang^="en"] .en-portal-pager {
+    justify-content: flex-start;
+  }
+
+  html[lang^="en"] .en-portal-person-card__photo,
+  html[lang^="en"] .en-portal-profile__photo {
+    width: 72px;
+    height: 72px;
+  }
+
+  html[lang^="en"] .en-portal-index {
+    width: 44px;
+    height: 44px;
+  }
+}

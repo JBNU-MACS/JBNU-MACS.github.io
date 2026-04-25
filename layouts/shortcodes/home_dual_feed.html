@@ -1,29 +1,64 @@
-{{ $notificationPages := first 5 ((where (where site.RegularPages "Section" "notification") "Params.home_hide" "ne" true).ByDate.Reverse) }}
-{{ $newsPages := first 5 ((where site.RegularPages "Section" "post").ByDate.Reverse) }}
-{{ $pubPages := first 5 ((where site.RegularPages "Section" "publication").ByDate.Reverse) }}
+{{ $notificationPages := first 4 ((where (where site.RegularPages "Section" "notification") "Params.home_hide" "ne" true).ByDate.Reverse) }}
+{{ $newsPages := first 4 ((where site.RegularPages "Section" "post").ByDate.Reverse) }}
+{{ $eventPages := first 4 ((where site.RegularPages "Section" "event").ByDate.Reverse) }}
+{{ $pubPages := first 4 ((where site.RegularPages "Section" "publication").ByDate.Reverse) }}
 {{ if eq .Page.Language.Lang "en" }}
-<section class="en-civic-streams">
-  <article class="stream-panel">
-    <div class="section-head"><h2>Notifications</h2><a href="{{ "notification/" | relLangURL }}">View All</a></div>
-    <div class="stream-list">
+<section class="en-portal-dashboard">
+  <article class="en-portal-panel">
+    <div class="en-portal-section-head">
+      <div><p class="en-portal-kicker">Notice Board</p><h2>Notifications</h2></div>
+      <a href="{{ "notification/" | relLangURL }}">All notifications</a>
+    </div>
+    <div class="en-portal-link-list">
       {{ range $notificationPages }}
-        <a class="stream-item" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ .Date.Format "2006.01.02" }}</span></a>
+        <a class="en-portal-link-row" href="{{ .RelPermalink }}"><span>{{ .Title }}</span><time>{{ .Date.Format "2006.01.02" }}</time></a>
+      {{ else }}
+        <p class="en-portal-empty">No notification records.</p>
       {{ end }}
     </div>
   </article>
-  <article class="stream-panel">
-    <div class="section-head"><h2>News</h2><a href="{{ "post/" | relLangURL }}">View All</a></div>
-    <div class="stream-list">
+
+  <article class="en-portal-panel">
+    <div class="en-portal-section-head">
+      <div><p class="en-portal-kicker">Laboratory Updates</p><h2>News</h2></div>
+      <a href="{{ "post/" | relLangURL }}">All news</a>
+    </div>
+    <div class="en-portal-link-list">
       {{ range $newsPages }}
-        <a class="stream-item" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ .Date.Format "2006.01.02" }}</span></a>
+        <a class="en-portal-link-row" href="{{ .RelPermalink }}"><span>{{ .Title }}</span><time>{{ .Date.Format "2006.01.02" }}</time></a>
+      {{ else }}
+        <p class="en-portal-empty">No news records.</p>
       {{ end }}
     </div>
   </article>
-  <article class="stream-panel">
-    <div class="section-head"><h2>Recent Publications</h2><a href="{{ "publication/" | relLangURL }}">View All</a></div>
-    <div class="stream-list">
+
+  <article class="en-portal-panel">
+    <div class="en-portal-section-head">
+      <div><p class="en-portal-kicker">Schedule</p><h2>Events</h2></div>
+      <a href="{{ "event/" | relLangURL }}">All events</a>
+    </div>
+    <div class="en-portal-link-list">
+      {{ range $eventPages }}
+        <a class="en-portal-link-row" href="{{ .RelPermalink }}"><span>{{ .Title }}</span><time>{{ partial "functions/get_event_dates" . }}</time></a>
+      {{ else }}
+        <p class="en-portal-empty">No event records.</p>
+      {{ end }}
+    </div>
+  </article>
+
+  <article class="en-portal-panel">
+    <div class="en-portal-section-head">
+      <div><p class="en-portal-kicker">Research Output</p><h2>Recent Publications</h2></div>
+      <a href="{{ "publication/" | relLangURL }}">All publications</a>
+    </div>
+    <div class="en-portal-publication-list">
       {{ range $pubPages }}
-        <a class="stream-item" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ .Date.Format "2006" }}</span></a>
+        <a class="en-portal-pub-row" href="{{ .RelPermalink }}">
+          <strong>{{ .Title }}</strong>
+          {{ with .Params.publication_short }}<span>{{ . }}</span>{{ end }}
+        </a>
+      {{ else }}
+        <p class="en-portal-empty">No publication records.</p>
       {{ end }}
     </div>
   </article>

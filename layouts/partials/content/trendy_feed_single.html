@@ -1,24 +1,49 @@
 {{ $p := .Page }}
-{{ $kindLabel := .KindLabel | default "News" }}
+{{ $kindLabel := .KindLabel | default "Record" }}
+{{ $hero := $p.Resources.GetMatch "featured*" }}
+{{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*cover*" }}{{ end }}
 {{ if eq $p.Language.Lang "en" }}
 <div class="universal-wrapper">
-  <article class="en-civic-detail">
-    <header class="page-head">
-      {{ with $p.CurrentSection }}<a class="back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
-      <p class="eyebrow">{{ $kindLabel }}</p>
-      <h1>{{ $p.Title }}</h1>
-      <div class="meta-line">
-        <span>{{ $p.Date.Format "2006.01.02" }}</span>
-        {{ with $p.Lastmod }}<span>Updated {{ .Format "2006.01.02" }}</span>{{ end }}
+  <article class="en-portal-detail">
+    <header class="en-portal-page__head">
+      <div>
+        {{ with $p.CurrentSection }}<a class="en-portal-back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
+        <p class="en-portal-eyebrow">{{ $kindLabel }}</p>
+        <h1>{{ $p.Title }}</h1>
+        {{ with ($p.Summary | plainify) }}{{ if ne . ($p.Title | plainify) }}<p class="en-portal-summary">{{ . }}</p>{{ end }}{{ end }}
       </div>
-      {{ with ($p.Summary | plainify) }}{{ if ne . ($p.Title | plainify) }}<p class="summary">{{ . }}</p>{{ end }}{{ end }}
     </header>
-    {{ $hero := $p.Resources.GetMatch "featured*" }}{{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*cover*" }}{{ end }}{{ if and $hero (ne $p.Type "publication") }}<figure class="detail-image"><img src="{{ $hero.RelPermalink }}" alt="{{ $p.Title }}"></figure>{{ end }}
-    <div class="detail-content">{{ $p.Content }}</div>
-    <footer class="detail-foot">
-      {{ with $p.PrevInSection }}<a href="{{ .RelPermalink }}">Previous: {{ .Title }}</a>{{ end }}
-      {{ with $p.NextInSection }}<a href="{{ .RelPermalink }}">Next: {{ .Title }}</a>{{ end }}
-    </footer>
+
+    <div class="en-portal-grid en-portal-grid--sidebar">
+      <div class="en-portal-stack">
+        <section class="en-portal-panel en-portal-panel--prose">
+          {{ $p.Content }}
+        </section>
+      </div>
+      <aside class="en-portal-stack">
+        <section class="en-portal-panel">
+          <h2>Record Information</h2>
+          <dl class="en-portal-definition-list">
+            <div><dt>Date</dt><dd>{{ if eq $p.Type "event" }}{{ partial "functions/get_event_dates" $p }}{{ else }}{{ $p.Date.Format "2006.01.02" }}{{ end }}</dd></div>
+            {{ with $p.Lastmod }}<div><dt>Updated</dt><dd>{{ .Format "2006.01.02" }}</dd></div>{{ end }}
+            <div><dt>Section</dt><dd>{{ $kindLabel }}</dd></div>
+          </dl>
+        </section>
+        {{ with $hero }}
+          <section class="en-portal-panel">
+            <h2>Image</h2>
+            <figure class="en-portal-figure"><img src="{{ .RelPermalink }}" alt="{{ $p.Title }}"></figure>
+          </section>
+        {{ end }}
+        <section class="en-portal-panel">
+          <h2>Navigation</h2>
+          <div class="en-portal-link-list">
+            {{ with $p.PrevInSection }}<a class="en-portal-link-row" href="{{ .RelPermalink }}"><span>Previous: {{ .Title }}</span></a>{{ end }}
+            {{ with $p.NextInSection }}<a class="en-portal-link-row" href="{{ .RelPermalink }}"><span>Next: {{ .Title }}</span></a>{{ end }}
+          </div>
+        </section>
+      </aside>
+    </div>
   </article>
 </div>
 {{ else }}

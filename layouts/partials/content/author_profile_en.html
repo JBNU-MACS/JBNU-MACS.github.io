@@ -1,46 +1,130 @@
 {{ $avatar := "" }}
 {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
 {{ $socialEmail := "" }}
-{{ range .Params.social }}{{ if and (eq .icon "envelope") (hasPrefix .link "mailto:") }}{{ $socialEmail = replace .link "mailto:" "" }}{{ end }}{{ end }}
+{{ range .Params.social }}
+  {{ if and (eq .icon "envelope") (hasPrefix .link "mailto:") }}{{ $socialEmail = replace .link "mailto:" "" }}{{ end }}
+{{ end }}
 {{ $email := .Params.email | default $socialEmail }}
 {{ $displayName := .Params.name_en | default .Title }}
 {{ $org := "" }}
 {{ with index .Params.organizations 0 }}{{ $org = .name }}{{ end }}
 {{ $social := .Params.social | default (slice) }}
-{{ $recent := first 6 (.Pages.ByDate.Reverse) }}
+{{ $normPattern := "[^\\pL\\pN]" }}
+{{ $currentNames := slice (.Title | default "") (.Params.name_ko | default "") (.Params.name_en | default "") }}
+{{ if .File }}{{ $currentNames = $currentNames | append (.File.ContentBaseName | default "") }}{{ end }}
+{{ $currentNorms := slice }}
+{{ range $n := $currentNames }}
+  {{ $nTrim := trim $n " \n\r\t" }}
+  {{ if ne $nTrim "" }}{{ $currentNorms = $currentNorms | append (lower (replaceRE $normPattern "" $nTrim)) }}{{ end }}
+{{ end }}
+{{ $matchedPubs := slice }}
+{{ range $pub := (where site.RegularPages "Section" "publication") }}
+  {{ $hit := false }}
+  {{ with $pub.Params.authors }}
+    {{ range $authorRaw := . }}
+      {{ if not $hit }}
+        {{ $resolved := partial "content/resolve_author_profile" (dict "name" $authorRaw) }}
+        {{ with index $resolved "page" }}
+          {{ $candNames := slice (.Title | default "") (.Params.name_ko | default "") (.Params.name_en | default "") }}
+          {{ if .File }}{{ $candNames = $candNames | append (.File.ContentBaseName | default "") }}{{ end }}
+          {{ range $cn := $candNames }}
+            {{ if not $hit }}
+              {{ $cnTrim := trim $cn " \n\r\t" }}
+              {{ if and (ne $cnTrim "") (in $currentNorms (lower (replaceRE $normPattern "" $cnTrim))) }}{{ $hit = true }}{{ end }}
+            {{ end }}
+          {{ end }}
+        {{ else }}
+          {{ $rawNorm := lower (replaceRE $normPattern "" $authorRaw) }}
+          {{ if in $currentNorms $rawNorm }}{{ $hit = true }}{{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ if $hit }}{{ $matchedPubs = $matchedPubs | append $pub }}{{ end }}
+{{ end }}
+{{ $recent := first 8 (sort $matchedPubs "Date" "desc") }}
 
 <div class="universal-wrapper">
-  <article class="en-civic-author">
-    <header class="author-head">
-      {{ if $avatar }}<img class="photo" src="{{ $avatar }}" alt="{{ $displayName }} portrait">{{ else }}<div class="photo placeholder">{{ slicestr ($displayName | plainify) 0 1 }}</div>{{ end }}
-      <div class="intro">
-        <p class="eyebrow">Profile</p>
-        <h1>{{ $displayName }}</h1>
-        {{ with .Params.name_ko }}<p class="alt-name">{{ . }}</p>{{ end }}
-        {{ with .Params.role }}<p class="role">{{ . }}</p>{{ end }}
-        {{ with $org }}<p class="org">{{ . }}</p>{{ end }}
-        {{ if ne $email "" }}<p class="contact"><a href="mailto:{{ $email }}">{{ $email }}</a></p>{{ end }}
-        {{ if gt (len $social) 0 }}
-          <div class="links">
-            {{ range $social }}<a href="{{ .link }}" {{ if not (hasPrefix .link "mailto:") }}target="_blank" rel="noopener"{{ end }}>{{ .icon | title }}</a>{{ end }}
-          </div>
+  <article class="en-portal-profile">
+    <header class="en-portal-profile__head">
+      <div class="en-portal-profile__identity">
+        {{ if $avatar }}
+          <img class="en-portal-profile__photo" src="{{ $avatar }}" alt="{{ $displayName }} portrait">
+        {{ else }}
+          <div class="en-portal-profile__photo en-portal-profile__photo--placeholder">{{ slicestr ($displayName | plainify) 0 1 }}</div>
         {{ end }}
+        <div>
+          <p class="en-portal-eyebrow">Member Profile</p>
+          <h1>{{ $displayName }}</h1>
+          {{ with .Params.name_ko }}<p class="en-portal-profile__alt">{{ . }}</p>{{ end }}
+          {{ with .Params.role }}<p class="en-portal-profile__role">{{ . }}</p>{{ end }}
+          {{ with $org }}<p class="en-portal-profile__org">{{ . }}</p>{{ end }}
+          {{ if ne $email "" }}<p class="en-portal-profile__contact"><a href="mailto:{{ $email }}">{{ $email }}</a></p>{{ end }}
+        </div>
       </div>
+      {{ if gt (len $social) 0 }}
+        <aside class="en-portal-inline-actions">
+          {{ range $social }}<a href="{{ .link }}"{{ if not (hasPrefix .link "mailto:") }} target="_blank" rel="noopener"{{ end }}>{{ .icon | title }}</a>{{ end }}
+        </aside>
+      {{ end }}
     </header>
 
-    <div class="author-layout">
-      <div class="main">
-        {{ if .Content }}<section class="panel"><h2>Profile</h2><div class="prose">{{ .Content }}</div></section>{{ end }}
+    <div class="en-portal-grid en-portal-grid--sidebar">
+      <div class="en-portal-stack">
+        {{ if .Content }}
+          <section class="en-portal-panel en-portal-panel--prose">
+            <h2>Profile</h2>
+            {{ .Content }}
+          </section>
+        {{ end }}
         {{ with .Params.career }}
-          <section class="panel"><h2>Career</h2><div class="stack">{{ range . }}<article class="stack-item"><h3>{{ .role }}</h3><p>{{ .institution }}</p><small>{{ .period }}</small></article>{{ end }}</div></section>
+          <section class="en-portal-panel">
+            <h2>Career</h2>
+            <div class="en-portal-timeline">
+              {{ range . }}
+                <article class="en-portal-timeline__item">
+                  <h3>{{ .role }}</h3>
+                  <p>{{ .institution }}</p>
+                  <span>{{ .period }}</span>
+                </article>
+              {{ end }}
+            </div>
+          </section>
         {{ end }}
         {{ if gt (len $recent) 0 }}
-          <section class="panel"><h2>Selected Recent Work</h2><div class="work-list">{{ range $recent }}<a class="work-item" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ if eq .Type "publication" }}{{ .Date.Format "2006" }}{{ else }}{{ .Date.Format "2006.01.02" }}{{ end }}</span></a>{{ end }}</div></section>
+          <section class="en-portal-panel">
+            <h2>Selected Publications</h2>
+            <div class="en-portal-link-list">
+              {{ range $recent }}
+                <a class="en-portal-link-row" href="{{ .RelPermalink }}"><span>{{ .Title }}</span><time>{{ .Date.Format "2006" }}</time></a>
+              {{ end }}
+            </div>
+          </section>
         {{ end }}
       </div>
-      <aside class="side">
-        {{ with .Params.education.courses }}<section class="panel"><h2>Education</h2><div class="stack">{{ range . }}<article class="stack-item"><h3>{{ .course | default .degree }}</h3><p>{{ .institution }}</p><small>{{ .year }}</small></article>{{ end }}</div></section>{{ end }}
-        {{ if .Params.interests }}<section class="panel"><h2>Research Interests</h2><div class="chip-list">{{ range .Params.interests }}<span>{{ . }}</span>{{ end }}</div></section>{{ end }}
+      <aside class="en-portal-stack">
+        {{ with .Params.education.courses }}
+          <section class="en-portal-panel">
+            <h2>Education</h2>
+            <div class="en-portal-timeline">
+              {{ range . }}
+                <article class="en-portal-timeline__item">
+                  <h3>{{ .course | default .degree }}</h3>
+                  <p>{{ .institution }}</p>
+                  <span>{{ .year }}</span>
+                </article>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+        {{ if .Params.interests }}
+          <section class="en-portal-panel">
+            <h2>Research Interests</h2>
+            <div class="en-portal-chip-list">
+              {{ range .Params.interests }}<span>{{ . }}</span>{{ end }}
+            </div>
+          </section>
+        {{ end }}
       </aside>
     </div>
   </article>

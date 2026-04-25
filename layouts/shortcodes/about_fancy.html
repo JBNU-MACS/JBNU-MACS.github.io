@@ -1,36 +1,60 @@
 {{ if eq .Page.Language.Lang "en" }}
-<section class="en-civic-page en-civic-page--about">
-  <header class="page-head">
-    <p class="eyebrow">About The Laboratory</p>
-    <h1>Medical AI &amp; Computational Science</h1>
-    <p class="summary">MACS Lab studies domain-oriented AI systems that connect medical imaging, multimodal learning, statistical modeling, and deployable engineering.</p>
+<section class="en-portal-page">
+  <header class="en-portal-page__head">
+    <div>
+      <p class="en-portal-eyebrow">About the Laboratory</p>
+      <h1>Research and Operating Principles</h1>
+      <p class="en-portal-summary">MACS Lab pursues applied AI research grounded in rigorous evaluation, domain knowledge, and implementation. The English page is structured as a concise institutional overview rather than a promotional landing page.</p>
+    </div>
+    <aside class="en-portal-panel en-portal-panel--accent">
+      <h2>Overview</h2>
+      <dl class="en-portal-definition-list">
+        <div><dt>Location</dt><dd>Jeonju, Republic of Korea</dd></div>
+        <div><dt>Institution</dt><dd>Jeonbuk National University</dd></div>
+        <div><dt>Core Scope</dt><dd>Medical AI, multimodal learning, computational science</dd></div>
+      </dl>
+    </aside>
   </header>
 
-  <div class="fact-grid">
-    <article class="fact-card">
-      <h2>Research Domains</h2>
-      <ul>
-        <li>Medical AI and Medical Imaging</li>
-        <li>Vision-Language and Multimodal Intelligence</li>
-        <li>Computational Science and Applied Engineering</li>
-      </ul>
-    </article>
-    <article class="fact-card">
-      <h2>Core Methods</h2>
-      <ul>
-        <li>Domain Adaptation and Test-Time Adaptation</li>
-        <li>Federated Learning and Representation Learning</li>
-        <li>Optimization, Statistics, and Model Personalization</li>
-      </ul>
-    </article>
-    <article class="fact-card">
-      <h2>Operating Direction</h2>
-      <ul>
-        <li>Balanced execution of theory, implementation, and evaluation</li>
-        <li>Research connected to usable systems and software</li>
-        <li>International publication and collaboration oriented workflow</li>
-      </ul>
-    </article>
+  <div class="en-portal-grid en-portal-grid--sidebar">
+    <div class="en-portal-stack">
+      <section class="en-portal-panel">
+        <h2>Mission</h2>
+        <p>We develop AI methods and systems that are technically rigorous, experimentally validated, and practically relevant to medical, scientific, and industrial problem settings.</p>
+      </section>
+      <section class="en-portal-panel">
+        <h2>Research Agenda</h2>
+        <ul class="en-portal-bullet-list">
+          <li>Medical AI, image analysis, and clinical decision support</li>
+          <li>Vision-language and multimodal learning</li>
+          <li>Optimization, adaptation, personalization, and representation learning</li>
+          <li>Deployable engineering workflows connected to research outputs</li>
+        </ul>
+      </section>
+      <section class="en-portal-panel">
+        <h2>Operating Model</h2>
+        <ul class="en-portal-bullet-list">
+          <li>Research linked to implementation and reproducible evaluation</li>
+          <li>Paper reading, code review, and collaborative experimentation</li>
+          <li>Publication-oriented work with attention to software quality</li>
+        </ul>
+      </section>
+    </div>
+    <aside class="en-portal-stack">
+      <section class="en-portal-panel">
+        <h2>Collaboration</h2>
+        <p>The laboratory welcomes collaboration in academic research, industry-linked development, and student research training.</p>
+        <a class="en-portal-text-link" href="{{ "contact/" | relLangURL }}">Go to contact information</a>
+      </section>
+      <section class="en-portal-panel">
+        <h2>Related Pages</h2>
+        <div class="en-portal-link-list">
+          <a class="en-portal-link-row" href="{{ "field/" | relLangURL }}"><span>Research Fields</span></a>
+          <a class="en-portal-link-row" href="{{ "publication/" | relLangURL }}"><span>Publications</span></a>
+          <a class="en-portal-link-row" href="{{ "people/" | relLangURL }}"><span>People</span></a>
+        </div>
+      </section>
+    </aside>
   </div>
 </section>
 {{ else }}

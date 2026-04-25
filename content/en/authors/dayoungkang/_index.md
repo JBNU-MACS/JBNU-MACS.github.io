@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Dayoung Kang
 
-# Full Name (for SEO)
+name_ko: "강다영"
+name_en: "Dayoung Kang"
 first_name: Student
 last_name: 1
 

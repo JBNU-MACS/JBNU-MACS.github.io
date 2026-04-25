@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Sehyun Park
 
-# Full Name (for SEO)
+name_ko: "박세현"
+name_en: "Sehyun Park"
 first_name: Student
 last_name: 1
 

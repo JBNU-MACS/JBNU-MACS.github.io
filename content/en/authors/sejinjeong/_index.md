@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Sejin Jeong
 
-# Full Name (for SEO)
+name_ko: "정세진"
+name_en: "Sejin Jeong"
 first_name: Student
 last_name: 1
 

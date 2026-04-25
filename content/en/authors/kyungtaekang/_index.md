@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Kyungtae Kang
 
-# Full Name (for SEO)
+name_ko: "강경태"
+name_en: "Kyungtae Kang"
 first_name: Student
 last_name: 1
 

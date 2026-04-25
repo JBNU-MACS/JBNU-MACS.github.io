@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Changon Park
 
-# Full Name (for SEO)
+name_ko: "박찬곤"
+name_en: "Changon Park"
 first_name: Student
 last_name: 1
 

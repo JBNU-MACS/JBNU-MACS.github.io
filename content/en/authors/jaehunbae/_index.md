@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Jaehun Bae
 
-# Full Name (for SEO)
+name_ko: "배재훈"
+name_en: "Jaehun Bae"
 first_name: Student
 last_name: 1
 

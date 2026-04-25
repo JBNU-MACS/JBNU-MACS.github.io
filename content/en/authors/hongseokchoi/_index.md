@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Hongseok Choi
 
-# Full Name (for SEO)
+name_ko: "최홍석"
+name_en: "Hongseok Choi"
 first_name: Student
 last_name: 1
 

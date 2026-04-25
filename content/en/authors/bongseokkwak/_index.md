@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Bongseok Kwak
 
-# Full Name (for SEO)
+name_ko: "곽봉석"
+name_en: "Bongseok Kwak"
 first_name: Student
 last_name: 1
 

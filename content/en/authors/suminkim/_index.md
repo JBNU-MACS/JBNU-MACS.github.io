@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Sumin Kim
 
-# Full Name (for SEO)
+name_ko: "김수민"
+name_en: "Sumin Kim"
 first_name: Student
 last_name: 1
 

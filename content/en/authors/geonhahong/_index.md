@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Geonha Hong
 
-# Full Name (for SEO)
+name_ko: "홍건하"
+name_en: "Geonha Hong"
 first_name: Student
 last_name: 1
 

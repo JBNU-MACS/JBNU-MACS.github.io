@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Jinsun Lee
 
-# Full Name (for SEO)
+name_ko: "이진선"
+name_en: "Jinsun Lee"
 first_name: Student
 last_name: 1
 

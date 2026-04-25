@@ -1,6 +1,8 @@
 ---
 # Display name
-title: Alice Wu 吳恩達
+title: Alice Wu
+
+name_en: "Alice Wu"
 
 # Full name (for SEO)
 first_name: Alice

@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Sanga An
 
-# Full Name (for SEO)
+name_ko: "안상아"
+name_en: "Sanga An"
 first_name: Student
 last_name: 1
 

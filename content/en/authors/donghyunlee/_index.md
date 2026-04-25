@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Donghyun Lee
 
-# Full Name (for SEO)
+name_ko: "이동현"
+name_en: "Donghyun Lee"
 first_name: Student
 last_name: 1
 

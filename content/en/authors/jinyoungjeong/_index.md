@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Jinyoung Jeong
 
-# Full Name (for SEO)
+name_ko: "정진영"
+name_en: "Jinyoung Jeong"
 first_name: Student
 last_name: 1
 

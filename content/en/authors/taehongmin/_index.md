@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Taehong Min
 
-# Full Name (for SEO)
+name_ko: "민태홍"
+name_en: "Taehong Min"
 first_name: Student
 last_name: 1
 

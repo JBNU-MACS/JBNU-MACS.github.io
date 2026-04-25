@@ -1,8 +1,9 @@
 ---
 # Display name
-title: 
+title: Sola Kim
 
-# Full Name (for SEO)
+name_ko: "김솔아"
+name_en: "Sola Kim"
 first_name: Student
 last_name: 1
 

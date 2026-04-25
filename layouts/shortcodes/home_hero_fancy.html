@@ -2,6 +2,78 @@
 {{ $total := add 4 (len $notices) }}
 {{ $hasNotices := gt (len $notices) 0 }}
 
+{{ if eq .Page.Language.Lang "en" }}
+<section class="en-gov-home">
+  <div class="en-gov-home-hero">
+    <div class="en-gov-home-copy">
+      <p class="eyebrow">Jeonbuk National University</p>
+      <h1>Medical AI &amp; Computational Science Laboratory</h1>
+      <p class="summary">MACS Lab conducts research in medical AI, multimodal intelligence, computational science, and applied AI engineering with a focus on practical academic impact.</p>
+      <div class="actions">
+        <a href="{{ "field/" | relLangURL }}" class="primary">Research Fields</a>
+        <a href="{{ "people/" | relLangURL }}" class="secondary">People</a>
+        <a href="{{ "contact/" | relLangURL }}" class="secondary">Contact</a>
+      </div>
+      <dl class="facts">
+        <div>
+          <dt>Focus</dt>
+          <dd>Medical AI, Multimodal AI, Applied Systems</dd>
+        </div>
+        <div>
+          <dt>Affiliation</dt>
+          <dd>Jeonbuk National University</dd>
+        </div>
+        <div>
+          <dt>Open To</dt>
+          <dd>Research collaboration and student applications</dd>
+        </div>
+      </dl>
+    </div>
+
+    <aside class="en-gov-home-panel">
+      <div class="panel-head">
+        <h2>Latest Notices</h2>
+        <a href="{{ "notification/" | relLangURL }}">View All</a>
+      </div>
+      <div class="panel-list">
+        {{ if $hasNotices }}
+          {{ range first 5 $notices }}
+            <article class="panel-item">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <p>{{ .Summary | plainify | truncate 90 }}</p>
+            </article>
+          {{ end }}
+        {{ else }}
+          <article class="panel-item empty">
+            <h3>No current notices</h3>
+            <p>Please check the notifications page for future updates.</p>
+          </article>
+        {{ end }}
+      </div>
+    </aside>
+  </div>
+
+  <div class="en-gov-home-links">
+    <a class="link-card" href="{{ "publication/" | relLangURL }}">
+      <strong>Publications</strong>
+      <span>Recent journals, conference papers, and ongoing research output.</span>
+    </a>
+    <a class="link-card" href="{{ "post/" | relLangURL }}">
+      <strong>News</strong>
+      <span>Laboratory updates, awards, and participation in academic events.</span>
+    </a>
+    <a class="link-card" href="{{ "event/" | relLangURL }}">
+      <strong>Events</strong>
+      <span>Conference activities, presentations, and external engagement records.</span>
+    </a>
+    <a class="link-card" href="{{ "notification/" | relLangURL }}">
+      <strong>Open Positions</strong>
+      <span>Recruitment information for undergraduate, master's, and doctoral applicants.</span>
+    </a>
+  </div>
+</section>
+{{ else }}
 <section class="macs-home-hero" id="macs-home-hero">
   <div class="macs-home-hero-track" aria-live="polite">
     {{ range $idx, $notice := $notices }}
@@ -170,3 +242,4 @@
     start();
   })();
 </script>
+{{ end }}

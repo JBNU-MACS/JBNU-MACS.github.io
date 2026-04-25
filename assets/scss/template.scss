@@ -5928,3 +5928,406 @@ html[lang^="en"] .macs-feed-list-pager span {
     gap: 0.75rem;
   }
 }
+
+/* English pages: institutional portal layout */
+html[lang^="en"] .en-gov-home,
+html[lang^="en"] .en-gov-research,
+html[lang^="en"] .en-gov-board-grid,
+html[lang^="en"] .en-gov-about,
+html[lang^="en"] .en-gov-contact {
+  color: var(--en-text);
+}
+
+html[lang^="en"] .en-gov-home-hero,
+html[lang^="en"] .en-gov-research,
+html[lang^="en"] .en-gov-about,
+html[lang^="en"] .en-gov-contact,
+html[lang^="en"] .en-gov-board-grid .board {
+  border: 1px solid #c9d4e0;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: none;
+}
+
+html[lang^="en"] .en-gov-home-hero,
+html[lang^="en"] .en-gov-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr);
+  gap: 1.25rem;
+  padding: 1.35rem;
+}
+
+html[lang^="en"] .en-gov-home-copy h1,
+html[lang^="en"] .en-gov-about h1,
+html[lang^="en"] .en-gov-contact h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.14;
+  color: #10233a;
+}
+
+html[lang^="en"] .en-gov-home .eyebrow,
+html[lang^="en"] .en-gov-research .eyebrow,
+html[lang^="en"] .en-gov-about .eyebrow,
+html[lang^="en"] .en-gov-contact .eyebrow {
+  display: inline-block;
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid #1f4f82;
+  color: #1f4f82;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+html[lang^="en"] .en-gov-home .summary,
+html[lang^="en"] .en-gov-about .about-intro p,
+html[lang^="en"] .en-gov-contact .contact-head p,
+html[lang^="en"] .en-gov-research .section-head p {
+  margin: 0.85rem 0 0;
+  max-width: 62ch;
+  color: #51667e;
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+html[lang^="en"] .en-gov-home .actions,
+html[lang^="en"] .en-gov-about .about-head,
+html[lang^="en"] .en-gov-contact .map-head,
+html[lang^="en"] .en-gov-board-grid .board-head,
+html[lang^="en"] .en-gov-home .panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+html[lang^="en"] .en-gov-home .actions {
+  justify-content: flex-start;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+html[lang^="en"] .en-gov-home .actions a,
+html[lang^="en"] .en-gov-about .about-link,
+html[lang^="en"] .en-gov-contact .contact-card a,
+html[lang^="en"] .en-gov-contact .map-head a,
+html[lang^="en"] .en-gov-board-grid .board-head a,
+html[lang^="en"] .en-gov-home .panel-head a,
+html[lang^="en"] .en-gov-home-links .link-card {
+  color: #1a4a7d;
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-gov-home .actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 0.95rem;
+  border: 1px solid #1a4a7d;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-gov-home .actions a.primary {
+  background: #1a4a7d;
+  color: #fff;
+}
+
+html[lang^="en"] .en-gov-home .actions a.secondary {
+  background: #fff;
+}
+
+html[lang^="en"] .en-gov-home .facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0 0;
+}
+
+html[lang^="en"] .en-gov-home .facts div,
+html[lang^="en"] .en-gov-home-panel,
+html[lang^="en"] .en-gov-home-links .link-card,
+html[lang^="en"] .en-gov-research .topic-card,
+html[lang^="en"] .en-gov-about .about-card,
+html[lang^="en"] .en-gov-contact .contact-card,
+html[lang^="en"] .en-gov-board-grid .board-item {
+  border: 1px solid #d4dde8;
+  border-radius: 4px;
+  background: #fff;
+}
+
+html[lang^="en"] .en-gov-home .facts div {
+  padding: 0.85rem;
+}
+
+html[lang^="en"] .en-gov-home .facts dt {
+  margin: 0 0 0.35rem;
+  color: #5b6e84;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+html[lang^="en"] .en-gov-home .facts dd {
+  margin: 0;
+  color: #13263e;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+html[lang^="en"] .en-gov-home-panel {
+  padding: 1rem;
+  background: #f9fbfd;
+}
+
+html[lang^="en"] .en-gov-home .panel-head,
+html[lang^="en"] .en-gov-board-grid .board-head,
+html[lang^="en"] .en-gov-contact .map-head,
+html[lang^="en"] .en-gov-about .about-head {
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid #d6dee7;
+}
+
+html[lang^="en"] .en-gov-home .panel-head h2,
+html[lang^="en"] .en-gov-board-grid .board-head h2,
+html[lang^="en"] .en-gov-contact .map-head h2,
+html[lang^="en"] .en-gov-research .section-head h2,
+html[lang^="en"] .en-gov-about .about-card h3 {
+  margin: 0;
+  color: #10233a;
+}
+
+html[lang^="en"] .en-gov-home .panel-list,
+html[lang^="en"] .en-gov-board-grid .board-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+html[lang^="en"] .en-gov-home .panel-item {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #e2e8ef;
+}
+
+html[lang^="en"] .en-gov-home .panel-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+html[lang^="en"] .en-gov-home .panel-item time,
+html[lang^="en"] .en-gov-board-grid .board-item span {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #617487;
+  font-size: 0.74rem;
+}
+
+html[lang^="en"] .en-gov-home .panel-item h3,
+html[lang^="en"] .en-gov-board-grid .board-item strong {
+  margin: 0;
+  color: #17375d;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+html[lang^="en"] .en-gov-home .panel-item p {
+  margin: 0.35rem 0 0;
+  color: #5b6e84;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+html[lang^="en"] .en-gov-home-links,
+html[lang^="en"] .en-gov-research .topic-grid,
+html[lang^="en"] .en-gov-about .about-grid,
+html[lang^="en"] .en-gov-contact .contact-grid,
+html[lang^="en"] .en-gov-board-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-gov-home-links,
+html[lang^="en"] .en-gov-research .topic-grid,
+html[lang^="en"] .en-gov-about .about-grid,
+html[lang^="en"] .en-gov-board-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+html[lang^="en"] .en-gov-home-links {
+  margin-top: 1rem;
+}
+
+html[lang^="en"] .en-gov-home-links .link-card,
+html[lang^="en"] .en-gov-research .topic-card,
+html[lang^="en"] .en-gov-about .about-card,
+html[lang^="en"] .en-gov-contact .contact-card,
+html[lang^="en"] .en-gov-board-grid .board,
+html[lang^="en"] .en-gov-board-grid .board-item {
+  padding: 1rem;
+}
+
+html[lang^="en"] .en-gov-home-links .link-card strong,
+html[lang^="en"] .en-gov-research .topic-card h3,
+html[lang^="en"] .en-gov-contact .contact-card h3,
+html[lang^="en"] .en-gov-board-grid .board-head h2 {
+  display: block;
+  margin: 0 0 0.45rem;
+  font-size: 0.95rem;
+  color: #10233a;
+}
+
+html[lang^="en"] .en-gov-home-links .link-card span,
+html[lang^="en"] .en-gov-research .topic-card p,
+html[lang^="en"] .en-gov-contact .contact-card small,
+html[lang^="en"] .en-gov-about .about-card li {
+  color: #5a6e84;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+html[lang^="en"] .en-gov-research,
+html[lang^="en"] .en-gov-about {
+  padding: 1.3rem;
+}
+
+html[lang^="en"] .en-gov-research .section-head,
+html[lang^="en"] .en-gov-contact .contact-head {
+  margin-bottom: 1rem;
+}
+
+html[lang^="en"] .en-gov-about .about-card ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+html[lang^="en"] .en-gov-about .about-card li + li {
+  margin-top: 0.4rem;
+}
+
+html[lang^="en"] .en-gov-contact .contact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html[lang^="en"] .en-gov-contact .map-frame {
+  border: 1px solid #d4dde8;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+html[lang^="en"] .en-gov-contact .map-frame iframe {
+  width: 100%;
+  min-height: 360px;
+  border: 0;
+}
+
+html[lang^="en"] .en-gov-board-grid .board-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-gov-board-grid .board-item:hover,
+html[lang^="en"] .en-gov-home-links .link-card:hover {
+  border-color: #b3c3d3;
+  background: #f9fbfd;
+}
+
+html[lang^="en"] .macs-people-fancy,
+html[lang^="en"] .macs-author-fancy,
+html[lang^="en"] .macs-feed-list,
+html[lang^="en"] .macs-feed-single,
+html[lang^="en"] .macs-pub-single,
+html[lang^="en"] .macs-field-hero,
+html[lang^="en"] .macs-field-single-hero,
+html[lang^="en"] .field-single-prose {
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+html[lang^="en"] .macs-people-fancy-head,
+html[lang^="en"] .macs-feed-list-head,
+html[lang^="en"] .macs-feed-single-hero,
+html[lang^="en"] .macs-pub-hero,
+html[lang^="en"] .macs-author-hero,
+html[lang^="en"] .macs-field-hero,
+html[lang^="en"] .macs-field-single-hero {
+  border-bottom-width: 1px;
+}
+
+html[lang^="en"] .macs-feed-list-card,
+html[lang^="en"] .macs-pub-side-card,
+html[lang^="en"] .macs-pub-block,
+html[lang^="en"] .macs-author-block,
+html[lang^="en"] .macs-people-card-inner,
+html[lang^="en"] .macs-feed-single-content,
+html[lang^="en"] .macs-field-card {
+  border-radius: 4px;
+}
+
+html[lang^="en"] .macs-people-tabs button,
+html[lang^="en"] .macs-people-quick-nav button,
+html[lang^="en"] .macs-home-hero-btn,
+html[lang^="en"] .cta-group .btn {
+  border-radius: 4px;
+}
+
+html[lang^="en"] .macs-people-section {
+  background: #fff;
+}
+
+html[lang^="en"] .macs-people-section::before {
+  height: 2px;
+}
+
+html[lang^="en"] .macs-people-card-inner:hover,
+html[lang^="en"] .macs-feed-list-card:hover,
+html[lang^="en"] .macs-field-card:hover {
+  transform: none;
+}
+
+@media (max-width: 991px) {
+  html[lang^="en"] .en-gov-home-hero,
+  html[lang^="en"] .en-gov-contact,
+  html[lang^="en"] .en-gov-home-links,
+  html[lang^="en"] .en-gov-research .topic-grid,
+  html[lang^="en"] .en-gov-about .about-grid,
+  html[lang^="en"] .en-gov-board-grid {
+    grid-template-columns: 1fr;
+  }
+
+  html[lang^="en"] .en-gov-home .facts,
+  html[lang^="en"] .en-gov-contact .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  html[lang^="en"] .en-gov-home-hero,
+  html[lang^="en"] .en-gov-research,
+  html[lang^="en"] .en-gov-about,
+  html[lang^="en"] .en-gov-contact,
+  html[lang^="en"] .en-gov-board-grid .board {
+    padding: 0.9rem;
+  }
+
+  html[lang^="en"] .en-gov-home-copy h1,
+  html[lang^="en"] .en-gov-about h1,
+  html[lang^="en"] .en-gov-contact h1 {
+    font-size: 1.5rem;
+  }
+
+  html[lang^="en"] .en-gov-home .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  html[lang^="en"] .en-gov-home .actions a {
+    width: 100%;
+  }
+}

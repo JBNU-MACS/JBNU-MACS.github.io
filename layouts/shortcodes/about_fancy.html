@@ -1,3 +1,45 @@
+{{ if eq .Page.Language.Lang "en" }}
+<section class="en-gov-about">
+  <header class="about-head">
+    <div>
+      <p class="eyebrow">About The Laboratory</p>
+      <h1>Medical AI &amp; Computational Science</h1>
+    </div>
+    <a href="{{ "contact/" | relLangURL }}" class="about-link">Contact The Lab</a>
+  </header>
+
+  <div class="about-intro">
+    <p>MACS Lab pursues research that connects medical AI, multimodal intelligence, computational science, and applied engineering to solve real-world problems with rigorous academic methods.</p>
+  </div>
+
+  <div class="about-grid">
+    <article class="about-card">
+      <h3>Research Domains</h3>
+      <ul>
+        <li>Medical AI and Medical Imaging</li>
+        <li>Vision-Language and Multimodal Intelligence</li>
+        <li>Aerospace, Contents AI, and Applied Systems</li>
+      </ul>
+    </article>
+    <article class="about-card">
+      <h3>Core Methods</h3>
+      <ul>
+        <li>Domain Adaptation and Test-time Adaptation</li>
+        <li>Federated Learning and Representation Learning</li>
+        <li>Optimization and Statistical Modeling</li>
+      </ul>
+    </article>
+    <article class="about-card">
+      <h3>Operational Direction</h3>
+      <ul>
+        <li>Balanced execution of research, implementation, and evaluation</li>
+        <li>Practical system development beyond paper-level results</li>
+        <li>Collaboration oriented toward international publications</li>
+      </ul>
+    </article>
+  </div>
+</section>
+{{ else }}
 <section class="macs-about-fancy">
   <div class="macs-about-hero">
     <div class="macs-about-hero-content">
@@ -41,3 +83,4 @@
     </article>
   </div>
 </section>
+{{ end }}

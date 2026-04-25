@@ -8,6 +8,54 @@
 {{ $pubPages := where site.RegularPages "Section" "publication" }}
 {{ $pubPages = first 4 ($pubPages.ByDate.Reverse) }}
 
+{{ if eq .Page.Language.Lang "en" }}
+<section class="en-gov-board-grid">
+  <article class="board">
+    <div class="board-head">
+      <h2>Notifications</h2>
+      <a href="{{ "notification/" | relLangURL }}">More</a>
+    </div>
+    <div class="board-list">
+      {{ range $notificationPages }}
+        <a class="board-item" href="{{ .RelPermalink }}">
+          <strong>{{ .Title }}</strong>
+          <span>{{ .Date.Format "2006.01.02" }}</span>
+        </a>
+      {{ end }}
+    </div>
+  </article>
+
+  <article class="board">
+    <div class="board-head">
+      <h2>News</h2>
+      <a href="{{ "post/" | relLangURL }}">More</a>
+    </div>
+    <div class="board-list">
+      {{ range $newsPages }}
+        <a class="board-item" href="{{ .RelPermalink }}">
+          <strong>{{ .Title }}</strong>
+          <span>{{ .Date.Format "2006.01.02" }}</span>
+        </a>
+      {{ end }}
+    </div>
+  </article>
+
+  <article class="board">
+    <div class="board-head">
+      <h2>Recent Publications</h2>
+      <a href="{{ "publication/" | relLangURL }}">More</a>
+    </div>
+    <div class="board-list">
+      {{ range $pubPages }}
+        <a class="board-item" href="{{ .RelPermalink }}">
+          <strong>{{ .Title }}</strong>
+          <span>{{ .Date.Format "2006" }}</span>
+        </a>
+      {{ end }}
+    </div>
+  </article>
+</section>
+{{ else }}
 <div class="home-dual-feed">
   <div class="home-dual-feed-col">
     <h2 class="home-dual-feed-title">
@@ -45,3 +93,4 @@
     </div>
   </div>
 </div>
+{{ end }}

@@ -56,7 +56,7 @@ main:
     url: post
     weight: 620
   - parent: Inform
-    name: Event
+    name: Events
     url: event
     weight: 630
 

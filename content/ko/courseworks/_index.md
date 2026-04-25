@@ -1,5 +1,5 @@
 ---
-title: Corseworks
+title: Courseworks
 
 # Listing view
 view: citation

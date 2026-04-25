@@ -4,7 +4,8 @@
     {{ $all = $all | append . }}
   {{ end }}
 {{ end }}
-{{ $graduates := sort (where $all "Params.user_groups" "intersect" (slice "M.S. Student")) "Title" }}
+{{ $professors := sort (where $all "Params.user_groups" "intersect" (slice "Professor")) "Title" }}
+{{ $graduates := sort (where $all "Params.user_groups" "intersect" (slice "M.S. Student" "Master's Student")) "Title" }}
 {{ $parttime := sort (where $all "Params.user_groups" "intersect" (slice "Part-time Graduate")) "Title" }}
 {{ $undergrad := sort (where $all "Params.user_groups" "intersect" (slice "Student" "Undergraduate Researcher")) "Title" }}
 {{ $alumni := sort (where $all "Params.user_groups" "intersect" (slice "Alumni")) "Title" }}
@@ -17,11 +18,45 @@
 
   <nav class="macs-people-tabs" aria-label="People categories">
     <button type="button" class="is-active" data-tab="all">{{ if eq .Page.Language.Lang "ko" }}전체{{ else }}All{{ end }}</button>
+    <button type="button" data-tab="professor">{{ if eq .Page.Language.Lang "ko" }}지도교수{{ else }}Professor{{ end }}</button>
     <button type="button" data-tab="graduate">{{ if eq .Page.Language.Lang "ko" }}석사{{ else }}Graduate{{ end }}</button>
     <button type="button" data-tab="undergrad">{{ if eq .Page.Language.Lang "ko" }}학부연구생{{ else }}Undergraduate{{ end }}</button>
     <button type="button" data-tab="parttime">{{ if eq .Page.Language.Lang "ko" }}파트{{ else }}Part-time{{ end }}</button>
     <button type="button" data-tab="alumni">{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</button>
   </nav>
+
+  <div class="macs-people-section" data-group="professor">
+    <div class="macs-people-section-head">
+      <h2>{{ if eq .Page.Language.Lang "ko" }}지도교수 (Professor){{ else }}Professor{{ end }}</h2>
+      <span>{{ len $professors }}</span>
+    </div>
+    <div class="macs-people-grid">
+      {{ if eq (len $professors) 0 }}<p class="macs-people-empty">No members yet.</p>{{ end }}
+      {{ range $professors }}
+        {{ $avatar := "" }}
+        {{ $email := (.Params.email | default "") }}
+        {{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+        <article class="macs-people-card">
+          <a href="{{ .RelPermalink }}" class="macs-people-card-inner">
+            {{ if $avatar }}
+              <img src="{{ $avatar }}" alt="{{ .Title }} avatar" class="macs-people-avatar">
+            {{ else }}
+              <div class="macs-people-avatar placeholder">{{ slicestr .Title 0 1 }}</div>
+            {{ end }}
+            <div class="macs-people-meta">
+              <h3>{{ .Title }}</h3>
+              <p class="role">{{ .Params.role }}</p>
+              {{ with index .Params.organizations 0 }}
+                <p class="org">{{ if eq $.Page.Language.Lang "ko" }}{{ replaceRE "^전북대학교\\s*" "" .name }}{{ else }}{{ .name }}{{ end }}</p>
+              {{ end }}
+              <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
+              <p class="hint">View detail</p>
+            </div>
+          </a>
+        </article>
+      {{ end }}
+    </div>
+  </div>
 
   <div class="macs-people-section" data-group="graduate">
     <div class="macs-people-section-head">

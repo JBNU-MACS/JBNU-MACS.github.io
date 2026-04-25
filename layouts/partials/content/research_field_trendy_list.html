@@ -33,7 +33,11 @@
       <p class="hero-kicker">MacsLAB Research Field</p>
       <h1 id="field-hero-title">{{ $page.Title }}</h1>
       <p class="hero-summary">
+        {{ if eq .Page.Language.Lang "ko" }}
         AI 이론부터 의료/헬스케어, 항공우주, 콘텐츠, 개발, 그리고 계산과학까지. 문제 중심으로 연결된 연구 스펙트럼을 구축합니다.
+        {{ else }}
+        From AI theory to medical/healthcare, aerospace, contents, development, and computational science. We build a research spectrum connected through problem-oriented approaches.
+        {{ end }}
       </p>
       <div class="hero-meta">
         <span><strong>{{ $total }}</strong> Research Tracks</span>
@@ -56,7 +60,7 @@
       {{ $order := printf "%02d" (add $idx 1) }}
 
       <article class="macs-field-card">
-        <a class="field-card-link" href="{{ $item.RelPermalink }}" aria-label="{{ $item.Title }} 자세히 보기">
+        <a class="field-card-link" href="{{ $item.RelPermalink }}" aria-label="{{ $item.Title }} {{ if eq $.Page.Language.Lang "ko" }}자세히 보기{{ else }}View Detail{{ end }}">
           <div class="field-card-media{{ if not $resource }} no-image{{ end }}">
             {{ with $resource }}
               {{ $img := .Resize "960x540" }}

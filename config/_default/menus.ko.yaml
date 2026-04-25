@@ -1,48 +1,48 @@
 main:
   - name: 소개
-    url: about
+    url: /ko/about/
     weight: 100
 
   - name: 구성원
-    url: people
+    url: /ko/people/
     weight: 200
   - parent: 구성원
     name: 지도교수
-    url: /author/이경수/
+    url: /ko/author/이경수/
     weight: 210
   - parent: 구성원
     name: 연구원
-    url: people
+    url: /ko/people/
     weight: 220
 
   - name: 연구
-    url: publication
+    url: /ko/publication/
     weight: 300
   - parent: 연구
     name: 논문
-    url: publication
+    url: /ko/publication/
     weight: 310
   - parent: 연구
     name: 연구 분야
-    url: field
+    url: /ko/field/
     weight: 320
 
   - name: 소식
-    url: post
+    url: /ko/post/
     weight: 600
   - parent: 소식
     name: 공지사항
-    url: notification
+    url: /ko/notification/
     weight: 610
   - parent: 소식
     name: 뉴스
-    url: post
+    url: /ko/post/
     weight: 620
   - parent: 소식
     name: 행사
-    url: event
+    url: /ko/event/
     weight: 630
 
   - name: 연락처
-    url: contact
+    url: /ko/contact/
     weight: 700

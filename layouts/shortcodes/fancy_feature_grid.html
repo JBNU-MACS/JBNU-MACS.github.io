@@ -39,7 +39,7 @@
 
   <div class="macs-feature-modal" id="macs-feature-modal" aria-hidden="true">
     <div class="macs-feature-modal-inner" role="dialog" aria-modal="true" aria-labelledby="macs-feature-modal-title">
-      <button type="button" class="macs-feature-modal-close" aria-label="닫기">&times;</button>
+      <button type="button" class="macs-feature-modal-close" aria-label="{{ if eq .Page.Language.Lang "ko" }}닫기{{ else }}Close{{ end }}">&times;</button>
       <h4 id="macs-feature-modal-title"></h4>
       <p id="macs-feature-modal-desc"></p>
     </div>

@@ -12,6 +12,39 @@
   {{ end }}
 {{ end }}
 
+{{ $role := ($item.Params.role | default "") }}
+{{ if eq $lang "en" }}
+  {{ $role = replace $role "석사과정" "Master's Student" }}
+  {{ $role = replace $role "학부연구생" "Undergraduate Researcher" }}
+  {{ $role = replace $role "파트석사" "Part-time M.S. Student" }}
+  {{ $role = replace $role "파트박사" "Part-time Ph.D. Student" }}
+  {{ $role = replace $role "(취업)" "Employed at" }}
+  {{ $role = replace $role "(석사과정)" "Master's Student" }}
+  {{ $role = replace $role "이스타항공" "Eastar Jet" }}
+  {{ $role = replace $role "포항공과대학교" "POSTECH" }}
+  {{ $role = replace $role "대구경북과학기술원" "DGIST" }}
+  {{ $role = replace $role "울산과학기술원" "UNIST" }}
+  {{ $role = replace $role "한국과학기술원" "KAIST" }}
+  {{ $role = replace $role "한국생산기술연구원" "Korea Institute of Industrial Technology" }}
+  {{ $role = replace $role "한국환경공단" "Korea Environment Corporation" }}
+{{ end }}
+
+{{ $org := "" }}
+{{ with index $item.Params.organizations 0 }}
+  {{ $org = .name }}
+{{ end }}
+{{ if eq $lang "en" }}
+  {{ $org = replace $org "전북대학교 컴퓨터인공지능학부" "School of Computer and Artificial Intelligence, Jeonbuk National University" }}
+  {{ $org = replace $org "전북대학교 전자.정보공학부(컴퓨터공학)" "School of Electronic and Information Engineering (Computer Engineering), Jeonbuk National University" }}
+  {{ $org = replace $org "전북대학교 산업정보시스템공학과" "Department of Industrial Information Systems Engineering, Jeonbuk National University" }}
+  {{ $org = replace $org "학부연구생 (컴퓨터인공지능학부)" "Undergraduate Researcher (School of Computer and Artificial Intelligence)" }}
+  {{ $org = replace $org "학부연구생 (컴퓨터공학부)" "Undergraduate Researcher (School of Computer Engineering)" }}
+  {{ $org = replace $org "학부연구생 (컴퓨터공학과)" "Undergraduate Researcher (Department of Computer Engineering)" }}
+  {{ $org = replace $org "학부연구생 (소프트웨어공학과)" "Undergraduate Researcher (Department of Software Engineering)" }}
+  {{ $org = replace $org "학부연구생 (스마트팜학과)" "Undergraduate Researcher (Department of Smart Farm)" }}
+  {{ $org = replace $org "학부연구생 (경제학부)" "Undergraduate Researcher (School of Economics)" }}
+{{ end }}
+
 <article class="macs-people-card">
   <a href="{{ $item.RelPermalink }}" class="macs-people-card-inner">
     {{ if $avatar }}
@@ -21,13 +54,13 @@
     {{ end }}
     <div class="macs-people-meta">
       <h3>{{ $name }}</h3>
-      <p class="role">{{ $item.Params.role }}</p>
-      {{ with index $item.Params.organizations 0 }}
+      <p class="role">{{ $role }}</p>
+      {{ if ne $org "" }}
         <p class="org">
           {{ if eq $lang "ko" }}
-            {{ replaceRE "^전북대학교\\s*" "" .name }}
+            {{ replaceRE "^전북대학교\\s*" "" $org }}
           {{ else }}
-            {{ .name }}
+            {{ $org }}
           {{ end }}
         </p>
       {{ end }}

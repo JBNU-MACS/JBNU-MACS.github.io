@@ -8,7 +8,7 @@ main:
     weight: 200
   - parent: People
     name: Professor
-    url: /en/author/kyungsulee/
+    url: /en/author/professor/
     weight: 210
   - parent: People
     name: Members

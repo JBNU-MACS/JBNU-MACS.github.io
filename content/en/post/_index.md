@@ -1,8 +1,8 @@
 ---
-title: Latest News
+title: News
 
 # Listing view
-view: compact
+view: community/custom_card
 
 # Optional banner image (relative to `assets/media/` folder).
 banner:

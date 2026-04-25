@@ -19,7 +19,7 @@
       </div>
       <div class="macs-contact-hero-actions">
         <a href="mailto:ksl@jbnu.ac.kr" class="macs-contact-btn">Email Us</a>
-        <a href="/notification/" class="macs-contact-btn ghost">{{ if eq .Page.Language.Lang "ko" }}공지사항{{ else }}Open Positions{{ end }}</a>
+        <a href="{{ "notification/" | relLangURL }}" class="macs-contact-btn ghost">{{ if eq .Page.Language.Lang "ko" }}공지사항{{ else }}Open Positions{{ end }}</a>
       </div>
     </div>
   </div>

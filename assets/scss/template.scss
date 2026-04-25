@@ -5360,3 +5360,571 @@ body.home .home-section:has(.home-dual-feed) {
     text-overflow: ellipsis;
   }
 }
+
+/* English-only institutional UI refresh */
+html[lang^="en"] {
+  --en-surface: #ffffff;
+  --en-surface-muted: #f4f7fb;
+  --en-surface-strong: #eef3f8;
+  --en-border: #cfd8e3;
+  --en-border-strong: #9eb1c6;
+  --en-text: #14263d;
+  --en-text-muted: #52667e;
+  --en-heading: #0f2138;
+  --en-accent: #1c4a7e;
+  --en-accent-soft: #dbe7f4;
+  --en-shadow: 0 8px 24px rgba(15, 33, 56, 0.06);
+  --en-radius-lg: 12px;
+  --en-radius-md: 8px;
+  --en-radius-sm: 6px;
+}
+
+html[lang^="en"] body {
+  font-family: "IBM Plex Sans", "Source Sans 3", "Segoe UI", sans-serif;
+  color: var(--en-text);
+  background:
+    linear-gradient(180deg, #f3f6fa 0%, #f8fafc 180px, #ffffff 180px, #ffffff 100%);
+}
+
+html[lang^="en"] .home-section {
+  padding: 26px 18px;
+}
+
+html[lang^="en"] .universal-wrapper h1,
+html[lang^="en"] .section-heading h1,
+html[lang^="en"] .widget h1,
+html[lang^="en"] .widget h2,
+html[lang^="en"] .article-container h1 {
+  text-align: left;
+  color: var(--en-heading);
+  letter-spacing: -0.02em;
+}
+
+html[lang^="en"] .cta-group {
+  justify-content: flex-start;
+}
+
+html[lang^="en"] .cta-group .btn,
+html[lang^="en"] .cta-group a.btn {
+  border-radius: var(--en-radius-sm);
+  border: 1px solid var(--en-accent);
+  background: var(--en-accent);
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+html[lang^="en"] .cta-group .btn:hover,
+html[lang^="en"] .cta-group a.btn:hover {
+  background: #163d68;
+  border-color: #163d68;
+}
+
+html[lang^="en"] .macs-home-hero {
+  border: 1px solid var(--en-border);
+  border-radius: var(--en-radius-lg);
+  overflow: hidden;
+  background: #dfe6ee;
+  box-shadow: var(--en-shadow);
+}
+
+html[lang^="en"] .macs-home-hero-track {
+  min-height: 460px;
+}
+
+html[lang^="en"] .macs-home-hero-slide {
+  min-height: 460px;
+}
+
+html[lang^="en"] .macs-home-hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(10, 26, 47, 0.88) 0%, rgba(10, 26, 47, 0.72) 42%, rgba(10, 26, 47, 0.28) 100%);
+}
+
+html[lang^="en"] .macs-home-hero-content {
+  max-width: 620px;
+  left: 3rem;
+  right: auto;
+  bottom: 3rem;
+  padding: 1.4rem 1.5rem;
+  border-left: 5px solid #7fa4cf;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--en-text);
+  box-shadow: 0 14px 28px rgba(15, 33, 56, 0.12);
+}
+
+html[lang^="en"] .macs-home-hero h1,
+html[lang^="en"] .macs-home-hero-slide.is-notice h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.08;
+  color: var(--en-heading);
+}
+
+html[lang^="en"] .macs-home-hero p,
+html[lang^="en"] .macs-home-hero-slide.is-notice p {
+  color: var(--en-text-muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  max-width: 56ch;
+}
+
+html[lang^="en"] .macs-home-hero-tags span {
+  border-radius: var(--en-radius-sm);
+  border: 1px solid var(--en-border);
+  background: var(--en-surface-muted);
+  color: var(--en-accent);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+html[lang^="en"] .macs-home-hero-btn {
+  border-radius: var(--en-radius-sm);
+  border: 1px solid var(--en-accent);
+  background: var(--en-accent);
+  color: #fff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+}
+
+html[lang^="en"] .macs-home-hero-btn.ghost {
+  background: #fff;
+  color: var(--en-accent);
+}
+
+html[lang^="en"] .macs-home-hero-btn:hover {
+  transform: none;
+  background: #163d68;
+  border-color: #163d68;
+}
+
+html[lang^="en"] .macs-home-hero-btn.ghost:hover {
+  background: var(--en-surface-muted);
+  color: #163d68;
+}
+
+html[lang^="en"] .macs-home-hero-ui {
+  inset: auto 0 0 0;
+  padding: 0.85rem 1rem;
+  background: rgba(10, 26, 47, 0.9);
+}
+
+html[lang^="en"] .macs-home-hero-dots button {
+  border-radius: 2px;
+  width: 24px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+html[lang^="en"] .macs-home-hero-dots button.is-active {
+  background: #ffffff;
+}
+
+html[lang^="en"] .macs-feature-grid-wrap,
+html[lang^="en"] .home-dual-feed,
+html[lang^="en"] .macs-about-fancy,
+html[lang^="en"] .macs-contact-fancy,
+html[lang^="en"] .macs-people-fancy,
+html[lang^="en"] .macs-author-fancy,
+html[lang^="en"] .macs-feed-list,
+html[lang^="en"] .macs-feed-single,
+html[lang^="en"] .macs-pub-single,
+html[lang^="en"] .macs-field-hero,
+html[lang^="en"] .macs-field-single-hero,
+html[lang^="en"] .field-single-prose {
+  border: 1px solid var(--en-border);
+  border-radius: var(--en-radius-lg);
+  background: var(--en-surface);
+  box-shadow: var(--en-shadow);
+}
+
+html[lang^="en"] .macs-feature-grid-wrap,
+html[lang^="en"] .macs-about-fancy,
+html[lang^="en"] .macs-contact-fancy,
+html[lang^="en"] .macs-people-fancy,
+html[lang^="en"] .macs-author-fancy,
+html[lang^="en"] .macs-feed-list,
+html[lang^="en"] .macs-feed-single,
+html[lang^="en"] .macs-pub-single {
+  padding: 1.35rem;
+}
+
+html[lang^="en"] .macs-feature-grid {
+  gap: 0.9rem;
+}
+
+html[lang^="en"] .macs-feature-card {
+  border: 1px solid var(--en-border);
+  border-top: 4px solid var(--en-accent);
+  border-radius: var(--en-radius-md);
+  background: #fff;
+  box-shadow: none;
+  transform: none;
+}
+
+html[lang^="en"] .macs-feature-card::after,
+html[lang^="en"] .macs-contact-orb,
+html[lang^="en"] .macs-author-hero::after,
+html[lang^="en"] .macs-feed-single::before {
+  display: none;
+}
+
+html[lang^="en"] .macs-feature-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--en-border-strong);
+}
+
+html[lang^="en"] .macs-feature-icon {
+  border-radius: var(--en-radius-sm);
+  background: var(--en-surface-strong);
+  color: var(--en-accent);
+}
+
+html[lang^="en"] .macs-feature-card h3,
+html[lang^="en"] .macs-about-card h3,
+html[lang^="en"] .macs-contact-card h3,
+html[lang^="en"] .macs-author-block h2,
+html[lang^="en"] .macs-feed-list-card h2,
+html[lang^="en"] .macs-field-card h2,
+html[lang^="en"] .macs-pub-block h2,
+html[lang^="en"] .macs-pub-side-card h3 {
+  color: var(--en-heading);
+}
+
+html[lang^="en"] .macs-feature-card p,
+html[lang^="en"] .macs-about-card li,
+html[lang^="en"] .macs-contact-card p,
+html[lang^="en"] .macs-contact-card small,
+html[lang^="en"] .macs-feed-list-card p,
+html[lang^="en"] .macs-feed-single-summary,
+html[lang^="en"] .macs-field-card p,
+html[lang^="en"] .macs-author-bio,
+html[lang^="en"] .macs-pub-block p,
+html[lang^="en"] .field-single-prose p {
+  color: var(--en-text-muted);
+}
+
+html[lang^="en"] .home-dual-feed {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+html[lang^="en"] .home-dual-feed-col {
+  padding: 1rem;
+  border: 1px solid var(--en-border);
+  border-radius: var(--en-radius-lg);
+  background: var(--en-surface);
+  box-shadow: var(--en-shadow);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+html[lang^="en"] .home-dual-feed-title {
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 2px solid var(--en-accent-soft);
+  color: var(--en-heading);
+  font-size: 0.98rem;
+  text-transform: none;
+}
+
+html[lang^="en"] .home-dual-feed-more {
+  color: var(--en-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+html[lang^="en"] .home-dual-feed .macslab-trend-card {
+  border: 1px solid var(--en-border);
+  border-radius: var(--en-radius-md);
+  box-shadow: none;
+}
+
+html[lang^="en"] .home-dual-feed .macslab-trend-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--en-border-strong);
+}
+
+html[lang^="en"] .home-dual-feed .macslab-card-badge {
+  border-radius: var(--en-radius-sm);
+  background: var(--en-surface-muted);
+  border: 1px solid var(--en-border);
+  color: var(--en-accent);
+}
+
+html[lang^="en"] .macs-about-hero,
+html[lang^="en"] .macs-contact-hero,
+html[lang^="en"] .macs-author-hero,
+html[lang^="en"] .macs-feed-list-head,
+html[lang^="en"] .macs-feed-single-hero,
+html[lang^="en"] .macs-pub-hero,
+html[lang^="en"] .macs-field-hero,
+html[lang^="en"] .macs-field-single-hero {
+  border-radius: var(--en-radius-md);
+  border: 1px solid var(--en-border);
+  background:
+    linear-gradient(180deg, #f7f9fc 0%, #eef3f8 100%);
+  box-shadow: none;
+}
+
+html[lang^="en"] .macs-about-hero,
+html[lang^="en"] .macs-contact-hero {
+  min-height: auto;
+  padding: 1.3rem 1.4rem;
+}
+
+html[lang^="en"] .macs-about-kicker,
+html[lang^="en"] .macs-contact-kicker,
+html[lang^="en"] .macs-author-head-copy .kicker,
+html[lang^="en"] .macs-feed-list-head .head-badge,
+html[lang^="en"] .macs-feed-single-kicker .kind,
+html[lang^="en"] .macs-pub-hero .kicker,
+html[lang^="en"] .hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--en-radius-sm);
+  border: 1px solid var(--en-border);
+  background: #fff;
+  color: var(--en-accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.24rem 0.5rem;
+}
+
+html[lang^="en"] .macs-about-cta,
+html[lang^="en"] .macs-contact-btn,
+html[lang^="en"] .macs-feed-list-card .card-link,
+html[lang^="en"] .field-card-cta,
+html[lang^="en"] .macs-pub-side-card .links a,
+html[lang^="en"] .macs-feed-single-foot .nav {
+  border-radius: var(--en-radius-sm);
+  border: 1px solid var(--en-accent);
+  background: var(--en-accent);
+  color: #fff;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+}
+
+html[lang^="en"] .macs-contact-btn.ghost,
+html[lang^="en"] .macs-about-cta:hover,
+html[lang^="en"] .macs-feed-list-card .card-link:hover,
+html[lang^="en"] .field-card-link:hover .field-card-cta,
+html[lang^="en"] .macs-pub-side-card .links a:hover,
+html[lang^="en"] .macs-feed-single-foot .nav:hover {
+  background: #fff;
+  color: var(--en-accent);
+}
+
+html[lang^="en"] .macs-about-grid,
+html[lang^="en"] .macs-contact-grid,
+html[lang^="en"] .macs-contact-bento {
+  gap: 0.9rem;
+}
+
+html[lang^="en"] .macs-about-card,
+html[lang^="en"] .macs-contact-card,
+html[lang^="en"] .macs-contact-map-wrap,
+html[lang^="en"] .macs-author-block,
+html[lang^="en"] .macs-feed-list-card,
+html[lang^="en"] .macs-feed-single-content,
+html[lang^="en"] .macs-pub-side-card,
+html[lang^="en"] .macs-pub-block,
+html[lang^="en"] .macs-field-card,
+html[lang^="en"] .field-single-aside .aside-card,
+html[lang^="en"] .field-single-prose {
+  border: 1px solid var(--en-border);
+  border-radius: var(--en-radius-md);
+  background: #fff;
+  box-shadow: none;
+}
+
+html[lang^="en"] .macs-feed-list-head.has-banner::before {
+  opacity: 0.16;
+}
+
+html[lang^="en"] .macs-feed-list-grid,
+html[lang^="en"] .macs-field-grid,
+html[lang^="en"] .macs-people-grid {
+  gap: 1rem;
+}
+
+html[lang^="en"] .macs-people-quick-nav,
+html[lang^="en"] .macs-people-tabs {
+  gap: 0.5rem;
+}
+
+html[lang^="en"] .macs-people-quick-nav button,
+html[lang^="en"] .macs-people-tabs button {
+  border-radius: var(--en-radius-sm);
+  border: 1px solid var(--en-border);
+  background: #fff;
+  color: var(--en-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.66rem;
+}
+
+html[lang^="en"] .macs-people-quick-nav button:hover,
+html[lang^="en"] .macs-people-quick-nav button.is-active,
+html[lang^="en"] .macs-people-tabs button:hover,
+html[lang^="en"] .macs-people-tabs button.is-active {
+  background: var(--en-accent);
+  border-color: var(--en-accent);
+  color: #fff;
+}
+
+html[lang^="en"] .macs-people-section {
+  border-radius: var(--en-radius-md);
+  background: var(--en-surface-muted);
+}
+
+html[lang^="en"] .macs-people-section::before {
+  width: 100%;
+  height: 3px;
+  background: var(--en-accent);
+  opacity: 1;
+}
+
+html[lang^="en"] .macs-people-card,
+html[lang^="en"] .macs-people-card-inner {
+  border-radius: var(--en-radius-md);
+}
+
+html[lang^="en"] .macs-people-card-inner {
+  border: 1px solid var(--en-border);
+  background: #fff;
+  box-shadow: none;
+}
+
+html[lang^="en"] .macs-people-card-inner:hover {
+  transform: none;
+  border-color: var(--en-border-strong);
+  box-shadow: none;
+}
+
+html[lang^="en"] .macs-people-avatar,
+html[lang^="en"] .macs-author-avatar {
+  border-radius: var(--en-radius-sm);
+  border: 1px solid var(--en-border);
+  box-shadow: none;
+}
+
+html[lang^="en"] .macs-author-meta-line,
+html[lang^="en"] .macs-author-stat-row,
+html[lang^="en"] .macs-contact-meta,
+html[lang^="en"] .hero-meta,
+html[lang^="en"] .macs-feed-single-meta,
+html[lang^="en"] .macs-pub-meta {
+  gap: 0.5rem;
+}
+
+html[lang^="en"] .macs-author-stat-row span,
+html[lang^="en"] .macs-contact-meta span,
+html[lang^="en"] .hero-meta span,
+html[lang^="en"] .macs-feed-single-meta span,
+html[lang^="en"] .macs-feed-single-meta time,
+html[lang^="en"] .macs-pub-meta span,
+html[lang^="en"] .macs-feed-list-card .card-meta .kind,
+html[lang^="en"] .macs-feed-list-card .card-meta time,
+html[lang^="en"] .macs-feed-list-card .card-meta .date,
+html[lang^="en"] .field-order {
+  border-radius: var(--en-radius-sm);
+  background: var(--en-surface-muted);
+  border: 1px solid var(--en-border);
+  color: var(--en-accent);
+}
+
+html[lang^="en"] .macs-feed-list-card .card-thumb,
+html[lang^="en"] .field-card-media,
+html[lang^="en"] .macs-feed-single-cover,
+html[lang^="en"] .macs-pub-cover {
+  border-radius: var(--en-radius-md);
+}
+
+html[lang^="en"] .macs-feed-list-pager a,
+html[lang^="en"] .macs-feed-list-pager span {
+  border-radius: var(--en-radius-sm);
+}
+
+@media (max-width: 991px) {
+  html[lang^="en"] .home-dual-feed {
+    grid-template-columns: 1fr;
+  }
+
+  html[lang^="en"] .macs-home-hero-content {
+    left: 1.4rem;
+    right: 1.4rem;
+    bottom: 4rem;
+    max-width: none;
+  }
+
+  html[lang^="en"] .macs-feature-grid-wrap,
+  html[lang^="en"] .macs-about-fancy,
+  html[lang^="en"] .macs-contact-fancy,
+  html[lang^="en"] .macs-people-fancy,
+  html[lang^="en"] .macs-author-fancy,
+  html[lang^="en"] .macs-feed-list,
+  html[lang^="en"] .macs-feed-single,
+  html[lang^="en"] .macs-pub-single {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  html[lang^="en"] .home-section {
+    padding: 18px 10px;
+  }
+
+  html[lang^="en"] .macs-home-hero,
+  html[lang^="en"] .macs-home-hero-track,
+  html[lang^="en"] .macs-home-hero-slide {
+    min-height: 420px;
+  }
+
+  html[lang^="en"] .macs-home-hero-content {
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 3.7rem;
+    padding: 1rem;
+  }
+
+  html[lang^="en"] .macs-home-hero h1,
+  html[lang^="en"] .macs-home-hero-slide.is-notice h1 {
+    font-size: 1.55rem;
+  }
+
+  html[lang^="en"] .macs-home-hero p,
+  html[lang^="en"] .macs-home-hero-slide.is-notice p {
+    font-size: 0.84rem;
+  }
+
+  html[lang^="en"] .macs-home-hero-actions,
+  html[lang^="en"] .macs-contact-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  html[lang^="en"] .macs-people-grid,
+  html[lang^="en"] .macs-feed-list-grid,
+  html[lang^="en"] .macs-field-grid {
+    gap: 0.75rem;
+  }
+}

@@ -4,7 +4,7 @@
       <span class="macs-about-kicker">About MacsLAB</span>
       <h1>Medical AI &amp; Computational Science</h1>
       <p>{{ if eq .Page.Language.Lang "ko" }}MacsLAB은 의료·멀티모달·응용개발을 연결해 실제 문제를 해결하는 연구를 수행합니다.{{ else }}MacsLAB conducts research that solves real-world problems by connecting medical AI, multimodality, and applied development.{{ end }}</p>
-      <a class="macs-about-cta" href="/contact/">{{ if eq .Page.Language.Lang "ko" }}Join our Lab{{ else }}Join our Lab{{ end }}</a>
+      <a class="macs-about-cta" href="{{ "contact/" | relLangURL }}">{{ if eq .Page.Language.Lang "ko" }}Join our Lab{{ else }}Join our Lab{{ end }}</a>
     </div>
   </div>
 

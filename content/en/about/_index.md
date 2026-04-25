@@ -56,10 +56,9 @@ sections:
           position: center
     design:
       # Slide height is automatic unless you force a specific height (e.g. '400px')
-      slide_height: '360px'
+      slide_height: '320px'
       is_fullscreen: false
-      loop: true
-      interval: 4200
+      loop: false
+      interval: 0
 
 ---
-

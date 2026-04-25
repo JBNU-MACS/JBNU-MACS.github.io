@@ -14,10 +14,10 @@
         <div class="macs-home-hero-content">
           <h1>{{ $notice.Title }}</h1>
           <p>{{ $notice.Summary | plainify | truncate 120 }}</p>
-          <div class="macs-home-hero-actions">
-            <a href="{{ $notice.RelPermalink }}" class="macs-home-hero-btn">Read Notice</a>
-            <a href="/notification/" class="macs-home-hero-btn ghost">All Notifications</a>
-          </div>
+        <div class="macs-home-hero-actions">
+          <a href="{{ $notice.RelPermalink }}" class="macs-home-hero-btn">Read Notice</a>
+          <a href="{{ "notification/" | relLangURL }}" class="macs-home-hero-btn ghost">All Notifications</a>
+        </div>
         </div>
       </article>
     {{ end }}
@@ -37,8 +37,8 @@
           <span>Applied Research</span>
         </div>
         <div class="macs-home-hero-actions">
-          <a href="/field/" class="macs-home-hero-btn">See Research Fields</a>
-          <a href="/contact/" class="macs-home-hero-btn ghost">Join Us</a>
+          <a href="{{ "field/" | relLangURL }}" class="macs-home-hero-btn">See Research Fields</a>
+          <a href="{{ "contact/" | relLangURL }}" class="macs-home-hero-btn ghost">Join Us</a>
         </div>
       </div>
     </article>
@@ -58,7 +58,7 @@
           <span>Trustworthy AI</span>
         </div>
         <div class="macs-home-hero-actions">
-          <a href="/publication/" class="macs-home-hero-btn">View Publications</a>
+          <a href="{{ "publication/" | relLangURL }}" class="macs-home-hero-btn">View Publications</a>
         </div>
       </div>
     </article>
@@ -78,7 +78,7 @@
           <span>Reasoning</span>
         </div>
         <div class="macs-home-hero-actions">
-          <a href="/field/" class="macs-home-hero-btn">Research Topics</a>
+          <a href="{{ "field/" | relLangURL }}" class="macs-home-hero-btn">Research Topics</a>
         </div>
       </div>
     </article>
@@ -98,7 +98,7 @@
           <span>Deployment</span>
         </div>
         <div class="macs-home-hero-actions">
-          <a href="/field/" class="macs-home-hero-btn">See Projects</a>
+          <a href="{{ "field/" | relLangURL }}" class="macs-home-hero-btn">See Projects</a>
         </div>
       </div>
     </article>

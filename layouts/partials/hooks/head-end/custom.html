@@ -14,3 +14,277 @@
     }, { once: true });
   })();
 </script>
+
+{{ if eq .Lang "en" }}
+<style>
+  /* MACS Lab Official English Portal - Government Standard Redesign */
+  :root {
+    --gov-navy: #00274c;
+    --gov-blue: #0055a4;
+    --gov-light-blue: #f1f6fb;
+    --gov-border: #adb5bd;
+    --gov-text: #1b1c1d;
+    --gov-muted: #53565a;
+    --gov-white: #ffffff;
+  }
+
+  html[lang^="en"] body {
+    background-color: var(--gov-white) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    color: var(--gov-text) !important;
+  }
+
+  /* Remove fancy background from theme */
+  html[lang^="en"] body.home {
+    background: var(--gov-white) !important;
+  }
+
+  /* Official Masthead / Navbar */
+  html[lang^="en"] .navbar {
+    border-top: 6px solid var(--gov-navy) !important;
+    border-bottom: 1px solid var(--gov-border) !important;
+    background: var(--gov-white) !important;
+    box-shadow: none !important;
+    height: auto !important;
+    padding: 1rem 0 !important;
+  }
+
+  html[lang^="en"] .navbar-brand {
+    font-weight: 800 !important;
+    color: var(--gov-navy) !important;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    font-size: 1.3rem !important;
+  }
+
+  html[lang^="en"] .navbar-nav .nav-link {
+    color: var(--gov-text) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.02em;
+    padding: 0.5rem 0.8rem !important;
+  }
+
+  html[lang^="en"] .navbar-nav .nav-link:hover,
+  html[lang^="en"] .navbar-nav .active > .nav-link {
+    color: var(--gov-blue) !important;
+    background: var(--gov-light-blue) !important;
+  }
+
+  /* Page Header / Masthead */
+  html[lang^="en"] .en-portal-home__masthead,
+  html[lang^="en"] .en-portal-page__head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px !important;
+    gap: 2rem !important;
+    background: var(--gov-light-blue) !important;
+    border: 1px solid var(--gov-border) !important;
+    border-left: 12px solid var(--gov-navy) !important;
+    padding: 3rem !important;
+    border-radius: 0 !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  @media (max-width: 991px) {
+    html[lang^="en"] .en-portal-home__masthead,
+    html[lang^="en"] .en-portal-page__head {
+      grid-template-columns: 1fr !important;
+      padding: 2rem !important;
+    }
+  }
+
+  html[lang^="en"] .en-portal-eyebrow,
+  html[lang^="en"] .en-portal-kicker {
+    display: inline-block;
+    background: var(--gov-navy);
+    color: var(--gov-white) !important;
+    padding: 4px 12px;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.2rem !important;
+    border-radius: 2px;
+  }
+
+  html[lang^="en"] h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem) !important;
+    color: var(--gov-navy) !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  html[lang^="en"] .en-portal-summary {
+    font-size: 1.15rem !important;
+    line-height: 1.6 !important;
+    color: var(--gov-muted) !important;
+    margin-top: 1.5rem !important;
+    max-width: 800px !important;
+  }
+
+  /* Panels and Sections */
+  html[lang^="en"] .en-portal-panel {
+    border: 1px solid var(--gov-border) !important;
+    border-radius: 0 !important;
+    padding: 2rem !important;
+    background: var(--gov-white) !important;
+    box-shadow: none !important;
+  }
+
+  html[lang^="en"] .en-portal-section-head {
+    border-bottom: 3px solid var(--gov-navy) !important;
+    padding-bottom: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    align-items: flex-end !important;
+  }
+
+  html[lang^="en"] .en-portal-section-head h2 {
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    color: var(--gov-navy) !important;
+    margin: 0 !important;
+  }
+
+  /* Stat Grid */
+  html[lang^="en"] .en-portal-stat-grid article {
+    background: var(--gov-light-blue) !important;
+    border: 1px solid var(--gov-border) !important;
+    border-radius: 0 !important;
+    padding: 1.2rem !important;
+    text-align: center;
+  }
+
+  html[lang^="en"] .en-portal-stat-grid strong {
+    font-size: 2rem !important;
+    color: var(--gov-navy) !important;
+  }
+
+  /* Links and Buttons */
+  html[lang^="en"] .en-portal-actions a,
+  html[lang^="en"] .en-portal-inline-actions a,
+  html[lang^="en"] .en-portal-pager a {
+    background: var(--gov-navy) !important;
+    color: var(--gov-white) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.85rem !important;
+    padding: 0.8rem 1.5rem !important;
+    transition: opacity 0.2s;
+  }
+
+  html[lang^="en"] .en-portal-actions a:hover {
+    opacity: 0.9;
+    text-decoration: none !important;
+  }
+
+  html[lang^="en"] .en-portal-text-link {
+    color: var(--gov-blue) !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+  }
+
+  /* Records and Tables */
+  html[lang^="en"] .en-portal-record,
+  html[lang^="en"] .en-portal-link-row,
+  html[lang^="en"] .en-portal-pub-row {
+    border-top: 1px solid var(--gov-border) !important;
+    padding: 1.2rem 0 !important;
+    grid-template-columns: 140px minmax(0, 1fr) !important;
+  }
+
+  html[lang^="en"] .en-portal-record-row {
+    border-top: 1px solid var(--gov-border) !important;
+    padding: 1.5rem !important;
+    background: #fff !important;
+    grid-template-columns: 100px minmax(0, 1fr) 150px !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+  }
+
+  @media (max-width: 767px) {
+    html[lang^="en"] .en-portal-record-row {
+      grid-template-columns: 1fr !important;
+      padding: 1.2rem !important;
+      gap: 0.8rem !important;
+    }
+    html[lang^="en"] .en-portal-record-row__action {
+      justify-content: flex-start !important;
+    }
+  }
+
+  html[lang^="en"] .en-portal-year-nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    padding: 1rem !important;
+    background: var(--gov-light-blue) !important;
+    border: 1px solid var(--gov-border) !important;
+    margin-bottom: 2rem !important;
+    border-radius: 0 !important;
+  }
+
+  html[lang^="en"] .en-portal-year-nav a {
+    padding: 0.4rem 0.8rem !important;
+    background: #fff !important;
+    border: 1px solid var(--gov-border) !important;
+    color: var(--gov-navy) !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+  }
+
+  html[lang^="en"] .en-portal-year-nav a:hover {
+    background: var(--gov-navy) !important;
+    color: #fff !important;
+  }
+
+  html[lang^="en"] .en-portal-person-card {
+    border: 1px solid var(--gov-border) !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  html[lang^="en"] .en-portal-person-card__photo {
+    border-radius: 0 !important;
+    border: 1px solid var(--gov-border) !important;
+  }
+
+  html[lang^="en"] .en-portal-record h3 a {
+    color: var(--gov-navy) !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+  }
+
+  html[lang^="en"] .en-portal-record time {
+    font-family: monospace !important;
+    color: var(--gov-blue) !important;
+    font-weight: 700 !important;
+  }
+
+  /* Footer */
+  html[lang^="en"] .site-footer {
+    background: var(--gov-light-blue) !important;
+    border-top: 4px solid var(--gov-navy) !important;
+    padding: 4rem 0 !important;
+    margin-top: 4rem !important;
+  }
+
+  html[lang^="en"] .site-footer p,
+  html[lang^="en"] .site-footer .powered-by {
+    color: var(--gov-muted) !important;
+    font-size: 0.85rem !important;
+    line-height: 1.8 !important;
+  }
+
+  /* Utility classes */
+  html[lang^="en"] .universal-wrapper {
+    max-width: 1200px !important;
+  }
+</style>
+{{ end }}

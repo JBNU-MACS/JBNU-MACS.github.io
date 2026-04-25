@@ -2,7 +2,7 @@
 {{- $kindLabel := .KindLabel | default "News" -}}
 {{- $kindClass := .KindClass | default "news" -}}
 {{- $items := $page.RegularPagesRecursive.ByDate.Reverse -}}
-{{- $paginator := $page.Paginate $items 9 -}}
+{{- $paginator := $page.Paginate $items 8 -}}
 {{- $bannerURL := "" -}}
 {{- with $page.Params.banner.image -}}
   {{- with resources.Get (printf "media/%s" .) -}}
@@ -12,18 +12,27 @@
 
 <div class="universal-wrapper macs-feed-list-shell">
   {{ if eq $page.Language.Lang "en" }}
-  <section class="en-gov-list en-gov-list--{{ $kindClass }}">
-    <header class="en-gov-list-head">
-      <div>
+  <section class="en-archive-list en-archive-list--{{ $kindClass }}">
+    <header class="hero">
+      <div class="copy">
         <p class="eyebrow">{{ $kindLabel }}</p>
         <h1>{{ $page.Title }}</h1>
+        <p class="summary">{{ with $page.Content }}{{ . | plainify }}{{ else }}Browse recent {{ lower $kindLabel }} items published by MACS Lab.{{ end }}</p>
+        <div class="stats">
+          <div><strong>{{ len $items }}</strong><span>Total Items</span></div>
+          <div><strong>{{ $paginator.TotalPages }}</strong><span>Pages</span></div>
+        </div>
       </div>
-      {{ with $page.Content }}
-        <div class="summary">{{ . }}</div>
-      {{ end }}
+      <figure class="visual{{ if eq $bannerURL "" }} no-image{{ end }}">
+        {{ if ne $bannerURL "" }}
+          <img src="{{ $bannerURL }}" alt="{{ $page.Title }} section image">
+        {{ else }}
+          <span>{{ slicestr $kindLabel 0 1 }}</span>
+        {{ end }}
+      </figure>
     </header>
 
-    <div class="en-gov-list-items">
+    <div class="cards">
       {{ range $item := $paginator.Pages }}
         {{ $link := $item.RelPermalink }}
         {{ $target := "" }}
@@ -31,7 +40,6 @@
           {{ $link = $item.Params.external_link }}
           {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
-
         {{ $summary := "" }}
         {{ if $item.Params.summary }}
           {{ $summary = $item.Params.summary | plainify }}
@@ -40,14 +48,12 @@
         {{ else if $item.Summary }}
           {{ $summary = $item.Summary | plainify }}
         {{ end }}
-        {{ $summary = $summary | truncate 200 }}
-
+        {{ $summary = $summary | truncate 220 }}
         {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
-
-        <article class="en-gov-list-item">
+        <article class="card">
           <a class="thumb{{ if not $resource }} no-image{{ end }}" href="{{ $link }}" {{ $target | safeHTMLAttr }}>
             {{ with $resource }}
-              {{ $img := .Resize "760x" }}
+              {{ $img := .Resize "960x620" }}
               {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
               <img src="{{ $img.RelPermalink }}" alt="{{ $item.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
             {{ else }}
@@ -55,8 +61,8 @@
             {{ end }}
           </a>
           <div class="body">
-            <div class="meta">
-              <span class="kind">{{ $kindLabel }}</span>
+            <div class="meta-row">
+              <span class="type">{{ $kindLabel }}</span>
               {{ if eq $item.Type "event" }}
                 <span class="date">{{ partial "functions/get_event_dates" $item }}</span>
               {{ else }}
@@ -65,25 +71,17 @@
             </div>
             <h2><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a></h2>
             {{ with $summary }}<p>{{ . }}</p>{{ end }}
-            <a class="more" href="{{ $link }}" {{ $target | safeHTMLAttr }}>View Details</a>
+            <a class="more" href="{{ $link }}" {{ $target | safeHTMLAttr }}>Read More</a>
           </div>
         </article>
       {{ end }}
     </div>
 
     {{ if gt $paginator.TotalPages 1 }}
-      <nav class="en-gov-pager" aria-label="Pagination">
-        {{ if $paginator.HasPrev }}
-          <a href="{{ $paginator.Prev.URL }}">Previous</a>
-        {{ else }}
-          <span class="disabled">Previous</span>
-        {{ end }}
+      <nav class="pager" aria-label="Pagination">
+        {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">Previous</a>{{ else }}<span class="disabled">Previous</span>{{ end }}
         <span class="count">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
-        {{ if $paginator.HasNext }}
-          <a href="{{ $paginator.Next.URL }}">Next</a>
-        {{ else }}
-          <span class="disabled">Next</span>
-        {{ end }}
+        {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">Next</a>{{ else }}<span class="disabled">Next</span>{{ end }}
       </nav>
     {{ end }}
   </section>

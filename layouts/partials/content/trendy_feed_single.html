@@ -8,42 +8,53 @@
 
 <div class="universal-wrapper">
   {{ if eq $p.Language.Lang "en" }}
-  <article class="en-gov-detail en-gov-detail--{{ $kindClass }}">
-    <header class="en-gov-detail-head">
-      <div class="topline">
-        {{ with $p.CurrentSection }}
-          <a class="back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>
+  <article class="en-article-detail en-article-detail--{{ $kindClass }}">
+    <header class="hero">
+      <div class="copy">
+        {{ with $p.CurrentSection }}<a class="back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
+        <p class="eyebrow">{{ $kindLabel }}</p>
+        <h1>{{ $p.Title }}</h1>
+        <div class="meta-row">
+          <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006.01.02" }}</time>
+          {{ with $p.Lastmod }}<span>Updated {{ .Format "2006.01.02" }}</span>{{ end }}
+          {{ with $p.ReadingTime }}<span>{{ . }} min read</span>{{ end }}
+        </div>
+        {{ if and $summary (ne $summary ($p.Title | plainify)) }}<p class="summary">{{ $summary }}</p>{{ end }}
+      </div>
+      <figure class="visual{{ if not $heroRes }} no-image{{ end }}">
+        {{ with $heroRes }}
+          <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
+        {{ else }}
+          <span>{{ slicestr $kindLabel 0 1 }}</span>
         {{ end }}
-      </div>
-      <p class="eyebrow">{{ $kindLabel }}</p>
-      <h1>{{ $p.Title }}</h1>
-      <div class="meta">
-        <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006.01.02" }}</time>
-        {{ with $p.ReadingTime }}<span>{{ . }} min read</span>{{ end }}
-        {{ with $p.Lastmod }}<span>Updated {{ .Format "2006.01.02" }}</span>{{ end }}
-      </div>
-      {{ if and $summary (ne $summary ($p.Title | plainify)) }}
-        <p class="summary">{{ $summary }}</p>
-      {{ end }}
+      </figure>
     </header>
 
-    {{ with $heroRes }}
-      <figure class="en-gov-detail-cover">
-        <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
-      </figure>
-    {{ end }}
+    <div class="layout">
+      <div class="main">
+        <div class="content">{{ $p.Content }}</div>
+      </div>
+      <aside class="side">
+        <div class="panel">
+          <h2>Article Information</h2>
+          <ul>
+            <li><strong>Category</strong><span>{{ $kindLabel }}</span></li>
+            <li><strong>Published</strong><span>{{ $p.Date.Format "2006.01.02" }}</span></li>
+            {{ with $p.Lastmod }}<li><strong>Updated</strong><span>{{ .Format "2006.01.02" }}</span></li>{{ end }}
+          </ul>
+        </div>
+        {{ with $p.CurrentSection }}
+        <div class="panel">
+          <h2>Section</h2>
+          <a href="{{ .RelPermalink }}">Browse {{ .Title }}</a>
+        </div>
+        {{ end }}
+      </aside>
+    </div>
 
-    <section class="en-gov-detail-body">
-      <div class="content">{{ $p.Content }}</div>
-    </section>
-
-    <footer class="en-gov-detail-foot">
-      {{ with $p.PrevInSection }}
-        <a class="nav prev" href="{{ .RelPermalink }}">Previous: {{ .Title }}</a>
-      {{ end }}
-      {{ with $p.NextInSection }}
-        <a class="nav next" href="{{ .RelPermalink }}">Next: {{ .Title }}</a>
-      {{ end }}
+    <footer class="foot">
+      {{ with $p.PrevInSection }}<a class="nav prev" href="{{ .RelPermalink }}">Previous: {{ .Title }}</a>{{ end }}
+      {{ with $p.NextInSection }}<a class="nav next" href="{{ .RelPermalink }}">Next: {{ .Title }}</a>{{ end }}
     </footer>
   </article>
   {{ else }}

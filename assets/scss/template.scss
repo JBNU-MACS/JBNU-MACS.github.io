@@ -7175,3 +7175,473 @@ html[lang^="en"] .macs-feed-list-pager span {
     grid-template-columns: 1fr !important;
   }
 }
+
+html[lang^="en"] .en-gov-home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.85fr) minmax(300px, 0.95fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+html[lang^="en"] .en-gov-home .hero-figure,
+html[lang^="en"] .en-gov-home-gallery .photo-card,
+html[lang^="en"] .en-gov-about .lead-image,
+html[lang^="en"] .en-gov-about .support-images img,
+html[lang^="en"] .en-gov-contact .contact-photo,
+html[lang^="en"] .en-gov-research .topic-card img,
+html[lang^="en"] .en-gov-field-list .card .media,
+html[lang^="en"] .en-author-photo,
+html[lang^="en"] .en-author-profile .work .thumb,
+html[lang^="en"] .en-people-card .photo,
+html[lang^="en"] .en-section-page .visual,
+html[lang^="en"] .en-tour-page .tour-card img {
+  overflow: hidden;
+  border: 1px solid var(--en-border) !important;
+  border-radius: 3px;
+  background: #eef3f7;
+}
+
+html[lang^="en"] .en-gov-home .hero-figure img,
+html[lang^="en"] .en-gov-home-gallery .photo-card img,
+html[lang^="en"] .en-gov-about .lead-image img,
+html[lang^="en"] .en-gov-about .support-images img,
+html[lang^="en"] .en-gov-contact .contact-photo img,
+html[lang^="en"] .en-gov-research .topic-card img,
+html[lang^="en"] .en-gov-field-list .card .media img,
+html[lang^="en"] .en-author-photo img,
+html[lang^="en"] .en-author-profile .work .thumb img,
+html[lang^="en"] .en-people-card .photo img,
+html[lang^="en"] .en-section-page .visual img,
+html[lang^="en"] .en-tour-page .tour-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+html[lang^="en"] .en-gov-home .hero-figure {
+  margin: 0;
+  min-height: 100%;
+}
+
+html[lang^="en"] .en-gov-home .hero-figure img {
+  min-height: 100%;
+}
+
+html[lang^="en"] .en-gov-home .hero-figure figcaption {
+  padding: 0.65rem 0.8rem;
+  border-top: 1px solid var(--en-border);
+  background: #fff;
+  color: var(--en-ink-soft);
+  font-size: 0.82rem;
+}
+
+html[lang^="en"] .en-gov-home-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+html[lang^="en"] .en-gov-home-gallery .photo-card img {
+  height: 220px;
+}
+
+html[lang^="en"] .en-gov-home-gallery .caption {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.8rem;
+  background: #fff;
+}
+
+html[lang^="en"] .en-gov-home-gallery .caption strong {
+  color: var(--en-accent-strong);
+}
+
+html[lang^="en"] .en-gov-about .about-visual {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.8fr);
+  gap: 1rem;
+  margin: 1rem 0 1.15rem;
+}
+
+html[lang^="en"] .en-gov-about .lead-image {
+  margin: 0;
+  min-height: 320px;
+}
+
+html[lang^="en"] .en-gov-about .support-images {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-gov-about .support-images img {
+  min-height: 152px;
+}
+
+html[lang^="en"] .en-gov-contact .contact-photo {
+  margin: 0 0 1rem;
+  height: 220px;
+}
+
+html[lang^="en"] .en-gov-research .topic-card {
+  display: grid;
+  gap: 0.8rem;
+  padding: 0.9rem;
+}
+
+html[lang^="en"] .en-gov-research .topic-card img {
+  height: 160px;
+}
+
+html[lang^="en"] .en-gov-field-list .cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html[lang^="en"] .en-gov-field-list .card {
+  display: grid;
+  gap: 0.8rem;
+}
+
+html[lang^="en"] .en-gov-field-list .card .media {
+  min-height: 210px;
+}
+
+html[lang^="en"] .en-people-page,
+html[lang^="en"] .en-author-profile,
+html[lang^="en"] .en-section-page {
+  border: 1px solid var(--en-border);
+  border-radius: 4px;
+  background: #fff;
+  padding: 1.35rem;
+}
+
+html[lang^="en"] .en-people-head,
+html[lang^="en"] .en-author-hero,
+html[lang^="en"] .en-section-page .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--en-border);
+}
+
+html[lang^="en"] .en-people-head .anchor-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-items: flex-start;
+}
+
+html[lang^="en"] .en-people-head .anchor-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--en-border);
+  border-radius: 2px;
+  color: var(--en-accent);
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-people-page .group + .group {
+  margin-top: 1.2rem;
+}
+
+html[lang^="en"] .en-people-page .group-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid var(--en-border);
+}
+
+html[lang^="en"] .en-people-page .group-head span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 0.7rem;
+  border: 1px solid var(--en-border);
+  border-radius: 2px;
+  background: var(--en-surface-muted);
+}
+
+html[lang^="en"] .en-people-page .grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-people-card .inner {
+  display: grid;
+  grid-template-rows: 220px auto;
+  border: 1px solid var(--en-border);
+  border-radius: 3px;
+  text-decoration: none;
+  background: #fff;
+  overflow: hidden;
+}
+
+html[lang^="en"] .en-people-card .photo {
+  min-height: 220px;
+}
+
+html[lang^="en"] .en-people-card .photo.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--en-accent);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-people-card .body {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.9rem;
+}
+
+html[lang^="en"] .en-people-card .body h3,
+html[lang^="en"] .en-author-profile h1,
+html[lang^="en"] .en-section-page h1 {
+  margin: 0;
+}
+
+html[lang^="en"] .en-people-card .more {
+  margin-top: 0.35rem;
+  color: var(--en-accent);
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-author-hero {
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+
+html[lang^="en"] .en-author-photo {
+  min-height: 280px;
+}
+
+html[lang^="en"] .en-author-photo .placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  color: var(--en-accent);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-author-intro {
+  display: grid;
+  gap: 0.45rem;
+}
+
+html[lang^="en"] .en-author-profile .name-ko {
+  margin: 0;
+  color: var(--en-ink-soft);
+}
+
+html[lang^="en"] .en-author-profile .stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+html[lang^="en"] .en-author-profile .stats div {
+  padding: 0.8rem;
+  border: 1px solid var(--en-border);
+  border-radius: 2px;
+  background: var(--en-surface-muted);
+}
+
+html[lang^="en"] .en-author-profile .stats strong {
+  display: block;
+  color: var(--en-accent-strong);
+  font-size: 1.2rem;
+}
+
+html[lang^="en"] .en-author-profile .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.4rem;
+}
+
+html[lang^="en"] .en-author-profile .links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--en-border);
+  border-radius: 2px;
+  color: var(--en-accent);
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-author-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.9fr);
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-author-profile .panel,
+html[lang^="en"] .en-section-page .section-block,
+html[lang^="en"] .en-tour-page .tour-card,
+html[lang^="en"] .en-section-page .info-card,
+html[lang^="en"] .en-section-page .list-card,
+html[lang^="en"] .en-section-page .empty-state {
+  border: 1px solid var(--en-border);
+  border-radius: 3px;
+  background: #fff;
+}
+
+html[lang^="en"] .en-author-profile .panel {
+  padding: 1rem;
+}
+
+html[lang^="en"] .en-author-profile .panel + .panel {
+  margin-top: 1rem;
+}
+
+html[lang^="en"] .en-author-profile .timeline,
+html[lang^="en"] .en-author-profile .list-stack {
+  display: grid;
+  gap: 0.75rem;
+}
+
+html[lang^="en"] .en-author-profile .timeline-item,
+html[lang^="en"] .en-author-profile .list-item {
+  padding: 0.85rem;
+  border: 1px solid var(--en-border);
+  border-radius: 2px;
+  background: var(--en-surface-muted);
+}
+
+html[lang^="en"] .en-author-profile .works {
+  display: grid;
+  gap: 0.85rem;
+}
+
+html[lang^="en"] .en-author-profile .work {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-author-profile .work .thumb {
+  min-height: 110px;
+}
+
+html[lang^="en"] .en-author-profile .work .thumb.no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--en-accent);
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-author-profile .work .body {
+  display: grid;
+  gap: 0.25rem;
+}
+
+html[lang^="en"] .en-author-profile .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+html[lang^="en"] .en-author-profile .chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 0.7rem;
+  border: 1px solid var(--en-border);
+  border-radius: 2px;
+  background: var(--en-surface-muted);
+}
+
+html[lang^="en"] .en-section-page .hero .visual {
+  height: 240px;
+  margin: 0;
+}
+
+html[lang^="en"] .en-section-page .section-block {
+  padding: 1rem;
+}
+
+html[lang^="en"] .en-section-page .info-grid,
+html[lang^="en"] .en-section-page .list-grid,
+html[lang^="en"] .en-tour-page .tour-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-section-page .info-card,
+html[lang^="en"] .en-section-page .list-card,
+html[lang^="en"] .en-section-page .empty-state,
+html[lang^="en"] .en-tour-page .tour-card {
+  padding: 1rem;
+}
+
+html[lang^="en"] .en-section-page .empty-state a {
+  display: inline-flex;
+  margin-top: 0.5rem;
+  color: var(--en-accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-tour-page .tour-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+html[lang^="en"] .en-tour-page .tour-card img {
+  height: 210px;
+}
+
+html[lang^="en"] .en-tour-page .tour-card .body {
+  padding: 0.95rem;
+}
+
+@media (max-width: 1199px) {
+  html[lang^="en"] .en-gov-home-hero,
+  html[lang^="en"] .en-author-layout,
+  html[lang^="en"] .en-people-head,
+  html[lang^="en"] .en-section-page .hero {
+    grid-template-columns: 1fr;
+  }
+
+  html[lang^="en"] .en-people-page .grid,
+  html[lang^="en"] .en-tour-page .tour-grid,
+  html[lang^="en"] .en-section-page .info-grid,
+  html[lang^="en"] .en-section-page .list-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  html[lang^="en"] .en-gov-home-gallery,
+  html[lang^="en"] .en-gov-about .about-visual,
+  html[lang^="en"] .en-people-page .grid,
+  html[lang^="en"] .en-tour-page .tour-grid,
+  html[lang^="en"] .en-section-page .info-grid,
+  html[lang^="en"] .en-section-page .list-grid,
+  html[lang^="en"] .en-gov-field-list .cards,
+  html[lang^="en"] .en-author-profile .stats,
+  html[lang^="en"] .en-author-profile .work {
+    grid-template-columns: 1fr;
+  }
+
+  html[lang^="en"] .en-author-hero {
+    grid-template-columns: 1fr;
+  }
+}

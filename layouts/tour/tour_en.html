@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="universal-wrapper">
+  <section class="en-section-page en-tour-page">
+    <header class="hero">
+      <div class="copy">
+        <p class="eyebrow">Laboratory Tour</p>
+        <h1>{{ .Title }}</h1>
+        <p class="summary">A quick overview of the laboratory environment, research culture, and collaboration opportunities at MACS Lab.</p>
+      </div>
+      <figure class="visual">
+        <img src="/media/welcome.jpg" alt="MACS Lab environment overview">
+      </figure>
+    </header>
+
+    <div class="tour-grid">
+      <article class="tour-card">
+        <img src="/media/coders.jpg" alt="Welcome to the group">
+        <div class="body">
+          <h2>Welcome to the Group</h2>
+          <p>Take a look at what the laboratory is working on across medical AI, multimodal intelligence, and applied systems.</p>
+        </div>
+      </article>
+      <article class="tour-card">
+        <img src="/media/contact.jpg" alt="Research exchange sessions">
+        <div class="body">
+          <h2>Research Exchange</h2>
+          <p>Members share ideas through technical discussions, paper reviews, and collaborative research activities.</p>
+        </div>
+      </article>
+      <article class="tour-card">
+        <img src="/media/pic-jbnu.jpg" alt="Jeonbuk National University campus">
+        <div class="body">
+          <h2>Campus and Facilities</h2>
+          <p>The laboratory is based at Jeonbuk National University and supports work spanning theory, experiments, and deployment.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>
+{{ end }}

@@ -1,0 +1,214 @@
+{{ $avatar := "" }}
+{{ with .Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+{{ $socialEmail := "" }}
+{{ range .Params.social }}
+  {{ if and (eq .icon "envelope") (hasPrefix .link "mailto:") }}
+    {{ $socialEmail = replace .link "mailto:" "" }}
+  {{ end }}
+{{ end }}
+{{ $email := .Params.email | default $socialEmail }}
+{{ $displayName := .Params.name_en | default .Title }}
+{{ $org := "" }}
+{{ with index .Params.organizations 0 }}{{ $org = .name }}{{ end }}
+{{ $social := .Params.social | default (slice) }}
+{{ $recent := first 6 (.Pages.ByDate.Reverse) }}
+{{ $workCount := len .Pages }}
+{{ $normPattern := "[^\\pL\\pN]" }}
+{{ $currentNames := slice (.Title | default "") (.Params.name_ko | default "") (.Params.name_en | default "") }}
+{{ if .File }}{{ $currentNames = $currentNames | append (.File.ContentBaseName | default "") }}{{ end }}
+{{ $currentNorms := slice }}
+{{ range $n := $currentNames }}
+  {{ $nTrim := trim $n " \n\r\t" }}
+  {{ if ne $nTrim "" }}
+    {{ $currentNorms = $currentNorms | append (lower (replaceRE $normPattern "" $nTrim)) }}
+  {{ end }}
+{{ end }}
+{{ $matchedPubs := slice }}
+{{ range $pub := (where site.RegularPages "Section" "publication") }}
+  {{ $hit := false }}
+  {{ with $pub.Params.authors }}
+    {{ range $authorRaw := . }}
+      {{ if not $hit }}
+        {{ $resolved := partial "content/resolve_author_profile" (dict "name" $authorRaw) }}
+        {{ with index $resolved "page" }}
+          {{ $candNames := slice (.Title | default "") (.Params.name_ko | default "") (.Params.name_en | default "") }}
+          {{ if .File }}{{ $candNames = $candNames | append (.File.ContentBaseName | default "") }}{{ end }}
+          {{ range $cn := $candNames }}
+            {{ if not $hit }}
+              {{ $cnTrim := trim $cn " \n\r\t" }}
+              {{ if and (ne $cnTrim "") (in $currentNorms (lower (replaceRE $normPattern "" $cnTrim))) }}
+                {{ $hit = true }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ else }}
+          {{ $rawNorm := lower (replaceRE $normPattern "" $authorRaw) }}
+          {{ if in $currentNorms $rawNorm }}
+            {{ $hit = true }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ if $hit }}
+    {{ $matchedPubs = $matchedPubs | append $pub }}
+  {{ end }}
+{{ end }}
+{{ if gt (len $matchedPubs) 0 }}
+  {{ $workCount = len $matchedPubs }}
+  {{ $recent = first 6 (sort $matchedPubs "Date" "desc") }}
+{{ end }}
+
+<div class="universal-wrapper">
+  <article class="en-author-profile">
+    <header class="en-author-hero">
+      <div class="en-author-photo">
+        {{ if $avatar }}
+          <img src="{{ $avatar }}" alt="{{ $displayName }} portrait">
+        {{ else }}
+          <div class="placeholder">{{ slicestr ($displayName | plainify) 0 1 }}</div>
+        {{ end }}
+      </div>
+
+      <div class="en-author-intro">
+        <p class="eyebrow">Faculty & Researcher Profile</p>
+        <h1>{{ $displayName }}</h1>
+        {{ with .Params.name_ko }}<p class="name-ko">{{ . }}</p>{{ end }}
+        {{ with .Params.role }}<p class="role">{{ . }}</p>{{ end }}
+        {{ with $org }}<p class="org">{{ . }}</p>{{ end }}
+        {{ if ne $email "" }}<p class="contact"><a href="mailto:{{ $email }}">{{ $email }}</a></p>{{ end }}
+
+        <div class="stats">
+          <div><strong>{{ $workCount }}</strong><span>Works</span></div>
+          <div><strong>{{ len (.Params.interests | default (slice)) }}</strong><span>Research Topics</span></div>
+          <div><strong>{{ len (.Params.education.courses | default (slice)) }}</strong><span>Education Records</span></div>
+        </div>
+
+        {{ if gt (len $social) 0 }}
+        <div class="links">
+          {{ range $social }}
+            {{ $pack := .icon_pack | default "fas" }}
+            {{ $icon := .icon | default "link" }}
+            {{ $klass := "" }}
+            {{ if eq $pack "ai" }}
+              {{ if eq $icon "google-scholar" }}
+                {{ $klass = "ai ai-google-scholar" }}
+              {{ else if eq $icon "orcid" }}
+                {{ $klass = "ai ai-orcid" }}
+              {{ else if eq $icon "cv" }}
+                {{ $klass = "ai ai-cv" }}
+              {{ else }}
+                {{ $klass = (printf "ai ai-%s" $icon) }}
+              {{ end }}
+            {{ else if eq $pack "fab" }}
+              {{ $klass = (printf "fab fa-%s" $icon) }}
+            {{ else }}
+              {{ if eq $icon "envelope" }}
+                {{ $klass = "fas fa-envelope" }}
+              {{ else }}
+                {{ $klass = (printf "fas fa-%s" $icon) }}
+              {{ end }}
+            {{ end }}
+            <a href="{{ .link }}" aria-label="{{ $icon }}" title="{{ $icon }}" {{ if not (hasPrefix .link "mailto:") }}target="_blank" rel="noopener"{{ end }}>
+              <i class="{{ $klass }}" aria-hidden="true"></i>
+            </a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </header>
+
+    <section class="en-author-layout">
+      <div class="main">
+        {{ if .Content }}
+        <section class="panel prose-panel">
+          <h2>Profile</h2>
+          <div class="prose">{{ .Content }}</div>
+        </section>
+        {{ end }}
+
+        {{ with .Params.career }}
+        <section class="panel timeline-panel">
+          <h2>Career</h2>
+          <div class="timeline">
+            {{ range . }}
+              <article class="timeline-item">
+                <h3>{{ .role }}</h3>
+                <p>{{ .institution }}</p>
+                <small>{{ .period }}</small>
+              </article>
+            {{ end }}
+          </div>
+        </section>
+        {{ end }}
+
+        {{ if gt (len $recent) 0 }}
+        <section class="panel works-panel">
+          <h2>Selected Recent Work</h2>
+          <div class="works">
+            {{ range $recent }}
+              {{ $thumb := partial "blox-core/functions/get_featured_image.html" . }}
+              <a class="work" href="{{ .RelPermalink }}">
+                <div class="thumb{{ if not $thumb }} no-image{{ end }}">
+                  {{ with $thumb }}
+                    {{ $img := .Resize "480x320" }}
+                    {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
+                    <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+                  {{ else }}
+                    <span>{{ upper (substr .Type 0 1) }}</span>
+                  {{ end }}
+                </div>
+                <div class="body">
+                  <p class="type">{{ .Type }}</p>
+                  <strong>{{ .Title }}</strong>
+                  <small>{{ if eq .Type "publication" }}{{ .Date.Format "2006" }}{{ else }}{{ .Date.Format "2006.01.02" }}{{ end }}</small>
+                </div>
+              </a>
+            {{ end }}
+          </div>
+        </section>
+        {{ end }}
+      </div>
+
+      <aside class="side">
+        {{ with .Params.education.courses }}
+        <section class="panel list-panel">
+          <h2>Education</h2>
+          <div class="list-stack">
+            {{ range . }}
+              {{ $rawCourse := .course | default "" }}
+              {{ $degree := .degree | default "" }}
+              {{ $department := .department | default "" }}
+              {{ if eq $degree "" }}
+                {{ if findRE `^.+\s+in\s+\(.+\)\s*$` $rawCourse }}
+                  {{ $degree = replaceRE `\s+in\s+\(.+\)\s*$` "" $rawCourse }}
+                {{ else }}
+                  {{ $degree = $rawCourse }}
+                {{ end }}
+              {{ end }}
+              {{ if and (eq $department "") (findRE `\(.+\)` $rawCourse) }}
+                {{ $department = replaceRE `^.*\((.+)\)\s*$` "$1" $rawCourse }}
+              {{ end }}
+              <article class="list-item">
+                <h3>{{ $degree }}</h3>
+                {{ with $department }}<p>{{ . }}</p>{{ end }}
+                <p>{{ .institution }}</p>
+                <small>{{ .year }}</small>
+              </article>
+            {{ end }}
+          </div>
+        </section>
+        {{ end }}
+
+        {{ if .Params.interests }}
+        <section class="panel chip-panel">
+          <h2>Research Interests</h2>
+          <div class="chips">
+            {{ range .Params.interests }}<span>{{ . }}</span>{{ end }}
+          </div>
+        </section>
+        {{ end }}
+      </aside>
+    </section>
+  </article>
+</div>

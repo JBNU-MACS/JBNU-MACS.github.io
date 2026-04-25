@@ -8,13 +8,65 @@
   {{ end }}
 {{ end }}
 
-{{/* 정교한 그룹 필터링 */}}
 {{ $professors := sort (where $all "Params.user_groups" "intersect" (slice "Professor")) "Title" }}
 {{ $graduates := sort (where $all "Params.user_groups" "intersect" (slice "M.S. Student" "Master's Student" "PhD Student" "PhD Student (Integrated)")) "Title" }}
 {{ $parttime := sort (where $all "Params.user_groups" "intersect" (slice "Part-time Graduate")) "Title" }}
 {{ $undergrad := sort (where $all "Params.user_groups" "intersect" (slice "Student" "Undergraduate Researcher")) "Title" }}
 {{ $alumni := sort (where $all "Params.user_groups" "intersect" (slice "Alumni")) "Title" }}
 
+{{ if eq .Page.Language.Lang "en" }}
+<section class="en-people-page">
+  <header class="en-people-head">
+    <div>
+      <p class="eyebrow">People</p>
+      <h1>MACS Lab Members</h1>
+      <p class="summary">Faculty, graduate researchers, undergraduate researchers, and alumni affiliated with the Medical AI &amp; Computational Science Laboratory.</p>
+    </div>
+    <nav class="anchor-nav" aria-label="People sections">
+      <a href="#people-professor">Professor</a>
+      <a href="#people-graduate">Graduate</a>
+      <a href="#people-undergraduate">Undergraduate</a>
+      <a href="#people-parttime">Part-time</a>
+      <a href="#people-alumni">Alumni</a>
+    </nav>
+  </header>
+
+  <section class="group" id="people-professor">
+    <div class="group-head"><h2>Professor</h2><span>{{ len $professors }}</span></div>
+    <div class="grid">
+      {{ range $professors }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
+    </div>
+  </section>
+
+  <section class="group" id="people-graduate">
+    <div class="group-head"><h2>Graduate Researchers</h2><span>{{ len $graduates }}</span></div>
+    <div class="grid">
+      {{ range $graduates }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
+    </div>
+  </section>
+
+  <section class="group" id="people-undergraduate">
+    <div class="group-head"><h2>Undergraduate Researchers</h2><span>{{ len $undergrad }}</span></div>
+    <div class="grid">
+      {{ range $undergrad }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
+    </div>
+  </section>
+
+  <section class="group" id="people-parttime">
+    <div class="group-head"><h2>Part-time Graduate Students</h2><span>{{ len $parttime }}</span></div>
+    <div class="grid">
+      {{ range $parttime }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
+    </div>
+  </section>
+
+  <section class="group" id="people-alumni">
+    <div class="group-head"><h2>Alumni</h2><span>{{ len $alumni }}</span></div>
+    <div class="grid">
+      {{ range $alumni }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
+    </div>
+  </section>
+</section>
+{{ else }}
 <section class="macs-people-fancy" id="macs-people-fancy">
   <header class="macs-people-fancy-head">
     <h1>{{ if eq .Page.Language.Lang "ko" }}구성원{{ else }}People{{ end }}</h1>
@@ -30,17 +82,13 @@
     <button type="button" data-tab="alumni">{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</button>
   </nav>
 
-  {{/* 공통 렌더링 매크로 (Go Template은 매크로가 없으므로 섹션별 반복) */}}
-
   <div class="macs-people-section" data-group="professor">
     <div class="macs-people-section-head">
       <h2>{{ if eq .Page.Language.Lang "ko" }}지도교수{{ else }}Professor{{ end }}</h2>
       <span>{{ len $professors }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ range $professors }}
-        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
-      {{ end }}
+      {{ range $professors }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
     </div>
   </div>
 
@@ -50,9 +98,7 @@
       <span>{{ len $graduates }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ range $graduates }}
-        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
-      {{ end }}
+      {{ range $graduates }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
     </div>
   </div>
 
@@ -62,9 +108,7 @@
       <span>{{ len $undergrad }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ range $undergrad }}
-        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
-      {{ end }}
+      {{ range $undergrad }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
     </div>
   </div>
 
@@ -74,9 +118,7 @@
       <span>{{ len $parttime }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ range $parttime }}
-        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
-      {{ end }}
+      {{ range $parttime }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
     </div>
   </div>
 
@@ -86,9 +128,7 @@
       <span>{{ len $alumni }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ range $alumni }}
-        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
-      {{ end }}
+      {{ range $alumni }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
     </div>
   </div>
 </section>
@@ -107,3 +147,4 @@
     render('all');
   })();
 </script>
+{{ end }}

@@ -48,8 +48,18 @@
           {{ $summary = $item.Plain | plainify }}
         {{ end }}
         {{ $summary = $summary | truncate 170 }}
+        {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
         <article class="card">
-          <span class="order">{{ printf "%02d" (add $idx 1) }}</span>
+          <div class="media{{ if not $resource }} no-image{{ end }}">
+            {{ with $resource }}
+              {{ $img := .Resize "960x540" }}
+              {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ $item.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+            {{ else }}
+              <span class="order">{{ printf "%02d" (add $idx 1) }}</span>
+            {{ end }}
+          </div>
+          {{ if $resource }}<span class="order">{{ printf "%02d" (add $idx 1) }}</span>{{ end }}
           <h2><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h2>
           {{ with $summary }}<p>{{ . }}</p>{{ end }}
           <a class="more" href="{{ $item.RelPermalink }}">View Field</a>

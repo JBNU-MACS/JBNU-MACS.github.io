@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="universal-wrapper">
+  <section class="en-section-page">
+    <header class="hero">
+      <div class="copy">
+        <p class="eyebrow">Project Overview</p>
+        <h1>{{ .Title }}</h1>
+        <p class="summary">MACS Lab develops research-driven AI systems with an emphasis on deployable engineering, evaluation, and domain-specific problem solving.</p>
+      </div>
+      <figure class="visual">
+        <img src="/media/development.jpg" alt="Project and development overview">
+      </figure>
+    </header>
+
+    <section class="section-block">
+      <h2>Current Status</h2>
+      {{ if gt (len .RegularPages) 0 }}
+        <div class="list-grid">
+          {{ range .RegularPages.ByDate.Reverse }}
+            <article class="list-card">
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <p>{{ .Summary | plainify | truncate 160 }}</p>
+            </article>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="empty-state">
+          <p>Project summaries will be published here as research outputs and implementation efforts are documented.</p>
+          <a href="{{ "publication/" | relLangURL }}">Browse Publications</a>
+        </div>
+      {{ end }}
+    </section>
+  </section>
+</div>
+{{ end }}

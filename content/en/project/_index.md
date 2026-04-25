@@ -1,5 +1,6 @@
 ---
 title: Projects
+layout: section_en
 
 # Listing view
 view: compact

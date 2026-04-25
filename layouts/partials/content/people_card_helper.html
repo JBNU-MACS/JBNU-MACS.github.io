@@ -4,7 +4,6 @@
 {{ $email := ($item.Params.email | default "") }}
 {{ with $item.Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
 
-{{/* 이름 결정 로직: en 섹션이면 name_en 우선, 없으면 Title */}}
 {{ $name := $item.Title }}
 {{ if eq $lang "en" }}
   {{ if $item.Params.name_en }}
@@ -24,19 +23,10 @@
   {{ $role = replace $role "파트박사" "Part-time Ph.D. Student" }}
   {{ $role = replace $role "(취업)" "Employed at" }}
   {{ $role = replace $role "(석사과정)" "Master's Student" }}
-  {{ $role = replace $role "이스타항공" "Eastar Jet" }}
-  {{ $role = replace $role "포항공과대학교" "POSTECH" }}
-  {{ $role = replace $role "대구경북과학기술원" "DGIST" }}
-  {{ $role = replace $role "울산과학기술원" "UNIST" }}
-  {{ $role = replace $role "한국과학기술원" "KAIST" }}
-  {{ $role = replace $role "한국생산기술연구원" "Korea Institute of Industrial Technology" }}
-  {{ $role = replace $role "한국환경공단" "Korea Environment Corporation" }}
 {{ end }}
 
 {{ $org := "" }}
-{{ with index $item.Params.organizations 0 }}
-  {{ $org = .name }}
-{{ end }}
+{{ with index $item.Params.organizations 0 }}{{ $org = .name }}{{ end }}
 {{ if eq $lang "en" }}
   {{ $org = replace $org "전북대학교 컴퓨터인공지능학부" "Department of Computer Science & Artificial Intelligence, Jeonbuk National University" }}
   {{ $org = replace $org "전북대학교 전자.정보공학부(컴퓨터공학)" "Division of Electronic and Information Engineering (Computer Science), Jeonbuk National University" }}
@@ -49,6 +39,26 @@
   {{ $org = replace $org "학부연구생 (경제학부)" "Undergraduate Researcher (School of Economics)" }}
 {{ end }}
 
+{{ if eq $lang "en" }}
+<article class="en-people-card">
+  <a href="{{ $item.RelPermalink }}" class="inner">
+    <div class="photo{{ if not $avatar }} placeholder{{ end }}">
+      {{ if $avatar }}
+        <img src="{{ $avatar }}" alt="{{ $name }} portrait" loading="lazy">
+      {{ else }}
+        <span>{{ slicestr ($name | plainify) 0 1 }}</span>
+      {{ end }}
+    </div>
+    <div class="body">
+      <h3>{{ $name }}</h3>
+      {{ with $role }}<p class="role">{{ . }}</p>{{ end }}
+      {{ if ne $org "" }}<p class="org">{{ $org }}</p>{{ end }}
+      {{ if ne $email "" }}<p class="contact"><a href="mailto:{{ $email }}">{{ $email }}</a></p>{{ end }}
+      <span class="more">View Profile</span>
+    </div>
+  </a>
+</article>
+{{ else }}
 <article class="macs-people-card">
   <a href="{{ $item.RelPermalink }}" class="macs-people-card-inner">
     {{ if $avatar }}
@@ -73,3 +83,4 @@
     </div>
   </a>
 </article>
+{{ end }}

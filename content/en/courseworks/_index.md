@@ -1,5 +1,6 @@
 ---
 title: Courseworks
+layout: section_en
 
 # Listing view
 view: citation

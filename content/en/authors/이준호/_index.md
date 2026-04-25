@@ -1,0 +1,32 @@
+---
+# Display name
+title: 이준호
+
+# Full Name (for SEO)
+first_name: Student
+last_name: 1
+
+# Username (this should match the folder name)
+authors:
+  - 이준호
+
+# Is this the primary user of the site?
+superuser: false
+
+# Role/position
+role: Undergraduate Researcher
+
+# Organizations/Affiliations
+organizations:
+  - name: School of Computer and Artificial Intelligence, Jeonbuk National University
+
+# Enter email to display Gravatar (if Gravatar enabled in Config)
+email: ''
+
+# Highlight the author in author lists? (true/false)
+highlight_name: true
+
+# Organizational groups that you belong to (for People widget)
+user_groups:
+  - Student
+---

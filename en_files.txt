@@ -1,0 +1,247 @@
+_index.md
+about/_index.md
+admin/index.md
+authors/admin/_index.md
+authors/admin/avatar.jpg
+authors/吳恩達/_index.md
+authors/吳恩達/avatar.jpg
+authors/강경태/_index.md
+authors/강경태/avatar.jpg
+authors/강다영/_index.md
+authors/강다영/avatar.jpg
+authors/강동준/_index.md
+authors/강동준/avatar.jpg
+authors/곽봉석/_index.md
+authors/곽봉석/avatar.jpg
+authors/김솔아/_index.md
+authors/김솔아/avatar.jpg
+authors/김수민/_index.md
+authors/김수민/avatar.jpg
+authors/김영수/_index.md
+authors/김영수/avatar.jpg
+authors/민태홍/_index.md
+authors/민태홍/avatar.jpg
+authors/박세현/_index.md
+authors/박세현/avatar.jpg
+authors/박찬곤/_index.md
+authors/박찬곤/avatar.jpg
+authors/배재훈/_index.md
+authors/배재훈/avatar.jpeg
+authors/송세화/_index.md
+authors/송세화/avatar.jpg
+authors/안상아/_index.md
+authors/안상아/avatar.jpg
+authors/이경수/_index.md
+authors/이동현/_index.md
+authors/이동현/avatar.jpeg
+authors/이준호/_index.md
+authors/이준호/avatar.jpg
+authors/이진선/_index.md
+authors/이진선/avatar.jpg
+authors/정세진/_index.md
+authors/정세진/avatar.jpg
+authors/정진영/_index.md
+authors/정진영/avatar.jpg
+authors/최서연/_index.md
+authors/최서연/avatar.png
+authors/최홍석/_index.md
+authors/최홍석/avatar.jpg
+authors/홍건하/_index.md
+authors/홍건하/avatar.jpg
+authors/홍사강/_index.md
+authors/홍사강/avatar.jpg
+contact/index.md
+courseworks/_index.md
+event/_index.md
+event/example/featured.jpg
+event/example/index.md
+field/00-AI/featured.jpg
+field/00-AI/index.md
+field/01-Medical-Imaging/featured.jpg
+field/01-Medical-Imaging/index.md
+field/02-Healthcare/featured.jpg
+field/02-Healthcare/index.md
+field/03-Contents/featured.jpg
+field/03-Contents/index.md
+field/04-Aerospace/featured.jpg
+field/04-Aerospace/index.md
+field/05-Mathematics/featured.jpg
+field/05-Mathematics/index.md
+field/06-Development/featured.jpg
+field/06-Development/index.md
+field/07-Computational-Science/featured.jpg
+field/07-Computational-Science/index.md
+field/_index.md
+notification/26-02-20-석박사학생모집/featured.jpg
+notification/26-02-20-석박사학생모집/index.md
+notification/26-02-20-학부연구생모집/featured.jpg
+notification/26-02-20-학부연구생모집/index.md
+notification/26-04-25-석박사학생모집-2학기/featured.jpg
+notification/26-04-25-석박사학생모집-2학기/index.md
+notification/26-04-25-학부연구생모집-2학기/featured.jpg
+notification/26-04-25-학부연구생모집-2학기/index.md
+notification/_index.md
+people/index.md
+post/20-12-01-wowchemy-prize/featured.jpg
+post/20-12-01-wowchemy-prize/index.md
+post/20-12-02-ICML-best-paper/featured.jpg
+post/20-12-02-ICML-best-paper/index.md
+post/24-03-02-신임교원임용/featured.jpg
+post/24-03-02-신임교원임용/index.md
+post/24-11-20-K-Health-수상/featured.jpg
+post/24-11-20-K-Health-수상/index.md
+post/25-01-23-ICLR2025 Accepted/featured.png
+post/25-01-23-ICLR2025 Accepted/index.md
+post/25-03-03-ICLR2025 Workshop Accepted/featured.png
+post/25-03-03-ICLR2025 Workshop Accepted/index.md
+post/25-07-15-ICCV2025 Workshop Accepted/featured.png
+post/25-07-15-ICCV2025 Workshop Accepted/index.md
+post/25-10-15-AIxMHC2025-Best-Poster-Award/aixmhc2025-award-certificate.jpeg
+post/25-10-15-AIxMHC2025-Best-Poster-Award/aixmhc2025-poster.jpeg
+post/25-10-15-AIxMHC2025-Best-Poster-Award/aixmhc2025-team.jpeg
+post/25-10-15-AIxMHC2025-Best-Poster-Award/featured.jpeg
+post/25-10-15-AIxMHC2025-Best-Poster-Award/index.md
+post/25-11-08-KOSOMBE-우수포스터상/featured.jpeg
+post/25-11-08-KOSOMBE-우수포스터상/index.md
+post/25-11-08-KOSOMBE-우수포스터상/kosombe2025-award-certificate.jpeg
+post/25-11-08-KOSOMBE-우수포스터상/kosombe2025-award-hong.jpeg
+post/25-12-09-CVPR2026 Accepted/featured.png
+post/25-12-09-CVPR2026 Accepted/index.md
+post/26-02-22-AISTATS2026 Accepted/featured.png
+post/26-02-22-AISTATS2026 Accepted/index.md
+post/26-02-22-CHI2026 Accepted/featured.png
+post/26-02-22-CHI2026 Accepted/index.md
+post/_index.md
+project/_index.md
+publication/0000-Smartphone-based Spectral Imaging Otoscope- System Development And Preliminary Study For Evaluation Of Its Potential As A Mobile Diagnostic Tool/cite.bib
+publication/0000-Smartphone-based Spectral Imaging Otoscope- System Development And Preliminary Study For Evaluation Of Its Potential As A Mobile Diagnostic Tool/featured.png
+publication/0000-Smartphone-based Spectral Imaging Otoscope- System Development And Preliminary Study For Evaluation Of Its Potential As A Mobile Diagnostic Tool/index.md
+publication/0001-Wide-field 3d Ultrasound Imaging Platform With A Semi-automatic 3d Segmentation Algorithm For Quantitative Analysis Of Rotator Cuff Tears/0001-Wide-field 3D Ultrasound Imaging Platform with a Semi-Automatic 3D Segmentation Algorithm for Quantitative Analysis of Rotator Cuff Tears.pdf
+publication/0001-Wide-field 3d Ultrasound Imaging Platform With A Semi-automatic 3d Segmentation Algorithm For Quantitative Analysis Of Rotator Cuff Tears/cite.bib
+publication/0001-Wide-field 3d Ultrasound Imaging Platform With A Semi-automatic 3d Segmentation Algorithm For Quantitative Analysis Of Rotator Cuff Tears/featured.png
+publication/0001-Wide-field 3d Ultrasound Imaging Platform With A Semi-automatic 3d Segmentation Algorithm For Quantitative Analysis Of Rotator Cuff Tears/index.md
+publication/0002-Fully-automatic Deep Learning-based Analysis For Determination Of The Invasiveness Of Breast Cancer Cells In An Acoustic Trap/cite.bib
+publication/0002-Fully-automatic Deep Learning-based Analysis For Determination Of The Invasiveness Of Breast Cancer Cells In An Acoustic Trap/featured.png
+publication/0002-Fully-automatic Deep Learning-based Analysis For Determination Of The Invasiveness Of Breast Cancer Cells In An Acoustic Trap/index.md
+publication/0003-Domain Adaptive Transfer Attack-based Segmentation Networks For Building Extraction From Aerial Images/cite.bib
+publication/0003-Domain Adaptive Transfer Attack-based Segmentation Networks For Building Extraction From Aerial Images/featured.png
+publication/0003-Domain Adaptive Transfer Attack-based Segmentation Networks For Building Extraction From Aerial Images/index.md
+publication/0004-Imbalanced Loss-integrated Deep-learning-based Ultrasound Image Analysis For Diagnosis Of Rotator-cuff Tear/0004-Imbalanced Loss-Integrated Deep-Learning-based Ultrasound Image Analysis for Diagnosis of Rotator-Cuff Tear.pdf
+publication/0004-Imbalanced Loss-integrated Deep-learning-based Ultrasound Image Analysis For Diagnosis Of Rotator-cuff Tear/cite.bib
+publication/0004-Imbalanced Loss-integrated Deep-learning-based Ultrasound Image Analysis For Diagnosis Of Rotator-cuff Tear/featured.png
+publication/0004-Imbalanced Loss-integrated Deep-learning-based Ultrasound Image Analysis For Diagnosis Of Rotator-cuff Tear/index.md
+publication/0005-Local Similarity Siamese Network For Urban Land Change Detection On Remote Sensing Images/cite.bib
+publication/0005-Local Similarity Siamese Network For Urban Land Change Detection On Remote Sensing Images/featured.png
+publication/0005-Local Similarity Siamese Network For Urban Land Change Detection On Remote Sensing Images/index.md
+publication/0006-Federated Learning For Thyroid Ultrasound Image Analysis To Protect Personal Information- Validation Study In A Real Health Care Environment/0006-Federated Learning for Thyroid Ultrasound Image Analysis to Protect Personal Information- Validation Study in a Real Health Care Environment.pdf
+publication/0006-Federated Learning For Thyroid Ultrasound Image Analysis To Protect Personal Information- Validation Study In A Real Health Care Environment/cite.bib
+publication/0006-Federated Learning For Thyroid Ultrasound Image Analysis To Protect Personal Information- Validation Study In A Real Health Care Environment/featured.png
+publication/0006-Federated Learning For Thyroid Ultrasound Image Analysis To Protect Personal Information- Validation Study In A Real Health Care Environment/index.md
+publication/0007-Boundary-oriented Binary Building Segmentation Model With Two Scheme Learning For Aerial Images/cite.bib
+publication/0007-Boundary-oriented Binary Building Segmentation Model With Two Scheme Learning For Aerial Images/featured.png
+publication/0007-Boundary-oriented Binary Building Segmentation Model With Two Scheme Learning For Aerial Images/index.md
+publication/0008-Self-mutating Network For Domain Adaptive Segmentation In Aerial Images/0008-Self-Mutating Network for Domain Adaptive Segmentation in Aerial Images.pdf
+publication/0008-Self-mutating Network For Domain Adaptive Segmentation In Aerial Images/cite.bib
+publication/0008-Self-mutating Network For Domain Adaptive Segmentation In Aerial Images/featured.png
+publication/0008-Self-mutating Network For Domain Adaptive Segmentation In Aerial Images/index.md
+publication/0009-Intelligent Smartphone-based Multimode Imaging Otoscope For The Mobile Diagnosis Of Otitis Media/cite.bib
+publication/0009-Intelligent Smartphone-based Multimode Imaging Otoscope For The Mobile Diagnosis Of Otitis Media/featured.png
+publication/0009-Intelligent Smartphone-based Multimode Imaging Otoscope For The Mobile Diagnosis Of Otitis Media/index.md
+publication/0010-Multi-task And Few-shot Learning-based Fully Automatic Deep Learning Platform For Mobile Diagnosis Of Skin Diseases/cite.bib
+publication/0010-Multi-task And Few-shot Learning-based Fully Automatic Deep Learning Platform For Mobile Diagnosis Of Skin Diseases/featured.png
+publication/0010-Multi-task And Few-shot Learning-based Fully Automatic Deep Learning Platform For Mobile Diagnosis Of Skin Diseases/index.md
+publication/0011-Speckle Reduction Via Deep Content-aware Image Prior For Precise Breast Tumor Segmentation In An Ultrasound Image/cite.bib
+publication/0011-Speckle Reduction Via Deep Content-aware Image Prior For Precise Breast Tumor Segmentation In An Ultrasound Image/featured.png
+publication/0011-Speckle Reduction Via Deep Content-aware Image Prior For Precise Breast Tumor Segmentation In An Ultrasound Image/index.md
+publication/0012-Usg-net- Deep Learning-based Ultrasound Scanning-guide For An Orthopedic Sonographer/cite.bib
+publication/0012-Usg-net- Deep Learning-based Ultrasound Scanning-guide For An Orthopedic Sonographer/featured.png
+publication/0012-Usg-net- Deep Learning-based Ultrasound Scanning-guide For An Orthopedic Sonographer/index.md
+publication/0013-Deep-learning Model Associating Lateral Cervical Radiographic Features With Cormack--lehane Grade 3 Or 4 Glottic View/cite.bib
+publication/0013-Deep-learning Model Associating Lateral Cervical Radiographic Features With Cormack--lehane Grade 3 Or 4 Glottic View/featured.png
+publication/0013-Deep-learning Model Associating Lateral Cervical Radiographic Features With Cormack--lehane Grade 3 Or 4 Glottic View/index.md
+publication/0014-Stochastic Adaptive Activation Function/0014-Stochastic Adaptive Activation Function.pdf
+publication/0014-Stochastic Adaptive Activation Function/cite.bib
+publication/0014-Stochastic Adaptive Activation Function/featured.png
+publication/0014-Stochastic Adaptive Activation Function/index.md
+publication/0015-Css-net- Classification And Substitution For Segmentation Of Rotator Cuff Tear/cite.bib
+publication/0015-Css-net- Classification And Substitution For Segmentation Of Rotator Cuff Tear/featured.png
+publication/0015-Css-net- Classification And Substitution For Segmentation Of Rotator Cuff Tear/index.md
+publication/0016-Usim Gate- Upsampling Module For Segmenting Precise Boundaries Concerning Entropy/0016-USIM Gate- Upsampling Module for Segmenting Precise Boundaries Concerning Entropy.pdf
+publication/0016-Usim Gate- Upsampling Module For Segmenting Precise Boundaries Concerning Entropy/cite.bib
+publication/0016-Usim Gate- Upsampling Module For Segmenting Precise Boundaries Concerning Entropy/featured.png
+publication/0016-Usim Gate- Upsampling Module For Segmenting Precise Boundaries Concerning Entropy/index.md
+publication/0017-Self-supervised Domain Adaptive Segmentation Of Breast Cancer Via Test-time Fine-tuning/cite.bib
+publication/0017-Self-supervised Domain Adaptive Segmentation Of Breast Cancer Via Test-time Fine-tuning/featured.png
+publication/0017-Self-supervised Domain Adaptive Segmentation Of Breast Cancer Via Test-time Fine-tuning/index.md
+publication/0018-Fine-tuning Network In Federated Learning For Personalized Skin Diagnosis/cite.bib
+publication/0018-Fine-tuning Network In Federated Learning For Personalized Skin Diagnosis/featured.png
+publication/0018-Fine-tuning Network In Federated Learning For Personalized Skin Diagnosis/index.md
+publication/0019-Bladder/cite.bib
+publication/0019-Bladder/featured.png
+publication/0019-Bladder/index.md
+publication/0020-Fine-Grained Binary Object Segmentation in Remote Sensing Imagery via Path-Selective Test-Time Adaptation/cite.bib
+publication/0020-Fine-Grained Binary Object Segmentation in Remote Sensing Imagery via Path-Selective Test-Time Adaptation/featured.png
+publication/0020-Fine-Grained Binary Object Segmentation in Remote Sensing Imagery via Path-Selective Test-Time Adaptation/index.md
+publication/0021-Predicting Obstructive Sleep Apnea Based on Computed Tomography Scan Using Deep Learning Models/cite.bib
+publication/0021-Predicting Obstructive Sleep Apnea Based on Computed Tomography Scan Using Deep Learning Models/featured.png
+publication/0021-Predicting Obstructive Sleep Apnea Based on Computed Tomography Scan Using Deep Learning Models/index.md
+publication/0022-Machine Learning-Enhanced Skull-Universal Acoustic Hologram for Efficient Transcranial Ultrasound Neuromodulation Across Varied Rodent Skulls/cite.bib
+publication/0022-Machine Learning-Enhanced Skull-Universal Acoustic Hologram for Efficient Transcranial Ultrasound Neuromodulation Across Varied Rodent Skulls/featured.png
+publication/0022-Machine Learning-Enhanced Skull-Universal Acoustic Hologram for Efficient Transcranial Ultrasound Neuromodulation Across Varied Rodent Skulls/index.md
+publication/0023-Connectome Mapping Shape-Memory Network via Interpretation of Contextual Semantic Information/cite.bib
+publication/0023-Connectome Mapping Shape-Memory Network via Interpretation of Contextual Semantic Information/featured.png
+publication/0023-Connectome Mapping Shape-Memory Network via Interpretation of Contextual Semantic Information/index.md
+publication/0024-Selective Optimal Network for Smartphone-based Indoor Localization in Real-time/cite.bib
+publication/0024-Selective Optimal Network for Smartphone-based Indoor Localization in Real-time/featured.png
+publication/0024-Selective Optimal Network for Smartphone-based Indoor Localization in Real-time/index.md
+publication/0025-Interactive Few-shot Online Adaptation for User-Guided Segmentation in Aerial Images/cite.bib
+publication/0025-Interactive Few-shot Online Adaptation for User-Guided Segmentation in Aerial Images/featured.png
+publication/0025-Interactive Few-shot Online Adaptation for User-Guided Segmentation in Aerial Images/index.md
+publication/0026-Real-time Self-supervised Ultrasound Image Enhancement Using Test-Time Adaptation for Sophisticated Rotator Cuff Tear Diagnosis/cite.bib
+publication/0026-Real-time Self-supervised Ultrasound Image Enhancement Using Test-Time Adaptation for Sophisticated Rotator Cuff Tear Diagnosis/featured.png
+publication/0026-Real-time Self-supervised Ultrasound Image Enhancement Using Test-Time Adaptation for Sophisticated Rotator Cuff Tear Diagnosis/index.md
+publication/0027-Human-Centered Personalization in Radiology AI/cite.bib
+publication/0027-Human-Centered Personalization in Radiology AI/featured.png
+publication/0027-Human-Centered Personalization in Radiology AI/index.md
+publication/0028-Context-Aware Pooling via Top-k% Activation Selection/cite.bib
+publication/0028-Context-Aware Pooling via Top-k% Activation Selection/featured.png
+publication/0028-Context-Aware Pooling via Top-k% Activation Selection/index.md
+publication/0029-Expert-level differentiation of incomplete Kawasaki disease and pneumonia from echocardiography via multiple large receptive attention mechanisms/cite.bib
+publication/0029-Expert-level differentiation of incomplete Kawasaki disease and pneumonia from echocardiography via multiple large receptive attention mechanisms/featured.png
+publication/0029-Expert-level differentiation of incomplete Kawasaki disease and pneumonia from echocardiography via multiple large receptive attention mechanisms/index.md
+publication/0030-Field Validated Hybrid ESP-NOW and Long Range IoT Monitoring System for Energy Autonomous Precision Agriculture/cite.bib
+publication/0030-Field Validated Hybrid ESP-NOW and Long Range IoT Monitoring System for Energy Autonomous Precision Agriculture/featured.jpg
+publication/0030-Field Validated Hybrid ESP-NOW and Long Range IoT Monitoring System for Energy Autonomous Precision Agriculture/index.md
+publication/0031-Patient-Centric Statistical Multi-Modal Fusion for Medical Diagnosis Integrating DICOM Radiomics and Patient Attributes/cite.bib
+publication/0031-Patient-Centric Statistical Multi-Modal Fusion for Medical Diagnosis Integrating DICOM Radiomics and Patient Attributes/featured.png
+publication/0031-Patient-Centric Statistical Multi-Modal Fusion for Medical Diagnosis Integrating DICOM Radiomics and Patient Attributes/index.md
+publication/0032-Memory-Guided Personalization for Physician-Specific Diagnostic Inference/cite.bib
+publication/0032-Memory-Guided Personalization for Physician-Specific Diagnostic Inference/featured.png
+publication/0032-Memory-Guided Personalization for Physician-Specific Diagnostic Inference/index.md
+publication/0033-Anatomy-Aware Distillation with Memory-Augmented SAM2 for Fracture Detection/cite.bib
+publication/0033-Anatomy-Aware Distillation with Memory-Augmented SAM2 for Fracture Detection/index.md
+publication/0034-SAM2-based Bayesian Prompt Adaptation for Cross-Modality Medical Segmentation/cite.bib
+publication/0034-SAM2-based Bayesian Prompt Adaptation for Cross-Modality Medical Segmentation/index.md
+publication/0035-Statistical Latent Manifold-Guided Framework for Generative Super-Resolution/index.md
+publication/0036-Statistical Multi-Modal Fusion for Patient-Centric Medical Diagnosis Using DICOM/index.md
+publication/0037-Statistical Latent Manifold-Guided Framework for Generative Super-Resolution AIxMHC2025/index.md
+publication/0038-Anatomy-Aware Distillation with Memory-Augmented SAM2 for Fracture Detection KSC2025/index.md
+publication/0039-Bayesian Multi-Class Segmentation for Remote Sensing Integrating User Priors and Uncertainty/cite.bib
+publication/0039-Bayesian Multi-Class Segmentation for Remote Sensing Integrating User Priors and Uncertainty/featured.png
+publication/0039-Bayesian Multi-Class Segmentation for Remote Sensing Integrating User Priors and Uncertainty/index.md
+publication/0040-PRIME Ultra-Low-Rank Principal-Residual Model Merging/cite.bib
+publication/0040-PRIME Ultra-Low-Rank Principal-Residual Model Merging/featured.png
+publication/0040-PRIME Ultra-Low-Rank Principal-Residual Model Merging/index.md
+publication/0041-Human-Intervention Segmentation via Federated Intent Embedding and Multi-Mask Recommendation/featured.png
+publication/0041-Human-Intervention Segmentation via Federated Intent Embedding and Multi-Mask Recommendation/index.md
+publication/_index.md
+publication/conference-paper/cite.bib
+publication/conference-paper/conference-paper.pdf
+publication/conference-paper/featured.jpg
+publication/conference-paper/index.md
+publication/journal-article/cite.bib
+publication/journal-article/featured.jpg
+publication/journal-article/index.md
+publication/preprint/featured.jpg
+publication/preprint/index.md
+tour/index.md

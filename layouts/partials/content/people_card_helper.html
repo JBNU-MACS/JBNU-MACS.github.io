@@ -9,6 +9,10 @@
 {{ if eq $lang "en" }}
   {{ if $item.Params.name_en }}
     {{ $name = $item.Params.name_en }}
+  {{ else if or $item.Params.first_name $item.Params.last_name }}
+    {{ $name = trim (printf "%s %s" ($item.Params.first_name | default "") ($item.Params.last_name | default "")) " " }}
+  {{ else if $item.File }}
+    {{ $name = ($item.File.ContentBaseName | replace "-" " " | replace "_" " " | title) }}
   {{ end }}
 {{ end }}
 

@@ -1,6 +1,9 @@
 {{ $all := slice }}
 {{ range site.Pages }}
-  {{ if and (or (eq .Type "authors") (eq .Section "authors")) (or (eq .Kind "term") (eq .Kind "page")) }}
+  {{ if and
+      (or (eq .Type "authors") (eq .Section "authors"))
+      (or (eq .Kind "term") (eq .Kind "page"))
+      (eq .Lang $.Page.Language.Lang) }}
     {{ $all = $all | append . }}
   {{ end }}
 {{ end }}

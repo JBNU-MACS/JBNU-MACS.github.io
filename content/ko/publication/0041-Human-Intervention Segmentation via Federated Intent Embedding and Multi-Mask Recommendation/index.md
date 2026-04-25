@@ -22,7 +22,7 @@ publishDate: '2026-04-25'
 
 # Publication type.
 publication_types:
-  - conference-international
+  - paper-csai
 
 badges:
   - Top
@@ -30,13 +30,13 @@ badges:
 highlight: true
 
 # Publication name and optional abbreviated publication name.
-publication: IEEE/CVF Conference on Computer Vision and Pattern Recognition 2026 (Conference Submission)
-publication_short: CVPR 2026 Submission
+publication: IEEE/CVF Conference on Computer Vision and Pattern Recognition 2026
+publication_short: CVPR2026
 
 abstract: Artificial intelligence (AI) has advanced radiology, yet variability across hospitals and devices undermines reliability and trust. We present a federated learning framework that combines frequency-domain harmonization and instruction-conditioned personalization to deliver consistent and interpretable diagnostic outcomes. Using FFT-based reconstructions informed by radiomics descriptors, the system reduces equipment dependency, while CLIP-based text conditioning enables clinicians to guide reconstructions to local practices and patient needs. We evaluated the framework across four hospitals with fifteen radiologists and fifty patients, spanning polyp detection, rotator cuff tear diagnosis, pneumothorax classification, and breast cancer classification and segmentation. Results show significant gains in accuracy, calibration, and robustness under cross-site transfer, without introducing prohibitive latency. Radiologists reported improved interpretability and preserved professional agency, while patients expressed greater trust, reduced anxiety, and stronger acceptance of AI involvement. This work advances a human-centered design for medical AI, aligning federated learning with transparency, equity, and trustworthy deployment.
 
 # Summary. An optional shortened abstract.
-summary: '___CVPR 2026 Conference Submission___ <br> _Submitted: 2026.04.25 (Last Modified: 2026.04.25)_'
+summary: '___CVPR2026___ <br> _Published: 2026.04.25 (Last Modified: 2026.04.25)_'
 
 tags: ['AI', 'computer vision', 'medical imaging', 'federated learning', 'intent embedding', 'interactive segmentation', 'multi-mask recommendation', 'student paper']
 

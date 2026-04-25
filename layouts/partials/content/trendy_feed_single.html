@@ -1,108 +1,26 @@
 {{ $p := .Page }}
 {{ $kindLabel := .KindLabel | default "News" }}
-{{ $kindClass := .KindClass | default "news" }}
-{{ $heroRes := $p.Resources.GetMatch "featured*" }}
-{{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*cover*" }}{{ end }}
-{{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*thumb*" }}{{ end }}
-{{ $summary := trim ($p.Summary | plainify) " \n\r\t" }}
-
+{{ if eq $p.Language.Lang "en" }}
 <div class="universal-wrapper">
-  {{ if eq $p.Language.Lang "en" }}
-  <article class="en-article-detail en-article-detail--{{ $kindClass }}">
-    <header class="hero">
-      <div class="copy">
-        {{ with $p.CurrentSection }}<a class="back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
-        <p class="eyebrow">{{ $kindLabel }}</p>
-        <h1>{{ $p.Title }}</h1>
-        <div class="meta-row">
-          <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006.01.02" }}</time>
-          {{ with $p.Lastmod }}<span>Updated {{ .Format "2006.01.02" }}</span>{{ end }}
-          {{ with $p.ReadingTime }}<span>{{ . }} min read</span>{{ end }}
-        </div>
-        {{ if and $summary (ne $summary ($p.Title | plainify)) }}<p class="summary">{{ $summary }}</p>{{ end }}
+  <article class="en-civic-detail">
+    <header class="page-head">
+      {{ with $p.CurrentSection }}<a class="back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
+      <p class="eyebrow">{{ $kindLabel }}</p>
+      <h1>{{ $p.Title }}</h1>
+      <div class="meta-line">
+        <span>{{ $p.Date.Format "2006.01.02" }}</span>
+        {{ with $p.Lastmod }}<span>Updated {{ .Format "2006.01.02" }}</span>{{ end }}
       </div>
-      <figure class="visual{{ if not $heroRes }} no-image{{ end }}">
-        {{ with $heroRes }}
-          <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
-        {{ else }}
-          <span>{{ slicestr $kindLabel 0 1 }}</span>
-        {{ end }}
-      </figure>
+      {{ with ($p.Summary | plainify) }}{{ if ne . ($p.Title | plainify) }}<p class="summary">{{ . }}</p>{{ end }}{{ end }}
     </header>
-
-    <div class="layout">
-      <div class="main">
-        <div class="content">{{ $p.Content }}</div>
-      </div>
-      <aside class="side">
-        <div class="panel">
-          <h2>Article Information</h2>
-          <ul>
-            <li><strong>Category</strong><span>{{ $kindLabel }}</span></li>
-            <li><strong>Published</strong><span>{{ $p.Date.Format "2006.01.02" }}</span></li>
-            {{ with $p.Lastmod }}<li><strong>Updated</strong><span>{{ .Format "2006.01.02" }}</span></li>{{ end }}
-          </ul>
-        </div>
-        {{ with $p.CurrentSection }}
-        <div class="panel">
-          <h2>Section</h2>
-          <a href="{{ .RelPermalink }}">Browse {{ .Title }}</a>
-        </div>
-        {{ end }}
-      </aside>
-    </div>
-
-    <footer class="foot">
-      {{ with $p.PrevInSection }}<a class="nav prev" href="{{ .RelPermalink }}">Previous: {{ .Title }}</a>{{ end }}
-      {{ with $p.NextInSection }}<a class="nav next" href="{{ .RelPermalink }}">Next: {{ .Title }}</a>{{ end }}
+    {{ $hero := $p.Resources.GetMatch "featured*" }}{{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*cover*" }}{{ end }}{{ if and $hero (ne $p.Type "publication") }}<figure class="detail-image"><img src="{{ $hero.RelPermalink }}" alt="{{ $p.Title }}"></figure>{{ end }}
+    <div class="detail-content">{{ $p.Content }}</div>
+    <footer class="detail-foot">
+      {{ with $p.PrevInSection }}<a href="{{ .RelPermalink }}">Previous: {{ .Title }}</a>{{ end }}
+      {{ with $p.NextInSection }}<a href="{{ .RelPermalink }}">Next: {{ .Title }}</a>{{ end }}
     </footer>
   </article>
-  {{ else }}
-  <article class="macs-feed-single macs-feed-single--{{ $kindClass }}">
-    <header class="macs-feed-single-hero{{ if not $heroRes }} no-hero{{ end }}">
-      <div class="macs-feed-single-head">
-        <div class="macs-feed-single-kicker">
-          {{ with $p.CurrentSection }}
-            <a class="back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>
-          {{ end }}
-        </div>
-
-        <h1>{{ $p.Title }}</h1>
-
-        <div class="macs-feed-single-meta">
-          <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006.01.02" }}</time>
-          {{ with $p.ReadingTime }}<span>{{ . }} min read</span>{{ end }}
-          {{ with $p.Lastmod }}<span>Updated {{ .Format "2006.01.02" }}</span>{{ end }}
-        </div>
-
-        {{ if and $summary (ne $summary ($p.Title | plainify)) }}
-          <p class="macs-feed-single-summary">{{ $summary }}</p>
-        {{ end }}
-      </div>
-
-      {{ with $heroRes }}
-        <figure class="macs-feed-single-cover">
-          <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
-        </figure>
-      {{ end }}
-    </header>
-
-    <section class="macs-feed-single-body">
-      <div class="macs-feed-single-content">
-        {{ $p.Content }}
-      </div>
-    </section>
-
-    <footer class="macs-feed-single-foot">
-      <div class="foot-links">
-        {{ with $p.PrevInSection }}
-          <a class="nav prev" href="{{ .RelPermalink }}">← {{ .Title }}</a>
-        {{ end }}
-        {{ with $p.NextInSection }}
-          <a class="nav next" href="{{ .RelPermalink }}">{{ .Title }} →</a>
-        {{ end }}
-      </div>
-    </footer>
-  </article>
-  {{ end }}
 </div>
+{{ else }}
+  {{ partial "content/legacy/trendy_feed_single_legacy.html" . }}
+{{ end }}

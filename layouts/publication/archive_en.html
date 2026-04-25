@@ -1,98 +1,37 @@
 {{ define "main" }}
 {{ $items := .RegularPages.ByDate.Reverse }}
-{{ $allYears := slice }}
-{{ range $items }}
-  {{ $year := .Date.Format "2006" }}
-  {{ if not (in $allYears $year) }}
-    {{ $allYears = $allYears | append $year }}
-  {{ end }}
-{{ end }}
-{{ $topCount := 0 }}
-{{ range $items }}
-  {{ if or (in (.Params.badges | default (slice)) "Top") (.Params.highlight | default false) }}
-    {{ $topCount = add $topCount 1 }}
-  {{ end }}
-{{ end }}
-
 <div class="universal-wrapper">
-  <section class="en-publication-archive">
-    <header class="archive-hero">
-      <div class="copy">
-        <p class="eyebrow">Research Archive</p>
-        <h1>{{ .Title }}</h1>
-        <p class="summary">A structured archive of journal articles, conference papers, workshop papers, and ongoing research outputs from MACS Lab.</p>
-        <div class="stats">
-          <div><strong>{{ len $items }}</strong><span>Total Records</span></div>
-          <div><strong>{{ $topCount }}</strong><span>Highlighted Papers</span></div>
-          <div><strong>{{ len $allYears }}</strong><span>Publication Years</span></div>
-        </div>
-      </div>
-      <figure class="visual">
-        <img src="/media/researchpaper.jpg" alt="Research publication archive">
-      </figure>
+  <section class="en-civic-publication-archive">
+    <header class="page-head">
+      <p class="eyebrow">Publications</p>
+      <h1>{{ .Title }}</h1>
+      <p class="summary">A year-based archive of journal articles, conference papers, workshop papers, and related research outputs from MACS Lab.</p>
     </header>
 
-    <section class="archive-overview">
-      <article class="panel overview-card">
-        <h2>Scope</h2>
-        <p>The archive includes work in medical AI, multimodal learning, remote sensing, computational science, personalization, and applied systems.</p>
-      </article>
-      <article class="panel years-card">
-        <h2>Years</h2>
-        <div class="year-chips">
-          {{ range $allYears }}<a href="#pub-year-{{ . }}">{{ . }}</a>{{ end }}
+    {{ range $group := $items.GroupByDate "2006" }}
+      <section class="year-group">
+        <div class="section-head">
+          <h2>{{ $group.Key }}</h2>
+          <span>{{ len $group.Pages }} records</span>
         </div>
-      </article>
-    </section>
-
-    <div class="archive-groups">
-      {{ range $group := $items.GroupByDate "2006" }}
-        <section class="year-group" id="pub-year-{{ $group.Key }}">
-          <header class="year-head">
-            <h2>{{ $group.Key }}</h2>
-            <span>{{ len $group.Pages }} records</span>
-          </header>
-
-          <div class="publication-cards">
-            {{ range $group.Pages }}
-              {{ $pub := . }}
-              {{ $thumb := partial "blox-core/functions/get_featured_image.html" . }}
-              {{ $authors := partial "content/render_publication_authors" (dict "item" . "link" false "showNotes" false "period" false "strongName" "") }}
-              {{ $summary := .Params.summary | default .Params.abstract | default .Summary | plainify | truncate 220 }}
-              {{ $isTop := or (in (.Params.badges | default (slice)) "Top") (.Params.highlight | default false) }}
-              <article class="publication-card{{ if $isTop }} is-top{{ end }}">
-                <a class="thumb{{ if not $thumb }} no-image{{ end }}" href="{{ .RelPermalink }}">
-                  {{ with $thumb }}
-                    {{ $img := .Resize "720x460" }}
-                    {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
-                    <img src="{{ $img.RelPermalink }}" alt="{{ $pub.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
-                  {{ else }}
-                    <span>P</span>
-                  {{ end }}
-                </a>
-
-                <div class="body">
-                  <div class="meta-row">
-                    {{ with .Params.publication_short }}<span class="venue">{{ . }}</span>{{ end }}
-                    <span class="year">{{ .Date.Format "2006" }}</span>
-                    {{ range (.Params.badges | default (slice)) }}<span class="badge">{{ . }}</span>{{ end }}
-                  </div>
-                  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                  {{ with $authors }}<p class="authors">{{ . }}</p>{{ end }}
-                  {{ with .Params.publication }}<p class="venue-full">{{ . }}</p>{{ end }}
-                  {{ with $summary }}<p class="summary">{{ . }}</p>{{ end }}
-                  <div class="actions">
-                    <a href="{{ .RelPermalink }}">View Publication</a>
-                    {{ with .Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
-                    {{ with .Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
-                  </div>
-                </div>
-              </article>
-            {{ end }}
-          </div>
-        </section>
-      {{ end }}
-    </div>
+        <div class="pub-list">
+          {{ range $group.Pages }}
+            {{ $authors := partial "content/render_publication_authors" (dict "item" . "link" false "showNotes" false "period" false "strongName" "") }}
+            <article class="pub-item{{ if or (in (.Params.badges | default (slice)) "Top") (.Params.highlight | default false) }} is-top{{ end }}">
+              <div class="pub-meta">{{ with .Params.publication_short }}<span>{{ . }}</span>{{ end }}{{ range (.Params.badges | default (slice)) }}<span>{{ . }}</span>{{ end }}</div>
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              {{ with $authors }}<p class="authors">{{ . }}</p>{{ end }}
+              {{ with .Params.publication }}<p class="venue">{{ . }}</p>{{ end }}
+              <div class="pub-actions">
+                <a href="{{ .RelPermalink }}">View</a>
+                {{ with .Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+                {{ with .Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
   </section>
 </div>
 {{ end }}

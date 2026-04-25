@@ -1,0 +1,111 @@
+{{ $notificationPages := where site.RegularPages "Section" "notification" }}
+{{ $notificationPages = where $notificationPages "Params.home_hide" "ne" true }}
+{{ $notificationPages = first 4 ($notificationPages.ByDate.Reverse) }}
+
+{{ $newsPages := where site.RegularPages "Section" "post" }}
+{{ $newsPages = first 4 ($newsPages.ByDate.Reverse) }}
+
+{{ $pubPages := where site.RegularPages "Section" "publication" }}
+{{ $pubPages = first 4 ($pubPages.ByDate.Reverse) }}
+
+{{ if eq .Page.Language.Lang "en" }}
+<section class="en-home-streams">
+  <article class="stream-panel">
+    <div class="head"><h2>Notifications</h2><a href="{{ "notification/" | relLangURL }}">View All</a></div>
+    <div class="items">
+      {{ range $notificationPages }}
+        {{ $item := . }}
+        {{ $thumb := partial "blox-core/functions/get_featured_image.html" . }}
+        <a class="item" href="{{ .RelPermalink }}">
+          <div class="thumb{{ if not $thumb }} no-image{{ end }}">
+            {{ with $thumb }}
+              {{ $img := .Resize "320x220" }}
+              {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ $item.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+            {{ else }}<span>N</span>{{ end }}
+          </div>
+          <div class="body"><strong>{{ .Title }}</strong><span>{{ .Date.Format "2006.01.02" }}</span></div>
+        </a>
+      {{ end }}
+    </div>
+  </article>
+
+  <article class="stream-panel">
+    <div class="head"><h2>News</h2><a href="{{ "post/" | relLangURL }}">View All</a></div>
+    <div class="items">
+      {{ range $newsPages }}
+        {{ $item := . }}
+        {{ $thumb := partial "blox-core/functions/get_featured_image.html" . }}
+        <a class="item" href="{{ .RelPermalink }}">
+          <div class="thumb{{ if not $thumb }} no-image{{ end }}">
+            {{ with $thumb }}
+              {{ $img := .Resize "320x220" }}
+              {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ $item.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+            {{ else }}<span>W</span>{{ end }}
+          </div>
+          <div class="body"><strong>{{ .Title }}</strong><span>{{ .Date.Format "2006.01.02" }}</span></div>
+        </a>
+      {{ end }}
+    </div>
+  </article>
+
+  <article class="stream-panel">
+    <div class="head"><h2>Recent Publications</h2><a href="{{ "publication/" | relLangURL }}">View All</a></div>
+    <div class="items">
+      {{ range $pubPages }}
+        {{ $item := . }}
+        {{ $thumb := partial "blox-core/functions/get_featured_image.html" . }}
+        <a class="item" href="{{ .RelPermalink }}">
+          <div class="thumb{{ if not $thumb }} no-image{{ end }}">
+            {{ with $thumb }}
+              {{ $img := .Resize "320x220" }}
+              {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ $item.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+            {{ else }}<span>P</span>{{ end }}
+          </div>
+          <div class="body"><strong>{{ .Title }}</strong><span>{{ .Date.Format "2006" }}</span></div>
+        </a>
+      {{ end }}
+    </div>
+  </article>
+</section>
+{{ else }}
+<div class="home-dual-feed">
+  <div class="home-dual-feed-col">
+    <h2 class="home-dual-feed-title">
+      <span>Notification</span>
+      <a class="home-dual-feed-more" href="{{ "notification/" | relLangURL }}">(More...)</a>
+    </h2>
+    <div class="home-dual-feed-list">
+      {{ range $notificationPages }}
+        {{ partial "views/community/custom_card.html" (dict "item" .) }}
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="home-dual-feed-col">
+    <h2 class="home-dual-feed-title">
+      <span>News</span>
+      <a class="home-dual-feed-more" href="{{ "post/" | relLangURL }}">(More...)</a>
+    </h2>
+    <div class="home-dual-feed-list">
+      {{ range $newsPages }}
+        {{ partial "views/community/custom_card.html" (dict "item" .) }}
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="home-dual-feed-col">
+    <h2 class="home-dual-feed-title">
+      <span>Last Publication</span>
+      <a class="home-dual-feed-more" href="{{ "publication/" | relLangURL }}">(More...)</a>
+    </h2>
+    <div class="home-dual-feed-list">
+      {{ range $pubPages }}
+        {{ partial "views/community/custom_card.html" (dict "item" .) }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

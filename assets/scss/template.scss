@@ -8028,3 +8028,465 @@ html[lang^="en"] .en-article-detail .foot {
     grid-template-columns: 1fr;
   }
 }
+
+html[lang^="en"] {
+  --civic-bg: #f3f5f7;
+  --civic-surface: #ffffff;
+  --civic-muted: #f8fafc;
+  --civic-border: #d7dee6;
+  --civic-border-strong: #c1ccd8;
+  --civic-ink: #18324a;
+  --civic-ink-soft: #5b6e80;
+  --civic-accent: #174a74;
+}
+
+html[lang^="en"] body {
+  background: var(--civic-bg) !important;
+  color: var(--civic-ink) !important;
+}
+
+html[lang^="en"] .en-civic-home,
+html[lang^="en"] .en-civic-page,
+html[lang^="en"] .en-civic-archive,
+html[lang^="en"] .en-civic-detail,
+html[lang^="en"] .en-civic-publication-archive,
+html[lang^="en"] .en-civic-publication-detail,
+html[lang^="en"] .en-civic-author,
+html[lang^="en"] .en-civic-streams {
+  color: var(--civic-ink);
+}
+
+html[lang^="en"] .en-civic-home,
+html[lang^="en"] .en-civic-page,
+html[lang^="en"] .en-civic-archive,
+html[lang^="en"] .en-civic-detail,
+html[lang^="en"] .en-civic-publication-archive,
+html[lang^="en"] .en-civic-publication-detail,
+html[lang^="en"] .en-civic-author {
+  border: 1px solid var(--civic-border);
+  border-radius: 4px;
+  background: var(--civic-surface);
+  padding: 1.4rem;
+}
+
+html[lang^="en"] .en-civic-home-head,
+html[lang^="en"] .en-civic-author .author-head,
+html[lang^="en"] .en-civic-detail .detail-layout,
+html[lang^="en"] .en-civic-publication-detail .publication-layout,
+html[lang^="en"] .en-civic-page--contact .contact-layout,
+html[lang^="en"] .en-civic-streams,
+html[lang^="en"] .en-civic-author .author-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-civic-home-head {
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.9fr);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--civic-border);
+}
+
+html[lang^="en"] .en-civic-home .eyebrow,
+html[lang^="en"] .en-civic-page .eyebrow,
+html[lang^="en"] .en-civic-archive .eyebrow,
+html[lang^="en"] .en-civic-detail .eyebrow,
+html[lang^="en"] .en-civic-publication-archive .eyebrow,
+html[lang^="en"] .en-civic-publication-detail .eyebrow,
+html[lang^="en"] .en-civic-author .eyebrow {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  color: var(--civic-accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+html[lang^="en"] .en-civic-home h1,
+html[lang^="en"] .en-civic-page h1,
+html[lang^="en"] .en-civic-archive h1,
+html[lang^="en"] .en-civic-detail h1,
+html[lang^="en"] .en-civic-publication-archive h1,
+html[lang^="en"] .en-civic-publication-detail h1,
+html[lang^="en"] .en-civic-author h1 {
+  margin: 0;
+  color: #10273e;
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  line-height: 1.18;
+}
+
+html[lang^="en"] .en-civic-home .summary,
+html[lang^="en"] .en-civic-page .summary,
+html[lang^="en"] .en-civic-archive .summary,
+html[lang^="en"] .en-civic-detail .summary,
+html[lang^="en"] .en-civic-publication-archive .summary,
+html[lang^="en"] .en-civic-publication-detail .summary,
+html[lang^="en"] .en-civic-author .summary,
+html[lang^="en"] .en-civic-author .org,
+html[lang^="en"] .en-civic-author .alt-name,
+html[lang^="en"] .en-civic-person-card .role,
+html[lang^="en"] .en-civic-person-card .org,
+html[lang^="en"] .en-civic-archive .archive-item p,
+html[lang^="en"] .en-civic-publication-archive .authors,
+html[lang^="en"] .en-civic-publication-archive .venue,
+html[lang^="en"] .en-civic-detail .detail-content,
+html[lang^="en"] .en-civic-publication-detail .prose,
+html[lang^="en"] .en-civic-publication-detail .authors {
+  color: var(--civic-ink-soft);
+  line-height: 1.75;
+}
+
+html[lang^="en"] .en-civic-home .actions,
+html[lang^="en"] .en-civic-author .links,
+html[lang^="en"] .en-civic-publication-detail .link-list,
+html[lang^="en"] .en-civic-detail .detail-foot,
+html[lang^="en"] .en-civic-detail .detail-side .link-list,
+html[lang^="en"] .en-civic-publication-archive .pub-actions,
+html[lang^="en"] .en-civic-publication-archive .pub-meta,
+html[lang^="en"] .en-civic-publication-detail .meta-line,
+html[lang^="en"] .en-civic-detail .meta-line,
+html[lang^="en"] .en-civic-page .chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+html[lang^="en"] .en-civic-home .actions a,
+html[lang^="en"] .en-civic-home .section-head a,
+html[lang^="en"] .en-civic-streams .section-head a,
+html[lang^="en"] .en-civic-detail .back-link,
+html[lang^="en"] .en-civic-detail .detail-foot a,
+html[lang^="en"] .en-civic-publication-archive .pub-actions a,
+html[lang^="en"] .en-civic-publication-detail .link-list a,
+html[lang^="en"] .en-civic-page .map-panel .section-head a,
+html[lang^="en"] .en-civic-page .empty-state a,
+html[lang^="en"] .en-civic-page .field-item .more,
+html[lang^="en"] .en-civic-detail .panel a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--civic-accent);
+  border-radius: 2px;
+  color: var(--civic-accent);
+  background: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+html[lang^="en"] .en-civic-home .actions a:hover,
+html[lang^="en"] .en-civic-home .section-head a:hover,
+html[lang^="en"] .en-civic-streams .section-head a:hover,
+html[lang^="en"] .en-civic-detail .back-link:hover,
+html[lang^="en"] .en-civic-detail .detail-foot a:hover,
+html[lang^="en"] .en-civic-publication-archive .pub-actions a:hover,
+html[lang^="en"] .en-civic-publication-detail .link-list a:hover,
+html[lang^="en"] .en-civic-page .map-panel .section-head a:hover,
+html[lang^="en"] .en-civic-page .empty-state a:hover,
+html[lang^="en"] .en-civic-page .field-item .more:hover,
+html[lang^="en"] .en-civic-detail .panel a:hover {
+  background: var(--civic-accent);
+  color: #fff;
+}
+
+html[lang^="en"] .en-civic-home .overview-card,
+html[lang^="en"] .en-civic-home .notice-item,
+html[lang^="en"] .en-civic-page .fact-card,
+html[lang^="en"] .en-civic-page .panel,
+html[lang^="en"] .en-civic-streams .stream-panel,
+html[lang^="en"] .en-civic-streams .stream-item,
+html[lang^="en"] .en-civic-person-card .inner,
+html[lang^="en"] .en-civic-author .panel,
+html[lang^="en"] .en-civic-author .stack-item,
+html[lang^="en"] .en-civic-author .work-item,
+html[lang^="en"] .en-civic-archive .archive-item,
+html[lang^="en"] .en-civic-publication-archive .pub-item,
+html[lang^="en"] .en-civic-detail .panel,
+html[lang^="en"] .en-civic-publication-detail .panel,
+html[lang^="en"] .en-civic-page .field-item {
+  border: 1px solid var(--civic-border);
+  border-radius: 3px;
+  background: #fff;
+}
+
+html[lang^="en"] .en-civic-home .overview-card,
+html[lang^="en"] .en-civic-home .notice-item,
+html[lang^="en"] .en-civic-streams .stream-panel,
+html[lang^="en"] .en-civic-page .fact-card,
+html[lang^="en"] .en-civic-page .panel,
+html[lang^="en"] .en-civic-author .panel,
+html[lang^="en"] .en-civic-author .stack-item,
+html[lang^="en"] .en-civic-author .work-item,
+html[lang^="en"] .en-civic-publication-archive .pub-item,
+html[lang^="en"] .en-civic-detail .panel,
+html[lang^="en"] .en-civic-publication-detail .panel {
+  padding: 1rem;
+}
+
+html[lang^="en"] .en-civic-home .overview-card dl,
+html[lang^="en"] .en-civic-publication-detail ul {
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+html[lang^="en"] .en-civic-home .overview-card dt {
+  color: var(--civic-accent);
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-civic-home .overview-card dd {
+  margin: 0.15rem 0 0;
+  color: var(--civic-ink-soft);
+}
+
+html[lang^="en"] .en-civic-home .notice-list,
+html[lang^="en"] .en-civic-streams .stream-list,
+html[lang^="en"] .en-civic-page .people-list,
+html[lang^="en"] .en-civic-page .field-list,
+html[lang^="en"] .en-civic-page .simple-list,
+html[lang^="en"] .en-civic-publication-archive .pub-list,
+html[lang^="en"] .en-civic-author .stack,
+html[lang^="en"] .en-civic-author .work-list,
+html[lang^="en"] .en-civic-archive .archive-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+html[lang^="en"] .en-civic-home .notice-item h3,
+html[lang^="en"] .en-civic-page h2,
+html[lang^="en"] .en-civic-streams .stream-panel h2,
+html[lang^="en"] .en-civic-publication-archive .pub-item h3,
+html[lang^="en"] .en-civic-author .stack-item h3,
+html[lang^="en"] .en-civic-archive .archive-item h2,
+html[lang^="en"] .en-civic-page .field-item h2 {
+  margin: 0;
+}
+
+html[lang^="en"] .en-civic-home .section-head,
+html[lang^="en"] .en-civic-streams .section-head,
+html[lang^="en"] .en-civic-page .section-head,
+html[lang^="en"] .en-civic-publication-archive .section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid var(--civic-border);
+}
+
+html[lang^="en"] .en-civic-streams {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+html[lang^="en"] .en-civic-streams .stream-item,
+html[lang^="en"] .en-civic-author .work-item,
+html[lang^="en"] .en-civic-page .simple-item {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.8rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+html[lang^="en"] .en-civic-streams .stream-item span,
+html[lang^="en"] .en-civic-author .work-item span,
+html[lang^="en"] .en-civic-page .simple-item span,
+html[lang^="en"] .en-civic-archive .archive-item .meta {
+  color: var(--civic-ink-soft);
+  font-size: 0.82rem;
+}
+
+html[lang^="en"] .en-civic-page .fact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-civic-page--contact .contact-layout {
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+}
+
+html[lang^="en"] .en-civic-page--contact .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-civic-page .map-panel .map-frame {
+  overflow: hidden;
+  border: 1px solid var(--civic-border);
+  border-radius: 3px;
+  min-height: 360px;
+}
+
+html[lang^="en"] .en-civic-page .map-panel iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border: 0;
+}
+
+html[lang^="en"] .en-civic-person-card .inner {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+  padding: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+html[lang^="en"] .en-civic-person-card .photo,
+html[lang^="en"] .en-civic-author .photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--civic-border);
+  border-radius: 3px;
+  background: var(--civic-muted);
+}
+
+html[lang^="en"] .en-civic-person-card .photo.placeholder,
+html[lang^="en"] .en-civic-author .photo.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--civic-accent);
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+
+html[lang^="en"] .en-civic-author .author-head {
+  grid-template-columns: 150px minmax(0, 1fr);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--civic-border);
+}
+
+html[lang^="en"] .en-civic-author .author-layout {
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.9fr);
+}
+
+html[lang^="en"] .en-civic-author .chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+html[lang^="en"] .en-civic-author .chip-list span,
+html[lang^="en"] .en-civic-publication-archive .pub-meta span,
+html[lang^="en"] .en-civic-publication-detail .meta-line span,
+html[lang^="en"] .en-civic-detail .meta-line span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 0.65rem;
+  border: 1px solid var(--civic-border);
+  border-radius: 2px;
+  background: var(--civic-muted);
+  color: var(--civic-accent);
+  font-size: 0.78rem;
+}
+
+html[lang^="en"] .en-civic-archive .archive-item,
+html[lang^="en"] .en-civic-page .field-item {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 0.9rem 1rem;
+}
+
+html[lang^="en"] .en-civic-publication-archive .pub-item {
+  display: grid;
+  gap: 0.55rem;
+}
+
+html[lang^="en"] .en-civic-publication-archive .pub-item.is-top {
+  border-color: #d3c18a;
+  background: #fffdf7;
+}
+
+html[lang^="en"] .en-civic-detail .detail-content,
+html[lang^="en"] .en-civic-page .panel .prose,
+html[lang^="en"] .en-civic-publication-detail .prose {
+  padding: 1rem;
+  border: 1px solid var(--civic-border);
+  border-radius: 3px;
+  background: #fff;
+}
+
+html[lang^="en"] .en-civic-detail .detail-layout,
+html[lang^="en"] .en-civic-publication-detail .publication-layout {
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.9fr);
+}
+
+html[lang^="en"] .en-civic-detail .detail-image,
+html[lang^="en"] .en-civic-publication-detail .pub-image {
+  margin: 0 0 1rem;
+  overflow: hidden;
+  border: 1px solid var(--civic-border);
+  border-radius: 3px;
+  background: var(--civic-muted);
+}
+
+html[lang^="en"] .en-civic-detail .detail-image img,
+html[lang^="en"] .en-civic-publication-detail .pub-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+html[lang^="en"] .en-civic-detail .detail-foot {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--civic-border);
+  justify-content: space-between;
+}
+
+html[lang^="en"] .en-civic-publication-detail .publication-layout ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+html[lang^="en"] .en-civic-publication-detail .publication-layout li {
+  display: grid;
+  gap: 0.2rem;
+}
+
+@media (max-width: 1199px) {
+  html[lang^="en"] .en-civic-streams,
+  html[lang^="en"] .en-civic-page .fact-grid,
+  html[lang^="en"] .en-civic-page--contact .contact-grid,
+  html[lang^="en"] .en-civic-author .author-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 991px) {
+  html[lang^="en"] .en-civic-home-head,
+  html[lang^="en"] .en-civic-page--contact .contact-layout,
+  html[lang^="en"] .en-civic-author .author-head,
+  html[lang^="en"] .en-civic-detail .detail-layout,
+  html[lang^="en"] .en-civic-publication-detail .publication-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  html[lang^="en"] .en-civic-page .fact-grid,
+  html[lang^="en"] .en-civic-page--contact .contact-grid,
+  html[lang^="en"] .en-civic-archive .archive-item,
+  html[lang^="en"] .en-civic-page .field-item,
+  html[lang^="en"] .en-civic-person-card .inner {
+    grid-template-columns: 1fr;
+  }
+}

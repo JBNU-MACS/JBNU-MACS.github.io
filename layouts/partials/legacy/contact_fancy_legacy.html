@@ -1,0 +1,115 @@
+{{ if eq .Page.Language.Lang "en" }}
+<section class="en-gov-contact">
+  <div class="contact-main">
+    <header class="contact-head">
+      <p class="eyebrow">Contact</p>
+      <h1>Contact MACS Lab</h1>
+      <p>We welcome academic collaboration inquiries and applications from prospective undergraduate and graduate researchers.</p>
+    </header>
+
+    <figure class="contact-photo">
+      <img src="/media/contact.jpg" alt="MACS Lab contact and campus">
+    </figure>
+
+    <div class="contact-grid">
+      <article class="contact-card">
+        <h3>Email</h3>
+        <p><a href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr</a></p>
+        <small>Primary channel for research collaboration and student inquiries.</small>
+      </article>
+      <article class="contact-card">
+        <h3>Phone</h3>
+        <p><a href="tel:+82632702406">+82-63-270-2406</a></p>
+        <small>Weekdays, 10:00-18:00 (KST).</small>
+      </article>
+      <article class="contact-card">
+        <h3>Office</h3>
+        <p>Room 626, Engineering Building 7</p>
+        <small>Jeonbuk National University, Jeonju, Republic of Korea</small>
+      </article>
+      <article class="contact-card">
+        <h3>Recruitment</h3>
+        <p><a href="{{ "notification/" | relLangURL }}">Open Positions</a></p>
+        <small>Current opportunities for undergraduate, master's, and doctoral applicants.</small>
+      </article>
+    </div>
+  </div>
+
+  <aside class="contact-side">
+    <div class="map-head">
+      <h2>Location</h2>
+      <a href="https://maps.google.com/?q=35.84601324617979,127.13444961966684" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+    <div class="map-frame">
+      <iframe
+        title="MACS Lab location map"
+        src="https://www.google.com/maps?q=35.84601324617979,127.13444961966684&z=16&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </aside>
+</section>
+{{ else }}
+<section class="macs-contact-fancy">
+  <div class="macs-contact-hero">
+    <div class="macs-contact-orb orb-a"></div>
+    <div class="macs-contact-orb orb-b"></div>
+    <div class="macs-contact-hero-content">
+      <p class="macs-contact-kicker">MACS LAB</p>
+      <h1>Contact</h1>
+      <p>
+        {{ if eq .Page.Language.Lang "ko" }}
+        전북대학교 의료 AI 및 계산 과학 연구실(MACS)과의 협업, 학부연구생/석사/박사 지원 문의를 환영합니다.
+        {{ else }}
+        We welcome inquiries for collaboration with the Medical AI & Computational Science Laboratory (MACS) at Jeonbuk National University, as well as applications for undergraduate/graduate researchers.
+        {{ end }}
+      </p>
+      <div class="macs-contact-meta">
+        <span>AI + Medical</span>
+        <span>Open Collaboration</span>
+        <span>Graduate Positions</span>
+      </div>
+      <div class="macs-contact-hero-actions">
+        <a href="mailto:ksl@jbnu.ac.kr" class="macs-contact-btn">Email Us</a>
+        <a href="{{ "notification/" | relLangURL }}" class="macs-contact-btn ghost">{{ if eq .Page.Language.Lang "ko" }}공지사항{{ else }}Open Positions{{ end }}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="macs-contact-bento">
+    <div class="macs-contact-grid">
+      <article class="macs-contact-card">
+        <h3>Email</h3>
+        <p><a href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr</a></p>
+        <small>{{ if eq .Page.Language.Lang "ko" }}지원/연구 협업 관련 문의는 메일로 보내주세요.{{ else }}Please contact us via email for research or application inquiries.{{ end }}</small>
+      </article>
+
+      <article class="macs-contact-card">
+        <h3>Phone</h3>
+        <p><a href="tel:+82632702406">+82-63-270-2406</a></p>
+        <small>{{ if eq .Page.Language.Lang "ko" }}평일 10:00 - 18:00 (KST){{ else }}Mon-Fri 10:00 - 18:00 (KST){{ end }}</small>
+      </article>
+
+      <article class="macs-contact-card">
+        <h3>Office</h3>
+        <p>{{ if eq .Page.Language.Lang "ko" }}전북대학교 공과대학 7호관 626호{{ else }}Room 626, Engineering Building 7, Jeonbuk National University{{ end }}</p>
+        <small>{{ if eq .Page.Language.Lang "ko" }}전주시 전라북도 54896, 대한민국{{ else }}Jeonju, Jeollabuk-do 54896, Republic of Korea{{ end }}</small>
+      </article>
+    </div>
+
+    <div class="macs-contact-map-wrap">
+      <div class="macs-contact-map-head">
+        <h3>Visit Us</h3>
+        <a href="https://maps.google.com/?q=35.84601324617979,127.13444961966684" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
+      <div class="macs-contact-map">
+        <iframe
+          title="MACS Lab location map"
+          src="https://www.google.com/maps?q=35.84601324617979,127.13444961966684&z=16&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

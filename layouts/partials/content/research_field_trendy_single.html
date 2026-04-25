@@ -1,104 +1,25 @@
 {{- $p := .Page -}}
 {{- $section := $p.CurrentSection -}}
-{{- $siblings := slice -}}
-{{- if $section -}}
-  {{- $siblings = $section.RegularPages.ByDate.Reverse -}}
-{{- end -}}
+{{- $siblings := slice -}}{{- if $section -}}{{- $siblings = $section.RegularPages.ByDate.Reverse -}}{{- end -}}
 {{- $summary := $p.Summary | plainify -}}
-{{- $resource := partial "blox-core/functions/get_featured_image.html" $p -}}
-
 <div class="universal-wrapper macs-field-single-shell">
-  {{ if eq $p.Language.Lang "en" }}
-  <section class="en-gov-field-single">
-    <header class="head">
-      <a class="back" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}">Back to Research Fields</a>
+{{ if eq $p.Language.Lang "en" }}
+  <section class="en-civic-detail en-civic-detail--field">
+    <header class="page-head">
+      <a class="back-link" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}">Back to Research Fields</a>
       <p class="eyebrow">Research Field</p>
       <h1>{{ $p.Title }}</h1>
       {{ with $summary }}<p class="summary">{{ . }}</p>{{ end }}
     </header>
-
-    <div class="layout">
-      <div class="content">
-        {{ with $resource }}
-          {{ $img := .Resize "1200x760" }}
-          {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
-          <figure class="cover">
-            <img src="{{ $img.RelPermalink }}" alt="{{ $p.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="eager">
-          </figure>
-        {{ end }}
-        <div class="prose">{{ $p.Content }}</div>
-      </div>
-
-      <aside class="side">
-        <div class="card">
-          <h2>Overview</h2>
-          {{ with $summary }}<p>{{ . }}</p>{{ end }}
-          <a href="{{ "publication/" | relLangURL }}">Browse Publications</a>
-        </div>
-        {{ if gt (len $siblings) 1 }}
-          <div class="card">
-            <h2>Other Fields</h2>
-            <ul>
-              {{ range $item := $siblings }}
-                {{ if ne $item.RelPermalink $p.RelPermalink }}
-                  <li><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></li>
-                {{ end }}
-              {{ end }}
-            </ul>
-          </div>
-        {{ end }}
+    <div class="detail-layout">
+      <div class="detail-content">{{ $p.Content }}</div>
+      <aside class="detail-side">
+        <section class="panel"><h2>Overview</h2>{{ with $summary }}<p>{{ . }}</p>{{ end }}<a href="{{ "publication/" | relLangURL }}">Browse Publications</a></section>
+        {{ if gt (len $siblings) 1 }}<section class="panel"><h2>Other Fields</h2><div class="link-list">{{ range $item := $siblings }}{{ if ne $item.RelPermalink $p.RelPermalink }}<a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>{{ end }}{{ end }}</div></section>{{ end }}
       </aside>
     </div>
   </section>
-  {{ else }}
-  <section class="macs-field-single-hero">
-    <a class="field-single-back" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}">Research Fields</a>
-    <div class="field-single-hero-inner">
-      <div class="field-single-title-wrap">
-        <p class="field-single-kicker">MacsLAB Research Track</p>
-        <h1>{{ $p.Title }}</h1>
-        <div class="field-single-meta">
-          {{ if gt (len $siblings) 0 }}<span>{{ len $siblings }} Tracks</span>{{ end }}
-        </div>
-      </div>
-      <div class="field-single-image{{ if not $resource }} no-image{{ end }}">
-        {{ with $resource }}
-          {{ $img := .Resize "1200x760" }}
-          {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
-          <img src="{{ $img.RelPermalink }}" alt="{{ $p.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="eager">
-        {{ else }}
-          <span>{{ substr ($p.Title | plainify) 0 1 }}</span>
-        {{ end }}
-      </div>
-    </div>
-  </section>
-
-  <section class="macs-field-single-layout">
-    <aside class="field-single-aside">
-      <div class="field-aside-card">
-        <h2>Overview</h2>
-        {{ with $summary }}<p>{{ . }}</p>{{ end }}
-        <a href="{{ "publication/" | relLangURL }}">Related Publications</a>
-      </div>
-      {{ if gt (len $siblings) 1 }}
-        <div class="field-aside-card">
-          <h3>Other Tracks</h3>
-          <ul>
-            {{ range $item := $siblings }}
-              {{ if ne $item.RelPermalink $p.RelPermalink }}
-                <li><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></li>
-              {{ end }}
-            {{ end }}
-          </ul>
-        </div>
-      {{ end }}
-    </aside>
-
-    <article class="field-single-content">
-      <div class="field-single-prose">
-        {{ $p.Content }}
-      </div>
-    </article>
-  </section>
-  {{ end }}
+{{ else }}
+  {{ partial "content/legacy/research_field_trendy_single_legacy.html" . }}
+{{ end }}
 </div>

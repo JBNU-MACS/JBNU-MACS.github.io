@@ -3,166 +3,46 @@
 {{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*cover*" }}{{ end }}
 {{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*thumb*" }}{{ end }}
 {{ $bib := $p.Resources.GetMatch "*.bib" }}
-{{ $pubYear := "" }}
-{{ with $p.Date }}{{ $pubYear = .Format "2006" }}{{ end }}
-
+{{ $pubYear := "" }}{{ with $p.Date }}{{ $pubYear = .Format "2006" }}{{ end }}
+{{ if eq $p.Language.Lang "en" }}
 <div class="universal-wrapper">
-  {{ if eq $p.Language.Lang "en" }}
-  <article class="en-publication-single">
-    <header class="hero">
-      <div class="copy">
-        <p class="eyebrow">Publication Record</p>
-        <h1>{{ $p.Title }}</h1>
-        <div class="authors">
-          {{ partial "content/render_publication_authors" (dict "item" $p "link" true "showNotes" true "period" false "strongName" "Kyungsu Lee") }}
-        </div>
-        <p class="reference">
-          {{ partial "content/render_publication_authors" (dict "item" $p "link" false "showNotes" false "period" true "strongName" "") }}
-          "{{ $p.Title }}," {{ with $p.Params.publication }}<i>{{ . }}</i>{{ end }}{{ with $p.Params.publication_short }} ({{ . }}){{ end }}{{ if ne $pubYear "" }}, {{ $pubYear }}{{ end }}.
-        </p>
-        <div class="meta-row">
-          {{ with $pubYear }}<span>{{ . }}</span>{{ end }}
-          {{ with $p.Params.publication_short }}<span>{{ . }}</span>{{ end }}
-          {{ range ($p.Params.badges | default (slice)) }}<span>{{ . }}</span>{{ end }}
-        </div>
+  <article class="en-civic-publication-detail">
+    <header class="page-head">
+      <p class="eyebrow">Publication Record</p>
+      <h1>{{ $p.Title }}</h1>
+      <div class="authors">{{ partial "content/render_publication_authors" (dict "item" $p "link" true "showNotes" true "period" false "strongName" "Kyungsu Lee") }}</div>
+      <div class="meta-line">
+        {{ with $pubYear }}<span>{{ . }}</span>{{ end }}
+        {{ with $p.Params.publication_short }}<span>{{ . }}</span>{{ end }}
+        {{ range ($p.Params.badges | default (slice)) }}<span>{{ . }}</span>{{ end }}
       </div>
-      <figure class="visual{{ if not $hero }} no-image{{ end }}">
-        {{ with $hero }}
-          <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
-        {{ else }}
-          <span>P</span>
-        {{ end }}
-      </figure>
+      {{ with $p.Params.publication }}<p class="summary">{{ . }}</p>{{ end }}
     </header>
-
-    <div class="layout">
+    <div class="publication-layout">
       <div class="main">
-        {{ with $p.Params.abstract }}
-          <section class="panel">
-            <h2>Abstract</h2>
-            <p>{{ . }}</p>
-          </section>
-        {{ end }}
-        {{ if $p.Content }}
-          <section class="panel">
-            <h2>Details</h2>
-            <div class="content">{{ $p.Content }}</div>
-          </section>
-        {{ end }}
+        {{ with $p.Params.abstract }}<section class="panel"><h2>Abstract</h2><p>{{ . }}</p></section>{{ end }}
+        {{ if $p.Content }}<section class="panel"><h2>Details</h2><div class="prose">{{ $p.Content }}</div></section>{{ end }}
       </div>
-
       <aside class="side">
-        <div class="panel">
-          <h2>Record Information</h2>
-          <ul>
-            {{ with $pubYear }}<li><strong>Year</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.publication }}<li><strong>Venue</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.publication_short }}<li><strong>Abbreviation</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.doi }}<li><strong>DOI</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.impact_factor }}<li><strong>Impact Factor</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.jcr_rank }}<li><strong>JCR Rank</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.jcr_percentile }}<li><strong>Quartile</strong><span>{{ . }}</span></li>{{ end }}
-          </ul>
-        </div>
-
-        <div class="panel links-panel">
-          <h2>Links</h2>
-          <div class="links">
-            {{ with $p.Params.doi }}<a href="{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
-            {{ with $p.Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
-            {{ with $p.Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
-            {{ with $p.Params.url_code }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
-            {{ with $p.Params.url_dataset }}<a href="{{ . }}" target="_blank" rel="noopener">Dataset</a>{{ end }}
-            {{ with $p.Params.url_poster }}<a href="{{ . }}" target="_blank" rel="noopener">Poster</a>{{ end }}
-            {{ with $p.Params.url_slides }}<a href="{{ . }}" target="_blank" rel="noopener">Slides</a>{{ end }}
-            {{ with $p.Params.url_video }}<a href="{{ . }}" target="_blank" rel="noopener">Video</a>{{ end }}
-            {{ with $bib }}<a href="{{ .RelPermalink }}" target="_blank" rel="noopener">BibTeX</a>{{ end }}
-          </div>
-        </div>
+        {{ with $hero }}<figure class="pub-image"><img src="{{ .RelPermalink }}" alt="{{ $p.Title }}"></figure>{{ end }}
+        <section class="panel"><h2>Record Information</h2><ul>
+          {{ with $pubYear }}<li><strong>Year</strong><span>{{ . }}</span></li>{{ end }}
+          {{ with $p.Params.publication }}<li><strong>Venue</strong><span>{{ . }}</span></li>{{ end }}
+          {{ with $p.Params.publication_short }}<li><strong>Abbreviation</strong><span>{{ . }}</span></li>{{ end }}
+          {{ with $p.Params.doi }}<li><strong>DOI</strong><span>{{ . }}</span></li>{{ end }}
+        </ul></section>
+        <section class="panel"><h2>Links</h2><div class="link-list">
+          {{ with $p.Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
+          {{ with $p.Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+          {{ with $p.Params.url_code }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
+          {{ with $p.Params.url_dataset }}<a href="{{ . }}" target="_blank" rel="noopener">Dataset</a>{{ end }}
+          {{ with $p.Params.url_video }}<a href="{{ . }}" target="_blank" rel="noopener">Video</a>{{ end }}
+          {{ with $bib }}<a href="{{ .RelPermalink }}" target="_blank" rel="noopener">BibTeX</a>{{ end }}
+        </div></section>
       </aside>
     </div>
   </article>
-  {{ else }}
-  <article class="macs-pub-single">
-    <header class="macs-pub-hero{{ if not $hero }} no-hero{{ end }}">
-      <div class="macs-pub-head">
-        <p class="kicker">Publication</p>
-        <h1>{{ $p.Title }}</h1>
-
-        <div class="macs-pub-authors">
-          {{ partial "content/render_publication_authors" (dict "item" $p "link" true "showNotes" true "period" false "strongName" "Kyungsu Lee") }}
-        </div>
-
-        <p class="macs-pub-reference">
-          {{ partial "content/render_publication_authors" (dict "item" $p "link" false "showNotes" false "period" true "strongName" "") }}
-          "{{ $p.Title }},"
-          {{ with $p.Params.publication }}<i>{{ . }}</i>{{ end }}
-          {{ with $p.Params.publication_short }}(<span class="abbr">{{ . }}</span>){{ end }}
-          {{ if ne $pubYear "" }}, {{ $pubYear }}{{ end }}.
-        </p>
-
-        <div class="macs-pub-meta">
-          {{ with $p.Params.publication }}<span>{{ . }}</span>{{ end }}
-          {{ with $p.Params.publication_short }}<span class="abbr">{{ . }}</span>{{ end }}
-          {{ with $pubYear }}<span>{{ . }}</span>{{ end }}
-          {{ with $p.Params.journal_type }}<span>{{ . }}</span>{{ end }}
-        </div>
-      </div>
-
-      {{ with $hero }}
-        <figure class="macs-pub-cover">
-          <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
-        </figure>
-      {{ end }}
-    </header>
-
-    <section class="macs-pub-main">
-      <aside class="macs-pub-side">
-        <div class="macs-pub-side-card">
-          <h3>Quick Info</h3>
-          <ul>
-            {{ with $p.Params.doi }}<li><strong>DOI</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.publication }}<li><strong>Venue</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.publication_short }}<li><strong>Abbr.</strong><span class="abbr">{{ . }}</span></li>{{ end }}
-            {{ with $pubYear }}<li><strong>Year</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.impact_factor }}<li><strong>IF</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.jcr_rank }}<li><strong>JCR</strong><span>{{ . }}</span></li>{{ end }}
-            {{ with $p.Params.jcr_percentile }}<li><strong>Quartile</strong><span>{{ . }}</span></li>{{ end }}
-          </ul>
-        </div>
-
-        <div class="macs-pub-side-card">
-          <h3>Links</h3>
-          <div class="links">
-            {{ with $p.Params.doi }}<a href="{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
-            {{ with $p.Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
-            {{ with $p.Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
-            {{ with $p.Params.url_code }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
-            {{ with $p.Params.url_dataset }}<a href="{{ . }}" target="_blank" rel="noopener">Dataset</a>{{ end }}
-            {{ with $p.Params.url_poster }}<a href="{{ . }}" target="_blank" rel="noopener">Poster</a>{{ end }}
-            {{ with $p.Params.url_slides }}<a href="{{ . }}" target="_blank" rel="noopener">Slides</a>{{ end }}
-            {{ with $p.Params.url_video }}<a href="{{ . }}" target="_blank" rel="noopener">Video</a>{{ end }}
-            {{ with $bib }}<a href="{{ .RelPermalink }}" target="_blank" rel="noopener">BibTeX</a>{{ end }}
-          </div>
-        </div>
-      </aside>
-
-      <div class="macs-pub-content">
-        {{ with $p.Params.abstract }}
-          <section class="macs-pub-block">
-            <h2>Abstract</h2>
-            <p>{{ . }}</p>
-          </section>
-        {{ end }}
-
-        {{ if $p.Content }}
-          <section class="macs-pub-block">
-            <h2>Details</h2>
-            <div class="body">{{ $p.Content }}</div>
-          </section>
-        {{ end }}
-      </div>
-    </section>
-  </article>
-  {{ end }}
 </div>
+{{ else }}
+  {{ partial "content/legacy/publication_trendy_single_legacy.html" . }}
+{{ end }}

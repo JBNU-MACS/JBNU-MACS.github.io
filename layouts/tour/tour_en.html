@@ -1,39 +1,15 @@
 {{ define "main" }}
 <div class="universal-wrapper">
-  <section class="en-section-page en-tour-page">
-    <header class="hero">
-      <div class="copy">
-        <p class="eyebrow">Laboratory Tour</p>
-        <h1>{{ .Title }}</h1>
-        <p class="summary">A quick overview of the laboratory environment, research culture, and collaboration opportunities at MACS Lab.</p>
-      </div>
-      <figure class="visual">
-        <img src="/media/welcome.jpg" alt="MACS Lab environment overview">
-      </figure>
+  <section class="en-civic-page en-civic-page--section">
+    <header class="page-head">
+      <p class="eyebrow">Laboratory Tour</p>
+      <h1>{{ .Title }}</h1>
+      <p class="summary">A concise overview of the laboratory environment, research exchange, and campus setting at MACS Lab.</p>
     </header>
-
-    <div class="tour-grid">
-      <article class="tour-card">
-        <img src="/media/coders.jpg" alt="Welcome to the group">
-        <div class="body">
-          <h2>Welcome to the Group</h2>
-          <p>Take a look at what the laboratory is working on across medical AI, multimodal intelligence, and applied systems.</p>
-        </div>
-      </article>
-      <article class="tour-card">
-        <img src="/media/contact.jpg" alt="Research exchange sessions">
-        <div class="body">
-          <h2>Research Exchange</h2>
-          <p>Members share ideas through technical discussions, paper reviews, and collaborative research activities.</p>
-        </div>
-      </article>
-      <article class="tour-card">
-        <img src="/media/pic-jbnu.jpg" alt="Jeonbuk National University campus">
-        <div class="body">
-          <h2>Campus and Facilities</h2>
-          <p>The laboratory is based at Jeonbuk National University and supports work spanning theory, experiments, and deployment.</p>
-        </div>
-      </article>
+    <div class="fact-grid">
+      <article class="fact-card"><h2>Research Environment</h2><p>The laboratory supports work spanning medical AI, multimodal intelligence, computation, and deployable systems.</p></article>
+      <article class="fact-card"><h2>Research Exchange</h2><p>Members share ideas through technical discussions, paper reviews, and collaborative implementation.</p></article>
+      <article class="fact-card"><h2>Campus Context</h2><p>MACS Lab is based at Jeonbuk National University and works within an academic environment oriented toward practical impact.</p></article>
     </div>
   </section>
 </div>

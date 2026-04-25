@@ -1,150 +1,43 @@
 {{ $all := slice }}
 {{ range site.Pages }}
-  {{ if and
-      (or (eq .Type "authors") (eq .Section "authors"))
-      (or (eq .Kind "term") (eq .Kind "page"))
-      (eq .Lang $.Page.Language.Lang) }}
+  {{ if and (or (eq .Type "authors") (eq .Section "authors")) (or (eq .Kind "term") (eq .Kind "page")) (eq .Lang $.Page.Language.Lang) }}
     {{ $all = $all | append . }}
   {{ end }}
 {{ end }}
-
 {{ $professors := sort (where $all "Params.user_groups" "intersect" (slice "Professor")) "Title" }}
 {{ $graduates := sort (where $all "Params.user_groups" "intersect" (slice "M.S. Student" "Master's Student" "PhD Student" "PhD Student (Integrated)")) "Title" }}
 {{ $parttime := sort (where $all "Params.user_groups" "intersect" (slice "Part-time Graduate")) "Title" }}
 {{ $undergrad := sort (where $all "Params.user_groups" "intersect" (slice "Student" "Undergraduate Researcher")) "Title" }}
 {{ $alumni := sort (where $all "Params.user_groups" "intersect" (slice "Alumni")) "Title" }}
-
 {{ if eq .Page.Language.Lang "en" }}
-<section class="en-people-page">
-  <header class="en-people-head">
-    <div>
-      <p class="eyebrow">People</p>
-      <h1>MACS Lab Members</h1>
-      <p class="summary">Faculty, graduate researchers, undergraduate researchers, and alumni affiliated with the Medical AI &amp; Computational Science Laboratory.</p>
-    </div>
-    <nav class="anchor-nav" aria-label="People sections">
-      <a href="#people-professor">Professor</a>
-      <a href="#people-graduate">Graduate</a>
-      <a href="#people-undergraduate">Undergraduate</a>
-      <a href="#people-parttime">Part-time</a>
-      <a href="#people-alumni">Alumni</a>
-    </nav>
+<section class="en-civic-page en-civic-page--people">
+  <header class="page-head">
+    <p class="eyebrow">People</p>
+    <h1>MACS Lab Members</h1>
+    <p class="summary">Faculty, graduate researchers, undergraduate researchers, part-time students, and alumni affiliated with the laboratory.</p>
   </header>
 
-  <section class="group" id="people-professor">
-    <div class="group-head"><h2>Professor</h2><span>{{ len $professors }}</span></div>
-    <div class="grid">
-      {{ range $professors }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
-    </div>
+  <section class="people-group">
+    <div class="section-head"><h2>Professor</h2><span>{{ len $professors }}</span></div>
+    <div class="people-list">{{ range $professors }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
   </section>
-
-  <section class="group" id="people-graduate">
-    <div class="group-head"><h2>Graduate Researchers</h2><span>{{ len $graduates }}</span></div>
-    <div class="grid">
-      {{ range $graduates }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
-    </div>
+  <section class="people-group">
+    <div class="section-head"><h2>Graduate Researchers</h2><span>{{ len $graduates }}</span></div>
+    <div class="people-list">{{ range $graduates }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
   </section>
-
-  <section class="group" id="people-undergraduate">
-    <div class="group-head"><h2>Undergraduate Researchers</h2><span>{{ len $undergrad }}</span></div>
-    <div class="grid">
-      {{ range $undergrad }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
-    </div>
+  <section class="people-group">
+    <div class="section-head"><h2>Undergraduate Researchers</h2><span>{{ len $undergrad }}</span></div>
+    <div class="people-list">{{ range $undergrad }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
   </section>
-
-  <section class="group" id="people-parttime">
-    <div class="group-head"><h2>Part-time Graduate Students</h2><span>{{ len $parttime }}</span></div>
-    <div class="grid">
-      {{ range $parttime }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
-    </div>
+  <section class="people-group">
+    <div class="section-head"><h2>Part-time Graduate Students</h2><span>{{ len $parttime }}</span></div>
+    <div class="people-list">{{ range $parttime }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
   </section>
-
-  <section class="group" id="people-alumni">
-    <div class="group-head"><h2>Alumni</h2><span>{{ len $alumni }}</span></div>
-    <div class="grid">
-      {{ range $alumni }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
-    </div>
+  <section class="people-group">
+    <div class="section-head"><h2>Alumni</h2><span>{{ len $alumni }}</span></div>
+    <div class="people-list">{{ range $alumni }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
   </section>
 </section>
 {{ else }}
-<section class="macs-people-fancy" id="macs-people-fancy">
-  <header class="macs-people-fancy-head">
-    <h1>{{ if eq .Page.Language.Lang "ko" }}구성원{{ else }}People{{ end }}</h1>
-    <p>MACS Lab Members</p>
-  </header>
-
-  <nav class="macs-people-tabs" aria-label="People categories">
-    <button type="button" class="is-active" data-tab="all">{{ if eq .Page.Language.Lang "ko" }}전체{{ else }}All{{ end }}</button>
-    <button type="button" data-tab="professor">{{ if eq .Page.Language.Lang "ko" }}지도교수{{ else }}Professor{{ end }}</button>
-    <button type="button" data-tab="graduate">{{ if eq .Page.Language.Lang "ko" }}석사{{ else }}Graduate{{ end }}</button>
-    <button type="button" data-tab="undergrad">{{ if eq .Page.Language.Lang "ko" }}학부연구생{{ else }}Undergraduate{{ end }}</button>
-    <button type="button" data-tab="parttime">{{ if eq .Page.Language.Lang "ko" }}파트{{ else }}Part-time{{ end }}</button>
-    <button type="button" data-tab="alumni">{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</button>
-  </nav>
-
-  <div class="macs-people-section" data-group="professor">
-    <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}지도교수{{ else }}Professor{{ end }}</h2>
-      <span>{{ len $professors }}</span>
-    </div>
-    <div class="macs-people-grid">
-      {{ range $professors }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
-    </div>
-  </div>
-
-  <div class="macs-people-section" data-group="graduate">
-    <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}석사{{ else }}Graduate (M.S. / Ph.D. Students){{ end }}</h2>
-      <span>{{ len $graduates }}</span>
-    </div>
-    <div class="macs-people-grid">
-      {{ range $graduates }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
-    </div>
-  </div>
-
-  <div class="macs-people-section" data-group="undergrad">
-    <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}학부연구생{{ else }}Undergraduate Researchers{{ end }}</h2>
-      <span>{{ len $undergrad }}</span>
-    </div>
-    <div class="macs-people-grid">
-      {{ range $undergrad }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
-    </div>
-  </div>
-
-  <div class="macs-people-section" data-group="parttime">
-    <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}파트 석/박{{ else }}Part-time Students{{ end }}</h2>
-      <span>{{ len $parttime }}</span>
-    </div>
-    <div class="macs-people-grid">
-      {{ range $parttime }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
-    </div>
-  </div>
-
-  <div class="macs-people-section" data-group="alumni">
-    <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</h2>
-      <span>{{ len $alumni }}</span>
-    </div>
-    <div class="macs-people-grid">
-      {{ range $alumni }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}
-    </div>
-  </div>
-</section>
-
-<script>
-  (function () {
-    var root = document.getElementById('macs-people-fancy');
-    if (!root) return;
-    var tabs = root.querySelectorAll('.macs-people-tabs button');
-    var sections = root.querySelectorAll('.macs-people-section');
-    function render(group) {
-      sections.forEach(function (s) { s.style.display = (group === 'all' || s.getAttribute('data-group') === group) ? '' : 'none'; });
-      tabs.forEach(function (t) { t.classList.toggle('is-active', t.getAttribute('data-tab') === group); });
-    }
-    tabs.forEach(function (t) { t.addEventListener('click', function () { render(t.getAttribute('data-tab') || 'all'); }); });
-    render('all');
-  })();
-</script>
+  {{ partial "legacy/people_fancy_legacy.html" . }}
 {{ end }}

@@ -1,0 +1,265 @@
+{{ $notices := first 3 ((where site.RegularPages "Section" "notification").ByDate.Reverse) }}
+{{ $total := add 4 (len $notices) }}
+{{ $hasNotices := gt (len $notices) 0 }}
+
+{{ if eq .Page.Language.Lang "en" }}
+<section class="en-gov-home">
+  <div class="en-gov-home-hero">
+    <div class="en-gov-home-copy">
+      <p class="eyebrow">Jeonbuk National University</p>
+      <h1>Medical AI &amp; Computational Science Laboratory</h1>
+      <p class="summary">MACS Lab conducts research in medical AI, multimodal intelligence, computational science, and applied AI engineering with a focus on practical academic impact.</p>
+      <div class="actions">
+        <a href="{{ "field/" | relLangURL }}" class="primary">Research Fields</a>
+        <a href="{{ "people/" | relLangURL }}" class="secondary">People</a>
+        <a href="{{ "contact/" | relLangURL }}" class="secondary">Contact</a>
+      </div>
+      <dl class="facts">
+        <div>
+          <dt>Focus</dt>
+          <dd>Medical AI, Multimodal AI, Applied Systems</dd>
+        </div>
+        <div>
+          <dt>Affiliation</dt>
+          <dd>Jeonbuk National University</dd>
+        </div>
+        <div>
+          <dt>Open To</dt>
+          <dd>Research collaboration and student applications</dd>
+        </div>
+      </dl>
+    </div>
+
+    <figure class="hero-figure">
+      <img src="/media/pic-jbnu.jpg" alt="Jeonbuk National University campus">
+      <figcaption>Jeonbuk National University, Republic of Korea</figcaption>
+    </figure>
+
+    <aside class="en-gov-home-panel">
+      <div class="panel-head">
+        <h2>Latest Notices</h2>
+        <a href="{{ "notification/" | relLangURL }}">View All</a>
+      </div>
+      <div class="panel-list">
+        {{ if $hasNotices }}
+          {{ range first 5 $notices }}
+            <article class="panel-item">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <p>{{ .Summary | plainify | truncate 90 }}</p>
+            </article>
+          {{ end }}
+        {{ else }}
+          <article class="panel-item empty">
+            <h3>No current notices</h3>
+            <p>Please check the notifications page for future updates.</p>
+          </article>
+        {{ end }}
+      </div>
+    </aside>
+  </div>
+
+  <div class="en-gov-home-links">
+    <a class="link-card" href="{{ "publication/" | relLangURL }}">
+      <strong>Publications</strong>
+      <span>Recent journals, conference papers, and ongoing research output.</span>
+    </a>
+    <a class="link-card" href="{{ "post/" | relLangURL }}">
+      <strong>News</strong>
+      <span>Laboratory updates, awards, and participation in academic events.</span>
+    </a>
+    <a class="link-card" href="{{ "event/" | relLangURL }}">
+      <strong>Events</strong>
+      <span>Conference activities, presentations, and external engagement records.</span>
+    </a>
+    <a class="link-card" href="{{ "notification/" | relLangURL }}">
+      <strong>Open Positions</strong>
+      <span>Recruitment information for undergraduate, master's, and doctoral applicants.</span>
+    </a>
+  </div>
+
+  <div class="en-gov-home-gallery">
+    <article class="photo-card">
+      <img src="/media/medical.jpg" alt="Medical AI research">
+      <div class="caption"><strong>Medical AI</strong><span>Clinical imaging and diagnosis support</span></div>
+    </article>
+    <article class="photo-card">
+      <img src="/media/Ai.jpg" alt="Multimodal AI research">
+      <div class="caption"><strong>Multimodal Intelligence</strong><span>Vision-language and foundation model research</span></div>
+    </article>
+    <article class="photo-card">
+      <img src="/media/development.jpg" alt="Applied systems and development">
+      <div class="caption"><strong>Applied Systems</strong><span>From research outcomes to deployable software</span></div>
+    </article>
+  </div>
+</section>
+{{ else }}
+<section class="macs-home-hero" id="macs-home-hero">
+  <div class="macs-home-hero-track" aria-live="polite">
+    {{ range $idx, $notice := $notices }}
+      {{ $bg := "/media/pic-jbnu.jpg" }}
+      {{ with $notice.Resources.GetMatch "featured*" }}
+        {{ $bg = .RelPermalink }}
+      {{ end }}
+      <article class="macs-home-hero-slide is-notice {{ if eq $idx 0 }}is-active{{ end }}" style="background-image: url('{{ $bg }}');">
+        <div class="macs-home-hero-overlay"></div>
+        <div class="macs-home-hero-content">
+          <h1>{{ $notice.Title }}</h1>
+          <p>{{ $notice.Summary | plainify | truncate 120 }}</p>
+        <div class="macs-home-hero-actions">
+          <a href="{{ $notice.RelPermalink }}" class="macs-home-hero-btn">Read Notice</a>
+          <a href="{{ "notification/" | relLangURL }}" class="macs-home-hero-btn ghost">All Notifications</a>
+        </div>
+        </div>
+      </article>
+    {{ end }}
+
+    <article class="macs-home-hero-slide {{ if not $hasNotices }}is-active{{ end }}" style="background-image: url('/media/pic-jbnu.jpg');">
+      <div class="macs-home-hero-overlay"></div>
+      <div class="macs-home-hero-content">
+        <h1>Medical AI &amp; Computational Science</h1>
+        {{ if eq .Page.Language.Lang "ko" }}
+        <p>전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</p>
+        {{ else }}
+        <p>Welcome to the Medical AI & Computational Science Laboratory at Jeonbuk National University.</p>
+        {{ end }}
+        <div class="macs-home-hero-tags">
+          <span>Medical AI</span>
+          <span>Multi-modal</span>
+          <span>Applied Research</span>
+        </div>
+        <div class="macs-home-hero-actions">
+          <a href="{{ "field/" | relLangURL }}" class="macs-home-hero-btn">See Research Fields</a>
+          <a href="{{ "contact/" | relLangURL }}" class="macs-home-hero-btn ghost">Join Us</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="macs-home-hero-slide" style="background-image: url('/media/medical.jpg');">
+      <div class="macs-home-hero-overlay"></div>
+      <div class="macs-home-hero-content">
+        <h1>Medical AI</h1>
+        {{ if eq .Page.Language.Lang "ko" }}
+        <p>의료 데이터와 딥러닝 기반으로 진단 보조, 임상 워크플로우, 신뢰 가능한 AI 적용을 확장합니다.</p>
+        {{ else }}
+        <p>We expand diagnosis support, clinical workflows, and trustworthy AI applications based on medical data and deep learning.</p>
+        {{ end }}
+        <div class="macs-home-hero-tags">
+          <span>Diagnosis Support</span>
+          <span>Clinical Workflow</span>
+          <span>Trustworthy AI</span>
+        </div>
+        <div class="macs-home-hero-actions">
+          <a href="{{ "publication/" | relLangURL }}" class="macs-home-hero-btn">View Publications</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="macs-home-hero-slide" style="background-image: url('/media/Ai.jpg');">
+      <div class="macs-home-hero-overlay"></div>
+      <div class="macs-home-hero-content">
+        <h1>Vision-Language Intelligence</h1>
+        {{ if eq .Page.Language.Lang "ko" }}
+        <p>멀티모달 학습으로 의료 영상, 텍스트, 임상 정보를 통합하여 해석 가능한 AI를 연구합니다.</p>
+        {{ else }}
+        <p>We research interpretable AI by integrating medical images, text, and clinical information through multimodal learning.</p>
+        {{ end }}
+        <div class="macs-home-hero-tags">
+          <span>Vision-Language</span>
+          <span>Multi-modal</span>
+          <span>Reasoning</span>
+        </div>
+        <div class="macs-home-hero-actions">
+          <a href="{{ "field/" | relLangURL }}" class="macs-home-hero-btn">Research Topics</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="macs-home-hero-slide" style="background-image: url('/media/development.jpg');">
+      <div class="macs-home-hero-overlay"></div>
+      <div class="macs-home-hero-content">
+        <h1>Research to Product</h1>
+        {{ if eq .Page.Language.Lang "ko" }}
+        <p>연구 결과를 실제 서비스와 시스템으로 연결하는 실용적 개발 역량을 강화합니다.</p>
+        {{ else }}
+        <p>We strengthen practical development capabilities to connect research results to real-world services and systems.</p>
+        {{ end }}
+        <div class="macs-home-hero-tags">
+          <span>Full-stack</span>
+          <span>MLOps</span>
+          <span>Deployment</span>
+        </div>
+        <div class="macs-home-hero-actions">
+          <a href="{{ "field/" | relLangURL }}" class="macs-home-hero-btn">See Projects</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="macs-home-hero-ui">
+    <div class="macs-home-hero-dots">
+      {{ range $idx, $num := seq $total }}
+        <button class="{{ if eq $idx 0 }}is-active{{ end }}" data-idx="{{ $idx }}" aria-label="slide {{ $num }}"></button>
+      {{ end }}
+    </div>
+    <div class="macs-home-hero-progress"><span></span></div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('macs-home-hero');
+    if (!root) return;
+    var slides = root.querySelectorAll('.macs-home-hero-slide');
+    var dots = root.querySelectorAll('.macs-home-hero-dots button');
+    var progress = root.querySelector('.macs-home-hero-progress span');
+    if (!slides.length || !dots.length) return;
+
+    var idx = 0;
+    var timer = null;
+
+    function render(nextIdx) {
+      idx = nextIdx;
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+      if (progress) {
+        progress.style.transition = 'none';
+        progress.style.width = '0%';
+        window.requestAnimationFrame(function () {
+          progress.style.transition = 'width 4.2s linear';
+          progress.style.width = '100%';
+        });
+      }
+    }
+
+    function next() {
+      render((idx + 1) % slides.length);
+    }
+
+    function start() {
+      stop();
+      timer = window.setInterval(next, 4200);
+    }
+
+    function stop() {
+      if (timer) window.clearInterval(timer);
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var n = parseInt(dot.getAttribute('data-idx') || '0', 10);
+        render(n);
+        start();
+      });
+    });
+
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('touchstart', stop, { passive: true });
+    root.addEventListener('touchend', start, { passive: true });
+
+    start();
+  })();
+</script>
+{{ end }}

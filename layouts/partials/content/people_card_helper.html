@@ -1,86 +1,29 @@
 {{ $item := .item }}
 {{ $lang := .lang }}
-{{ $avatar := "" }}
-{{ $email := ($item.Params.email | default "") }}
-{{ with $item.Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
-
-{{ $name := $item.Title }}
 {{ if eq $lang "en" }}
-  {{ if $item.Params.name_en }}
-    {{ $name = $item.Params.name_en }}
-  {{ else if or $item.Params.first_name $item.Params.last_name }}
+  {{ $avatar := "" }}
+  {{ $email := ($item.Params.email | default "") }}
+  {{ with $item.Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+  {{ $name := $item.Params.name_en | default $item.Title }}
+  {{ if and (eq $name $item.Title) (or $item.Params.first_name $item.Params.last_name) }}
     {{ $name = trim (printf "%s %s" ($item.Params.first_name | default "") ($item.Params.last_name | default "")) " " }}
-  {{ else if $item.File }}
-    {{ $name = ($item.File.ContentBaseName | replace "-" " " | replace "_" " " | title) }}
   {{ end }}
-{{ end }}
-
-{{ $role := ($item.Params.role | default "") }}
-{{ if eq $lang "en" }}
-  {{ $role = replace $role "석사과정" "Master's Student" }}
-  {{ $role = replace $role "학부연구생" "Undergraduate Researcher" }}
-  {{ $role = replace $role "파트석사" "Part-time M.S. Student" }}
-  {{ $role = replace $role "파트박사" "Part-time Ph.D. Student" }}
-  {{ $role = replace $role "(취업)" "Employed at" }}
-  {{ $role = replace $role "(석사과정)" "Master's Student" }}
-{{ end }}
-
-{{ $org := "" }}
-{{ with index $item.Params.organizations 0 }}{{ $org = .name }}{{ end }}
-{{ if eq $lang "en" }}
+  {{ $role := ($item.Params.role | default "") | replace "석사과정" "Master's Student" | replace "학부연구생" "Undergraduate Researcher" | replace "파트석사" "Part-time M.S. Student" | replace "파트박사" "Part-time Ph.D. Student" }}
+  {{ $org := "" }}
+  {{ with index $item.Params.organizations 0 }}{{ $org = .name }}{{ end }}
   {{ $org = replace $org "전북대학교 컴퓨터인공지능학부" "Department of Computer Science & Artificial Intelligence, Jeonbuk National University" }}
   {{ $org = replace $org "전북대학교 전자.정보공학부(컴퓨터공학)" "Division of Electronic and Information Engineering (Computer Science), Jeonbuk National University" }}
-  {{ $org = replace $org "전북대학교 산업정보시스템공학과" "Department of Industrial Information Systems Engineering, Jeonbuk National University" }}
-  {{ $org = replace $org "학부연구생 (컴퓨터인공지능학부)" "Undergraduate Researcher (Department of Computer Science & Artificial Intelligence)" }}
-  {{ $org = replace $org "학부연구생 (컴퓨터공학부)" "Undergraduate Researcher (Division of Electronic and Information Engineering)" }}
-  {{ $org = replace $org "학부연구생 (컴퓨터공학과)" "Undergraduate Researcher (Department of Computer Engineering)" }}
-  {{ $org = replace $org "학부연구생 (소프트웨어공학과)" "Undergraduate Researcher (Department of Software Engineering)" }}
-  {{ $org = replace $org "학부연구생 (스마트팜학과)" "Undergraduate Researcher (Department of Smart Farm)" }}
-  {{ $org = replace $org "학부연구생 (경제학부)" "Undergraduate Researcher (School of Economics)" }}
-{{ end }}
-
-{{ if eq $lang "en" }}
-<article class="en-people-card">
+<article class="en-civic-person-card">
   <a href="{{ $item.RelPermalink }}" class="inner">
-    <div class="photo{{ if not $avatar }} placeholder{{ end }}">
-      {{ if $avatar }}
-        <img src="{{ $avatar }}" alt="{{ $name }} portrait" loading="lazy">
-      {{ else }}
-        <span>{{ slicestr ($name | plainify) 0 1 }}</span>
-      {{ end }}
-    </div>
+    {{ if $avatar }}<img class="photo" src="{{ $avatar }}" alt="{{ $name }} portrait" loading="lazy">{{ else }}<div class="photo placeholder">{{ slicestr ($name | plainify) 0 1 }}</div>{{ end }}
     <div class="body">
       <h3>{{ $name }}</h3>
       {{ with $role }}<p class="role">{{ . }}</p>{{ end }}
       {{ if ne $org "" }}<p class="org">{{ $org }}</p>{{ end }}
       {{ if ne $email "" }}<p class="contact"><a href="mailto:{{ $email }}">{{ $email }}</a></p>{{ end }}
-      <span class="more">View Profile</span>
     </div>
   </a>
 </article>
 {{ else }}
-<article class="macs-people-card">
-  <a href="{{ $item.RelPermalink }}" class="macs-people-card-inner">
-    {{ if $avatar }}
-      <img src="{{ $avatar }}" alt="{{ $name }} avatar" class="macs-people-avatar">
-    {{ else }}
-      <div class="macs-people-avatar placeholder">{{ slicestr ($name | plainify) 0 1 }}</div>
-    {{ end }}
-    <div class="macs-people-meta">
-      <h3>{{ $name }}</h3>
-      <p class="role">{{ $role }}</p>
-      {{ if ne $org "" }}
-        <p class="org">
-          {{ if eq $lang "ko" }}
-            {{ replaceRE "^전북대학교\\s*" "" $org }}
-          {{ else }}
-            {{ $org }}
-          {{ end }}
-        </p>
-      {{ end }}
-      <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
-      <p class="hint">View detail</p>
-    </div>
-  </a>
-</article>
+  {{ partial "content/legacy/people_card_helper_legacy.html" . }}
 {{ end }}

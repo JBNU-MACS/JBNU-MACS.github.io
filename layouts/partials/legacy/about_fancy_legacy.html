@@ -1,0 +1,96 @@
+{{ if eq .Page.Language.Lang "en" }}
+<section class="en-gov-about">
+  <header class="about-head">
+    <div>
+      <p class="eyebrow">About The Laboratory</p>
+      <h1>Medical AI &amp; Computational Science</h1>
+    </div>
+    <a href="{{ "contact/" | relLangURL }}" class="about-link">Contact The Lab</a>
+  </header>
+
+  <div class="about-intro">
+    <p>MACS Lab pursues research that connects medical AI, multimodal intelligence, computational science, and applied engineering to solve real-world problems with rigorous academic methods.</p>
+  </div>
+
+  <div class="about-visual">
+    <figure class="lead-image">
+      <img src="/media/coders.jpg" alt="MACS Lab research environment">
+    </figure>
+    <div class="support-images">
+      <img src="/media/medical.jpg" alt="Medical AI research">
+      <img src="/media/contact.jpg" alt="Campus and collaboration">
+    </div>
+  </div>
+
+  <div class="about-grid">
+    <article class="about-card">
+      <h3>Research Domains</h3>
+      <ul>
+        <li>Medical AI and Medical Imaging</li>
+        <li>Vision-Language and Multimodal Intelligence</li>
+        <li>Aerospace, Contents AI, and Applied Systems</li>
+      </ul>
+    </article>
+    <article class="about-card">
+      <h3>Core Methods</h3>
+      <ul>
+        <li>Domain Adaptation and Test-time Adaptation</li>
+        <li>Federated Learning and Representation Learning</li>
+        <li>Optimization and Statistical Modeling</li>
+      </ul>
+    </article>
+    <article class="about-card">
+      <h3>Operational Direction</h3>
+      <ul>
+        <li>Balanced execution of research, implementation, and evaluation</li>
+        <li>Practical system development beyond paper-level results</li>
+        <li>Collaboration oriented toward international publications</li>
+      </ul>
+    </article>
+  </div>
+</section>
+{{ else }}
+<section class="macs-about-fancy">
+  <div class="macs-about-hero">
+    <div class="macs-about-hero-content">
+      <span class="macs-about-kicker">About MacsLAB</span>
+      <h1>Medical AI &amp; Computational Science</h1>
+      <p>{{ if eq .Page.Language.Lang "ko" }}MacsLAB은 의료·멀티모달·응용개발을 연결해 실제 문제를 해결하는 연구를 수행합니다.{{ else }}MacsLAB conducts research that solves real-world problems by connecting medical AI, multimodality, and applied development.{{ end }}</p>
+      <a class="macs-about-cta" href="{{ "contact/" | relLangURL }}">{{ if eq .Page.Language.Lang "ko" }}Join our Lab{{ else }}Join our Lab{{ end }}</a>
+    </div>
+  </div>
+
+  <div class="macs-about-grid">
+    <article class="macs-about-card">
+      <h3>Research Domains</h3>
+      <ul>
+        <li>Medical AI / Medical Imaging</li>
+        <li>Vision &amp; Language / Multimodal AI</li>
+        <li>Aerospace / Contents AI</li>
+      </ul>
+    </article>
+    <article class="macs-about-card">
+      <h3>Core Methods</h3>
+      <ul>
+        <li>Domain Adaptation / Test-time Adaptation</li>
+        <li>Federated Learning / Representation Learning</li>
+        <li>Optimization / Statistical Modeling</li>
+      </ul>
+    </article>
+    <article class="macs-about-card">
+      <h3>Lab Culture</h3>
+      <ul>
+        {{ if eq .Page.Language.Lang "ko" }}
+        <li>Research + Engineering 동시 성장</li>
+        <li>논문·구현·실험의 균형 있는 수행</li>
+        <li>국제 학회/저널 목표의 팀워크</li>
+        {{ else }}
+        <li>Simultaneous growth of Research + Engineering</li>
+        <li>Balanced execution of papers, implementation, and experiments</li>
+        <li>Teamwork aimed at international conferences/journals</li>
+        {{ end }}
+      </ul>
+    </article>
+  </div>
+</section>
+{{ end }}

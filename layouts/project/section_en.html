@@ -1,33 +1,17 @@
 {{ define "main" }}
 <div class="universal-wrapper">
-  <section class="en-section-page">
-    <header class="hero">
-      <div class="copy">
-        <p class="eyebrow">Project Overview</p>
-        <h1>{{ .Title }}</h1>
-        <p class="summary">MACS Lab develops research-driven AI systems with an emphasis on deployable engineering, evaluation, and domain-specific problem solving.</p>
-      </div>
-      <figure class="visual">
-        <img src="/media/development.jpg" alt="Project and development overview">
-      </figure>
+  <section class="en-civic-page en-civic-page--section">
+    <header class="page-head">
+      <p class="eyebrow">Project Overview</p>
+      <h1>{{ .Title }}</h1>
+      <p class="summary">MACS Lab develops research-driven AI systems with an emphasis on deployable engineering, evaluation, and domain-specific problem solving.</p>
     </header>
-
-    <section class="section-block">
+    <section class="panel">
       <h2>Current Status</h2>
       {{ if gt (len .RegularPages) 0 }}
-        <div class="list-grid">
-          {{ range .RegularPages.ByDate.Reverse }}
-            <article class="list-card">
-              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-              <p>{{ .Summary | plainify | truncate 160 }}</p>
-            </article>
-          {{ end }}
-        </div>
+        <div class="simple-list">{{ range .RegularPages.ByDate.Reverse }}<a class="simple-item" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ .Summary | plainify | truncate 140 }}</span></a>{{ end }}</div>
       {{ else }}
-        <div class="empty-state">
-          <p>Project summaries will be published here as research outputs and implementation efforts are documented.</p>
-          <a href="{{ "publication/" | relLangURL }}">Browse Publications</a>
-        </div>
+        <div class="empty-state"><p>Project summaries will be published here as research outputs and implementation efforts are documented.</p><a href="{{ "publication/" | relLangURL }}">Browse Publications</a></div>
       {{ end }}
     </section>
   </section>

@@ -28,13 +28,13 @@ publication_types:
   - conference-domestic
 
 # Publication name and optional abbreviated publication name.
-publication: 한국컴퓨터종합학술대회 (KCC 2025)
+publication: (KCC 2025)
 publication_short: KCC2025
 
 abstract: We present a statistical latent manifold-guided framework for generative super-resolution, designed to improve reconstruction quality and structural consistency under challenging low-resolution conditions. The method incorporates manifold-aware latent constraints to preserve clinically meaningful details while reducing hallucination artifacts. The framework was presented at KCC 2025 poster session by Seo-Yeon Choi as first author, with Kyungsu Lee as corresponding author.
 
 # Summary. An optional shortened abstract.
-summary: ___KCC2025___ <br> _한국컴퓨터종합학술대회 2025 (Poster Presentation)_
+summary: ___KCC2025___ <br> _ 2025 (Poster Presentation)_
 
 tags: ['AI', 'medical imaging', 'generative super-resolution', 'latent manifold', 'KCC2025']
 

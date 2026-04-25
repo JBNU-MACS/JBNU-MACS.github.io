@@ -7,7 +7,7 @@ showShare: false
 
 <br><br>
 
-We are thrilled to announce that our undergraduate researcher, **Seo-Yeon Choi (최서연)**, has achieved a remarkable accomplishment—**two papers have been accepted to workshops at ICCV 2025 Workshops (CVAMD / VADH25)**!
+We are thrilled to announce that our undergraduate researcher, **Seo-Yeon Choi**, has achieved a remarkable accomplishment—**two papers have been accepted to workshops at ICCV 2025 Workshops (CVAMD / VADH25)**!
 
 Even more exciting, one paper was selected for an **oral presentation** and the other for a **poster presentation**. Having two papers accepted at such a prestigious venue as ICCV is a truly outstanding feat, especially for an undergraduate researcher. This is a testament to Seo-Yeon’s dedication, hard work, and innovative research.
 

@@ -5,7 +5,7 @@ title: 'SAM2-based Bayesian Prompt Adaptation for Cross-Modality Medical Segment
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-  - 홍사강
+  - sakanghong
   - Jun-Yung Kim
   - Kyungsu Lee
 
@@ -31,17 +31,17 @@ publication_types:
 
 award: true
 award_badge: 'Best Poster Award'
-award_name: '우수포스터상'
-award_event: '대한의용생체공학회 2025 추계학술대회'
+award_name: ''
+award_event: '2025'
 
 # Publication name and optional abbreviated publication name.
-publication: 대한의용생체공학회 2025 추계학술대회
+publication: 2025
 publication_short: KOSOMBE2025 Fall
 
 abstract: Segmentation foundation models such as SAM2 generalize well in natural images, but adapting them to medical imaging remains challenging because of cross-modality gaps and limited annotations. We propose BayesPrompt, a SAM2-based Bayesian Prompt Adaptation framework for few-shot medical segmentation. BayesPrompt combines Bayesian meta-prior adaptation, which regularizes lightweight head updates through source-target posterior alignment, with a probabilistic prompt module that encodes support-set feature statistics and uncertainty into decoder prompts. Experiments on ultrasound and MRI show improvements in few-shot generalization, calibration, and efficiency over existing adaptation baselines.
 
 # Summary. An optional shortened abstract.
-summary: ___KOSOMBE 2025 Fall___ <br> _대한의용생체공학회 2025 추계학술대회 (Poster 247)_
+summary: ___KOSOMBE 2025 Fall___ <br> _ 2025  (Poster 247)_
 
 tags: ['AI', 'medical', 'few-shot', 'segmentation', 'SAM2', 'bayesian adaptation']
 

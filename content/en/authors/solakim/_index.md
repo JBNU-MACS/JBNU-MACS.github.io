@@ -1,9 +1,6 @@
 ---
 # Display name
-title: 김영수
-
-name_ko: "김영수"
-name_en: "Yeongsu Kim"
+title: 
 
 # Full Name (for SEO)
 first_name: Student
@@ -11,18 +8,19 @@ last_name: 1
 
 # Username (this should match the folder name)
 authors:
-  - 김영수
+  - solakim
+slug: solakim
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: (석사과정) 포항공과대학교 (POSTECH)
+role: (석사과정) 한국과학기술원 (KAIST)
 
 # Organizations/Affiliations
 organizations:
-  - name: 학부연구생 (경제학부)
-  - year: 2026-02
+  - name: 학부연구생 (스마트팜학과)
+  - year: 2025-02
 
 # Short bio (displayed in user profile at end of posts)
 # bio: 연합학습 및 표현 학습을 사용한 medical 도메인에서의 딥 러닝 기법, 도메인 적응 및 테스트 타임 학습과 같은 딥 러닝 기반 컴퓨터 비전 응용, 이미지 처리 및 이미지-텍스트 캡셔닝을 포함한 의료 응용의 딥 러닝 기반 진단 등을 포함합니다.
@@ -76,4 +74,4 @@ user_groups:
 
 ---
 
-<!-- Fine-Tuning Deep Learning Network for Multi-Domain and Multi-Task Applications이라는 제목의 논문으로 2023년 대구경북과학기술원에서 통합 석사 및 박사 학위를 받았습니다. 2024년에 전북대학교 컴퓨터인공지능학부에 조교수 position으로 임명받고 현재까지 근무하고 있습니다. 연구 분야는 연합학습 및 표현 학습을 사용한 medical 도메인에서의 딥 러닝 기법, 도메인 적응 및 테스트 타임 학습과 같은 딥 러닝 기반 컴퓨터 비전 응용, 이미지 처리를 포함하고 있으며, AI의 이론부터 다양한 특성화 분야의 애플리케이션까지 넓은 범위를 포함하고 있습니다.  -->
+<!-- Fine-Tuning Deep Learning Network for Multi-Domain and Multi-Task Applications   2023       . 2024    position    .        medical    ,             ,    , AI         .  -->

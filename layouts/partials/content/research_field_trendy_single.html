@@ -8,6 +8,49 @@
 {{- $resource := partial "blox-core/functions/get_featured_image.html" $p -}}
 
 <div class="universal-wrapper macs-field-single-shell">
+  {{ if eq $p.Language.Lang "en" }}
+  <section class="en-gov-field-single">
+    <header class="head">
+      <a class="back" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}">Back to Research Fields</a>
+      <p class="eyebrow">Research Field</p>
+      <h1>{{ $p.Title }}</h1>
+      {{ with $summary }}<p class="summary">{{ . }}</p>{{ end }}
+    </header>
+
+    <div class="layout">
+      <div class="content">
+        {{ with $resource }}
+          {{ $img := .Resize "1200x760" }}
+          {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
+          <figure class="cover">
+            <img src="{{ $img.RelPermalink }}" alt="{{ $p.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="eager">
+          </figure>
+        {{ end }}
+        <div class="prose">{{ $p.Content }}</div>
+      </div>
+
+      <aside class="side">
+        <div class="card">
+          <h2>Overview</h2>
+          {{ with $summary }}<p>{{ . }}</p>{{ end }}
+          <a href="{{ "publication/" | relLangURL }}">Browse Publications</a>
+        </div>
+        {{ if gt (len $siblings) 1 }}
+          <div class="card">
+            <h2>Other Fields</h2>
+            <ul>
+              {{ range $item := $siblings }}
+                {{ if ne $item.RelPermalink $p.RelPermalink }}
+                  <li><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></li>
+                {{ end }}
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+      </aside>
+    </div>
+  </section>
+  {{ else }}
   <section class="macs-field-single-hero">
     <a class="field-single-back" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}">Research Fields</a>
     <div class="field-single-hero-inner">
@@ -57,4 +100,5 @@
       </div>
     </article>
   </section>
+  {{ end }}
 </div>

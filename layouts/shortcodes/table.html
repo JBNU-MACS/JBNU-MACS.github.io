@@ -1,0 +1,58 @@
+{{/* Compatible CSV table shortcode override for modern Hugo. */}}
+{{ $src := .Get "path" }}
+{{ $delimiter := .Get "delimiter" | default "," }}
+{{ $useHeaderRow := true }}
+{{ with .Get "header" }}
+  {{ $useHeaderRow = eq (lower .) "true" }}
+{{ end }}
+{{ $caption := .Get "caption" }}
+
+{{ $raw := "" }}
+{{ $isRemote := strings.HasPrefix $src "http" }}
+
+{{ if $isRemote }}
+  {{ with try (resources.GetRemote $src) }}
+    {{ with .Value }}
+      {{ $raw = .Content }}
+    {{ end }}
+  {{ end }}
+{{ else if and $.Page $.Page.File }}
+  {{ $fullPath := path.Join "content" $.Page.File.Dir $src }}
+  {{ $raw = readFile $fullPath }}
+{{ end }}
+
+{{ $rows := slice }}
+{{ range $line := split (replace $raw "\r\n" "\n") "\n" }}
+  {{ $clean := trim $line " \t\r\n" }}
+  {{ if ne $clean "" }}
+    {{ $rows = $rows | append (split $clean $delimiter) }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $rows) 0 }}
+  <table class="table">
+    {{ if $useHeaderRow }}
+      {{ $headerRow := index $rows 0 }}
+      {{ $rows = after 1 $rows }}
+      <tr>
+        {{ range $headerRow }}
+          <th>{{ . | markdownify | emojify }}</th>
+        {{ end }}
+      </tr>
+    {{ end }}
+    {{ range $rows }}
+      <tr>
+        {{ range . }}
+          {{ if findRE "^\\d+$" . }}
+            <td data-table-dtype="number">{{ . }}</td>
+          {{ else }}
+            <td data-table-dtype="text">{{ . | markdownify | emojify }}</td>
+          {{ end }}
+        {{ end }}
+      </tr>
+    {{ end }}
+    {{ with $caption }}
+      <caption>{{ . | markdownify | emojify }}</caption>
+    {{ end }}
+  </table>
+{{ end }}

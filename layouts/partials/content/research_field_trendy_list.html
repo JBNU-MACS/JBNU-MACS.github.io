@@ -27,6 +27,37 @@
 {{- $total := len $items -}}
 
 <div class="universal-wrapper macs-field-shell">
+  {{ if eq $page.Language.Lang "en" }}
+  <section class="en-gov-field-list">
+    <header class="head">
+      <div>
+        <p class="eyebrow">Research Fields</p>
+        <h1>{{ $page.Title }}</h1>
+      </div>
+      <p class="summary">MACS Lab organizes its research portfolio across domain-oriented and method-oriented tracks. The following fields summarize the laboratory's main directions.</p>
+    </header>
+
+    <div class="cards">
+      {{ range $idx, $item := $items }}
+        {{ $summary := "" }}
+        {{ if $item.Params.summary }}
+          {{ $summary = $item.Params.summary | plainify }}
+        {{ else if $item.Summary }}
+          {{ $summary = $item.Summary | plainify }}
+        {{ else }}
+          {{ $summary = $item.Plain | plainify }}
+        {{ end }}
+        {{ $summary = $summary | truncate 170 }}
+        <article class="card">
+          <span class="order">{{ printf "%02d" (add $idx 1) }}</span>
+          <h2><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h2>
+          {{ with $summary }}<p>{{ . }}</p>{{ end }}
+          <a class="more" href="{{ $item.RelPermalink }}">View Field</a>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ else }}
   <section class="macs-field-hero" aria-labelledby="field-hero-title">
     <div class="hero-grid-bg" aria-hidden="true"></div>
     <div class="hero-content">
@@ -83,4 +114,5 @@
       </article>
     {{ end }}
   </section>
+  {{ end }}
 </div>

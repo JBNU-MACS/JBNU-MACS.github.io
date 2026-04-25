@@ -7,6 +7,75 @@
 {{ with $p.Date }}{{ $pubYear = .Format "2006" }}{{ end }}
 
 <div class="universal-wrapper">
+  {{ if eq $p.Language.Lang "en" }}
+  <article class="en-gov-publication">
+    <header class="en-gov-publication-head">
+      <p class="eyebrow">Publication</p>
+      <h1>{{ $p.Title }}</h1>
+      <div class="authors">
+        {{ partial "content/render_publication_authors" (dict "item" $p "link" true "showNotes" true "period" false "strongName" "Kyungsu Lee") }}
+      </div>
+      <p class="reference">
+        {{ partial "content/render_publication_authors" (dict "item" $p "link" false "showNotes" false "period" true "strongName" "") }}
+        "{{ $p.Title }}," {{ with $p.Params.publication }}<i>{{ . }}</i>{{ end }}{{ with $p.Params.publication_short }} ({{ . }}){{ end }}{{ if ne $pubYear "" }}, {{ $pubYear }}{{ end }}.
+      </p>
+    </header>
+
+    <section class="en-gov-publication-main">
+      <div class="content">
+        {{ with $hero }}
+          <figure class="cover">
+            <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
+          </figure>
+        {{ end }}
+
+        {{ with $p.Params.abstract }}
+          <section class="block">
+            <h2>Abstract</h2>
+            <p>{{ . }}</p>
+          </section>
+        {{ end }}
+
+        {{ if $p.Content }}
+          <section class="block">
+            <h2>Details</h2>
+            <div class="body">{{ $p.Content }}</div>
+          </section>
+        {{ end }}
+      </div>
+
+      <aside class="side">
+        <div class="info-card">
+          <h3>Record Information</h3>
+          <ul>
+            {{ with $pubYear }}<li><strong>Year</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.publication }}<li><strong>Venue</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.publication_short }}<li><strong>Abbreviation</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.doi }}<li><strong>DOI</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.impact_factor }}<li><strong>Impact Factor</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.jcr_rank }}<li><strong>JCR Rank</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.jcr_percentile }}<li><strong>Quartile</strong><span>{{ . }}</span></li>{{ end }}
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>External Links</h3>
+          <div class="links">
+            {{ with $p.Params.doi }}<a href="{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
+            {{ with $p.Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
+            {{ with $p.Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+            {{ with $p.Params.url_code }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
+            {{ with $p.Params.url_dataset }}<a href="{{ . }}" target="_blank" rel="noopener">Dataset</a>{{ end }}
+            {{ with $p.Params.url_poster }}<a href="{{ . }}" target="_blank" rel="noopener">Poster</a>{{ end }}
+            {{ with $p.Params.url_slides }}<a href="{{ . }}" target="_blank" rel="noopener">Slides</a>{{ end }}
+            {{ with $p.Params.url_video }}<a href="{{ . }}" target="_blank" rel="noopener">Video</a>{{ end }}
+            {{ with $bib }}<a href="{{ .RelPermalink }}" target="_blank" rel="noopener">BibTeX</a>{{ end }}
+          </div>
+        </div>
+      </aside>
+    </section>
+  </article>
+  {{ else }}
   <article class="macs-pub-single">
     <header class="macs-pub-hero{{ if not $hero }} no-hero{{ end }}">
       <div class="macs-pub-head">
@@ -88,4 +157,5 @@
       </div>
     </section>
   </article>
+  {{ end }}
 </div>

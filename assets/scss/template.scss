@@ -6331,3 +6331,411 @@ html[lang^="en"] .macs-field-card:hover {
     width: 100%;
   }
 }
+
+html[lang^="en"] .navbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid #cfd8e3;
+  box-shadow: none;
+}
+
+html[lang^="en"] .navbar-brand,
+html[lang^="en"] .navbar-light .navbar-nav .nav-link,
+html[lang^="en"] .dropdown-item {
+  color: #163150 !important;
+}
+
+html[lang^="en"] .navbar-light .navbar-nav .nav-link {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+html[lang^="en"] .navbar-light .navbar-nav .nav-link:hover,
+html[lang^="en"] .navbar-light .navbar-nav .nav-link.active {
+  color: #1a4a7d !important;
+}
+
+html[lang^="en"] .dropdown-menu {
+  border: 1px solid #d4dde8;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+html[lang^="en"] footer.site-footer,
+html[lang^="en"] .site-footer {
+  border-top: 1px solid #d7dee8;
+  background: #f5f7fa;
+}
+
+html[lang^="en"] .en-gov-list,
+html[lang^="en"] .en-gov-detail,
+html[lang^="en"] .en-gov-publication,
+html[lang^="en"] .en-gov-field-list,
+html[lang^="en"] .en-gov-field-single {
+  border: 1px solid #c9d4e0;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: none;
+  padding: 1.3rem;
+}
+
+html[lang^="en"] .en-gov-list-head,
+html[lang^="en"] .en-gov-detail-head,
+html[lang^="en"] .en-gov-publication-head,
+html[lang^="en"] .en-gov-field-list .head,
+html[lang^="en"] .en-gov-field-single .head {
+  padding-bottom: 0.9rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #d6dee7;
+}
+
+html[lang^="en"] .en-gov-list-head,
+html[lang^="en"] .en-gov-field-list .head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-gov-list-head .eyebrow,
+html[lang^="en"] .en-gov-detail .eyebrow,
+html[lang^="en"] .en-gov-publication .eyebrow,
+html[lang^="en"] .en-gov-field-list .eyebrow,
+html[lang^="en"] .en-gov-field-single .eyebrow {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  color: #1a4a7d;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+html[lang^="en"] .en-gov-list h1,
+html[lang^="en"] .en-gov-detail h1,
+html[lang^="en"] .en-gov-publication h1,
+html[lang^="en"] .en-gov-field-list h1,
+html[lang^="en"] .en-gov-field-single h1 {
+  margin: 0;
+  color: #10233a;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.18;
+}
+
+html[lang^="en"] .en-gov-list-head .summary,
+html[lang^="en"] .en-gov-detail .summary,
+html[lang^="en"] .en-gov-field-list .summary,
+html[lang^="en"] .en-gov-field-single .summary,
+html[lang^="en"] .en-gov-publication .reference {
+  color: #566a80;
+  line-height: 1.65;
+}
+
+html[lang^="en"] .en-gov-list-head .summary {
+  max-width: 36ch;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+html[lang^="en"] .en-gov-list-items {
+  display: grid;
+  gap: 0.9rem;
+}
+
+html[lang^="en"] .en-gov-list-item {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #d6dee7;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+html[lang^="en"] .en-gov-list-item .thumb {
+  display: block;
+  border: 1px solid #d6dee7;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f5f7fa;
+  min-height: 132px;
+}
+
+html[lang^="en"] .en-gov-list-item .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+html[lang^="en"] .en-gov-list-item .thumb.no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a4a7d;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+html[lang^="en"] .en-gov-list-item .meta,
+html[lang^="en"] .en-gov-detail .meta,
+html[lang^="en"] .en-gov-publication .authors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+html[lang^="en"] .en-gov-list-item .meta span,
+html[lang^="en"] .en-gov-list-item .meta time,
+html[lang^="en"] .en-gov-detail .meta span,
+html[lang^="en"] .en-gov-detail .meta time {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 0.55rem;
+  border: 1px solid #d2dce7;
+  border-radius: 4px;
+  background: #f5f7fa;
+  color: #2f4f74;
+  font-size: 0.74rem;
+}
+
+html[lang^="en"] .en-gov-list-item h2 {
+  margin: 0.6rem 0 0.45rem;
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+html[lang^="en"] .en-gov-list-item h2 a,
+html[lang^="en"] .en-gov-detail .back-link,
+html[lang^="en"] .en-gov-field-single .back,
+html[lang^="en"] .en-gov-field-list .card h2 a {
+  color: #17375d;
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-gov-list-item p,
+html[lang^="en"] .en-gov-detail .summary,
+html[lang^="en"] .en-gov-detail .content,
+html[lang^="en"] .en-gov-field-list .card p,
+html[lang^="en"] .en-gov-field-single .prose,
+html[lang^="en"] .en-gov-publication .block p {
+  color: #5b6e84;
+  line-height: 1.7;
+}
+
+html[lang^="en"] .en-gov-list-item .more,
+html[lang^="en"] .en-gov-field-list .more,
+html[lang^="en"] .en-gov-field-single .side .card a,
+html[lang^="en"] .en-gov-publication .links a,
+html[lang^="en"] .en-gov-detail-foot .nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 0.8rem;
+  border: 1px solid #1a4a7d;
+  border-radius: 4px;
+  color: #1a4a7d;
+  background: #fff;
+  text-decoration: none;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+html[lang^="en"] .en-gov-list-item .more:hover,
+html[lang^="en"] .en-gov-field-list .more:hover,
+html[lang^="en"] .en-gov-field-single .side .card a:hover,
+html[lang^="en"] .en-gov-publication .links a:hover,
+html[lang^="en"] .en-gov-detail-foot .nav:hover {
+  background: #1a4a7d;
+  color: #fff;
+}
+
+html[lang^="en"] .en-gov-pager,
+html[lang^="en"] .en-gov-detail-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d6dee7;
+}
+
+html[lang^="en"] .en-gov-pager a,
+html[lang^="en"] .en-gov-pager span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 0.7rem;
+  border: 1px solid #d2dce7;
+  border-radius: 4px;
+  background: #fff;
+  color: #1a4a7d;
+  text-decoration: none;
+}
+
+html[lang^="en"] .en-gov-pager .disabled {
+  color: #7b8c9f;
+  background: #f5f7fa;
+}
+
+html[lang^="en"] .en-gov-detail .topline {
+  margin-bottom: 0.5rem;
+}
+
+html[lang^="en"] .en-gov-detail-cover,
+html[lang^="en"] .en-gov-field-single .cover,
+html[lang^="en"] .en-gov-publication .cover {
+  margin: 0 0 1rem;
+  border: 1px solid #d6dee7;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+html[lang^="en"] .en-gov-detail-cover img,
+html[lang^="en"] .en-gov-field-single .cover img,
+html[lang^="en"] .en-gov-publication .cover img {
+  width: 100%;
+  display: block;
+}
+
+html[lang^="en"] .en-gov-publication-main,
+html[lang^="en"] .en-gov-field-single .layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.85fr);
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-gov-publication .info-card,
+html[lang^="en"] .en-gov-field-single .side .card {
+  padding: 1rem;
+  border: 1px solid #d6dee7;
+  border-radius: 4px;
+  background: #fff;
+}
+
+html[lang^="en"] .en-gov-publication .info-card + .info-card,
+html[lang^="en"] .en-gov-field-single .side .card + .card {
+  margin-top: 0.9rem;
+}
+
+html[lang^="en"] .en-gov-publication .info-card h3,
+html[lang^="en"] .en-gov-field-single .side .card h2,
+html[lang^="en"] .en-gov-publication .block h2 {
+  margin: 0 0 0.7rem;
+  color: #10233a;
+}
+
+html[lang^="en"] .en-gov-publication .info-card ul,
+html[lang^="en"] .en-gov-field-single .side .card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html[lang^="en"] .en-gov-publication .info-card li {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 0.65rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #e3e8ef;
+  color: #5a6e84;
+  font-size: 0.85rem;
+}
+
+html[lang^="en"] .en-gov-publication .info-card li:last-child {
+  border-bottom: 0;
+}
+
+html[lang^="en"] .en-gov-publication .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+html[lang^="en"] .en-gov-publication .block {
+  padding: 1rem;
+  border: 1px solid #d6dee7;
+  border-radius: 4px;
+  background: #fff;
+}
+
+html[lang^="en"] .en-gov-publication .block + .block {
+  margin-top: 0.9rem;
+}
+
+html[lang^="en"] .en-gov-field-list .cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+html[lang^="en"] .en-gov-field-list .card {
+  padding: 1rem;
+  border: 1px solid #d6dee7;
+  border-radius: 4px;
+}
+
+html[lang^="en"] .en-gov-field-list .order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.7rem;
+  border: 1px solid #d2dce7;
+  border-radius: 4px;
+  background: #f5f7fa;
+  color: #1a4a7d;
+  font-weight: 800;
+}
+
+html[lang^="en"] .en-gov-field-single .prose {
+  padding: 1rem;
+  border: 1px solid #d6dee7;
+  border-radius: 4px;
+  background: #fff;
+}
+
+html[lang^="en"] .macs-author-head-copy .kicker,
+html[lang^="en"] .macs-author-block h2,
+html[lang^="en"] .macs-author-head-copy .role,
+html[lang^="en"] .macs-author-head-copy .org,
+html[lang^="en"] .macs-author-head-copy .contact {
+  letter-spacing: normal;
+}
+
+html[lang^="en"] .macs-author-links a,
+html[lang^="en"] .macs-author-stat-row span,
+html[lang^="en"] .macs-chip-wrap .chip {
+  border-radius: 4px;
+}
+
+@media (max-width: 991px) {
+  html[lang^="en"] .en-gov-list-head,
+  html[lang^="en"] .en-gov-home .panel-head,
+  html[lang^="en"] .en-gov-board-grid .board-head,
+  html[lang^="en"] .en-gov-about .about-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  html[lang^="en"] .en-gov-list-item,
+  html[lang^="en"] .en-gov-publication-main,
+  html[lang^="en"] .en-gov-field-single .layout,
+  html[lang^="en"] .en-gov-field-list .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  html[lang^="en"] .en-gov-list,
+  html[lang^="en"] .en-gov-detail,
+  html[lang^="en"] .en-gov-publication,
+  html[lang^="en"] .en-gov-field-list,
+  html[lang^="en"] .en-gov-field-single {
+    padding: 0.95rem;
+  }
+}

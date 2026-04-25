@@ -17,274 +17,310 @@
 
 {{ if eq .Lang "en" }}
 <style>
-  /* MACS Lab Official English Portal - Government Standard Redesign */
+  /* MACS Lab Modern Official Portal (V2) - Minimalist & Professional */
   :root {
-    --gov-navy: #00274c;
-    --gov-blue: #0055a4;
-    --gov-light-blue: #f1f6fb;
-    --gov-border: #adb5bd;
-    --gov-text: #1b1c1d;
-    --gov-muted: #53565a;
-    --gov-white: #ffffff;
+    --macs-navy: #0f172a;
+    --macs-blue: #2563eb;
+    --macs-slate: #64748b;
+    --macs-border: #e2e8f0;
+    --macs-bg: #ffffff;
+    --macs-subtle: #f8fafc;
   }
 
   html[lang^="en"] body {
-    background-color: var(--gov-white) !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-    color: var(--gov-text) !important;
+    background-color: var(--macs-bg) !important;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif !important;
+    color: var(--macs-navy) !important;
+    letter-spacing: -0.011em !important;
   }
 
-  /* Remove fancy background from theme */
-  html[lang^="en"] body.home {
-    background: var(--gov-white) !important;
+  /* Official Top Banner */
+  html[lang^="en"] body::before {
+    content: "Official Research Laboratory Website of JBNU";
+    display: block;
+    background: var(--macs-navy);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    padding: 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
-  /* Official Masthead / Navbar */
+  /* Navbar Redesign - Modern Minimalist */
   html[lang^="en"] .navbar {
-    border-top: 6px solid var(--gov-navy) !important;
-    border-bottom: 1px solid var(--gov-border) !important;
-    background: var(--gov-white) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--macs-border) !important;
+    padding: 1.2rem 0 !important;
     box-shadow: none !important;
     height: auto !important;
-    padding: 1rem 0 !important;
   }
 
   html[lang^="en"] .navbar-brand {
     font-weight: 800 !important;
-    color: var(--gov-navy) !important;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    font-size: 1.3rem !important;
+    font-size: 1.4rem !important;
+    letter-spacing: -0.03em !important;
+    color: var(--macs-navy) !important;
   }
 
   html[lang^="en"] .navbar-nav .nav-link {
-    color: var(--gov-text) !important;
-    font-weight: 700 !important;
-    text-transform: uppercase;
-    font-size: 0.85rem !important;
-    letter-spacing: 0.02em;
-    padding: 0.5rem 0.8rem !important;
+    color: var(--macs-slate) !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.2s ease;
   }
 
   html[lang^="en"] .navbar-nav .nav-link:hover,
   html[lang^="en"] .navbar-nav .active > .nav-link {
-    color: var(--gov-blue) !important;
-    background: var(--gov-light-blue) !important;
+    color: var(--macs-blue) !important;
+    background: transparent !important;
   }
 
-  /* Page Header / Masthead */
+  /* Page Header - Clean & Focused */
   html[lang^="en"] .en-portal-home__masthead,
   html[lang^="en"] .en-portal-page__head {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 320px !important;
-    gap: 2rem !important;
-    background: var(--gov-light-blue) !important;
-    border: 1px solid var(--gov-border) !important;
-    border-left: 12px solid var(--gov-navy) !important;
-    padding: 3rem !important;
-    border-radius: 0 !important;
-    margin-bottom: 2.5rem !important;
-  }
-
-  @media (max-width: 991px) {
-    html[lang^="en"] .en-portal-home__masthead,
-    html[lang^="en"] .en-portal-page__head {
-      grid-template-columns: 1fr !important;
-      padding: 2rem !important;
-    }
+    display: block !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 4rem 0 3rem !important;
+    margin-bottom: 2rem !important;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 
   html[lang^="en"] .en-portal-eyebrow,
   html[lang^="en"] .en-portal-kicker {
-    display: inline-block;
-    background: var(--gov-navy);
-    color: var(--gov-white) !important;
-    padding: 4px 12px;
+    display: inline-block !important;
+    color: var(--macs-blue) !important;
+    background: #eff6ff !important;
+    padding: 4px 12px !important;
     font-size: 0.75rem !important;
-    font-weight: 800 !important;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.2rem !important;
-    border-radius: 2px;
+    font-weight: 700 !important;
+    border-radius: 999px !important;
+    margin-bottom: 1.5rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
   }
 
   html[lang^="en"] h1 {
-    font-size: clamp(2rem, 4vw, 3.2rem) !important;
-    color: var(--gov-navy) !important;
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
     font-weight: 900 !important;
-    line-height: 1.1 !important;
-    margin: 0 !important;
-    letter-spacing: -0.04em !important;
+    color: var(--macs-navy) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.05em !important;
+    margin-bottom: 1.5rem !important;
   }
 
   html[lang^="en"] .en-portal-summary {
-    font-size: 1.15rem !important;
+    font-size: 1.25rem !important;
+    color: var(--macs-slate) !important;
     line-height: 1.6 !important;
-    color: var(--gov-muted) !important;
-    margin-top: 1.5rem !important;
-    max-width: 800px !important;
+    max-width: 700px !important;
+    margin: 0 auto !important;
   }
 
-  /* Panels and Sections */
+  /* Side Panel - Simplify */
+  html[lang^="en"] aside.en-portal-home__side,
+  html[lang^="en"] aside.en-portal-page__side {
+    margin-top: 3rem !important;
+  }
+
+  /* Sections & Panels - Ultra Clean */
   html[lang^="en"] .en-portal-panel {
-    border: 1px solid var(--gov-border) !important;
-    border-radius: 0 !important;
-    padding: 2rem !important;
-    background: var(--gov-white) !important;
-    box-shadow: none !important;
+    border: 1px solid var(--macs-border) !important;
+    background: var(--macs-bg) !important;
+    border-radius: 12px !important;
+    padding: 2.5rem !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+    margin-bottom: 2rem !important;
   }
 
   html[lang^="en"] .en-portal-section-head {
-    border-bottom: 3px solid var(--gov-navy) !important;
-    padding-bottom: 1rem !important;
-    margin-bottom: 1.5rem !important;
-    align-items: flex-end !important;
+    border: none !important;
+    margin-bottom: 2rem !important;
+    padding-bottom: 0 !important;
+    text-align: left;
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
   }
 
   html[lang^="en"] .en-portal-section-head h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.75rem !important;
     font-weight: 800 !important;
-    color: var(--gov-navy) !important;
+    letter-spacing: -0.03em !important;
     margin: 0 !important;
   }
 
-  /* Stat Grid */
-  html[lang^="en"] .en-portal-stat-grid article {
-    background: var(--gov-light-blue) !important;
-    border: 1px solid var(--gov-border) !important;
-    border-radius: 0 !important;
-    padding: 1.2rem !important;
-    text-align: center;
-  }
-
-  html[lang^="en"] .en-portal-stat-grid strong {
-    font-size: 2rem !important;
-    color: var(--gov-navy) !important;
-  }
-
-  /* Links and Buttons */
-  html[lang^="en"] .en-portal-actions a,
-  html[lang^="en"] .en-portal-inline-actions a,
-  html[lang^="en"] .en-portal-pager a {
-    background: var(--gov-navy) !important;
-    color: var(--gov-white) !important;
-    border: none !important;
-    border-radius: 0 !important;
-    font-weight: 700 !important;
-    text-transform: uppercase;
-    font-size: 0.85rem !important;
-    padding: 0.8rem 1.5rem !important;
-    transition: opacity 0.2s;
-  }
-
-  html[lang^="en"] .en-portal-actions a:hover {
-    opacity: 0.9;
-    text-decoration: none !important;
-  }
-
-  html[lang^="en"] .en-portal-text-link {
-    color: var(--gov-blue) !important;
-    font-weight: 700 !important;
-    text-decoration: underline !important;
-  }
-
-  /* Records and Tables */
+  /* Record Rows - Modern Table Look */
   html[lang^="en"] .en-portal-record,
   html[lang^="en"] .en-portal-link-row,
-  html[lang^="en"] .en-portal-pub-row {
-    border-top: 1px solid var(--gov-border) !important;
-    padding: 1.2rem 0 !important;
-    grid-template-columns: 140px minmax(0, 1fr) !important;
+  html[lang^="en"] .en-portal-pub-row,
+  html[lang^="en"] .en-portal-record-row {
+    border-top: 1px solid var(--macs-border) !important;
+    padding: 1.5rem 0 !important;
+    background: transparent !important;
+    transition: background 0.2s ease;
+    display: grid !important;
+    grid-template-columns: 120px 1fr !important;
+    gap: 1.5rem !important;
   }
 
   html[lang^="en"] .en-portal-record-row {
-    border-top: 1px solid var(--gov-border) !important;
-    padding: 1.5rem !important;
-    background: #fff !important;
-    grid-template-columns: 100px minmax(0, 1fr) 150px !important;
-    gap: 1.5rem !important;
-    align-items: center !important;
+    grid-template-columns: 100px 1fr 140px !important;
   }
 
-  @media (max-width: 767px) {
-    html[lang^="en"] .en-portal-record-row {
-      grid-template-columns: 1fr !important;
-      padding: 1.2rem !important;
-      gap: 0.8rem !important;
-    }
-    html[lang^="en"] .en-portal-record-row__action {
-      justify-content: flex-start !important;
-    }
-  }
-
-  html[lang^="en"] .en-portal-year-nav {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-    padding: 1rem !important;
-    background: var(--gov-light-blue) !important;
-    border: 1px solid var(--gov-border) !important;
-    margin-bottom: 2rem !important;
-    border-radius: 0 !important;
-  }
-
-  html[lang^="en"] .en-portal-year-nav a {
-    padding: 0.4rem 0.8rem !important;
-    background: #fff !important;
-    border: 1px solid var(--gov-border) !important;
-    color: var(--gov-navy) !important;
-    font-weight: 700 !important;
-    text-decoration: none !important;
-    font-size: 0.9rem !important;
-  }
-
-  html[lang^="en"] .en-portal-year-nav a:hover {
-    background: var(--gov-navy) !important;
-    color: #fff !important;
-  }
-
-  html[lang^="en"] .en-portal-person-card {
-    border: 1px solid var(--gov-border) !important;
-    border-radius: 0 !important;
-    background: #fff !important;
-    box-shadow: none !important;
-  }
-
-  html[lang^="en"] .en-portal-person-card__photo {
-    border-radius: 0 !important;
-    border: 1px solid var(--gov-border) !important;
+  html[lang^="en"] .en-portal-record:hover {
+    background: var(--macs-subtle) !important;
   }
 
   html[lang^="en"] .en-portal-record h3 a {
-    color: var(--gov-navy) !important;
+    color: var(--macs-navy) !important;
     font-weight: 700 !important;
-    font-size: 1.1rem !important;
+    font-size: 1.15rem !important;
+    text-decoration: none !important;
+  }
+
+  html[lang^="en"] .en-portal-record h3 a:hover {
+    color: var(--macs-blue) !important;
   }
 
   html[lang^="en"] .en-portal-record time {
-    font-family: monospace !important;
-    color: var(--gov-blue) !important;
+    color: var(--macs-slate) !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Buttons - Sleek & Modern */
+  html[lang^="en"] .en-portal-actions a,
+  html[lang^="en"] .en-portal-inline-actions a,
+  html[lang^="en"] .en-portal-pager a {
+    background: var(--macs-navy) !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    padding: 0.7rem 1.4rem !important;
+    font-size: 0.9rem !important;
+    border: none !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  html[lang^="en"] .en-portal-actions a:hover {
+    background: #1e293b !important;
+    transform: translateY(-1px);
+  }
+
+  /* Year Nav */
+  html[lang^="en"] .en-portal-year-nav {
+    display: flex !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem !important;
+    background: var(--macs-subtle) !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--macs-border) !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  html[lang^="en"] .en-portal-year-nav a {
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px !important;
     font-weight: 700 !important;
+    color: var(--macs-slate) !important;
+    text-decoration: none !important;
   }
 
-  /* Footer */
+  html[lang^="en"] .en-portal-year-nav a:hover {
+    background: #fff !important;
+    color: var(--macs-blue) !important;
+  }
+
+  /* Footer - Minimalist */
   html[lang^="en"] .site-footer {
-    background: var(--gov-light-blue) !important;
-    border-top: 4px solid var(--gov-navy) !important;
-    padding: 4rem 0 !important;
-    margin-top: 4rem !important;
+    border-top: 1px solid var(--macs-border) !important;
+    background: var(--macs-bg) !important;
+    padding: 5rem 0 !important;
+    text-align: center;
+    margin-top: 5rem !important;
+    box-shadow: none !important;
   }
 
-  html[lang^="en"] .site-footer p,
-  html[lang^="en"] .site-footer .powered-by {
-    color: var(--gov-muted) !important;
+  html[lang^="en"] .site-footer p {
+    font-size: 0.9rem !important;
+    color: var(--macs-slate) !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Stats - Clean Grid */
+  html[lang^="en"] .en-portal-stat-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.5rem !important;
+    margin-top: 3rem !important;
+  }
+
+  @media (max-width: 767px) {
+    html[lang^="en"] .en-portal-stat-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+    html[lang^="en"] .en-portal-record-row {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  html[lang^="en"] .en-portal-stat-grid article {
+    background: transparent !important;
+    border: none !important;
+    border-left: 1px solid var(--macs-border) !important;
+    padding: 0 0 0 1.5rem !important;
+    text-align: left !important;
+    border-radius: 0 !important;
+  }
+
+  html[lang^="en"] .en-portal-stat-grid strong {
+    display: block !important;
+    font-size: 2rem !important;
+    letter-spacing: -0.05em !important;
+    color: var(--macs-navy) !important;
+    line-height: 1 !important;
+  }
+
+  html[lang^="en"] .en-portal-stat-grid span {
     font-size: 0.85rem !important;
-    line-height: 1.8 !important;
+    color: var(--macs-slate) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
   }
 
-  /* Utility classes */
+  /* Person Cards */
+  html[lang^="en"] .en-portal-person-card {
+    border: 1px solid var(--macs-border) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+  }
+
+  html[lang^="en"] .en-portal-person-card__photo {
+    border-radius: 12px !important;
+    border: 1px solid var(--macs-border) !important;
+  }
+
+  /* Utility */
   html[lang^="en"] .universal-wrapper {
-    max-width: 1200px !important;
+    max-width: 1100px !important;
+  }
+
+  html[lang^="en"] .en-portal-empty {
+    color: var(--macs-slate) !important;
+    font-style: italic !important;
   }
 </style>
 {{ end }}

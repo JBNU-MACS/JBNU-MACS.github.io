@@ -4,9 +4,10 @@ title: Research Fields
 # Listing view
 view: community/custom_card
 
-# Optional banner image (relative to `assets/media/` folder).
-
+# Optional header image (relative to `assets/media/` folder).
 banner:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/)'
-  image: 'researchpaper.jpg'
+  caption: ''
+  image: 'contents.jpg'
 ---
+
+Our laboratory conducts research across various specialized fields such as Medical AI, Multi-modality, and Applied AI Engineering. We focus on solving real-world problems and creating social value through innovative AI technologies.

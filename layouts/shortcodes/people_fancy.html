@@ -6,26 +6,26 @@
 {{ end }}
 {{ $graduates := sort (where $all "Params.user_groups" "intersect" (slice "M.S. Student")) "Title" }}
 {{ $parttime := sort (where $all "Params.user_groups" "intersect" (slice "Part-time Graduate")) "Title" }}
-{{ $undergrad := sort (where $all "Params.user_groups" "intersect" (slice "Student")) "Title" }}
+{{ $undergrad := sort (where $all "Params.user_groups" "intersect" (slice "Student" "Undergraduate Researcher")) "Title" }}
 {{ $alumni := sort (where $all "Params.user_groups" "intersect" (slice "Alumni")) "Title" }}
 
 <section class="macs-people-fancy" id="macs-people-fancy">
   <header class="macs-people-fancy-head">
-    <h1>구성원 (People)</h1>
+    <h1>{{ if eq .Page.Language.Lang "ko" }}구성원 (People){{ else }}People{{ end }}</h1>
     <p>MACS Lab Members</p>
   </header>
 
   <nav class="macs-people-tabs" aria-label="People categories">
-    <button type="button" class="is-active" data-tab="all">전체 (All)</button>
-    <button type="button" data-tab="graduate">석사 (Graduate)</button>
-    <button type="button" data-tab="undergrad">학부연구생 (Undergraduate)</button>
-    <button type="button" data-tab="parttime">파트 (Part-time)</button>
-    <button type="button" data-tab="alumni">졸업생 (Alumni)</button>
+    <button type="button" class="is-active" data-tab="all">{{ if eq .Page.Language.Lang "ko" }}전체{{ else }}All{{ end }}</button>
+    <button type="button" data-tab="graduate">{{ if eq .Page.Language.Lang "ko" }}석사{{ else }}Graduate{{ end }}</button>
+    <button type="button" data-tab="undergrad">{{ if eq .Page.Language.Lang "ko" }}학부연구생{{ else }}Undergraduate{{ end }}</button>
+    <button type="button" data-tab="parttime">{{ if eq .Page.Language.Lang "ko" }}파트{{ else }}Part-time{{ end }}</button>
+    <button type="button" data-tab="alumni">{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</button>
   </nav>
 
   <div class="macs-people-section" data-group="graduate">
     <div class="macs-people-section-head">
-      <h2>석사 (Graduate)</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}석사 (Graduate){{ else }}Graduate (M.S. Students){{ end }}</h2>
       <span>{{ len $graduates }}</span>
     </div>
     <div class="macs-people-grid">
@@ -45,13 +45,9 @@
               <h3>{{ .Title }}</h3>
               <p class="role">{{ .Params.role }}</p>
               {{ with index .Params.organizations 0 }}
-                <p class="org">{{ replaceRE "^전북대학교\\s*" "" .name }}</p>
+                <p class="org">{{ if eq $.Page.Language.Lang "ko" }}{{ replaceRE "^전북대학교\\s*" "" .name }}{{ else }}{{ .name }}{{ end }}</p>
               {{ end }}
-              {{ if ne $email "" }}
-                <p class="contact">contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
-              {{ else }}
-                <p class="contact">contact:</p>
-              {{ end }}
+              <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
               <p class="hint">View detail</p>
             </div>
           </a>
@@ -62,7 +58,7 @@
 
   <div class="macs-people-section" data-group="undergrad">
     <div class="macs-people-section-head">
-      <h2>학부연구생 (Undergraduate)</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}학부연구생 (Undergraduate){{ else }}Undergraduate Researchers{{ end }}</h2>
       <span>{{ len $undergrad }}</span>
     </div>
     <div class="macs-people-grid">
@@ -82,13 +78,9 @@
               <h3>{{ .Title }}</h3>
               <p class="role">{{ .Params.role }}</p>
               {{ with index .Params.organizations 0 }}
-                <p class="org">{{ replaceRE "^전북대학교\\s*" "" .name }}</p>
+                <p class="org">{{ if eq $.Page.Language.Lang "ko" }}{{ replaceRE "^전북대학교\\s*" "" .name }}{{ else }}{{ .name }}{{ end }}</p>
               {{ end }}
-              {{ if ne $email "" }}
-                <p class="contact">contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
-              {{ else }}
-                <p class="contact">contact:</p>
-              {{ end }}
+              <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
               <p class="hint">View detail</p>
             </div>
           </a>
@@ -99,7 +91,7 @@
 
   <div class="macs-people-section" data-group="parttime">
     <div class="macs-people-section-head">
-      <h2>파트 석/박 (Part-time M.S. / Ph.D.)</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}파트 석/박 (Part-time M.S. / Ph.D.){{ else }}Part-time M.S. / Ph.D. Students{{ end }}</h2>
       <span>{{ len $parttime }}</span>
     </div>
     <div class="macs-people-grid">
@@ -119,13 +111,9 @@
               <h3>{{ .Title }}</h3>
               <p class="role">{{ .Params.role }}</p>
               {{ with index .Params.organizations 0 }}
-                <p class="org">{{ replaceRE "^전북대학교\\s*" "" .name }}</p>
+                <p class="org">{{ if eq $.Page.Language.Lang "ko" }}{{ replaceRE "^전북대학교\\s*" "" .name }}{{ else }}{{ .name }}{{ end }}</p>
               {{ end }}
-              {{ if ne $email "" }}
-                <p class="contact">contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
-              {{ else }}
-                <p class="contact">contact:</p>
-              {{ end }}
+              <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
               <p class="hint">View detail</p>
             </div>
           </a>
@@ -136,7 +124,7 @@
 
   <div class="macs-people-section" data-group="alumni">
     <div class="macs-people-section-head">
-      <h2>졸업생 (Alumni)</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}졸업생 (Alumni){{ else }}Alumni{{ end }}</h2>
       <span>{{ len $alumni }}</span>
     </div>
     <div class="macs-people-grid">
@@ -163,16 +151,12 @@
               <h3>{{ .Title }}</h3>
               <p class="role">{{ .Params.role }}</p>
               {{ with index .Params.organizations 0 }}
-                <p class="org">{{ replaceRE "^전북대학교\\s*" "" .name }}</p>
+                <p class="org">{{ if eq $.Page.Language.Lang "ko" }}{{ replaceRE "^전북대학교\\s*" "" .name }}{{ else }}{{ .name }}{{ end }}</p>
               {{ end }}
               {{ if ne $gradym "" }}
-                <p class="grad">졸업: {{ $gradym }}</p>
+                <p class="grad">{{ if eq $.Page.Language.Lang "ko" }}졸업:{{ else }}Graduated:{{ end }} {{ $gradym }}</p>
               {{ end }}
-              {{ if ne $email "" }}
-                <p class="contact">contact: <a href="mailto:{{ $email }}">{{ $email }}</a></p>
-              {{ else }}
-                <p class="contact">contact:</p>
-              {{ end }}
+              <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
               <p class="hint">View detail</p>
             </div>
           </a>

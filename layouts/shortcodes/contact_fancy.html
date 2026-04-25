@@ -5,7 +5,13 @@
     <div class="macs-contact-hero-content">
       <p class="macs-contact-kicker">MACS LAB</p>
       <h1>Contact</h1>
-      <p>전북대학교 의료 AI 및 계산 과학 연구실(MACS)과의 협업, 학부연구생/석사/박사 지원 문의를 환영합니다.</p>
+      <p>
+        {{ if eq .Page.Language.Lang "ko" }}
+        전북대학교 의료 AI 및 계산 과학 연구실(MACS)과의 협업, 학부연구생/석사/박사 지원 문의를 환영합니다.
+        {{ else }}
+        We welcome inquiries for collaboration with the Medical AI & Computational Science Laboratory (MACS) at Jeonbuk National University, as well as applications for undergraduate/graduate researchers.
+        {{ end }}
+      </p>
       <div class="macs-contact-meta">
         <span>AI + Medical</span>
         <span>Open Collaboration</span>
@@ -13,7 +19,7 @@
       </div>
       <div class="macs-contact-hero-actions">
         <a href="mailto:ksl@jbnu.ac.kr" class="macs-contact-btn">Email Us</a>
-        <a href="/notification/" class="macs-contact-btn ghost">Open Positions</a>
+        <a href="/notification/" class="macs-contact-btn ghost">{{ if eq .Page.Language.Lang "ko" }}공지사항{{ else }}Open Positions{{ end }}</a>
       </div>
     </div>
   </div>
@@ -23,19 +29,19 @@
       <article class="macs-contact-card">
         <h3>Email</h3>
         <p><a href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr</a></p>
-        <small>지원/연구 협업 관련 문의는 메일로 보내주세요.</small>
+        <small>{{ if eq .Page.Language.Lang "ko" }}지원/연구 협업 관련 문의는 메일로 보내주세요.{{ else }}Please contact us via email for research or application inquiries.{{ end }}</small>
       </article>
 
       <article class="macs-contact-card">
         <h3>Phone</h3>
         <p><a href="tel:+82632702406">+82-63-270-2406</a></p>
-        <small>평일 10:00 - 18:00 (KST)</small>
+        <small>{{ if eq .Page.Language.Lang "ko" }}평일 10:00 - 18:00 (KST){{ else }}Mon-Fri 10:00 - 18:00 (KST){{ end }}</small>
       </article>
 
       <article class="macs-contact-card">
         <h3>Office</h3>
-        <p>전북대학교 공과대학 7호관 626호</p>
-        <small>전주시 전라북도 54896, 대한민국</small>
+        <p>{{ if eq .Page.Language.Lang "ko" }}전북대학교 공과대학 7호관 626호{{ else }}Room 626, Engineering Building 7, Jeonbuk National University{{ end }}</p>
+        <small>{{ if eq .Page.Language.Lang "ko" }}전주시 전라북도 54896, 대한민국{{ else }}Jeonju, Jeollabuk-do 54896, Republic of Korea{{ end }}</small>
       </article>
     </div>
 

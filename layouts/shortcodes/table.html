@@ -8,13 +8,11 @@
 {{ $caption := .Get "caption" }}
 
 {{ $raw := "" }}
-{{ $isRemote := strings.HasPrefix $src "http" }}
+{{ $isRemote := hasPrefix $src "http" }}
 
 {{ if $isRemote }}
-  {{ with try (resources.GetRemote $src) }}
-    {{ with .Value }}
-      {{ $raw = .Content }}
-    {{ end }}
+  {{ with resources.GetRemote $src }}
+    {{ $raw = .Content }}
   {{ end }}
 {{ else if and $.Page $.Page.File }}
   {{ $fullPath := path.Join "content" $.Page.File.Dir $src }}

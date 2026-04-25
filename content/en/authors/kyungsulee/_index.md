@@ -22,7 +22,7 @@ role: Assistant Professor
 
 # Organizations/Affiliations
 organizations:
-  - name: School of Computer and Artificial Intelligence, Jeonbuk National University
+  - name: Department of Computer Science & Artificial Intelligence, Jeonbuk National University
     url: 'https://csai.jbnu.ac.kr/csai/index.do'
 
 # Short bio (displayed in user profile at end of posts)
@@ -93,4 +93,4 @@ user_groups:
 
 ---
 
-He received his integrated Master's and Ph.D. degrees from Daegu Gyeongbuk Institute of Science and Technology (DGIST) in 2023 with a thesis titled "Fine-Tuning Deep Learning Network for Multi-Domain and Multi-Task Applications". In 2024, he was appointed as an Assistant Professor in the School of Computer and Artificial Intelligence at Jeonbuk National University, where he has been serving since. His research interests include deep learning techniques in the medical domain using federated learning and representation learning, deep learning-based computer vision applications such as domain adaptation and test-time training, and image processing, covering a wide range from AI theory to applications in various specialized fields.
+He received his integrated Master's and Ph.D. degrees from Daegu Gyeongbuk Institute of Science and Technology (DGIST) in 2023 with a thesis titled "Fine-Tuning Deep Learning Network for Multi-Domain and Multi-Task Applications". In 2024, he was appointed as an Assistant Professor in the Department of Computer Science & Artificial Intelligence at Jeonbuk National University, where he has been serving since. His research interests include deep learning techniques in the medical domain using federated learning and representation learning, deep learning-based computer vision applications such as domain adaptation and test-time training, and image processing, covering a wide range from AI theory to applications in various specialized fields.

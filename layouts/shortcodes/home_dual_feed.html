@@ -1,4 +1,5 @@
 {{ $notificationPages := where site.RegularPages "Section" "notification" }}
+{{ $notificationPages = where $notificationPages "Params.home_hide" "ne" true }}
 {{ $notificationPages = first 4 ($notificationPages.ByDate.Reverse) }}
 
 {{ $newsPages := where site.RegularPages "Section" "post" }}

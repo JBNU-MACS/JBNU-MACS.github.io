@@ -18,7 +18,7 @@ role: 학부연구생
 
 # Organizations/Affiliations
 organizations:
-  - name: 전북대학교 컴퓨터인공지능학부
+  - name: 전북대학교 산업정보시스템공학과
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''

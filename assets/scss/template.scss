@@ -6739,3 +6739,439 @@ html[lang^="en"] .macs-chip-wrap .chip {
     padding: 0.95rem;
   }
 }
+
+/* English-only institutional reset across all pages */
+html[lang^="en"] {
+  --en-bg: #f3f5f7;
+  --en-surface: #ffffff;
+  --en-surface-muted: #f8fafc;
+  --en-border: #d5dee8;
+  --en-border-strong: #bcc9d7;
+  --en-ink: #14324d;
+  --en-ink-soft: #5a6d80;
+  --en-accent: #1b4d78;
+  --en-accent-strong: #153b5d;
+}
+
+html[lang^="en"] body,
+html[lang^="en"] body.home,
+html[lang^="en"] .page-wrapper,
+html[lang^="en"] .site-wrapper {
+  background: var(--en-bg) !important;
+  color: var(--en-ink) !important;
+  font-family: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+html[lang^="en"] h1,
+html[lang^="en"] h2,
+html[lang^="en"] h3,
+html[lang^="en"] h4,
+html[lang^="en"] h5,
+html[lang^="en"] h6 {
+  color: #10273e !important;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
+}
+
+html[lang^="en"] .home-section,
+html[lang^="en"] .wg-blank,
+html[lang^="en"] .wg-pages,
+html[lang^="en"] .wg-portfolio,
+html[lang^="en"] .wg-accomplishments,
+html[lang^="en"] .wg-experience {
+  padding: 3.25rem 0 !important;
+  background: transparent !important;
+}
+
+html[lang^="en"] .home-section .container,
+html[lang^="en"] .home-section .universal-wrapper,
+html[lang^="en"] .universal-wrapper,
+html[lang^="en"] .article-container,
+html[lang^="en"] .docs-container {
+  max-width: 1180px;
+}
+
+html[lang^="en"] .universal-wrapper h1,
+html[lang^="en"] .section-heading h1,
+html[lang^="en"] .section-heading h2,
+html[lang^="en"] .section-heading p,
+html[lang^="en"] .section-subheading {
+  text-align: left !important;
+}
+
+html[lang^="en"] body::before,
+html[lang^="en"] body::after,
+html[lang^="en"] .home-section::before,
+html[lang^="en"] .home-section::after,
+html[lang^="en"] .macs-home-hero::before,
+html[lang^="en"] .macs-home-hero::after,
+html[lang^="en"] .macs-about-hero::before,
+html[lang^="en"] .macs-about-hero::after,
+html[lang^="en"] .macs-contact-hero::before,
+html[lang^="en"] .macs-contact-hero::after,
+html[lang^="en"] .macs-feed-list-head::before,
+html[lang^="en"] .macs-feed-list-head::after,
+html[lang^="en"] .macs-feed-single-hero::before,
+html[lang^="en"] .macs-feed-single-hero::after,
+html[lang^="en"] .macs-field-hero::before,
+html[lang^="en"] .macs-field-hero::after,
+html[lang^="en"] .macs-field-single-hero::before,
+html[lang^="en"] .macs-field-single-hero::after,
+html[lang^="en"] .macs-pub-hero::before,
+html[lang^="en"] .macs-pub-hero::after,
+html[lang^="en"] .macs-author-hero::before,
+html[lang^="en"] .macs-author-hero::after,
+html[lang^="en"] .macs-contact-orb,
+html[lang^="en"] .macs-home-hero-dots,
+html[lang^="en"] .macs-home-hero-progress {
+  display: none !important;
+  content: none !important;
+}
+
+html[lang^="en"] [class*="macs-"],
+html[lang^="en"] [class*="en-gov-"],
+html[lang^="en"] .card,
+html[lang^="en"] .card-simple,
+html[lang^="en"] .stream-item,
+html[lang^="en"] .media.stream-item {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+html[lang^="en"] .navbar,
+html[lang^="en"] .navbar.navbar-light {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--en-border-strong) !important;
+}
+
+html[lang^="en"] .navbar-brand,
+html[lang^="en"] .navbar-light .navbar-nav .nav-link,
+html[lang^="en"] .dropdown-item {
+  color: var(--en-ink) !important;
+  font-weight: 600;
+}
+
+html[lang^="en"] .dropdown-menu,
+html[lang^="en"] footer.site-footer,
+html[lang^="en"] .site-footer {
+  border-color: var(--en-border) !important;
+  background: #ffffff !important;
+}
+
+html[lang^="en"] footer.site-footer,
+html[lang^="en"] .site-footer {
+  background: #eef2f5 !important;
+}
+
+html[lang^="en"] .section-subheading,
+html[lang^="en"] .article-metadata,
+html[lang^="en"] .article-style,
+html[lang^="en"] .summary,
+html[lang^="en"] .subtitle,
+html[lang^="en"] .role,
+html[lang^="en"] .org,
+html[lang^="en"] .contact,
+html[lang^="en"] .hint {
+  color: var(--en-ink-soft) !important;
+}
+
+html[lang^="en"] .btn,
+html[lang^="en"] .btn-primary,
+html[lang^="en"] .btn-outline-primary,
+html[lang^="en"] .macs-home-hero-btn,
+html[lang^="en"] .macs-contact-btn,
+html[lang^="en"] .macs-about-cta,
+html[lang^="en"] .about-link,
+html[lang^="en"] .more {
+  background: #ffffff !important;
+  color: var(--en-accent) !important;
+  border: 1px solid var(--en-accent) !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  text-transform: none !important;
+}
+
+html[lang^="en"] .btn:hover,
+html[lang^="en"] .btn-primary:hover,
+html[lang^="en"] .btn-outline-primary:hover,
+html[lang^="en"] .macs-home-hero-btn:hover,
+html[lang^="en"] .macs-contact-btn:hover,
+html[lang^="en"] .macs-about-cta:hover,
+html[lang^="en"] .about-link:hover,
+html[lang^="en"] .more:hover {
+  background: var(--en-accent) !important;
+  color: #ffffff !important;
+}
+
+html[lang^="en"] .home-dual-feed,
+html[lang^="en"] .macs-feature-grid-wrap,
+html[lang^="en"] .macs-about-fancy,
+html[lang^="en"] .macs-contact-fancy,
+html[lang^="en"] .macs-feed-list-shell,
+html[lang^="en"] .macs-field-shell,
+html[lang^="en"] .macs-field-single-shell,
+html[lang^="en"] .macs-author-fancy,
+html[lang^="en"] .macs-people-fancy,
+html[lang^="en"] .en-gov-home,
+html[lang^="en"] .en-gov-about,
+html[lang^="en"] .en-gov-contact,
+html[lang^="en"] .en-gov-list,
+html[lang^="en"] .en-gov-detail,
+html[lang^="en"] .en-gov-publication,
+html[lang^="en"] .en-gov-field-list,
+html[lang^="en"] .en-gov-field-single {
+  border: 1px solid var(--en-border) !important;
+  border-radius: 4px !important;
+  background: var(--en-surface) !important;
+  padding: 1.4rem !important;
+  overflow: hidden;
+}
+
+html[lang^="en"] .home-dual-feed,
+html[lang^="en"] .macs-author-main,
+html[lang^="en"] .macs-field-single-layout,
+html[lang^="en"] .en-gov-publication-main,
+html[lang^="en"] .about-grid,
+html[lang^="en"] .macs-contact-grid,
+html[lang^="en"] .en-gov-board-grid,
+html[lang^="en"] .en-gov-home-links,
+html[lang^="en"] .macs-feed-list-grid,
+html[lang^="en"] .macs-field-grid {
+  gap: 1rem !important;
+}
+
+html[lang^="en"] .home-dual-feed-col,
+html[lang^="en"] .macs-feature-card,
+html[lang^="en"] .macs-about-card,
+html[lang^="en"] .macs-contact-card,
+html[lang^="en"] .macs-contact-map,
+html[lang^="en"] .macs-feed-list-card,
+html[lang^="en"] .macs-field-card,
+html[lang^="en"] .field-aside-card,
+html[lang^="en"] .macs-author-block,
+html[lang^="en"] .macs-author-career-item,
+html[lang^="en"] .macs-author-edu-item,
+html[lang^="en"] .work-item,
+html[lang^="en"] .macs-people-card-inner,
+html[lang^="en"] .en-gov-home-panel,
+html[lang^="en"] .en-gov-home-links a,
+html[lang^="en"] .en-gov-list-item,
+html[lang^="en"] .en-gov-field-list .card,
+html[lang^="en"] .en-gov-field-single .side .card,
+html[lang^="en"] .en-gov-publication .links,
+html[lang^="en"] .en-gov-publication .record,
+html[lang^="en"] .macslab-trend-card,
+html[lang^="en"] .view-card .card-simple,
+html[lang^="en"] .media.stream-item {
+  background: #ffffff !important;
+  border: 1px solid var(--en-border) !important;
+  border-radius: 3px !important;
+  transform: none !important;
+}
+
+html[lang^="en"] .macs-home-hero,
+html[lang^="en"] .macs-about-hero,
+html[lang^="en"] .macs-contact-hero,
+html[lang^="en"] .macs-feed-single-hero,
+html[lang^="en"] .macs-field-hero,
+html[lang^="en"] .macs-field-single-hero,
+html[lang^="en"] .macs-pub-hero,
+html[lang^="en"] .macs-author-hero,
+html[lang^="en"] .en-gov-home-hero {
+  background: #f7f9fb !important;
+  border: 1px solid var(--en-border) !important;
+  border-radius: 4px !important;
+  color: var(--en-ink) !important;
+  min-height: 0 !important;
+}
+
+html[lang^="en"] .macs-home-hero-overlay,
+html[lang^="en"] .field-card-media::after,
+html[lang^="en"] .macs-feed-single-cover::after,
+html[lang^="en"] .macs-pub-cover::after {
+  display: none !important;
+}
+
+html[lang^="en"] .home-dual-feed .macslab-trend-card:hover,
+html[lang^="en"] .macs-field-card:hover,
+html[lang^="en"] .macs-people-card:hover,
+html[lang^="en"] .macs-people-card-inner:hover,
+html[lang^="en"] .work-item:hover,
+html[lang^="en"] .en-gov-list-item:hover,
+html[lang^="en"] .en-gov-field-list .card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: var(--en-border-strong) !important;
+}
+
+html[lang^="en"] .macs-people-fancy-head,
+html[lang^="en"] .macs-people-section-head,
+html[lang^="en"] .macs-author-block h2,
+html[lang^="en"] .en-gov-list-head,
+html[lang^="en"] .en-gov-detail-head,
+html[lang^="en"] .en-gov-publication-head,
+html[lang^="en"] .en-gov-field-list .head,
+html[lang^="en"] .en-gov-field-single .head,
+html[lang^="en"] .about-head,
+html[lang^="en"] .contact-head,
+html[lang^="en"] .macs-feed-list-head,
+html[lang^="en"] .macs-feed-single-head,
+html[lang^="en"] .macs-pub-head {
+  border-bottom: 1px solid var(--en-border) !important;
+}
+
+html[lang^="en"] .macs-people-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+html[lang^="en"] .macs-people-tabs button,
+html[lang^="en"] .chip,
+html[lang^="en"] .macs-author-stat-row span,
+html[lang^="en"] .macs-home-hero-tags span,
+html[lang^="en"] .en-gov-list-item .meta span,
+html[lang^="en"] .en-gov-list-item .meta time,
+html[lang^="en"] .en-gov-detail .meta span,
+html[lang^="en"] .en-gov-detail .meta time {
+  background: var(--en-surface-muted) !important;
+  border: 1px solid var(--en-border) !important;
+  border-radius: 2px !important;
+  color: var(--en-accent-strong) !important;
+}
+
+html[lang^="en"] .macs-people-tabs button.is-active {
+  background: var(--en-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--en-accent) !important;
+}
+
+html[lang^="en"] .macs-people-card-inner {
+  align-items: flex-start !important;
+  padding: 1rem !important;
+}
+
+html[lang^="en"] .macs-people-avatar,
+html[lang^="en"] .macs-author-avatar {
+  border-radius: 3px !important;
+  border: 1px solid var(--en-border) !important;
+}
+
+html[lang^="en"] .macs-author-hero {
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 1.25rem !important;
+  align-items: start !important;
+  padding: 1.25rem !important;
+}
+
+html[lang^="en"] .macs-author-main {
+  display: grid !important;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+}
+
+html[lang^="en"] .macs-author-links {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.55rem !important;
+}
+
+html[lang^="en"] .macs-author-links a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--en-border) !important;
+  border-radius: 2px !important;
+  background: #ffffff !important;
+  color: var(--en-accent) !important;
+}
+
+html[lang^="en"] .macs-author-links a:hover {
+  background: var(--en-accent) !important;
+  color: #ffffff !important;
+}
+
+html[lang^="en"] .macs-feed-list-head.has-banner,
+html[lang^="en"] .macs-feed-single-cover,
+html[lang^="en"] .macs-pub-cover,
+html[lang^="en"] .field-card-media,
+html[lang^="en"] .field-single-image {
+  background: #eef3f7 !important;
+  border: 1px solid var(--en-border) !important;
+  border-radius: 3px !important;
+}
+
+html[lang^="en"] .article-style,
+html[lang^="en"] .article-container,
+html[lang^="en"] .docs-content,
+html[lang^="en"] .en-gov-detail .content,
+html[lang^="en"] .en-gov-publication .block,
+html[lang^="en"] .field-single-prose,
+html[lang^="en"] .macs-author-bio {
+  line-height: 1.8 !important;
+}
+
+html[lang^="en"] .article-style blockquote,
+html[lang^="en"] .en-gov-detail blockquote,
+html[lang^="en"] .field-single-prose blockquote,
+html[lang^="en"] .macs-author-bio blockquote {
+  border-left: 3px solid var(--en-accent) !important;
+  padding: 0.8rem 1rem !important;
+  background: #f7f9fb !important;
+}
+
+html[lang^="en"] table,
+html[lang^="en"] .table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff !important;
+}
+
+html[lang^="en"] th,
+html[lang^="en"] td {
+  border: 1px solid var(--en-border) !important;
+  padding: 0.75rem !important;
+}
+
+html[lang^="en"] th {
+  background: #eef3f7 !important;
+  color: var(--en-accent-strong) !important;
+}
+
+html[lang^="en"] input,
+html[lang^="en"] textarea,
+html[lang^="en"] select {
+  border: 1px solid var(--en-border) !important;
+  border-radius: 2px !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+html[lang^="en"] .pagination li a,
+html[lang^="en"] .pager a,
+html[lang^="en"] .pager span,
+html[lang^="en"] .en-gov-pager a,
+html[lang^="en"] .en-gov-pager span,
+html[lang^="en"] .macs-feed-list-pager a,
+html[lang^="en"] .macs-feed-list-pager span {
+  border-radius: 2px !important;
+  border: 1px solid var(--en-border) !important;
+  background: #ffffff !important;
+  color: var(--en-accent) !important;
+}
+
+@media (max-width: 991px) {
+  html[lang^="en"] .macs-author-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  html[lang^="en"] .macs-author-main,
+  html[lang^="en"] .home-dual-feed,
+  html[lang^="en"] .macs-field-single-layout,
+  html[lang^="en"] .en-gov-publication-main,
+  html[lang^="en"] .en-gov-list-item {
+    grid-template-columns: 1fr !important;
+  }
+}

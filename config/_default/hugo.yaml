@@ -11,8 +11,8 @@ baseURL: 'https://jbnu.macs.or.kr/' # Website URL
 ############################
 
 defaultContentLanguage: ko
-hasCJKLanguage: false
-defaultContentLanguageInSubdir: false
+hasCJKLanguage: true
+defaultContentLanguageInSubdir: true
 removePathAccents: true
 
 ############################

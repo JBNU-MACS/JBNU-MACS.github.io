@@ -26,7 +26,11 @@
       <div class="macs-home-hero-overlay"></div>
       <div class="macs-home-hero-content">
         <h1>Medical AI &amp; Computational Science</h1>
+        {{ if eq .Page.Language.Lang "ko" }}
         <p>전북대학교 의료 AI 및 계산 과학 연구실 홈페이지에 오신 것을 환영합니다.</p>
+        {{ else }}
+        <p>Welcome to the Medical AI & Computational Science Laboratory at Jeonbuk National University.</p>
+        {{ end }}
         <div class="macs-home-hero-tags">
           <span>Medical AI</span>
           <span>Multi-modal</span>
@@ -43,7 +47,11 @@
       <div class="macs-home-hero-overlay"></div>
       <div class="macs-home-hero-content">
         <h1>Medical AI</h1>
+        {{ if eq .Page.Language.Lang "ko" }}
         <p>의료 데이터와 딥러닝 기반으로 진단 보조, 임상 워크플로우, 신뢰 가능한 AI 적용을 확장합니다.</p>
+        {{ else }}
+        <p>We expand diagnosis support, clinical workflows, and trustworthy AI applications based on medical data and deep learning.</p>
+        {{ end }}
         <div class="macs-home-hero-tags">
           <span>Diagnosis Support</span>
           <span>Clinical Workflow</span>
@@ -59,7 +67,11 @@
       <div class="macs-home-hero-overlay"></div>
       <div class="macs-home-hero-content">
         <h1>Vision-Language Intelligence</h1>
+        {{ if eq .Page.Language.Lang "ko" }}
         <p>멀티모달 학습으로 의료 영상, 텍스트, 임상 정보를 통합하여 해석 가능한 AI를 연구합니다.</p>
+        {{ else }}
+        <p>We research interpretable AI by integrating medical images, text, and clinical information through multimodal learning.</p>
+        {{ end }}
         <div class="macs-home-hero-tags">
           <span>Vision-Language</span>
           <span>Multi-modal</span>
@@ -75,7 +87,11 @@
       <div class="macs-home-hero-overlay"></div>
       <div class="macs-home-hero-content">
         <h1>Research to Product</h1>
+        {{ if eq .Page.Language.Lang "ko" }}
         <p>연구 결과를 실제 서비스와 시스템으로 연결하는 실용적 개발 역량을 강화합니다.</p>
+        {{ else }}
+        <p>We strengthen practical development capabilities to connect research results to real-world services and systems.</p>
+        {{ end }}
         <div class="macs-home-hero-tags">
           <span>Full-stack</span>
           <span>MLOps</span>

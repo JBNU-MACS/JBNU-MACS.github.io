@@ -3,8 +3,8 @@
     <div class="macs-about-hero-content">
       <span class="macs-about-kicker">About MacsLAB</span>
       <h1>Medical AI &amp; Computational Science</h1>
-      <p>MacsLAB은 의료·멀티모달·응용개발을 연결해 실제 문제를 해결하는 연구를 수행합니다.</p>
-      <a class="macs-about-cta" href="/contact/">Join our Lab</a>
+      <p>{{ if eq .Page.Language.Lang "ko" }}MacsLAB은 의료·멀티모달·응용개발을 연결해 실제 문제를 해결하는 연구를 수행합니다.{{ else }}MacsLAB conducts research that solves real-world problems by connecting medical AI, multimodality, and applied development.{{ end }}</p>
+      <a class="macs-about-cta" href="/contact/">{{ if eq .Page.Language.Lang "ko" }}Join our Lab{{ else }}Join our Lab{{ end }}</a>
     </div>
   </div>
 
@@ -28,9 +28,15 @@
     <article class="macs-about-card">
       <h3>Lab Culture</h3>
       <ul>
+        {{ if eq .Page.Language.Lang "ko" }}
         <li>Research + Engineering 동시 성장</li>
         <li>논문·구현·실험의 균형 있는 수행</li>
         <li>국제 학회/저널 목표의 팀워크</li>
+        {{ else }}
+        <li>Simultaneous growth of Research + Engineering</li>
+        <li>Balanced execution of papers, implementation, and experiments</li>
+        <li>Teamwork aimed at international conferences/journals</li>
+        {{ end }}
       </ul>
     </article>
   </div>

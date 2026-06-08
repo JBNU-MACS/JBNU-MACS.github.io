@@ -5,17 +5,17 @@ share: false
 showShare: false
 ---
 
-We are happy to share that **Sakang Hong**'s paper has been accepted to **Expert Systems With Applications** on **June 7, 2026**.
+Congratulations to **Sakang Hong** on the acceptance of his paper to **Expert Systems With Applications**.
+
+This is an excellent achievement and a strong result for Sakang and the MACS Lab team.
 
 Accepted paper:
 
 - **Uncertainty-Aware Bayesian Prompt Adaptation of SAM2 for Few-Shot Cross-Modal Segmentation**
-- **Authors:** Sakang Hong, Jong Pil Yoon, Jun-Young Kim, Kyungsu Lee
-- **Corresponding author:** Kyungsu Lee
-- **Journal:** *Expert Systems With Applications*
-- **Metrics:** IF **7.5**, JCR **6.1%**
+- **Expert Systems With Applications**
+- **IF 7.5, JCR 6.1%**
 
-This acceptance is a meaningful achievement for Sakang Hong and the MACS Lab team. Congratulations to Sakang on this excellent result, and we look forward to the final published version.
+Congratulations again to **Sakang Hong** and all co-authors on this outstanding accomplishment.
 
 Related link:
 - [/en/publication/0042-Uncertainty-Aware%20Bayesian%20Prompt%20Adaptation%20of%20SAM2%20for%20Few-Shot%20Cross-Modal%20Segmentation/](/en/publication/0042-Uncertainty-Aware%20Bayesian%20Prompt%20Adaptation%20of%20SAM2%20for%20Few-Shot%20Cross-Modal%20Segmentation/)

@@ -13,9 +13,9 @@ author_notes:
   - ''
   - 'Corresponding author'
 
-date: '2026-06-09'
+date: '2026-06-07'
 doi: ''
-publishDate: '2026-06-09'
+publishDate: '2026-06-07'
 
 publication_types: ['article-journal']
 
@@ -28,7 +28,7 @@ jcr_percentile: 'Q1'
 
 abstract: We present an uncertainty-aware Bayesian prompt adaptation framework built on SAM2 for few-shot cross-modal segmentation in medical imaging. The method estimates prompt uncertainty while adapting segmentation priors across source and target modalities, enabling more robust cross-modal transfer under limited supervision.
 
-summary: ___SCI(E); IF=7.50, 6.10% (Q1)___ <br> _Expert Systems With Applications (Accepted on June 9, 2026)_
+summary: ___SCI(E); IF=7.50, 6.10% (Q1)___ <br> _Expert Systems With Applications (Accepted on June 7, 2026)_
 
 tags: ['AI', 'medical imaging', 'few-shot', 'cross-modal segmentation', 'SAM2', 'bayesian adaptation', 'uncertainty']
 

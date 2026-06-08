@@ -1,11 +1,11 @@
 ---
 title: Congratulations to Sakang Hong on ESWA Acceptance!
-date: 2026-06-09
+date: 2026-06-07
 share: false
 showShare: false
 ---
 
-We are happy to share that **Sakang Hong**'s paper has been accepted to **Expert Systems With Applications** on **June 9, 2026**.
+We are happy to share that **Sakang Hong**'s paper has been accepted to **Expert Systems With Applications** on **June 7, 2026**.
 
 Accepted paper:
 

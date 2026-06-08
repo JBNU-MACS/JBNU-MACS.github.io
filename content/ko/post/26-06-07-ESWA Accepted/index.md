@@ -1,11 +1,11 @@
 ---
 title: 홍사강 학생 ESWA 논문 Accept를 축하합니다!
-date: 2026-06-09
+date: 2026-06-07
 share: false
 showShare: false
 ---
 
-MacsLAB의 **홍사강** 학생 논문이 **2026년 6월 9일**, **Expert Systems With Applications**에 accept 되었습니다.
+MacsLAB의 **홍사강** 학생 논문이 **2026년 6월 7일**, **Expert Systems With Applications**에 accept 되었습니다.
 
 Accept 된 논문은 다음과 같습니다.
 

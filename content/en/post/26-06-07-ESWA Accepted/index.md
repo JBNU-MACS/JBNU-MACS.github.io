@@ -5,7 +5,7 @@ share: false
 showShare: false
 ---
 
-Congratulations to **Sakang Hong** on the acceptance of his paper to **Expert Systems With Applications**.
+Congratulations to **Sakang Hong** on the acceptance of her paper to **Expert Systems With Applications**.
 
 This is an excellent achievement and a strong result for Sakang and the MACS Lab team.
 

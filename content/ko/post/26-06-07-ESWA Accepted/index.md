@@ -1,5 +1,5 @@
 ---
-title: Congratulations to Sakang Hong on His ESWA Paper Acceptance!
+title: Congratulations to Sakang Hong on Her ESWA Paper Acceptance!
 date: 2026-06-07
 share: false
 showShare: false

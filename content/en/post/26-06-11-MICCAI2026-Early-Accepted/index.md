@@ -1,6 +1,6 @@
 ---
 title: Two MICCAI 2026 Papers Accepted as Early Accepts
-date: 2026-06-13T00:00:00+09:00
+date: 2026-06-11T00:00:00+09:00
 share: false
 showShare: false
 ---

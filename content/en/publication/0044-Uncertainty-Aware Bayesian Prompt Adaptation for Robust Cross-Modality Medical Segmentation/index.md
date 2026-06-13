@@ -16,7 +16,11 @@ doi: ''
 publishDate: '2026-06-01T00:00:00+09:00'
 
 publication_types:
-  - conference-international
+  - paper-csai
+
+badges:
+  - Top
+  - BK/CS
 highlight: true
 
 publication: Medical Image Computing and Computer Assisted Intervention 2026

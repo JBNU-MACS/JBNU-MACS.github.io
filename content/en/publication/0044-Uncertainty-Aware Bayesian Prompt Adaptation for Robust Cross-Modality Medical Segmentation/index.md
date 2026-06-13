@@ -11,9 +11,9 @@ author_notes:
   - ''
   - 'Corresponding author'
 
-date: '2026-06-11T00:00:00+09:00'
+date: '2026-06-01T00:00:00+09:00'
 doi: ''
-publishDate: '2026-06-11T00:00:00+09:00'
+publishDate: '2026-06-01T00:00:00+09:00'
 
 publication_types:
   - conference-international

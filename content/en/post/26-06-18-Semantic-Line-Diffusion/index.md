@@ -1,5 +1,5 @@
 ---
-title: New Paper: Semantic Line Diffusion
+title: 'New Paper: Semantic Line Diffusion'
 date: 2026-06-18T00:00:00+09:00
 share: false
 showShare: false

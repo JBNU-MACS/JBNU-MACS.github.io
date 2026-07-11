@@ -1,26 +1,3 @@
-{{ if eq .Page.Language.Lang "en" }}
-{{ $fields := (where site.RegularPages "Section" "field").ByDate.Reverse }}
-<section class="en-portal-directory en-portal-panel">
-  <div class="en-portal-section-head">
-    <div>
-      <p class="en-portal-kicker">Research Areas</p>
-      <h2>Research Directory</h2>
-    </div>
-    <a href="{{ "field/" | relLangURL }}">Open full directory</a>
-  </div>
-  <div class="en-portal-directory-grid">
-    {{ range $index, $item := $fields }}
-      <article class="en-portal-directory-card">
-        <span class="en-portal-index">{{ printf "%02d" (add $index 1) }}</span>
-        <div>
-          <h3><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h3>
-          <p>{{ $item.Content | plainify | truncate 150 }}</p>
-        </div>
-      </article>
-    {{ end }}
-  </div>
-</section>
-{{ else }}
 <section class="macs-feature-grid-wrap">
   <div class="macs-feature-grid">
     <article class="macs-feature-card" data-title="{{ if eq .Page.Language.Lang "ko" }}인공지능(AI){{ else }}Artificial Intelligence{{ end }}" data-desc="{{ if eq .Page.Language.Lang "ko" }}의료 (Medical), 항공우주 (Aerospace), 콘텐츠 (Contents) 등 다양한 특성화 분야에 적응형 AI 기술 적용.{{ else }}Applying adaptive AI technologies to specialized fields such as Medical, Aerospace, and Contents.{{ end }}">
@@ -111,4 +88,4 @@
     });
   })();
 </script>
-{{ end }}
+

@@ -1,6 +1,5 @@
 ---
 title: Courseworks
-layout: section_en
 
 # Listing view
 view: citation
@@ -10,3 +9,4 @@ banner:
   caption: ''
   image: 'mathematics.jpg'
 ---
+

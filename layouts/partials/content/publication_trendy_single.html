@@ -3,60 +3,90 @@
 {{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*cover*" }}{{ end }}
 {{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*thumb*" }}{{ end }}
 {{ $bib := $p.Resources.GetMatch "*.bib" }}
-{{ if eq $p.Language.Lang "en" }}
+{{ $pubYear := "" }}
+{{ with $p.Date }}{{ $pubYear = .Format "2006" }}{{ end }}
+
 <div class="universal-wrapper">
-  <article class="en-portal-detail en-portal-detail--publication">
-    <header class="en-portal-page__head">
-      <div>
-        {{ with $p.CurrentSection }}<a class="en-portal-back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
-        <p class="en-portal-eyebrow">Publication Record</p>
+  <article class="macs-pub-single">
+    <header class="macs-pub-hero{{ if not $hero }} no-hero{{ end }}">
+      <div class="macs-pub-head">
+        <p class="kicker">Publication</p>
         <h1>{{ $p.Title }}</h1>
-        <div class="en-portal-author-line">{{ partial "content/render_publication_authors" (dict "item" $p "link" true "showNotes" true "period" false "strongName" "Kyungsu Lee") }}</div>
-        {{ with $p.Params.publication }}<p class="en-portal-summary">{{ . }}</p>{{ end }}
+
+        <div class="macs-pub-authors">
+          {{ partial "content/render_publication_authors" (dict "item" $p "link" true "showNotes" true "period" false "strongName" "Kyungsu Lee") }}
+        </div>
+
+        <p class="macs-pub-reference">
+          {{ partial "content/render_publication_authors" (dict "item" $p "link" false "showNotes" false "period" true "strongName" "") }}
+          "{{ $p.Title }},"
+          {{ with $p.Params.publication }}<i>{{ . }}</i>{{ end }}
+          {{ with $p.Params.publication_short }}(<span class="abbr">{{ . }}</span>){{ end }}
+          {{ if ne $pubYear "" }}, {{ $pubYear }}{{ end }}.
+        </p>
+
+        <div class="macs-pub-meta">
+          {{ with $p.Params.publication }}<span>{{ . }}</span>{{ end }}
+          {{ with $p.Params.publication_short }}<span class="abbr">{{ . }}</span>{{ end }}
+          {{ with $pubYear }}<span>{{ . }}</span>{{ end }}
+          {{ with $p.Params.journal_type }}<span>{{ . }}</span>{{ end }}
+        </div>
       </div>
-      <aside class="en-portal-inline-actions">
-        {{ with $p.Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
-        {{ with $p.Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
-        {{ with $p.Params.url_code }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
-        {{ with $bib }}<a href="{{ .RelPermalink }}" target="_blank" rel="noopener">BibTeX</a>{{ end }}
-      </aside>
+
+      {{ with $hero }}
+        <figure class="macs-pub-cover">
+          <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
+        </figure>
+      {{ end }}
     </header>
 
-    <div class="en-portal-grid en-portal-grid--sidebar">
-      <div class="en-portal-stack">
+    <section class="macs-pub-main">
+      <aside class="macs-pub-side">
+        <div class="macs-pub-side-card">
+          <h3>Quick Info</h3>
+          <ul>
+            {{ with $p.Params.doi }}<li><strong>DOI</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.publication }}<li><strong>Venue</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.publication_short }}<li><strong>Abbr.</strong><span class="abbr">{{ . }}</span></li>{{ end }}
+            {{ with $pubYear }}<li><strong>Year</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.impact_factor }}<li><strong>IF</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.jcr_rank }}<li><strong>JCR</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.jcr_percentile }}<li><strong>Quartile</strong><span>{{ . }}</span></li>{{ end }}
+          </ul>
+        </div>
+
+        <div class="macs-pub-side-card">
+          <h3>Links</h3>
+          <div class="links">
+            {{ with $p.Params.doi }}<a href="{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
+            {{ with $p.Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
+            {{ with $p.Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+            {{ with $p.Params.url_code }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
+            {{ with $p.Params.url_dataset }}<a href="{{ . }}" target="_blank" rel="noopener">Dataset</a>{{ end }}
+            {{ with $p.Params.url_poster }}<a href="{{ . }}" target="_blank" rel="noopener">Poster</a>{{ end }}
+            {{ with $p.Params.url_slides }}<a href="{{ . }}" target="_blank" rel="noopener">Slides</a>{{ end }}
+            {{ with $p.Params.url_video }}<a href="{{ . }}" target="_blank" rel="noopener">Video</a>{{ end }}
+            {{ with $bib }}<a href="{{ .RelPermalink }}" target="_blank" rel="noopener">BibTeX</a>{{ end }}
+          </div>
+        </div>
+      </aside>
+
+      <div class="macs-pub-content">
         {{ with $p.Params.abstract }}
-          <section class="en-portal-panel">
+          <section class="macs-pub-block">
             <h2>Abstract</h2>
             <p>{{ . }}</p>
           </section>
         {{ end }}
+
         {{ if $p.Content }}
-          <section class="en-portal-panel en-portal-panel--prose">
+          <section class="macs-pub-block">
             <h2>Details</h2>
-            {{ $p.Content }}
+            <div class="body">{{ $p.Content }}</div>
           </section>
         {{ end }}
       </div>
-      <aside class="en-portal-stack">
-        <section class="en-portal-panel">
-          <h2>Metadata</h2>
-          <dl class="en-portal-definition-list">
-            <div><dt>Year</dt><dd>{{ $p.Date.Format "2006" }}</dd></div>
-            {{ with $p.Params.publication_short }}<div><dt>Venue</dt><dd>{{ . }}</dd></div>{{ end }}
-            {{ with $p.Params.publication }}<div><dt>Publication</dt><dd>{{ . }}</dd></div>{{ end }}
-            {{ with $p.Params.doi }}<div><dt>DOI</dt><dd>{{ . }}</dd></div>{{ end }}
-          </dl>
-        </section>
-        {{ with $hero }}
-          <section class="en-portal-panel">
-            <h2>Preview</h2>
-            <figure class="en-portal-figure"><img src="{{ .RelPermalink }}" alt="{{ $p.Title }}"></figure>
-          </section>
-        {{ end }}
-      </aside>
-    </div>
+    </section>
   </article>
 </div>
-{{ else }}
-  {{ partial "content/legacy/publication_trendy_single_legacy.html" . }}
-{{ end }}
+

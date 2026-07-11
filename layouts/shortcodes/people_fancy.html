@@ -1,68 +1,110 @@
 {{ $all := slice }}
 {{ range site.Pages }}
-  {{ if and (or (eq .Type "authors") (eq .Section "authors")) (or (eq .Kind "term") (eq .Kind "page")) (eq .Lang $.Page.Language.Lang) }}
+  {{ if and
+      (or (eq .Type "authors") (eq .Section "authors"))
+      (or (eq .Kind "term") (eq .Kind "page"))
+      (eq .Lang $.Page.Language.Lang) }}
     {{ $all = $all | append . }}
   {{ end }}
 {{ end }}
+
+{{/* 정교한 그룹 필터링 */}}
 {{ $professors := sort (where $all "Params.user_groups" "intersect" (slice "Professor")) "Title" }}
 {{ $graduates := sort (where $all "Params.user_groups" "intersect" (slice "M.S. Student" "Master's Student" "PhD Student" "PhD Student (Integrated)")) "Title" }}
 {{ $parttime := sort (where $all "Params.user_groups" "intersect" (slice "Part-time Graduate")) "Title" }}
 {{ $undergrad := sort (where $all "Params.user_groups" "intersect" (slice "Student" "Undergraduate Researcher")) "Title" }}
 {{ $alumni := sort (where $all "Params.user_groups" "intersect" (slice "Alumni")) "Title" }}
-{{ if eq .Page.Language.Lang "en" }}
-<section class="en-portal-page">
-  <header class="en-portal-page__head">
-    <div>
-      <p class="en-portal-eyebrow">People</p>
-      <h1>Member Directory</h1>
-      <p class="en-portal-summary">Faculty, students, and alumni are listed in a structured directory format for quick access to profiles and current affiliation information.</p>
-    </div>
-    <aside class="en-portal-panel en-portal-panel--accent">
-      <h2>Directory Summary</h2>
-      <div class="en-portal-stat-grid">
-        <article><strong>{{ len $professors }}</strong><span>Professor</span></article>
-        <article><strong>{{ len $graduates }}</strong><span>Graduate</span></article>
-        <article><strong>{{ len $undergrad }}</strong><span>Undergraduate</span></article>
-        <article><strong>{{ len $alumni }}</strong><span>Alumni</span></article>
-      </div>
-    </aside>
+
+<section class="macs-people-fancy" id="macs-people-fancy">
+  <header class="macs-people-fancy-head">
+    <h1>{{ if eq .Page.Language.Lang "ko" }}구성원{{ else }}People{{ end }}</h1>
+    <p>MACS Lab Members</p>
   </header>
 
-  <nav class="en-portal-anchor-nav en-portal-panel">
-    <a href="#professor">Professor</a>
-    <a href="#graduate">Graduate Researchers</a>
-    <a href="#undergraduate">Undergraduate Researchers</a>
-    <a href="#parttime">Part-time Graduate</a>
-    <a href="#alumni">Alumni</a>
+  <nav class="macs-people-tabs" aria-label="People categories">
+    <button type="button" class="is-active" data-tab="all">{{ if eq .Page.Language.Lang "ko" }}전체{{ else }}All{{ end }}</button>
+    <button type="button" data-tab="professor">{{ if eq .Page.Language.Lang "ko" }}지도교수{{ else }}Professor{{ end }}</button>
+    <button type="button" data-tab="graduate">{{ if eq .Page.Language.Lang "ko" }}석사{{ else }}Graduate{{ end }}</button>
+    <button type="button" data-tab="undergrad">{{ if eq .Page.Language.Lang "ko" }}학부연구생{{ else }}Undergraduate{{ end }}</button>
+    <button type="button" data-tab="parttime">{{ if eq .Page.Language.Lang "ko" }}파트{{ else }}Part-time{{ end }}</button>
+    <button type="button" data-tab="alumni">{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</button>
   </nav>
 
-  <div class="en-portal-stack">
-    <section class="en-portal-panel" id="professor">
-      <div class="en-portal-section-head"><div><p class="en-portal-kicker">Faculty</p><h2>Professor</h2></div><span>{{ len $professors }}</span></div>
-      <div class="en-portal-people-grid">{{ range $professors }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
-    </section>
+  {{/* 공통 렌더링 매크로 (Go Template은 매크로가 없으므로 섹션별 반복) */}}
 
-    <section class="en-portal-panel" id="graduate">
-      <div class="en-portal-section-head"><div><p class="en-portal-kicker">Directory</p><h2>Graduate Researchers</h2></div><span>{{ len $graduates }}</span></div>
-      <div class="en-portal-people-grid">{{ range $graduates }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
-    </section>
+  <div class="macs-people-section" data-group="professor">
+    <div class="macs-people-section-head">
+      <h2>{{ if eq .Page.Language.Lang "ko" }}지도교수{{ else }}Professor{{ end }}</h2>
+      <span>{{ len $professors }}</span>
+    </div>
+    <div class="macs-people-grid">
+      {{ range $professors }}
+        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
+      {{ end }}
+    </div>
+  </div>
 
-    <section class="en-portal-panel" id="undergraduate">
-      <div class="en-portal-section-head"><div><p class="en-portal-kicker">Directory</p><h2>Undergraduate Researchers</h2></div><span>{{ len $undergrad }}</span></div>
-      <div class="en-portal-people-grid">{{ range $undergrad }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
-    </section>
+  <div class="macs-people-section" data-group="graduate">
+    <div class="macs-people-section-head">
+      <h2>{{ if eq .Page.Language.Lang "ko" }}석사{{ else }}Graduate (M.S. / Ph.D. Students){{ end }}</h2>
+      <span>{{ len $graduates }}</span>
+    </div>
+    <div class="macs-people-grid">
+      {{ range $graduates }}
+        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
+      {{ end }}
+    </div>
+  </div>
 
-    <section class="en-portal-panel" id="parttime">
-      <div class="en-portal-section-head"><div><p class="en-portal-kicker">Directory</p><h2>Part-time Graduate Students</h2></div><span>{{ len $parttime }}</span></div>
-      <div class="en-portal-people-grid">{{ range $parttime }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
-    </section>
+  <div class="macs-people-section" data-group="undergrad">
+    <div class="macs-people-section-head">
+      <h2>{{ if eq .Page.Language.Lang "ko" }}학부연구생{{ else }}Undergraduate Researchers{{ end }}</h2>
+      <span>{{ len $undergrad }}</span>
+    </div>
+    <div class="macs-people-grid">
+      {{ range $undergrad }}
+        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
+      {{ end }}
+    </div>
+  </div>
 
-    <section class="en-portal-panel" id="alumni">
-      <div class="en-portal-section-head"><div><p class="en-portal-kicker">Directory</p><h2>Alumni</h2></div><span>{{ len $alumni }}</span></div>
-      <div class="en-portal-people-grid">{{ range $alumni }}{{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}{{ end }}</div>
-    </section>
+  <div class="macs-people-section" data-group="parttime">
+    <div class="macs-people-section-head">
+      <h2>{{ if eq .Page.Language.Lang "ko" }}파트 석/박{{ else }}Part-time Students{{ end }}</h2>
+      <span>{{ len $parttime }}</span>
+    </div>
+    <div class="macs-people-grid">
+      {{ range $parttime }}
+        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="macs-people-section" data-group="alumni">
+    <div class="macs-people-section-head">
+      <h2>{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</h2>
+      <span>{{ len $alumni }}</span>
+    </div>
+    <div class="macs-people-grid">
+      {{ range $alumni }}
+        {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
+      {{ end }}
+    </div>
   </div>
 </section>
-{{ else }}
-  {{ partial "legacy/people_fancy_legacy.html" . }}
-{{ end }}
+
+<script>
+  (function () {
+    var root = document.getElementById('macs-people-fancy');
+    if (!root) return;
+    var tabs = root.querySelectorAll('.macs-people-tabs button');
+    var sections = root.querySelectorAll('.macs-people-section');
+    function render(group) {
+      sections.forEach(function (s) { s.style.display = (group === 'all' || s.getAttribute('data-group') === group) ? '' : 'none'; });
+      tabs.forEach(function (t) { t.classList.toggle('is-active', t.getAttribute('data-tab') === group); });
+    }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { render(t.getAttribute('data-tab') || 'all'); }); });
+    render('all');
+  })();
+</script>
+

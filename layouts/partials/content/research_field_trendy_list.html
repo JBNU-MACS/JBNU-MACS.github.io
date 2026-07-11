@@ -1,28 +1,87 @@
-{{ $page := .Page }}
-{{ if eq $page.Language.Lang "en" }}
-<div class="universal-wrapper">
-  <section class="en-portal-page">
-    <header class="en-portal-page__head">
-      <div>
-        <p class="en-portal-eyebrow">Research Fields</p>
-        <h1>{{ $page.Title }}</h1>
-        <p class="en-portal-summary">Research topics are organized as a clear directory of MACS Lab's current areas of work.</p>
+{{- $page := .Page -}}
+{{- $baseItems := $page.RegularPages.ByDate.Reverse -}}
+{{- $items := slice -}}
+{{- $pinned := slice
+  "field/00-ai"
+  "field/01-medical-imaging"
+  "field/07-computational-science"
+-}}
+{{- range $want := $pinned -}}
+  {{- range $it := $baseItems -}}
+    {{- if in $it.RelPermalink $want -}}
+      {{- $items = $items | append $it -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- range $it := $baseItems -}}
+  {{- $isPinned := false -}}
+  {{- range $want := $pinned -}}
+    {{- if in $it.RelPermalink $want -}}
+      {{- $isPinned = true -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $isPinned -}}
+    {{- $items = $items | append $it -}}
+  {{- end -}}
+{{- end -}}
+{{- $total := len $items -}}
+
+<div class="universal-wrapper macs-field-shell">
+  <section class="macs-field-hero" aria-labelledby="field-hero-title">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-kicker">MacsLAB Research Field</p>
+      <h1 id="field-hero-title">{{ $page.Title }}</h1>
+      <p class="hero-summary">
+        {{ if eq .Page.Language.Lang "ko" }}
+        AI 이론부터 의료/헬스케어, 항공우주, 콘텐츠, 개발, 그리고 계산과학까지. 문제 중심으로 연결된 연구 스펙트럼을 구축합니다.
+        {{ else }}
+        From AI theory to medical/healthcare, aerospace, contents, development, and computational science. We build a research spectrum connected through problem-oriented approaches.
+        {{ end }}
+      </p>
+      <div class="hero-meta">
+        <span><strong>{{ $total }}</strong> Research Tracks</span>
       </div>
-    </header>
-    <div class="en-portal-directory-grid">
-      {{ range $index, $item := $page.RegularPages.ByDate.Reverse }}
-        <article class="en-portal-directory-card en-portal-directory-card--large">
-          <span class="en-portal-index">{{ printf "%02d" (add $index 1) }}</span>
-          <div>
-            <h2><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h2>
-            <p>{{ $item.Content | plainify | truncate 220 }}</p>
-            <a class="en-portal-text-link" href="{{ $item.RelPermalink }}">Read field overview</a>
-          </div>
-        </article>
-      {{ end }}
     </div>
   </section>
+
+  <section class="macs-field-grid" aria-label="Research field cards">
+    {{ range $idx, $item := $items }}
+      {{ $summary := "" }}
+      {{ if $item.Params.summary }}
+        {{ $summary = $item.Params.summary | plainify }}
+      {{ else if $item.Summary }}
+        {{ $summary = $item.Summary | plainify }}
+      {{ else }}
+        {{ $summary = $item.Plain | plainify }}
+      {{ end }}
+      {{ $summary = $summary | truncate 170 }}
+      {{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
+      {{ $order := printf "%02d" (add $idx 1) }}
+
+      <article class="macs-field-card">
+        <a class="field-card-link" href="{{ $item.RelPermalink }}" aria-label="{{ $item.Title }} {{ if eq $.Page.Language.Lang "ko" }}자세히 보기{{ else }}View Detail{{ end }}">
+          <div class="field-card-media{{ if not $resource }} no-image{{ end }}">
+            {{ with $resource }}
+              {{ $img := .Resize "960x540" }}
+              {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ $item.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
+            {{ else }}
+              <span class="field-card-fallback" aria-hidden="true">{{ $order }}</span>
+            {{ end }}
+          </div>
+
+          <div class="field-card-body">
+            <div class="field-card-meta">
+              <span class="field-order">{{ $order }}</span>
+            </div>
+            <h2>{{ $item.Title }}</h2>
+            {{ with $summary }}<p>{{ . }}</p>{{ end }}
+            <span class="field-card-cta">Explore</span>
+          </div>
+        </a>
+      </article>
+    {{ end }}
+  </section>
 </div>
-{{ else }}
-  {{ partial "content/legacy/research_field_trendy_list_legacy.html" . }}
-{{ end }}
+

@@ -1,51 +1,57 @@
 {{ $p := .Page }}
-{{ $kindLabel := .KindLabel | default "Record" }}
-{{ $hero := $p.Resources.GetMatch "featured*" }}
-{{ if not $hero }}{{ $hero = $p.Resources.GetMatch "*cover*" }}{{ end }}
-{{ if eq $p.Language.Lang "en" }}
+{{ $kindLabel := .KindLabel | default "News" }}
+{{ $kindClass := .KindClass | default "news" }}
+{{ $heroRes := $p.Resources.GetMatch "featured*" }}
+{{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*cover*" }}{{ end }}
+{{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*thumb*" }}{{ end }}
+{{ $summary := trim ($p.Summary | plainify) " \n\r\t" }}
+
 <div class="universal-wrapper">
-  <article class="en-portal-detail">
-    <header class="en-portal-page__head">
-      <div>
-        {{ with $p.CurrentSection }}<a class="en-portal-back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
-        <p class="en-portal-eyebrow">{{ $kindLabel }}</p>
+  <article class="macs-feed-single macs-feed-single--{{ $kindClass }}">
+    <header class="macs-feed-single-hero{{ if not $heroRes }} no-hero{{ end }}">
+      <div class="macs-feed-single-head">
+        <div class="macs-feed-single-kicker">
+          {{ with $p.CurrentSection }}
+            <a class="back-link" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>
+          {{ end }}
+        </div>
+
         <h1>{{ $p.Title }}</h1>
-        {{ with ($p.Summary | plainify) }}{{ if ne . ($p.Title | plainify) }}<p class="en-portal-summary">{{ . }}</p>{{ end }}{{ end }}
+
+        <div class="macs-feed-single-meta">
+          <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006.01.02" }}</time>
+          {{ with $p.ReadingTime }}<span>{{ . }} min read</span>{{ end }}
+          {{ with $p.Lastmod }}<span>Updated {{ .Format "2006.01.02" }}</span>{{ end }}
+        </div>
+
+        {{ if and $summary (ne $summary ($p.Title | plainify)) }}
+          <p class="macs-feed-single-summary">{{ $summary }}</p>
+        {{ end }}
       </div>
+
+      {{ with $heroRes }}
+        <figure class="macs-feed-single-cover">
+          <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
+        </figure>
+      {{ end }}
     </header>
 
-    <div class="en-portal-grid en-portal-grid--sidebar">
-      <div class="en-portal-stack">
-        <section class="en-portal-panel en-portal-panel--prose">
-          {{ $p.Content }}
-        </section>
+    <section class="macs-feed-single-body">
+      <div class="macs-feed-single-content">
+        {{ $p.Content }}
       </div>
-      <aside class="en-portal-stack">
-        <section class="en-portal-panel">
-          <h2>Record Information</h2>
-          <dl class="en-portal-definition-list">
-            <div><dt>Date</dt><dd>{{ if eq $p.Type "event" }}{{ partial "functions/get_event_dates" $p }}{{ else }}{{ $p.Date.Format "2006.01.02" }}{{ end }}</dd></div>
-            {{ with $p.Lastmod }}<div><dt>Updated</dt><dd>{{ .Format "2006.01.02" }}</dd></div>{{ end }}
-            <div><dt>Section</dt><dd>{{ $kindLabel }}</dd></div>
-          </dl>
-        </section>
-        {{ with $hero }}
-          <section class="en-portal-panel">
-            <h2>Image</h2>
-            <figure class="en-portal-figure"><img src="{{ .RelPermalink }}" alt="{{ $p.Title }}"></figure>
-          </section>
+    </section>
+
+    <footer class="macs-feed-single-foot">
+      <div class="foot-links">
+        {{ with $p.PrevInSection }}
+          <a class="nav prev" href="{{ .RelPermalink }}">← {{ .Title }}</a>
         {{ end }}
-        <section class="en-portal-panel">
-          <h2>Navigation</h2>
-          <div class="en-portal-link-list">
-            {{ with $p.PrevInSection }}<a class="en-portal-link-row" href="{{ .RelPermalink }}"><span>Previous: {{ .Title }}</span></a>{{ end }}
-            {{ with $p.NextInSection }}<a class="en-portal-link-row" href="{{ .RelPermalink }}"><span>Next: {{ .Title }}</span></a>{{ end }}
-          </div>
-        </section>
-      </aside>
-    </div>
+        {{ with $p.NextInSection }}
+          <a class="nav next" href="{{ .RelPermalink }}">{{ .Title }} →</a>
+        {{ end }}
+      </div>
+    </footer>
   </article>
 </div>
-{{ else }}
-  {{ partial "content/legacy/trendy_feed_single_legacy.html" . }}
-{{ end }}
+

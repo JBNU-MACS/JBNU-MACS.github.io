@@ -13,6 +13,10 @@ We are pleased to announce that two papers from our laboratory have been accepte
 
 This work introduces **SFXGraph**, a causal-compositional graph parsing framework for recognizing stylized sound effects in webtoons. The framework represents linguistic content, geometric deformation, visual style, and contextual interactions as a structured graph. Counterfactual factor consistency and a graph-supervised synthetic generation pipeline support interpretable representations and improved robustness across artistic styles.
 
+[![Overview of the SFXGraph framework for stylized sound effect recognition in webtoons.](/ko/publication/0046-sfxgraph-causal-compositional-graph-learning-for-stylized-sound-effects-in-webtoons/featured.png)](/ko/publication/0046-sfxgraph-causal-compositional-graph-learning-for-stylized-sound-effects-in-webtoons/featured.png)
+
+*SFXGraph framework overview (Figure 3 from the paper).*
+
 [Publication details](/ko/publication/0046-sfxgraph-causal-compositional-graph-learning-for-stylized-sound-effects-in-webtoons/)
 
 ## Biomarker-Aware Mixture-of-Experts for Device-Invariant Personalized Skin Diagnosis
@@ -20,6 +24,10 @@ This work introduces **SFXGraph**, a causal-compositional graph parsing framewor
 **Authors:** Seo-Yeon Choi and Kyungsu Lee (corresponding author).
 
 This work presents an end-to-end framework for device-invariant, personalized skin diagnosis. It combines hierarchical hybrid normalization, a keypoint-guided Skin Mixture-of-Experts, and causal expert deliberation to address device heterogeneity, illumination variability, and interactions among dermatological biomarkers.
+
+[![Overview of the biomarker-aware skin diagnosis framework.](/ko/publication/0047-biomarker-aware-mixture-of-experts-for-device-invariant-personalized-skin-diagnosis/featured.png)](/ko/publication/0047-biomarker-aware-mixture-of-experts-for-device-invariant-personalized-skin-diagnosis/featured.png)
+
+*Biomarker-aware skin diagnosis framework (Figure 1 from the paper).*
 
 [Publication details](/ko/publication/0047-biomarker-aware-mixture-of-experts-for-device-invariant-personalized-skin-diagnosis/)
 

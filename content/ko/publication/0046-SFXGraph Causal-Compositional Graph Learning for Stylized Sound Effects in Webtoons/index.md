@@ -44,3 +44,15 @@ url_code: ''
 url_project: ''
 url_source: 'https://openreview.net/revisions?id=E0G0Yi1ASs'
 ---
+
+### Framework Overview
+
+[![SFXGraph framework showing SFX detection, graph parsing, text decoding, graph-conditioned rendering, and synthetic supervision.](featured.png)](featured.png)
+
+*Figure 3 from the paper. SFXGraph represents stylized sound effects as structured graphs and uses graph-conditioned rendering and synthetic supervision to support recognition.*
+
+### Recognition Results
+
+[![Comparison of the original webtoon panel, four OCR baselines, and SFXGraph predictions.](recognition-results.png)](recognition-results.png)
+
+*Figure 4 from the paper. From left to right: original panel, Naver Clova OCR, Keras OCR, Paddle OCR, Google OCR, and SFXGraph. Bounding boxes and transcriptions show detection and recognition outputs; "None" indicates a missed detection.*

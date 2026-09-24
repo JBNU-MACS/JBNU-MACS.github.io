@@ -36,3 +36,9 @@ url_code: ''
 url_project: ''
 url_source: 'https://openreview.net/revisions?id=ZUcq0XTmMG'
 ---
+
+### Framework Overview
+
+[![Skin diagnosis framework combining hierarchical hybrid normalization, keypoint-guided Skin Mixture-of-Experts, and biomarker-aware aggregation.](featured.png)](featured.png)
+
+*Figure 1 from the paper. The framework combines device and illumination normalization, biomarker-specific expert routing, and clinically constrained evidence aggregation for personalized skin diagnosis.*

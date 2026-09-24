@@ -9,6 +9,14 @@ authors:
   - Sanga Ahn
   - Kyungsu Lee
 
+author_notes:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - 'Corresponding author'
+
 date: '2026-09-22T00:00:00+09:00'
 doi: ''
 publishDate: '2026-09-22T00:00:00+09:00'
@@ -17,6 +25,7 @@ publication_types:
   - paper-csai
 
 badges:
+  - Top
   - BK/CS
 highlight: true
 

@@ -2,6 +2,9 @@
 # Display name
 title: 안상아
 
+name_ko: "안상아"
+name_en: "Sanga Ahn"
+
 # Full Name (for SEO)
 first_name: Student
 last_name: 1

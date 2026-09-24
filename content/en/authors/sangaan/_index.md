@@ -1,9 +1,9 @@
 ---
 # Display name
-title: Sanga An
+title: Sanga Ahn
 
 name_ko: "안상아"
-name_en: "Sanga An"
+name_en: "Sanga Ahn"
 first_name: Student
 last_name: 1
 

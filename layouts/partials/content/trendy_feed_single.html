@@ -61,13 +61,8 @@
     <section class="macs-feed-single-body">
       <div class="macs-feed-single-content">
         {{ if $bilingual }}
-          <nav class="macs-news-language-nav" aria-label="본문 언어 / Content languages">
-            <a href="#news-ko" lang="ko">한국어</a>
-            <a href="#news-en" lang="en">English</a>
-          </nav>
           {{ range $newsTranslations }}
-            <section class="macs-news-language" id="news-{{ .Lang }}" lang="{{ .Lang }}" aria-labelledby="news-label-{{ .Lang }}">
-              <h2 id="news-label-{{ .Lang }}">{{ if eq .Lang "ko" }}한국어{{ else }}English{{ end }}</h2>
+            <section class="macs-news-language" id="news-{{ .Lang }}" lang="{{ .Lang }}">
               {{/* Namespace headings so matching paper titles have distinct anchors. */}}
               {{ $content := replaceRE `id="([^"]+)"` (printf `id="news-%s-${1}"` .Lang) .Content }}
               {{ $content = replaceRE `href="#([^"]+)"` (printf `href="#news-%s-${1}"` .Lang) $content }}

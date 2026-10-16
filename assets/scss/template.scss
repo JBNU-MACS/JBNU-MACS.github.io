@@ -3233,24 +3233,6 @@ body.home .home-section:has(.home-dual-feed) {
   color: #4a5e78;
 }
 
-.macs-news-language-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-bottom: 1.4rem;
-}
-
-.macs-news-language-nav a {
-  padding: 0.4rem 0.85rem;
-  border: 1px solid #c5d1e1;
-  border-radius: 999px;
-  background: #f7faff;
-}
-
-.macs-news-language {
-  scroll-margin-top: 6rem;
-}
-
 .macs-news-language + .macs-news-language {
   margin-top: 2rem;
   padding-top: 1rem;

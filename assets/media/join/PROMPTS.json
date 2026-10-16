@@ -1,0 +1,20 @@
+{
+  "generated_on": "2026-10-17",
+  "tool": "built-in image_gen",
+  "purpose": "Original illustrations for the Join page. These are conceptual scenes, not depictions of actual lab members.",
+  "previous_references": [
+    "research/generated/00-ai.png",
+    "research/generated/07-computational-science.png"
+  ],
+  "preservation": "Previous shared research images are retained unchanged.",
+  "images": [
+    {
+      "file": "undergraduate-research.png",
+      "prompt": "Use case: stylized-concept. Asset type: exclusive wide 16:9 illustration for the undergraduate research section of MACS Lab's Join page, at a Korean university. Primary request: convey learning together by building and testing an idea, rather than a generic AI technology diagram. Scene: a refined miniature research workspace on a warm off-white seamless ground. Three subtly stylized young adult student figures, diverse gender, in casual navy and muted teal clothes collaborate around one long pale oak desk: one codes on an unbranded laptop, one points to a simple experiment plot on a small translucent upright board, one arranges small physical prototype components. Natural believable poses, simplified faces, clearly an illustration rather than a documentary photo. A notebook, an unobtrusive camera module and a few blue-green sample pieces are carefully composed, no clutter. Style: premium editorial 3D illustration, tactile matte ceramic figures, paper and wood, restrained frosted glass accents, NOT photorealistic people and NOT an Apple product ad. Camera: slightly elevated three-quarter orthographic view, full scene visible, wide balanced composition with comfortable margins, all essential subjects in central 80%, the desk anchors the bottom half, no cut-off objects. Lighting: large soft daylight source, delicate contact shadows, thoughtful calm welcoming mood. Palette: navy #243e52, teal #387b82, pale sage #f4f7f6, warm ivory, very small warm wood accents. Background uniform pale sage off-white blending with website card. High visual clarity at 550px display width. No typography, no readable letters or numbers, no logo, no watermark, no border, no labels, no interface mockup. Output one finished landscape image."
+    },
+    {
+      "file": "graduate-research.png",
+      "prompt": "Use case: stylized-concept. Asset type: exclusive wide 16:9 illustration for the graduate research section of MACS Lab's Join page, paired with a tactile miniature collaborative student-workspace illustration. Primary request: convey a researcher shaping a question into a careful experiment and a new contribution. Scene: a refined miniature research workspace on a very pale blue-gray seamless ground. Two subtly stylized adult researcher figures in casual navy and muted teal clothes stand at opposite sides of a pale oak research table, thoughtfully examining a small sculptural wave surface made of fine teal mesh. One adjusts a small experimental component; the other compares the model with an abstract plotted curve on a freestanding translucent board. Notebook sheets and a compact unbranded laptop suggest iterative experiments and writing. Simplified faces, clearly an illustration rather than a documentary photo. Make the scientific model and the human collaboration the visual center, not a fantastical hologram. Style: premium editorial 3D illustration, tactile matte ceramic figures, paper, fine mesh and wood, restrained frosted glass accents, NOT photorealistic people and NOT an Apple product ad. Camera: slightly elevated three-quarter orthographic view, full scene visible, wide balanced composition with comfortable margins, all essential subjects in central 80%, table anchors bottom half. Lighting: large soft daylight source, delicate contact shadows, calm curious focused mood. Palette: navy #243e52, teal #387b82, pale blue-gray #edf3f6, warm ivory, very small warm wood accents. Background uniform pale blue-gray blending with website card. High visual clarity at 550px display width. No typography, no readable letters or numbers, no logo, no watermark, no border, no labels, no interface mockup. Output one finished landscape image."
+    }
+  ]
+}

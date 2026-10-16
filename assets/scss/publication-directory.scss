@@ -1,8 +1,5 @@
 /* Year → publication type → paper: three distinct levels. */
-.institute-publications-page > .institute-page-head {
-  padding: 0 0 28px; margin: 34px 0 28px; border: 0; border-bottom: 1px solid #e0e6ed;
-  border-radius: 0; background: transparent; box-shadow: none;
-}
+.institute-publications-page { padding-top: 28px; }
 .institute-publications-page > .publications-index { margin-inline: 0; }
 .publications-controls {
   padding: 18px 20px; margin-bottom: 28px; border: 1px solid #e0e7ed;
@@ -115,7 +112,7 @@ b.publication-lab-author { font-weight: 700; }
   .publications-index .publications-year-content:has(> [data-category='conference']:not([hidden])):has(> [data-category='journal']:not([hidden])) > .publications-category { margin-bottom: 24px; }
 }
 @media(max-width:640px) {
-  .institute-publications-page > .institute-page-head { margin-top: 24px; padding-bottom: 24px; }
+  .institute-publications-page { padding-top: 24px; }
   .publications-controls { padding: 14px; margin-bottom: 24px; }
   .publications-controls-top { align-items: stretch; gap: 12px; padding-bottom: 14px; }
   .publications-index .publications-filter { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); width: 100%; gap: 6px; }

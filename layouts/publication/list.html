@@ -1,9 +1,6 @@
 {{ define "main" }}
-{{ $ko := eq .Lang "ko" }}
-{{ $title := "Publications" }}{{ $desc := "Browse papers by research field, year and publication type. Follow individual papers for an overview and citation details." }}{{ $link := "See research examples" }}
-{{ if $ko }}{{ $title = "연구 논문" }}{{ $desc = "연구 분야·연도·유형별로 논문을 찾고, 상세 페이지에서 연구 개요와 서지정보를 확인할 수 있습니다." }}{{ $link = "연구 분야부터 살펴보기" }}{{ end }}
 <div class="universal-wrapper institute-publications-page">
-  {{ partial "content/institute_page_head" (dict "label" "PUBLICATIONS" "title" $title "description" $desc "link" (dict "url" ("field/" | relLangURL) "text" $link)) }}
+  <h1 class="sr-only">{{ if eq .Lang "ko" }}연구 논문{{ else }}Publications{{ end }}</h1>
   {{ .Content }}
 </div>
 {{ end }}

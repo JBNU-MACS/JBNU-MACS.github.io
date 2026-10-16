@@ -5,7 +5,6 @@
   <h4><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h4>
   <p class="publication-authors">{{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" false "period" false) }}</p>
   <p class="publication-venue">{{ partial "content/publication_reference" (dict "item" $item) }}</p>
-  {{ partial "content/publication_field_links" $item }}
   <div class="publication-entry-footer">{{ partial "content/publication_badges" (dict "item" $item "kind" $kind) }}
 
   <div class="publication-footnotes publication-resource-links">

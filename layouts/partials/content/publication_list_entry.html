@@ -2,16 +2,6 @@
 {{ $roles := partial "content/publication_author_role_flags" (dict "item" $item) }}
 {{ $highlight := $roles.is_kyungsu_main }}
 <li class="publication-entry{{ if $highlight }} publication-entry--lead{{ end }}" data-kind="{{ $kind }}" data-fields="{{ delimit ($item.Params.research_fields | default (slice)) " " }}">
-  {{ if $highlight }}
-    {{ $labels := slice }}
-    {{ if $roles.co_first_author }}
-      {{ $labels = $labels | append (cond $ko "공동 제1저자" "Co-first author") }}
-    {{ else if $roles.first_author }}
-      {{ $labels = $labels | append (cond $ko "제1저자" "First author") }}
-    {{ end }}
-    {{ if $roles.corresponding_author }}{{ $labels = $labels | append (cond $ko "교신저자" "Corresponding author") }}{{ end }}
-    <p class="publication-lead-role">Kyungsu Lee <span aria-hidden="true">·</span> {{ delimit $labels " · " }}</p>
-  {{ end }}
   <h4><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h4>
   <p class="publication-authors">{{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" false "period" false) }}</p>
   <p class="publication-venue">{{ partial "content/publication_reference" (dict "item" $item) }}</p>

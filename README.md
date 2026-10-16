@@ -34,7 +34,7 @@
 
 논문에는 `research_fields: ["ai", "medical-ai"]`처럼 관련 분야를 지정합니다. 분야 ID와 분류 기준은 [논문 연구 분야 안내](docs/publication-research-fields.md)를 참고하세요. 한글·영문 분류를 함께 수정한 뒤 `python3 scripts/check_research_fields.py`로 확인합니다. 이 분류는 연구 분야의 관련 논문과 논문 목록의 분야·연도·유형 필터에 공통으로 적용됩니다.
 
-논문 목록에서는 Kyungsu Lee가 제1저자(공동 제1저자 포함) 또는 교신저자인 논문에 역할을 표시하고 제목을 강조합니다. 첫 번째 저자는 `authors` 순서로, 공동 제1저자와 교신저자는 같은 위치의 `author_notes`에 있는 `Equal contribution`, `Corresponding author`로 판별합니다. 두 역할이면 하나의 메모에 함께 기록할 수 있습니다. 이 목록 강조에는 수동 `highlight` 값을 사용하지 않으며, 저자 정보는 한글·영문에 동일하게 반영합니다.
+논문 목록에서는 Kyungsu Lee가 제1저자(공동 제1저자 포함) 또는 교신저자인 논문의 카드 배경만 흰색에 가까운 옅은 색으로 강조합니다. 첫 번째 저자는 `authors` 순서로, 공동 제1저자와 교신저자는 같은 위치의 `author_notes`에 있는 `Equal contribution`, `Corresponding author`로 판별합니다. 두 역할이면 하나의 메모에 함께 기록할 수 있습니다. 이 목록 강조에는 수동 `highlight` 값을 사용하지 않으며, 저자 정보는 한글·영문에 동일하게 반영합니다.
 
 페이지 일부는 사용자 정의 템플릿으로 구성되어 있습니다. Markdown에 `{{< academic_home >}}` 같은 호출이 있으면 해당 화면의 구성과 문구는 `layouts/shortcodes/` 및 `layouts/partials/`도 확인합니다.
 

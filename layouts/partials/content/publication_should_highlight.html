@@ -74,6 +74,8 @@
 
 {{- $isTopOrBkcsConference := or (in $types "paper-csai") $hasTopOrBkcsBadge -}}
 {{- $isHighlight := and $isKyungsuMain (or $isTopOrBkcsConference $isJournal) -}}
+{{/* Explicit editorial highlighting must not depend on author-role metadata. */}}
+{{- $isHighlight = or $isHighlight ($item.Params.highlight | default false) -}}
 
 {{- if $isDomesticConference -}}
   {{- $isHighlight = false -}}

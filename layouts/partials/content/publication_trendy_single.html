@@ -49,9 +49,18 @@
             {{ with $p.Params.publication }}<li><strong>Venue</strong><span>{{ . }}</span></li>{{ end }}
             {{ with $p.Params.publication_short }}<li><strong>Abbr.</strong><span class="abbr">{{ . }}</span></li>{{ end }}
             {{ with $pubYear }}<li><strong>Year</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.publication_status }}<li><strong>Status</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.pages }}<li><strong>Pages</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.publisher }}<li><strong>Publisher</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.journal_type }}<li><strong>Indexing</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.jcr_year }}<li><strong>JCR year</strong><span>{{ . }}</span></li>{{ end }}
             {{ with $p.Params.impact_factor }}<li><strong>IF</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.impact_factor_without_self_citations }}<li><strong>IF excl. self-cites</strong><span>{{ . }}</span></li>{{ end }}
             {{ with $p.Params.jcr_rank }}<li><strong>JCR</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.jif_percentile }}<li><strong>JIF percentile</strong><span>{{ . }}</span></li>{{ end }}
             {{ with $p.Params.jcr_percentile }}<li><strong>Quartile</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.issn }}<li><strong>ISSN</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.eissn }}<li><strong>eISSN</strong><span>{{ . }}</span></li>{{ end }}
           </ul>
         </div>
 

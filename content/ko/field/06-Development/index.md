@@ -1,6 +1,8 @@
 ---
 title: 개발 (Development)
 date: 2024-03-24
+image:
+  filename: research/generated/06-development.png
 ---
 
 개발 분야에서는 Full-Stack 애플리케이션 개발에 중점을 두고 있으며, 연구실에서 개발한 AI 기술을 실제로 적용하고 배포하는 데 있어 중요한 역할을 합니다. 연구소는 실제 사용자의 필요와 문제 해결을 위한 맞춤형 솔루션을 제공하며, 이를 통해 연구 결과를 실생활에 적용함으로써 사회적 가치를 창출하고자 합니다.

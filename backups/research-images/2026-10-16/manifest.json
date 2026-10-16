@@ -1,0 +1,193 @@
+{
+  "date": "2026-10-16",
+  "purpose": "Original research-area images and their page configuration before AI-generated replacements",
+  "git_commit": "ea29f87a6d1d9885fa62ce8dc5312b38e256f440",
+  "restore": "Extract originals.zip into a separate directory first. The archive preserves repository-relative paths. Restore the desired images and page front matter from that directory.",
+  "files": [
+    {
+      "path": "content/en/field/00-AI/featured.jpg",
+      "bytes": 769650,
+      "sha256": "b8decd221af54bb9b5351a8aa2e17479be39902dcfb07f176681389dbe5421a8"
+    },
+    {
+      "path": "content/en/field/00-AI/index.md",
+      "bytes": 446,
+      "sha256": "f4d96d76056edd3a8f6cf32494ce3396469771699c53415872d410cb29641997"
+    },
+    {
+      "path": "content/en/field/01-Medical-Imaging/featured.jpg",
+      "bytes": 597283,
+      "sha256": "86d01ec62d9b24706345d82cdf00819426ac1942a0068d4287936ba56bdeec04"
+    },
+    {
+      "path": "content/en/field/01-Medical-Imaging/index.md",
+      "bytes": 534,
+      "sha256": "adbb5dba49d4cb9b185165fb9adb7575a46aca7e090998ea084131a4344d4072"
+    },
+    {
+      "path": "content/en/field/02-Healthcare/featured.jpg",
+      "bytes": 403603,
+      "sha256": "184ef77d77eebde1db8d8d3e59e648852848a46e013d43fae92cd22b8e82e9f1"
+    },
+    {
+      "path": "content/en/field/02-Healthcare/index.md",
+      "bytes": 561,
+      "sha256": "ac3c6dd044a8a3fed65d3c859b8513bd5fb44b5a603ae15c12b2c4d668afb7f9"
+    },
+    {
+      "path": "content/en/field/03-Contents/featured.jpg",
+      "bytes": 1089986,
+      "sha256": "c861c475a0b83ea5fd3949a829c1c05691b56a3d80924b081fb56bd3037772e9"
+    },
+    {
+      "path": "content/en/field/03-Contents/index.md",
+      "bytes": 544,
+      "sha256": "6c3af49110e7b65f2cb91b695c328c608b8c9b5715ca30f6d76ee40c632c1dcc"
+    },
+    {
+      "path": "content/en/field/04-Aerospace/featured.jpg",
+      "bytes": 1324301,
+      "sha256": "67012648ce3458dc5b0c8a712969f3888a1420d430eb7486c293713036a0dcfa"
+    },
+    {
+      "path": "content/en/field/04-Aerospace/index.md",
+      "bytes": 509,
+      "sha256": "6bdffa9398bdfb35b53eefecf7133e97d5bc91e9a371a8d3e5cb073db09371c7"
+    },
+    {
+      "path": "content/en/field/05-Mathematics/featured.jpg",
+      "bytes": 685921,
+      "sha256": "03097cbcf33176f5e3ce4f58700786b6983a0620d88415a0c444cd05549ef987"
+    },
+    {
+      "path": "content/en/field/05-Mathematics/index.md",
+      "bytes": 593,
+      "sha256": "9a5cf6071b177436c9164785f36c0fa342679eec872b991f25b9998b0e145cd7"
+    },
+    {
+      "path": "content/en/field/06-Development/featured.jpg",
+      "bytes": 548686,
+      "sha256": "429856fb3e3dfb2a8e5841ab22610a759e55bfe11b799292f8d7340f129b54b2"
+    },
+    {
+      "path": "content/en/field/06-Development/index.md",
+      "bytes": 395,
+      "sha256": "bf380043605f7deb8f7e586542b65fe8802648287bc415ca32a23c3261b80f34"
+    },
+    {
+      "path": "content/en/field/07-Computational-Science/featured.jpg",
+      "bytes": 1040286,
+      "sha256": "faf45312b691c90c38979529c94d6707a88ba26a395c2948e4a32a9f9c8ff170"
+    },
+    {
+      "path": "content/en/field/07-Computational-Science/index.md",
+      "bytes": 447,
+      "sha256": "4634b53faa5ee8865e8dfc82ec9dc9d48e3f5d1a961eb1c251d0245d14a719bc"
+    },
+    {
+      "path": "content/en/field/08-Physical-AI/index.md",
+      "bytes": 2150,
+      "sha256": "ace4d3f8f0786f5fda3f59d384d13fcb9a4aa2e25d43ade3d26fd961e3728d49"
+    },
+    {
+      "path": "content/ko/field/00-AI/featured.jpg",
+      "bytes": 769650,
+      "sha256": "b8decd221af54bb9b5351a8aa2e17479be39902dcfb07f176681389dbe5421a8"
+    },
+    {
+      "path": "content/ko/field/00-AI/index.md",
+      "bytes": 2363,
+      "sha256": "7521b3ce9f8e12f7e1b882c1dfbae23c89f4b8618f6c095a41ad461dd6859bbf"
+    },
+    {
+      "path": "content/ko/field/01-Medical-Imaging/featured.jpg",
+      "bytes": 597283,
+      "sha256": "86d01ec62d9b24706345d82cdf00819426ac1942a0068d4287936ba56bdeec04"
+    },
+    {
+      "path": "content/ko/field/01-Medical-Imaging/index.md",
+      "bytes": 2682,
+      "sha256": "73f063180f357af29c6a16a16005bef1b9533e3f60d44fc0c633d530c9c363a9"
+    },
+    {
+      "path": "content/ko/field/02-Healthcare/featured.jpg",
+      "bytes": 403603,
+      "sha256": "184ef77d77eebde1db8d8d3e59e648852848a46e013d43fae92cd22b8e82e9f1"
+    },
+    {
+      "path": "content/ko/field/02-Healthcare/index.md",
+      "bytes": 2836,
+      "sha256": "039a1c59747e98a008a743b7f7c44433fa68286d0e9ee699ae46e1995c581aaa"
+    },
+    {
+      "path": "content/ko/field/03-Contents/featured.jpg",
+      "bytes": 1089986,
+      "sha256": "c861c475a0b83ea5fd3949a829c1c05691b56a3d80924b081fb56bd3037772e9"
+    },
+    {
+      "path": "content/ko/field/03-Contents/index.md",
+      "bytes": 2779,
+      "sha256": "49c30acf66975717f112035c1c0f88c72fec9b65d5de833048ec4dd82afe5704"
+    },
+    {
+      "path": "content/ko/field/04-Aerospace/featured.jpg",
+      "bytes": 1324301,
+      "sha256": "67012648ce3458dc5b0c8a712969f3888a1420d430eb7486c293713036a0dcfa"
+    },
+    {
+      "path": "content/ko/field/04-Aerospace/index.md",
+      "bytes": 2569,
+      "sha256": "320073a6f3bece50885aea6b2b4a9ecedd0094f70a67167d895b2dc9015c7601"
+    },
+    {
+      "path": "content/ko/field/05-Mathematics/featured.jpg",
+      "bytes": 685921,
+      "sha256": "03097cbcf33176f5e3ce4f58700786b6983a0620d88415a0c444cd05549ef987"
+    },
+    {
+      "path": "content/ko/field/05-Mathematics/index.md",
+      "bytes": 2524,
+      "sha256": "56949d5b463f93f33c89c4675751b851b947615b0c7b872673d26290635dc850"
+    },
+    {
+      "path": "content/ko/field/06-Development/featured.jpg",
+      "bytes": 548686,
+      "sha256": "429856fb3e3dfb2a8e5841ab22610a759e55bfe11b799292f8d7340f129b54b2"
+    },
+    {
+      "path": "content/ko/field/06-Development/index.md",
+      "bytes": 2644,
+      "sha256": "ea4a8843e05bfa4ddbf504bc1945c3ffc134144e65da90cdd120c2a9b0933b43"
+    },
+    {
+      "path": "content/ko/field/07-Computational-Science/featured.jpg",
+      "bytes": 1040286,
+      "sha256": "faf45312b691c90c38979529c94d6707a88ba26a395c2948e4a32a9f9c8ff170"
+    },
+    {
+      "path": "content/ko/field/07-Computational-Science/index.md",
+      "bytes": 2200,
+      "sha256": "255126cca59f7256de75f3e0dafcb7aff5d0d460be9382ac7225d4de5d7bcc43"
+    },
+    {
+      "path": "content/ko/field/08-Physical-AI/index.md",
+      "bytes": 2202,
+      "sha256": "6f6023e54c0a0ac0c7db19b40efb807e74c5d49cff2f286e3c00fd38374b17d5"
+    },
+    {
+      "path": "assets/media/research/icons/physical-ai.svg",
+      "bytes": 362,
+      "sha256": "ce2f943eeb1f9548ca194718676418335f2604664209e6cc82637727d724d2c4"
+    },
+    {
+      "path": "layouts/partials/content/research_field_trendy_list.html",
+      "bytes": 3640,
+      "sha256": "74a0a96c024a74f9fbb0cc965b401c4a4709da76cb65a9c05e1d3ea666618c9b"
+    },
+    {
+      "path": "layouts/partials/content/research_field_trendy_single.html",
+      "bytes": 2604,
+      "sha256": "c69e0842be5765e8713032f86f57840bc33754f39ce02e804144306d786e282d"
+    }
+  ]
+}

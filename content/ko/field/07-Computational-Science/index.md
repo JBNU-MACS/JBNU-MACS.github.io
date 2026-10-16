@@ -1,6 +1,8 @@
 ---
 title: 계산과학 (Computational Science) 연구 주제
 date: 2024-04-01
+image:
+  filename: research/generated/07-computational-science.png
 ---
 
 MacsLAB의 계산과학 연구는 복잡한 자연/공학 시스템을 수치적으로 모델링하고, 데이터 기반 방법과 결합해 예측 가능하고 설명 가능한 해석을 제공하는 데 초점을 둡니다. 실험만으로 다루기 어려운 문제를 시뮬레이션으로 확장하고, 실제 데이터와의 정합성을 높여 실질적인 의사결정을 지원합니다.

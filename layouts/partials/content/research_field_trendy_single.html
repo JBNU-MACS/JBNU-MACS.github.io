@@ -20,7 +20,7 @@
       </div>
       <div class="field-single-image{{ if not $resource }} no-image{{ end }}{{ if $p.Params.research_icon }} field-research-icon{{ end }}">
         {{ with $resource }}
-          {{ $img := .Resize "1200x760" }}
+          {{ $img := .Fit "1200x760" }}
           {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
           <img src="{{ $img.RelPermalink }}" alt="{{ $p.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="eager">
         {{ else }}{{ if $p.Params.research_icon }}

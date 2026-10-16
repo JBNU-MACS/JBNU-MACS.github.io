@@ -151,7 +151,9 @@ footer a { color: inherit; }
 .field-single-title-wrap h1 { color: var(--lab-ink); font-size: 36px; line-height: 1.4; font-weight: 550; }
 .field-single-kicker, .field-single-meta { display: none; }
 .field-single-back { color: var(--lab-muted); font-size: 13px; }
-.field-single-image { background: none; border: 0; border-radius: 2px; }
+.field-single-image { align-self: center; min-height: 0; background: none; border: 0; border-radius: 2px; }
+.field-single-image::after { display: none; }
+.field-single-image img { display: block; height: auto; }
 .macs-field-card .field-card-media.field-research-icon,
 .field-single-image.field-research-icon { display: grid; place-items: center; background: linear-gradient(135deg,#f0f6fa,#e9f4ef); }
 .field-single-image.field-research-icon::after { display: none; }

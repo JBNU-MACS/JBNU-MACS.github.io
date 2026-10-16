@@ -1,0 +1,92 @@
+[
+  {
+    "id": "00-AI",
+    "asset": "assets/media/research/generated/00-ai.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2278831,
+    "sha256": "4c75e4c7429d5fd1a701830a40d368c8e9a45a0331a67de330ec16f6183c97f7",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-16"
+  },
+  {
+    "id": "01-Medical-Imaging",
+    "asset": "assets/media/research/generated/01-medical-imaging.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2074491,
+    "sha256": "d1291f42f5d7b9ce6967066f6ccbf56c25c5aae7617cf781a30b5fa383d5ae1d",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-16"
+  },
+  {
+    "id": "02-Healthcare",
+    "asset": "assets/media/research/generated/02-healthcare.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 1788357,
+    "sha256": "613684342e92b4eab78a33b0e7349b4f556b23e6128b79a2940a583dc8f1e102",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-16"
+  },
+  {
+    "id": "03-Contents",
+    "asset": "assets/media/research/generated/03-contents.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2518865,
+    "sha256": "68fb633fe1d71bd2356047308e8dc153d8847fb6c96b6750b943648a581e8152",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-16"
+  },
+  {
+    "id": "04-Aerospace",
+    "asset": "assets/media/research/generated/04-aerospace.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2751047,
+    "sha256": "c0f98fbeb52b539c7337eeaf40d1234b5d7e70650b4bc160dc22e912ec7a449e",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-16"
+  },
+  {
+    "id": "05-Mathematics",
+    "asset": "assets/media/research/generated/05-mathematics.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2418854,
+    "sha256": "5ec521697bc0375063c2921a3c4e94ee0b2dc88d2cd3e743b71f715dca92e227",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-16"
+  },
+  {
+    "id": "06-Development",
+    "asset": "assets/media/research/generated/06-development.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 1948520,
+    "sha256": "35bd077989156aca45953a431bbf0bdcfbb37db10c257fc7e124fb83da8777a1",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-16"
+  },
+  {
+    "id": "07-Computational-Science",
+    "asset": "assets/media/research/generated/07-computational-science.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2516105,
+    "sha256": "38f625a2a037434ee28f887bd2c1b0f44f9dc0fb50581d72aa15a422b10073c4",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-16"
+  },
+  {
+    "id": "08-Physical-AI",
+    "asset": "assets/media/research/generated/08-physical-ai.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 1901344,
+    "sha256": "00cd6e1122857509386270856244db04760955f47e8e20e47662b51f1518081f",
+    "generator": "Built-in image_gen",
+    "date": "2026-10-16"
+  }
+]

@@ -1,8 +1,9 @@
 ---
 title: Physical AI
 date: 2026-10-16
-research_icon: physical-ai
 summary: AI that understands physical environments through images, language, and sensor data, connecting perception with decisions and actions.
+image:
+  filename: research/generated/08-physical-ai.png
 ---
 
 Physical AI perceives and acts in physical environments, using the outcomes of its actions as feedback for learning. Building on multimodal learning and computational science, MACS Lab aims to extend its research from models that interpret observations to models that interact with their surroundings.

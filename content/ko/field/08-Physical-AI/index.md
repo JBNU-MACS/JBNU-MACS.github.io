@@ -1,8 +1,9 @@
 ---
 title: 피지컬 AI (Physical AI)
 date: 2026-10-16
-research_icon: physical-ai
 summary: 영상·언어·센서 정보를 바탕으로 물리적 환경을 이해하고, 판단과 행동으로 연결하는 AI를 연구합니다.
+image:
+  filename: research/generated/08-physical-ai.png
 ---
 
 Physical AI는 물리적 환경을 인식하고 그 안에서 행동하며, 행동의 결과를 다시 학습에 반영하는 인공지능입니다. MACS Lab은 멀티모달 학습과 계산과학을 바탕으로, 관측 데이터를 이해하는 모델에서 환경과 상호작용하는 모델로 연구를 확장하고자 합니다.

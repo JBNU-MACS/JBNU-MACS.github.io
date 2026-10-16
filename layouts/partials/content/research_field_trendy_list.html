@@ -51,7 +51,7 @@
         <a class="field-card-link" href="{{ $item.RelPermalink }}" aria-label="{{ $item.Title }} {{ if eq $.Page.Language.Lang "ko" }}자세히 보기{{ else }}View Detail{{ end }}">
           <div class="field-card-media{{ if not $resource }} no-image{{ end }}{{ if $item.Params.research_icon }} field-research-icon{{ end }}">
             {{ with $resource }}
-              {{ $img := .Resize "960x540" }}
+              {{ $img := .Fill "960x540 Center" }}
               {{ if ne $img.MediaType.SubType "gif" }}{{ $img = $img.Process "webp" }}{{ end }}
               <img src="{{ $img.RelPermalink }}" alt="{{ $item.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy">
             {{ else }}{{ if $item.Params.research_icon }}

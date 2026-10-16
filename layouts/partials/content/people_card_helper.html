@@ -73,7 +73,6 @@
       {{ with $email }}
         <p class="contact"><a href="mailto:{{ . }}">{{ . }}</a></p>
       {{ end }}
-      <p class="hint"><a href="{{ $item.RelPermalink }}">{{ if eq $lang "ko" }}프로필 보기{{ else }}View profile{{ end }} <span aria-hidden="true">→</span></a></p>
     </div>
   </div>
 </article>

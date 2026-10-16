@@ -2200,374 +2200,49 @@ body.home .home-section:has(.home-dual-feed) {
   }
 }
 
-/* People page: clean & modern */
-.macs-people-fancy {
-  display: grid;
-  gap: 2.5rem;
-}
-
-.macs-people-fancy-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.8rem;
-  padding: 0.12rem 0.1rem 0.28rem;
-  border-bottom: 1px solid #e1e8f4;
-}
-
-.macs-people-fancy-head h1 {
-  margin: 0;
-  font-size: 1.33rem;
-  letter-spacing: -0.02em;
-  color: #102a52;
-  font-weight: 800;
-}
-
-.macs-people-fancy-head p {
-  margin: 0;
-  font-size: 0.72rem;
-  color: #425c86;
-  font-weight: 600;
-}
-
-.macs-people-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.32rem;
-}
-
-.macs-people-tabs button {
-  border: 1px solid #d6e0ef;
-  background: #ffffff;
-  color: #28456f;
-  border-radius: 999px;
-  font-size: 0.67rem;
-  font-weight: 700;
-  padding: 0.26rem 0.6rem;
-  line-height: 1.2;
-  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-}
-
-.macs-people-tabs button:hover,
-.macs-people-tabs button.is-active {
-  border-color: #9cb3da;
-  background: #f3f8ff;
-  color: #173d74;
-}
-
-.macs-people-section {
-  border: 1px solid #dee7f4;
-  background: #fbfdff;
-  border-radius: 14px;
-  padding: 0.72rem 0.62rem 0.56rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.macs-people-section::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 72px;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #3f78d8 0%, #64b1ff 100%);
-  opacity: 0.78;
-}
-
-.macs-people-section-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.48rem;
-}
-
-.macs-people-section-head h2 {
-  margin: 0;
-  font-size: 0.92rem;
-  color: #1a345f;
-  letter-spacing: -0.01em;
-  font-weight: 800;
-}
-
-.macs-people-section-head span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 1.5rem;
-  height: 1.5rem;
-  padding: 0 0.34rem;
-  border-radius: 999px;
-  border: 1px solid #d1deef;
-  background: #f5f9ff;
-  color: #1f497f;
-  font-size: 0.61rem;
-  font-weight: 700;
-}
-
-.macs-people-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.macs-people-empty {
-  margin: 0.2rem 0;
-  color: #667b9e;
-  font-size: 0.65rem;
-}
-
-.macs-people-card {
-  min-width: 0;
-}
-
-.macs-people-card-inner {
-  display: grid;
-  grid-template-columns: 93px minmax(0, 1fr);
-  gap: 0.56rem;
-  align-items: start;
-  text-decoration: none !important;
-  border: 1px solid #e1e9f5;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 0.46rem;
-  height: 100%;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
-}
-
-.macs-people-photo-link {
-  display: block;
-  width: fit-content;
-  border-radius: 10px;
-}
-
-.macs-people-card h3 a,
-.macs-people-card .hint a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.macs-people-card h3 a:hover,
-.macs-people-card .hint a:hover {
-  color: #1d4f90;
-  text-decoration: underline;
-}
-
-.macs-people-card a:focus-visible {
-  outline: 2px solid #3976cf;
-  outline-offset: 3px;
-}
-
-.macs-people-card-inner:hover {
-  border-color: #c7d7ed;
-  box-shadow: 0 8px 16px rgba(16, 35, 68, 0.08);
-  transform: translateY(-1px);
-}
-
-.macs-people-avatar {
-  display: block;
-  width: 93px;
-  height: 93px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid #d3dff0;
-}
-
-.macs-people-avatar.placeholder {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #f0f5fe;
-  color: #2a4a79;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.macs-people-card h3 {
-  margin: 0;
-  font-size: 0.86rem;
-  color: #132f5a;
-  line-height: 1.25;
-  font-weight: 800;
-  word-break: keep-all;
-}
-
-.macs-people-card .role {
-  margin: 0.18rem 0 0;
-  font-size: 0.68rem;
-  color: #2f4f80;
-  line-height: 1.34;
-  font-weight: 700;
-  word-break: keep-all;
-}
-
-.macs-people-card .org {
-  margin: 0.1rem 0 0;
-  font-size: 0.63rem;
-  color: #556d93;
-  line-height: 1.35;
-  font-weight: 600;
-  word-break: keep-all;
-}
-
-.macs-people-card .grad {
-  margin: 0.08rem 0 0;
-  font-size: 0.56rem;
-  color: #6c7fa1;
-  line-height: 1.3;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
-.macs-people-meta {
-  min-width: 0;
-}
-
-.macs-people-card .hint {
-  margin: 0.14rem 0 0;
-  font-size: 0.56rem;
-  color: #7a8eaf;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.macs-people-card .contact {
-  margin: 0.08rem 0 0;
-  font-size: 0.58rem;
-  color: #5f7498;
-  line-height: 1.3;
-  font-weight: 600;
-  overflow-wrap: anywhere;
-}
-
-.macs-people-card .contact a {
-  color: #2f5790;
-  text-decoration: none;
-}
-
-/* Graduate + Undergraduate: name and role on one line */
-.macs-people-section[data-group="graduate"] .macs-people-meta,
-.macs-people-section[data-group="undergrad"] .macs-people-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  column-gap: 0.34rem;
-  row-gap: 0.12rem;
-}
-
-.macs-people-section[data-group="graduate"] .macs-people-card h3,
-.macs-people-section[data-group="undergrad"] .macs-people-card h3 {
-  margin: 0;
-}
-
-.macs-people-section[data-group="graduate"] .macs-people-card .role,
-.macs-people-section[data-group="undergrad"] .macs-people-card .role {
-  margin: 0;
-  font-size: 0.6rem;
-  font-weight: 800;
-  line-height: 1.2;
-  color: #1d4f90;
-  background: #eaf2ff;
-  border: 1px solid #c8daf6;
-  border-radius: 999px;
-  padding: 0.08rem 0.38rem;
-}
-
-.macs-people-section[data-group="graduate"] .macs-people-card .org,
-.macs-people-section[data-group="undergrad"] .macs-people-card .org {
-  flex-basis: 100%;
-  margin-top: 0.08rem;
-}
-
-.macs-people-section[data-group="graduate"] .macs-people-card .contact,
-.macs-people-section[data-group="undergrad"] .macs-people-card .contact,
-.macs-people-section[data-group="graduate"] .macs-people-card .hint,
-.macs-people-section[data-group="undergrad"] .macs-people-card .hint {
-  flex-basis: 100%;
-}
-
-@media (max-width: 767px) {
-  .macs-people-fancy {
-    gap: 0.56rem;
-  }
-
-  .macs-people-fancy-head h1 {
-    font-size: 1.22rem;
-  }
-
-  .macs-people-fancy-head p {
-    font-size: 0.70rem;
-  }
-
-  .macs-people-tabs button {
-    font-size: 0.67rem;
-    padding: 0.22rem 0.45rem;
-  }
-
-  .macs-people-section {
-    border-radius: 10px;
-    padding: 0.52rem 0.42rem 0.4rem;
-  }
-
-  .macs-people-section-head h2 {
-    font-size: 0.87rem;
-  }
-
-  .macs-people-grid {
-    grid-template-columns: 1fr;
-    gap: 0.34rem;
-  }
-
-  .macs-people-card-inner {
-    grid-template-columns: 78px minmax(0, 1fr);
-    gap: 0.44rem;
-    padding: 0.38rem;
-    border-radius: 9px;
-  }
-
-  .macs-people-avatar {
-    width: 78px;
-    height: 78px;
-    border-radius: 8px;
-  }
-
-  .macs-people-card h3 {
-    font-size: 0.83rem;
-  }
-
-  .macs-people-card .role {
-    font-size: 0.68rem;
-  }
-
-  .macs-people-card .org {
-    font-size: 0.62rem;
-  }
-
-  .macs-people-card .grad {
-    font-size: 0.58rem;
-  }
-
-  .macs-people-card .contact {
-    font-size: 0.54rem;
-  }
-
-  .macs-people-card .hint {
-    font-size: 0.52rem;
-  }
-
-  .macs-people-section[data-group="graduate"] .macs-people-card .role,
-  .macs-people-section[data-group="undergrad"] .macs-people-card .role {
-    font-size: 0.62rem;
-    padding: 0.06rem 0.32rem;
-  }
-}
-
-@media (max-width: 1100px) and (min-width: 768px) {
-  .macs-people-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+/* People: a simple academic directory. */
+.macs-people-fancy { display:grid; gap:2rem; max-width:1240px; margin:0 auto; }
+.macs-people-fancy-head { padding:0 0 1rem; border-bottom:1px solid #222; }
+.macs-people-fancy-head h1 { margin:0; font-size:1.65rem; font-weight:650; color:#202020; letter-spacing:-0.025em; }
+.macs-people-tabs { display:flex; flex-wrap:wrap; gap:0.3rem 1.25rem; border-bottom:1px solid #ddd; }
+.macs-people-tabs button { appearance:none; border:0; border-bottom:2px solid transparent; border-radius:0; padding:0.25rem 0 0.65rem; background:none; color:#666; font-size:0.73rem; font-weight:400; line-height:1.5; }
+.macs-people-tabs button:hover, .macs-people-tabs button.is-active { color:#171717; border-bottom-color:#171717; background:none; }
+.macs-people-tabs button:focus-visible { outline:2px solid #345c87; outline-offset:3px; }
+.macs-people-section { padding:0 0 1.5rem; border:0; border-bottom:1px solid #ddd; background:none; border-radius:0; overflow:visible; }
+.macs-people-section-head { display:flex; align-items:baseline; gap:0.6rem; margin-bottom:1.2rem; }
+.macs-people-section-head h2 { margin:0; font-size:1.08rem; font-weight:600; color:#222; }
+.macs-people-section-head span { font-size:0.65rem; color:#777; font-weight:400; }
+.macs-people-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.7rem 1.3rem; }
+.macs-people-card { min-width:0; }
+.macs-people-card-inner { display:grid; grid-template-columns:96px minmax(0,1fr); align-items:start; gap:0.8rem; height:100%; }
+.macs-people-photo-link { display:block; width:fit-content; }
+.macs-people-avatar { display:block; width:96px; height:112px; object-fit:cover; border-radius:2px; }
+.macs-people-avatar.placeholder { display:flex; align-items:center; justify-content:center; background:#f0f0ed; color:#777; font-size:1.2rem; font-weight:400; }
+.macs-people-meta { min-width:0; }
+.macs-people-card h3 { margin:0 0 0.3rem; color:#222; font-size:unquote("max(0.86rem,15px)"); font-weight:600; line-height:1.35; word-break:keep-all; }
+.macs-people-card h3 a { color:inherit; text-decoration:none; }
+.macs-people-card h3 a:hover { text-decoration:underline; text-underline-offset:3px; }
+.macs-people-card .role { margin:0 0 0.3rem; font-size:unquote("max(0.68rem,13px)"); font-weight:400; color:#444; line-height:1.45; }
+.macs-people-card .org { margin:0; font-size:unquote("max(0.64rem,12px)"); font-weight:400; color:#777; line-height:1.55; word-break:keep-all; }
+.macs-people-card .contact { margin:0.5rem 0 0; font-size:0.63rem; line-height:1.5; overflow-wrap:anywhere; }
+.macs-people-card .contact a { color:#365777; text-decoration:none; }
+.macs-people-card .contact a:hover { text-decoration:underline; }
+.macs-people-card a:focus-visible { outline:2px solid #345c87; outline-offset:3px; }
+.macs-people-section[data-group="professor"] .macs-people-grid { grid-template-columns:minmax(0,680px); }
+.macs-people-section[data-group="professor"] .macs-people-card-inner { grid-template-columns:128px minmax(0,1fr); gap:1.1rem; }
+.macs-people-section[data-group="professor"] .macs-people-avatar { width:128px; height:150px; }
+.macs-people-section[data-group="professor"] h3 { font-size:1.1rem; margin-top:0.2rem; }
+@media(max-width:1100px) { .macs-people-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:640px) {
+  .macs-people-fancy { gap:1.4rem; }
+  .macs-people-fancy-head h1 { font-size:1.4rem; }
+  .macs-people-tabs { gap:0.2rem 0.95rem; }
+  .macs-people-tabs button { font-size:12px; }
+  .macs-people-grid { grid-template-columns:1fr; gap:1.25rem; }
+  .macs-people-card-inner { grid-template-columns:82px minmax(0,1fr); gap:0.8rem; }
+  .macs-people-avatar { width:82px; height:98px; }
+  .macs-people-section[data-group="professor"] .macs-people-card-inner { grid-template-columns:100px minmax(0,1fr); gap:0.9rem; }
+  .macs-people-section[data-group="professor"] .macs-people-avatar { width:100px; height:120px; }
 }
 
 /* Author term page custom layout */
@@ -3413,311 +3088,47 @@ body.home .home-section:has(.home-dual-feed) {
   }
 }
 
-/* Publication single: trendy + readable */
-.macs-pub-single {
-  margin: 0.9rem auto 1.3rem;
-  border: 1px solid rgba(145, 163, 193, 0.42);
-  border-radius: 22px;
-  background: linear-gradient(170deg, #ffffff 0%, #f8fbff 100%);
-  box-shadow: 0 16px 34px rgba(23, 36, 64, 0.08);
-  color: #1d2430;
-  overflow: hidden;
-  font-family: "Pretendard Variable", "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
-}
-
-.macs-pub-hero {
-  display: grid;
-  grid-template-columns: 1.06fr 0.94fr;
-  gap: 0.95rem;
-  padding: 1rem 1.05rem;
-  border-bottom: 1px solid rgba(145, 163, 192, 0.28);
-}
-
-.macs-pub-hero.no-hero {
-  grid-template-columns: 1fr;
-}
-
-.macs-pub-head .kicker {
-  margin: 0 0 0.3rem;
-  font-size: 0.58rem;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #42576f;
-}
-
-.macs-pub-head h1 {
-  margin: 0;
-  font-size: 1.04rem;
-  line-height: 1.42;
-  letter-spacing: -0.01em;
-  color: #171d27;
-  text-align: left;
-  font-weight: 700;
-}
-
-.macs-pub-authors {
-  margin-top: 0.48rem;
-  color: #2e3e52;
-  font-size: 0.68rem;
-  line-height: 1.56;
-}
-
-.macs-pub-authors a {
-  color: #2a4266;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.macs-pub-authors a:hover {
-  text-decoration: underline;
-}
-
-.macs-pub-reference {
-  margin: 0.58rem 0 0;
-  font-size: 0.7rem;
-  line-height: 1.62;
-  color: #2a3648;
-  border-left: 2px solid #89a5cf;
-  background: #f4f8ff;
-  border-radius: 8px;
-  padding: 0.46rem 0.56rem;
-}
-
-.macs-pub-reference .abbr,
-.macs-pub-meta .abbr {
-  font-weight: 700;
-  color: #20395e;
-}
-
-.macs-pub-meta {
-  margin-top: 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.22rem 0.34rem;
-}
-
-.macs-pub-meta span {
-  font-size: 0.58rem;
-  font-weight: 650;
-  color: #425873;
-  border: 1px solid rgba(158, 176, 208, 0.44);
-  background: #f9fbff;
-  border-radius: 999px;
-  padding: 0.11rem 0.36rem;
-}
-
-.macs-pub-cover {
-  margin: 0;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(151, 171, 203, 0.44);
-  background: #f3f7fd;
-}
-
-.macs-pub-cover img {
-  width: 100%;
-  height: 100%;
-  min-height: 220px;
-  max-height: 340px;
-  object-fit: contain;
-  display: block;
-  background: #f3f7fd;
-}
-
-.macs-pub-main {
-  display: grid;
-  grid-template-columns: 290px minmax(0, 1fr);
-  gap: 0.9rem;
-  padding: 0.95rem 1.05rem 1.05rem;
-}
-
-.macs-pub-side {
-  display: grid;
-  gap: 0.72rem;
-  align-content: start;
-}
-
-.macs-pub-side-card {
-  border: 1px solid rgba(160, 178, 208, 0.45);
-  border-radius: 12px;
-  background: #ffffff;
-  padding: 0.58rem 0.62rem;
-}
-
-.macs-pub-side-card h3 {
-  margin: 0 0 0.44rem;
-  font-size: 0.72rem;
-  color: #223650;
-  font-weight: 700;
-}
-
-.macs-pub-side-card ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0.28rem;
-}
-
-.macs-pub-side-card li {
-  display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
-  gap: 0.34rem;
-  align-items: baseline;
-}
-
-.macs-pub-side-card li strong {
-  font-size: 0.6rem;
-  color: #4a607f;
-  font-weight: 700;
-}
-
-.macs-pub-side-card li span {
-  font-size: 0.62rem;
-  color: #25384f;
-  line-height: 1.45;
-  word-break: break-word;
-}
-
-.macs-pub-side-card .links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-}
-
-.macs-pub-side-card .links a {
-  font-size: 0.6rem;
-  font-weight: 700;
-  color: #28446d;
-  border: 1px solid rgba(153, 173, 205, 0.44);
-  background: #f7faff;
-  border-radius: 999px;
-  padding: 0.12rem 0.36rem;
-  text-decoration: none;
-}
-
-.macs-pub-side-card .links a:hover {
-  background: #eef4ff;
-}
-
-.macs-pub-content {
-  display: grid;
-  gap: 0.72rem;
-}
-
-
-.macs-pub-block {
-  border: 1px solid rgba(154, 173, 203, 0.38);
-  border-radius: 12px;
-  background: #ffffff;
-  padding: 0.62rem 0.68rem;
-}
-
-.macs-pub-block h2 {
-  margin: 0 0 0.45rem;
-  font-size: 0.8rem;
-  color: #1e324d;
-  font-weight: 700;
-}
-
-.macs-pub-block p,
-.macs-pub-block .body {
-  margin: 0;
-  font-size: 0.72rem;
-  line-height: 1.62;
-  color: #1f2733;
-  font-weight: 420;
-}
-
-.macs-pub-block .body p {
-  margin-bottom: 1rem;
-}
-
-.macs-pub-block .body h2,
-.macs-pub-block .body h3,
-.macs-pub-block .body h4 {
-  margin-top: 1.2rem;
-  margin-bottom: 0.55rem;
-  font-size: 0.78rem;
-  color: #1c3048;
-  font-weight: 640;
-}
-
-.macs-pub-block .body a {
-  color: #27466f;
-  font-weight: 620;
-  text-decoration: none;
-}
-
-.macs-pub-block .body a:hover {
-  text-decoration: underline;
-}
-
-.macs-pub-block .body img {
-  border-radius: 12px;
-  border: 1px solid rgba(156, 175, 204, 0.44);
-  box-shadow: 0 8px 18px rgba(21, 35, 63, 0.09);
-}
-
-@media (max-width: 991px) {
-  .macs-pub-single {
-    margin: 0.68rem auto 1rem;
-    border-radius: 15px;
-  }
-
-  .macs-pub-hero {
-    grid-template-columns: 1fr;
-    gap: 0.66rem;
-    padding: 0.72rem;
-  }
-
-  .macs-pub-head h1 {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-
-  .macs-pub-authors {
-    font-size: 0.6rem;
-  }
-
-  .macs-pub-reference {
-    font-size: 0.62rem;
-  }
-
-  .macs-pub-meta span {
-    font-size: 0.52rem;
-  }
-
-  .macs-pub-cover img {
-    min-height: 170px;
-    max-height: 250px;
-  }
-
-  .macs-pub-main {
-    grid-template-columns: 1fr;
-    gap: 0.7rem;
-    padding: 0.72rem;
-  }
-
-  .macs-pub-side-card h3 {
-    font-size: 0.66rem;
-  }
-
-  .macs-pub-side-card li strong,
-  .macs-pub-side-card li span,
-  .macs-pub-side-card .links a {
-    font-size: 0.56rem;
-  }
-
-  .macs-pub-block h2 {
-    font-size: 0.7rem;
-  }
-
-  .macs-pub-block p,
-  .macs-pub-block .body {
-    font-size: 0.66rem;
-  }
+/* Publication detail: typography and rules rather than stacked cards. */
+.macs-pub-single { margin:1.5rem auto 3rem; max-width:1180px; color:#252525; }
+.macs-pub-hero { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,0.8fr); gap:2rem; padding-bottom:1.6rem; border-bottom:1px solid #333; }
+.macs-pub-hero.no-hero { grid-template-columns:1fr; }
+.macs-pub-head .kicker { margin:0 0 0.7rem; color:#777; font-size:0.65rem; letter-spacing:0.08em; text-transform:uppercase; }
+.macs-pub-head h1 { text-align:left; margin:0; font-size:1.45rem; line-height:1.4; font-weight:600; letter-spacing:-0.02em; color:#202020; }
+.macs-pub-authors { margin-top:1rem; font-size:0.8rem; line-height:1.7; }
+.macs-pub-authors a { color:#365777; text-decoration:none; font-weight:400; }
+.macs-pub-authors a:hover { text-decoration:underline; }
+.macs-pub-reference { margin:1rem 0 0; color:#666; font-size:0.72rem; line-height:1.7; }
+.macs-pub-cover { margin:0; align-self:center; }
+.macs-pub-cover img { display:block; width:100%; max-height:320px; object-fit:contain; }
+.macs-pub-main { display:grid; grid-template-columns:minmax(0,1fr) 260px; gap:2.5rem; padding-top:1.8rem; align-items:start; }
+.macs-pub-side { grid-column:2; grid-row:1; display:grid; gap:1.5rem; }
+.macs-pub-side-card { padding:0; }
+.macs-pub-side-card h3 { margin:0 0 0.8rem; padding-bottom:0.5rem; border-bottom:1px solid #ddd; color:#333; font-size:0.78rem; font-weight:600; }
+.macs-pub-side-card ul { list-style:none; margin:0; padding:0; display:grid; gap:0.5rem; }
+.macs-pub-side-card li { display:grid; grid-template-columns:92px minmax(0,1fr); gap:0.5rem; font-size:unquote("max(0.65rem,12px)"); line-height:1.6; }
+.macs-pub-side-card li strong { color:#777; font-weight:400; }
+.macs-pub-side-card li span { color:#444; overflow-wrap:anywhere; }
+.macs-pub-side-card .links { display:flex; flex-wrap:wrap; gap:0.5rem 1rem; }
+.macs-pub-side-card .links a { font-size:0.72rem; color:#365777; text-decoration:underline; text-underline-offset:3px; }
+.macs-pub-content { grid-column:1; grid-row:1; display:grid; gap:2rem; min-width:0; }
+.macs-pub-block { padding:0; }
+.macs-pub-block h2 { margin:0 0 0.9rem; font-size:1rem; font-weight:600; color:#222; }
+.macs-pub-block p, .macs-pub-block .body { font-size:0.79rem; line-height:1.85; color:#333; font-weight:400; }
+.macs-pub-block p { margin:0; }
+.macs-pub-block .body p { margin:0 0 1rem; }
+.macs-pub-block .body h2, .macs-pub-block .body h3, .macs-pub-block .body h4 { margin:1.5rem 0 0.7rem; font-size:0.9rem; font-weight:600; color:#222; }
+.macs-pub-block .body > :first-child { margin-top:0; }
+.macs-pub-block .body a { color:#365777; text-decoration:underline; text-underline-offset:3px; }
+.macs-pub-block .body img { display:block; max-width:100%; height:auto; border-radius:0; box-shadow:none; }
+.macs-pub-block .body table { display:block; max-width:100%; overflow-x:auto; font-size:0.7rem; }
+@media(max-width:800px) {
+  .macs-pub-hero { grid-template-columns:1fr; gap:1.2rem; }
+  .macs-pub-head h1 { font-size:1.15rem; }
+  .macs-pub-cover img { max-height:250px; }
+  .macs-pub-main { grid-template-columns:1fr; gap:2rem; }
+  .macs-pub-content, .macs-pub-side { grid-column:1; grid-row:auto; }
+  .macs-pub-side { grid-row:2; }
+  .macs-pub-block p, .macs-pub-block .body { font-size:14px; }
 }
 
 .macs-author-head-copy h1 {

@@ -14,218 +14,48 @@
 </script>
 
 <style>
-  .universal-wrapper {
-    max-width: 1480px !important;
-    width: min(98vw, 1480px) !important;
-  }
-  .pub-page-shell {
-    display: grid;
-    gap: 1rem;
-  }
-  .pub-section {
-    border: 1px solid rgba(163, 180, 216, 0.58);
-    border-radius: 20px;
-    background: linear-gradient(165deg, #ffffff 0%, #f7faff 100%);
-    box-shadow: 0 14px 32px rgba(30, 44, 84, 0.08);
-    padding: 0.9rem 1rem 0.95rem;
-  }
-  .pub-wrap,
-  .pub-wrap p,
-  .pub-wrap li {
-    color: #24354d;
-  }
-  .pub-section-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 0.5rem;
-    border-bottom: 1px solid rgba(140, 160, 198, 0.28);
-    padding-bottom: 0.45rem;
-    margin-bottom: 0.3rem;
-  }
-  .pub-section-head h3 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    color: #223651;
-  }
-  .pub-section-head span {
-    font-size: 0.7rem;
-    color: #4b617f;
-    font-weight: 600;
-  }
-  .pub-wrap{ width:100%; }
-  .pub-head{
-    display:grid;
-    grid-template-columns: 80px 1fr 1fr;
-    column-gap: 0.75rem;
-    align-items:end;
-    padding: 0.4rem 0 0.85rem;
-  }
-  .pub-head .col-title{
-    font-weight: 800;
-    font-size: 0.94rem;
-    text-align:center;
-    color: #243a59;
-    border: 1px solid rgba(169, 186, 219, 0.45);
-    background: rgba(245, 249, 255, 0.92);
-    border-radius: 999px;
-    padding: 0.24rem 0.45rem;
-  }
-  .pub-row{
-    display:grid;
-    grid-template-columns: 80px 1fr 1fr;
-    column-gap: 0.75rem;
-    align-items:start;
-    padding: 0.95rem 0;
-  }
-  .pub-year{
-    display: inline-flex;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 0.92rem;
-    line-height: 1;
-    padding: 0.26rem 0.38rem;
-    border-radius: 10px;
-    border: 1px solid rgba(167, 185, 216, 0.55);
-    color: #2d4768;
-    background: rgba(244, 248, 255, 0.95);
-  }
-  .pub-list{
-    margin: 0;
-    list-style: none;
-    padding-left: 0;
-  }
-  .pub-item{
-    margin-bottom: 0.78rem;
-    line-height: 1.4;
-    font-size: 0.77rem;
-    padding: 0.82rem 0.76rem;
-    border: 1px solid rgba(180, 193, 220, 0.45);
-    border-left: 3px solid #98b2df;
-    border-radius: 11px;
-    background: #ffffff;
-    box-shadow: 0 6px 16px rgba(23, 40, 78, 0.05);
-  }
-  .pub-item.is-highlight{
-    border-color: rgba(206, 178, 114, 0.55);
-    border-left-color: #b48f45;
-    background: linear-gradient(180deg, #fffcf6 0%, #ffffff 56%);
-    box-shadow: 0 9px 20px rgba(78, 58, 26, 0.08);
-  }
-  .pub-item-meta-row{
-    margin-top: 0.36rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 0.3rem;
-    min-width: 0;
-  }
-  .pub-item-meta-row .venue-badge{
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid #c3d0e5;
-    border-radius: 999px;
-    background: #f3f7ff;
-    color: #2c4363;
-    font-size: 0.62rem;
-    font-weight: 800;
-    line-height: 1;
-    padding: 0.16rem 0.46rem;
-    letter-spacing: 0.01em;
-    white-space: nowrap;
-  }
-  .pub-item-meta-row .badge-top{
-    border-color: #d6b36b;
-    background: #fff3dc;
-    color: #765317;
-  }
-  .pub-item-meta-row .badge-bkcs{
-    border-color: #d3d7de;
-    background: #f5f7fa;
-    color: #434d5b;
-  }
-  .pub-item-meta-row .badge-award{
-    border-color: #d6b36b;
-    background: #fff7e8;
-    color: #7b520f;
-  }
-  .journal-meta{
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.62rem;
-    font-weight: 800;
-    color: #314a6c;
-    background: #eef3fb;
-    border: 1px solid #c3d0e5;
-    border-radius: 999px;
-    padding: 0.14rem 0.48rem;
-    white-space: nowrap;
-  }
-  .pub-sep{
-    border: none;
-    border-top: 1px dashed rgba(121, 141, 180, 0.44);
-    margin: 0.56rem 0;
-  }
-  .pub-item a {
-    color: #2b4467 !important;
-    text-decoration: none;
-    font-weight: 700;
-  }
-  .pub-item .venue-short {
-    display: inline-block;
-    font-weight: 800;
-    letter-spacing: 0.01em;
-    color: #1f3451;
-  }
-  .pub-item a:hover {
-    text-decoration: underline;
-  }
-  @media (max-width: 900px){
-    .universal-wrapper {
-      width: min(96vw, 900px) !important;
-    }
-    .pub-section {
-      border-radius: 15px;
-      padding: 0.7rem 0.65rem 0.72rem;
-    }
-    .pub-section-head h3 {
-      font-size: 0.88rem;
-    }
-    .pub-section-head span {
-      font-size: 0.62rem;
-    }
-    .pub-head{ display:none; }
-    .pub-row{
-      grid-template-columns: 1fr;
-      row-gap: 0.62rem;
-      padding: 0.72rem 0;
-    }
-    .pub-item {
-      font-size: 0.76rem;
-      line-height: 1.64;
-      padding: 0.56rem 0.52rem;
-      margin-bottom: 0.6rem;
-      border-radius: 10px;
-    }
-    .pub-year{
-      width: fit-content;
-      font-size: 0.85rem;
-      padding: 0.18rem 0.38rem;
-    }
-    .pub-item-meta-row .venue-badge,
-    .journal-meta {
-      font-size: 0.56rem;
-    }
-  }
+.universal-wrapper.pt-3 { max-width:1380px; width:calc(100% - 48px); padding-top:2rem !important; }
+.universal-wrapper.pt-3 h1 { text-align:left; font-size:1.65rem; font-weight:650; color:#222; }
+.universal-wrapper:has(.pub-page-shell) { max-width:1380px !important; width:calc(100% - 48px) !important; }
+.pub-page-shell { display:grid; gap:3rem; }
+.pub-section { padding:0; }
+.pub-section-head { border-bottom:1px solid #222; padding-bottom:0.8rem; margin-bottom:0.8rem; }
+.pub-section-head h3 { margin:0; font-size:1rem; font-weight:600; color:#222; }
+.pub-wrap { width:100%; color:#333; }
+.pub-head, .pub-row { display:grid; grid-template-columns:64px minmax(0,1fr) minmax(0,1fr); column-gap:1.6rem; }
+.pub-head { padding:0.6rem 0; border-bottom:1px solid #ddd; }
+.pub-head .col-title { font-size:0.72rem; font-weight:600; color:#555; }
+.pub-row { align-items:start; padding:1.3rem 0; }
+.pub-year { font-size:0.95rem; font-weight:600; color:#333; padding-top:0.5rem; }
+.pub-list { list-style:none; padding:0; margin:0; }
+.pub-column { min-width:0; }
+.pub-item { margin:0 0 0.75rem; padding:0.65rem 0.75rem; font-size:0.77rem; line-height:1.75; border-left:2px solid transparent; color:#333; overflow-wrap:anywhere; }
+.pub-item:last-child { margin-bottom:0; }
+.pub-item.is-highlight { border-left-color:#c4a451; background:#fff9e5; }
+.pub-item a { color:#333 !important; text-decoration:none; font-weight:400; }
+.pub-item b > a { font-weight:600; }
+.pub-item a:hover { text-decoration:underline; text-underline-offset:3px; }
+.pub-item .venue-short { color:#444; font-weight:500; }
+.pub-item-meta-row { display:flex; flex-wrap:wrap; align-items:baseline; gap:0.25rem 0.65rem; margin-top:0.5rem; }
+.pub-item-meta-row .venue-badge, .journal-meta { color:#666; font-size:max(0.6rem,11px); font-weight:500; line-height:1.5; }
+.pub-item-meta-row .badge-top, .pub-item-meta-row .badge-award { color:#806024; }
+.pub-sep { margin:0; border:0; border-top:1px solid #ddd; }
+@media(max-width:900px) {
+  .universal-wrapper:has(.pub-page-shell) { width:calc(100% - 32px) !important; }
+  .pub-head { display:none; }
+  .pub-row { grid-template-columns:1fr; gap:1rem; }
+  .pub-year { padding:0; font-size:1rem; }
+  .pub-column:has(.pub-item)::before { content:attr(data-label); display:block; padding:0 0 0.4rem; font-size:0.65rem; color:#777; }
+  .pub-column:not(:has(.pub-item)) { display:none; }
+  .pub-item { font-size:14px; padding:0.6rem 0.65rem; }
+}
 </style>
 
 <div id="publication-ref-mode" class="visible-by-opacity">
   <div class="pub-page-shell">
     <section class="pub-section">
       <div class="pub-section-head">
-        <h3>Reference List: Top CS/AI Conference & Journal</h3>
+        <h3>Conferences & Journals</h3>
         
       </div>
       <div class="pub-wrap">
@@ -251,7 +81,7 @@
   {{/* ===== 헤더(연도 + 2컬럼 타이틀) ===== */}}
   <div class="pub-head">
     <div></div>
-    <div class="col-title">Top CS/AI Conference</div>
+    <div class="col-title">Conferences</div>
     <div class="col-title">Journal</div>
   </div>
 
@@ -269,7 +99,7 @@
         <div class="pub-year">{{ $group.Key }}</div>
 
         {{/* ========== LEFT: Conference (paper-csai + paper-conference) ========== */}}
-        <div>
+        <div class="pub-column" data-label="Conferences">
           <ol class="pub-list">
             {{ range $itemIndex, $item := $leftItems }}
               {{ $badges := $item.Params.badges | default (slice) }}
@@ -354,7 +184,7 @@
         </div>
 
         {{/* ========== RIGHT: Journal (article-journal only) ========== */}}
-        <div>
+        <div class="pub-column" data-label="Journals">
           <ol class="pub-list">
             {{ range $itemIndex, $item := $rightItems }}
               {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
@@ -433,7 +263,7 @@
 
     <section class="pub-section">
       <div class="pub-section-head">
-        <h3>Reference List: Conference Proceedings</h3>
+        <h3>Conference Proceedings</h3>
       </div>
       <div class="pub-wrap">
 
@@ -476,7 +306,7 @@
         <div class="pub-year">{{ $group.Key }}</div>
 
         {{/* ========== LEFT: Conference (paper-csai + paper-conference) ========== */}}
-        <div>
+        <div class="pub-column" data-label="International proceedings">
           <ol class="pub-list">
             {{ range $itemIndex, $item := $leftItems }}
               {{ $badges := $item.Params.badges | default (slice) }}
@@ -561,7 +391,7 @@
         </div>
 
         {{/* ========== RIGHT: Conference Proceedings (Domestic) ========== */}}
-        <div>
+        <div class="pub-column" data-label="Domestic proceedings">
           <ol class="pub-list">
             {{ range $itemIndex, $item := $rightItems }}
               {{ $badges := $item.Params.badges | default (slice) }}

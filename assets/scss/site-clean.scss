@@ -138,6 +138,9 @@ footer a { color: inherit; }
 .macs-field-hero .hero-content { padding: 0; }
 .macs-field-hero .hero-meta { display: none; }
 .macs-field-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 42px 32px; }
+@media (min-width: 992px) {
+  .macs-field-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
 .macs-field-card .field-card-link { display: block; padding: 0; color: inherit; text-decoration: none; }
 .macs-field-card:hover { transform: none; box-shadow: none; border: 0; }
 .field-card-media { border-radius: 2px; height: auto; aspect-ratio: 16 / 9; background: #f4f5f2; }

@@ -69,7 +69,7 @@
   .institute-story-grid { position: relative; isolation: isolate; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; padding: 0; border: 0; border-radius: 0; background: none; backdrop-filter: none; box-shadow: none; }
   .institute-story-grid::before {
     content: ''; position: absolute; inset: -24px -12px; z-index: -1; pointer-events: none;
-    background: radial-gradient(ellipse at 12% 26%,#9bd2cdba,transparent 58%),radial-gradient(ellipse at 86% 36%,#aac8e8cc,transparent 60%),radial-gradient(ellipse at 50% 90%,#c1dbe78c,transparent 65%);
+    background: radial-gradient(ellipse at 12% 26%,#9bd2cd40,transparent 58%),radial-gradient(ellipse at 86% 36%,#aac8e847,transparent 60%),radial-gradient(ellipse at 50% 90%,#c1dbe72e,transparent 65%);
     mask-image: radial-gradient(ellipse closest-side,#000 65%,transparent 100%);
   }
   .institute-story-grid article {

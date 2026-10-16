@@ -1,6 +1,6 @@
 {{ $ko := eq .Lang "ko" }}
 <section class="academic-areas">
-  <header class="academic-section-head"><h2>{{ if $ko }}연구 분야{{ else }}Research Areas{{ end }}</h2><a href="{{ "field/" | relLangURL }}">{{ if $ko }}전체 보기{{ else }}View all{{ end }} →</a></header>
+  <header class="academic-section-head"><h2>{{ if $ko }}연구 분야{{ else }}Research Areas{{ end }}</h2><a href="{{ "field/" | relLangURL }}">{{ if $ko }}전체 보기{{ else }}View all{{ end }} {{ partial "content/ui_icon.html" "arrow-right" }}</a></header>
   <div class="academic-areas-grid">
     {{ $areas := slice
       (dict "art" "ai" "ko" "인공지능" "en" "Artificial Intelligence" "url" "field/00-ai/" "descKo" "의료·항공우주·콘텐츠에 적용하는 AI 기술" "descEn" "AI methods for medicine, aerospace, and content applications")
@@ -13,6 +13,6 @@
       (dict "art" "medical-ai" "ko" "의료 AI" "en" "Medical AI" "url" "field/01-medical-imaging/" "descKo" "의료 영상과 생체신호를 분석하는 진단 지원 AI" "descEn" "AI for medical image and biosignal analysis to support diagnosis")
       (dict "art" "computational-science" "ko" "계산과학" "en" "Computational Science" "url" "field/07-computational-science/" "descKo" "수치 모델링과 시뮬레이션으로 복잡한 시스템을 해석" "descEn" "Numerical modeling and simulation of complex systems")
     }}
-    {{ range $areas }}<a class="academic-area" href="{{ .url | relLangURL }}">{{ with resources.Get (printf "media/research/icons/%s.svg" .art) }}<img class="academic-area-art" src="{{ .RelPermalink }}" width="32" height="32" alt="" loading="lazy" aria-hidden="true">{{ end }}<div class="academic-area-copy"><div class="academic-area-heading"><h3>{{ if $ko }}{{ .ko }}{{ else }}{{ .en }}{{ end }}</h3>{{ if $ko }}<span class="academic-area-en">{{ .en }}</span>{{ end }}</div><p>{{ if $ko }}{{ .descKo }}{{ else }}{{ .descEn }}{{ end }}</p><span class="academic-area-arrow" aria-hidden="true">↗</span></div></a>{{ end }}
+    {{ range $areas }}<a class="academic-area" href="{{ .url | relLangURL }}">{{ with resources.Get (printf "media/research/icons/%s.svg" .art) }}<img class="academic-area-art" src="{{ .RelPermalink }}" width="32" height="32" alt="" loading="lazy" aria-hidden="true">{{ end }}<div class="academic-area-copy"><div class="academic-area-heading"><h3>{{ if $ko }}{{ .ko }}{{ else }}{{ .en }}{{ end }}</h3>{{ if $ko }}<span class="academic-area-en">{{ .en }}</span>{{ end }}</div><p>{{ if $ko }}{{ .descKo }}{{ else }}{{ .descEn }}{{ end }}</p><span class="academic-area-arrow" aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></div></a>{{ end }}
   </div>
 </section>

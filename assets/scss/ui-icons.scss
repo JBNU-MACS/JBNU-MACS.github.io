@@ -1,0 +1,24 @@
+/* Keep decorative icons independent of the surrounding text's font metrics. */
+.macs-ui-icon {
+  display: inline-block; width: 1em; height: 1em; flex: 0 0 auto;
+  vertical-align: -0.125em; overflow: visible;
+}
+.brand-join a > span[aria-hidden='true'],
+.institute-page-intro a > span[aria-hidden='true'],
+.macs-people-fancy .people-profile-arrow,
+.academic-areas .academic-area-arrow {
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0; line-height: 1;
+}
+.brand-join a > .macs-ui-icon,
+.brand-join a > span > .macs-ui-icon,
+.brand-join summary > span > .macs-ui-icon,
+.people-profile-arrow > .macs-ui-icon,
+.academic-area-arrow > .macs-ui-icon { display: block; }
+.institute-page-intro > a,
+.academic-areas .academic-section-head > a,
+.field-related-publications > header > a {
+  display: inline-flex; align-items: center; gap: 8px;
+}
+
+svg.macs-ui-icon, svg.macs-ui-icon path { fill: none; stroke: currentColor; }

@@ -46,10 +46,10 @@
   .join-path > p:not(.join-path-label) { font-size: 16px; line-height: 1.75; color: #4e6570; margin: 0 0 28px; max-width: none; min-height: 84px; }
   .join-path-art { margin: 0 -36px; }
   .join-path-art img { display: block; width: 100%; height: auto; margin: 0; }
-  .join-path-details { margin: 0 -36px; padding: 0 28px; text-align: left; }
-  .join-path-details summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; min-height: 66px; list-style: none; font-size: 14px; font-weight: 500; color: #243e52; cursor: pointer; }
+  .join-path-details { margin: 0 -36px; padding: 0 36px; text-align: left; }
+  .join-path-details summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; min-height: 66px; list-style: none; line-height: 1.5; font-size: 14px; font-weight: 500; color: #243e52; cursor: pointer; }
   .join-path-details summary::-webkit-details-marker { display: none; }
-  .join-path-details summary > span { display: grid; place-items: center; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #e0eaeb; color: #4e6570; font-size: 22px; font-weight: 400; transition: transform .2s; }
+  .join-path-details summary > span { display: grid; place-items: center; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #e0eaeb; color: #4e6570; font-size: 16px; line-height: 1; font-weight: 400; transition: transform .2s; }
   .join-path-details[open] summary > span { transform: rotate(45deg); }
   .join-path-list { margin: 0 0 24px; padding-left: 20px; }
   .join-path-list li { font-size: 14px; line-height: 1.8; color: #4e6570; margin-bottom: 8px; }
@@ -84,7 +84,7 @@
   .institute-story-grid h3 { font-size: 21px; font-weight: 600; line-height: 1.5; letter-spacing: -.025em; margin-bottom: 16px; }
   .institute-story-grid h3 a { color: #243e52; }
   .institute-story-grid article > p:not(.institute-project-label) { display: block; font-size: 14px; color: #4e6570; line-height: 1.8; margin: 0 0 20px; }
-  .institute-story-grid .institute-small-link { display: inline-flex; margin-top: auto; font-size: 14px; }
+  .institute-story-grid .institute-small-link { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; font-size: 14px; }
 
   .join-inquiry { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; padding: 64px 48px; border-radius: 20px; background: #f4f7f6; }
   .join-inquiry h2 { font-size: clamp(30px,3.5vw,42px); letter-spacing: -.05em; line-height: 1.25; margin-bottom: 24px; }
@@ -96,7 +96,7 @@
   .join-mail-guide h3 { font-size: 17px; margin: 0 0 28px; }
   .join-mail-guide ol { list-style: none; padding: 0; margin: 0; }
   .join-mail-guide li { display: flex; align-items: flex-start; gap: 16px; margin: 0 0 24px; }
-  .join-mail-guide li > span { color: #73888e; font-size: 13px; line-height: 24px; }
+  .join-mail-guide li > span { flex: 0 0 20px; color: #73888e; font-size: 13px; line-height: 24px; font-variant-numeric: tabular-nums; }
   .join-mail-guide h4 { font-size: 15px; line-height: 1.6; margin: 0 0 4px; font-weight: 600; }
   .join-mail-guide li p { font-size: 13px; line-height: 1.7; margin: 0; color: #667982; }
   .join-cv-note { border-top: 1px solid #d5e0e2; padding-top: 20px; margin: 0; font-size: 12px; line-height: 1.7; }
@@ -106,6 +106,7 @@
     .join-hero-copy { padding-top: 64px; }
     .join-path { padding-inline: 24px; }
     .join-path-art, .join-path-details { margin-inline: -24px; }
+    .join-path-details { padding-inline: 24px; }
     .join-path > p:not(.join-path-label) { min-height: 112px; }
     .join-inquiry { padding: 42px 32px; gap: 32px; }
     .join-mail-guide { padding-left: 28px; }
@@ -157,4 +158,16 @@
 @supports not (backdrop-filter:blur(1px)) {
   .brand-join .join-photo-caption { background: #f4f7f6; }
   .brand-join .institute-story-grid article { background: #f2f7f8; }
+}
+
+/* Share content rows so translated headings cannot offset the images and toggles. */
+@supports (grid-template-rows: subgrid) {
+  @media(min-width:701px) {
+    .brand-join .join-paths { row-gap: 0; }
+    .brand-join .join-path {
+      display: grid; grid-row: span 5; grid-template-rows: subgrid;
+      row-gap: 0; align-items: start; align-self: stretch;
+    }
+    .brand-join .join-path > p:not(.join-path-label) { min-height: 0; }
+  }
 }

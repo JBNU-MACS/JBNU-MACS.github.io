@@ -7,7 +7,7 @@
       <p class="join-intro">{{ if $ko }}전북대학교 MACS Lab의 연구 활동을 소개합니다.<br>관심 분야와 참여 방법을 확인해 보세요.{{ else }}Explore research activities at MACS Lab,<br>Jeonbuk National University, and learn how to get involved.{{ end }}</p>
       <div class="join-actions">
         <a class="join-button" href="#opportunities">{{ if $ko }}연구 활동 보기{{ else }}Research activities{{ end }}</a>
-        <a class="join-text-link" href="#inquiry">{{ if $ko }}문의하기{{ else }}Get in touch{{ end }} <span aria-hidden="true">›</span></a>
+        <a class="join-text-link" href="#inquiry">{{ if $ko }}문의하기{{ else }}Get in touch{{ end }} <span aria-hidden="true">{{ partial "content/ui_icon.html" "chevron-right" }}</span></a>
       </div>
       <p class="join-hero-note">{{ if $ko }}논문 읽기 · 모델 구현 · 실험 · 응용 개발{{ else }}Reading papers · Model implementation · Experiments · Applications{{ end }}</p>
     </div>
@@ -17,7 +17,7 @@
       {{ end }}
       <figcaption class="join-photo-caption">
         <div><strong>{{ if $ko }}MICCAI 2026 학회 참가{{ else }}At MICCAI 2026{{ end }}</strong><span>MICCAI 2026 · Strasbourg, France</span></div>
-        <a href="{{ "people/" | relLangURL }}">{{ if $ko }}구성원 보기{{ else }}Lab members{{ end }} <span aria-hidden="true">›</span></a>
+        <a href="{{ "people/" | relLangURL }}">{{ if $ko }}구성원 보기{{ else }}Lab members{{ end }} <span aria-hidden="true">{{ partial "content/ui_icon.html" "chevron-right" }}</span></a>
       </figcaption>
     </figure>
   </header>
@@ -25,14 +25,14 @@
   <nav class="join-topics" aria-label="{{ if $ko }}관심 연구 분야{{ else }}Explore research areas{{ end }}">
     <span class="join-small-label">{{ if $ko }}주요 연구 분야{{ else }}Research areas{{ end }}</span>
     {{ range slice (dict "title" "Medical AI" "path" "field/01-medical-imaging/") (dict "title" "Multimodal Learning" "path" "field/00-ai/") (dict "title" "Physical AI" "path" "field/08-physical-ai/") (dict "title" "Computational Science" "path" "field/07-computational-science/") }}
-      <a href="{{ .path | relLangURL }}">{{ .title }} <span aria-hidden="true">↗</span></a>
+      <a href="{{ .path | relLangURL }}">{{ .title }} <span aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></a>
     {{ end }}
   </nav>
 
   <section class="join-section" id="opportunities" aria-labelledby="join-paths-title">
     <header class="join-section-heading">
       <div><p class="join-small-label">{{ if $ko }}참여 방법{{ else }}Ways to join{{ end }}</p><h2 id="join-paths-title">{{ if $ko }}연구 활동{{ else }}Research activities{{ end }}</h2></div>
-      <a class="join-text-link" href="{{ "notification/" | relLangURL }}">{{ if $ko }}모집 공지 확인{{ else }}Recruitment notices{{ end }} <span aria-hidden="true">↗</span></a>
+      <a class="join-text-link" href="{{ "notification/" | relLangURL }}">{{ if $ko }}모집 공지 확인{{ else }}Recruitment notices{{ end }} <span aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></a>
     </header>
     <div class="join-paths">
       <article class="join-path join-path-undergrad">
@@ -41,13 +41,13 @@
         <p>{{ if $ko }}관심 분야의 논문을 읽고, 모델을 구현하며 실험 결과를 분석합니다. 연구 주제와 관련된 개발 작업에도 참여합니다.{{ else }}Read papers in your area of interest, implement models and analyze experimental results. Activities also include development work related to the research topic.{{ end }}</p>
         <div class="join-path-art" aria-hidden="true">{{ with resources.Get "media/join/undergraduate-research.png" }}{{ $art := .Resize "1000x webp q82" }}<img src="{{ $art.RelPermalink }}" width="{{ $art.Width }}" height="{{ $art.Height }}" alt="" loading="lazy">{{ end }}</div>
         <details class="join-path-details">
-          <summary>{{ if $ko }}연구 활동과 문의 안내{{ else }}Research activities and inquiry details{{ end }}<span aria-hidden="true">+</span></summary>
+          <summary>{{ if $ko }}연구 활동과 문의 안내{{ else }}Research activities and inquiry details{{ end }}<span aria-hidden="true">{{ partial "content/ui_icon.html" "plus" }}</span></summary>
         <ul class="join-path-list">
           <li>{{ if $ko }}의료 AI·멀티모달·피지컬 AI·콘텐츠 연구{{ else }}Medical AI, multimodal learning, physical AI and content{{ end }}</li>
           <li>{{ if $ko }}논문 읽기와 모델 구현, 실험·분석{{ else }}Read papers, implement models and analyze experiments{{ end }}</li>
           <li>{{ if $ko }}AI 이론·수학부터 웹·앱 응용 개발까지{{ else }}From AI theory and mathematics to web and app development{{ end }}</li>
         </ul>
-        <div class="join-path-footer"><p>{{ if $ko }}학년·전공, 관심 분야와 수업·프로젝트 경험을 알려주세요.{{ else }}Tell us your year, major, interests and coursework or project experience.{{ end }}</p><a class="join-text-link" href="#inquiry">{{ if $ko }}학부연구 문의하기{{ else }}Ask about undergraduate research{{ end }} <span aria-hidden="true">↗</span></a></div>
+        <div class="join-path-footer"><p>{{ if $ko }}학년·전공, 관심 분야와 수업·프로젝트 경험을 알려주세요.{{ else }}Tell us your year, major, interests and coursework or project experience.{{ end }}</p><a class="join-text-link" href="#inquiry">{{ if $ko }}학부연구 문의하기{{ else }}Ask about undergraduate research{{ end }} <span aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></a></div>
         </details>
       </article>
       <article class="join-path join-path-graduate">
@@ -56,13 +56,13 @@
         <p>{{ if $ko }}연구 주제를 정하고, 방법론을 설계해 실험으로 검증합니다. 결과를 분석하고 논문을 작성하며, 관련 응용 연구를 수행합니다.{{ else }}Define a research topic, develop methods and evaluate them through experiments. Analyze results, write papers and work on related applications.{{ end }}</p>
         <div class="join-path-art" aria-hidden="true">{{ with resources.Get "media/join/graduate-research.png" }}{{ $art := .Resize "1000x webp q82" }}<img src="{{ $art.RelPermalink }}" width="{{ $art.Width }}" height="{{ $art.Height }}" alt="" loading="lazy">{{ end }}</div>
         <details class="join-path-details">
-          <summary>{{ if $ko }}연구 활동과 문의 안내{{ else }}Research activities and inquiry details{{ end }}<span aria-hidden="true">+</span></summary>
+          <summary>{{ if $ko }}연구 활동과 문의 안내{{ else }}Research activities and inquiry details{{ end }}<span aria-hidden="true">{{ partial "content/ui_icon.html" "plus" }}</span></summary>
         <ul class="join-path-list">
           <li>{{ if $ko }}문제 정의부터 실험 설계와 검증까지{{ else }}Define problems, design experiments and evaluate ideas{{ end }}</li>
           <li>{{ if $ko }}논문 작성과 연구 결과의 공유{{ else }}Write papers and share research findings{{ end }}</li>
           <li>{{ if $ko }}관심 분야와 연구실 주제를 바탕으로 연구 계획 수립{{ else }}Plan research based on your interests and the lab’s topics{{ end }}</li>
         </ul>
-        <div class="join-path-footer"><p>{{ if $ko }}관심 주제와 관련 경험을 알려주세요.{{ else }}Tell us about your research interests and relevant experience.{{ end }}</p><a class="join-text-link" href="#inquiry">{{ if $ko }}연구 참여 문의하기{{ else }}Ask about research opportunities{{ end }} <span aria-hidden="true">↗</span></a></div>
+        <div class="join-path-footer"><p>{{ if $ko }}관심 주제와 관련 경험을 알려주세요.{{ else }}Tell us about your research interests and relevant experience.{{ end }}</p><a class="join-text-link" href="#inquiry">{{ if $ko }}연구 참여 문의하기{{ else }}Ask about research opportunities{{ end }} <span aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></a></div>
         </details>
       </article>
     </div>
@@ -74,8 +74,8 @@
       <p class="join-small-label">{{ if $ko }}연락처{{ else }}Contact{{ end }}</p>
       <h2 id="join-inquiry-title">{{ if $ko }}연구 참여 문의{{ else }}Research inquiries{{ end }}</h2>
       <p>{{ if $ko }}관심 분야와 참여 희망 시기를 이메일로 보내주세요.<br>모집 여부와 연구 주제, 참여 조건을 문의할 수 있습니다.{{ else }}Email us your research interests and preferred start date.<br>You can ask about openings, research topics and participation requirements.{{ end }}</p>
-      <a class="join-button join-email" href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr <span aria-hidden="true">↗</span></a>
-      <div class="join-inquiry-links"><a class="join-text-link" href="{{ "notification/" | relLangURL }}">{{ if $ko }}모집 공지{{ else }}Recruitment notices{{ end }} ↗</a><a class="join-text-link" href="{{ "contact/" | relLangURL }}">{{ if $ko }}연락처·방문 안내{{ else }}Contact & directions{{ end }} ↗</a></div>
+      <a class="join-button join-email" href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr <span aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></a>
+      <div class="join-inquiry-links"><a class="join-text-link" href="{{ "notification/" | relLangURL }}">{{ if $ko }}모집 공지{{ else }}Recruitment notices{{ end }} {{ partial "content/ui_icon.html" "arrow-up-right" }}</a><a class="join-text-link" href="{{ "contact/" | relLangURL }}">{{ if $ko }}연락처·방문 안내{{ else }}Contact & directions{{ end }} {{ partial "content/ui_icon.html" "arrow-up-right" }}</a></div>
     </div>
     <aside class="join-mail-guide">
       <h3>{{ if $ko }}문의 시 포함할 내용{{ else }}What to include in your email{{ end }}</h3>

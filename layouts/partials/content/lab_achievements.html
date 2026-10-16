@@ -3,8 +3,8 @@
   <header class="institute-content-heading join-achievements-heading">
     <div><p class="institute-section-label">MACS LAB · RESEARCH HIGHLIGHTS</p><h2 id="join-achievements-title">{{ if $ko }}연구실 주요 성과{{ else }}Research highlights{{ end }}</h2></div>
     <nav class="join-achievements-links" aria-label="{{ if $ko }}연구실 전체 성과 보기{{ else }}Explore all lab achievements{{ end }}">
-      <a class="join-text-link" href="{{ "publication/" | relLangURL }}">{{ if $ko }}전체 논문{{ else }}All publications{{ end }} <span aria-hidden="true">↗</span></a>
-      <a class="join-text-link" href="{{ "post/" | relLangURL }}">{{ if $ko }}전체 소식{{ else }}All news{{ end }} <span aria-hidden="true">↗</span></a>
+      <a class="join-text-link" href="{{ "publication/" | relLangURL }}">{{ if $ko }}전체 논문{{ else }}All publications{{ end }} <span aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></a>
+      <a class="join-text-link" href="{{ "post/" | relLangURL }}">{{ if $ko }}전체 소식{{ else }}All news{{ end }} <span aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></a>
     </nav>
   </header>
   <div class="institute-story-grid">
@@ -17,7 +17,7 @@
       (dict "path" "post/25-11-08-KOSOMBE-우수포스터상" "label" "KOSOMBE 2025" "ko" "대한의용생체공학회 우수포스터상 수상" "en" "Excellent Poster Award at KOSOMBE" "descKo" "홍사강 학생이 크로스 모달리티 의료 영상 분할을 위한 SAM2 기반 연구로 우수포스터상을 수상했습니다." "descEn" "Sakang Hong received an Excellent Poster Award for SAM2-based research on cross-modality medical segmentation.")
     }}
     {{ range $stories }}{{ $story := . }}{{ with site.GetPage .path }}
-      <article><p class="institute-project-label">{{ $story.label }}</p><h3><a href="{{ .RelPermalink }}">{{ if $ko }}{{ $story.ko }}{{ else }}{{ $story.en }}{{ end }}</a></h3><p>{{ if $ko }}{{ $story.descKo }}{{ else }}{{ $story.descEn }}{{ end }}</p><a class="institute-small-link" href="{{ .RelPermalink }}">{{ if $ko }}자세히 보기{{ else }}Read more{{ end }} <span aria-hidden="true">↗</span></a></article>
+      <article><p class="institute-project-label">{{ $story.label }}</p><h3><a href="{{ .RelPermalink }}">{{ if $ko }}{{ $story.ko }}{{ else }}{{ $story.en }}{{ end }}</a></h3><p>{{ if $ko }}{{ $story.descKo }}{{ else }}{{ $story.descEn }}{{ end }}</p><a class="institute-small-link" href="{{ .RelPermalink }}">{{ if $ko }}자세히 보기{{ else }}Read more{{ end }} <span aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></a></article>
     {{ end }}{{ end }}
   </div>
 </section>

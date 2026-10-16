@@ -1,0 +1,9 @@
+{{- /* Decorative UI icons use a fixed viewBox rather than font baselines. */ -}}
+<svg class="macs-ui-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  {{- if eq . "plus" -}}<path d="M12 5v14M5 12h14"/>
+  {{- else if eq . "chevron-right" -}}<path d="m9 5 7 7-7 7"/>
+  {{- else if eq . "arrow-left" -}}<path d="M19 12H5m7-7-7 7 7 7"/>
+  {{- else if eq . "arrow-right" -}}<path d="M5 12h14m-7-7 7 7-7 7"/>
+  {{- else -}}<path d="M6 18 18 6M6 6h12v12"/>
+  {{- end -}}
+</svg>

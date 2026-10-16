@@ -1,4 +1,4 @@
 <header class="institute-page-head">
   <div><p class="institute-section-label">{{ .label }}</p><h1>{{ .title }}</h1></div>
-  <div class="institute-page-intro"><p>{{ .description }}</p>{{ with .link }}<a href="{{ .url }}">{{ .text }} <span aria-hidden="true">↗</span></a>{{ end }}</div>
+  <div class="institute-page-intro"><p>{{ .description }}</p>{{ with .link }}<a href="{{ .url }}">{{ .text }} <span aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></a>{{ end }}</div>
 </header>

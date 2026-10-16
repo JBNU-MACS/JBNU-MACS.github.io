@@ -15,7 +15,7 @@
   <section class="macs-field-single-hero">
     <div class="field-single-hero-inner">
       <div class="field-single-title-wrap">
-        <a class="field-single-back" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}"><span aria-hidden="true">←</span> {{ if eq $p.Lang "ko" }}연구 분야{{ else }}Research fields{{ end }}</a>
+        <a class="field-single-back" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}"><span aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-left" }}</span> {{ if eq $p.Lang "ko" }}연구 분야{{ else }}Research fields{{ end }}</a>
         <p class="field-single-kicker">MacsLAB Research Track</p>
         <h1>{{ $p.Title }}</h1>
         <div class="field-single-meta">
@@ -65,7 +65,7 @@
       <section class="field-related-publications" id="related-publications" aria-labelledby="field-related-title">
         <header>
           <h2 id="field-related-title">{{ if eq $p.Lang "ko" }}관련 논문{{ else }}Related Publications{{ end }} <span>{{ len $related }}</span></h2>
-          <a href="{{ $publicationsURL }}">{{ if eq $p.Lang "ko" }}이 분야 논문 전체 보기{{ else }}View all papers in this field{{ end }} ↗</a>
+          <a href="{{ $publicationsURL }}">{{ if eq $p.Lang "ko" }}이 분야 논문 전체 보기{{ else }}View all papers in this field{{ end }} {{ partial "content/ui_icon.html" "arrow-up-right" }}</a>
         </header>
         {{ if $related }}
           <ol>

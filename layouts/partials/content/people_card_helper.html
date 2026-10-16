@@ -71,7 +71,7 @@
       {{ end }}
     </a>
     <div class="macs-people-meta">
-      <h3><a href="{{ $item.RelPermalink }}">{{ $name }} <span class="people-profile-arrow" aria-hidden="true">↗</span></a></h3>
+      <h3><a href="{{ $item.RelPermalink }}">{{ $name }} <span class="people-profile-arrow" aria-hidden="true">{{ partial "content/ui_icon.html" "arrow-up-right" }}</span></a></h3>
       {{ if and (eq $lang "ko") (ne $englishName "") }}<p class="people-name-en">{{ $englishName }}</p>{{ end }}
       <p class="role">{{ $role }}</p>
       {{ if ne $org "" }}

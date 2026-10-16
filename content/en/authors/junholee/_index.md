@@ -1,9 +1,9 @@
 ---
 # Display name
-title: Junho Lee
+title: Jun Ho Lee
 
 name_ko: "이준호"
-name_en: "Junho Lee"
+name_en: "Jun Ho Lee"
 first_name: Student
 last_name: 1
 

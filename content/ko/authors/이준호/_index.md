@@ -2,6 +2,9 @@
 # Display name
 title: 이준호
 
+name_ko: "이준호"
+name_en: "Jun Ho Lee"
+
 # Full Name (for SEO)
 first_name: Student
 last_name: 1

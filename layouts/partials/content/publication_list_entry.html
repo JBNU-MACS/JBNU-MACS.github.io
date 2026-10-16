@@ -1,0 +1,17 @@
+{{ $item := .item }}{{ $kind := .kind }}{{ $ko := eq $item.Lang "ko" }}
+<li class="publication-entry" data-kind="{{ $kind }}">
+  <h4><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h4>
+  <p class="publication-authors">{{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" false "period" false "strongName" "") }}</p>
+  <p class="publication-venue">{{ with $item.Params.publication }}<i>{{ . }}</i>{{ end }}{{ with $item.Params.publication_status }}<span> · {{ . }}</span>{{ end }}</p>
+  <div class="publication-entry-footer">{{ partial "content/publication_badges" (dict "item" $item "kind" $kind) }}
+
+  <div class="publication-footnotes publication-resource-links">
+    {{ with $item.Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+    {{ if $item.Params.doi }}
+      {{ $doiURL := $item.Params.doi }}{{ if not (hasPrefix $doiURL "http") }}{{ $doiURL = printf "https://doi.org/%s" $doiURL }}{{ end }}
+      <a href="{{ $doiURL }}" target="_blank" rel="noopener">DOI</a>
+    {{ else }}{{ with $item.Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">{{ if $ko }}원문{{ else }}Publisher{{ end }}</a>{{ end }}{{ end }}
+    {{ with $item.Resources.GetMatch "*.bib" }}<a href="{{ .RelPermalink }}">BibTeX</a>{{ end }}
+  </div>
+  </div>
+</li>

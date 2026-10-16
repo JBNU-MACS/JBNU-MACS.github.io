@@ -1,48 +1,56 @@
 main:
-  - name: About
+  - identifier: about
+    name: 소개
     url: /ko/about/
     weight: 100
-
-  - name: People
+  - parent: about
+    identifier: about-about
+    name: 연구실 소개 (Overview)
+    url: /ko/about/
+    weight: 101
+  - parent: about
+    identifier: about-join
+    name: 연구 참여 안내 (Join Us)
+    url: /ko/join/
+    weight: 102
+  - identifier: research
+    name: 연구
+    url: /ko/field/
+    weight: 300
+  - parent: research
+    identifier: research-field
+    name: 연구 분야 (Research Areas)
+    url: /ko/field/
+    weight: 302
+  - parent: research
+    identifier: research-publication
+    name: 연구 논문 (Publications)
+    url: /ko/publication/
+    weight: 301
+  - identifier: people
+    name: 구성원
     url: /ko/people/
     weight: 200
-  - parent: People
-    name: Professor
-    url: /ko/author/이경수/
-    weight: 210
-  - parent: People
-    name: Members
-    url: /ko/people/
-    weight: 220
-
-  - name: Research
-    url: /ko/publication/
-    weight: 300
-  - parent: Research
-    name: Publications
-    url: /ko/publication/
-    weight: 310
-  - parent: Research
-    name: Research Fields
-    url: /ko/field/
-    weight: 320
-
-  - name: Inform
+  - identifier: news
+    name: 소식
     url: /ko/post/
-    weight: 600
-  - parent: Inform
-    name: Notifications
+    weight: 400
+  - parent: news
+    identifier: news-post
+    name: 연구실 소식 (Lab News)
+    url: /ko/post/
+    weight: 401
+  - parent: news
+    identifier: news-notification
+    name: 공지사항 (Announcements)
     url: /ko/notification/
-    weight: 610
-  - parent: Inform
-    name: News
-    url: /ko/post/
-    weight: 620
-  - parent: Inform
-    name: Events
+    weight: 402
+  - parent: news
+    identifier: news-event
+    name: 학술 활동 (Events)
     url: /ko/event/
-    weight: 630
-
-  - name: Contact
+    weight: 403
+  - identifier: contact
+    name: 연락처
     url: /ko/contact/
-    weight: 700
+    weight: 500

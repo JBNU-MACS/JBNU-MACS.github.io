@@ -32,6 +32,9 @@ highlight: true
 publication: Asian Conference on Computer Vision 2026
 publication_short: ACCV2026
 
+research_question: "AI는 웹툰 속 효과음을 어떻게 읽을까?"
+research_overview: "웹툰 속 글자는 그림과 섞이고 모양도 자유롭게 변합니다. 글자의 내용·변형·스타일·주변 맥락을 그래프로 표현해 효과음 인식을 다루는 연구입니다."
+
 abstract: >-
   Webtoons, a globally popular form of digital comics, rely on stylized sound effects (SFX) as essential visual cues for actions, emotions, and atmosphere. Since Webtoon SFX tightly entangle linguistic content, geometry, style, and scene context, conventional optical character recognition (OCR) systems designed for regular text often fail on these highly stylized effects. We propose SFXGraph, a causal-compositional graph parsing framework that models each SFX instance as a structured graph of linguistic units, geometric deformation, visual style, and contextual interaction factors, rather than decoding it as a flat text sequence. To learn this representation, we introduce counterfactual factor consistency, which separates scene-invariant content from SFX-induced factors and enforces the predicted graph to be sufficient for SFX removal, reconstruction, and controlled synthesis. We further construct a graph-supervised synthetic SFX generation pipeline that provides dense node, edge, style, and deformation supervision at scale. Experiments on public and custom Webtoon datasets demonstrate that SFXGraph consistently outperforms conventional OCR engines and vision--language baselines, while providing interpretable graph-level representations and stronger robustness to diverse artistic styles.
 

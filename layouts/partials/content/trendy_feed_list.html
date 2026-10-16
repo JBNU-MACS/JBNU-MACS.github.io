@@ -12,13 +12,12 @@
 
 <div class="universal-wrapper macs-feed-list-shell">
   <section class="macs-feed-list macs-feed-list--{{ $kindClass }}">
-    <header class="macs-feed-list-head{{ if ne $bannerURL "" }} has-banner{{ end }}"{{ if ne $bannerURL "" }} style="--feed-banner:url('{{ $bannerURL }}')"{{ end }}>
-      <div class="head-badge">{{ $kindLabel }}</div>
-      <h1>{{ $page.Title }}</h1>
-      {{ with $page.Content }}
-        <div class="head-summary">{{ . }}</div>
-      {{ end }}
-    </header>
+    {{ $ko := eq $page.Lang "ko" }}
+    {{ $title := "Lab news" }}{{ $desc := "Papers, student achievements, and research updates from MACS." }}
+    {{ if $ko }}{{ $title = "연구실 소식" }}{{ $desc = "논문 채택과 수상, 학생들의 연구 성과와 연구실의 새로운 소식을 전합니다." }}{{ end }}
+    {{ if eq $kindClass "event" }}{{ $title = "Activities & Events" }}{{ $desc = "Conference presentations, research exchanges, and activities with our students." }}{{ if $ko }}{{ $title = "학술 활동" }}{{ $desc = "학술대회 발표와 연구 교류, 학생들이 함께한 활동의 현장을 살펴보세요." }}{{ end }}{{ end }}
+    {{ if eq $kindClass "notification" }}{{ $title = "Announcements & opportunities" }}{{ $desc = "Recruitment notices and practical information. Check each notice's date and details before getting in touch." }}{{ if $ko }}{{ $title = "공지사항" }}{{ $desc = "학부연구생·대학원생 모집과 연구실 공지입니다. 공지의 게시일과 모집 내용을 확인하고 문의해 주세요." }}{{ end }}{{ end }}
+    {{ partial "content/institute_page_head" (dict "label" (upper $kindLabel) "title" $title "description" $desc) }}
 
     <div class="macs-feed-list-grid">
       {{ range $item := $paginator.Pages }}

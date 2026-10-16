@@ -1,0 +1,10 @@
+{{ $item := .item }}{{ $kind := .kind }}{{ $ko := eq $item.Lang "ko" }}
+<div class="publication-badges" aria-label="{{ if $ko }}학회·학술지 및 지표{{ else }}Venue and distinctions{{ end }}">
+    {{ with $item.Params.publication_short }}<span class="publication-badge publication-badge--venue publication-badge--{{ $kind }}">{{ . }}</span>{{ end }}
+    {{ range $item.Params.badges }}<span class="publication-badge publication-badge--recognition">{{ . }}</span>{{ end }}
+    {{ with $item.Params.award_badge }}<span class="publication-badge publication-badge--award">{{ . }}</span>{{ end }}
+    {{ with $item.Params.journal_type }}<span class="publication-badge publication-badge--index">{{ . }}</span>{{ end }}
+    {{ with $item.Params.impact_factor }}<span class="publication-badge">IF {{ . }}</span>{{ end }}
+    {{ with $item.Params.jcr_rank }}<span class="publication-badge">JCR {{ . }}</span>{{ end }}
+    {{ with $item.Params.jcr_percentile }}<span class="publication-badge">{{ . }}</span>{{ end }}
+  </div>

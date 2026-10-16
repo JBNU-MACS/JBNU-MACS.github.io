@@ -1,0 +1,17 @@
+{{ $ko := eq .Lang "ko" }}
+{{ $notices := first 2 ((where .Site.RegularPages "Section" "notification").ByDate.Reverse) }}
+{{ with $notices }}
+<aside class="home-notices" data-home-notices aria-label="{{ if $ko }}연구실 공지{{ else }}Lab notices{{ end }}">
+  <button class="home-notices-reopen" type="button" data-notice-open aria-expanded="false" aria-controls="home-notices-panel" hidden><span aria-hidden="true">↗</span> {{ if $ko }}공지{{ else }}Notices{{ end }} <span class="home-notices-count">{{ len . }}</span></button>
+  <div class="home-notices-panel" id="home-notices-panel" data-notice-panel>
+    <header class="home-notices-cover">
+      {{ with resources.Get "media/pic-jbnu.jpg" }}{{ $cover := .Resize "720x webp q85" }}<img src="{{ $cover.RelPermalink }}" width="{{ $cover.Width }}" height="{{ $cover.Height }}" alt="" aria-hidden="true">{{ end }}
+      <h2>{{ if $ko }}공지사항{{ else }}Notice board{{ end }}</h2>
+      <button type="button" class="home-notices-close" data-notice-close aria-label="{{ if $ko }}공지 접기{{ else }}Collapse notices{{ end }}"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8"/></svg></button>
+    </header>
+    <ul>{{ range . }}<li><a href="{{ .RelPermalink }}"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><span class="home-notices-title">{{ .Title }}</span><svg class="home-notices-arrow" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></a></li>{{ end }}</ul>
+    <footer><a href="{{ "notification/" | relLangURL }}"><span>{{ if $ko }}전체 공지 보기{{ else }}All notices{{ end }}</span><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a></footer>
+  </div>
+</aside>
+{{ with resources.Get "js/home-notices.js" }}{{ $script := . | minify | fingerprint }}<script src="{{ $script.RelPermalink }}" defer></script>{{ end }}
+{{ end }}

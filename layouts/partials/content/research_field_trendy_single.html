@@ -9,7 +9,7 @@
 
 <div class="universal-wrapper macs-field-single-shell">
   <section class="macs-field-single-hero">
-    <a class="field-single-back" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}">Research Fields</a>
+    <a class="field-single-back" href="{{ $section.RelPermalink | default ("field/" | relLangURL) }}">{{ if eq $p.Lang "ko" }}연구 분야{{ else }}Research fields{{ end }}</a>
     <div class="field-single-hero-inner">
       <div class="field-single-title-wrap">
         <p class="field-single-kicker">MacsLAB Research Track</p>

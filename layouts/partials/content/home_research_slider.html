@@ -1,0 +1,72 @@
+{{ $ko := eq .Lang "ko" }}
+{{ $maxSlides := 12 }}
+{{ $slides := slice (dict
+  "kind" "intro" "image" "slider/overview-natural-v1.png"
+  "title" "Medical AI & Computational Science"
+  "description" (cond $ko "전북대학교 의료 AI 및 계산과학 연구실" "Medical AI & Computational Science Laboratory at Jeonbuk National University")
+  "eyebrow" "JEONBUK NATIONAL UNIVERSITY · MACS LAB"
+  "tags" "Medical AI · Multimodal Learning · Applied Research"
+  "url" ("field/" | relLangURL) "link" (cond $ko "연구 분야" "Research areas")
+) (dict
+  "kind" "intro" "image" "slider/medical-natural-v1.png"
+  "title" "Medical AI"
+  "description" (cond $ko "의료 데이터와 딥러닝을 바탕으로 진단 지원과 신뢰할 수 있는 AI를 연구합니다." "We study diagnostic support and trustworthy AI using medical data and deep learning.")
+  "eyebrow" "JEONBUK NATIONAL UNIVERSITY · MACS LAB"
+  "tags" "Diagnosis Support · Clinical Workflow · Trustworthy AI"
+  "url" ("publication/" | relLangURL) "link" (cond $ko "연구 논문" "Publications")
+) (dict
+  "kind" "intro" "image" "slider/multimodal-natural-v1.png"
+  "title" "Vision-Language Intelligence"
+  "description" (cond $ko "의료 영상과 텍스트, 임상 정보를 함께 이해하는 멀티모달 AI를 연구합니다." "We develop multimodal AI that connects medical images, text, and clinical information.")
+  "eyebrow" "JEONBUK NATIONAL UNIVERSITY · MACS LAB"
+  "tags" "Vision-Language · Multimodal Learning · Reasoning"
+  "url" ("field/00-ai/" | relLangURL) "link" (cond $ko "연구 주제" "Research topics")
+) }}
+{{ $newsBackgrounds := slice "slider/medical-natural-v1.png" "slider/multimodal-natural-v1.png" "slider/applied-natural-v1.png" "slider/overview-natural-v1.png" }}
+{{ range $i, $item := first 4 ((where .Site.RegularPages "Section" "post").ByDate.Reverse) }}
+  {{ $summary := .Params.summary | default "" }}
+  {{ if not $summary }}
+    {{ $paragraphs := findRE "(?s)<p>.*?</p>" .Content 1 }}
+    {{ if $paragraphs }}{{ $summary = index $paragraphs 0 }}{{ else }}{{ $summary = .Plain }}{{ end }}
+  {{ end }}
+  {{ $summary = $summary | plainify | markdownify | plainify | htmlUnescape | truncate 170 }}
+  {{ $slides = $slides | append (dict
+    "kind" "news" "image" (index $newsBackgrounds $i) "photo" (.Resources.GetMatch (.Params.slider_image | default "__no_slide_photo__"))
+    "title" .Title "description" $summary
+    "eyebrow" (printf "%s · %s" (cond $ko "연구실 소식" "LAB NEWS") (.Date.Format "2006.01.02"))
+    "url" .RelPermalink "link" (cond $ko "소식 보기" "Read news")
+  ) }}
+{{ end }}
+{{ $paperLimit := sub $maxSlides (len $slides) }}
+{{ range $i, $item := first $paperLimit ((where .Site.RegularPages "Section" "publication").ByDate.Reverse) }}
+  {{ $summary := .Params.research_overview | default .Params.abstract | default .Summary | markdownify | plainify | htmlUnescape | truncate 170 }}
+  {{ $venue := .Params.publication_short | default .Params.publication | default "" }}
+  {{ $slides = $slides | append (dict
+    "kind" "publication" "paper" $item
+    "title" .Title "description" $summary
+    "eyebrow" (printf "%s · %s" (cond $ko "최근 논문" "PUBLICATION") (.Date.Format "2006"))
+    "tags" ($venue | markdownify | plainify | htmlUnescape)
+    "url" .RelPermalink "link" (cond $ko "논문 보기" "View paper")
+  ) }}
+{{ end }}
+<section class="academic-slider academic-research-slider" aria-roledescription="carousel" aria-label="{{ if $ko }}연구실 소개와 최신 소식·논문{{ else }}About MACS, latest news and publications{{ end }}" data-activity-slider>
+  <div class="academic-slides">
+    {{ range $index, $slide := $slides }}<article class="academic-slide{{ if ne .kind "intro" }} academic-slide--update{{ end }}{{ if eq .kind "publication" }} academic-slide--publication{{ end }}" data-slide data-slide-kind="{{ .kind }}" {{ if ne $index 0 }}hidden{{ end }} aria-roledescription="slide" aria-label="{{ add $index 1 }} / {{ len $slides }}">
+      {{ if ne .kind "publication" }}{{ $background := resources.Get (printf "media/%s" .image) }}{{ with .photo }}{{ $background = . }}{{ end }}{{ with $background }}{{ $image := .Resize "1800x webp q85" }}<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="" aria-hidden="true" {{ if eq $index 0 }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}>{{ end }}{{ end }}
+      {{ if eq .kind "publication" }}{{ with .paper.Resources.GetMatch "featured*" }}{{ $ambient := .Resize "1600x webp q75" }}<img class="academic-slide-paper-ambient" src="{{ $ambient.RelPermalink }}" width="{{ $ambient.Width }}" height="{{ $ambient.Height }}" alt="" aria-hidden="true" loading="lazy">{{ end }}{{ end }}
+      <div class="academic-research-slide-copy">
+        <p class="academic-slide-eyebrow">{{ .eyebrow }}</p>
+        {{ if eq $index 0 }}<h1>{{ .title }}</h1>{{ else }}<h2>{{ .title }}</h2>{{ end }}
+        {{ with .description }}<p class="academic-slide-description">{{ . }}</p>{{ end }}
+        {{ with .tags }}<p class="academic-slide-tags">{{ . }}</p>{{ end }}
+        <div class="academic-hero-actions"><a class="academic-button academic-button-primary" href="{{ .url }}">{{ .link }} →</a>{{ if eq $index 0 }}<a class="academic-button academic-button-outline" href="{{ "people/" | relLangURL }}">{{ if $ko }}구성원{{ else }}Our team{{ end }} →</a>{{ end }}</div>
+      </div>
+      {{ if eq .kind "publication" }}<a class="academic-slide-paper-preview" href="{{ .url }}" aria-label="{{ .title }}">
+        {{ with .paper.Resources.GetMatch "featured*" }}{{ $figure := .Fit "1400x1000 webp q85" }}<img src="{{ $figure.RelPermalink }}" width="{{ $figure.Width }}" height="{{ $figure.Height }}" loading="lazy" alt="{{ if $ko }}{{ $slide.title }} 논문 대표 그림{{ else }}Overview figure for {{ $slide.title }}{{ end }}">
+        {{ else }}<span class="academic-slide-paper-placeholder"><span>PUBLICATION</span><strong>{{ .tags | default "MACS Research" }}</strong><span>{{ .paper.Params.publication | markdownify | plainify }}</span></span>{{ end }}
+      </a>{{ end }}
+    </article>{{ end }}
+  </div>
+  <div class="academic-slider-bar"><div class="academic-slider-dots">{{ range $i, $slide := $slides }}<button type="button" data-slide-index="{{ $i }}" aria-label="{{ if $ko }}{{ add $i 1 }}번 슬라이드{{ else }}Slide {{ add $i 1 }}{{ end }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}"></button>{{ end }}</div><div class="academic-slider-controls"><button type="button" data-prev aria-label="{{ if $ko }}이전 슬라이드{{ else }}Previous slide{{ end }}">←</button><span data-slide-count aria-live="off">1 / {{ len $slides }}</span><button type="button" data-next aria-label="{{ if $ko }}다음 슬라이드{{ else }}Next slide{{ end }}">→</button><button type="button" data-toggle aria-label="{{ if $ko }}자동 재생{{ else }}Auto-play{{ end }}" aria-pressed="false">{{ if $ko }}재생{{ else }}Play{{ end }}</button></div></div>
+</section>
+{{ with resources.Get "js/activity-slider.js" }}{{ $script := . | minify | fingerprint }}<script src="{{ $script.RelPermalink }}" defer></script>{{ end }}

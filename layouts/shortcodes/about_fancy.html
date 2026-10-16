@@ -1,43 +1,15 @@
-<section class="macs-about-fancy">
-  <div class="macs-about-hero">
-    <div class="macs-about-hero-content">
-      <span class="macs-about-kicker">About MacsLAB</span>
-      <h1>Medical AI &amp; Computational Science</h1>
-      <p>{{ if eq .Page.Language.Lang "ko" }}MacsLAB은 의료·멀티모달·응용개발을 연결해 실제 문제를 해결하는 연구를 수행합니다.{{ else }}MacsLAB conducts research that solves real-world problems by connecting medical AI, multimodality, and applied development.{{ end }}</p>
-      <a class="macs-about-cta" href="{{ "contact/" | relLangURL }}">{{ if eq .Page.Language.Lang "ko" }}Join our Lab{{ else }}Join our Lab{{ end }}</a>
+{{ $ko := eq .Page.Lang "ko" }}
+<div class="brand-page brand-about">
+  {{ partial "content/brand_page_hero" (dict "label" "ABOUT MACS" "title" (cond $ko "연구실 소개" "About MACS Lab") "description" (cond $ko "전북대학교 MACS Lab은 의료영상, 멀티모달 학습, 계산과학을 연구합니다. 모델의 원리부터 실제 환경에서의 검증과 응용까지 함께 다룹니다." "MACS Lab at Jeonbuk National University studies medical imaging, multimodal learning and computational science, from model foundations to evaluation and real-world applications.") "image" "MICCAI2026/group.jpeg" "alt" (cond $ko "MICCAI 2026에 함께 참가한 MACS 연구실 구성원" "MACS Lab members at MICCAI 2026") "caption" (cond $ko "MICCAI 2026 · Strasbourg, France" "MICCAI 2026 · Strasbourg, France") "links" (slice (dict "text" (cond $ko "연구 논문" "Publications") "url" ("publication/" | relLangURL)) (dict "text" (cond $ko "구성원 소개" "Meet our people") "url" ("people/" | relLangURL))) ) }}
+  <section class="brand-section">
+    <header class="brand-section-heading"><div><h2>{{ if $ko }}연구 분야{{ else }}Research areas{{ end }}</h2></div><a class="brand-link" href="{{ "field/" | relLangURL }}">{{ if $ko }}전체 연구 분야{{ else }}All research areas{{ end }} ↗</a></header>
+    <div class="brand-directions">
+      {{ $directions := slice
+        (dict "art" "ai" "ko" "신뢰할 수 있는 의료 AI" "en" "Trustworthy medical AI" "descKo" "병원과 촬영 장치가 달라져도 잘 작동하는 모델을 연구합니다. 의료영상 분석과 진단 지원, 개인화와 일반화를 함께 다룹니다." "descEn" "We study models that work across hospitals and imaging devices, connecting medical image analysis and diagnostic support with personalization and generalization." "path" "field/01-medical-imaging/")
+        (dict "art" "multimodal" "ko" "멀티모달 학습" "en" "Multimodal learning" "descKo" "영상·텍스트·생체신호를 함께 이해하는 멀티모달 학습을 연구합니다. 의료 데이터부터 웹툰과 미디어 콘텐츠까지 응용을 확장합니다." "descEn" "We study multimodal learning across images, text and physiological signals, with applications from medical data to webtoons and media content." "path" "field/00-ai/")
+        (dict "art" "math" "ko" "계산과학과 응용" "en" "Computational science & applications" "descKo" "최적화·통계·수학적 모델링으로 문제를 이해하고, 코드와 실험으로 검증합니다. 연구 모델을 실제 응용과 개발로 연결합니다." "descEn" "We understand problems through optimization, statistics and mathematical modeling, test ideas through code and experiments, and connect models to practical applications." "path" "field/07-computational-science/") }}
+      {{ range $directions }}<article class="brand-direction"><div><h3>{{ if $ko }}{{ .ko }}{{ else }}{{ .en }}{{ end }}</h3><p>{{ if $ko }}{{ .descKo }}{{ else }}{{ .descEn }}{{ end }}</p><a class="brand-link" href="{{ .path | relLangURL }}">{{ if $ko }}연구 주제 보기{{ else }}Explore this area{{ end }} ↗</a></div></article>{{ end }}
     </div>
-  </div>
-
-  <div class="macs-about-grid">
-    <article class="macs-about-card">
-      <h3>Research Domains</h3>
-      <ul>
-        <li>Medical AI / Medical Imaging</li>
-        <li>Vision &amp; Language / Multimodal AI</li>
-        <li>Aerospace / Contents AI</li>
-      </ul>
-    </article>
-    <article class="macs-about-card">
-      <h3>Core Methods</h3>
-      <ul>
-        <li>Domain Adaptation / Test-time Adaptation</li>
-        <li>Federated Learning / Representation Learning</li>
-        <li>Optimization / Statistical Modeling</li>
-      </ul>
-    </article>
-    <article class="macs-about-card">
-      <h3>Lab Culture</h3>
-      <ul>
-        {{ if eq .Page.Language.Lang "ko" }}
-        <li>Research + Engineering 동시 성장</li>
-        <li>논문·구현·실험의 균형 있는 수행</li>
-        <li>국제 학회/저널 목표의 팀워크</li>
-        {{ else }}
-        <li>Simultaneous growth of Research + Engineering</li>
-        <li>Balanced execution of papers, implementation, and experiments</li>
-        <li>Teamwork aimed at international conferences/journals</li>
-        {{ end }}
-      </ul>
-    </article>
-  </div>
-</section>
+  </section>
+  <section class="brand-invitation"><div><h2>{{ if $ko }}연구 참여와 협업{{ else }}Research & collaboration{{ end }}</h2><p>{{ if $ko }}연구 참여, 대학원 진학, 공동 연구에 관한 이야기를 기다립니다.{{ else }}Get in touch about research participation, graduate study or collaboration.{{ end }}</p></div><div class="brand-actions"><a class="brand-button" href="{{ "join/" | relLangURL }}">{{ if $ko }}연구 참여 안내{{ else }}Join MACS{{ end }} ↗</a><a class="brand-link" href="{{ "contact/" | relLangURL }}">{{ if $ko }}연구 협업 문의{{ else }}Contact us{{ end }} ↗</a></div></section>
+</div>

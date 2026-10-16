@@ -1,48 +1,56 @@
 main:
-  - name: About
-    url: about
+  - identifier: about
+    name: About
+    url: /en/about/
     weight: 100
-
-  - name: People
-    url: people
-    weight: 200
-  - parent: People
-    name: Professor
-    url: /en/author/professor/
-    weight: 210
-  - parent: People
-    name: Members
-    url: people
-    weight: 220
-
-  - name: Research
-    url: publication
+  - parent: about
+    identifier: about-about
+    name: 연구실 소개 (Overview)
+    url: /en/about/
+    weight: 101
+  - parent: about
+    identifier: about-join
+    name: 연구 참여 안내 (Join Us)
+    url: /en/join/
+    weight: 102
+  - identifier: research
+    name: Research
+    url: /en/field/
     weight: 300
-  - parent: Research
-    name: Publications
-    url: publication
-    weight: 310
-  - parent: Research
-    name: Research Fields
-    url: field
-    weight: 320
-
-  - name: Inform
-    url: post
-    weight: 600
-  - parent: Inform
-    name: Notifications
-    url: notification
-    weight: 610
-  - parent: Inform
+  - parent: research
+    identifier: research-field
+    name: 연구 분야 (Research Areas)
+    url: /en/field/
+    weight: 302
+  - parent: research
+    identifier: research-publication
+    name: 연구 논문 (Publications)
+    url: /en/publication/
+    weight: 301
+  - identifier: people
+    name: People
+    url: /en/people/
+    weight: 200
+  - identifier: news
     name: News
-    url: post
-    weight: 620
-  - parent: Inform
-    name: Events
-    url: event
-    weight: 630
-
-  - name: Contact
-    url: contact
-    weight: 700
+    url: /en/post/
+    weight: 400
+  - parent: news
+    identifier: news-post
+    name: 연구실 소식 (Lab News)
+    url: /en/post/
+    weight: 401
+  - parent: news
+    identifier: news-notification
+    name: 공지사항 (Announcements)
+    url: /en/notification/
+    weight: 402
+  - parent: news
+    identifier: news-event
+    name: 학술 활동 (Events)
+    url: /en/event/
+    weight: 403
+  - identifier: contact
+    name: Contact
+    url: /en/contact/
+    weight: 500

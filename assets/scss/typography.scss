@@ -1,0 +1,156 @@
+/* Shared type roles. Keep component layout and type decisions separate. */
+:root {
+  --type-hero: 35px;
+  --type-page: 30px;
+  --type-section: 22px;
+  --type-item: 18px;
+  --type-body: 15px;
+  --type-ui: 14px;
+  --type-meta: 13px;
+  --type-label: 12px;
+  --leading-heading: 1.4;
+  --leading-body: 1.8;
+  --leading-meta: 1.65;
+}
+body { font-size: var(--type-body); line-height: var(--leading-body); }
+h1, h2, h3, h4, h5, h6 { font-weight: 600; letter-spacing: -0.02em; }
+h1 { font-size: var(--type-page); line-height: var(--leading-heading); }
+h2 { font-size: var(--type-section); line-height: var(--leading-heading); }
+h3, h4 { font-size: var(--type-item); line-height: 1.55; }
+h5, h6 { font-size: var(--type-body); line-height: 1.55; }
+
+/* Page titles, including long titles on detail pages. */
+.institute-page-head h1,
+.macs-feed-list-head h1, .macs-feed-single-head h1,
+.macs-about-hero h1, .macs-contact-hero h1, .macs-field-hero h1,
+.field-single-title-wrap h1, .macs-pub-head h1,
+.macs-author-head-copy h1 {
+  font-size: var(--type-page); line-height: var(--leading-heading);
+  font-weight: 600; letter-spacing: -0.025em;
+}
+.academic-research-slide-copy h1, .academic-research-slide-copy h2 {
+  font-size: var(--type-hero); line-height: var(--leading-heading);
+  font-weight: 600; letter-spacing: -0.025em;
+}
+
+/* Section headings share a scale across home, directories and articles. */
+.academic-section-head h2,
+.academic-home .institute-content-heading h2,
+.academic-publications-showcase .academic-section-head h2,
+.institute-content-heading h2, .macs-people-section-head h2,
+.publications-year-group .publications-year-heading h2,
+.institute-about-overview h2, .institute-about-join h2,
+.institute-guide-intro > h2, .institute-research-process > h2,
+.institute-guide-contact h2, .macs-author-block h2,
+.macs-pub-block h2, .macs-pub-block .body h2, .institute-paper-intro h2,
+.field-single-prose h2, .macs-feed-single-content h2 {
+  font-size: var(--type-section); line-height: var(--leading-heading);
+  font-weight: 600; letter-spacing: -0.02em;
+}
+
+/* Item titles and names; consistent on cards and list views. */
+.academic-area h3, .academic-home .institute-project h3,
+.academic-featured-paper h3,
+.publications-year-group .publication-entry h4,
+.macs-people-card h3, .macs-people-section[data-group='professor'] h3,
+.macs-feed-list-card h2,
+.macs-field-card .field-card-body h2,
+.institute-project h3, .institute-story-grid h3,
+.institute-about-methods h3, .institute-interest-grid h3,
+.institute-process-grid h3, .institute-guide-contact aside h3,
+.macs-author-career-item h3, .macs-author-edu-item .edu-degree,
+.macs-contact-card h3, .macs-contact-map-head h3,
+.field-aside-card h2, .field-aside-card h3,
+.macs-pub-side-card h3, .macs-feed-single-content h3,
+.field-single-prose h3, .field-single-prose h4,
+.macs-feed-single-content h4, .macs-pub-block .body h3, .macs-pub-block .body h4 {
+  font-size: var(--type-item); line-height: 1.55;
+  font-weight: 600; letter-spacing: -0.015em;
+}
+.academic-news-list h3 { font-size: var(--type-body); line-height: var(--leading-body); font-weight: 500; }
+
+/* Reading text and descriptions use one size, independent of viewport. */
+.institute-page-intro p, .academic-slide-description,
+.academic-area p, .macs-field-card .field-card-body p,
+.macs-feed-list-card .card-body > p,
+.institute-about-overview p, .institute-about-methods p,
+.institute-about-join p:not(.institute-section-label),
+.institute-guide-intro > p, .institute-interest-grid p,
+.institute-process-grid p, .institute-guide-contact p:not(.institute-section-label),
+.institute-paper-intro > p:last-child,
+.institute-project > p:not(.institute-project-label),
+.institute-story-grid article > p:not(.institute-project-label),
+.macs-contact-card p, .macs-contact-card p a,
+.macs-feed-single-content, .field-single-prose, .macs-author-bio,
+.macs-pub-block p, .macs-pub-block .body {
+  font-size: var(--type-body); line-height: var(--leading-body);
+}
+.macs-feed-single-content p, .macs-feed-single-content li,
+.field-single-prose p, .field-single-prose li,
+.macs-author-bio p, .macs-author-bio li,
+.macs-pub-block .body p, .macs-pub-block .body li { font-size: inherit; line-height: inherit; }
+
+/* Metadata remains readable without competing with titles. */
+.publication-entry .publication-authors, .publication-entry .publication-venue,
+.academic-featured-paper-authors, .academic-featured-paper-meta,
+.academic-news-list time, .academic-area-en, .academic-slide-tags,
+.macs-people-card .role, .macs-people-card .org, .macs-people-card .contact,
+.macs-contact-card small, .macs-feed-list-card time,
+.macs-feed-single-meta, .macs-feed-single-meta time,
+.macs-pub-authors, .macs-pub-reference, .macs-pub-side-card li,
+.field-aside-card p, .field-aside-card a, .field-aside-card li,
+.macs-author-meta-line .role, .macs-author-meta-line .org,
+.macs-author-head-copy .contact,
+.macs-author-career-item p, .macs-author-edu-item p,
+.macs-author-edu-item .edu-dept, .macs-chip-wrap .chip, .macs-author-links a {
+  font-size: var(--type-meta); line-height: var(--leading-meta);
+}
+.macs-pub-block .body table, .field-single-prose table,
+.macs-feed-single-content table { font-size: var(--type-meta); line-height: var(--leading-meta); }
+.macs-author-head-copy h1 .name-en { font-size: var(--type-item); line-height: 1.55; font-weight: 400; }
+.macs-author-head-copy h1 .name-ko { font-size: inherit; font-weight: inherit; }
+.academic-slide-eyebrow, .institute-project-label,
+.institute-section-label, .institute-paper-intro .institute-section-label,
+.institute-process-grid article > span,
+.publication-badge, .academic-featured-paper .publication-badge,
+.publication-resource-links, .publications-filter button > span,
+.publications-year-heading > span,
+.publications-year-group .publications-category-head h3 span,
+.macs-people-section-head > span,
+.academic-paper-cover-type, .academic-paper-cover > span:last-child,
+.macs-author-edu-item .edu-period, .macs-author-career-item small,
+.macs-author-edu-item small {
+  font-size: var(--type-label); line-height: var(--leading-meta);
+}
+.publications-year-group .publications-category-head h3 {
+  font-size: var(--type-ui); line-height: 1.55; font-weight: 600;
+}
+
+/* Navigation, controls and secondary links. */
+#navbar-main .navbar-nav .nav-link, #navbar-main .dropdown-item,
+.publications-filter button, .macs-people-tabs button,
+.academic-button, .academic-section-head > a,
+.academic-home .institute-content-heading > a,
+.institute-page-intro a, .institute-small-link,
+.academic-research-slider .academic-slider-controls [data-toggle],
+.academic-research-slider .academic-slider-controls [data-slide-count] {
+  font-size: var(--type-ui); line-height: 1.55;
+}
+.institute-email { font-size: var(--type-item); line-height: 1.55; }
+.academic-research-slider .academic-slide-description { font-size: 17px; }
+.academic-research-slider .academic-slide-tags { font-size: 13px; }
+.academic-research-slider .academic-slide-eyebrow { font-size: 12px; }
+.academic-research-slider .academic-slide--update h2 {
+  font-size: var(--type-page);
+  line-height: 1.4;
+}
+.academic-slide--update .academic-hero-actions { margin-top: 8px; }
+.institute-footer-nav .institute-footer-brand { font-size: var(--type-item); font-weight: 600; }
+.institute-footer-nav .institute-footer-identity p,
+.institute-footer-nav .institute-footer-identity .institute-footer-affiliation,
+.institute-footer-nav nav a, footer p, footer .powered-by {
+  font-size: var(--type-label); line-height: var(--leading-meta);
+}
+@media(max-width:640px) {
+  :root { --type-hero: 29px; --type-page: 26px; --type-section: 20px; }
+}

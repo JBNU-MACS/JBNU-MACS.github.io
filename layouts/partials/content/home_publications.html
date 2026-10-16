@@ -1,0 +1,24 @@
+{{ $ko := eq .Lang "ko" }}
+<section class="academic-recent-papers academic-publications-showcase">
+  <header class="academic-section-head"><h2>{{ if $ko }}최근 논문{{ else }}Recent Publications{{ end }}</h2><a href="{{ "publication/" | relLangURL }}">{{ if $ko }}전체 논문 보기{{ else }}All publications{{ end }} →</a></header>
+  <div class="academic-featured-papers">
+    {{ range first 3 ((where site.RegularPages "Section" "publication").ByDate.Reverse) }}
+      {{ $item := . }}{{ $types := .Params.publication_types | default (slice) }}
+      {{ $kind := "proceedings" }}{{ $label := "Proceedings" }}
+      {{ if in $types "article-journal" }}{{ $kind = "journal" }}{{ $label = "Journal" }}
+      {{ else if or (in $types "paper-csai") (in $types "paper-conference") }}{{ $kind = "conference" }}{{ $label = "Conference" }}{{ end }}
+      <article class="academic-featured-paper">
+        <a class="academic-featured-paper-image" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
+          {{ with .Resources.GetMatch "featured*" }}{{ $img := .Fit "640x360 webp q85" }}<img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" alt="{{ if $ko }}논문 대표 그림{{ else }}Paper overview figure{{ end }}">
+          {{ else }}<span class="academic-paper-placeholder"><span>{{ $label }}</span><strong>{{ .Params.publication_short | default "MACS" }}</strong></span>{{ end }}
+        </a>
+        <div class="academic-featured-paper-content">
+          <div class="academic-paper-byline"><span>{{ $label }} <span aria-hidden="true">·</span> <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time>{{ with .Params.publication_status }} <span aria-hidden="true">·</span> {{ . }}{{ end }}</span></div>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }} <span class="academic-paper-title-arrow" aria-hidden="true">↗</span></a></h3>
+          <p class="academic-featured-paper-authors">{{ partial "content/render_publication_authors" (dict "item" . "link" false "showNotes" false "strongName" "") }}</p>
+          {{ partial "content/publication_badges" (dict "item" $item "kind" $kind) }}
+        </div>
+      </article>
+    {{ end }}
+  </div>
+</section>

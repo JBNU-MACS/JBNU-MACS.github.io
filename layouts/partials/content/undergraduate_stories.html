@@ -1,0 +1,14 @@
+{{ $ko := eq .Lang "ko" }}
+<section class="institute-student-stories">
+  <header class="institute-content-heading"><div><p class="institute-section-label">UNDERGRADUATE RESEARCH</p><h2>{{ if $ko }}학부연구생 연구 성과{{ else }}Undergraduate Research{{ end }}</h2></div></header>
+  <div class="institute-story-grid">
+    {{ $stories := slice
+      (dict "path" "post/26-10-15-WACV2027-Accepted" "label" "WACV 2027" "ko" "이준호 학부연구생, 제1저자 논문 채택" "en" "Undergraduate Jun Ho Lee's first-author paper accepted" "descKo" "단안 영상에서 관절 각도를 선택적으로 보정하는 연구로 국제학회에 논문이 채택되었습니다." "descEn" "A first-author study on selective calibration of joint angles from monocular video.")
+      (dict "path" "post/25-03-03-ICLR2025 Workshop Accepted" "label" "ICLR 2025 Workshop" "ko" "김영수 학부연구생, 원격탐사 분할 연구 발표" "en" "Undergraduate Yeongsu Kim's work accepted to an ICLR workshop" "descKo" "사용자 피드백과 적응 학습을 활용하는 연구가 ML4RS 워크숍에 채택되었습니다." "descEn" "Research on segmentation with user feedback and adaptation, accepted to ML4RS.")
+      (dict "path" "post/24-11-20-K-Health-수상" "label" "K-Health 2024" "ko" "학부연구생 팀, 의료 AI 해커톤 최우수상" "en" "An undergraduate team recognized at a medical AI hackathon" "descKo" "강다영·김수민·박세현·최서연 학생이 유방 영상 분할 모델을 개발해 수상했습니다." "descEn" "Dayoung Kang, Sumin Kim, Sehyun Park, and Seo-Yeon Choi developed a mammography segmentation model.")
+    }}
+    {{ range $stories }}{{ $story := . }}{{ with site.GetPage .path }}
+      <article><p class="institute-project-label">{{ $story.label }}</p><h3><a href="{{ .RelPermalink }}">{{ if $ko }}{{ $story.ko }}{{ else }}{{ $story.en }}{{ end }}</a></h3><p>{{ if $ko }}{{ $story.descKo }}{{ else }}{{ $story.descEn }}{{ end }}</p><a class="institute-small-link" href="{{ .RelPermalink }}">{{ if $ko }}이야기 읽기{{ else }}Read the story{{ end }} ↗</a></article>
+    {{ end }}{{ end }}
+  </div>
+</section>

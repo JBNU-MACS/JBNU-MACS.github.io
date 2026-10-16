@@ -1,0 +1,10 @@
+.macs-feed-single--photo-story .macs-feed-single-hero { display: block; }
+.macs-feed-single--photo-story .macs-feed-single-head { padding-bottom: 28px; }
+.macs-feed-single--photo-story .macs-feed-single-cover { margin: 0; border-radius: 8px; overflow: hidden; background: transparent; }
+.macs-feed-single--photo-story .macs-feed-single-cover img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; }
+.photo-story-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; margin-top: 28px; }
+.photo-story-gallery a { display: block; border-radius: 6px; overflow: hidden; }
+.photo-story-gallery img { display: block; width: 100%; height: auto; margin: 0; }
+@media(max-width:640px) {
+  .photo-story-gallery { grid-template-columns: minmax(0,1fr); gap: 16px; }
+}

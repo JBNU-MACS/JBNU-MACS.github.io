@@ -2,7 +2,17 @@
 {{ $lang := .lang }}
 {{ $avatar := "" }}
 {{ $email := ($item.Params.email | default "") }}
-{{ with $item.Resources.GetMatch "avatar*" }}{{ $avatar = .RelPermalink }}{{ end }}
+{{ with $item.Resources.GetMatch "avatar*" }}
+  {{ $source := . }}
+  {{ with .Exif }}
+    {{ $orientation := int (.Tags.Orientation | default 1) }}
+    {{ if eq $orientation 3 }}{{ $source = $source.Process "r180" }}{{ end }}
+    {{ if eq $orientation 6 }}{{ $source = $source.Process "r270" }}{{ end }}
+    {{ if eq $orientation 8 }}{{ $source = $source.Process "r90" }}{{ end }}
+  {{ end }}
+  {{ $thumbnail := $source.Fill "256x300 Center" }}
+  {{ $avatar = $thumbnail.RelPermalink }}
+{{ end }}
 
 {{/* 이름 결정 로직: en 섹션이면 name_en 우선, 없으면 Title */}}
 {{ $name := $item.Title }}

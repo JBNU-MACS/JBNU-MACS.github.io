@@ -1,48 +1,28 @@
-{{ $notificationPages := where site.RegularPages "Section" "notification" }}
-{{ $notificationPages = where $notificationPages "Params.home_hide" "ne" true }}
-{{ $notificationPages = first 4 ($notificationPages.ByDate.Reverse) }}
-
-{{ $newsPages := where site.RegularPages "Section" "post" }}
-{{ $newsPages = first 4 ($newsPages.ByDate.Reverse) }}
-
-{{ $pubPages := where site.RegularPages "Section" "publication" }}
-{{ $pubPages = first 4 ($pubPages.ByDate.Reverse) }}
-
-<div class="home-dual-feed">
-  <div class="home-dual-feed-col">
-    <h2 class="home-dual-feed-title">
-      <span>Notification</span>
-      <a class="home-dual-feed-more" href="{{ "notification/" | relLangURL }}">(More...)</a>
-    </h2>
-    <div class="home-dual-feed-list">
-      {{ range $notificationPages }}
-        {{ partial "views/community/custom_card.html" (dict "item" .) }}
-      {{ end }}
-    </div>
+{{ $ko := eq .Page.Lang "ko" }}
+<section class="lab-home-updates">
+  <div class="lab-news-column">
+    <header class="lab-section-heading"><h2>{{ if $ko }}연구실 소식{{ else }}Lab news{{ end }}</h2><a href="{{ "post/" | relLangURL }}">{{ if $ko }}전체 보기{{ else }}All news{{ end }} ↗</a></header>
+    {{ range first 4 ((where site.RegularPages "Section" "post").ByDate.Reverse) }}
+      <article class="lab-news-row"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3></article>
+    {{ end }}
+    <a class="lab-secondary-link" href="{{ "event/" | relLangURL }}">{{ if $ko }}학술 활동 및 행사{{ else }}Activities &amp; events{{ end }} ↗</a>
   </div>
-
-  <div class="home-dual-feed-col">
-    <h2 class="home-dual-feed-title">
-      <span>News</span>
-      <a class="home-dual-feed-more" href="{{ "post/" | relLangURL }}">(More...)</a>
-    </h2>
-    <div class="home-dual-feed-list">
-      {{ range $newsPages }}
-        {{ partial "views/community/custom_card.html" (dict "item" .) }}
-      {{ end }}
-    </div>
+  <div class="lab-papers-column">
+    <header class="lab-section-heading"><h2>{{ if $ko }}최근 논문{{ else }}Recent publications{{ end }}</h2><a href="{{ "publication/" | relLangURL }}">{{ if $ko }}전체 보기{{ else }}All publications{{ end }} ↗</a></header>
+    {{ range first 3 ((where site.RegularPages "Section" "publication").ByDate.Reverse) }}
+      <article class="lab-paper-row"><p>{{ .Date.Format "2006" }}{{ with .Params.publication_short }} / {{ . }}{{ end }}</p><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><div class="lab-paper-authors">{{ partial "content/render_publication_authors" (dict "item" . "link" false "showNotes" false "strongName" "") }}</div></article>
+    {{ end }}
   </div>
-
-  <div class="home-dual-feed-col">
-    <h2 class="home-dual-feed-title">
-      <span>Last Publication</span>
-      <a class="home-dual-feed-more" href="{{ "publication/" | relLangURL }}">(More...)</a>
-    </h2>
-    <div class="home-dual-feed-list">
-      {{ range $pubPages }}
-        {{ partial "views/community/custom_card.html" (dict "item" .) }}
-      {{ end }}
-    </div>
-  </div>
-</div>
-
+</section>
+<section class="institute-people">
+  {{ with site.GetPage "event/25-10-13-AIxMHC2025" }}
+    {{ with .Resources.GetMatch "aixmhc2025-team.jpeg" }}
+      <figure><img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" alt="MACS Lab at AIxMHC 2025"><figcaption>MACS Lab · AIxMHC 2025, Taichung</figcaption></figure>
+    {{ end }}
+  {{ end }}
+  <div><p class="institute-section-label">PEOPLE AT MACS</p><h2>{{ if $ko }}함께 묻고,<br>함께 나아갑니다.{{ else }}Research grows<br>through people.{{ end }}</h2><p>{{ if $ko }}연구와 구현, 실험을 함께하며 새로운 질문을 탐구합니다. MACS 연구실의 구성원과 학술 활동을 만나보세요.{{ else }}Through research, implementation, and experiments, we explore new questions together. Meet the people and activities behind MACS.{{ end }}</p><a href="{{ "people/" | relLangURL }}">{{ if $ko }}구성원 만나보기{{ else }}Meet our people{{ end }} ↗</a></div>
+</section>
+<section class="lab-join">
+  <div><h2>{{ if $ko }}함께 연구할 동료를 기다립니다.{{ else }}Explore research with us.{{ end }}</h2><p>{{ if $ko }}학부연구생·대학원 진학 및 연구 협업에 관심이 있다면 연락해 주세요.{{ else }}Get in touch about student research, graduate study, or collaboration.{{ end }}</p></div>
+  <a href="{{ "join/" | relLangURL }}">{{ if $ko }}학부연구생 안내{{ else }}Undergraduate research{{ end }} ↗</a>
+</section>

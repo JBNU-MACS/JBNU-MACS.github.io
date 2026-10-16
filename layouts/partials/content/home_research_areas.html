@@ -1,0 +1,15 @@
+{{ $ko := eq .Lang "ko" }}
+<section class="academic-areas">
+  <header class="academic-section-head"><h2>{{ if $ko }}연구 분야{{ else }}Research Areas{{ end }}</h2><a href="{{ "field/" | relLangURL }}">{{ if $ko }}전체 보기{{ else }}View all{{ end }} →</a></header>
+  <div class="academic-areas-grid">
+    {{ $areas := slice
+      (dict "art" "ai" "ko" "인공지능" "en" "Artificial Intelligence" "url" "field/00-ai/" "descKo" "의료·항공우주·콘텐츠에 적용하는 AI 기술" "descEn" "AI methods for medicine, aerospace, and content applications")
+      (dict "art" "multimodal" "ko" "멀티모달" "en" "Multimodal Learning" "url" "field/00-ai/" "descKo" "영상·언어·생체신호를 함께 이해하는 모델" "descEn" "Learning across images, language, and physiological signals")
+      (dict "art" "math" "ko" "의료수학" "en" "Medical Mathematics" "url" "field/05-mathematics/" "descKo" "의료 데이터의 통계 분석과 질병의 수학적 모델링" "descEn" "Statistical analysis and mathematical modeling for medicine")
+      (dict "art" "contents" "ko" "콘텐츠" "en" "Contents AI" "url" "field/03-contents/" "descKo" "웹툰과 미디어 콘텐츠를 분석하고 생성하는 AI" "descEn" "AI for analyzing and generating webtoons and media content")
+      (dict "art" "development" "ko" "개발" "en" "Development" "url" "field/06-development/" "descKo" "AI 모델을 웹·앱으로 연결하는 응용 개발" "descEn" "Full-stack applications that bring research models into use")
+      (dict "art" "solutions" "ko" "솔루션" "en" "Solutions" "url" "field/06-development/" "descKo" "AI와 응용 시스템을 잇는 통합 솔루션" "descEn" "Integrated solutions combining AI and application systems")
+    }}
+    {{ range $areas }}<a class="academic-area" href="{{ .url | relLangURL }}">{{ with resources.Get (printf "media/research/icons/%s.svg" .art) }}<img class="academic-area-art" src="{{ .RelPermalink }}" width="32" height="32" alt="" loading="lazy" aria-hidden="true">{{ end }}<div class="academic-area-copy"><div class="academic-area-heading"><h3>{{ if $ko }}{{ .ko }}{{ else }}{{ .en }}{{ end }}</h3>{{ if $ko }}<span class="academic-area-en">{{ .en }}</span>{{ end }}</div><p>{{ if $ko }}{{ .descKo }}{{ else }}{{ .descEn }}{{ end }}</p><span class="academic-area-arrow" aria-hidden="true">↗</span></div></a>{{ end }}
+  </div>
+</section>

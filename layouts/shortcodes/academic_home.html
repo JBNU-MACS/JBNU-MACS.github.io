@@ -1,0 +1,14 @@
+{{ $ko := eq .Page.Lang "ko" }}
+<div class="academic-home">
+  {{ partial "content/home_research_slider" .Page }}
+  {{ partial "content/home_notices" .Page }}
+  <section class="academic-news">
+    <header class="academic-section-head"><h2>{{ if $ko }}연구실 소식{{ else }}News{{ end }}</h2><a href="{{ "post/" | relLangURL }}">{{ if $ko }}전체 보기{{ else }}View all{{ end }} →</a></header>
+    <div class="academic-news-list">
+      {{ range first 5 ((where site.RegularPages "Section" "post").ByDate.Reverse) }}<article><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3></article>{{ end }}
+    </div>
+  </section>
+  {{ partial "content/home_research_areas" .Page }}
+
+  {{ partial "content/home_publications" .Page }}
+</div>

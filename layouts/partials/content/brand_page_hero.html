@@ -1,0 +1,4 @@
+<header class="brand-hero">
+  <div class="brand-hero-copy"><h1>{{ .title }}</h1><p class="brand-hero-description">{{ .description }}</p><div class="brand-actions">{{ range .links }}<a class="brand-link" href="{{ .url }}">{{ .text }} <span aria-hidden="true">↗</span></a>{{ end }}</div></div>
+  {{ if not .noPhoto }}<figure class="brand-hero-photo">{{ with resources.Get (printf "media/%s" .image) }}{{ $photo := .Fit "1600x1000 webp q85" }}<img src="{{ $photo.RelPermalink }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" alt="{{ $.alt }}" fetchpriority="high">{{ end }}<figcaption><span>{{ .caption }}</span><a class="brand-photo-link" href="{{ "event/26-10-16-miccai2026-visit/" | relLangURL }}">{{ if eq site.Language.Lang "ko" }}참가 소식 보기{{ else }}Read about the visit{{ end }} ↗</a></figcaption></figure>{{ end }}
+</header>

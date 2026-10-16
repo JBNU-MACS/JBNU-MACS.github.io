@@ -10,7 +10,7 @@
   <article class="macs-pub-single">
     <header class="macs-pub-hero{{ if not $hero }} no-hero{{ end }}">
       <div class="macs-pub-head">
-        <p class="kicker">Publication</p>
+        <p class="kicker"><a href="{{ "publication/" | relLangURL }}">{{ if eq $p.Lang "ko" }}연구 논문{{ else }}Publications{{ end }}</a></p>
         <h1>{{ $p.Title }}</h1>
 
         <div class="macs-pub-authors">
@@ -73,6 +73,9 @@
       </aside>
 
       <div class="macs-pub-content">
+        {{ with $p.Params.research_question }}
+          <section class="institute-paper-intro"><p class="institute-section-label">RESEARCH OVERVIEW</p><h2>{{ . }}</h2>{{ with $p.Params.research_overview }}<p>{{ . }}</p>{{ end }}</section>
+        {{ end }}
         {{ with $p.Params.abstract }}
           <section class="macs-pub-block">
             <h2>Abstract</h2>

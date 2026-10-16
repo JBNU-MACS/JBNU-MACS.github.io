@@ -24,6 +24,9 @@ highlight: true
 publication: Asian Conference on Computer Vision 2026
 publication_short: ACCV2026
 
+research_question: "촬영 기기가 달라져도 피부 분석은 일관될 수 있을까?"
+research_overview: "스마트폰과 조명 조건이 달라지면 피부 이미지도 달라집니다. 장치와 조명의 차이를 다루고 피부 바이오마커 간 관계를 함께 학습하는 프레임워크를 제안합니다."
+
 abstract: >-
   Smartphone-based skin analysis is limited by device heterogeneity, uncontrolled illumination, and subject-specific variability, yet existing methods treat calibration, domain adaptation, and multi-task prediction in isolation without capturing the causal structure underlying biomarker interactions. We propose an end-to-end framework for device-invariant skin diagnosis built on three principles: (i) hierarchical hybrid normalization formulated as a causal intervention to disentangle diagnostic signals from device-induced nuisance, (ii) a keypoint-guided Skin Mixture-of-Experts that organizes experts around dermatological biomarkers with conditional routing, and (iii) a causal expert deliberation module that enables experts to exchange evidence through clinically motivated dependency constraints, moving beyond simple expert averaging to structured causal reasoning over multi-biomarker outputs. Experiments on multiple public dermatology benchmarks demonstrate consistent improvements over strong 2024--2025 vision and medical foundation baselines.
 

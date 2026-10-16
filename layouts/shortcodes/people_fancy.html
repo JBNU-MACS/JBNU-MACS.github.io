@@ -16,9 +16,10 @@
 {{ $alumni := sort (where $all "Params.user_groups" "intersect" (slice "Alumni")) "Title" }}
 
 <section class="macs-people-fancy" id="macs-people-fancy">
-  <header class="macs-people-fancy-head">
-    <h1>{{ if eq .Page.Language.Lang "ko" }}구성원{{ else }}People{{ end }}</h1>
-  </header>
+  {{ $ko := eq .Page.Lang "ko" }}
+  {{ $title := "People" }}{{ $description := "Meet our faculty, graduate students, undergraduate researchers, and alumni. Explore the people and work behind MACS." }}
+  {{ if $ko }}{{ $title = "구성원" }}{{ $description = "지도교수와 대학원생, 학부연구생, 졸업생의 연구와 활동을 만나보세요. 서로 다른 관심사에서 새로운 질문을 함께 찾습니다." }}{{ end }}
+  {{ partial "content/institute_page_head" (dict "label" "PEOPLE" "title" $title "description" $description) }}
 
   <nav class="macs-people-tabs" aria-label="People categories">
     <button type="button" class="is-active" data-tab="all">{{ if eq .Page.Language.Lang "ko" }}전체{{ else }}All{{ end }}</button>

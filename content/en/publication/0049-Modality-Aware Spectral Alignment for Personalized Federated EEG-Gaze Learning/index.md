@@ -29,6 +29,9 @@ jcr_percentile: Q2
 jcr_category: Engineering, Electrical & Electronic
 highlight: true
 
+research_question: "What can EEG and eye-gaze signals tell us together?"
+research_overview: "This work combines EEG and gaze for surgical performance prediction. Personalized federated learning handles individual differences while retaining raw signals at each client."
+
 abstract: >-
   FedAlign-RAS predicts performance in robot-assisted surgery by combining EEG recordings with eye-gaze measurements in a personalized federated model. Shared encoders learn common representations, while small modules maintained by each client align spectral and temporal characteristics to address differences between individuals and between modalities. Evaluation uses a PhysioNet surgical-performance dataset, with additional pretraining on public recordings from consumer EEG and eye-tracking devices. The reported comparisons favor this personalized approach over centralized training, independent local models, and conventional federated learning, while retaining the original signals at each client.
 

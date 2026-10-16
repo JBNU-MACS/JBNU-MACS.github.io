@@ -6,7 +6,7 @@
 {{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*thumb*" }}{{ end }}
 {{ $summary := trim ($p.Summary | plainify) " \n\r\t" }}
 {{ $newsTranslations := slice }}
-{{ if eq $p.Section "post" }}
+{{ if or (eq $p.Section "post") $p.Params.photo_story }}
   {{ range $language := slice "ko" "en" }}
     {{ range $translation := $p.AllTranslations }}
       {{ if eq $translation.Lang $language }}
@@ -23,7 +23,7 @@
 {{ end }}
 
 <div class="universal-wrapper">
-  <article class="macs-feed-single macs-feed-single--{{ $kindClass }}">
+  <article class="macs-feed-single macs-feed-single--{{ $kindClass }}{{ if $p.Params.photo_story }} macs-feed-single--photo-story{{ end }}">
     <header class="macs-feed-single-hero{{ if not $heroRes }} no-hero{{ end }}">
       <div class="macs-feed-single-head">
         <div class="macs-feed-single-kicker">
@@ -52,8 +52,9 @@
       </div>
 
       {{ with $heroRes }}
+        {{ $cover := . }}{{ if $p.Params.photo_story }}{{ $cover = .Fit "1800x1200 webp q85" }}{{ end }}
         <figure class="macs-feed-single-cover">
-          <img src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
+          <img src="{{ $cover.RelPermalink }}" alt="{{ $p.Title }}">
         </figure>
       {{ end }}
     </header>
@@ -73,6 +74,7 @@
           {{ $p.Content }}
         {{ end }}
       </div>
+      {{ if $p.Params.photo_story }}{{ partial "content/photo_story_gallery" $p }}{{ end }}
     </section>
 
     <footer class="macs-feed-single-foot">

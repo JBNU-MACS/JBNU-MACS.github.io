@@ -27,23 +27,10 @@
 {{- $total := len $items -}}
 
 <div class="universal-wrapper macs-field-shell">
-  <section class="macs-field-hero" aria-labelledby="field-hero-title">
-    <div class="hero-grid-bg" aria-hidden="true"></div>
-    <div class="hero-content">
-      <p class="hero-kicker">MacsLAB Research Field</p>
-      <h1 id="field-hero-title">{{ $page.Title }}</h1>
-      <p class="hero-summary">
-        {{ if eq .Page.Language.Lang "ko" }}
-        AI 이론부터 의료/헬스케어, 항공우주, 콘텐츠, 개발, 그리고 계산과학까지. 문제 중심으로 연결된 연구 스펙트럼을 구축합니다.
-        {{ else }}
-        From AI theory to medical/healthcare, aerospace, contents, development, and computational science. We build a research spectrum connected through problem-oriented approaches.
-        {{ end }}
-      </p>
-      <div class="hero-meta">
-        <span><strong>{{ $total }}</strong> Research Tracks</span>
-      </div>
-    </div>
-  </section>
+  {{ $ko := eq $page.Lang "ko" }}
+  {{ $title := "Research" }}{{ $desc := "From medical images to webtoons and human movement, explore the problems and methods we study. Follow individual areas for an overview and related publications." }}{{ $link := "Related publications" }}
+  {{ if $ko }}{{ $title = "연구 분야" }}{{ $desc = "의료 영상부터 웹툰, 사람의 움직임까지. 관심 있는 문제를 골라 연구의 배경과 방법을 살펴보세요. 각 분야에서 관련 내용과 연구 논문으로 이어집니다." }}{{ $link = "관련 연구 논문" }}{{ end }}
+  {{ partial "content/institute_page_head" (dict "label" "RESEARCH" "title" $title "description" $desc "link" (dict "url" ("publication/" | relLangURL) "text" $link)) }}
 
   <section class="macs-field-grid" aria-label="Research field cards">
     {{ range $idx, $item := $items }}

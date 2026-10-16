@@ -1,0 +1,106 @@
+/* Year → publication type → paper: three distinct levels. */
+.institute-publications-page > .institute-page-head {
+  padding: 0 0 28px; margin: 34px 0 28px; border: 0; border-bottom: 1px solid #e0e6ed;
+  border-radius: 0; background: transparent; box-shadow: none;
+}
+.institute-publications-page > .publications-index { margin-inline: 0; }
+.publications-index .publications-filter {
+  padding: 0 0 24px; margin-bottom: 8px; gap: 8px; border: 0; border-radius: 0;
+  background: transparent; box-shadow: none;
+}
+.publications-index .publications-filter button {
+  padding: 9px 14px; border: 1px solid #dce4ec; border-radius: 6px;
+  background: #fff; color: #5b6a7c; box-shadow: none;
+}
+.publications-index .publications-filter button[aria-pressed='true'] { border-color: #2e4b69; background: #2e4b69; color: #fff; box-shadow: none; }
+.publications-index .publications-filter button[aria-pressed='true'] > span { color: #d9e4ef; }
+.publications-year-filter { display: flex; align-items: center; gap: 10px; margin: 0 0 0 auto; color: #68798b; font-size: 13px; }
+.publications-year-filter select { min-width: 142px; margin: 0; padding: 9px 30px 9px 12px; border: 1px solid #dce4ec; border-radius: 6px; background-color: #fff; color: #344e68; font: inherit; font-size: 14px; line-height: 1.5; cursor: pointer; }
+.publications-year-filter select:focus-visible { outline: 2px solid #4c779f; outline-offset: 2px; }
+.publications-empty { padding: 32px 20px; margin: 0; border: 1px solid #e0e6ed; border-radius: 8px; color: #758294; font-size: 14px; text-align: center; }
+.publications-empty[hidden] { display: none !important; }
+.publications-index .publications-year-group {
+  display: grid; grid-template-columns: 92px minmax(0,1fr); gap: 28px;
+  padding-top: 26px; margin-bottom: 42px; border-top: 2px solid #415970;
+}
+.publications-index .publications-year-heading {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
+  position: sticky; top: 94px; align-self: start; margin: 0; padding: 0; border: 0;
+}
+.publications-index .publications-year-heading h2 { color: #20374e; font-size: 26px; line-height: 1.2; font-weight: 600; }
+.publications-index .publications-year-heading > span { color: #85909c; font-size: 12px; }
+.publications-additional { margin-top: 60px; }
+.publications-additional[hidden] { display: none !important; }
+.publications-additional-heading { display: flex; align-items: baseline; gap: 14px; margin-bottom: 24px; }
+.publications-additional-heading h2 { margin: 0; color: #31445b; font-size: var(--type-section); font-weight: 600; }
+.publications-additional-heading > span { color: #85909c; font-size: 12px; }
+.publications-index .publications-additional .publications-year-heading h3 { margin: 0; color: #20374e; font-size: 26px; line-height: 1.2; font-weight: 600; }
+.publications-index .publications-additional .publications-year-group { border-top-color: #a1abb7; }
+.publications-index .publications-year-content { min-width: 0; }
+.publications-index .publications-year-content:has(> [data-category='conference']:not([hidden])):has(> [data-category='journal']:not([hidden])) {
+  display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; align-items: start;
+}
+.publications-index .publications-year-content > [data-category='conference'] { grid-column: 1; }
+.publications-index .publications-year-content > [data-category='journal'] { grid-column: 2; }
+.publications-index .publications-year-content > [data-category='proceedings'] { grid-column: 1 / -1; }
+.publications-index .publications-year-content:has(> [data-category='conference']:not([hidden])):has(> [data-category='journal']:not([hidden])) > .publications-category { margin-bottom: 0; }
+.publications-index .publications-category {
+  margin: 0 0 24px; overflow: hidden; border: 1px solid #dce5ee;
+  border-radius: 8px; background: #fff;
+}
+.publications-index .publications-category-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin: 0; padding: 14px 22px; border: 0; border-bottom: 1px solid #dce5ee;
+  background: #edf3f9;
+}
+.publications-index .publications-category-head > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.publications-index .publications-category-head h3 { margin: 0; color: #345777; font-size: 16px; line-height: 1.5; font-weight: 600; }
+.publications-index .publications-category-head p { margin: 0; color: #6b8299; font-size: 12px; line-height: 1.5; }
+.publications-index .publications-category-count { color: #6b8299; font-size: 12px; white-space: nowrap; }
+.publications-index [data-category='journal'] { border-color: #d8e5df; }
+.publications-index [data-category='journal'] .publications-category-head { background: #eef5f1; border-bottom-color: #d8e5df; }
+.publications-index [data-category='journal'] .publications-category-head h3 { color: #3a695b; }
+.publications-index [data-category='journal'] .publications-category-head p,
+.publications-index [data-category='journal'] .publications-category-count { color: #708b7f; }
+.publications-index [data-category='proceedings'] .publications-category-head { background: #f2f3f5; }
+.publications-index .publications-list { display: block; margin: 0; padding: 0; list-style: none; }
+.publications-index .publication-entry,
+.publications-index .publication-entry:last-child {
+  margin: 0; padding: 22px; border: 0; border-bottom: 1px solid #e2e8ef;
+  border-radius: 0; background: #fff; box-shadow: none;
+}
+.publications-index .publication-entry:last-child { border-bottom: 0; }
+.publications-index .publication-entry h4 { margin: 0 0 10px; font-size: 18px; line-height: 1.6; font-weight: 600; }
+.publications-index .publication-entry h4 a { color: #22364c; }
+.publications-index .publication-entry h4 a:hover { color: #336c9a; }
+.publications-index .publication-authors { margin: 0 0 5px; color: #687789; font-size: 13px; line-height: 1.75; }
+.publications-index .publication-venue { margin: 0; color: #84909e; font-size: 13px; line-height: 1.75; }
+.publications-index .publication-venue i { font-style: normal; }
+.publication-entry-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 20px; margin-top: 15px; }
+.publication-entry-footer .publication-badges { margin: 0; gap: 6px; }
+.publication-entry-footer .publication-badge { padding: 2px 7px; font-size: 12px; }
+.publication-entry-footer .publication-resource-links { display: flex; flex-wrap: wrap; gap: 14px; margin: 0; padding: 0; border: 0; font-size: 12px; }
+.publication-entry-footer .publication-resource-links a { color: #5d7893; text-decoration: none; border: 0; }
+.publication-entry-footer .publication-resource-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media(max-width:900px) {
+  .publications-index .publications-year-content:has(> [data-category='conference']:not([hidden])):has(> [data-category='journal']:not([hidden])) { display: block; }
+  .publications-index .publications-year-content:has(> [data-category='conference']:not([hidden])):has(> [data-category='journal']:not([hidden])) > .publications-category { margin-bottom: 24px; }
+}
+@media(max-width:640px) {
+  .institute-publications-page > .institute-page-head { margin-top: 24px; padding-bottom: 24px; }
+  .publications-index .publications-filter { gap: 7px; padding-bottom: 20px; }
+  .publications-index .publications-filter button { padding: 8px 10px; }
+  .publications-year-filter { width: 100%; margin: 8px 0 0; }
+  .publications-year-filter select { flex: 1; }
+  .publications-index .publications-year-group { grid-template-columns: minmax(0,1fr); gap: 18px; padding-top: 20px; margin-bottom: 32px; }
+  .publications-index .publications-year-heading { position: static; flex-direction: row; align-items: baseline; gap: 12px; }
+  .publications-index .publications-year-heading h2 { font-size: 24px; }
+  .publications-index .publications-additional .publications-year-heading h3 { font-size: 24px; }
+  .publications-additional { margin-top: 38px; }
+  .publications-index .publications-category-head { padding: 12px 16px; }
+  .publications-index .publications-category-head > div { display: block; }
+  .publications-index .publications-category-head p { margin-top: 3px; }
+  .publications-index .publication-entry, .publications-index .publication-entry:last-child { padding: 18px 16px; }
+  .publications-index .publication-entry h4 { font-size: 17px; }
+  .publication-entry-footer { align-items: flex-start; gap: 12px; }
+}

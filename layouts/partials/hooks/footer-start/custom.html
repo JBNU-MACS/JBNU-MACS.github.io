@@ -1,0 +1,14 @@
+{{ $ko := eq .Lang "ko" }}
+<div class="institute-footer-nav">
+  <div class="institute-footer-identity">
+    <a class="institute-footer-brand" href="{{ "/" | relLangURL }}">MACS LAB</a>
+    <p class="institute-footer-description">Medical AI &amp; Computational Science</p>
+    <p class="institute-footer-affiliation">{{ if $ko }}전북대학교{{ else }}Jeonbuk National University{{ end }} · Jeonju, Korea</p>
+  </div>
+  <nav aria-label="{{ if $ko }}하단 메뉴{{ else }}Footer navigation{{ end }}">
+    <a href="{{ "field/" | relLangURL }}">{{ if $ko }}연구 분야{{ else }}Research{{ end }}</a>
+    <a href="{{ "publication/" | relLangURL }}">{{ if $ko }}논문{{ else }}Publications{{ end }}</a>
+    <a href="{{ "people/" | relLangURL }}">{{ if $ko }}구성원{{ else }}People{{ end }}</a>
+    <a href="{{ "contact/" | relLangURL }}">{{ if $ko }}연락처{{ else }}Contact{{ end }}</a>
+  </nav>
+</div>

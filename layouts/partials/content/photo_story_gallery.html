@@ -1,0 +1,5 @@
+{{ with .Resources.Match "gallery-*" }}
+<div class="photo-story-gallery">
+  {{ range $i, $photo := . }}{{ $image := .Fit "1000x700 webp q85" }}<a href="{{ .RelPermalink }}" target="_blank" rel="noopener" aria-label="{{ if eq site.Language.Lang "ko" }}참가 사진 {{ add $i 1 }} 크게 보기{{ else }}Open group photo {{ add $i 1 }}{{ end }}"><img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ if eq site.Language.Lang "ko" }}MICCAI 2026 현장 단체사진 {{ add $i 1 }}{{ else }}Group photo at MICCAI 2026, {{ add $i 1 }}{{ end }}" loading="lazy"></a>{{ end }}
+</div>
+{{ end }}

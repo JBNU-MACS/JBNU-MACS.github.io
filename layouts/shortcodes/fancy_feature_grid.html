@@ -1,91 +1,15 @@
-<section class="macs-feature-grid-wrap">
-  <div class="macs-feature-grid">
-    <article class="macs-feature-card" data-title="{{ if eq .Page.Language.Lang "ko" }}인공지능(AI){{ else }}Artificial Intelligence{{ end }}" data-desc="{{ if eq .Page.Language.Lang "ko" }}의료 (Medical), 항공우주 (Aerospace), 콘텐츠 (Contents) 등 다양한 특성화 분야에 적응형 AI 기술 적용.{{ else }}Applying adaptive AI technologies to specialized fields such as Medical, Aerospace, and Contents.{{ end }}">
-      <div class="macs-feature-icon"><i class="fas fa-code-branch"></i></div>
-      <h3>{{ if eq .Page.Language.Lang "ko" }}인공지능(AI){{ else }}AI{{ end }}</h3>
-      <p>{{ if eq .Page.Language.Lang "ko" }}의료 (Medical), 항공우주 (Aerospace), 콘텐츠 (Contents) 등 다양한 특성화 분야에 적응형 AI 기술 적용.{{ else }}Applying adaptive AI technologies to specialized fields such as Medical, Aerospace, and Contents.{{ end }}</p>
-    </article>
-
-    <article class="macs-feature-card" data-title="{{ if eq .Page.Language.Lang "ko" }}멀티모달 (Multi-modality){{ else }}Multi-modality{{ end }}" data-desc="{{ if eq .Page.Language.Lang "ko" }}Vision &amp; Language 분야의 기반 AI 기술 개발 및 관련 응용 애플리케이션에 기술 적용.{{ else }}Developing core AI technologies in Vision & Language and applying them to various applications.{{ end }}">
-      <div class="macs-feature-icon"><i class="fas fa-globe"></i></div>
-      <h3>{{ if eq .Page.Language.Lang "ko" }}멀티모달(Multi-modality){{ else }}Multi-modality{{ end }}</h3>
-      <p>{{ if eq .Page.Language.Lang "ko" }}Vision &amp; Language 분야의 기반 AI 기술 개발 및 관련 응용 애플리케이션에 기술 적용.{{ else }}Developing core AI technologies in Vision & Language and applying them to various applications.{{ end }}</p>
-    </article>
-
-    <article class="macs-feature-card" data-title="{{ if eq .Page.Language.Lang "ko" }}의료수학 (Medical Math){{ else }}Medical Mathematics{{ end }}" data-desc="{{ if eq .Page.Language.Lang "ko" }}의료 분야에 대한 통계 분석 수행 및 의료 질병에 대한 수학적인 모델링 관련 연구 수행.{{ else }}Performing statistical analysis and mathematical modeling for medical diseases and healthcare.{{ end }}">
-      <div class="macs-feature-icon"><i class="fas fa-calculator"></i></div>
-      <h3>{{ if eq .Page.Language.Lang "ko" }}의료수학(Medical Math){{ else }}Medical Math{{ end }}</h3>
-      <p>{{ if eq .Page.Language.Lang "ko" }}의료 분야에 대한 통계 분석 수행 및 의료 질병에 대한 수학적인 모델링 관련 연구 수행.{{ else }}Performing statistical analysis and mathematical modeling for medical diseases and healthcare.{{ end }}</p>
-    </article>
-
-    <article class="macs-feature-card" data-title="{{ if eq .Page.Language.Lang "ko" }}콘텐츠 (Contents){{ else }}Contents AI{{ end }}" data-desc="{{ if eq .Page.Language.Lang "ko" }}웹툰 및 미디어 콘텐츠와 관련된 AI 기반 기술 개발 및 고도화.{{ else }}Developing and advancing AI-based technologies related to webtoons and media contents.{{ end }}">
-      <div class="macs-feature-icon"><i class="fas fa-comment-dots"></i></div>
-      <h3>{{ if eq .Page.Language.Lang "ko" }}콘텐츠 (Contents){{ else }}Contents{{ end }}</h3>
-      <p>{{ if eq .Page.Language.Lang "ko" }}웹툰 및 미디어 콘텐츠와 관련된 AI 기반 기술 개발 및 고도화.{{ else }}Developing and advancing AI-based technologies related to webtoons and media contents.{{ end }}</p>
-    </article>
-
-    <article class="macs-feature-card" data-title="{{ if eq .Page.Language.Lang "ko" }}개발 (Development){{ else }}Development{{ end }}" data-desc="{{ if eq .Page.Language.Lang "ko" }}Full-Stack 기반의 응용 애플리케이션 개발.{{ else }}Developing applications based on Full-Stack engineering.{{ end }}">
-      <div class="macs-feature-icon"><i class="fas fa-laptop"></i></div>
-      <h3>{{ if eq .Page.Language.Lang "ko" }}개발 (Development){{ else }}Development{{ end }}</h3>
-      <p>{{ if eq .Page.Language.Lang "ko" }}Full-Stack 기반의 응용 애플리케이션 개발.{{ else }}Developing applications based on Full-Stack engineering.{{ end }}</p>
-    </article>
-
-    <article class="macs-feature-card" data-title="{{ if eq .Page.Language.Lang "ko" }}솔루션 (Solution){{ else }}Solution{{ end }}" data-desc="{{ if eq .Page.Language.Lang "ko" }}AI 기반기술 및 관련 애플리케이션에 적용을 통한 통합 솔루션 개발.{{ else }}Developing integrated solutions through the application of core AI technologies.{{ end }}">
-      <div class="macs-feature-icon"><i class="fab fa-app-store-ios"></i></div>
-      <h3>{{ if eq .Page.Language.Lang "ko" }}솔루션 (Solution){{ else }}Solution{{ end }}</h3>
-      <p>{{ if eq .Page.Language.Lang "ko" }}AI 기반기술 및 관련 애플리케이션에 적용을 통한 통합 솔루션 개발.{{ else }}Developing integrated solutions through the application of core AI technologies.{{ end }}</p>
-    </article>
+{{ $ko := eq .Page.Lang "ko" }}
+{{ partial "content/student_research_examples" .Page }}
+<section class="institute-research">
+  <div class="institute-research-head">
+    <div><p class="institute-section-label">OUR RESEARCH</p><h2>{{ if $ko }}데이터를 이해하고,<br>가능성을 확장합니다.{{ else }}Understanding data.<br>Expanding possibilities.{{ end }}</h2></div>
+    <a href="{{ "field/" | relLangURL }}">{{ if $ko }}전체 연구 분야{{ else }}Explore our research{{ end }} <span aria-hidden="true">↗</span></a>
   </div>
-
-  <div class="macs-feature-modal" id="macs-feature-modal" aria-hidden="true">
-    <div class="macs-feature-modal-inner" role="dialog" aria-modal="true" aria-labelledby="macs-feature-modal-title">
-      <button type="button" class="macs-feature-modal-close" aria-label="{{ if eq .Page.Language.Lang "ko" }}닫기{{ else }}Close{{ end }}">&times;</button>
-      <h4 id="macs-feature-modal-title"></h4>
-      <p id="macs-feature-modal-desc"></p>
-    </div>
+  <div class="institute-research-tracks">
+    <article><span>01</span><h3><a href="{{ "field/01-medical-imaging/" | relLangURL }}">Medical Imaging</a></h3><p>{{ if $ko }}의료 영상의 분할·분석부터 진단 지원까지. 임상 데이터의 차이에 강건한 모델을 연구합니다.{{ else }}From image segmentation and analysis to diagnostic support, we develop models robust to variation in clinical data.{{ end }}</p><a class="institute-track-link" href="{{ "field/01-medical-imaging/" | relLangURL }}">{{ if $ko }}연구 주제 보기{{ else }}View research{{ end }} ↗</a></article>
+    <article><span>02</span><h3><a href="{{ "field/00-ai/" | relLangURL }}">Multimodal Intelligence</a></h3><p>{{ if $ko }}영상·언어·생체신호를 함께 이해합니다. 다양한 데이터와 사람을 연결하는 AI를 연구합니다.{{ else }}We connect images, language, and physiological signals through AI that learns across different sources of information.{{ end }}</p><a class="institute-track-link" href="{{ "field/00-ai/" | relLangURL }}">{{ if $ko }}연구 주제 보기{{ else }}View research{{ end }} ↗</a></article>
+    <article><span>03</span><h3><a href="{{ "field/07-computational-science/" | relLangURL }}">Computational Science</a></h3><p>{{ if $ko }}통계와 수학적 모델링으로 복잡한 문제를 다룹니다. 이론을 실제 응용과 시스템으로 연결합니다.{{ else }}Statistics and mathematical modeling help us address complex problems and connect theory with practical applications.{{ end }}</p><a class="institute-track-link" href="{{ "field/07-computational-science/" | relLangURL }}">{{ if $ko }}연구 주제 보기{{ else }}View research{{ end }} ↗</a></article>
   </div>
 </section>
 
-<script>
-  (function () {
-    var root = document.currentScript && document.currentScript.previousElementSibling;
-    if (!root) return;
-    var cards = root.querySelectorAll('.macs-feature-card');
-    var modal = root.querySelector('#macs-feature-modal');
-    var title = root.querySelector('#macs-feature-modal-title');
-    var desc = root.querySelector('#macs-feature-modal-desc');
-    var closeBtn = root.querySelector('.macs-feature-modal-close');
-    if (!cards.length || !modal || !title || !desc || !closeBtn) return;
-
-    function isMobile() {
-      return window.matchMedia('(max-width: 767px)').matches;
-    }
-
-    function openModal(t, d) {
-      title.textContent = t || '';
-      desc.textContent = d || '';
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    cards.forEach(function (card) {
-      card.addEventListener('click', function () {
-        if (!isMobile()) return;
-        openModal(card.getAttribute('data-title'), card.getAttribute('data-desc'));
-      });
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal) closeModal();
-    });
-  })();
-</script>
-
+{{ partial "content/undergraduate_stories" .Page }}

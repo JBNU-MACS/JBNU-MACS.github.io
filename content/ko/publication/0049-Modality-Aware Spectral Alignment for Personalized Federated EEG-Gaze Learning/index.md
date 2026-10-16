@@ -29,6 +29,9 @@ jcr_percentile: Q2
 jcr_category: Engineering, Electrical & Electronic
 highlight: true
 
+research_question: "뇌파와 시선 정보를 함께 보면 무엇을 알 수 있을까?"
+research_overview: "뇌파와 시선 데이터를 결합해 로봇 보조 수술 수행 능력을 예측합니다. 개인별 신호 차이에 적응하면서 원시 데이터를 각 클라이언트에 유지하는 연합학습을 연구합니다."
+
 abstract: >-
   FedAlign-RAS predicts performance in robot-assisted surgery by combining EEG recordings with eye-gaze measurements in a personalized federated model. Shared encoders learn common representations, while small modules maintained by each client align spectral and temporal characteristics to address differences between individuals and between modalities. Evaluation uses a PhysioNet surgical-performance dataset, with additional pretraining on public recordings from consumer EEG and eye-tracking devices. The reported comparisons favor this personalized approach over centralized training, independent local models, and conventional federated learning, while retaining the original signals at each client.
 

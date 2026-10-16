@@ -1,0 +1,23 @@
+{{ $ko := eq .Lang "ko" }}
+<section class="institute-projects">
+  <header class="institute-content-heading"><div><p class="institute-section-label">RESEARCH IN PRACTICE</p><h2>{{ if $ko }}주요 연구{{ else }}Research Highlights{{ end }}</h2></div><a href="{{ "publication/" | relLangURL }}">{{ if $ko }}연구 논문 전체 보기{{ else }}All publications{{ end }} ↗</a></header>
+  <div class="institute-project-grid">
+    {{ $examples := slice
+      (dict "path" "publication/0048-Learning When to Correct Selective Calibration for Monocular Kinematics" "ko" "영상만으로 사람의 움직임을 정확하게 측정할 수 있을까?" "en" "Can video measure human movement more accurately?" "descKo" "이미 정확한 관절 각도는 유지하고, 보정이 도움이 되는 순간만 찾아내는 연구입니다." "descEn" "Learning when to keep an accurate joint-angle estimate and when a correction will help." "label" "Movement analysis · WACV 2027")
+      (dict "path" "publication/0046-SFXGraph Causal-Compositional Graph Learning for Stylized Sound Effects in Webtoons" "ko" "AI는 웹툰 속 효과음도 읽을 수 있을까?" "en" "Can AI read the sound effects drawn into webtoons?" "descKo" "글자 모양과 그림, 주변 맥락이 뒤섞인 웹툰 효과음을 구조적으로 이해합니다." "descEn" "Understanding stylized lettering through its shape, visual style, and surrounding context." "label" "Contents AI · ACCV 2026")
+      (dict "path" "publication/0047-Biomarker-Aware Mixture-of-Experts for Device-Invariant Personalized Skin Diagnosis" "ko" "촬영 기기가 달라도 피부 상태를 분석할 수 있을까?" "en" "Can skin analysis work across different cameras?" "descKo" "조명과 촬영 장치의 차이를 다루고, 피부 특징을 함께 고려하는 모델을 연구합니다." "descEn" "Modeling skin features while accounting for differences in devices and illumination." "label" "Medical AI · ACCV 2026")
+    }}
+    {{ range $examples }}
+      {{ $entry := . }}
+      {{ with site.GetPage .path }}
+        <article class="institute-project">
+          <a class="institute-project-image" href="{{ .RelPermalink }}">{{ with .Resources.GetMatch "featured*" }}{{ $img := .Resize "800x" }}<img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" alt="{{ if $ko }}{{ $entry.ko }}{{ else }}{{ $entry.en }}{{ end }}">{{ end }}</a>
+          <p class="institute-project-label">{{ $entry.label }}</p>
+          <h3><a href="{{ .RelPermalink }}">{{ if $ko }}{{ $entry.ko }}{{ else }}{{ $entry.en }}{{ end }}</a></h3>
+          <p>{{ if $ko }}{{ $entry.descKo }}{{ else }}{{ $entry.descEn }}{{ end }}</p>
+          <a class="institute-small-link" href="{{ .RelPermalink }}">{{ if $ko }}연구 내용 보기{{ else }}Explore the work{{ end }} ↗</a>
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

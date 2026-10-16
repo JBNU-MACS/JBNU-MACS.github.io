@@ -1,28 +1,8 @@
 <section class="macs-contact-fancy">
-  <div class="macs-contact-hero">
-    <div class="macs-contact-orb orb-a"></div>
-    <div class="macs-contact-orb orb-b"></div>
-    <div class="macs-contact-hero-content">
-      <p class="macs-contact-kicker">MACS LAB</p>
-      <h1>Contact</h1>
-      <p>
-        {{ if eq .Page.Language.Lang "ko" }}
-        전북대학교 의료 AI 및 계산 과학 연구실(MACS)과의 협업, 학부연구생/석사/박사 지원 문의를 환영합니다.
-        {{ else }}
-        We welcome inquiries for collaboration with the Medical AI & Computational Science Laboratory (MACS) at Jeonbuk National University, as well as applications for undergraduate/graduate researchers.
-        {{ end }}
-      </p>
-      <div class="macs-contact-meta">
-        <span>AI + Medical</span>
-        <span>Open Collaboration</span>
-        <span>Graduate Positions</span>
-      </div>
-      <div class="macs-contact-hero-actions">
-        <a href="mailto:ksl@jbnu.ac.kr" class="macs-contact-btn">Email Us</a>
-        <a href="{{ "notification/" | relLangURL }}" class="macs-contact-btn ghost">{{ if eq .Page.Language.Lang "ko" }}공지사항{{ else }}Open Positions{{ end }}</a>
-      </div>
-    </div>
-  </div>
+  {{ $ko := eq .Page.Lang "ko" }}
+  {{ $title := "Contact" }}{{ $desc := "Contact us about research collaboration, undergraduate research, and graduate study." }}
+  {{ if $ko }}{{ $title = "연락처" }}{{ $desc = "연구 협업과 학부연구생 참여, 대학원 진학에 관한 문의를 환영합니다." }}{{ end }}
+  {{ partial "content/institute_page_head" (dict "label" "CONTACT" "title" $title "description" $desc "link" (dict "url" ("join/" | relLangURL) "text" (cond $ko "학부연구생 안내" "Undergraduate research guide"))) }}
 
   <div class="macs-contact-bento">
     <div class="macs-contact-grid">

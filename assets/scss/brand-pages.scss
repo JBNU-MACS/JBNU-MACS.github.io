@@ -1,0 +1,86 @@
+/* Simple lab pages: one reading grid, useful text and an unaltered group photo. */
+.home-section:has(.brand-page) { padding: 0 !important; }
+.home-section:has(.brand-page) > .container { width: calc(100% - 64px) !important; max-width: 1000px !important; padding-inline: 0; }
+.home-section:has(.brand-page) > .container > .row { margin-inline: 0; }
+.home-section:has(.brand-page) > .container > .row > .col-12 { padding-inline: 0; }
+.brand-page { color: #26384b; padding-bottom: 16px; }
+.brand-page h1 { margin: 0 0 20px; color: #203348; font-size: var(--type-page); font-weight: 600; line-height: 1.45; letter-spacing: -.025em; text-align: left; }
+.brand-page h2 { margin: 0 0 18px; color: #293e53; font-size: var(--type-section); line-height: 1.5; font-weight: 600; }
+.brand-page h3 { margin: 0 0 12px; color: #30475c; font-size: var(--type-item); line-height: 1.55; font-weight: 600; }
+.brand-page p, .brand-page li { color: #667587; font-size: var(--type-body); line-height: 1.85; }
+.brand-page p { margin: 0 0 18px; word-break: keep-all; overflow-wrap: break-word; }
+.brand-page a { color: #496b89; text-decoration: none; }
+.brand-page a:hover { color: #244f75; text-decoration: underline; text-underline-offset: 4px; }
+.brand-page a:focus-visible { outline: 2px solid #456b98; outline-offset: 4px; }
+.brand-page .brand-link, .brand-page .brand-button, .brand-page .institute-small-link { display: inline-flex; align-items: center; gap: 9px; color: #496b89; font-size: 14px; line-height: 1.6; }
+.brand-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 24px; }
+.brand-hero { display: grid; grid-template-columns: 1fr 1.12fr; align-items: center; gap: 46px; margin-top: 44px; }
+.brand-hero-copy { min-width: 0; }
+.brand-hero-description { margin-bottom: 22px !important; }
+.brand-hero-photo { margin: 0; min-width: 0; }
+.brand-hero-photo > img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.brand-hero-photo figcaption, .brand-join-photo figcaption { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 14px; margin-top: 10px; color: #93a0ad; font-size: 11px; line-height: 1.7; }
+.brand-photo-link { font-size: 11px; }
+.brand-page .brand-section { margin: 52px 0 0; scroll-margin-top: 100px; }
+.brand-section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 24px; }
+.brand-section-heading h2 { margin: 0; }
+.brand-section-heading > a { flex-shrink: 0; }
+.brand-directions { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 34px; }
+.brand-direction { min-width: 0; }
+.brand-direction > div { display: flex; flex-direction: column; height: 100%; }
+.brand-direction h3 { font-size: 17px; }
+.brand-direction p { margin-bottom: 18px; }
+.brand-direction .brand-link { margin-top: auto; font-size: 13px; }
+.brand-invitation { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 48px; padding-top: 28px; border-top: 1px solid #e5e9ef; }
+.brand-invitation h2 { margin-bottom: 8px; font-size: 20px; }
+.brand-invitation p { margin: 0; font-size: 14px; }
+.brand-invitation .brand-actions { flex-shrink: 0; }
+.brand-join .brand-hero { display: block; max-width: 720px; }
+.brand-join .brand-hero-description { max-width: 650px; }
+.brand-join .brand-hero .brand-actions { display: none; }
+.brand-join .brand-section:first-of-type { margin-top: 34px; }
+.brand-opportunities { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px; }
+.brand-opportunity { display: flex; flex-direction: column; min-width: 0; padding: 0; }
+.brand-opportunity + .brand-opportunity { border-left: 1px solid #e5e9ef; padding-left: 40px; }
+.brand-opportunity ul { padding-left: 18px; margin: 0 0 18px; }
+.brand-opportunity li { padding-left: 2px; margin-bottom: 4px; }
+.brand-page .brand-opportunity-note { margin-top: auto; margin-bottom: 14px; color: #8794a2; font-size: 13px; }
+.brand-page .brand-section-note { margin: 24px 0 0; color: #8b98a5; font-size: 12px; line-height: 1.7; }
+.brand-inquiry { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding-top: 30px; border-top: 1px solid #e5e9ef; }
+.brand-inquiry .brand-email { display: inline-flex; align-items: center; gap: 20px; margin: 0 0 20px; color: #3a5c79; font-size: 21px; line-height: 1.6; }
+.brand-inquiry aside { padding: 0 0 0 40px; border-left: 1px solid #e5e9ef; }
+.brand-inquiry aside h3 { font-size: 16px; }
+.brand-inquiry aside ol { padding-left: 18px; margin-bottom: 16px; }
+.brand-inquiry aside li { padding-left: 4px; margin-bottom: 8px; font-size: 14px; }
+.brand-inquiry aside p { margin: 0; font-size: 13px; }
+.brand-page .institute-student-stories { margin-top: 44px; padding-top: 28px; border-top: 1px solid #e5e9ef; }
+.brand-page .institute-content-heading { margin-bottom: 18px; }
+.brand-page .institute-section-label { display: none; }
+.brand-page .institute-story-grid { display: block; }
+.brand-page .institute-story-grid article { display: grid; grid-template-columns: 145px minmax(0,1fr); align-items: baseline; gap: 18px; padding: 12px 0; margin: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.brand-page .institute-story-grid h3 { margin: 0; font-size: 15px; font-weight: 500; }
+.brand-page .institute-project-label { margin: 0; color: #8b99a8; font-size: 12px; }
+.brand-page .institute-story-grid article > p:not(.institute-project-label), .brand-page .institute-story-grid .institute-small-link { display: none; }
+.brand-join-photo { margin: 40px 0 0; }
+.brand-join-photo img { display: block; width: 100%; height: auto; border-radius: 4px; }
+@media(max-width:900px) {
+  .brand-hero { gap: 28px; }
+  .brand-directions { gap: 24px; }
+  .brand-invitation { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .brand-opportunities, .brand-inquiry { gap: 28px; }
+  .brand-opportunity + .brand-opportunity, .brand-inquiry aside { padding-left: 28px; }
+}
+@media(max-width:640px) {
+  .home-section:has(.brand-page) > .container { width: calc(100% - 36px) !important; }
+  .brand-hero { grid-template-columns: minmax(0,1fr); gap: 26px; margin-top: 28px; }
+  .brand-hero h1 { margin-bottom: 16px; }
+  .brand-page .brand-section { margin-top: 34px; }
+  .brand-section-heading { flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+  .brand-directions, .brand-opportunities, .brand-inquiry { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .brand-opportunity + .brand-opportunity { padding: 24px 0 0; border-left: 0; border-top: 1px solid #e5e9ef; }
+  .brand-inquiry { padding-top: 26px; }
+  .brand-inquiry aside { padding-left: 0; border: 0; }
+  .brand-invitation { margin-top: 34px; padding-top: 24px; }
+  .brand-page .institute-story-grid article { grid-template-columns: minmax(0,1fr); gap: 4px; }
+  .brand-join-photo { margin-top: 28px; }
+}

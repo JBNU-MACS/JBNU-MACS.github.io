@@ -1,0 +1,61 @@
+.home-notices {
+  position: fixed; z-index: 1020; top: 88px; right: 32px; width: 280px;
+  color: #21374f; font-size: var(--type-ui);
+}
+.home-notices [hidden] { display: none !important; }
+.home-notices-panel {
+  overflow: hidden; padding: 5px; border: 1px solid #ffffffed; border-radius: 14px;
+  background: linear-gradient(140deg,rgba(255,255,255,.32),rgba(240,246,252,.14));
+  box-shadow: 0 10px 30px #142b4321,0 0 0 1px #8ca6bf38,inset 0 1px #fff;
+  -webkit-backdrop-filter: blur(10px) saturate(120%); backdrop-filter: blur(10px) saturate(120%);
+}
+.home-notices .home-notices-cover { position: relative; display: flex; align-items: flex-end; height: 68px; padding: 14px; overflow: hidden; isolation: isolate; border-radius: 9px; background: #25445b; }
+.home-notices-cover img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; }
+.home-notices-cover::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(0deg,#102c48bf,#102c4826); }
+.home-notices h2 { margin: 0; color: #fff; font-size: 16px; font-weight: 600; line-height: 1.4; letter-spacing: -.02em; }
+.home-notices button { cursor: pointer; font: inherit; }
+.home-notices-close { position: absolute; top: 10px; right: 9px; display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0; border: 1px solid #ffffff70; border-radius: 50%; background: #18334942; color: #fff; font-size: 20px !important; line-height: 1; }
+.home-notices svg { display: block; flex-shrink: 0; fill: none; }
+.home-notices-close:hover { background: #18334999; }
+.home-notices ul { padding: 0 14px; margin: 0; list-style: none; }
+.home-notices li + li { border-top: 1px solid #c9d7e480; }
+.home-notices li a { display: grid; grid-template-columns: minmax(0,1fr) 16px; gap: 4px 10px; padding: 10px 0; color: #263e58; }
+.home-notices time { grid-column: 1 / -1; font-size: 12px; color: #6b7d8f; line-height: 1.5; }
+.home-notices li .home-notices-title { font-size: var(--type-ui); line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; text-wrap: pretty; }
+.home-notices-arrow { grid-column: 2; grid-row: 2; align-self: start; margin-top: 3.5px; color: #68819b; }
+.home-notices a:hover { color: #225c93; }
+.home-notices footer { width: auto; margin: 0 14px; padding: 9px 0 7px; border-top: 1px solid #c9d7e480; background: transparent; text-align: left; }
+.home-notices footer a { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; line-height: 1.65; font-size: var(--type-meta); color: #476b8e; }
+.home-notices-reopen { float: right; display: flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid #d2dee9; border-radius: 24px; background: #fffffff2; color: #294c6c; box-shadow: 0 3px 12px #142b4317; }
+.home-notices-count { font-size: 12px; color: #607b96; }
+.home-notices a:focus-visible, .home-notices button:focus-visible { outline: 2px solid #3e739e; outline-offset: 2px; }
+@media(max-width:900px) {
+  .home-notices { position: relative; top: auto; right: auto; z-index: 1; width: 100%; margin-bottom: 18px; }
+  .home-notices:has(.home-notices-panel[hidden]) { display: flow-root; }
+  .home-notices-panel { box-shadow: 0 3px 12px #142b4310,inset 0 1px #fff; }
+  .home-notices .home-notices-cover { height: 60px; }
+}
+@media(prefers-reduced-transparency:reduce) {
+  .home-notices-panel { background: #f8fbfe; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
+/* Float only in the outer margin; the original hero keeps its full width. */
+.academic-home { position: relative; }
+.academic-home > .home-notices {
+  position: relative; top: auto; right: auto; z-index: 4;
+  width: 280px; margin: 18px 0 0 auto;
+}
+@media(min-width:1600px) {
+  .academic-home > .home-notices {
+    position: absolute; top: 0; left: calc(100% + 20px); right: auto;
+    width: 200px; margin: 0;
+  }
+  .academic-home > .home-notices .home-notices-cover { height: 60px; }
+  .academic-home > .home-notices .home-notices-cover,
+  .academic-home > .home-notices ul { padding-left: 12px; padding-right: 12px; }
+  .academic-home > .home-notices footer { margin-left: 12px; margin-right: 12px; }
+  .academic-home > .home-notices .home-notices-close { right: 7px; }
+}
+@media(max-width:640px) {
+  .academic-home > .home-notices { width: 100%; }
+}

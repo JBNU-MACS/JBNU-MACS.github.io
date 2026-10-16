@@ -6,6 +6,10 @@ authors:
   - Seo-Yeon Choi
   - Kyungsu Lee
 
+author_notes:
+  - ''
+  - Corresponding author
+
 date: '2026-10-13T00:00:00+09:00'
 publishDate: '2026-10-13T00:00:00+09:00'
 doi: https://doi.org/10.1109/LSP.2026.3743024

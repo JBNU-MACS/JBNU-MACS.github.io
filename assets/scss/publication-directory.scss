@@ -95,7 +95,11 @@
 .publications-index .publication-entry:last-child { border-bottom: 0; }
 .publications-index .publication-entry h4 { margin: 0 0 10px; font-size: 18px; line-height: 1.6; font-weight: 600; }
 .publications-index .publication-entry h4 a { color: #22364c; }
-/* Use title weight and contrast to emphasize lead papers on a clean white surface. */
+/* State the authorship role explicitly, keeping the paper surface white. */
+.publications-index .publication-lead-role {
+  margin: 0 0 8px; color: #526b80; font-size: 12px; line-height: 1.5; font-weight: 600;
+}
+.publications-index .publication-lead-role > span { margin-inline: 4px; color: #8a9baa; }
 .publications-index .publication-entry--lead h4 { font-weight: 700; }
 .publications-index .publication-entry--lead h4 a { color: #142c40; }
 .publications-index .publication-entry h4 a:hover { color: #336c9a; }

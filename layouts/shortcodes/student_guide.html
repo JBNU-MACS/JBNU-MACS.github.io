@@ -2,32 +2,28 @@
 <div class="brand-page brand-join">
   <header class="join-hero">
     <div class="join-hero-copy">
-      <p class="join-eyebrow"><span class="join-status-dot" aria-hidden="true"></span> JOIN MACS LAB</p>
-      <h1>{{ if $ko }}호기심에서 시작해,<br><span>연구로 이어가세요.</span>{{ else }}Bring your curiosity.<br><span>Build what’s next.</span>{{ end }}</h1>
-      <p class="join-intro">{{ if $ko }}좋은 질문을 찾고, 직접 구현하고, 실험으로 확인하는 일.<br>전북대학교 MACS Lab에서 함께 시작해 보세요.{{ else }}Find a good question. Build an idea. Put it to the test. Start your next chapter with MACS Lab at Jeonbuk National University.{{ end }}</p>
+      <p class="join-eyebrow">Join MACS Lab</p>
+      <h1>{{ if $ko }}당신의 호기심이,<br><span>다음 연구의 시작.</span>{{ else }}Your curiosity.<br><span>Your next discovery.</span>{{ end }}</h1>
+      <p class="join-intro">{{ if $ko }}질문하고, 만들고, 발견하는 즐거움.<br>전북대학교 MACS Lab에서 함께하세요.{{ else }}The joy of asking, building, and discovering.<br>Find it at MACS Lab, Jeonbuk National University.{{ end }}</p>
       <div class="join-actions">
-        <a class="join-button join-button-primary" href="#opportunities">{{ if $ko }}나에게 맞는 참여 방법{{ else }}Find your path{{ end }} <span aria-hidden="true">↓</span></a>
-        <a class="join-text-link" href="#inquiry">{{ if $ko }}문의하기{{ else }}Get in touch{{ end }} <span aria-hidden="true">↗</span></a>
+        <a class="join-button" href="#opportunities">{{ if $ko }}참여 방법 알아보기{{ else }}Explore your path{{ end }}</a>
+        <a class="join-text-link" href="#inquiry">{{ if $ko }}문의하기{{ else }}Get in touch{{ end }} <span aria-hidden="true">›</span></a>
       </div>
       <p class="join-hero-note">{{ if $ko }}학부연구 참여 · 석사 · 박사 · 통합과정{{ else }}Undergraduate research · Master’s · PhD · Integrated programs{{ end }}</p>
     </div>
-    <div class="join-hero-visual">
-      <figure class="join-photo join-glass">
-        {{ with resources.Get "media/MICCAI2026/group.jpeg" }}{{ $photo := .Fit "1100x800 webp q85" }}
-          <img src="{{ $photo.RelPermalink }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" alt="{{ if $ko }}MICCAI 2026에 함께 참가한 MACS Lab 구성원{{ else }}MACS Lab members attending MICCAI 2026 together{{ end }}" fetchpriority="high">
-        {{ end }}
-        <figcaption><span>MACS LAB / IN THE WORLD</span><span>MICCAI 2026 · Strasbourg</span></figcaption>
-      </figure>
-      <div class="join-visual-note join-glass">
-        <span class="join-spark" aria-hidden="true">✳</span>
-        <div><span class="join-small-label">LEARN. BUILD. DISCOVER.</span><p>{{ if $ko }}함께 질문하고,<br>함께 성장하는 연구.{{ else }}Shared questions.<br>New possibilities.{{ end }}</p></div>
-        <a href="{{ "people/" | relLangURL }}" aria-label="{{ if $ko }}연구실 구성원 만나보기{{ else }}Meet the lab{{ end }}"><span aria-hidden="true">↗</span></a>
-      </div>
-    </div>
+    <figure class="join-photo">
+      {{ with resources.Get "media/MICCAI2026/group.jpeg" }}{{ $photo := .Fit "1600x1100 webp q85" }}
+        <img src="{{ $photo.RelPermalink }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" alt="{{ if $ko }}MICCAI 2026에 함께 참가한 MACS Lab 구성원{{ else }}MACS Lab members attending MICCAI 2026 together{{ end }}" fetchpriority="high">
+      {{ end }}
+      <figcaption class="join-photo-caption">
+        <div><strong>{{ if $ko }}함께하는 연구. 넓어지는 세상.{{ else }}Shared questions. Wider horizons.{{ end }}</strong><span>MICCAI 2026 · Strasbourg, France</span></div>
+        <a href="{{ "people/" | relLangURL }}">{{ if $ko }}구성원 만나보기{{ else }}Meet the lab{{ end }} <span aria-hidden="true">›</span></a>
+      </figcaption>
+    </figure>
   </header>
 
   <nav class="join-topics" aria-label="{{ if $ko }}관심 연구 분야{{ else }}Explore research areas{{ end }}">
-    <span class="join-small-label">EXPLORE WITH US</span>
+    <span class="join-small-label">{{ if $ko }}함께 탐구할 분야{{ else }}What we explore{{ end }}</span>
     {{ range slice (dict "title" "Medical AI" "path" "field/01-medical-imaging/") (dict "title" "Multimodal Learning" "path" "field/00-ai/") (dict "title" "Physical AI" "path" "field/08-physical-ai/") (dict "title" "Computational Science" "path" "field/07-computational-science/") }}
       <a href="{{ .path | relLangURL }}">{{ .title }} <span aria-hidden="true">↗</span></a>
     {{ end }}
@@ -35,33 +31,39 @@
 
   <section class="join-section" id="opportunities" aria-labelledby="join-paths-title">
     <header class="join-section-heading">
-      <div><p class="join-small-label">CHOOSE YOUR PATH</p><h2 id="join-paths-title">{{ if $ko }}지금의 나에게 맞는 시작{{ else }}A place to start, a path to grow{{ end }}</h2></div>
+      <div><p class="join-small-label">{{ if $ko }}참여 방법{{ else }}Ways to join{{ end }}</p><h2 id="join-paths-title">{{ if $ko }}서로 다른 출발.<br>함께하는 발견.{{ else }}Different starting points.<br>A shared sense of discovery.{{ end }}</h2></div>
       <a class="join-text-link" href="{{ "notification/" | relLangURL }}">{{ if $ko }}모집 공지 확인{{ else }}Recruitment notices{{ end }} <span aria-hidden="true">↗</span></a>
     </header>
     <div class="join-paths">
-      <article class="join-path join-path-undergrad join-glass">
-        <div class="join-path-top"><span class="join-path-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg></span><span class="join-path-label">UNDERGRADUATE</span><span class="join-path-number" aria-hidden="true">01</span></div>
+      <article class="join-path join-path-undergrad">
+        <p class="join-path-label">{{ if $ko }}학부연구 참여{{ else }}Undergraduate research{{ end }}</p>
         <h3>{{ if $ko }}배운 것을,<br>직접 해보는 연구로.{{ else }}Turn what you learn<br>into what you build.{{ end }}</h3>
-        <p class="join-path-subtitle">{{ if $ko }}학부연구 참여{{ else }}Undergraduate research{{ end }}</p>
         <p>{{ if $ko }}수업에서 생긴 궁금증을 연구와 개발로 확장해 보세요. 관심 있는 문제를 찾고, 코드와 실험으로 아이디어를 구체화합니다.{{ else }}Take your curiosity beyond coursework. Explore a problem that interests you and make your ideas concrete through code and experiments.{{ end }}</p>
+        <div class="join-path-art" aria-hidden="true">{{ with resources.Get "media/research/generated/00-ai.png" }}{{ $art := .Resize "800x webp q82" }}<img src="{{ $art.RelPermalink }}" width="{{ $art.Width }}" height="{{ $art.Height }}" alt="" loading="lazy">{{ end }}</div>
+        <details class="join-path-details">
+          <summary>{{ if $ko }}연구 활동과 문의 안내{{ else }}Research activities and inquiry details{{ end }}<span aria-hidden="true">+</span></summary>
         <ul class="join-path-list">
           <li>{{ if $ko }}의료 AI·멀티모달·피지컬 AI·콘텐츠 연구{{ else }}Medical AI, multimodal learning, physical AI and content{{ end }}</li>
           <li>{{ if $ko }}논문 읽기와 모델 구현, 실험·분석{{ else }}Read papers, implement models and analyze experiments{{ end }}</li>
           <li>{{ if $ko }}AI 이론·수학부터 웹·앱 응용 개발까지{{ else }}From AI theory and mathematics to web and app development{{ end }}</li>
         </ul>
         <div class="join-path-footer"><p>{{ if $ko }}학년·전공, 관심 분야와 수업·프로젝트 경험을 알려주세요.{{ else }}Tell us your year, major, interests and coursework or project experience.{{ end }}</p><a class="join-text-link" href="#inquiry">{{ if $ko }}학부연구 문의하기{{ else }}Ask about undergraduate research{{ end }} <span aria-hidden="true">↗</span></a></div>
+        </details>
       </article>
-      <article class="join-path join-path-graduate join-glass">
-        <div class="join-path-top"><span class="join-path-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5-10-5Zm4 2v6c4 3 8 3 12 0v-6m4-2v8"/></svg></span><span class="join-path-label">GRADUATE</span><span class="join-path-number" aria-hidden="true">02</span></div>
+      <article class="join-path join-path-graduate">
+        <p class="join-path-label">{{ if $ko }}석사 · 박사 · 통합과정{{ else }}Master’s · PhD · Integrated programs{{ end }}</p>
         <h3>{{ if $ko }}나만의 질문을,<br>새로운 기여로.{{ else }}Turn your question<br>into a contribution.{{ end }}</h3>
-        <p class="join-path-subtitle">{{ if $ko }}석사 · 박사 · 통합과정{{ else }}Master’s · PhD · Integrated programs{{ end }}</p>
         <p>{{ if $ko }}관심 있는 문제를 깊이 탐구하고, 연구의 방향을 직접 만들어가세요. 실험의 결과를 논문과 실제 응용으로 발전시킵니다.{{ else }}Investigate a problem in depth and shape your research direction. Develop experimental results into publications and practical applications.{{ end }}</p>
+        <div class="join-path-art" aria-hidden="true">{{ with resources.Get "media/research/generated/07-computational-science.png" }}{{ $art := .Resize "800x webp q82" }}<img src="{{ $art.RelPermalink }}" width="{{ $art.Width }}" height="{{ $art.Height }}" alt="" loading="lazy">{{ end }}</div>
+        <details class="join-path-details">
+          <summary>{{ if $ko }}연구 활동과 문의 안내{{ else }}Research activities and inquiry details{{ end }}<span aria-hidden="true">+</span></summary>
         <ul class="join-path-list">
           <li>{{ if $ko }}문제 정의부터 실험 설계와 검증까지{{ else }}Define problems, design experiments and evaluate ideas{{ end }}</li>
           <li>{{ if $ko }}논문 작성과 연구 결과의 공유{{ else }}Write papers and share research findings{{ end }}</li>
           <li>{{ if $ko }}개인의 관심과 연구실의 방향을 연결{{ else }}Connect your interests with the lab’s research directions{{ end }}</li>
         </ul>
         <div class="join-path-footer"><p>{{ if $ko }}지원과정, 관심 주제와 자유 양식의 CV를 보내주세요.{{ else }}Share your intended program, research interests and a CV in your preferred format.{{ end }}</p><a class="join-text-link" href="#inquiry">{{ if $ko }}대학원 진학 문의하기{{ else }}Ask about graduate study{{ end }} <span aria-hidden="true">↗</span></a></div>
+        </details>
       </article>
     </div>
     <p class="join-fine-print">{{ if $ko }}모집 분야·참여 조건·선발 일정은 모집 공지와 메일 문의를 통해 확인해 주세요.{{ else }}Please check recruitment notices or contact us for available topics, participation requirements and selection schedules.{{ end }}</p>
@@ -69,12 +71,12 @@
 
   {{ partial "content/undergraduate_stories" .Page }}
 
-  <section class="join-section join-inquiry join-glass" id="inquiry" aria-labelledby="join-inquiry-title">
+  <section class="join-section join-inquiry" id="inquiry" aria-labelledby="join-inquiry-title">
     <div class="join-inquiry-copy">
-      <p class="join-small-label">LET’S START A CONVERSATION</p>
-      <h2 id="join-inquiry-title">{{ if $ko }}첫 시작은,<br>메일 한 통이면 됩니다.{{ else }}It starts with<br>a conversation.{{ end }}</h2>
+      <p class="join-small-label">{{ if $ko }}지금, 이야기를 시작해 보세요{{ else }}Let’s start a conversation{{ end }}</p>
+      <h2 id="join-inquiry-title">{{ if $ko }}시작은 가볍게.<br>메일 한 통으로.{{ else }}It starts with<br>a conversation.{{ end }}</h2>
       <p>{{ if $ko }}완성된 연구 계획이 아니어도 좋습니다.<br>지금 궁금한 것과 앞으로 해보고 싶은 일을 들려주세요.{{ else }}You do not need a fully formed research plan. Tell us what you are curious about and what you would like to explore.{{ end }}</p>
-      <a class="join-button join-button-primary join-email" href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr <span aria-hidden="true">↗</span></a>
+      <a class="join-button join-email" href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr <span aria-hidden="true">↗</span></a>
       <div class="join-inquiry-links"><a class="join-text-link" href="{{ "notification/" | relLangURL }}">{{ if $ko }}모집 공지{{ else }}Recruitment notices{{ end }} ↗</a><a class="join-text-link" href="{{ "contact/" | relLangURL }}">{{ if $ko }}연락처·방문 안내{{ else }}Contact & directions{{ end }} ↗</a></div>
     </div>
     <aside class="join-mail-guide">

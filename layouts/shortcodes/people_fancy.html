@@ -13,12 +13,12 @@
 {{ $graduates := sort (where $all "Params.user_groups" "intersect" (slice "M.S. Student" "Master's Student" "PhD Student" "PhD Student (Integrated)")) "Title" }}
 {{ $parttime := sort (where $all "Params.user_groups" "intersect" (slice "Part-time Graduate")) "Title" }}
 {{ $undergrad := sort (where $all "Params.user_groups" "intersect" (slice "Student" "Undergraduate Researcher")) "Title" }}
-{{ $alumni := sort (where $all "Params.user_groups" "intersect" (slice "Alumni")) "Title" }}
+{{ $former := sort (where $all "Params.user_groups" "intersect" (slice "Alumni" "Former Members")) "Title" }}
 
 <section class="macs-people-fancy" id="macs-people-fancy">
   {{ $ko := eq .Page.Lang "ko" }}
-  {{ $title := "People" }}{{ $description := "Meet our faculty, graduate students, undergraduate researchers, and alumni. Explore the people and work behind MACS." }}
-  {{ if $ko }}{{ $title = "구성원" }}{{ $description = "지도교수와 대학원생, 학부연구생, 졸업생의 연구와 활동을 만나보세요. 서로 다른 관심사에서 새로운 질문을 함께 찾습니다." }}{{ end }}
+  {{ $title := "People" }}{{ $description := "Meet our faculty, graduate students, undergraduate researchers, and former members." }}
+  {{ if $ko }}{{ $title = "구성원" }}{{ $description = "지도교수와 대학원생, 학부연구생, 이전 구성원을 소개합니다." }}{{ end }}
   {{ partial "content/institute_page_head" (dict "label" "PEOPLE" "title" $title "description" $description) }}
 
   <nav class="macs-people-tabs" aria-label="People categories">
@@ -27,7 +27,7 @@
     <button type="button" data-tab="graduate">{{ if eq .Page.Language.Lang "ko" }}대학원생{{ else }}Graduate{{ end }}</button>
     <button type="button" data-tab="undergrad">{{ if eq .Page.Language.Lang "ko" }}학부연구생{{ else }}Undergraduate{{ end }}</button>
     <button type="button" data-tab="parttime">{{ if eq .Page.Language.Lang "ko" }}파트타임{{ else }}Part-time{{ end }}</button>
-    <button type="button" data-tab="alumni">{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</button>
+    <button type="button" data-tab="former">{{ if eq .Page.Language.Lang "ko" }}이전 구성원{{ else }}Former Members{{ end }}</button>
   </nav>
 
   {{/* 공통 렌더링 매크로 (Go Template은 매크로가 없으므로 섹션별 반복) */}}
@@ -80,13 +80,13 @@
     </div>
   </div>
 
-  <div class="macs-people-section" data-group="alumni">
+  <div class="macs-people-section" data-group="former">
     <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</h2>
-      <span>{{ len $alumni }}</span>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}이전 구성원{{ else }}Former Members{{ end }}</h2>
+      <span>{{ len $former }}</span>
     </div>
     <div class="macs-people-grid">
-      {{ range $alumni }}
+      {{ range $former }}
         {{ partial "content/people_card_helper" (dict "item" . "lang" $.Page.Language.Lang) }}
       {{ end }}
     </div>

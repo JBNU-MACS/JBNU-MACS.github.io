@@ -8,7 +8,7 @@
       {{ if in $types "article-journal" }}{{ $kind = "journal" }}{{ $label = "Journal" }}
       {{ else if or (in $types "paper-csai") (in $types "paper-conference") }}{{ $kind = "conference" }}{{ $label = "Conference" }}{{ end }}
       {{ $roles := partial "content/publication_author_role_flags" (dict "item" $item) }}
-      {{ $highlight := or $roles.is_kyungsu_main ($item.Params.highlight | default false) }}
+      {{ $highlight := $roles.is_kyungsu_main }}
       <article class="academic-featured-paper{{ if $highlight }} academic-featured-paper--lead{{ end }}">
         <a class="academic-featured-paper-image" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
           {{ with .Resources.GetMatch "featured*" }}{{ $img := .Fit "640x360 webp q85" }}<img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" alt="{{ if $ko }}논문 대표 그림{{ else }}Paper overview figure{{ end }}">

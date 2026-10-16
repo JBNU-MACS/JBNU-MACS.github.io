@@ -47,6 +47,16 @@
 .macs-people-fancy [data-group='professor'] .macs-people-meta { padding: 0; max-width: 680px; }
 .macs-people-fancy [data-group='professor'] h3 { margin: 0 0 4px; font-size: 22px; }
 .macs-people-fancy [data-group='professor'] .people-interests { grid-column: 1 / -1; margin: 0; padding-top: 16px; border-top: 1px solid #dfe8ed; color: #708797; font-size: 12px; line-height: 1.8; }
+.macs-people-fancy .macs-people-section:not([data-group='professor']) {
+  .macs-people-grid { row-gap: 44px; }
+  .macs-people-card-inner { padding-bottom: 18px; border-bottom: 1px solid #e5ebef; }
+  .macs-people-meta { padding-top: 11px; }
+  .macs-people-card h3 { margin-bottom: 1px; line-height: 1.4; }
+  .people-name-en { margin-bottom: 4px; line-height: 1.4; }
+  .macs-people-card .role { margin-bottom: 2px; line-height: 1.45; }
+  .macs-people-card .org { line-height: 1.5; }
+  .macs-people-card .contact { margin-top: 6px; }
+}
 @media(max-width:900px) {
   .macs-people-fancy .macs-people-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
   .macs-people-fancy > .institute-page-head { align-items: flex-start; gap: 26px; }
@@ -55,6 +65,7 @@
   .macs-people-fancy { padding-top: 24px; }
   .macs-people-fancy > .institute-page-head { flex-direction: column; gap: 14px; padding-bottom: 24px; }
   .macs-people-fancy .macs-people-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px 18px; }
+  .macs-people-fancy .macs-people-section:not([data-group='professor']) .macs-people-grid { row-gap: 36px; }
   .macs-people-fancy .macs-people-card-inner { width: 94%; }
   .macs-people-fancy .macs-people-tabs button { padding: 7px 10px; font-size: 12px; min-height: 34px; }
   .macs-people-fancy > .macs-people-tabs { gap: 4px; margin-bottom: 28px; }

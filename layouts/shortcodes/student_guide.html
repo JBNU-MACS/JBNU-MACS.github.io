@@ -69,8 +69,6 @@
     <p class="join-fine-print">{{ if $ko }}모집 분야·참여 조건·선발 일정은 모집 공지와 메일 문의를 통해 확인해 주세요.{{ else }}Please check recruitment notices or contact us for available topics, participation requirements and selection schedules.{{ end }}</p>
   </section>
 
-  {{ partial "content/undergraduate_stories" .Page }}
-
   <section class="join-section join-inquiry" id="inquiry" aria-labelledby="join-inquiry-title">
     <div class="join-inquiry-copy">
       <p class="join-small-label">{{ if $ko }}지금, 이야기를 시작해 보세요{{ else }}Let’s start a conversation{{ end }}</p>
@@ -89,4 +87,5 @@
       <p class="join-cv-note">{{ if $ko }}대학원 진학 문의에는 CV를 함께 보내주세요.{{ else }}For graduate study inquiries, please also include your CV.{{ end }}</p>
     </aside>
   </section>
+  {{ partial "content/lab_achievements" .Page }}
 </div>

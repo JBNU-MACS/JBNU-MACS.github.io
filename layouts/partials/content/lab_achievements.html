@@ -1,0 +1,23 @@
+{{ $ko := eq .Lang "ko" }}
+<section class="institute-lab-stories" aria-labelledby="join-achievements-title">
+  <header class="institute-content-heading join-achievements-heading">
+    <div><p class="institute-section-label">MACS LAB · RESEARCH HIGHLIGHTS</p><h2 id="join-achievements-title">{{ if $ko }}연구실 주요 성과{{ else }}Research highlights{{ end }}</h2></div>
+    <nav class="join-achievements-links" aria-label="{{ if $ko }}연구실 전체 성과 보기{{ else }}Explore all lab achievements{{ end }}">
+      <a class="join-text-link" href="{{ "publication/" | relLangURL }}">{{ if $ko }}전체 논문{{ else }}All publications{{ end }} <span aria-hidden="true">↗</span></a>
+      <a class="join-text-link" href="{{ "post/" | relLangURL }}">{{ if $ko }}전체 소식{{ else }}All news{{ end }} <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <div class="institute-story-grid">
+    {{ $stories := slice
+      (dict "path" "post/26-10-15-WACV2027-Accepted" "label" "WACV 2027" "ko" "단안 영상 기반 운동학 보정 연구, 논문 채택" "en" "Selective calibration for monocular kinematics accepted" "descKo" "이준호·강동준·이경수 연구팀이 관절 각도를 선택적으로 보정하는 기법을 제안했습니다." "descEn" "Jun Ho Lee, Dong-Jun Kang, and Kyungsu Lee developed a method that learns when to correct estimated joint angles.")
+      (dict "path" "post/26-09-22-ACCV2026-Accepted" "label" "ACCV 2026" "ko" "웹툰 이해·개인화 피부 진단 논문 2편 채택" "en" "Two papers on webtoon understanding and personalized skin diagnosis" "descKo" "효과음 문자를 이해하는 SFXGraph와 장치 차이에 강건한 개인화 피부 진단 연구가 채택되었습니다." "descEn" "SFXGraph for stylized sound effects and device-invariant personalized skin diagnosis were accepted.")
+      (dict "path" "post/26-06-18-Semantic-Line-Diffusion" "label" "ECCV 2026" "ko" "캐릭터 일관성을 유지하는 선화 생성 연구" "en" "Character-consistent line art generation" "descKo" "최서연·이경수 연구팀의 스토리보드 기반 선화 생성 연구 Semantic Line Diffusion이 채택되었습니다." "descEn" "Seo-Yeon Choi and Kyungsu Lee’s Semantic Line Diffusion research generates consistent line art from storyboards.")
+      (dict "path" "post/26-06-11-MICCAI2026-Early-Accepted" "label" "MICCAI 2026" "ko" "의료 영상 분할 논문 2편 Early Accept 선정" "en" "Two medical segmentation papers selected for Early Accept" "descKo" "동적 하위 도메인 모델링과 베이지안 프롬프트 적응 연구가 Early Accept로 선정되었습니다." "descEn" "Research on dynamic sub-domain modeling and Bayesian prompt adaptation received Early Accept decisions.")
+      (dict "path" "post/26-06-07-ESWA Accepted" "label" "Expert Systems With Applications" "ko" "SAM2 기반 의료 영상 분할 연구, 게재 승인" "en" "SAM2-based medical segmentation paper accepted" "descKo" "홍사강 학생과 공동연구진의 불확실성 기반 베이지안 프롬프트 적응 연구가 게재 승인되었습니다." "descEn" "Sakang Hong and collaborators’ work on uncertainty-aware Bayesian prompt adaptation was accepted for publication.")
+      (dict "path" "post/25-11-08-KOSOMBE-우수포스터상" "label" "KOSOMBE 2025" "ko" "대한의용생체공학회 우수포스터상 수상" "en" "Excellent Poster Award at KOSOMBE" "descKo" "홍사강 학생이 크로스 모달리티 의료 영상 분할을 위한 SAM2 기반 연구로 우수포스터상을 수상했습니다." "descEn" "Sakang Hong received an Excellent Poster Award for SAM2-based research on cross-modality medical segmentation.")
+    }}
+    {{ range $stories }}{{ $story := . }}{{ with site.GetPage .path }}
+      <article><p class="institute-project-label">{{ $story.label }}</p><h3><a href="{{ .RelPermalink }}">{{ if $ko }}{{ $story.ko }}{{ else }}{{ $story.en }}{{ end }}</a></h3><p>{{ if $ko }}{{ $story.descKo }}{{ else }}{{ $story.descEn }}{{ end }}</p><a class="institute-small-link" href="{{ .RelPermalink }}">{{ if $ko }}자세히 보기{{ else }}Read more{{ end }} <span aria-hidden="true">↗</span></a></article>
+    {{ end }}{{ end }}
+  </div>
+</section>

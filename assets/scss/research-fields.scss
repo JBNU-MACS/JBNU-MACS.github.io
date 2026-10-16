@@ -1,0 +1,26 @@
+/* Keep the navigation, title and illustration together above the article. */
+.macs-field-single-shell { padding-top: 28px; }
+.macs-field-single-shell .macs-field-single-hero {
+  padding: 0 0 28px; margin-bottom: 28px; border-bottom: 1px solid #e1e8ee;
+}
+.macs-field-single-shell .field-single-hero-inner {
+  grid-template-columns: minmax(0,1fr) minmax(260px,360px);
+  align-items: center; gap: 32px; padding: 0;
+}
+.macs-field-single-shell .field-single-title-wrap { min-width: 0; padding: 0; }
+.macs-field-single-shell .field-single-back {
+  gap: 6px; min-height: 0; padding: 5px 10px; margin-bottom: 14px;
+  border: 1px solid #dce5ec; border-radius: 6px; background: #f3f7fa;
+  color: #536e82; line-height: 1.5; letter-spacing: 0; text-transform: none;
+}
+.macs-field-single-shell .field-single-back:hover { background: #eaf1f6; color: #2c516d; }
+.macs-field-single-shell .field-single-title-wrap h1 { margin: 0; line-height: 1.4; overflow-wrap: break-word; }
+.macs-field-single-shell .field-single-image { width: 100%; min-height: 0; border-radius: 12px; }
+.macs-field-single-shell .field-single-image img { height: auto; }
+@media(max-width:760px) {
+  .macs-field-single-shell { padding-top: 24px; }
+  .macs-field-single-shell .macs-field-single-hero { padding-bottom: 24px; margin-bottom: 24px; }
+  .macs-field-single-shell .field-single-hero-inner { grid-template-columns: minmax(0,1fr); gap: 20px; }
+  .macs-field-single-shell .field-single-back { margin-bottom: 10px; }
+  .macs-field-single-shell .field-single-image { max-width: 420px; }
+}

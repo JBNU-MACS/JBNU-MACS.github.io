@@ -152,6 +152,11 @@ footer a { color: inherit; }
 .field-single-kicker, .field-single-meta { display: none; }
 .field-single-back { color: var(--lab-muted); font-size: 13px; }
 .field-single-image { background: none; border: 0; border-radius: 2px; }
+.macs-field-card .field-card-media.field-research-icon,
+.field-single-image.field-research-icon { display: grid; place-items: center; background: linear-gradient(135deg,#f0f6fa,#e9f4ef); }
+.field-single-image.field-research-icon::after { display: none; }
+.macs-field-card .field-research-icon img,
+.field-single-image.field-research-icon img { width: 96px; height: 96px; object-fit: contain; }
 .macs-field-single-layout { gap: 48px; }
 .field-aside-card { padding: 0 0 24px; border-bottom: 1px solid var(--lab-rule); }
 .field-aside-card p, .field-aside-card a, .field-aside-card li { color: var(--lab-muted); font-size: 14px; line-height: 1.8; }

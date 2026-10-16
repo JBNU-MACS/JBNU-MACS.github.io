@@ -49,7 +49,7 @@
 .brand-section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 22px; }
 .brand-section-heading h2 { margin: 0; }
 .brand-section-heading > a { flex-shrink: 0; }
-.brand-directions { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.brand-directions { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
 .brand-direction, .brand-opportunity, .brand-inquiry, .brand-invitation {
   border: 1px solid var(--brand-line); border-top-color: rgba(255,255,255,.98); border-radius: 20px;
   background: var(--brand-glass); backdrop-filter: blur(18px) saturate(130%);

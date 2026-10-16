@@ -93,6 +93,8 @@
   border-radius: 0; background: #fff; box-shadow: none;
 }
 .publications-index .publication-entry:last-child { border-bottom: 0; }
+/* Mark highlighted papers without tinting their white background or shifting text. */
+.publications-index .publication-entry.publication-entry--lead { box-shadow: inset 3px 0 0 #7892a8; }
 .publications-index .publication-entry h4 { margin: 0 0 10px; font-size: 18px; line-height: 1.6; font-weight: 600; }
 .publications-index .publication-entry h4 a { color: #22364c; }
 .publications-index .publication-entry h4 a:hover { color: #336c9a; }

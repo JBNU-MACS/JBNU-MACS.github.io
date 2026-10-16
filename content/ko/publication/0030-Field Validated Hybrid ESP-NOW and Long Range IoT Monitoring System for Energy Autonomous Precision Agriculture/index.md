@@ -1,4 +1,5 @@
 ---
+research_fields: ["development"]
 title: 'Field Validated Hybrid ESP-NOW and Long Range IoT Monitoring System for Energy Autonomous Precision Agriculture'
 
 # Authors

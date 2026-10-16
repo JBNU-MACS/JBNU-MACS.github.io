@@ -1,4 +1,5 @@
 ---
+research_field: aerospace
 title: Aerospace
 date: 2024-03-26
 image:

@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare"]
 title: 'Human-Centered Personalization in Radiology AI: Evaluating Trust, Usability, and Cross-Hospital Robustness'
 
 # Authors

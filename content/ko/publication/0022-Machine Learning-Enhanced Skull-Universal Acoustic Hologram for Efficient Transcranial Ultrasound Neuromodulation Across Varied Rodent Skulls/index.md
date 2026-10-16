@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "medical-mathematics", "computational-science"]
 title: 'Machine Learning-Enhanced Skull-Universal Acoustic Hologram for Efficient Transcranial Ultrasound Neuromodulation Across Varied Rodent Skulls'
 
 # Authors

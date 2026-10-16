@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare", "medical-mathematics"]
 title: 'Statistical Multi-Modal Fusion for Patient-Centric Medical Diagnosis Using DICOM'
 
 authors:

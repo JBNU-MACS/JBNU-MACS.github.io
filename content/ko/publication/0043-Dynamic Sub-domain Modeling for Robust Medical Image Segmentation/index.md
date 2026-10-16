@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai"]
 title: 'Dynamic Sub-domain Modeling for Robust Medical Image Segmentation'
 
 authors:

@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai"]
 title: 'Real-time Self-supervised Ultrasound Image Enhancement Using Test-Time Adaptation for Sophisticated Rotator Cuff Tear Diagnosis'
 
 # Authors

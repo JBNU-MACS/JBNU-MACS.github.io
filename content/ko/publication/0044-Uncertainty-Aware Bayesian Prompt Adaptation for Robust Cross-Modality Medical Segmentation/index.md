@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "medical-mathematics"]
 title: 'Uncertainty-Aware Bayesian Prompt Adaptation for Robust Cross-Modality Medical Segmentation'
 
 authors:

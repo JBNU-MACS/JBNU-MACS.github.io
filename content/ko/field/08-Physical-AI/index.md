@@ -1,4 +1,5 @@
 ---
+research_field: physical-ai
 title: 피지컬 AI (Physical AI)
 date: 2026-10-16
 summary: 영상·언어·센서 정보를 바탕으로 물리적 환경을 이해하고, 판단과 행동으로 연결하는 AI를 연구합니다.

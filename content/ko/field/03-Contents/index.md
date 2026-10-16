@@ -1,4 +1,5 @@
 ---
+research_field: contents
 title: 콘텐츠 (Contents & Webtoon AI) 기반 연구 주제
 date: 2024-03-27
 image:

@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai"]
 title: 'Self-supervised Domain Adaptive Segmentation of Breast Cancer Via Test-time Fine-Tuning'
 
 # Authors

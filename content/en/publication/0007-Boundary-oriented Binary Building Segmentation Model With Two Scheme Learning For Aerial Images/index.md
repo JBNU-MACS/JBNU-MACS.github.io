@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "aerospace"]
 title: 'Boundary-oriented Binary Building Segmentation Model with Two Scheme Learning for Aerial Images'
 
 # Authors

@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai"]
 title: 'Anatomy-Aware Distillation with Memory-Augmented SAM2 for Fracture Detection'
 
 authors:

@@ -32,6 +32,8 @@
 
 새 글이나 논문은 같은 유형의 기존 폴더를 복사한 뒤 `index.md`의 제목, 날짜, 저자, 본문과 첨부 이미지를 수정합니다. 구성원 프로필은 `authors/<이름>/_index.md`에서 관리합니다. 복사한 항목의 기존 메타데이터와 링크가 남지 않았는지 확인하고, 로컬 미리보기에서 목록과 상세 페이지를 모두 확인해 주세요.
 
+논문에는 `research_fields: ["ai", "medical-ai"]`처럼 관련 분야를 지정합니다. 분야 ID와 분류 기준은 [논문 연구 분야 안내](docs/publication-research-fields.md)를 참고하세요. 한글·영문 분류를 함께 수정한 뒤 `python3 scripts/check_research_fields.py`로 확인합니다. 이 분류는 연구 분야의 관련 논문과 논문 목록의 분야·연도·유형 필터에 공통으로 적용됩니다.
+
 페이지 일부는 사용자 정의 템플릿으로 구성되어 있습니다. Markdown에 `{{< academic_home >}}` 같은 호출이 있으면 해당 화면의 구성과 문구는 `layouts/shortcodes/` 및 `layouts/partials/`도 확인합니다.
 
 ## 주요 디렉터리

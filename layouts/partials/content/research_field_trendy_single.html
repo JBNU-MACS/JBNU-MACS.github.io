@@ -6,6 +6,10 @@
 {{- end -}}
 {{- $summary := $p.Summary | plainify -}}
 {{- $resource := partial "blox-core/functions/get_featured_image.html" $p -}}
+{{- $fieldID := $p.Params.research_field | default "" -}}
+{{- $related := where (where site.RegularPages "Section" "publication") "Params.research_fields" "intersect" (slice $fieldID) -}}
+{{- $related = $related.ByDate.Reverse -}}
+{{- $publicationsURL := printf "%s?field=%s#publications-index" ("publication/" | relLangURL) $fieldID -}}
 
 <div class="universal-wrapper macs-field-single-shell">
   <section class="macs-field-single-hero">
@@ -38,7 +42,7 @@
       <div class="field-aside-card">
         <h2>Overview</h2>
         {{ with $summary }}<p>{{ . }}</p>{{ end }}
-        <a href="{{ "publication/" | relLangURL }}">Related Publications</a>
+        <a href="#related-publications">{{ if eq $p.Lang "ko" }}관련 논문{{ else }}Related Publications{{ end }} · {{ len $related }}</a>
       </div>
       {{ if gt (len $siblings) 1 }}
         <div class="field-aside-card">
@@ -58,6 +62,21 @@
       <div class="field-single-prose">
         {{ $p.Content }}
       </div>
+      <section class="field-related-publications" id="related-publications" aria-labelledby="field-related-title">
+        <header>
+          <h2 id="field-related-title">{{ if eq $p.Lang "ko" }}관련 논문{{ else }}Related Publications{{ end }} <span>{{ len $related }}</span></h2>
+          <a href="{{ $publicationsURL }}">{{ if eq $p.Lang "ko" }}이 분야 논문 전체 보기{{ else }}View all papers in this field{{ end }} ↗</a>
+        </header>
+        {{ if $related }}
+          <ol>
+            {{ range first 6 $related }}
+              <li><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Date.Format "2006" }} · {{ .Params.publication_short | default .Params.publication | plainify }}</p></li>
+            {{ end }}
+          </ol>
+        {{ else }}
+          <p>{{ if eq $p.Lang "ko" }}이 분야에 등록된 논문이 아직 없습니다.{{ else }}No publications have been listed in this field yet.{{ end }}</p>
+        {{ end }}
+      </section>
     </article>
   </section>
 </div>

@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai"]
 title: 'Connectome Mapping: Shape-Memory Network via Interpretation of Contextual Semantic Information'
 
 # Authors

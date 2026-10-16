@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare"]
 title: 'Biomarker-Aware Mixture-of-Experts for Device-Invariant Personalized Skin Diagnosis'
 
 authors:

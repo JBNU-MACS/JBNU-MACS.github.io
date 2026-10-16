@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "aerospace"]
 title: 'Domain Adaptive Transfer Attack-based Segmentation Networks for Building Extraction from Aerial Images'
 
 # Authors

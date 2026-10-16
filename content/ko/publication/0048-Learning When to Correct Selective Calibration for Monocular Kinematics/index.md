@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "healthcare", "computational-science", "physical-ai"]
 title: 'Learning When to Correct: Selective Calibration for Monocular Kinematics'
 
 authors:

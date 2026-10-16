@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai"]
 title: 'Expert-level differentiation of incomplete Kawasaki disease and pneumonia from echocardiography via multiple large receptive attention mechanisms'
 
 # Authors

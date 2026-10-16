@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "development", "physical-ai"]
 title: 'SoN: Selective Optimal Network for Smartphone-based Indoor Localization in Real-time'
 
 # Authors

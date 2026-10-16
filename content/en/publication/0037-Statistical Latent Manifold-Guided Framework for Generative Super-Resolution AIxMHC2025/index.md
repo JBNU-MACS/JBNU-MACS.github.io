@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "medical-mathematics"]
 title: 'Statistical Latent Manifold-Guided Framework for Generative Super-Resolution'
 
 authors:

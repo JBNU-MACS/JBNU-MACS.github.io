@@ -1,0 +1,10 @@
+{{- $p := . -}}
+{{- with $p.Params.research_fields -}}
+<nav class="publication-field-links" aria-label="{{ if eq $p.Lang "ko" }}논문 연구 분야{{ else }}Publication research fields{{ end }}">
+  {{- range site.Data.research_fields -}}
+    {{- if in $p.Params.research_fields .id -}}
+      <a href="{{ printf "%s?field=%s#publications-index" ("publication/" | relLangURL) .id }}">{{ if eq $p.Lang "ko" }}{{ .ko }}{{ else }}{{ .en }}{{ end }}</a>
+    {{- end -}}
+  {{- end -}}
+</nav>
+{{- end -}}

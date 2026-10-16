@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "contents"]
 title: 'Semantic Line Diffusion: Character-Consistent Line Art from Text-Annotated Storyboards'
 
 authors:

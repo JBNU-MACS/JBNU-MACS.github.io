@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare", "medical-mathematics"]
 title: 'Patient-Centric Statistical Multi-Modal Fusion for Medical Diagnosis: Integrating DICOM, Radiomics, and Patient Attributes'
 
 # Authors

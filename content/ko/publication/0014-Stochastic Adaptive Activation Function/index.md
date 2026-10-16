@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-mathematics"]
 title: 'Stochastic Adaptive Activation Function'
 
 # Authors

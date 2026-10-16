@@ -106,3 +106,30 @@ b.publication-lab-author { font-weight: 700; }
   .publications-index .publication-entry h4 { font-size: 17px; }
   .publication-entry-footer { align-items: flex-start; gap: 12px; }
 }
+
+/* Research field filters share the same classification as the field pages. */
+#publications-index, #related-publications { scroll-margin-top: 100px; }
+.publications-topic-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 12px; color: #68798b; font-size: 14px; }
+.publications-topic-filter label { margin: 0; }
+.publications-topic-filter select { width: auto; max-width: 100%; min-width: 210px; padding: 9px 32px 9px 12px; border: 1px solid #dce4ec; border-radius: 6px; color: #344e68; background-color: #fff; font: inherit; }
+.publications-topic-filter button { padding: 9px 12px; border: 1px solid #dce4ec; border-radius: 6px; color: #536b80; background: #fff; font: inherit; cursor: pointer; }
+.publications-topic-filter :is(select,button):focus-visible { outline: 2px solid #4c779f; outline-offset: 2px; }
+.publications-result { margin: 0 0 24px; color: #68798b; font-size: 13px; }
+.publications-index [hidden] { display: none !important; }
+.publication-field-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.publication-field-links a { padding: 3px 8px; border: 1px solid #dce6ed; border-radius: 5px; color: #4d6d81; background: #f5f9fb; font-size: 12px; line-height: 1.5; text-decoration: none; }
+.publication-field-links a:hover { border-color: #7194a8; color: #244f69; }
+.field-related-publications { margin-top: 44px; padding-top: 28px; border-top: 1px solid #dce6ed; }
+.field-related-publications > header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.field-related-publications h2 { margin: 0; font-size: 24px; color: #243e52; }
+.field-related-publications h2 span { color: #78909e; font-size: 15px; font-weight: 400; }
+.field-related-publications > header > a { color: #456d84; font-size: 13px; }
+.field-related-publications ol { padding: 0; margin: 0; list-style: none; }
+.field-related-publications li { padding: 18px 0; border-bottom: 1px solid #e3eaf0; }
+.field-related-publications h3 { margin: 0 0 6px; font-size: 17px; line-height: 1.65; }
+.field-related-publications h3 a { color: #29465c; }
+.field-related-publications li p { margin: 0; color: #708391; font-size: 13px; }
+@media (max-width:640px) {
+  .publications-topic-filter select { flex: 1; min-width: 0; }
+  .field-related-publications h2 { font-size: 21px; }
+}

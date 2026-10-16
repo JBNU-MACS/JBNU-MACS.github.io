@@ -1,0 +1,65 @@
+[
+  {
+    "id": "ai",
+    "ko": "인공지능",
+    "en": "Artificial Intelligence",
+    "path": "field/00-ai/",
+    "scope": "학습 모델·컴퓨터 비전·표현 학습 등 AI 방법론. AI 모델을 사용하지 않는 기기·IoT 시스템 논문은 제외."
+  },
+  {
+    "id": "medical-ai",
+    "ko": "의료 AI",
+    "en": "Medical AI",
+    "path": "field/01-medical-imaging/",
+    "scope": "의료영상·진단·생체신호·의료 기기와 분석 방법."
+  },
+  {
+    "id": "healthcare",
+    "ko": "헬스케어",
+    "en": "Healthcare",
+    "path": "field/02-healthcare/",
+    "scope": "모바일·웨어러블 건강 관리, 개인정보 보호, 개인화, 임상 업무와 사용자 중심 평가."
+  },
+  {
+    "id": "contents",
+    "ko": "콘텐츠",
+    "en": "Contents & Webtoon AI",
+    "path": "field/03-contents/",
+    "scope": "웹툰·스토리보드·시각 콘텐츠의 이해와 생성. 의료 영상 생성은 제외."
+  },
+  {
+    "id": "aerospace",
+    "ko": "항공우주·원격탐사",
+    "en": "Aerospace & Remote Sensing",
+    "path": "field/04-aerospace/",
+    "scope": "항공·위성 영상 기반 지리정보 분석. 실내 위치 추정과 지상 IoT 센싱은 제외."
+  },
+  {
+    "id": "medical-mathematics",
+    "ko": "의료수학·AI 수학",
+    "en": "Medical Mathematics & AI Theory",
+    "path": "field/05-mathematics/",
+    "scope": "활성화·풀링·최적화·통계적 융합·베이지안 추정·잠재공간 등 수학적 방법이 핵심인 연구."
+  },
+  {
+    "id": "development",
+    "ko": "개발·시스템",
+    "en": "Development & Systems",
+    "path": "field/06-development/",
+    "scope": "모바일 기기, 진단 플랫폼, 실시간 애플리케이션, IoT·웹 대시보드 등 실제 시스템 구현."
+  },
+  {
+    "id": "computational-science",
+    "ko": "계산과학",
+    "en": "Computational Science",
+    "path": "field/07-computational-science/",
+    "scope": "수치적 형상·체적 추정, 물리 기반 시뮬레이션, 불확실성 정량화와 생체역학 모델링."
+  },
+  {
+    "id": "physical-ai",
+    "ko": "피지컬 AI",
+    "en": "Physical AI",
+    "path": "field/08-physical-ai/",
+    "scope": "탐촉자 이동 안내, 공간 위치 인식, 사람의 동작·생체신호와 로봇 보조 수술 작업의 이해. 자율제어 실적을 뜻하지 않음."
+  }
+]

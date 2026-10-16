@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "aerospace", "medical-mathematics"]
 title: 'USIM Gate: Upsampling Module for Segmenting Precise Boundaries Concerning Entropy'
 
 # Authors

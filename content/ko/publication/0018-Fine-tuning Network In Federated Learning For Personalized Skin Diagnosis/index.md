@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare", "medical-mathematics"]
 title: 'Fine-Tuning Network in Federated Learning for Personalized Skin Diagnosis'
 
 # Authors

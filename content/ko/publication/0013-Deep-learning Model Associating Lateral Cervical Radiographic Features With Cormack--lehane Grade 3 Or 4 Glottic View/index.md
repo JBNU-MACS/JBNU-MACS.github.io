@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai"]
 title: 'Deep-Learning Model Associating Lateral Cervical Radiographic Features with Cormack--lehane Grade 3 Or 4 Glottic View'
 
 # Authors

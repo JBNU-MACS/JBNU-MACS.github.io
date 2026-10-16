@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai"]
 title: 'Fully-automatic Deep Learning-based Analysis for Determination of the Invasiveness of Breast Cancer Cells in an Acoustic Trap'
 
 # Authors

@@ -12,13 +12,22 @@
   (dict "kind" "journal" "title" "Journal" "description" (cond $ko "학술지 논문" "Journal articles") "items" $journals)
   (dict "kind" "proceedings" "title" (cond $ko "기타 학회 발표" "Other Proceedings") "description" (cond $ko "기타 학술대회 및 발표 논문" "Additional conference proceedings and presentations") "items" $other)
 }}
-<div class="publications-index" id="publications-index">
+<div class="publications-index" id="publications-index" data-language="{{ .Page.Lang }}">
   <nav class="publications-filter" aria-label="{{ if $ko }}논문 유형{{ else }}Publication type{{ end }}">
     <button type="button" data-kind="all" aria-pressed="true">{{ if $ko }}전체{{ else }}All{{ end }} <span>{{ len $items }}</span></button>
     {{ range $groups }}{{ if gt (len .items) 0 }}<button type="button" data-kind="{{ .kind }}" aria-pressed="false">{{ .title }} <span>{{ len .items }}</span></button>{{ end }}{{ end }}
     <label class="publications-year-filter"><span>{{ if $ko }}연도{{ else }}Year{{ end }}</span><select data-publication-year-select><option value="all">{{ if $ko }}전체 연도{{ else }}All years{{ end }}</option>{{ range $items.GroupByDate "2006" }}<option value="{{ .Key }}">{{ .Key }}</option>{{ end }}</select></label>
   </nav>
-  <p class="publications-empty" data-publication-empty role="status" hidden>{{ if $ko }}선택한 연도와 유형에 해당하는 논문이 없습니다.{{ else }}No publications match the selected year and type.{{ end }}</p>
+  <div class="publications-topic-filter">
+    <label for="publication-field">{{ if $ko }}연구 분야{{ else }}Research field{{ end }}</label>
+    <select id="publication-field" data-publication-field-select>
+      <option value="all">{{ if $ko }}전체 분야{{ else }}All fields{{ end }}</option>
+      {{ range site.Data.research_fields }}<option value="{{ .id }}">{{ if $ko }}{{ .ko }}{{ else }}{{ .en }}{{ end }}</option>{{ end }}
+    </select>
+    <button type="button" data-publication-reset>{{ if $ko }}필터 초기화{{ else }}Reset filters{{ end }}</button>
+  </div>
+  <p class="publications-result" data-publication-result role="status" aria-live="polite"></p>
+  <p class="publications-empty" data-publication-empty role="status" hidden>{{ if $ko }}선택한 분야·연도·유형에 해당하는 논문이 없습니다.{{ else }}No publications match the selected field, year and type.{{ end }}</p>
   {{ range $items.GroupByDate "2006" }}
     {{ $year := .Key }}{{ $yearItems := complement $other .Pages }}
     {{ if gt (len $yearItems) 0 }}
@@ -40,7 +49,7 @@
   {{ end }}
   {{ if gt (len $other) 0 }}
   <section class="publications-additional" data-other-publications aria-labelledby="publications-additional-title">
-    <header class="publications-additional-heading"><h2 id="publications-additional-title">{{ if $ko }}기타 학회 발표{{ else }}Other Proceedings{{ end }}</h2><span>{{ len $other }}{{ if $ko }}편{{ else }} papers{{ end }}</span></header>
+    <header class="publications-additional-heading"><h2 id="publications-additional-title">{{ if $ko }}기타 학회 발표{{ else }}Other Proceedings{{ end }}</h2><span data-additional-count>{{ len $other }}{{ if $ko }}편{{ else }} papers{{ end }}</span></header>
     {{ range $items.GroupByDate "2006" }}
       {{ $year := .Key }}{{ $entries := intersect .Pages $other }}
       {{ if gt (len $entries) 0 }}
@@ -56,35 +65,5 @@
   </section>
   {{ end }}
 </div>
-<script>
-(() => {
-  const root = document.getElementById('publications-index');
-  if (!root) return;
-  const buttons = root.querySelectorAll('.publications-filter button');
-  const groups = root.querySelectorAll('[data-category]');
-  const years = [...root.querySelectorAll('[data-publication-year]')];
-  const yearSelect = root.querySelector('[data-publication-year-select]');
-  const entries = [...root.querySelectorAll('.publication-entry')];
-  let kind = 'all';
-  const applyFilters = () => {
-    const selectedYear = yearSelect.value;
-    const matchingYear = entry => selectedYear === 'all' || entry.closest('[data-publication-year]').dataset.year === selectedYear;
-    buttons.forEach(button => {
-      button.setAttribute('aria-pressed', String(button.dataset.kind === kind));
-      button.querySelector('span').textContent = entries.filter(entry => matchingYear(entry) && (button.dataset.kind === 'all' || entry.dataset.kind === button.dataset.kind)).length;
-    });
-    groups.forEach(group => { group.hidden = kind !== 'all' && group.dataset.category !== kind; });
-    years.forEach(year => {
-      const visible = [...year.querySelectorAll('[data-category]')].filter(group => !group.hidden);
-      year.hidden = visible.length === 0 || (selectedYear !== 'all' && year.dataset.year !== selectedYear);
-      const count = visible.reduce((total, group) => total + group.querySelectorAll('.publication-entry').length, 0);
-      year.querySelector('[data-year-count]').textContent = `${count} {{ if $ko }}편{{ else }}${count === 1 ? "paper" : "papers"}{{ end }}`;
-    });
-    const additional = root.querySelector('[data-other-publications]');
-    if (additional) additional.hidden = ![...additional.querySelectorAll('[data-publication-year]')].some(year => !year.hidden);
-    root.querySelector('[data-publication-empty]').hidden = years.some(year => !year.hidden);
-  };
-  buttons.forEach(button => button.addEventListener('click', () => { kind = button.dataset.kind; applyFilters(); }));
-  yearSelect.addEventListener('change', applyFilters);
-})();
-</script>
+{{ $filters := resources.Get "js/publication-filters.js" | minify | fingerprint }}
+<script src="{{ $filters.RelPermalink }}" defer></script>

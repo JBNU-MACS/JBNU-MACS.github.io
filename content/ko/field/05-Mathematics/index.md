@@ -1,4 +1,5 @@
 ---
+research_field: medical-mathematics
 title: 의료수학 (Medical Mathematics) 및 AI 기반 연구 주제
 date: 2024-03-25
 image:

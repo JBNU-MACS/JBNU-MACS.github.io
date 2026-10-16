@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "aerospace"]
 title: 'Fine-Grained Binary Object Segmentation in Remote Sensing Imagery via Path-Selective Test-Time Adaptation'
 
 # Authors

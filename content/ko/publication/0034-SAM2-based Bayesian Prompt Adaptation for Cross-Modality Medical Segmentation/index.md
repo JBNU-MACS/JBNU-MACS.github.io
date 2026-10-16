@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "medical-mathematics"]
 title: 'SAM2-based Bayesian Prompt Adaptation for Cross-Modality Medical Segmentation'
 
 # Authors

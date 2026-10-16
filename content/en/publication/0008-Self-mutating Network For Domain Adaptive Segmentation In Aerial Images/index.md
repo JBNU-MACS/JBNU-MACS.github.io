@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "aerospace"]
 title: 'Self-Mutating Network for Domain Adaptive Segmentation in Aerial Images'
 
 # Authors

@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "contents"]
 title: 'SFXGraph: Causal-Compositional Graph Learning for Stylized Sound Effects in Webtoons'
 
 authors:

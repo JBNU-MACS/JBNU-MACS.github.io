@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "medical-mathematics"]
 title: 'Imbalanced Loss-Integrated Deep-Learning-based Ultrasound Image Analysis for Diagnosis of Rotator-Cuff Tear'
 
 # Authors

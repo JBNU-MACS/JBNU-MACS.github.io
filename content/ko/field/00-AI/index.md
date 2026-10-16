@@ -1,4 +1,5 @@
 ---
+research_field: ai
 title: 인공지능(AI) 연구 주제
 date: 2024-03-31
 image:

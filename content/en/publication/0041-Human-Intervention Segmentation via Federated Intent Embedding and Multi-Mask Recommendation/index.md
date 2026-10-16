@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare"]
 title: 'Human-Intervention Segmentation via Federated Intent Embedding and Multi-Mask Recommendation'
 
 # Authors

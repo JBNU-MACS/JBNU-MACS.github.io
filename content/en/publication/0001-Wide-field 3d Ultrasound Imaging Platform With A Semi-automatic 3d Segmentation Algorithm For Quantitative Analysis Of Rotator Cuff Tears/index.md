@@ -1,4 +1,5 @@
 ---
+research_fields: ["medical-ai", "development", "computational-science"]
 title: 'Wide-field 3D Ultrasound Imaging Platform with a Semi-Automatic 3D Segmentation Algorithm for Quantitative Analysis of Rotator Cuff Tears'
 
 # Authors

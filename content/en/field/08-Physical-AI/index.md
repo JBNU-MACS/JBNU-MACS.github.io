@@ -1,4 +1,5 @@
 ---
+research_field: physical-ai
 title: Physical AI
 date: 2026-10-16
 summary: AI that understands physical environments through images, language, and sensor data, connecting perception with decisions and actions.

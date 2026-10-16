@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare"]
 title: 'Predicting Obstructive Sleep Apnea Based on Computed Tomography Scan Using Deep Learning Models'
 
 # Authors

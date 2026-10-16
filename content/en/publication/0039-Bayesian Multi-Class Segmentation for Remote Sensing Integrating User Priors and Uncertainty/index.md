@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "aerospace", "medical-mathematics", "computational-science"]
 title: 'Bayesian Multiclass Segmentation for Remote Sensing: Integrating User Priors and Uncertainty'
 
 # Authors

@@ -1,4 +1,5 @@
 ---
+research_field: computational-science
 title: 계산과학 (Computational Science) 연구 주제
 date: 2024-04-01
 image:

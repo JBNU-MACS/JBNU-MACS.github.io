@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare"]
 title: 'Federated Learning for Thyroid Ultrasound Image Analysis to Protect Personal Information: Validation Study in a Real Health Care Environment'
 
 # Authors

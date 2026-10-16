@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "medical-mathematics"]
 title: 'Uncertainty-Aware Bayesian Prompt Adaptation of SAM2 for Few-Shot Cross-Modal Segmentation'
 
 authors:

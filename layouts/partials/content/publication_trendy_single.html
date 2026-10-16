@@ -20,6 +20,7 @@
         <p class="macs-pub-reference">
           {{ partial "content/publication_reference" (dict "item" $p) }}{{ if ne $pubYear "" }}, {{ $pubYear }}.{{ end }}
         </p>
+        {{ partial "content/publication_field_links" $p }}
       </div>
 
       {{ with $hero }}
@@ -94,4 +95,3 @@
     </section>
   </article>
 </div>
-

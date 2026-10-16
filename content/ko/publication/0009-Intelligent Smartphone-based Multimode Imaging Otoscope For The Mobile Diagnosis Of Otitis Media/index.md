@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare", "development"]
 title: 'Intelligent Smartphone-based Multimode Imaging Otoscope for the Mobile Diagnosis of Otitis Media'
 
 # Authors

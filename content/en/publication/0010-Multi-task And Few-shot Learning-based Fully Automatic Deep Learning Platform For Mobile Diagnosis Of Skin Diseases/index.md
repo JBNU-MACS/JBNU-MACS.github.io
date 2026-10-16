@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare", "development"]
 title: 'Multi-task and Few-shot Learning-based Fully Automatic Deep Learning Platform for Mobile Diagnosis of Skin Diseases'
 
 # Authors

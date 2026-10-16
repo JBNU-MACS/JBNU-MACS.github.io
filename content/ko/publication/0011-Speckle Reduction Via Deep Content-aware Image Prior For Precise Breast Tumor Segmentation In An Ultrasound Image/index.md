@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai"]
 title: 'Speckle Reduction Via Deep Content-aware Image Prior for Precise Breast Tumor Segmentation in an Ultrasound Image'
 
 # Authors

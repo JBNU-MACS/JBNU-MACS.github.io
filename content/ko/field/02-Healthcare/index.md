@@ -1,4 +1,5 @@
 ---
+research_field: healthcare
 title: 헬스케어 (Healthcare) 연구 주제
 date: 2024-03-28
 image:

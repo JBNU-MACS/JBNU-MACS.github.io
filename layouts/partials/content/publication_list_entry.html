@@ -1,10 +1,11 @@
 {{ $item := .item }}{{ $kind := .kind }}{{ $ko := eq $item.Lang "ko" }}
 {{ $roles := partial "content/publication_author_role_flags" (dict "item" $item) }}
 {{ $highlight := or $roles.is_kyungsu_main ($item.Params.highlight | default false) }}
-<li class="publication-entry{{ if $highlight }} publication-entry--lead{{ end }}" data-kind="{{ $kind }}">
+<li class="publication-entry{{ if $highlight }} publication-entry--lead{{ end }}" data-kind="{{ $kind }}" data-fields="{{ delimit ($item.Params.research_fields | default (slice)) " " }}">
   <h4><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h4>
   <p class="publication-authors">{{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" false "period" false) }}</p>
   <p class="publication-venue">{{ partial "content/publication_reference" (dict "item" $item) }}</p>
+  {{ partial "content/publication_field_links" $item }}
   <div class="publication-entry-footer">{{ partial "content/publication_badges" (dict "item" $item "kind" $kind) }}
 
   <div class="publication-footnotes publication-resource-links">

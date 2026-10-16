@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "aerospace"]
 title: 'Interactive Few-shot Online Adaptation for User-Guided Segmentation in Aerial Images'
 
 # Authors

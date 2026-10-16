@@ -1,4 +1,5 @@
 ---
+research_field: medical-ai
 title: 의료 인공지능 (Medical AI) 연구 주제
 date: 2024-03-29
 image:

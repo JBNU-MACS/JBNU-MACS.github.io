@@ -1,4 +1,5 @@
 ---
+research_fields: ["medical-ai", "healthcare", "development"]
 title: 'Smartphone-based Spectral Imaging Otoscope: System Development and Preliminary Study for Evaluation of Its Potential As a Mobile Diagnostic Tool'
 
 # Authors

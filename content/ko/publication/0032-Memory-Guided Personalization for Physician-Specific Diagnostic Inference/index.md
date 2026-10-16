@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare"]
 title: 'Memory-Guided Personalization for Physician-Specific Diagnostic Inference'
 
 # Authors

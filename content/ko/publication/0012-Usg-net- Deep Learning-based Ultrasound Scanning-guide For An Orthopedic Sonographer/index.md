@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare", "physical-ai"]
 title: 'USG-Net: Deep Learning-based Ultrasound Scanning-Guide for an Orthopedic Sonographer'
 
 # Authors

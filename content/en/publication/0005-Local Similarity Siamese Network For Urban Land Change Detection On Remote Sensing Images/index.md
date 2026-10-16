@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "aerospace"]
 title: 'Local Similarity Siamese Network for Urban Land Change Detection on Remote Sensing Images'
 
 # Authors

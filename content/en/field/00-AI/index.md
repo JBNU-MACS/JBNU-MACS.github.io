@@ -1,4 +1,5 @@
 ---
+research_field: ai
 title: AI
 date: 2024-03-31
 image:

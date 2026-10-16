@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare", "physical-ai"]
 title: 'Modality-Aware Spectral Alignment for Personalized Federated EEG–Gaze Learning'
 
 authors:

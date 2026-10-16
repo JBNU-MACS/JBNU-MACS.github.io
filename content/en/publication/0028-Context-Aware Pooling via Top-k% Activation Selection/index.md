@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-mathematics"]
 title: 'TCP: Context-Aware Pooling via Top-k% Activation Selection'
 
 # Authors

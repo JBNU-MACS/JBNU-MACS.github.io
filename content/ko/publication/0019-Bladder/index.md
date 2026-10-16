@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai", "healthcare", "development", "computational-science"]
 title: 'Intelligent Bladder Volume Monitoring for Wearable Ultrasound Devices: Enhancing Accuracy through Deep Learning-based Coarse-to-Fine Shape Estimation'
 
 # Authors

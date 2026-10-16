@@ -1,4 +1,5 @@
 ---
+research_field: aerospace
 title: 항공우주 (Aerospace) 연구 주제
 date: 2024-03-26
 image:

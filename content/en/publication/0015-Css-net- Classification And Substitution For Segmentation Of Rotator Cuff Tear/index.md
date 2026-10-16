@@ -1,4 +1,5 @@
 ---
+research_fields: ["ai", "medical-ai"]
 title: 'CSS-Net: Classification and Substitution for Segmentation of Rotator Cuff Tear'
 
 # Authors

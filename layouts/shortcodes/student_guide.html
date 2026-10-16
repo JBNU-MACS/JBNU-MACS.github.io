@@ -1,21 +1,90 @@
 {{ $ko := eq .Page.Lang "ko" }}
 <div class="brand-page brand-join">
-  <header class="brand-join-intro">
-    <div><p class="brand-kicker">JOIN MACS LAB</p><h1>{{ if $ko }}연구 참여{{ else }}Join MACS Lab{{ end }}</h1><p class="brand-join-description">{{ if $ko }}의료 AI, 멀티모달 학습, 계산과학을 함께 연구할 분들을 기다립니다. 관심 있는 문제를 탐구하고, 아이디어를 구현하며, 실험으로 검증하는 과정에 참여해 보세요.{{ else }}Join us in medical AI, multimodal learning and computational science. Explore questions that interest you, implement ideas and put them to the test.{{ end }}</p><div class="brand-actions"><a class="brand-button" href="#opportunities">{{ if $ko }}참여 방법{{ else }}Ways to join{{ end }} ↓</a><a class="brand-link" href="{{ "about/" | relLangURL }}">{{ if $ko }}연구실 소개{{ else }}About the lab{{ end }} ↗</a></div></div>
-    <aside class="brand-join-contact"><span class="brand-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span><h2>{{ if $ko }}관심 분야부터 이야기해 주세요{{ else }}Start with your interests{{ end }}</h2><p>{{ if $ko }}학부연구 참여와 대학원 진학에 관한 문의를 받습니다. 간단한 자기소개와 관심 분야를 메일로 보내주세요.{{ else }}Contact us about undergraduate research or graduate study. Send a brief introduction and tell us what you would like to explore.{{ end }}</p><a class="brand-email" href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr <span aria-hidden="true">↗</span></a></aside>
-  </header>
-  <section class="brand-section" id="opportunities">
-    <header class="brand-section-heading"><div><h2>{{ if $ko }}참여 방법{{ else }}Ways to join{{ end }}</h2></div><a class="brand-link" href="{{ "notification/" | relLangURL }}">{{ if $ko }}모집 공지 확인{{ else }}Recruitment notices{{ end }} ↗</a></header>
-    <div class="brand-opportunities">
-      <article class="brand-opportunity"><h3>{{ if $ko }}학부연구 참여{{ else }}Undergraduate research{{ end }}</h3><p>{{ if $ko }}수업에서 배운 내용을 연구와 개발로 확장하고 싶은 학부생을 위한 경로입니다. 관심 분야와 해보고 싶은 일을 알려주세요.{{ else }}For undergraduate students who want to explore research and development beyond coursework. Tell us your interests and what you would like to try.{{ end }}</p><ul><li>{{ if $ko }}의료 AI·멀티모달·콘텐츠·생성 AI{{ else }}Medical AI, multimodal learning, content and generative AI{{ end }}</li><li>{{ if $ko }}AI 이론·수학과 실험·분석{{ else }}AI theory, mathematics, experimentation and analysis{{ end }}</li><li>{{ if $ko }}코딩과 Full-stack 응용 개발{{ else }}Coding and full-stack application development{{ end }}</li></ul><p class="brand-opportunity-note">{{ if $ko }}문의할 때: 학년·전공·관심 분야, 경험한 수업이나 프로젝트{{ else }}In your inquiry: year, major, interests and relevant coursework or projects{{ end }}</p><a class="brand-link" href="#inquiry">{{ if $ko }}학부연구 문의 방법{{ else }}How to get in touch{{ end }} ↗</a></article>
-      <article class="brand-opportunity"><h3>{{ if $ko }}석사·박사·통합과정{{ else }}Master’s, doctoral & integrated study{{ end }}</h3><p>{{ if $ko }}주제를 구체화하고 실험을 설계하며, 논문과 응용으로 연구를 발전시키고 싶은 분들을 환영합니다.{{ else }}For those who want to develop research questions, design experiments and advance their work through publications and applications.{{ end }}</p><ul><li>{{ if $ko }}논문 읽기·구현·실험·분석을 통한 연구{{ else }}Research through reading, implementation, experiments and analysis{{ end }}</li><li>{{ if $ko }}주제 발굴부터 논문 작성까지 연구 전 과정{{ else }}The research process from problem definition to writing{{ end }}</li><li>{{ if $ko }}개인 관심 분야와 연구실 방향의 연결{{ else }}Connecting your interests with the lab’s research directions{{ end }}</li></ul><p class="brand-opportunity-note">{{ if $ko }}문의할 때: 지원과정·CV·자기소개와 관심 연구 분야{{ else }}In your inquiry: intended program, CV, a brief introduction and research interests{{ end }}</p><a class="brand-link" href="#inquiry">{{ if $ko }}대학원 지원 문의 방법{{ else }}Graduate application inquiries{{ end }} ↗</a></article>
+  <header class="join-hero">
+    <div class="join-hero-copy">
+      <p class="join-eyebrow"><span class="join-status-dot" aria-hidden="true"></span> JOIN MACS LAB</p>
+      <h1>{{ if $ko }}호기심에서 시작해,<br><span>연구로 이어가세요.</span>{{ else }}Bring your curiosity.<br><span>Build what’s next.</span>{{ end }}</h1>
+      <p class="join-intro">{{ if $ko }}좋은 질문을 찾고, 직접 구현하고, 실험으로 확인하는 일.<br>전북대학교 MACS Lab에서 함께 시작해 보세요.{{ else }}Find a good question. Build an idea. Put it to the test. Start your next chapter with MACS Lab at Jeonbuk National University.{{ end }}</p>
+      <div class="join-actions">
+        <a class="join-button join-button-primary" href="#opportunities">{{ if $ko }}나에게 맞는 참여 방법{{ else }}Find your path{{ end }} <span aria-hidden="true">↓</span></a>
+        <a class="join-text-link" href="#inquiry">{{ if $ko }}문의하기{{ else }}Get in touch{{ end }} <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="join-hero-note">{{ if $ko }}학부연구 참여 · 석사 · 박사 · 통합과정{{ else }}Undergraduate research · Master’s · PhD · Integrated programs{{ end }}</p>
     </div>
-    <p class="brand-section-note">{{ if $ko }}모집 분야와 참여 조건, 선발 일정은 해당 모집 공지와 메일 문의를 통해 확인해 주세요.{{ else }}Please check the relevant notice or contact us for available topics, participation requirements and selection schedules.{{ end }}</p>
+    <div class="join-hero-visual">
+      <figure class="join-photo join-glass">
+        {{ with resources.Get "media/MICCAI2026/group.jpeg" }}{{ $photo := .Fit "1100x800 webp q85" }}
+          <img src="{{ $photo.RelPermalink }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" alt="{{ if $ko }}MICCAI 2026에 함께 참가한 MACS Lab 구성원{{ else }}MACS Lab members attending MICCAI 2026 together{{ end }}" fetchpriority="high">
+        {{ end }}
+        <figcaption><span>MACS LAB / IN THE WORLD</span><span>MICCAI 2026 · Strasbourg</span></figcaption>
+      </figure>
+      <div class="join-visual-note join-glass">
+        <span class="join-spark" aria-hidden="true">✳</span>
+        <div><span class="join-small-label">LEARN. BUILD. DISCOVER.</span><p>{{ if $ko }}함께 질문하고,<br>함께 성장하는 연구.{{ else }}Shared questions.<br>New possibilities.{{ end }}</p></div>
+        <a href="{{ "people/" | relLangURL }}" aria-label="{{ if $ko }}연구실 구성원 만나보기{{ else }}Meet the lab{{ end }}"><span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="join-topics" aria-label="{{ if $ko }}관심 연구 분야{{ else }}Explore research areas{{ end }}">
+    <span class="join-small-label">EXPLORE WITH US</span>
+    {{ range slice (dict "title" "Medical AI" "path" "field/01-medical-imaging/") (dict "title" "Multimodal Learning" "path" "field/00-ai/") (dict "title" "Physical AI" "path" "field/08-physical-ai/") (dict "title" "Computational Science" "path" "field/07-computational-science/") }}
+      <a href="{{ .path | relLangURL }}">{{ .title }} <span aria-hidden="true">↗</span></a>
+    {{ end }}
+  </nav>
+
+  <section class="join-section" id="opportunities" aria-labelledby="join-paths-title">
+    <header class="join-section-heading">
+      <div><p class="join-small-label">CHOOSE YOUR PATH</p><h2 id="join-paths-title">{{ if $ko }}지금의 나에게 맞는 시작{{ else }}A place to start, a path to grow{{ end }}</h2></div>
+      <a class="join-text-link" href="{{ "notification/" | relLangURL }}">{{ if $ko }}모집 공지 확인{{ else }}Recruitment notices{{ end }} <span aria-hidden="true">↗</span></a>
+    </header>
+    <div class="join-paths">
+      <article class="join-path join-path-undergrad join-glass">
+        <div class="join-path-top"><span class="join-path-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg></span><span class="join-path-label">UNDERGRADUATE</span><span class="join-path-number" aria-hidden="true">01</span></div>
+        <h3>{{ if $ko }}배운 것을,<br>직접 해보는 연구로.{{ else }}Turn what you learn<br>into what you build.{{ end }}</h3>
+        <p class="join-path-subtitle">{{ if $ko }}학부연구 참여{{ else }}Undergraduate research{{ end }}</p>
+        <p>{{ if $ko }}수업에서 생긴 궁금증을 연구와 개발로 확장해 보세요. 관심 있는 문제를 찾고, 코드와 실험으로 아이디어를 구체화합니다.{{ else }}Take your curiosity beyond coursework. Explore a problem that interests you and make your ideas concrete through code and experiments.{{ end }}</p>
+        <ul class="join-path-list">
+          <li>{{ if $ko }}의료 AI·멀티모달·피지컬 AI·콘텐츠 연구{{ else }}Medical AI, multimodal learning, physical AI and content{{ end }}</li>
+          <li>{{ if $ko }}논문 읽기와 모델 구현, 실험·분석{{ else }}Read papers, implement models and analyze experiments{{ end }}</li>
+          <li>{{ if $ko }}AI 이론·수학부터 웹·앱 응용 개발까지{{ else }}From AI theory and mathematics to web and app development{{ end }}</li>
+        </ul>
+        <div class="join-path-footer"><p>{{ if $ko }}학년·전공, 관심 분야와 수업·프로젝트 경험을 알려주세요.{{ else }}Tell us your year, major, interests and coursework or project experience.{{ end }}</p><a class="join-text-link" href="#inquiry">{{ if $ko }}학부연구 문의하기{{ else }}Ask about undergraduate research{{ end }} <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="join-path join-path-graduate join-glass">
+        <div class="join-path-top"><span class="join-path-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5-10-5Zm4 2v6c4 3 8 3 12 0v-6m4-2v8"/></svg></span><span class="join-path-label">GRADUATE</span><span class="join-path-number" aria-hidden="true">02</span></div>
+        <h3>{{ if $ko }}나만의 질문을,<br>새로운 기여로.{{ else }}Turn your question<br>into a contribution.{{ end }}</h3>
+        <p class="join-path-subtitle">{{ if $ko }}석사 · 박사 · 통합과정{{ else }}Master’s · PhD · Integrated programs{{ end }}</p>
+        <p>{{ if $ko }}관심 있는 문제를 깊이 탐구하고, 연구의 방향을 직접 만들어가세요. 실험의 결과를 논문과 실제 응용으로 발전시킵니다.{{ else }}Investigate a problem in depth and shape your research direction. Develop experimental results into publications and practical applications.{{ end }}</p>
+        <ul class="join-path-list">
+          <li>{{ if $ko }}문제 정의부터 실험 설계와 검증까지{{ else }}Define problems, design experiments and evaluate ideas{{ end }}</li>
+          <li>{{ if $ko }}논문 작성과 연구 결과의 공유{{ else }}Write papers and share research findings{{ end }}</li>
+          <li>{{ if $ko }}개인의 관심과 연구실의 방향을 연결{{ else }}Connect your interests with the lab’s research directions{{ end }}</li>
+        </ul>
+        <div class="join-path-footer"><p>{{ if $ko }}지원과정, 관심 주제와 자유 양식의 CV를 보내주세요.{{ else }}Share your intended program, research interests and a CV in your preferred format.{{ end }}</p><a class="join-text-link" href="#inquiry">{{ if $ko }}대학원 진학 문의하기{{ else }}Ask about graduate study{{ end }} <span aria-hidden="true">↗</span></a></div>
+      </article>
+    </div>
+    <p class="join-fine-print">{{ if $ko }}모집 분야·참여 조건·선발 일정은 모집 공지와 메일 문의를 통해 확인해 주세요.{{ else }}Please check recruitment notices or contact us for available topics, participation requirements and selection schedules.{{ end }}</p>
   </section>
-  <section class="brand-section brand-inquiry" id="inquiry">
-    <div><h2>{{ if $ko }}지원 및 문의{{ else }}Get in touch{{ end }}</h2><p>{{ if $ko }}완성된 연구 계획이 아니어도 좋습니다. 어떤 분야에 관심이 있고, 무엇을 해봤고, 앞으로 무엇을 해보고 싶은지 간단히 소개해 주세요.{{ else }}You do not need a fully formed research plan to start a conversation. Briefly share your interests, what you have worked on and what you would like to explore.{{ end }}</p><a class="brand-email" href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr <span aria-hidden="true">↗</span></a><div class="brand-actions"><a class="brand-link" href="{{ "notification/" | relLangURL }}">{{ if $ko }}모집 공지{{ else }}Recruitment notices{{ end }} ↗</a><a class="brand-link" href="{{ "contact/" | relLangURL }}">{{ if $ko }}연락처·방문 안내{{ else }}Contact & directions{{ end }} ↗</a></div></div>
-    <aside><h3>{{ if $ko }}메일에 담아주시면 좋은 내용{{ else }}What to include{{ end }}</h3><ol><li>{{ if $ko }}이름, 소속·전공, 학년 또는 지원과정{{ else }}Your name, affiliation, major and year or intended program{{ end }}</li><li>{{ if $ko }}관심 있는 연구 분야와 간단한 자기소개{{ else }}A brief introduction and your research interests{{ end }}</li><li>{{ if $ko }}관련 수업·프로젝트·GitHub 등 참고할 경험{{ else }}Relevant coursework, projects or a GitHub link{{ end }}</li></ol><p>{{ if $ko }}대학원 지원 문의에는 자유 양식의 CV를 함께 보내주세요.{{ else }}For graduate study inquiries, please also include a CV in your preferred format.{{ end }}</p></aside>
-  </section>
+
   {{ partial "content/undergraduate_stories" .Page }}
 
+  <section class="join-section join-inquiry join-glass" id="inquiry" aria-labelledby="join-inquiry-title">
+    <div class="join-inquiry-copy">
+      <p class="join-small-label">LET’S START A CONVERSATION</p>
+      <h2 id="join-inquiry-title">{{ if $ko }}첫 시작은,<br>메일 한 통이면 됩니다.{{ else }}It starts with<br>a conversation.{{ end }}</h2>
+      <p>{{ if $ko }}완성된 연구 계획이 아니어도 좋습니다.<br>지금 궁금한 것과 앞으로 해보고 싶은 일을 들려주세요.{{ else }}You do not need a fully formed research plan. Tell us what you are curious about and what you would like to explore.{{ end }}</p>
+      <a class="join-button join-button-primary join-email" href="mailto:ksl@jbnu.ac.kr">ksl@jbnu.ac.kr <span aria-hidden="true">↗</span></a>
+      <div class="join-inquiry-links"><a class="join-text-link" href="{{ "notification/" | relLangURL }}">{{ if $ko }}모집 공지{{ else }}Recruitment notices{{ end }} ↗</a><a class="join-text-link" href="{{ "contact/" | relLangURL }}">{{ if $ko }}연락처·방문 안내{{ else }}Contact & directions{{ end }} ↗</a></div>
+    </div>
+    <aside class="join-mail-guide">
+      <h3>{{ if $ko }}메일에 담아주세요{{ else }}A few things to include{{ end }}</h3>
+      <ol>
+        <li><span aria-hidden="true">01</span><div><h4>{{ if $ko }}간단한 자기소개{{ else }}Introduce yourself{{ end }}</h4><p>{{ if $ko }}이름, 소속·전공, 학년 또는 지원과정{{ else }}Name, affiliation, major and year or intended program{{ end }}</p></div></li>
+        <li><span aria-hidden="true">02</span><div><h4>{{ if $ko }}관심 있는 연구{{ else }}Share your interests{{ end }}</h4><p>{{ if $ko }}탐구하고 싶은 주제나 궁금한 문제{{ else }}A topic you want to explore or a question you want to investigate{{ end }}</p></div></li>
+        <li><span aria-hidden="true">03</span><div><h4>{{ if $ko }}지금까지의 경험{{ else }}Show your experience{{ end }}</h4><p>{{ if $ko }}관련 수업·프로젝트·GitHub 링크 등{{ else }}Relevant coursework, projects or a GitHub link{{ end }}</p></div></li>
+      </ol>
+      <p class="join-cv-note">{{ if $ko }}대학원 진학 문의에는 CV를 함께 보내주세요.{{ else }}For graduate study inquiries, please also include your CV.{{ end }}</p>
+    </aside>
+  </section>
 </div>

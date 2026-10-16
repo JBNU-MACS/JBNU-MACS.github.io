@@ -5,6 +5,22 @@
 {{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*cover*" }}{{ end }}
 {{ if not $heroRes }}{{ $heroRes = $p.Resources.GetMatch "*thumb*" }}{{ end }}
 {{ $summary := trim ($p.Summary | plainify) " \n\r\t" }}
+{{ $newsTranslations := slice }}
+{{ if eq $p.Section "post" }}
+  {{ range $language := slice "ko" "en" }}
+    {{ range $translation := $p.AllTranslations }}
+      {{ if eq $translation.Lang $language }}
+        {{ $newsTranslations = $newsTranslations | append $translation }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $bilingual := gt (len $newsTranslations) 1 }}
+{{ $readingTime := $p.ReadingTime }}
+{{ if $bilingual }}
+  {{ $readingTime = 0 }}
+  {{ range $newsTranslations }}{{ $readingTime = add $readingTime .ReadingTime }}{{ end }}
+{{ end }}
 
 <div class="universal-wrapper">
   <article class="macs-feed-single macs-feed-single--{{ $kindClass }}">
@@ -16,11 +32,17 @@
           {{ end }}
         </div>
 
-        <h1>{{ $p.Title }}</h1>
+        {{ if $bilingual }}
+          <h1 class="macs-news-bilingual-title">
+            {{ range $newsTranslations }}<span lang="{{ .Lang }}">{{ .Title }}</span>{{ end }}
+          </h1>
+        {{ else }}
+          <h1>{{ $p.Title }}</h1>
+        {{ end }}
 
         <div class="macs-feed-single-meta">
           <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006.01.02" }}</time>
-          {{ with $p.ReadingTime }}<span>{{ . }} min read</span>{{ end }}
+          {{ with $readingTime }}<span>{{ . }} min read</span>{{ end }}
           {{ with $p.Lastmod }}<span>Updated {{ .Format "2006.01.02" }}</span>{{ end }}
         </div>
 
@@ -38,7 +60,23 @@
 
     <section class="macs-feed-single-body">
       <div class="macs-feed-single-content">
-        {{ $p.Content }}
+        {{ if $bilingual }}
+          <nav class="macs-news-language-nav" aria-label="본문 언어 / Content languages">
+            <a href="#news-ko" lang="ko">한국어</a>
+            <a href="#news-en" lang="en">English</a>
+          </nav>
+          {{ range $newsTranslations }}
+            <section class="macs-news-language" id="news-{{ .Lang }}" lang="{{ .Lang }}" aria-labelledby="news-label-{{ .Lang }}">
+              <h2 id="news-label-{{ .Lang }}">{{ if eq .Lang "ko" }}한국어{{ else }}English{{ end }}</h2>
+              {{/* Namespace headings so matching paper titles have distinct anchors. */}}
+              {{ $content := replaceRE `id="([^"]+)"` (printf `id="news-%s-${1}"` .Lang) .Content }}
+              {{ $content = replaceRE `href="#([^"]+)"` (printf `href="#news-%s-${1}"` .Lang) $content }}
+              {{ $content | safeHTML }}
+            </section>
+          {{ end }}
+        {{ else }}
+          {{ $p.Content }}
+        {{ end }}
       </div>
     </section>
 

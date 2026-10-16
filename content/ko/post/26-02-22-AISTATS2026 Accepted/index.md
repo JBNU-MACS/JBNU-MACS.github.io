@@ -1,18 +1,18 @@
 ---
-title: Congratulations on AISTATS 2026 Acceptance!
+title: 'AISTATS 2026 논문 채택을 축하합니다'
 date: 2026-02-01
 share: false
 showShare: false
 ---
 
-We are excited to share that our paper has been accepted to **AISTATS 2026**:
+연구실의 논문이 <strong>AISTATS 2026</strong>에 채택되었습니다!
 
-**Seo-Yeon Choi**, and **Kyungsu Lee***, "**TCP: Context-Aware Pooling via Top-k% Activation Selection**," *Annual Conference on Artificial Intelligence and Statistics (AISTATS 2026)*.
+<strong>최서연, 이경수(교신저자)</strong>, 「TCP: Context-Aware Pooling via Top-k% Activation Selection」, <em>Annual Conference on Artificial Intelligence and Statistics (AISTATS 2026)</em>.
 
-This is a strong result at a **Top BK/CS venue**, and we warmly congratulate **Seo-Yeon Choi** (first author) and **Kyungsu Lee** (corresponding author).
+<strong>Top BK/CS 학술대회</strong>에서 거둔 성과로, 제1저자 최서연 학생과 교신저자 이경수 교수에게 축하를 전합니다.
 
-- Venue: **AISTATS 2026**
-- Badge: **Top**
-- Badge: **BK/CS**
+- 학회: <strong>AISTATS 2026</strong>
+- 배지: <strong>Top</strong>
+- 배지: <strong>BK/CS</strong>
 
-Congratulations again to the authors on this excellent achievement.
+저자들의 뛰어난 연구 성과를 다시 한번 축하합니다.

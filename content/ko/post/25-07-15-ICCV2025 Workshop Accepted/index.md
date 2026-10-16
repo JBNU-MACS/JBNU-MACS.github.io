@@ -1,60 +1,30 @@
 ---
-title: Congratulations to Seo-Yeon Choi (Student Researcher, 학부연구생) on Two Papers Accepted to ICCV 2025 Workshops!
+title: '최서연 학부연구생, ICCV 2025 워크숍 논문 2편 채택'
 date: 2025-07-19
 share: false
 showShare: false
 ---
 
-<br><br>
+최서연 학부연구생의 논문 <strong>2편이 ICCV 2025 Workshops(CVAMD / VADH25)에 채택</strong>되었습니다!
 
-We are thrilled to announce that our undergraduate researcher, **Seo-Yeon Choi (최서연)**, has achieved a remarkable accomplishment—**two papers have been accepted to workshops at ICCV 2025 Workshops (CVAMD / VADH25)**!
+한 편은 <strong>구두 발표</strong>, 다른 한 편은 <strong>포스터 발표</strong>로 선정되었습니다. 학부연구생으로서 국제 학술대회 워크숍에 두 편의 논문을 발표하게 된 이번 성과는 최서연 학생의 성실한 노력과 창의적인 연구를 보여줍니다.
 
-Even more exciting, one paper was selected for an **oral presentation** and the other for a **poster presentation**. Having two papers accepted at such a prestigious venue as ICCV is a truly outstanding feat, especially for an undergraduate researcher. This is a testament to Seo-Yeon’s dedication, hard work, and innovative research.
-
-Congratulations once again, Seo-Yeon! We look forward to seeing both the oral and poster presentations at ICCV 2025 in Hawaii! 🌺🌴
-
-
-<br><br>
-
----
-
-<br><br>
+진심으로 축하하며, 하와이에서 열리는 ICCV 2025의 구두 및 포스터 발표를 기대합니다! 🌺🌴
 
 ## Patient-Centric Statistical Multi-Modal Fusion for Medical Diagnosis: Integrating DICOM, Radiomics, and Patient Attributes
 
-![Info1](ICCVW2025/VADH25.png)
+![환자 중심 다중 모달 융합 연구](ICCVW2025/VADH25.png)
 
-### Abstract
+### 초록
 
-Deep learning (DL) has led to substantial progress in medical image analysis, particularly for disease classification. However, the integration of patient-specific attributes, such as age, body mass index (BMI), and lifestyle factors with radiomics and raw imaging data remains a key challenge in the development of personalized diagnostic models. To alleviate this, in this research, we propose a novel multi-modal framework, denoted as Statistically Coherent Network (SCN), which jointly models imaging, radiomic, and patient metadata through a structured multi-space latent representation. SCN facilitates distributional coherence across subpopulations by leveraging a newly devised statistics-based loss in conjunction with a triplet loss, thereby aligning feature distributions among clinically similar cohorts. This statistical alignment using T-test facilitates more interpretable and robust representation learning across heterogeneous patient groups. We evaluate SCN on four clinically diverse tasks, including breast cancer (mammography), obstructive sleep apnea (CT), rotator cuff tear (MRI), and Cormack-Lehane grading (X-ray), and demonstrate the consistent improvements over conventional single-space and multi-modal baselines. The experimental results highlight the importance of explicitly incorporating patient metadata, in terms of multimodal learning, to enhance model generalizability and clinical relevance.
-
-
-<br><br>
-
----
-
-<br><br>
+딥러닝은 특히 질병 분류를 중심으로 의료 영상 분석의 큰 발전을 이끌었습니다. 그러나 연령, 체질량지수(BMI), 생활 습관 등 환자별 특성을 라디오믹스 및 원시 영상 데이터와 통합하는 것은 맞춤형 진단 모델 개발의 핵심 과제로 남아 있습니다. 이를 해결하기 위해 구조화된 다중 공간 잠재 표현을 통해 영상, 라디오믹스, 환자 메타데이터를 공동 모델링하는 Statistically Coherent Network(SCN)라는 새로운 다중 모달 프레임워크를 제안합니다. SCN은 새롭게 설계한 통계 기반 손실과 삼중항 손실을 결합하여 하위 집단 사이의 분포 일관성을 확보하고, 임상적으로 유사한 집단의 특징 분포를 정렬합니다. T-검정을 활용한 통계적 정렬은 이질적인 환자 집단에 대해 더욱 해석 가능하고 강건한 표현 학습을 지원합니다. 유방암(맘모그래피), 폐쇄성 수면무호흡증(CT), 회전근개 파열(MRI), Cormack-Lehane 등급 분류(X-ray)라는 네 가지 임상 과제에서 SCN을 평가하여 기존 단일 공간 및 다중 모달 기준 모델 대비 일관된 성능 향상을 확인했습니다. 실험 결과는 다중 모달 학습에서 환자 메타데이터를 명시적으로 반영하는 것이 모델의 일반화 성능과 임상적 유용성을 높이는 데 중요함을 보여줍니다.
 
 ## Memory-Guided Personalization for Physician-Specific Diagnostic Inference
 
-![Info1](ICCVW2025/CVAMD25.png)
+![의사별 진단 추론 개인화 연구](ICCVW2025/CVAMD25.png)
 
-### Abstract
+### 초록
 
-Recent advances in deep learning have improved diagnostic precision across medical imaging tasks. However, clinical adoption remains limited due to a mismatch between model outputs and the diverse reasoning styles of physicians. Prior personalization efforts have primarily focused on patient-specific adaptation, overlooking clinician-specific variability. We propose a physician-centric diagnostic framework that supports real-time, adaptive inference tailored to individual clinicians. The system consists of three stages: supervised learning, Human-in-the-Loop guidance, and personalized deployment. Physician feedback is encoded as memory-based priors and reused at inference without retraining, enabling lightweight, end-to-end personalization. We validate our method on detection and segmentation tasks including parathyroid localization, breast cancer segmentation, and rotator cuff tear analysis. Results demonstrated that our model adapts effectively to individual diagnostic styles while maintaining high accuracy in clinical workflows.
+최근 딥러닝의 발전은 의료 영상 기반 진단의 정확도를 높였습니다. 그러나 모델 출력과 의사들의 다양한 추론 방식 사이의 불일치로 인해 임상 도입에는 여전히 한계가 있습니다. 기존 개인화 연구는 주로 환자별 적응에 초점을 맞추어 의료진별 차이를 충분히 반영하지 못했습니다. 본 연구는 개별 의료진에 맞춘 실시간 적응 추론을 지원하는 의사 중심 진단 프레임워크를 제안합니다. 시스템은 지도 학습, Human-in-the-Loop 지도, 개인화 배포의 세 단계로 구성됩니다. 의료진의 피드백을 메모리 기반 사전 정보로 인코딩하여 재학습 없이 추론 시 재사용함으로써 경량의 종단 간 개인화를 구현합니다. 부갑상선 위치 추정, 유방암 분할, 회전근개 분석 등 검출 및 분할 과제에서 방법을 검증했습니다. 실험 결과, 높은 정확도를 유지하면서 개별 의료진의 진단 방식에 효과적으로 적응함을 확인했습니다.
 
-<br><br>
-
----
-
-<br><br>
-
-Once again, congratulations to Seo-Yeon Choi for this outstanding achievement. Let’s look forward to an inspiring and impactful presentation at ICCV 2025! 🚀🎉
-
-<br><br>
-
----
-
-
-<br><br>
-
+최서연 학생의 뛰어난 성과를 다시 한번 축하하며, ICCV 2025에서의 의미 있는 발표를 기대합니다! 🚀🎉

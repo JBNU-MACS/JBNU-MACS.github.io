@@ -1,13 +1,14 @@
 ---
-title: Congratulations to Yeongsu Kim (Student Researcher, 학부연구생) on ICLR 2025 Workshop Acceptance!
+title: '김영수 학부연구생, ICLR 2025 워크숍 논문 채택'
 date: 2025-03-03
 ---
 
-Exciting news! Our undergraduate researcher, Yeongsu Kim, has achieved an outstanding milestone—his paper has been accepted to the ML4RS Workshop at ICLR 2025!
+김영수 학부연구생의 논문이 <strong>ICLR 2025 ML4RS Workshop</strong>에 채택되었습니다!
 
-As an undergraduate student, getting a paper into a prestigious venue like ICLR is no small feat, and this accomplishment is a testament to his dedication and hard work. Congratulations once again, Yeongsu!
+학부 과정에서 국제 학술대회 워크숍에 논문을 발표하게 된 이번 성과는 김영수 학생의 꾸준한 노력과 연구에 대한 열정을 보여줍니다. 진심으로 축하합니다!
 
-Looking forward to seeing the research presented in Singapore this April! 🚀🎉
+4월 싱가포르에서 연구 성과를 발표할 모습을 기대합니다! 🚀🎉
 
-#### Abstract
-Over the past few decades, geospatial objects have been extensively recognized as significant components in remote sensing applications, including environmental monitoring, urban planning, and defense. Particularly, accurate segmentation of objects has aimed at meaningful observations from aerial imagery, leading to the necessity of deep learning-based methodologies. However, conventional deep learning-based segmentation methodologies exhibit limited generalization capabilities across diverse geographical domains due to inherent variations in regional characteristics and data distribution shifts. Furthermore, most existing approaches strongly rely on static, pre-trained models lacking the adaptability to handle previously unseen data. To alleviate these limitations, we propose a novel Few-shot Semi-Online Adaptation framework incorporating interactive user feedback to iteratively refine segmentation outputs. By leveraging online learning and test-time adaptation, our approach enables models to continuously be accurate based on minimal user corrections, ensuring flexibility and adaptability to new environments. Experimental results demonstrate that our method effectively enhances the segmentation accuracy with minimal user intervention, bridging the gap between automated segmentation and domain-specific expertise. Our research contributes to the development of interactive, user-adaptive segmentation models to facilitate geospatial analysis more efficiently and reliably. 
+#### 초록
+
+지난 수십 년 동안 지리 공간 객체는 환경 모니터링, 도시 계획, 국방 등 원격탐사 응용에서 중요한 요소로 인식되어 왔습니다. 특히 항공 영상에서 의미 있는 관측 정보를 얻기 위한 정확한 객체 분할의 필요성으로 딥러닝 기반 방법이 발전했습니다. 그러나 기존의 딥러닝 기반 분할 방법은 지역별 특성과 데이터 분포 변화로 인해 다양한 지리적 도메인에서 일반화 성능에 한계를 보입니다. 또한 대부분의 기존 방법은 정적인 사전 학습 모델에 크게 의존하여 이전에 보지 못한 데이터에 적응하기 어렵습니다. 이를 해결하기 위해 대화형 사용자 피드백을 통합하여 분할 결과를 반복적으로 개선하는 Few-shot Semi-Online Adaptation 프레임워크를 제안합니다. 온라인 학습과 테스트 시점 적응을 활용해 최소한의 사용자 수정만으로 모델의 정확도를 지속적으로 유지하고 새로운 환경에 유연하게 적응하도록 합니다. 실험 결과, 적은 사용자 개입으로 분할 정확도가 효과적으로 향상되어 자동 분할과 도메인 전문가 지식 사이의 간극을 줄였습니다. 이 연구는 지리 공간 분석의 효율성과 신뢰성을 높이기 위한 대화형 사용자 적응 분할 모델 개발에 기여합니다.

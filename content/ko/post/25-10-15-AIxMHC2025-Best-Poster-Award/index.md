@@ -7,12 +7,12 @@ showShare: false
 
 축하합니다!
 
-MacsLAB의 **Seo-Yeon Choi, Haeyun Lee, Kyungsu Lee** 팀이
-**AIxMHC 2025**에서 **Best Poster Award**를 수상했습니다.
+MacsLAB의 <strong>Seo-Yeon Choi, Haeyun Lee, Kyungsu Lee</strong> 팀이
+<strong>AIxMHC 2025</strong>에서 <strong>Best Poster Award</strong>를 수상했습니다.
 
 수상 논문은 다음과 같습니다.
 
-- **Statistical Multi-Modal Fusion for Patient-Centric Medical Diagnosis Using DICOM**
+- <strong>Statistical Multi-Modal Fusion for Patient-Centric Medical Diagnosis Using DICOM</strong>
 
 ![Best Poster Award 상장](aixmhc2025-award-certificate.jpeg)
 *AIxMHC 2025 Best Poster Award Certificate*
@@ -26,5 +26,5 @@ MacsLAB의 **Seo-Yeon Choi, Haeyun Lee, Kyungsu Lee** 팀이
 앞으로도 MacsLAB은 의료 AI 분야에서 임상적으로 의미 있는 연구 성과를 이어가겠습니다.
 
 관련 링크:
-- [/publication/0036-statistical-multi-modal-fusion-for-patient-centric-medical-diagnosis-using-dicom/](/publication/0036-statistical-multi-modal-fusion-for-patient-centric-medical-diagnosis-using-dicom/)
+- [/publication/0036-statistical-multi-modal-fusion-for-patient-centric-medical-diagnosis-using-dicom/](/ko/publication/0036-statistical-multi-modal-fusion-for-patient-centric-medical-diagnosis-using-dicom/)
 - [AIxMHC 2025](https://chaoneng.github.io/aixmhc2025.github.io/)

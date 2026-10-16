@@ -1,18 +1,18 @@
 ---
-title: Congratulations on CHI 2026 Acceptance
+title: 'CHI 2026 논문 채택을 축하합니다'
 date: 2026-01-22
 share: false
 showShare: false
 ---
 
-We are delighted to announce that our paper has been accepted to **CHI 2026**:
+연구실의 논문이 <strong>CHI 2026</strong>에 채택되었습니다!
 
-**Seo-Yeon Choi**, and **Kyungsu Lee***, "**Human-Centered Personalization in Radiology AI: Evaluating Trust, Usability, and Cross-Hospital Robustness**," *ACM CHI Conference on Human Factors in Computing Systems (CHI 2026)*.
+<strong>최서연, 이경수(교신저자)</strong>, 「Human-Centered Personalization in Radiology AI: Evaluating Trust, Usability, and Cross-Hospital Robustness」, <em>ACM CHI Conference on Human Factors in Computing Systems (CHI 2026)</em>.
 
-This paper was accepted to a **Top BK/CS conference**, and we sincerely congratulate **Seo-Yeon Choi** (first author) and **Kyungsu Lee** (corresponding author).
+<strong>Top BK/CS 학술대회</strong>에 논문이 채택된 것을 축하하며, 제1저자 최서연 학생과 교신저자 이경수 교수에게 축하를 전합니다.
 
-- Venue: **CHI 2026**
-- Badge: **Top**
-- Badge: **BK/CS**
+- 학회: <strong>CHI 2026</strong>
+- 배지: <strong>Top</strong>
+- 배지: <strong>BK/CS</strong>
 
-Congratulations to the authors for this outstanding milestone.
+저자들의 뜻깊은 연구 성과를 축하합니다.

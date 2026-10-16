@@ -25,5 +25,5 @@ The award-winning paper is:
 MacsLAB will continue to strive for clinically meaningful research achievements in the field of medical AI.
 
 Related Links:
-- [/publication/0036-statistical-multi-modal-fusion-for-patient-centric-medical-diagnosis-using-dicom/](/publication/0036-statistical-multi-modal-fusion-for-patient-centric-medical-diagnosis-using-dicom/)
+- [/publication/0036-statistical-multi-modal-fusion-for-patient-centric-medical-diagnosis-using-dicom/](/en/publication/0036-statistical-multi-modal-fusion-for-patient-centric-medical-diagnosis-using-dicom/)
 - [AIxMHC 2025](https://chaoneng.github.io/aixmhc2025.github.io/)

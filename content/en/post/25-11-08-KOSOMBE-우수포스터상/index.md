@@ -25,5 +25,5 @@ Award-winning Paper Information:
 We sincerely congratulate Sagang Hong on his award and look forward to more excellent research achievements from MacsLAB.
 
 Related Links:
-- [/publication/0034-sam2-based-bayesian-prompt-adaptation-for-cross-modality-medical-segmentation/](/publication/0034-sam2-based-bayesian-prompt-adaptation-for-cross-modality-medical-segmentation/)
+- [/publication/0034-sam2-based-bayesian-prompt-adaptation-for-cross-modality-medical-segmentation/](/en/publication/0034-sam2-based-bayesian-prompt-adaptation-for-cross-modality-medical-segmentation/)
 - [KOSOMBE 2025 Fall Conference Program](https://www.kosombe.or.kr/register/2025_fall/program/sub07.html)

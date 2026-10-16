@@ -18,4 +18,4 @@ Accepted paper:
 Congratulations again to **Sakang Hong** and all co-authors on this outstanding accomplishment.
 
 Related link:
-- [/en/publication/0042-Uncertainty-Aware%20Bayesian%20Prompt%20Adaptation%20of%20SAM2%20for%20Few-Shot%20Cross-Modal%20Segmentation/](/en/publication/0042-Uncertainty-Aware%20Bayesian%20Prompt%20Adaptation%20of%20SAM2%20for%20Few-Shot%20Cross-Modal%20Segmentation/)
+- [/en/publication/0042-uncertainty-aware-bayesian-prompt-adaptation-of-sam2-for-few-shot-cross-modal-segmentation/](/en/publication/0042-uncertainty-aware-bayesian-prompt-adaptation-of-sam2-for-few-shot-cross-modal-segmentation/)

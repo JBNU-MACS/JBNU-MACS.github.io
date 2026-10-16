@@ -1,476 +1,75 @@
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var pubs = document.getElementById('container-publications');
-    if (pubs) {
-      pubs.style.height = '0';
-      pubs.style.display = 'none';
-    }
-    var pub = document.getElementById('publication-ref-mode');
-    if (pub) {
-      pub.classList.add('visible-by-opacity');
-      pub.classList.remove('hidden-by-opacity');
-    }
-  });
-</script>
+{{- $items := (where site.RegularPages "Section" "publication").ByDate.Reverse -}}
+{{- $ko := eq .Page.Lang "ko" -}}
 
-<style>
-.universal-wrapper.pt-3 { max-width:1380px; width:calc(100% - 48px); padding-top:2rem !important; }
-.universal-wrapper.pt-3 h1 { text-align:left; font-size:1.65rem; font-weight:650; color:#222; }
-.universal-wrapper:has(.pub-page-shell) { max-width:1380px !important; width:calc(100% - 48px) !important; }
-.pub-page-shell { display:grid; gap:3rem; }
-.pub-section { padding:0; }
-.pub-section-head { border-bottom:1px solid #222; padding-bottom:0.8rem; margin-bottom:0.8rem; }
-.pub-section-head h3 { margin:0; font-size:1rem; font-weight:600; color:#222; }
-.pub-wrap { width:100%; color:#333; }
-.pub-head, .pub-row { display:grid; grid-template-columns:64px minmax(0,1fr) minmax(0,1fr); column-gap:1.6rem; }
-.pub-head { padding:0.6rem 0; border-bottom:1px solid #ddd; }
-.pub-head .col-title { font-size:0.72rem; font-weight:600; color:#555; }
-.pub-row { align-items:start; padding:1.3rem 0; }
-.pub-year { font-size:0.95rem; font-weight:600; color:#333; padding-top:0.5rem; }
-.pub-list { list-style:none; padding:0; margin:0; }
-.pub-column { min-width:0; }
-.pub-item { margin:0 0 0.75rem; padding:0.65rem 0.75rem; font-size:0.77rem; line-height:1.75; border-left:2px solid transparent; color:#333; overflow-wrap:anywhere; }
-.pub-item:last-child { margin-bottom:0; }
-.pub-item.is-highlight { border-left-color:#c4a451; background:#fff9e5; }
-.pub-item a { color:#333 !important; text-decoration:none; font-weight:400; }
-.pub-item b > a { font-weight:600; }
-.pub-item a:hover { text-decoration:underline; text-underline-offset:3px; }
-.pub-item .venue-short { color:#444; font-weight:500; }
-.pub-item-meta-row { display:flex; flex-wrap:wrap; align-items:baseline; gap:0.25rem 0.65rem; margin-top:0.5rem; }
-.pub-item-meta-row .venue-badge, .journal-meta { color:#666; font-size:max(0.6rem,11px); font-weight:500; line-height:1.5; }
-.pub-item-meta-row .badge-top, .pub-item-meta-row .badge-award { color:#806024; }
-.pub-sep { margin:0; border:0; border-top:1px solid #ddd; }
-@media(max-width:900px) {
-  .universal-wrapper:has(.pub-page-shell) { width:calc(100% - 32px) !important; }
-  .pub-head { display:none; }
-  .pub-row { grid-template-columns:1fr; gap:1rem; }
-  .pub-year { padding:0; font-size:1rem; }
-  .pub-column:has(.pub-item)::before { content:attr(data-label); display:block; padding:0 0 0.4rem; font-size:0.65rem; color:#777; }
-  .pub-column:not(:has(.pub-item)) { display:none; }
-  .pub-item { font-size:14px; padding:0.6rem 0.65rem; }
-}
-</style>
+<div class="publications-index" id="publications-index">
+  <nav class="publications-filter" aria-label="{{ if $ko }}논문 유형{{ else }}Publication type{{ end }}">
+    <button type="button" data-kind="all" aria-pressed="true">{{ if $ko }}전체{{ else }}All{{ end }}</button>
+    <button type="button" data-kind="journal" aria-pressed="false">{{ if $ko }}학술지{{ else }}Journals{{ end }}</button>
+    <button type="button" data-kind="conference" aria-pressed="false">{{ if $ko }}국제학회{{ else }}Conferences{{ end }}</button>
+    <button type="button" data-kind="proceedings" aria-pressed="false">{{ if $ko }}기타 학회 발표{{ else }}Other proceedings{{ end }}</button>
+  </nav>
 
-<div id="publication-ref-mode" class="visible-by-opacity">
-  <div class="pub-page-shell">
-    <section class="pub-section">
-      <div class="pub-section-head">
-        <h3>Conferences & Journals</h3>
-        
-      </div>
-      <div class="pub-wrap">
-
-  {{/* ===== 타입 정의: 왼쪽(Conference) / 오른쪽(Journal) ===== */}}
-  <!-- {{ $leftTypes := slice "paper-csai" "paper-conference" }} -->
-  {{ $leftTypes := slice "paper-csai" }}
-  {{ $rightTypes := slice "article-journal" }}
-
-  {{/* ===== 전체 publication 페이지 ===== */}}
-  {{ $allItems := where site.RegularPages "Section" "publication" }}
-  {{ $allItems = $allItems.ByDate.Reverse }}
-  {{/* ===== 번호 맵: 오래된 논문=1, 연도 바뀌어도 번호 유지 ===== */}}
-  {{ $leftNumberMap2 := dict }}
-  {{ $rightNumberMap2 := dict }}
-  {{ range $idx, $it := (where $allItems "Params.publication_types" "intersect" $leftTypes).ByDate }}
-    {{ $leftNumberMap2 = merge $leftNumberMap2 (dict $it.RelPermalink (add $idx 1)) }}
-  {{ end }}
-  {{ range $idx, $it := (where $allItems "Params.publication_types" "intersect" $rightTypes).ByDate }}
-    {{ $rightNumberMap2 = merge $rightNumberMap2 (dict $it.RelPermalink (add $idx 1)) }}
-  {{ end }}
-
-  {{/* ===== 헤더(연도 + 2컬럼 타이틀) ===== */}}
-  <div class="pub-head">
-    <div></div>
-    <div class="col-title">Conferences</div>
-    <div class="col-title">Journal</div>
-  </div>
-
-  {{/* ===== 연도 기준으로 “한 번만” 그룹핑 ===== */}}
-  {{ range $group := $allItems.GroupByDate "2006" }}
-    {{ $yearPages := $group.Pages }}
-
-    {{ $leftItems := where $yearPages "Params.publication_types" "intersect" $leftTypes }}
-    {{ $rightItems := where $yearPages "Params.publication_types" "intersect" $rightTypes }}
-
-    {{/* 연도에 양쪽 다 아무것도 없으면 스킵 */}}
-    {{ if or (gt (len $leftItems) 0) (gt (len $rightItems) 0) }}
-
-      <div class="pub-row">
-        <div class="pub-year">{{ $group.Key }}</div>
-
-        {{/* ========== LEFT: Conference (paper-csai + paper-conference) ========== */}}
-        <div class="pub-column" data-label="Conferences">
-          <ol class="pub-list">
-            {{ range $itemIndex, $item := $leftItems }}
-              {{ $badges := $item.Params.badges | default (slice) }}
-              {{ with ($item.Params.award_badge | default "") }}
-                {{ $badges = $badges | append . }}
+  {{ range $items.GroupByDate "2006" }}
+    <section class="publications-year" aria-labelledby="publications-year-{{ .Key }}">
+      <h2 id="publications-year-{{ .Key }}">{{ .Key }}</h2>
+      <ol class="publications-list">
+        {{ range .Pages }}
+          {{ $kind := "proceedings" }}
+          {{ $types := .Params.publication_types | default (slice) }}
+          {{ if in $types "article-journal" }}
+            {{ $kind = "journal" }}
+          {{ else if or (in $types "paper-csai") (in $types "paper-conference") }}
+            {{ $kind = "conference" }}
+          {{ end }}
+          <li class="publication-entry" data-kind="{{ $kind }}">
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p class="publication-authors">{{ partial "content/render_publication_authors" (dict "item" . "link" true "showNotes" false "period" false "strongName" "") }}</p>
+            <p class="publication-venue">
+              {{ with .Params.publication }}<i>{{ . }}</i>{{ end }}
+              {{ with .Params.publication_short }}<span>({{ . }})</span>{{ end }}
+              {{ with .Params.publication_status }}<span>· {{ . }}</span>{{ end }}
+            </p>
+            <div class="publication-footnotes">
+              {{ range .Params.badges }}<span>{{ . }}</span>{{ end }}
+              {{ with .Params.award_badge }}<span>{{ . }}</span>{{ end }}
+              {{ with .Params.journal_type }}<span>{{ . }}</span>{{ end }}
+              {{ with .Params.impact_factor }}<span>IF {{ . }}</span>{{ end }}
+              {{ with .Params.jcr_rank }}<span>JCR {{ . }}</span>{{ end }}
+              {{ with .Params.jcr_percentile }}<span>{{ . }}</span>{{ end }}
+              {{ with .Params.url_pdf }}<a href="{{ . }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+              {{ if .Params.doi }}
+                {{ $doiURL := .Params.doi }}
+                {{ if not (hasPrefix $doiURL "http") }}{{ $doiURL = printf "https://doi.org/%s" $doiURL }}{{ end }}
+                <a href="{{ $doiURL }}" target="_blank" rel="noopener">DOI</a>
+              {{ else }}
+                {{ with .Params.url_source }}<a href="{{ . }}" target="_blank" rel="noopener">{{ if $ko }}원문{{ else }}Publisher{{ end }}</a>{{ end }}
               {{ end }}
-              {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
-              {{ $showAsterisk := index $roleFlags "show_asterisk" }}
-              {{ $isHighlight := partial "content/publication_should_highlight" (dict "item" $item "target" "Kyungsu Lee") }}
-              {{ $displayNumber := index $leftNumberMap2 $item.RelPermalink }}
-              {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
-              <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
-
-                {{ if $showAsterisk }}<b title="Main Author">*{{ $displayNumber }}.</b>&nbsp;
-                {{ else }}<b>{{ $displayNumber }}.</b>&nbsp;
-                {{ end }}
-
-                {{/* ===== 저자 출력 ===== */}}
-                {{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" true "period" true "strongName" "Kyungsu Lee") }}
-
-                {{/* ===== 제목 링크 ===== */}}
-                <b>
-                  {{ $link := $item.RelPermalink }}
-                  {{ $target := "" }}
-                  {{ if $item.Params.external_link }}
-                    {{ $link = $item.Params.external_link }}
-                    {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-                  {{ end }}
-
-                  {{ if $link }}
-                    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} style="color:black;">"{{ $item.Title }}"</a>
-                  {{ else }}
-                    "{{ $item.Title }}"
-                  {{ end }}
-                </b>
-
-                {{/* ===== Conference 출력 형식: csai면 (short) 스타일, 아니면 기본 컨퍼런스 ===== */}}
-                {{ $isCsai := false }}
-                {{ if $item.Params.publication_types }}
-                  {{ if (in $item.Params.publication_types "paper-csai") }}
-                    {{ $isCsai = true }}
-                  {{ end }}
-                {{ end }}
-
-                {{ if $isCsai }}
-                  , {{ with $item.Params.publication }}
-                    <i>{{ . }}</i>
-                    {{ if $item.Params.publication_short }}
-                      (<span class="venue-short">{{ $item.Params.publication_short }}</span>)
-                    {{ end }}
-                  {{ end }}
-                {{ else }}
-                  , {{ with $item.Params.publication }}
-                    <i>{{ . }}</i>,
-                  {{ end }}
-                  {{ with $item.Params.date }}
-                    ({{ (time .).Year }})
-                  {{ end }}
-                {{ end }}
-
-                
-                {{ if $item.Params.url_pdf }}
-                  <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
-                {{ end }}
-                {{ if or (gt (len $badges) 0) $item.Params.publication_short }}
-                  <div class="pub-item-meta-row">
-                    {{ range $b := $badges }}
-                      {{ $raw := printf "%v" $b }}
-                      {{ $norm := lower (replaceRE "[^a-z0-9]" "" $raw) }}
-                      {{ $label := $raw }}
-                      {{ if eq $norm "bkcs" }}{{ $label = "BK/CS" }}{{ end }}
-                      <span class="journal-meta{{ if eq $norm "top" }} badge-top{{ end }}{{ if eq $norm "bkcs" }} badge-bkcs{{ end }}{{ if in $norm "award" }} badge-award{{ end }}">{{ $label }}</span>
-                    {{ end }}
-                    {{ with $item.Params.publication_short }}
-                      <span class="venue-badge">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                {{ end }}
-              </li>
-            {{ end }}
-          </ol>
-        </div>
-
-        {{/* ========== RIGHT: Journal (article-journal only) ========== */}}
-        <div class="pub-column" data-label="Journals">
-          <ol class="pub-list">
-            {{ range $itemIndex, $item := $rightItems }}
-              {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
-              {{ $showAsterisk := index $roleFlags "show_asterisk" }}
-              {{ $isHighlight := partial "content/publication_should_highlight" (dict "item" $item "target" "Kyungsu Lee") }}
-              {{ $displayNumber := index $rightNumberMap2 $item.RelPermalink }}
-              {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
-              <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
-
-                {{ if $showAsterisk }}<b title="Main Author">*{{ $displayNumber }}.</b>&nbsp;
-                {{ else }}<b>{{ $displayNumber }}.</b>&nbsp;
-                {{ end }}
-
-                {{/* ===== 저자 출력 ===== */}}
-                {{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" true "period" true "strongName" "Kyungsu Lee") }}
-
-                {{/* ===== 제목 링크 ===== */}}
-                <b>
-                  {{ $link := $item.RelPermalink }}
-                  {{ $target := "" }}
-                  {{ if $item.Params.external_link }}
-                    {{ $link = $item.Params.external_link }}
-                    {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-                  {{ end }}
-
-                  {{ if $link }}
-                    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} style="color:black;">"{{ $item.Title }}"</a>
-                  {{ else }}
-                    "{{ $item.Title }}"
-                  {{ end }}
-                </b>
-
-                {{/* ===== Journal 출력 형식 (원래 article-journal 블록 유지) ===== */}}
-                , {{ with $item.Params.publication }}
-                  <i>{{ . }}</i>,
-                {{ end }}
-                {{ with $item.Params.publication_short }}
-                  <span class="venue-short">{{ . }}</span>,
-                {{ end }}
-                {{ with $item.Params.date }}
-                  {{ (time .).Year }}
-                {{ end }}
-
-                {{ $journalType := $item.Params.journal_type }}
-                {{ $journalIF := $item.Params.impact_factor }}
-                {{ $journalRank := $item.Params.jcr_rank }}
-                {{ $journalQuartile := $item.Params.jcr_percentile }}
-                {{ if or ($item.Params.publication_short) $journalType $journalIF $journalRank $journalQuartile }}
-                  <div class="pub-item-meta-row">
-                    {{ with $item.Params.publication_short }}
-                      <span class="venue-badge">{{ . }}</span>
-                    {{ end }}
-                    {{ with $journalType }}<span class="journal-meta">{{ . }}</span>{{ end }}
-                    {{ with $journalQuartile }}<span class="journal-meta">{{ . }}</span>{{ end }}
-                    {{ with $journalRank }}<span class="journal-meta">JCR {{ . }}</span>{{ end }}
-                    {{ with $journalIF }}<span class="journal-meta">IF {{ . }}</span>{{ end }}
-                  </div>
-                {{ end }}
-                {{ if $item.Params.url_pdf }}
-                  <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
-                {{ end }}
-              </li>
-            {{ end }}
-          </ol>
-        </div>
-
-      </div>
-
-      <hr class="pub-sep">
-
-    {{ end }}
-  {{ end }}
-
-      </div>
+              {{ with .Resources.GetMatch "*.bib" }}<a href="{{ .RelPermalink }}">BibTeX</a>{{ end }}
+            </div>
+          </li>
+        {{ end }}
+      </ol>
     </section>
-
-    <section class="pub-section">
-      <div class="pub-section-head">
-        <h3>Conference Proceedings</h3>
-      </div>
-      <div class="pub-wrap">
-
-  {{/* ===== 타입 정의: 왼쪽(Conference) / 오른쪽(Journal) ===== */}}
-  <!-- {{ $leftTypes := slice "paper-csai" "paper-conference" }} -->
-  {{ $leftTypes := slice "conference-international" }}
-  {{ $rightTypes := slice "conference-domestic" }}
-
-  {{/* ===== 전체 publication 페이지 ===== */}}
-  {{ $allItems := where site.RegularPages "Section" "publication" }}
-  {{ $allItems = $allItems.ByDate.Reverse }}
-  {{/* ===== 번호 맵: 오래된 논문=1, 연도 바뀌어도 번호 유지 ===== */}}
-  {{ $leftNumberMap := dict }}
-  {{ $rightNumberMap := dict }}
-  {{ range $idx, $it := (where $allItems "Params.publication_types" "intersect" $leftTypes).ByDate }}
-    {{ $leftNumberMap = merge $leftNumberMap (dict $it.RelPermalink (add $idx 1)) }}
   {{ end }}
-  {{ range $idx, $it := (where $allItems "Params.publication_types" "intersect" $rightTypes).ByDate }}
-    {{ $rightNumberMap = merge $rightNumberMap (dict $it.RelPermalink (add $idx 1)) }}
-  {{ end }}
-
-  {{/* ===== 헤더(연도 + 2컬럼 타이틀) ===== */}}
-  <div class="pub-head">
-    <div></div>
-    <div class="col-title">Conference Proceedings (International)</div>
-    <div class="col-title">Conference Proceedings (Domestic)</div>
-  </div>
-
-  {{/* ===== 연도 기준으로 “한 번만” 그룹핑 ===== */}}
-  {{ range $group := $allItems.GroupByDate "2006" }}
-    {{ $yearPages := $group.Pages }}
-
-    {{ $leftItems := where $yearPages "Params.publication_types" "intersect" $leftTypes }}
-    {{ $rightItems := where $yearPages "Params.publication_types" "intersect" $rightTypes }}
-
-    {{/* 연도에 양쪽 다 아무것도 없으면 스킵 */}}
-    {{ if or (gt (len $leftItems) 0) (gt (len $rightItems) 0) }}
-
-      <div class="pub-row">
-        <div class="pub-year">{{ $group.Key }}</div>
-
-        {{/* ========== LEFT: Conference (paper-csai + paper-conference) ========== */}}
-        <div class="pub-column" data-label="International proceedings">
-          <ol class="pub-list">
-            {{ range $itemIndex, $item := $leftItems }}
-              {{ $badges := $item.Params.badges | default (slice) }}
-              {{ with ($item.Params.award_badge | default "") }}
-                {{ $badges = $badges | append . }}
-              {{ end }}
-              {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
-              {{ $showAsterisk := index $roleFlags "show_asterisk" }}
-              {{ $isHighlight := partial "content/publication_should_highlight" (dict "item" $item "target" "Kyungsu Lee") }}
-              {{ $displayNumber := index $leftNumberMap $item.RelPermalink }}
-              {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
-              <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
-
-                {{ if $showAsterisk }}<b title="Main Author">*{{ $displayNumber }}.</b>&nbsp;
-                {{ else }}<b>{{ $displayNumber }}.</b>&nbsp;
-                {{ end }}
-
-                {{/* ===== 저자 출력 ===== */}}
-                {{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" true "period" true "strongName" "Kyungsu Lee") }}
-
-                {{/* ===== 제목 링크 ===== */}}
-                <b>
-                  {{ $link := $item.RelPermalink }}
-                  {{ $target := "" }}
-                  {{ if $item.Params.external_link }}
-                    {{ $link = $item.Params.external_link }}
-                    {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-                  {{ end }}
-
-                  {{ if $link }}
-                    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} style="color:black;">"{{ $item.Title }}"</a>
-                  {{ else }}
-                    "{{ $item.Title }}"
-                  {{ end }}
-                </b>
-
-                {{/* ===== Conference 출력 형식: csai면 (short) 스타일, 아니면 기본 컨퍼런스 ===== */}}
-                {{ $isCsai := false }}
-                {{ if $item.Params.publication_types }}
-                  {{ if (in $item.Params.publication_types "paper-csai") }}
-                    {{ $isCsai = true }}
-                  {{ end }}
-                {{ end }}
-
-                {{ if $isCsai }}
-                  , {{ with $item.Params.publication }}
-                    <i>{{ . }}</i>
-                    {{ if $item.Params.publication_short }}
-                      (<span class="venue-short">{{ $item.Params.publication_short }}</span>)
-                    {{ end }}
-                  {{ end }}
-                {{ else }}
-                  , {{ with $item.Params.publication }}
-                    <i>{{ . }}</i>,
-                  {{ end }}
-                  {{ with $item.Params.date }}
-                    ({{ (time .).Year }})
-                  {{ end }}
-                {{ end }}
-
-                .
-                {{ if $item.Params.url_pdf }}
-                  <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
-                {{ end }}
-                {{ if or (gt (len $badges) 0) $item.Params.publication_short }}
-                  <div class="pub-item-meta-row">
-                    {{ range $b := $badges }}
-                      {{ $raw := printf "%v" $b }}
-                      {{ $norm := lower (replaceRE "[^a-z0-9]" "" $raw) }}
-                      {{ $label := $raw }}
-                      {{ if eq $norm "bkcs" }}{{ $label = "BK/CS" }}{{ end }}
-                      <span class="journal-meta{{ if eq $norm "top" }} badge-top{{ end }}{{ if eq $norm "bkcs" }} badge-bkcs{{ end }}{{ if in $norm "award" }} badge-award{{ end }}">{{ $label }}</span>
-                    {{ end }}
-                    {{ with $item.Params.publication_short }}
-                      <span class="venue-badge">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                {{ end }}
-              </li>
-            {{ end }}
-          </ol>
-        </div>
-
-        {{/* ========== RIGHT: Conference Proceedings (Domestic) ========== */}}
-        <div class="pub-column" data-label="Domestic proceedings">
-          <ol class="pub-list">
-            {{ range $itemIndex, $item := $rightItems }}
-              {{ $badges := $item.Params.badges | default (slice) }}
-              {{ with ($item.Params.award_badge | default "") }}
-                {{ $badges = $badges | append . }}
-              {{ end }}
-              {{ $roleFlags := partial "content/publication_author_role_flags" (dict "item" $item "target" "Kyungsu Lee") }}
-              {{ $showAsterisk := index $roleFlags "show_asterisk" }}
-              {{ $isHighlight := partial "content/publication_should_highlight" (dict "item" $item "target" "Kyungsu Lee") }}
-              {{ $displayNumber := index $rightNumberMap $item.RelPermalink }}
-              {{ if not $displayNumber }}{{ $displayNumber = add $itemIndex 1 }}{{ end }}
-              <li class="pub-item{{ if $isHighlight }} is-highlight{{ end }}">
-
-                {{ if $showAsterisk }}<b title="Main Author">*{{ $displayNumber }}.</b>&nbsp;
-                {{ else }}<b>{{ $displayNumber }}.</b>&nbsp;
-                {{ end }}
-
-                {{/* ===== 저자 출력 ===== */}}
-                {{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" true "period" true "strongName" "Kyungsu Lee") }}
-
-                {{/* ===== 제목 링크 ===== */}}
-                <b>
-                  {{ $link := $item.RelPermalink }}
-                  {{ $target := "" }}
-                  {{ if $item.Params.external_link }}
-                    {{ $link = $item.Params.external_link }}
-                    {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-                  {{ end }}
-
-                  {{ if $link }}
-                    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} style="color:black;">"{{ $item.Title }}"</a>
-                  {{ else }}
-                    "{{ $item.Title }}"
-                  {{ end }}
-                </b>
-
-                {{/* ===== Journal 출력 형식 (원래 article-journal 블록 유지) ===== */}}
-                , {{ with $item.Params.publication }}
-                  <i>{{ . }}</i>,
-                {{ end }}
-                {{ with $item.Params.publication_short }}
-                  <span class="venue-short">{{ . }}</span>,
-                {{ end }}
-                {{ with $item.Params.date }}
-                  {{ (time .).Year }}
-                {{ end }}
-
-                .
-                {{ if $item.Params.url_pdf }}
-                  <a href="{{ $item.Params.url_pdf }}" target="_blank" style="color:black;">[PDF]</a>
-                {{ end }}
-                {{ if or (gt (len $badges) 0) $item.Params.publication_short }}
-                  <div class="pub-item-meta-row">
-                    {{ range $b := $badges }}
-                      {{ $raw := printf "%v" $b }}
-                      {{ $norm := lower (replaceRE "[^a-z0-9]" "" $raw) }}
-                      {{ $label := $raw }}
-                      {{ if eq $norm "bkcs" }}{{ $label = "BK/CS" }}{{ end }}
-                      <span class="journal-meta{{ if eq $norm "top" }} badge-top{{ end }}{{ if eq $norm "bkcs" }} badge-bkcs{{ end }}{{ if in $norm "award" }} badge-award{{ end }}">{{ $label }}</span>
-                    {{ end }}
-                    {{ with $item.Params.publication_short }}
-                      <span class="venue-badge">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                {{ end }}
-              </li>
-            {{ end }}
-          </ol>
-        </div>
-
-      </div>
-
-      <hr class="pub-sep">
-
-    {{ end }}
-  {{ end }}
-
-
-      </div>
-    </section>
-  </div>
 </div>
+
+<script>
+(() => {
+  const root = document.getElementById('publications-index');
+  if (!root) return;
+  const buttons = root.querySelectorAll('.publications-filter button');
+  const years = root.querySelectorAll('.publications-year');
+  buttons.forEach(button => button.addEventListener('click', () => {
+    const kind = button.dataset.kind;
+    buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    years.forEach(year => {
+      let visible = false;
+      year.querySelectorAll('.publication-entry').forEach(entry => {
+        entry.hidden = kind !== 'all' && entry.dataset.kind !== kind;
+        visible = visible || !entry.hidden;
+      });
+      year.hidden = !visible;
+    });
+  }));
+})();
+</script>

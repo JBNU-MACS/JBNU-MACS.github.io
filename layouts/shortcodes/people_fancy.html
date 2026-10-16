@@ -24,9 +24,9 @@
   <nav class="macs-people-tabs" aria-label="People categories">
     <button type="button" class="is-active" data-tab="all">{{ if eq .Page.Language.Lang "ko" }}전체{{ else }}All{{ end }}</button>
     <button type="button" data-tab="professor">{{ if eq .Page.Language.Lang "ko" }}지도교수{{ else }}Professor{{ end }}</button>
-    <button type="button" data-tab="graduate">{{ if eq .Page.Language.Lang "ko" }}석사{{ else }}Graduate{{ end }}</button>
+    <button type="button" data-tab="graduate">{{ if eq .Page.Language.Lang "ko" }}대학원생{{ else }}Graduate{{ end }}</button>
     <button type="button" data-tab="undergrad">{{ if eq .Page.Language.Lang "ko" }}학부연구생{{ else }}Undergraduate{{ end }}</button>
-    <button type="button" data-tab="parttime">{{ if eq .Page.Language.Lang "ko" }}파트{{ else }}Part-time{{ end }}</button>
+    <button type="button" data-tab="parttime">{{ if eq .Page.Language.Lang "ko" }}파트타임{{ else }}Part-time{{ end }}</button>
     <button type="button" data-tab="alumni">{{ if eq .Page.Language.Lang "ko" }}졸업생{{ else }}Alumni{{ end }}</button>
   </nav>
 
@@ -46,7 +46,7 @@
 
   <div class="macs-people-section" data-group="graduate">
     <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}석사{{ else }}Graduate (M.S. / Ph.D. Students){{ end }}</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}대학원생{{ else }}Graduate (M.S. / Ph.D. Students){{ end }}</h2>
       <span>{{ len $graduates }}</span>
     </div>
     <div class="macs-people-grid">
@@ -70,7 +70,7 @@
 
   <div class="macs-people-section" data-group="parttime">
     <div class="macs-people-section-head">
-      <h2>{{ if eq .Page.Language.Lang "ko" }}파트 석/박{{ else }}Part-time Students{{ end }}</h2>
+      <h2>{{ if eq .Page.Language.Lang "ko" }}파트타임 대학원생{{ else }}Part-time Students{{ end }}</h2>
       <span>{{ len $parttime }}</span>
     </div>
     <div class="macs-people-grid">
@@ -101,7 +101,7 @@
     var sections = root.querySelectorAll('.macs-people-section');
     function render(group) {
       sections.forEach(function (s) { s.style.display = (group === 'all' || s.getAttribute('data-group') === group) ? '' : 'none'; });
-      tabs.forEach(function (t) { t.classList.toggle('is-active', t.getAttribute('data-tab') === group); });
+      tabs.forEach(function (t) { var active = t.getAttribute('data-tab') === group; t.classList.toggle('is-active', active); t.setAttribute('aria-pressed', String(active)); });
     }
     tabs.forEach(function (t) { t.addEventListener('click', function () { render(t.getAttribute('data-tab') || 'all'); }); });
     render('all');

@@ -7,7 +7,8 @@
       {{ $kind := "proceedings" }}{{ $label := "Proceedings" }}
       {{ if in $types "article-journal" }}{{ $kind = "journal" }}{{ $label = "Journal" }}
       {{ else if or (in $types "paper-csai") (in $types "paper-conference") }}{{ $kind = "conference" }}{{ $label = "Conference" }}{{ end }}
-      <article class="academic-featured-paper">
+      {{ $roles := partial "content/publication_author_role_flags" (dict "item" $item) }}
+      <article class="academic-featured-paper{{ if $roles.is_kyungsu_main }} academic-featured-paper--lead{{ end }}">
         <a class="academic-featured-paper-image" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
           {{ with .Resources.GetMatch "featured*" }}{{ $img := .Fit "640x360 webp q85" }}<img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" alt="{{ if $ko }}논문 대표 그림{{ else }}Paper overview figure{{ end }}">
           {{ else }}<span class="academic-paper-placeholder"><span>{{ $label }}</span><strong>{{ .Params.publication_short | default "MACS" }}</strong></span>{{ end }}
@@ -15,7 +16,7 @@
         <div class="academic-featured-paper-content">
           <div class="academic-paper-byline"><span>{{ $label }} <span aria-hidden="true">·</span> <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time>{{ with .Params.publication_status }} <span aria-hidden="true">·</span> {{ . }}{{ end }}</span></div>
           <h3><a href="{{ .RelPermalink }}">{{ .Title }} <span class="academic-paper-title-arrow" aria-hidden="true">↗</span></a></h3>
-          <p class="academic-featured-paper-authors">{{ partial "content/render_publication_authors" (dict "item" . "link" false "showNotes" false "strongName" "") }}</p>
+          <p class="academic-featured-paper-authors">{{ partial "content/render_publication_authors" (dict "item" . "link" false "showNotes" false) }}</p>
           {{ partial "content/publication_badges" (dict "item" $item "kind" $kind) }}
         </div>
       </article>

@@ -1,0 +1,67 @@
+/* A portrait-led directory, with one typographic rhythm for every group. */
+.home-section:has(.macs-people-fancy) { padding: 0 !important; }
+.macs-people-fancy {
+  display: block; max-width: 1120px; padding: 36px 0 12px; color: #263c4d;
+}
+.macs-people-fancy > .institute-page-head {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 48px;
+  margin: 0; padding: 0 0 30px; background: transparent; border: 0; border-radius: 0; box-shadow: none;
+}
+.macs-people-fancy .institute-section-label { display: none; }
+.macs-people-fancy .institute-page-head h1 { font-size: var(--type-page); margin: 0; font-weight: 600; line-height: 1.4; }
+.macs-people-fancy .institute-page-intro { max-width: 530px; }
+.macs-people-fancy .institute-page-intro p { font-size: 14px; color: #73808d; line-height: 1.8; margin: 0; }
+.macs-people-fancy > .macs-people-tabs {
+  display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 34px; padding: 8px;
+  background: linear-gradient(110deg,#f1f6f9b3,#f9fafb80); border: 1px solid #e7edf1; border-radius: 14px; box-shadow: inset 0 1px 0 #fff;
+}
+.macs-people-fancy .macs-people-tabs button { margin: 0; padding: 8px 16px; min-height: 38px; font-size: 13px; line-height: 1.6; border: 0; border-radius: 8px; background: transparent; color: #6b7d8b; box-shadow: none; }
+.macs-people-fancy .macs-people-tabs button.is-active { background: #fff; color: #244761; box-shadow: 0 2px 8px #23476112,inset 0 0 0 1px #e0e8ee; }
+.macs-people-fancy .macs-people-tabs button:hover { color: #244761; background: #ffffffb3; }
+.macs-people-fancy > .macs-people-section { margin: 0 0 38px; padding: 0 0 36px; border: 0; border-bottom: 1px solid #e5ebef; background: transparent; box-shadow: none; border-radius: 0; }
+.macs-people-fancy .macs-people-section-head { display: flex; align-items: baseline; gap: 10px; margin: 0 0 22px; }
+.macs-people-fancy .macs-people-section-head h2 { font-size: 20px; font-weight: 600; color: #2c4659; margin: 0; line-height: 1.5; }
+.macs-people-fancy .macs-people-section-head > span { font-size: 12px; color: #8999a5; }
+.macs-people-fancy .macs-people-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 26px; }
+.macs-people-fancy .macs-people-card { min-width: 0; padding: 0; margin: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.macs-people-fancy .macs-people-card-inner { display: flex; flex-direction: column; align-items: stretch; gap: 0; height: 100%; }
+.macs-people-fancy .macs-people-photo-link { display: block; width: 100%; overflow: hidden; border-radius: 14px; background: #edf2f5; }
+.macs-people-fancy .macs-people-avatar { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 35%; border: 0; border-radius: 0; transition: transform 220ms ease; }
+.macs-people-fancy .macs-people-photo-link:hover .macs-people-avatar { transform: scale(1.025); }
+.macs-people-fancy .macs-people-avatar.placeholder { display: flex; justify-content: center; align-items: center; background: #edf2f5; color: #879aa9; font-size: 28px; }
+.macs-people-fancy .macs-people-meta { width: 100%; min-width: 0; padding: 17px 2px 0; }
+.macs-people-fancy .macs-people-card h3 { margin: 0 0 3px; font-size: 18px; line-height: 1.5; font-weight: 600; }
+.macs-people-fancy .macs-people-card h3 a { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; color: #263f52; }
+.macs-people-fancy .people-profile-arrow { color: #8da0ae; font-size: 14px; font-weight: 400; }
+.macs-people-fancy .people-name-en { margin: 0 0 11px; color: #84919c; font-size: 12px; line-height: 1.6; }
+.macs-people-fancy .macs-people-card .role { margin: 0 0 6px; font-size: 13px; line-height: 1.7; color: #577386; }
+.macs-people-fancy .macs-people-card .org { margin: 0; font-size: 12px; line-height: 1.75; font-weight: 400; color: #8a959e; overflow-wrap: break-word; }
+.macs-people-fancy .macs-people-card .contact { margin: 12px 0 0; font-size: 12px; }
+.macs-people-fancy .macs-people-card .contact a { color: #5a7a91; }
+.macs-people-fancy [data-group='professor'] .macs-people-grid { grid-template-columns: minmax(0,1fr); }
+.macs-people-fancy [data-group='professor'] .macs-people-card-inner {
+  display: grid; grid-template-columns: 160px minmax(0,1fr); align-items: center; gap: 20px 32px; padding: 22px;
+  border: 1px solid #e4ebf0; border-radius: 20px; background: linear-gradient(115deg,#f1f7fb80,#ffffffb3 55%,#eff7f380); box-shadow: inset 0 1px 0 #fff;
+}
+.macs-people-fancy [data-group='professor'] .macs-people-avatar { width: 100%; height: auto; aspect-ratio: 4 / 5; }
+.macs-people-fancy [data-group='professor'] .macs-people-meta { padding: 0; max-width: 680px; }
+.macs-people-fancy [data-group='professor'] h3 { margin: 0 0 4px; font-size: 22px; }
+.macs-people-fancy [data-group='professor'] .people-interests { grid-column: 1 / -1; margin: 0; padding-top: 16px; border-top: 1px solid #dfe8ed; color: #708797; font-size: 12px; line-height: 1.8; }
+@media(max-width:900px) {
+  .macs-people-fancy .macs-people-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+  .macs-people-fancy > .institute-page-head { align-items: flex-start; gap: 26px; }
+}
+@media(max-width:640px) {
+  .macs-people-fancy { padding-top: 24px; }
+  .macs-people-fancy > .institute-page-head { flex-direction: column; gap: 14px; padding-bottom: 24px; }
+  .macs-people-fancy .macs-people-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px 18px; }
+  .macs-people-fancy .macs-people-tabs button { padding: 7px 10px; font-size: 12px; min-height: 34px; }
+  .macs-people-fancy > .macs-people-tabs { gap: 4px; margin-bottom: 28px; }
+  .macs-people-fancy .macs-people-section-head h2 { font-size: 18px; }
+  .macs-people-fancy [data-group='professor'] .macs-people-card-inner { grid-template-columns: 105px minmax(0,1fr); gap: 18px; padding: 18px; }
+  .macs-people-fancy [data-group='professor'] h3 { font-size: 19px; }
+  .macs-people-fancy [data-group='professor'] .people-interests { grid-column: 1 / -1; margin: 0; padding-top: 14px; }
+  .macs-people-fancy .macs-people-card h3 { font-size: 16px; }
+  .macs-people-fancy .macs-people-card .org { font-size: 11px; }
+}
+@media(prefers-reduced-motion:reduce) { .macs-people-fancy .macs-people-avatar { transition: none; } }

@@ -1,7 +1,8 @@
 {{ $item := .item }}{{ $kind := .kind }}{{ $ko := eq $item.Lang "ko" }}
-<li class="publication-entry" data-kind="{{ $kind }}">
+{{ $roles := partial "content/publication_author_role_flags" (dict "item" $item) }}
+<li class="publication-entry{{ if $roles.is_kyungsu_main }} publication-entry--lead{{ end }}" data-kind="{{ $kind }}">
   <h4><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h4>
-  <p class="publication-authors">{{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" false "period" false "strongName" "") }}</p>
+  <p class="publication-authors">{{ partial "content/render_publication_authors" (dict "item" $item "link" true "showNotes" false "period" false) }}</p>
   <p class="publication-venue">{{ with $item.Params.publication }}<i>{{ . }}</i>{{ end }}{{ with $item.Params.publication_status }}<span> · {{ . }}</span>{{ end }}</p>
   <div class="publication-entry-footer">{{ partial "content/publication_badges" (dict "item" $item "kind" $kind) }}
 

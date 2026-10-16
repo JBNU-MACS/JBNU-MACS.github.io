@@ -2,7 +2,6 @@
 {{- $link := .link | default false -}}
 {{- $showNotes := .showNotes | default false -}}
 {{- $period := .period | default false -}}
-{{- $strongName := .strongName | default "" -}}
 {{- $authors := $item.Params.authors | default (slice) -}}
 {{- $notes := $item.Params.author_notes | default (slice) -}}
 {{- $total := len $authors -}}
@@ -12,8 +11,9 @@
   {{- $display := index $resolved "display" -}}
   {{- $url := index $resolved "url" -}}
   {{- $out := $display -}}
-  {{- if and (ne $strongName "") (eq $display $strongName) -}}
-    {{- $out = printf "<b>%s</b>" $display -}}
+  {{- $profile := index $resolved "page" -}}
+  {{- if and $profile ($profile.Params.highlight_name | default false) -}}
+    {{- $out = printf "<b class=\"publication-lab-author\">%s</b>" (htmlEscape $display) -}}
   {{- end -}}
   {{- if and $link (ne $url "") -}}
     <a href="{{ $url }}" style="color:black;">{{ $out | safeHTML }}</a>

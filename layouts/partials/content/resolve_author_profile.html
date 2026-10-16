@@ -17,11 +17,14 @@
   "dongjunkang" "강동준"
   "saganghong" "홍사강"
   "geonhahong" "홍건하"
+  "gunhahong" "홍건하"
   "suminkim" "김수민"
   "junholee" "이준호"
   "donghyeonlee" "이동현"
   "donghyunlee" "이동현"
   "jinyeongjeong" "정진영"
+  "jinyoungjung" "정진영"
+  "jinyoungjeong" "정진영"
   "sejinjeong" "정세진"
   "jinseonlee" "이진선"
   "hongseokchoi" "최홍석"
@@ -60,6 +63,7 @@
 {{- end -}}
 
 {{- if not $profile -}}
+  {{- $aliasNorm := lower (replaceRE "[^\\pL\\pN]" "" (index $alias $norm | default "")) -}}
   {{- $allAuthors := slice -}}
   {{- range site.Pages -}}
     {{- if and .File (or (eq .Type "authors") (eq .Section "authors")) (or (eq .Kind "term") (eq .Kind "page")) -}}
@@ -92,6 +96,7 @@
         {{- $fullNorm = printf "%s%s" $firstNorm $lastNorm -}}
       {{- end -}}
       {{- if or
+        (and (ne $aliasNorm "") (or (eq $aliasNorm $titleNorm) (eq $aliasNorm $koNorm)))
         (and (ne $titleNorm "") (eq $norm $titleNorm))
         (and (ne $koNorm "") (eq $norm $koNorm))
         (and (ne $enNorm "") (eq $norm $enNorm))
@@ -116,6 +121,8 @@
       {{- $display = $profile.Title -}}
     {{- end -}}
   {{- end -}}
+  {{/* Preserve the paper’s English spelling when a profile has no English display name. */}}
+  {{- if and (not $profile.Params.name_en) (gt (len (findRE "[A-Za-z]" $name)) 0) -}}{{- $display = $name -}}{{- end -}}
   {{- $url = $profile.RelPermalink -}}
 {{- end -}}
 

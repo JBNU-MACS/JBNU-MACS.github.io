@@ -1,28 +1,22 @@
 {{- $item := .item -}}
 {{- $target := .target | default "Kyungsu Lee" -}}
-{{- $targetNorm := lower (replaceRE "[^a-z0-9]" "" $target) -}}
+{{- $targetNorm := replaceRE "[^a-z0-9]" "" (lower $target) -}}
 {{- $authors := $item.Params.authors | default (slice) -}}
 {{- $notes := $item.Params.author_notes | default (slice) -}}
-
-{{- $isKyungsuMain := false -}}
+{{- $first := false -}}{{- $coFirst := false -}}{{- $corresponding := false -}}
 {{- range $idx, $auth := $authors -}}
   {{- $resolved := partial "content/resolve_author_profile" (dict "name" $auth) -}}
   {{- $display := index $resolved "display" | default (printf "%v" $auth) -}}
-  {{- $authNorm := lower (replaceRE "[^a-z0-9]" "" $display) -}}
-
-  {{- if eq $authNorm $targetNorm -}}
-    {{- if eq $idx 0 -}}
-      {{- $isKyungsuMain = true -}}
-    {{- else if lt $idx (len $notes) -}}
+  {{- $norm := replaceRE "[^a-z0-9]" "" (lower $display) -}}
+  {{- if eq $norm $targetNorm -}}
+    {{- $first = eq $idx 0 -}}
+    {{- if lt $idx (len $notes) -}}
       {{- $note := lower (printf "%v" (index $notes $idx)) -}}
-      {{- if or (in $note "equal contribution") (in $note "co-first") (in $note "corresponding") (in $note "공동") -}}
-        {{- $isKyungsuMain = true -}}
-      {{- end -}}
+      {{- $coFirst = or (in $note "equal contribution") (in $note "co-first") (in $note "co first") (in $note "joint first") (in $note "공동1저자") (in $note "공동제1저자") -}}
+      {{- $first = or $first $coFirst (in $note "first author") (in $note "제1저자") (in $note "1저자") -}}
+      {{- $corresponding = or (in $note "corresponding") (in $note "교신") -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
-
-{{- return (dict
-  "is_kyungsu_main" $isKyungsuMain
-  "show_asterisk" $isKyungsuMain
-) -}}
+{{- $main := or $first $corresponding -}}
+{{- return (dict "is_kyungsu_main" $main "show_asterisk" $main "first_author" $first "co_first_author" $coFirst "corresponding_author" $corresponding) -}}

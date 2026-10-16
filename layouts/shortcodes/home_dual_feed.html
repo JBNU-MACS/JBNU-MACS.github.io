@@ -10,7 +10,7 @@
   <div class="lab-papers-column">
     <header class="lab-section-heading"><h2>{{ if $ko }}최근 논문{{ else }}Recent publications{{ end }}</h2><a href="{{ "publication/" | relLangURL }}">{{ if $ko }}전체 보기{{ else }}All publications{{ end }} ↗</a></header>
     {{ range first 3 ((where site.RegularPages "Section" "publication").ByDate.Reverse) }}
-      <article class="lab-paper-row"><p>{{ .Date.Format "2006" }}{{ with .Params.publication_short }} / {{ . }}{{ end }}</p><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><div class="lab-paper-authors">{{ partial "content/render_publication_authors" (dict "item" . "link" false "showNotes" false "strongName" "") }}</div></article>
+      <article class="lab-paper-row"><p>{{ .Date.Format "2006" }}{{ with .Params.publication_short }} / {{ . }}{{ end }}</p><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><div class="lab-paper-authors">{{ partial "content/render_publication_authors" (dict "item" . "link" false "showNotes" false) }}</div></article>
     {{ end }}
   </div>
 </section>

@@ -59,6 +59,8 @@
   {{ $org = replace $org "학부연구생 (경제학부)" "Undergraduate Researcher (School of Economics)" }}
 {{ end }}
 
+{{ $englishName := $item.Params.name_en | default "" }}
+{{ if and (eq $lang "ko") (eq $englishName "") }}{{ range $item.Translations }}{{ if eq .Lang "en" }}{{ $englishName = .Params.name_en | default .Title }}{{ end }}{{ end }}{{ end }}
 <article class="macs-people-card">
   <div class="macs-people-card-inner">
     <a href="{{ $item.RelPermalink }}" class="macs-people-photo-link" aria-label="{{ $name }}">
@@ -69,7 +71,8 @@
       {{ end }}
     </a>
     <div class="macs-people-meta">
-      <h3><a href="{{ $item.RelPermalink }}">{{ $name }}</a></h3>
+      <h3><a href="{{ $item.RelPermalink }}">{{ $name }} <span class="people-profile-arrow" aria-hidden="true">↗</span></a></h3>
+      {{ if and (eq $lang "ko") (ne $englishName "") }}<p class="people-name-en">{{ $englishName }}</p>{{ end }}
       <p class="role">{{ $role }}</p>
       {{ if ne $org "" }}
         <p class="org">
@@ -84,6 +87,7 @@
         <p class="contact"><a href="mailto:{{ . }}">{{ . }}</a></p>
       {{ end }}
     </div>
+      {{ if in ($item.Params.user_groups | default (slice)) "Professor" }}{{ with $item.Params.interests }}<p class="people-interests">{{ delimit (first 4 .) " · " }}</p>{{ end }}{{ end }}
   </div>
 </article>
 

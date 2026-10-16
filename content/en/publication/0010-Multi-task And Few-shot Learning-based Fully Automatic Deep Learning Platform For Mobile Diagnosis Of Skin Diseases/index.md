@@ -25,8 +25,8 @@ author_notes:
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
-date: '2022-07-25'
-doi: 'https://doi.org/10.1109/JBHI.2022.3193685'
+date: '2023-01-01'
+doi: https://doi.org/10.1109/JBHI.2022.3193685
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2022-07-25'
@@ -47,7 +47,7 @@ jcr_percentile: 'Q1'
 abstract: Fluorescence imaging-based diagnostic systems have been widely used to diagnose skin diseases due to their ability to provide detailed information related to the molecular composition of the skin compared to conventional RGB imaging. In addition, recent advances in smartphones have made them suitable for application in biomedical imaging, and therefore various smartphone-based optical imaging systems have been developed for mobile healthcare. However, an advanced analysis algorithm is required to improve the diagnosis of skin diseases. Various deep learning-based algorithms have recently been developed for this purpose. However, deep learning-based algorithms using only white-light reflectance RGB images have exhibited limited diagnostic performance. In this study, we developed an auxiliary deep learning network called fluorescence-aided amplifying network (FAA-Net) to diagnose skin diseases using a developed multi-modal smartphone imaging system that offers RGB and fluorescence images. FAA-Net is equipped with a meta-learning-based algorithm to solve problems that may occur due to the insufficient number of images acquired by the developed system. In addition, we devised a new attention-based module that can learn the location of skin diseases by itself and emphasize potential disease regions, and incorporated it into FAA-Net. We conducted a clinical trial in a hospital to evaluate the performance of FAA-Net and to compare various evaluation metrics of our developed model and other state-of-the-art models for the diagnosis of skin diseases using our multi-modal system. Experimental results demonstrated that our developed model exhibited an 8.61% and 9.83% improvement in mean accuracy and area under the curve in classifying skin diseases, respectively, compared with other advanced models.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=7.70, 6.40% (Q1)___ <br> _IEEE Journal of Biomedical and Health Informatics (JBHI, 2022, Vol. 27, Issue 1, pp. 176-187)_
+summary: ___SCI(E); IF=7.70, 6.40% (Q1)___ <br> _IEEE Journal of Biomedical and Health Informatics, Vol. 27, No. 1, pp. 176–187_
 
 tags: ['AI', 'medical', 'healthcare', 'skin', 'few-shot', 'multi-task', 'Q1']
 
@@ -89,4 +89,14 @@ url_source: 'https://doi.org/10.1109/JBHI.2022.3193685'
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: 2023-01
+publisher: Institute of Electrical and Electronics Engineers (IEEE)
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1109/JBHI.2022.3193685
+volume: '27'
+issue: '1'
+pages: 176–187
+issn: 2168-2194
+eissn: 2168-2208
 ---

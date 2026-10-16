@@ -26,7 +26,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2024-01-05'
-doi: 'https://doi.org/10.1109/TUFFC.2024.3350033'
+doi: https://doi.org/10.1109/TUFFC.2024.3350033
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2024-01-05'
@@ -47,7 +47,7 @@ jcr_percentile: 'Q1'
 abstract: Accurate and continuous bladder volume monitoring is crucial for managing urinary dysfunctions. Wearable ultrasound devices offer a solution by enabling non-invasive and real-time monitoring. Previous studies have limitations in power consumption and computation cost or quantitative volume estimation capability. To alleviate this, we present a novel pipeline that effectively integrates conventional feature extraction and deep learning to achieve continuous quantitative bladder volume monitoring efficiently. Particularly, in the proposed pipeline, bladder shape is coarsely estimated by a simple bladder wall detection algorithm in wearable devices, and the bladder wall coordinates are wirelessly transferred to an external server. Subsequently, a roughly estimated bladder shape from the wall coordinates is refined in an external server with a diffusion-based model. With this approach, power consumption and computation costs on wearable devices remained low, while fully harnessing the potential of deep learning for accurate shape estimation. To evaluate the proposed pipeline, we collected a dataset of bladder ultrasound images and RF signals from 250 patients. By simulating data acquisition from wearable devices using the dataset, we replicated real-world scenarios and validated the proposed method within these scenarios. Experimental results exhibit superior improvements, including +9.32% of IoU value in 2D segmentation and -22.06 of RMSE in bladder volume regression compared to state-of-the-art performance from alternative methods, emphasizing the potential of this approach in continuous bladder volume monitoring in clinical settings. Therefore, this study effectively bridges the gap between accurate bladder volume estimation and the practical deployment of wearable ultrasound devices, promising improved patient care and quality of life.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=3.60, 17.70% (Q1)___ <br> _IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control (TUFFC, 2024, Early Access)_
+summary: ___SCI(E); IF=3.60, 17.70% (Q1)___ <br> _IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, Vol. 71, No. 7, pp. 775–785_
 
 tags: ['AI', 'medical', 'ultrasound', 'Diffusion', 'Q1']
 
@@ -89,4 +89,14 @@ url_source: 'https://doi.org/10.1109/TUFFC.2024.3350033'
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: 2024-07
+publisher: Institute of Electrical and Electronics Engineers (IEEE)
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1109/TUFFC.2024.3350033
+volume: '71'
+issue: '7'
+pages: 775–785
+issn: 0885-3010
+eissn: 1525-8955
 ---

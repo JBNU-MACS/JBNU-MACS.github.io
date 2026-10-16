@@ -22,7 +22,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2025-03-31'
-doi: '10.1109/LSP.2025.3557754'
+doi: https://doi.org/10.1109/LSP.2025.3557754
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2025-03-31'
@@ -43,7 +43,7 @@ jcr_percentile: 'Q2'
 abstract: Medical ultrasound imaging is a key diagnostic tool across various fields, with computer-aided diagnosis systems benefiting from advances in deep learning. However, its lower resolution and artifacts pose challenges, particularly for non-specialists. The simultaneous acquisition of degraded and high-quality images is infeasible, limiting supervised learning approaches. Additionally, self-supervised and zero-shot methods require extensive processing time, conflicting with the real-time demands of ultrasound imaging. Therefore, to address the aforementioned issues, we propose real-time ultrasound image enhancement via a self-supervised learning technique and a test-time adaptation for sophisticated rotational cuff tear diagnosis. The proposed approach learns from other domain image datasets and performs self-supervised learning on an ultrasound image during inference for enhancement. Our approach not only demonstrated superior ultrasound image enhancement performance compared to other state-of-the-art methods but also achieved an 18\% improvement in the RCT segmentation performance.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=3.6, 38.3% (Q2)___ <br> _IEEE Signal Processing Letters (Early Accept)_
+summary: ___SCI(E); IF=3.6, 38.3% (Q2)___ <br> _IEEE Signal Processing Letters, Vol. 32, pp. 1635–1639_
 
 tags: ['AI', 'Ultrasound', 'Super-resolution', 'Segmentation', 'Test-Time Adaptation', 'Q2']
 
@@ -85,4 +85,13 @@ url_source: 'https://ieeexplore.ieee.org/document/10948347'
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: '2025'
+publisher: Institute of Electrical and Electronics Engineers (IEEE)
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1109/LSP.2025.3557754
+volume: '32'
+pages: 1635–1639
+issn: 1070-9908
+eissn: 1558-2361
 ---

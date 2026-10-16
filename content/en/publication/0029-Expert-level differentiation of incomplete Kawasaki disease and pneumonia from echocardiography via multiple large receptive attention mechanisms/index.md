@@ -26,7 +26,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2025-09-01'
-doi: 'https://doi.org/10.1016/j.compbiomed.2025.110478'
+doi: https://doi.org/10.1016/j.compbiomed.2025.110478
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2025-09-01'
@@ -47,7 +47,7 @@ jcr_percentile: 'Q1'
 abstract: Incomplete Kawasaki disease (KD) is challenging to diagnose due to its lack of classic clinical features, yet it has a higher incidence of coronary artery lesions, making early detection crucial. Echocardiography plays a vital role in identifying these lesions, but differentiating incomplete KD from other febrile illnesses, such as COVID-19, is difficult. Algorithms capable of achieving expert-level performance are needed to aid diagnosis, particularly in the absence of pediatric cardiologists.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=6.30, 5.20% (Q1)___ <br> _Computers in Biology and Medicine (CBAM, Vol. 195)_
+summary: ___SCI(E); IF=6.30, 5.20% (Q1)___ <br> _Computers in Biology and Medicine, Vol. 195, Art. 110478_
 
 tags: ['AI', 'medical', 'Kawasaki disease']
 
@@ -89,4 +89,12 @@ url_source: 'https://www.sciencedirect.com/science/article/abs/pii/S001048252500
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: 2025-09
+publisher: Elsevier BV
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1016/j.compbiomed.2025.110478
+volume: '195'
+article_number: '110478'
+issn: 0010-4825
 ---

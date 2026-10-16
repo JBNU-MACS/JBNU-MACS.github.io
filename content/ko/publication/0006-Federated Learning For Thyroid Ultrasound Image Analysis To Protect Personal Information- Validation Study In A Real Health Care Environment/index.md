@@ -44,7 +44,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2021-05-18'
-doi: 'https://doi.org/10.2196/25869'
+doi: https://doi.org/10.2196/25869
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2021-05-18'
@@ -55,7 +55,7 @@ publishDate: '2021-05-18'
 publication_types: ['article-journal']
 
 # Publication name and optional abbreviated publication name.
-publication: Journal of Medical Internet Research Medical Informatics
+publication: JMIR Medical Informatics
 publication_short: JMIR Medical Informatics
 journal_type: SCI(E)
 impact_factor: '3.23'
@@ -65,7 +65,7 @@ jcr_percentile: 'Q3'
 abstract: (Background) Federated learning is a decentralized approach to machine learning; it is a training strategy that overcomes medical data privacy regulations and generalizes deep learning algorithms. Federated learning mitigates many systemic privacy risks by sharing only the model and parameters for training, without the need to export existing medical data sets. In this study, we performed ultrasound image analysis using federated learning to predict whether thyroid nodules were benign or malignant. (Objective) The goal of this study was to evaluate whether the performance of federated learning was comparable with that of conventional deep learning. (Methods) A total of 8457 (5375 malignant, 3082 benign) ultrasound images were collected from 6 institutions and used for federated learning and conventional deep learning. Five deep learning networks (VGG19, ResNet50, ResNext50, SE-ResNet50, and SE-ResNext50) were used. Using stratified random sampling, we selected 20% (1075 malignant, 616 benign) of the total images for internal validation. For external validation, we used 100 ultrasound images (50 malignant, 50 benign) from another institution.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=3.23, 56.45% (Q3)___ <br> _JMIR Medical Informatics (JMIR Medical Informatics, 2021, Vol. 9, Issue 5)_
+summary: ___SCI(E); IF=3.23, 56.45% (Q3)___ <br> _JMIR Medical Informatics, Vol. 9, No. 5, Art. e25869_
 
 tags: ['AI', 'medical', 'federated learning', 'Q3']
 
@@ -107,4 +107,14 @@ url_source: 'https://doi.org/10.2196/25869'
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: '2021-05-18'
+publisher: JMIR Publications Inc.
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.2196/25869
+volume: '9'
+issue: '5'
+article_number: e25869
+published_online: '2021-05-18'
+eissn: 2291-9694
 ---

@@ -7,7 +7,7 @@ authors:
 
 date: '2026-10-13T00:00:00+09:00'
 publishDate: '2026-10-13T00:00:00+09:00'
-doi: 'https://doi.org/10.1109/LSP.2026.3743024'
+doi: https://doi.org/10.1109/LSP.2026.3743024
 
 publication_types:
   - article-journal
@@ -15,10 +15,10 @@ publication_types:
 publication: IEEE Signal Processing Letters
 publication_short: IEEE SPL
 publication_status: Early Access
-publisher: IEEE
-pages: '1–5'
-issn: '1070-9908'
-eissn: '1558-2361'
+publisher: Institute of Electrical and Electronics Engineers (IEEE)
+pages: 1–5
+issn: 1070-9908
+eissn: 1558-2361
 journal_type: SCI(E)
 jcr_year: 2025
 impact_factor: '3.6'
@@ -35,7 +35,7 @@ research_overview: "This work combines EEG and gaze for surgical performance pre
 abstract: >-
   FedAlign-RAS predicts performance in robot-assisted surgery by combining EEG recordings with eye-gaze measurements in a personalized federated model. Shared encoders learn common representations, while small modules maintained by each client align spectral and temporal characteristics to address differences between individuals and between modalities. Evaluation uses a PhysioNet surgical-performance dataset, with additional pretraining on public recordings from consumer EEG and eye-tracking devices. The reported comparisons favor this personalized approach over centralized training, independent local models, and conventional federated learning, while retaining the original signals at each client.
 
-summary: '___SCI(E); IF=3.6, 39.1% (Q2), JCR 2025___ <br> _IEEE Signal Processing Letters (Early Access)_'
+summary: ___SCI(E); IF=3.6, 39.1% (Q2), JCR 2025___ <br> _IEEE Signal Processing Letters, pp. 1–5 (Early Access)_
 
 tags: ['AI', 'federated learning', 'multimodal learning', 'personalization', 'EEG', 'eye tracking', 'surgical skill assessment']
 featured: true
@@ -43,6 +43,9 @@ featured: true
 url_source: 'https://ieeexplore.ieee.org/document/11735077'
 url_code: ''
 url_project: ''
+publication_date: '2026-10-13'
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1109/LSP.2026.3743024
 ---
 
 ### Publication Details

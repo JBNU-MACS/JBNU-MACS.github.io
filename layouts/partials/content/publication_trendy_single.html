@@ -18,10 +18,7 @@
         </div>
 
         <p class="macs-pub-reference">
-          {{ with $p.Params.publication }}<i>{{ . }}</i>{{ end }}
-          {{ with $p.Params.publication_short }}(<span class="abbr">{{ . }}</span>){{ end }}
-          {{ if ne $pubYear "" }}, {{ $pubYear }}{{ end }}.
-          {{ with $p.Params.publication_status }} {{ . }}.{{ end }}
+          {{ partial "content/publication_reference" (dict "item" $p) }}{{ if ne $pubYear "" }}, {{ $pubYear }}.{{ end }}
         </p>
       </div>
 
@@ -42,6 +39,11 @@
             {{ with $p.Params.publication_short }}<li><strong>Abbr.</strong><span class="abbr">{{ . }}</span></li>{{ end }}
             {{ with $pubYear }}<li><strong>Year</strong><span>{{ . }}</span></li>{{ end }}
             {{ with $p.Params.publication_status }}<li><strong>Status</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.volume }}<li><strong>Volume</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.issue }}<li><strong>Issue</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.article_number }}<li><strong>Article no.</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.publication_date }}<li><strong>{{ if and $p.Params.volume (ne $p.Params.publication_status "Early Access") }}Issue date{{ else }}Published{{ end }}</strong><span>{{ . }}</span></li>{{ end }}
+            {{ with $p.Params.published_online }}<li><strong>Online</strong><span>{{ . }}</span></li>{{ end }}
             {{ with $p.Params.pages }}<li><strong>Pages</strong><span>{{ . }}</span></li>{{ end }}
             {{ with $p.Params.publisher }}<li><strong>Publisher</strong><span>{{ . }}</span></li>{{ end }}
             {{ with $p.Params.journal_type }}<li><strong>Indexing</strong><span>{{ . }}</span></li>{{ end }}

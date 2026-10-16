@@ -23,8 +23,8 @@ author_notes:
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
-date: '2024-12-01'
-doi: '10.1109/TUFFC.2024.3506913'
+date: '2025-01-01'
+doi: https://doi.org/10.1109/TUFFC.2024.3506913
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2024-12-01'
@@ -35,7 +35,7 @@ publishDate: '2024-12-01'
 publication_types: ['article-journal']
 
 # Publication name and optional abbreviated publication name.
-publication: IEEE TRANSACTIONS ON ULTRASONICS FERROELECTRICS AND FREQUENCY CONTROL
+publication: IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control
 publication_short: TUFFC
 journal_type: SCI(E)
 impact_factor: '3.00'
@@ -45,7 +45,7 @@ jcr_percentile: 'Q1'
 abstract: Ultrasound neuromodulation (UNM) has gained significant interest in brain science due to its non-invasive nature, precision, and deep brain stimulation capabilities. However, the skull poses challenges along the acoustic path, leading to beam distortion and necessitating effective acoustic aberration correction. Acoustic holograms used with single-element ultrasound transducers offer a promising solution by enabling both aberration correction and multi-focal stimulation. A major limitation, however, is that hologram lenses designed for specific skulls may not perform well on other skulls, requiring multiple custom lenses for scaled studies. To address this, we introduce the Skull-Universal Acoustic Hologram (SUAH), which enables efficient transcranial UNM across various skull types. Our hologram generation framework integrates a physics-based acoustic hologram, differentiable acoustic simulation in heterogeneous media, and a gradient accumulation technique. SUAH, trained on a range of rodent skull shapes, demonstrated remarkable generalizability and robustness, even outperforming the Skull-Specific Acoustic Hologram (SSAH). Through comprehensive analyses, we showed that SUAH performs exceptionally well—even when trained on smaller datasets—significantly outperforming training based on individual skulls. In conclusion, SUAH shows promise as a scalable, versatile, and accurate tool for ultrasound neuromodulation, representing a significant advancement over conventional single-skull hologram lenses. Its ability to adapt to different skull types without the need for multiple custom lenses has the potential to greatly facilitate research in ultrasound neuromodulation.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=3.00, 18.70% (Q1)___ <br> _IEEE TRANSACTIONS ON ULTRASONICS FERROELECTRICS AND FREQUENCY CONTROL (TUFFC, Vol. 72, Issue. 1, pp.127-140)_
+summary: ___SCI(E); IF=3.00, 18.70% (Q1)___ <br> _IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, Vol. 72, No. 1, pp. 127–140_
 
 
 tags: ['AI', 'medical', 'ultrasound']
@@ -88,4 +88,14 @@ url_source: 'https://ieeexplore.ieee.org/document/10772248'
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: 2025-01
+publisher: Institute of Electrical and Electronics Engineers (IEEE)
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1109/TUFFC.2024.3506913
+volume: '72'
+issue: '1'
+pages: 127–140
+issn: 0885-3010
+eissn: 1525-8955
 ---

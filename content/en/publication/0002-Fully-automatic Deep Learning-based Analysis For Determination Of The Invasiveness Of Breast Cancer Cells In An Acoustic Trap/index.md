@@ -23,7 +23,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2020-05-11'
-doi: 'https://doi.org/10.1364/BOE.390558'
+doi: https://doi.org/10.1364/BOE.390558
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2020-05-11'
@@ -44,7 +44,7 @@ jcr_percentile: 'Q1'
 abstract: A single-beam acoustic trapping technique has been shown to be very useful for determining the invasiveness of suspended breast cancer cells in an acoustic trap with a manual calcium analysis method. However, for the rapid translation of the technology into the clinic, the development of an efficient/accurate analytical method is needed. We, therefore, develop a fully-automatic deep learning-based calcium image analysis algorithm for determining the invasiveness of suspended breast cancer cells using a single-beam acoustic trapping system. The algorithm allows to segment cells, find trapped cells, and quantify their calcium changes over time. For better segmentation of calcium fluorescent cells even with vague boundaries, a novel deep learning architecture with multi-scale/multi-channel convolution operations (MM-Net) is devised and constructed by a target inversion training method. The MM-Net outperforms other deep learning models in the cell segmentation. Also, a detection/quantification algorithm is developed and implemented to automatically determine the invasiveness of a trapped cell. For the evaluation of the algorithm, it is applied to quantify the invasiveness of breast cancer cells. The results show that the algorithm offers similar performance to the manual calcium analysis method for determining the invasiveness of cancer cells, suggesting that it may serve as a novel tool to automatically determine the invasiveness of cancer cells with high-efficiency.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=3.73, 22.73% (Q1)___ <br> _Biomedical Optics Express (BOE, 2020, Vol. 11, Issue 6, pp. 2976-2995)_
+summary: ___SCI(E); IF=3.73, 22.73% (Q1)___ <br> _Biomedical Optics Express, Vol. 11, No. 6, pp. 2976–2995_
 
 tags: ['AI', 'biomedical', 'cell', 'tracking', 'segmentation', 'Q1']
 
@@ -86,4 +86,15 @@ url_source: 'https://doi.org/10.1364/BOE.390558'
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: '2020-06-01'
+publisher: Optica Publishing Group
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1364/BOE.390558
+volume: '11'
+issue: '6'
+pages: 2976–2995
+published_online: '2020-05-11'
+issn: 2156-7085
+eissn: 2156-7085
 ---

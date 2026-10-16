@@ -28,7 +28,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2024-03-12'
-doi: 'https://doi.org/10.1164/rccm.202304-0767OC'
+doi: https://doi.org/10.1164/rccm.202304-0767OC
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2024-03-12'
@@ -48,7 +48,7 @@ jcr_percentile: 'Q1'
 abstract: Rationale| The incidence of clinically undiagnosed obstructive sleep apnea (OSA) is high among the general population due to limited access to polysomnography. Computed tomography (CT) of craniofacial regions obtained for other purposes can be beneficial in predicting OSA and its severity. Objectives| To predict OSA and its severity based on paranasal CT using a 3-dimensional deep learning algorithm. Methods| One internal dataset (n=798) and two external datasets (n=135 and 85) were used in this study. In the internal dataset, 92 normal, 159 mild, 201 moderate, and 346 severe OSA participants were enrolled to derive the deep learning model. A multimodal deep learning model was elicited from the connection between a 3-dimensional convolutional neural network (CNN)-based part treating unstructured data (CT images) and a multi-layer perceptron (MLP)-based part treating structured data (age, sex, and body mass index) to predict OSA and its severity. Measurements and Main Results| In four-class classification for predicting the severity of OSA, the AirwayNet-MM-H model (multimodal model with airway-highlighting preprocessing algorithm) showed an average accuracy of 87.6% (95% confidence interval [CI] 86.8–88.6) in the internal dataset and 84.0% (95% CI 83.0–85.1) and 86.3% (95% CI 85.3-87.3) in the two external datasets, respectively. In the two-class classification for predicting significant OSA (moderate to severe OSA), The area under the receiver operating characteristics (AUROC), accuracy, sensitivity, specificity, and F1 score were 0.910 (95% CI 0.899–0.922), 91.0% (95% CI 90.1–91.9), 89.9% (95% CI 88.8–90.9), 93.5% (95% CI 92.7–94.3), and 93.2% (95% CI 92.5–93.9), respectively, in the internal dataset. Furthermore, the diagnostic performance of the Airway Net-MM-H model outperformed that of the other six state-of-the-art deep learning models in terms of accuracy for both four- and two-class classifications and AUROC for two-class classification (p<0.001). Conclusions| A novel deep learning model, including a multimodal deep learning model and an airway-highlighting preprocessing algorithm from CT images obtained for other purposes, can provide significantly precise outcomes for OSA diagnosis
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=24.70, 3.80% (Q1)___ <br> _American Journal of Respiratory and Critical Care Medicine (AJRCCM, Early Accept)_
+summary: ___SCI(E); IF=24.70, 3.80% (Q1)___ <br> _American Journal of Respiratory and Critical Care Medicine, Vol. 210, No. 2, pp. 211–221_
 
 tags: ['AI', 'medical', 'Obstructive Sleep Apnea', 'Classification', 'CT', 'Multi-modal', 'Q1']
 
@@ -90,4 +90,15 @@ url_source: 'https://doi.org/10.1164/rccm.202304-0767OC'
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: '2024-07-15'
+publisher: Oxford University Press (OUP)
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1164/rccm.202304-0767OC
+volume: '210'
+issue: '2'
+pages: 211–221
+published_online: '2024-07-15'
+issn: 1073-449X
+eissn: 1535-4970
 ---

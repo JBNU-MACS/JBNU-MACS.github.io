@@ -18,7 +18,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2025-01-20'
-doi: 'https://doi.org/10.1016/j.eswa.2025.126639'
+doi: https://doi.org/10.1016/j.eswa.2025.126639
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2025-01-20'
@@ -29,7 +29,7 @@ publishDate: '2025-01-20'
 publication_types: ['article-journal']
 
 # Publication name and optional abbreviated publication name.
-publication: Expert Systems With Applications
+publication: Expert Systems with Applications
 publication_short: ESWA
 journal_type: SCI(E)
 impact_factor: '9.4'
@@ -39,7 +39,7 @@ jcr_percentile: 'Q1'
 abstract: Deep learning-based scene recognition algorithms have been developed for real-time application in indoor localization systems. However, owing to the slow calculation time resulting from the deep structure of convolutional neural networks, deep learning-based algorithms have limitations in the usage of real-time applications, despite their high accuracy in classification tasks. To significantly reduce the computation time of these algorithms and slightly improve their accuracy, we thus propose a path-selective deep learning network, denoted as Selective Optimal Network (SoN). The SoN selectively uses the depth-variable networks depending on a new indicator, denoted as the classification-complexity of a source image. The SoN reduces the prediction time by selecting optimal depth for the baseline networks corresponding to the input samples. The network was evaluated using two public datasets and two custom datasets for indoor localization and scene classification, respectively. The experimental results indicated that, compared to other deep learning models, the SoN exhibited improved accuracy and enhanced the processing speed by up to 78.59\%. Additionally, the SoN was applied to a smartphone-based indoor positioning system in real-time. The results indicated that the SoN shows excellent performance for rapid and accurate classification in real-time applications of indoor localization systems.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=9.4, 5% (Q1)___ <br> _Expert Systems With Applications (ESWA, Vol. 272)_
+summary: ___SCI(E); IF=9.4, 5% (Q1)___ <br> _Expert Systems with Applications, Vol. 272, Art. 126639_
 
 tags: ['AI', 'remote sensing', 'indoor localization']
 
@@ -81,4 +81,12 @@ url_source: 'https://www.sciencedirect.com/science/article/abs/pii/S095741742500
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: 2025-05
+publisher: Elsevier BV
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1016/j.eswa.2025.126639
+volume: '272'
+article_number: '126639'
+issn: 0957-4174
 ---

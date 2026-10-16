@@ -24,7 +24,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2021-11-23'
-doi: 'https://doi.org/10.1364/BOE.441590'
+doi: https://doi.org/10.1364/BOE.441590
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2021-11-23'
@@ -45,7 +45,7 @@ jcr_percentile: 'Q2'
 abstract: Otitis media (OM) is one of the most common ear diseases in children and a common reason for outpatient visits to medical doctors in primary care practices. Adhesive OM (AdOM) is recognized as a sequela of OM with effusion (OME) and often requires surgical intervention. OME and AdOM exhibit similar symptoms, and it is difficult to distinguish between them using a conventional otoscope in a primary care unit. The accuracy of the diagnosis is highly dependent on the experience of the examiner. The development of an advanced otoscope with less variation in diagnostic accuracy by the examiner is crucial for a more accurate diagnosis. Thus, we developed an intelligent smartphone-based multimode imaging otoscope for better diagnosis of OM, even in mobile environments. The system offers spectral and autofluorescence imaging of the tympanic membrane using a smartphone attached to the developed multimode imaging module. Moreover, it is capable of intelligent analysis for distinguishing between normal, OME, and AdOM ears using a machine learning algorithm. Using the developed system, we examined the ears of 69 patients to assess their performance for distinguishing between normal, OME, and AdOM ears. In the classification of ear diseases, the multimode system based on machine learning analysis performed better in terms of accuracy and F1 scores than single RGB image analysis, RGB/fluorescence image analysis, and the analysis of spectral image cubes only, respectively. These results demonstrate that the intelligent multimode diagnostic capability of an otoscope would be beneficial for better diagnosis and management of OM.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=3.56, 30.20% (Q2)___ <br> _Biomedical Optics Express (BOE, 2021, Vol. 12, Issue 12, pp. 7765-7779)_
+summary: ___SCI(E); IF=3.56, 30.20% (Q2)___ <br> _Biomedical Optics Express, Vol. 12, No. 12, pp. 7765–7779_
 
 tags: ['AI', 'medical', 'mobile', 'healthcare', 'classification', 'Q2']
 
@@ -87,4 +87,15 @@ url_source: 'https://doi.org/10.1364/BOE.441590'
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: '2021-12-01'
+publisher: Optica Publishing Group
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1364/BOE.441590
+volume: '12'
+issue: '12'
+pages: 7765–7779
+published_online: '2021-11-23'
+issn: 2156-7085
+eissn: 2156-7085
 ---

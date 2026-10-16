@@ -27,8 +27,8 @@ author_notes:
 # {{equal}}
 
 # date format: '2013-07-01T00:00:00Z'
-date: '2022-10-05'
-doi: 'https://doi.org/10.1111/anae.15874'
+date: '2023-01-01'
+doi: https://doi.org/10.1111/anae.15874
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2022-10-05'
@@ -49,7 +49,7 @@ jcr_percentile: 'Q1'
 abstract: Unanticipated difficult laryngoscopy is associated with serious airway-related complications. We aimed to develop and test a convolutional neural network-based deep-learning model that uses lateral cervical spine radiographs to predict Cormack_ehane grade 3 or 4 direct laryngoscopy views of the glottis. We analysed the radiographs of 5939 thyroid surgery patients at our hospital, 253 (4%) of whom had grade 3 or 4 glottic views. We used 10 randomly sampled datasets to train a model. We compared the new model with six similar models (VGG, ResNet, Xception, ResNext, DenseNet and SENet). The Brier score (95%CI) of the new model, 0.023 (0.0210.025), was lower (_etter) than the other models- VGG, 0.034 (0.0340.035); ResNet, 0.033 (0.0330.035); Xception, 0.032 (0.0310.033); ResNext, 0.033 (0.0320.033); DenseNet, 0.030 (0.0290.032); SENet, 0.031 (0.0290.032), all p<0.001. We calculated mean (95%CI) of the new model for- R2, 0.428 (0.3880.468); mean squared error, 0.023 (0.0210.025); mean absolute error, 0.048 (0.0460.049); balanced accuracy, 0.713 (0.6840.742); and area under the receiver operating characteristic curve, 0.965 (0.9620.969). Radiographic features around the hyoid bone, pharynx and cervical spine were associated with grade 3 and 4 glottic views.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=10.70, 1.40% (Q1)___ <br> _Anaesthesia (Anaesthesia, 2022, Vol. 78, Issue 1, pp. 64-72)_
+summary: ___SCI(E); IF=10.70, 1.40% (Q1)___ <br> _Anaesthesia, Vol. 78, No. 1, pp. 64–72_
 
 
 tags: ['AI', 'medical', 'x-ray', 'localization', 'classification', 'Q1']
@@ -92,4 +92,15 @@ url_source: 'https://doi.org/10.1111/anae.15874'
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: 2023-01
+publisher: Wiley
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1111/anae.15874
+volume: '78'
+issue: '1'
+pages: 64–72
+published_online: '2022-10-05'
+issn: 0003-2409
+eissn: 1365-2044
 ---

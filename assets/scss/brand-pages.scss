@@ -9,8 +9,8 @@
   position: relative; isolation: isolate; color: #23394b; padding: 40px 0 24px;
 }
 .brand-page::before {
-  content: ''; position: absolute; inset: 110px -20px 0; z-index: -1; pointer-events: none;
-  border-radius: 48px;
+  content: ''; position: absolute; inset: 240px 0 0; z-index: -1; pointer-events: none;
+  border-radius: 48px; mask-image: linear-gradient(transparent,#000 12%,#000 85%,transparent);
   background: radial-gradient(ellipse 420px 310px at 8% 30%,rgba(146,198,232,.55),transparent 75%), radial-gradient(ellipse 440px 320px at 93% 52%,rgba(145,211,195,.43),transparent 75%), radial-gradient(ellipse 420px 290px at 40% 95%,rgba(189,178,225,.37),transparent 75%);
 }
 .brand-page h1 { margin: 0 0 20px; color: #20384c; font-size: var(--type-page); font-weight: 600; line-height: 1.4; letter-spacing: -.025em; text-align: left; }
@@ -23,34 +23,27 @@
 .brand-page a:focus-visible { outline: 2px solid #456b98; outline-offset: 4px; }
 .brand-page .brand-link, .brand-page .brand-button, .brand-page .institute-small-link { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; line-height: 1.6; }
 .brand-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 24px; }
-.brand-hero {
-  position: relative; display: grid; grid-template-columns: .9fr 1.1fr; align-items: stretch;
-  padding: 12px; border: 1px solid var(--brand-line); border-radius: 28px;
-  background: linear-gradient(120deg,#e5f0f5,#f4f7fb 45%,#dcebe9);
-  box-shadow: 0 18px 48px -30px rgba(41,76,102,.35),inset 0 1px 0 #fff;
-}
-.brand-hero-copy {
-  position: relative; z-index: 1; min-width: 0; padding: 38px 30px 34px;
-  border: 1px solid rgba(255,255,255,.92); border-radius: 19px 0 0 19px;
-  background: var(--brand-glass); backdrop-filter: blur(18px) saturate(130%);
-  box-shadow: inset 0 1px 0 #fff;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.brand-page .brand-kicker { font-size: 10px; line-height: 1.7; letter-spacing: .1em; color: #617e90; margin-bottom: 22px; }
-.brand-hero-description { margin-bottom: 24px !important; }
-.brand-hero .brand-actions { gap: 10px; }
-.brand-hero .brand-link, .brand-page .brand-button {
-  padding: 10px 15px; border: 1px solid rgba(255,255,255,.95); border-radius: 10px;
-  background: rgba(255,255,255,.65); box-shadow: 0 3px 10px -6px rgba(28,66,89,.4),0 0 0 1px rgba(127,160,181,.15);
-}
-.brand-hero-photo { position: relative; margin: 0; min-width: 0; overflow: hidden; border-radius: 0 19px 19px 0; background: #e6eef1; display: flex; flex-direction: column; justify-content: flex-end; }
-.brand-hero-photo > img { display: block; width: 100%; height: auto; min-height: 0; flex: 1; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 70%; }
-.brand-hero-photo figcaption {
-  position: relative; margin: 0; flex-shrink: 0; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px;
-  padding: 11px 14px; color: #243b4b; font-size: 11px; line-height: 1.7; border: 1px solid rgba(255,255,255,.7); border-radius: 0;
-  background: rgba(255,255,255,.64); backdrop-filter: blur(16px) saturate(140%); box-shadow: 0 5px 18px rgba(28,49,60,.1);
-}
-.brand-photo-link { font-size: 11px; }
+.brand-hero { display: block; padding: 0; border: 0; background: none; box-shadow: none; }
+.brand-hero-copy { display: grid; grid-template-columns: .7fr 1.3fr; column-gap: 70px; align-items: start; padding: 0; border: 0; background: none; box-shadow: none; }
+.brand-hero-copy h1 { grid-column: 1; grid-row: 1; }
+.brand-hero-copy .brand-hero-description { grid-column: 2; grid-row: 1 / 3; margin: 0; max-width: 610px; }
+.brand-hero-copy .brand-actions { grid-column: 1; grid-row: 2; gap: 18px; }
+.brand-hero-copy .brand-kicker { display: none; }
+.brand-page .brand-kicker { font-size: 11px; line-height: 1.7; letter-spacing: .1em; color: #698393; margin-bottom: 16px; }
+.brand-hero-photo { display: block; margin: 30px 0 0; padding: 8px; min-width: 0; border: 1px solid #dde8ed; border-radius: 22px; background: linear-gradient(120deg,#ffffffc9,#e1edf0a3); box-shadow: 0 16px 40px -30px #21445c55,inset 0 1px 0 #fff; }
+.brand-hero-photo > img { display: block; width: 100%; height: 370px; object-fit: cover; object-position: center 85%; border-radius: 15px; }
+.brand-hero-photo figcaption { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin: 0; padding: 14px 12px 6px; font-size: 12px; color: #6b8292; line-height: 1.7; }
+.brand-photo-link { font-size: 12px; }
+.brand-page .brand-button { padding: 10px 16px; border: 1px solid #d9e4eb; border-radius: 9px; background: #ffffffb3; box-shadow: inset 0 1px 0 #fff,0 3px 10px -7px #24486255; }
+.brand-join-intro { display: grid; grid-template-columns: 1.15fr .85fr; gap: 70px; align-items: center; }
+.brand-join-description { max-width: 590px; margin-bottom: 26px !important; }
+.brand-join-contact { padding: 30px; border: 1px solid #d5e5eb; border-top-color: #fff; border-radius: 20px; background: linear-gradient(125deg,#e9f4f5b3,#ffffff7a 65%,#e3eafa80); backdrop-filter: blur(20px); box-shadow: inset 0 1px 0 #fff,0 10px 25px -24px #24486288; }
+.brand-page .brand-join-contact h2 { font-size: 18px; margin-bottom: 12px; }
+.brand-page .brand-join-contact p { font-size: 14px; }
+.brand-page .brand-join-contact .brand-email { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid #ccdde5; font-size: 17px; }
+.brand-contact-icon { display: flex; width: 36px; height: 36px; align-items: center; justify-content: center; margin-bottom: 16px; color: #587b91; }
+.brand-contact-icon svg { width: 30px; height: 30px; }
+.brand-contact-icon svg, .brand-contact-icon svg * { fill: none; stroke: currentColor; }
 .brand-page .brand-section { margin: 46px 0 0; scroll-margin-top: 110px; }
 .brand-section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 22px; }
 .brand-section-heading h2 { margin: 0; }
@@ -94,8 +87,7 @@
 .brand-page .institute-project-label { margin: 0; color: #6a8296; font-size: 12px; }
 .brand-page .institute-story-grid article > p:not(.institute-project-label), .brand-page .institute-story-grid .institute-small-link { display: none; }
 @media(max-width:900px) {
-  .brand-hero { grid-template-columns: 1fr 1fr; }
-  .brand-hero-copy { padding: 26px 22px; }
+  .brand-hero-copy, .brand-join-intro { column-gap: 36px; }
   .brand-directions { gap: 14px; }
   .brand-direction { padding: 22px; }
   .brand-invitation { align-items: flex-start; flex-direction: column; gap: 20px; }
@@ -107,11 +99,12 @@
   .home-section:has(.brand-page) > .container { width: calc(100% - 36px) !important; }
   .brand-page { padding-top: 24px; }
   .brand-page::before { inset-inline: 0; }
-  .brand-hero { grid-template-columns: minmax(0,1fr); padding: 8px; border-radius: 22px; }
-  .brand-hero-copy { padding: 26px 20px; border-radius: 15px 15px 0 0; }
-  .brand-hero-photo { border-radius: 0 0 15px 15px; }
-  .brand-hero-photo > img { height: auto; min-height: 0; }
-  .brand-hero-photo figcaption { position: static; border-radius: 0; border: 0; padding: 10px 12px; }
+  .brand-hero-copy, .brand-join-intro { display: flex; flex-direction: column; gap: 20px; align-items: stretch; }
+  .brand-hero-copy .brand-actions { order: 3; }
+  .brand-hero-photo { padding: 6px; border-radius: 17px; margin-top: 24px; }
+  .brand-hero-photo > img { height: auto; border-radius: 11px; }
+  .brand-hero-photo figcaption { padding: 10px 6px 4px; font-size: 11px; }
+  .brand-join-contact { padding: 24px; }
   .brand-hero h1 { margin-bottom: 16px; }
   .brand-page .brand-section { margin-top: 32px; }
   .brand-section-heading { flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
@@ -122,5 +115,5 @@
   .brand-page .institute-story-grid article { grid-template-columns: minmax(0,1fr); gap: 5px; }
 }
 @media(prefers-reduced-transparency:reduce) {
-  .brand-hero-copy, .brand-direction, .brand-opportunity, .brand-inquiry, .brand-invitation, .brand-page .institute-story-grid, .brand-hero-photo figcaption { background: #f5f9fc; backdrop-filter: none; }
+  .brand-join-contact, .brand-direction, .brand-opportunity, .brand-inquiry, .brand-invitation, .brand-page .institute-story-grid, .brand-hero-photo figcaption { background: #f5f9fc; backdrop-filter: none; }
 }

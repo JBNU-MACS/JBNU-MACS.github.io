@@ -24,7 +24,7 @@ author_notes:
 
 # date format: '2013-07-01T00:00:00Z'
 date: '2020-03-05'
-doi: 'https://doi.org/10.1002/jbio.201960213'
+doi: https://doi.org/10.1002/jbio.201960213
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2020-03-05'
@@ -44,7 +44,7 @@ jcr_percentile: 'Q2'
 abstract: We develop a novel smartphone-based spectral imaging otoscope for telemedicine and examine its capability for the mobile diagnosis of middle ear diseases. The device was applied to perform spectral imaging and analysis of an ear-mimicking phantom and a normal and abnormal tympanic membrane for evaluation of its potential for the mobile diagnosis. Spectral classified images were obtained via online spectral analysis in a remote server. The phantom experimental results showed that it allowed us to distinguish four different fluids located behind a semitransparent membrane. Also, in the spectral classified images of normal ears (n = 3) and an ear with chronic otitis media (n = 1), the normal and abnormal regions in each ear could be quantitatively distinguished with high contrast. These preliminary results thus suggested that it might have the potentials for providing quantitative information for the mobile diagnosis of various middle ear diseases.
 
 # Summary. An optional shortened abstract.
-summary: ___SCI(E); IF=3.21, 28.79% (Q2)___ <br> _Journal of Biophotonics (Journal of Biophotonics, 2020, Vol. 13, Issue 6, pp. 24-52)_
+summary: ___SCI(E); IF=3.21, 28.79% (Q2)___ <br> _Journal of Biophotonics, Vol. 13, No. 6, Art. e2452_
 
 tags: ['AI', 'medical', 'mobile', 'healthcare', 'classification', 'Q2']
 
@@ -86,4 +86,15 @@ url_source: 'https://doi.org/10.1002/jbio.201960213'
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
 # slides: example
+publication_status: Published
+publication_date: 2020-06
+publisher: Wiley
+metadata_checked: '2026-10-16'
+metadata_source: https://api.crossref.org/works/10.1002/jbio.201960213
+volume: '13'
+issue: '6'
+article_number: e2452
+published_online: '2020-03-21'
+issn: 1864-063X
+eissn: 1864-0648
 ---

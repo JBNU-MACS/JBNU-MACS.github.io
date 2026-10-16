@@ -1,0 +1,7 @@
+{{- $p := .item -}}
+{{- with $p.Params.publication -}}<i>{{ . }}</i>{{- end -}}
+{{- with $p.Params.volume -}}, Vol. {{ . }}{{- end -}}
+{{- with $p.Params.issue -}}, {{ if hasPrefix (printf "%v" .) "Part " }}{{ . }}{{ else }}No. {{ . }}{{ end }}{{- end -}}
+{{- with $p.Params.article_number -}}, Art. {{ . }}{{- end -}}
+{{- with $p.Params.pages -}}, pp. {{ . }}{{- end -}}
+{{- with $p.Params.publication_status -}}{{ if ne . "Published" }} <span> · {{ . }}</span>{{ end }}{{- end -}}

@@ -9,8 +9,9 @@
   position: relative; isolation: isolate; color: #23394b; padding: 40px 0 24px;
 }
 .brand-page::before {
-  content: ''; position: absolute; inset: 240px 0 0; z-index: -1; pointer-events: none;
-  border-radius: 48px; mask-image: linear-gradient(transparent,#000 12%,#000 85%,transparent);
+  content: ''; position: absolute; inset: 240px -24px 0; z-index: -1; pointer-events: none;
+  /* Fade every edge so the color field never ends at the content boundary. */
+  mask-image: radial-gradient(ellipse closest-side,#000 55%,transparent 100%);
   background: radial-gradient(ellipse 420px 310px at 8% 30%,rgba(146,198,232,.55),transparent 75%), radial-gradient(ellipse 440px 320px at 93% 52%,rgba(145,211,195,.43),transparent 75%), radial-gradient(ellipse 420px 290px at 40% 95%,rgba(189,178,225,.37),transparent 75%);
 }
 .brand-page h1 { margin: 0 0 20px; color: #20384c; font-size: var(--type-page); font-weight: 600; line-height: 1.4; letter-spacing: -.025em; text-align: left; }
@@ -31,7 +32,7 @@
 .brand-hero-copy .brand-kicker { display: none; }
 .brand-page .brand-kicker { font-size: 11px; line-height: 1.7; letter-spacing: .1em; color: #698393; margin-bottom: 16px; }
 .brand-hero-photo { display: block; margin: 30px 0 0; padding: 8px; min-width: 0; border: 1px solid #dde8ed; border-radius: 22px; background: linear-gradient(120deg,#ffffffc9,#e1edf0a3); box-shadow: 0 16px 40px -30px #21445c55,inset 0 1px 0 #fff; }
-.brand-hero-photo > img { display: block; width: 100%; height: 370px; object-fit: cover; object-position: center 85%; border-radius: 15px; }
+.brand-hero-photo > img { display: block; width: 100%; height: auto; border-radius: 15px; }
 .brand-hero-photo figcaption { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin: 0; padding: 14px 12px 6px; font-size: 12px; color: #6b8292; line-height: 1.7; }
 .brand-photo-link { font-size: 12px; }
 .brand-page .brand-button { padding: 10px 16px; border: 1px solid #d9e4eb; border-radius: 9px; background: #ffffffb3; box-shadow: inset 0 1px 0 #fff,0 3px 10px -7px #24486255; }
@@ -98,7 +99,7 @@
 @media(max-width:640px) {
   .home-section:has(.brand-page) > .container { width: calc(100% - 36px) !important; }
   .brand-page { padding-top: 24px; }
-  .brand-page::before { inset-inline: 0; }
+  .brand-page::before { inset-inline: -12px; }
   .brand-hero-copy, .brand-join-intro { display: flex; flex-direction: column; gap: 20px; align-items: stretch; }
   .brand-hero-copy .brand-actions { order: 3; }
   .brand-hero-photo { padding: 6px; border-radius: 17px; margin-top: 24px; }

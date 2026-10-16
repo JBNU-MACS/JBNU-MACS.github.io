@@ -1,49 +1,70 @@
-# [Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)
+# MACS Lab · 전북대학교
 
-[![Screenshot](./preview.png)](https://hugoblox.com/hugo-themes/)
+전북대학교 **Medical AI & Computational Science Laboratory (MACS Lab)** 홈페이지 저장소입니다. 의료영상, 멀티모달 학습, 계산과학을 중심으로 연구실의 연구 성과와 구성원, 학술 활동을 소개합니다.
 
-The **Research Group Template** empowers your research group to easily create a beautiful website with a stunning homepage, news, academic publications, events, team profiles, and a contact form.
+- **홈페이지:** [jbnu.macs.or.kr](https://jbnu.macs.or.kr/)
+- **언어:** [한국어](https://jbnu.macs.or.kr/ko/) · [English](https://jbnu.macs.or.kr/en/)
+- **소속:** 전북대학교 컴퓨터인공지능학부
+- **지도교수:** 이경수 (Kyungsu Lee)
+- **문의:** [ksl@jbnu.ac.kr](mailto:ksl@jbnu.ac.kr)
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, widget-based Wowchemy page builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+## 사이트 구성
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://hugoblox.com/hugo-themes/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/GetResearchDev?label=Follow%20on%20Twitter)](https://twitter.com/wowchemy)
+| 메뉴 | 내용 |
+| --- | --- |
+| 소개 | 연구실 소개, 연구 참여 및 대학원 진학 안내 |
+| 구성원 | 교수, 연구원, 학생 및 졸업생 소개 |
+| 연구 | 연구 분야와 논문, 연구 성과 |
+| 소식 | 연구실 소식, 공지사항, 학술 활동 |
+| 연락처 | 연구 참여·협업 문의 및 위치 안내 |
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+## 콘텐츠 관리
 
-[Check out the latest demo](https://research-group.netlify.app/) of what you'll get in less than 60 seconds, or [view the showcase](https://hugoblox.com/creators/).
+한국어 콘텐츠는 `content/ko/`, 영어 콘텐츠는 `content/en/`에서 관리합니다. 같은 내용을 두 언어로 게시할 때는 양쪽의 본문과 메타데이터를 함께 갱신합니다.
 
-The integrated [**Wowchemy**](https://hugoblox.com) website builder and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+| 수정할 내용 | 경로 (`content/<언어>/` 기준) |
+| --- | --- |
+| 메인 페이지 구성 | `_index.md` |
+| 연구실 소개 / 참여 안내 / 연락처 | `about/`, `join/`, `contact/` |
+| 구성원 프로필 / 구성원 페이지 | `authors/`, `people/` |
+| 연구 분야 / 논문 | `field/`, `publication/` |
+| 연구실 소식 / 공지사항 / 학술 활동 | `post/`, `notification/`, `event/` |
 
-- 👉 [**Get Started**](https://hugoblox.com/hugo-themes/)
-- 📚 [View the **documentation**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Wowchemy research community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- ⬇️ **Automatically import citations from BibTeX** with the [Hugo Academic CLI](https://github.com/GetRD/academic-file-converter)
-- 🐦 Share your new site with the community: [@wowchemy](https://twitter.com/wowchemy) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithWowchemy](https://twitter.com/search?q=%23MadeWithWowchemy&src=typed_query)
-- 🗳 [Take the survey and help us improve #OpenSource](https://forms.gle/NioD9VhUg7PNmdCAA)
-- 🚀 [Contribute improvements](https://github.com/HugoBlox/hugo-blox-builder/blob/main/CONTRIBUTING.md) or [suggest improvements](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://docs.hugoblox.com/hugo-tutorials/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+새 글이나 논문은 같은 유형의 기존 폴더를 복사한 뒤 `index.md`의 제목, 날짜, 저자, 본문과 첨부 이미지를 수정합니다. 구성원 프로필은 `authors/<이름>/_index.md`에서 관리합니다. 복사한 항목의 기존 메타데이터와 링크가 남지 않았는지 확인하고, 로컬 미리보기에서 목록과 상세 페이지를 모두 확인해 주세요.
 
-## We ask you, humbly, to support this open source movement
+페이지 일부는 사용자 정의 템플릿으로 구성되어 있습니다. Markdown에 `{{< academic_home >}}` 같은 호출이 있으면 해당 화면의 구성과 문구는 `layouts/shortcodes/` 및 `layouts/partials/`도 확인합니다.
 
-Today we ask you to defend the open source independence of the Wowchemy website builder and themes 🐧
+## 주요 디렉터리
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+| 경로 | 용도 |
+| --- | --- |
+| `content/ko/`, `content/en/` | 언어별 페이지와 콘텐츠 |
+| `assets/media/` | 공용 이미지와 아이콘 |
+| `assets/scss/`, `assets/js/` | 스타일과 화면 동작 |
+| `layouts/` | 사용자 정의 페이지 템플릿, shortcode, partial |
+| `static/` | 경로를 유지한 채 제공하는 정적 파일 |
+| `config/_default/` | 사이트 기본 정보, 언어, 메뉴, 테마 설정 |
+| `.github/workflows/publish.yaml` | GitHub Pages 빌드·배포 설정 |
+| `public/` | 빌드 출력 위치 — 콘텐츠 수정은 원본 파일에서 진행 |
 
-### [❤️ Click here to become a GitHub Sponsor, unlocking awesome perks such as _exclusive academic templates and widgets_](https://github.com/sponsors/gcushen)
+메뉴는 `menus.ko.yaml`과 `menus.en.yaml`, 사이트 주소와 기본 언어는 `hugo.yaml`, 언어별 콘텐츠 경로는 `languages.yaml`에서 설정합니다. 모두 `config/_default/` 안에 있습니다.
 
-## Demo credits
+## 로컬 실행
 
+Hugo **Extended 0.123.7**과 Go가 필요합니다. Hugo 버전은 현재 GitHub Actions 배포 설정과 동일하게 맞춥니다. 로컬 실행은 Go 1.21.5에서 확인했습니다.
 
-Please replace the demo images with your own.
+저장소 루트에서 실행합니다. 첫 실행 시 테마 모듈을 다운로드하므로 인터넷 연결이 필요합니다.
 
-- [Female scientist](https://unsplash.com/photos/uVnRa6mOLOM)
-- [2 Coders](https://unsplash.com/photos/kwzWjTnDPLk)
-- [Cafe](https://unsplash.com/photos/RnDGGnMEOao)
-- Blog posts
-  - https://unsplash.com/photos/AndE50aaHn4
-  - https://unsplash.com/photos/OYzbqk2y26c
-- Avatars
-  - https://unsplash.com/photos/5yENNRbbat4
-  - https://unsplash.com/photos/WNoLnJo7tS8
+```sh
+hugo server --bind 127.0.0.1 --baseURL http://localhost:1313/ --renderToMemory
+```
+
+[한국어 미리보기](http://localhost:1313/ko/) 또는 [영어 미리보기](http://localhost:1313/en/)를 엽니다. 파일을 저장하면 자동으로 다시 빌드되며, 종료는 `Ctrl+C`입니다. 초안까지 확인하려면 실행 명령에 `--buildDrafts`를 추가합니다.
+
+## 배포
+
+`main` 브랜치에 push하면 GitHub Actions가 사이트를 빌드하고 GitHub Pages에 배포합니다. [배포 워크플로](https://github.com/JBNU-MACS/JBNU-MACS.github.io/actions/workflows/publish.yaml)에서 진행 상태를 확인하거나 수동 실행할 수 있습니다.
+
+## 기반 및 라이선스
+
+[Hugo](https://gohugo.io/)와 [HugoBlox Research Group 테마](https://github.com/wowchemy/starter-hugo-research-group)를 기반으로 연구실에 맞게 구성했습니다. 원본 테마의 MIT 라이선스와 저작권 고지는 [LICENSE.md](LICENSE.md)에 보존되어 있습니다.

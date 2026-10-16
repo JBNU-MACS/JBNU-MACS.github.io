@@ -50,14 +50,16 @@
 {{ end }}
 
 <article class="macs-people-card">
-  <a href="{{ $item.RelPermalink }}" class="macs-people-card-inner">
-    {{ if $avatar }}
-      <img src="{{ $avatar }}" alt="{{ $name }} avatar" class="macs-people-avatar">
-    {{ else }}
-      <div class="macs-people-avatar placeholder">{{ slicestr ($name | plainify) 0 1 }}</div>
-    {{ end }}
+  <div class="macs-people-card-inner">
+    <a href="{{ $item.RelPermalink }}" class="macs-people-photo-link" aria-label="{{ $name }}">
+      {{ if $avatar }}
+        <img src="{{ $avatar }}" alt="{{ $name }} avatar" class="macs-people-avatar" loading="lazy">
+      {{ else }}
+        <div class="macs-people-avatar placeholder">{{ slicestr ($name | plainify) 0 1 }}</div>
+      {{ end }}
+    </a>
     <div class="macs-people-meta">
-      <h3>{{ $name }}</h3>
+      <h3><a href="{{ $item.RelPermalink }}">{{ $name }}</a></h3>
       <p class="role">{{ $role }}</p>
       {{ if ne $org "" }}
         <p class="org">
@@ -68,9 +70,11 @@
           {{ end }}
         </p>
       {{ end }}
-      <p class="contact">contact: {{ if ne $email "" }}<a href="mailto:{{ $email }}">{{ $email }}</a>{{ end }}</p>
-      <p class="hint">View detail</p>
+      {{ with $email }}
+        <p class="contact"><a href="mailto:{{ . }}">{{ . }}</a></p>
+      {{ end }}
+      <p class="hint"><a href="{{ $item.RelPermalink }}">{{ if eq $lang "ko" }}프로필 보기{{ else }}View profile{{ end }} <span aria-hidden="true">→</span></a></p>
     </div>
-  </a>
+  </div>
 </article>
 
